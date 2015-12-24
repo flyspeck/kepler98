@@ -1,0 +1,35 @@
+MakeExecQ := Module[{i,j,s}, stream = OpenWrite["/tmp/Z/cplex.Qexec"];
+    s = "set logfile /tmp/Z/cplex.log\n";
+    Do[s = StringJoin[s, "read /tmp/Z/cplex.lp", S[i],".",
+            S[j], " lp \n",
+       "optimize\n"], 
+			{i, 1, Length[finalY]},
+            {j,1,4^NumQuads[[i]]}
+                ]; s = StringJoin[s, "quit"];
+    WriteString[stream, s]; Close[stream]; ]
+
+(* The next two procedures are to generate a file to check the
+	sum of the heights of a quasi-regular tetrahedron. *)
+(* i = config, j= quad case, k= tetra face *)
+MakeQT[i_,j_,k_] := Module[{s,t}, 
+	t = GBLregions[[k]];
+    StringJoin[
+		"read cplex.lp", S[i],".",S[j], " lp \n",
+		"add \n",
+		"X - y(",S[t[[1]]],") - y(",S[t[[2]]],") - y(",S[t[[3]]],") = 0\n",
+		"end \n",
+       "optimize\n"]
+      ];
+
+MakeQQ:= Module[{stream,v,i,k,s}, 
+	(* i,j = residue18, parts 1,2 *)
+	(* k = GBLregions, tet.  	*)
+	s = "";
+    Do[Initialize[residue18[[i,1]]];
+		v = Select[Range[Length[GBLregions]],Length[GBLregions[[#]]]==3&];
+		Do[s=StringJoin[s,MakeQT[residue18[[i,1]],residue18[[i,2]],v[[k]]]],
+			{k,1,Length[v]}];
+		, {i,1,Length[residue18]}];
+	stream = OpenWrite["/tmp/Z/cplex.Qexec"];
+    WriteString[stream, s]; Close[stream]; ]
+

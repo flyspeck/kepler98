@@ -1,0 +1,25 @@
+Welcome to sphere packing routines, relation testing division.
+Welcome to BigPoly.  Subdivisions:	2
+
+Enter bound:  		Bound = 16
+Starting time:  	Wed Jul 16 12:55:46 1997
+
+Starting case 1:
+cellcount    =         47804033		maxdepth = 7
+insidecount  =         20634795
+verifycount  =         26422300
+Verification succeeded.
+
+Starting case 2:
+cellcount    =       1961455489		maxdepth = 10
+insidecount  =        435747528
+verifycount  =       1495060219
+Verification succeeded.
+
+Done.
+Ending time:    	Thu Jul 17 11:32:57 1997
+
+Elapsed time: 81431 seconds
+diff = -942.972		24674.4 cells per second
+
+

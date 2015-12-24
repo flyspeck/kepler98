@@ -1,0 +1,26 @@
+PM[6,248].F16.C9
+
+(* Flat cases of PM[6,248] *)
+
+PM[6,248];
+Map[Last,Select[valHexnHi,#[[3]]==248&]]//Union == {9}
+PM[6,248].F16.C9.
+ 
+list9 = Select[valHexn,#[[3]]==248&&#[[5]]==9&];  Length[list9]==1024;
+p9 = PSelect[list9,#[[1]]>0.4429&] == {2, 5, 6, 13, 14, 18, 22, 130, 134};
+Initialize[6,248];
+
+
+
+bf = "SHORT/HEX/LP/cplexE.lp6.248.F16.C9"
+uf1[i_]:= uf1[i]=
+	UpdateSubregion[bf,16,{1,2,3,6},
+		Branch[Band[6,248],i ]]<>
+    UpdateSubregion[bf,16,{3,4,5,6},
+		Branch[Band[6,248],i ]]
+Map[LPdisplay[bf,
+		Branch[Band[6,248],#]<>uf1[#] ]&,p9]//Max == 0.358567
+
+
+
+PM[6,248].F16.9  done 6:00pm 6 July 1998 

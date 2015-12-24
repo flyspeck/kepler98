@@ -1,0 +1,65 @@
+head	1.1;
+access;
+symbols;
+locks
+	hales:1.1; strict;
+comment	@// @;
+
+
+1.1
+date	98.07.06.20.14.10;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@
+
+(*
+<< graphY.m;
+ConfigurationList = lpent;
+*)
+
+<< MathToCplex.m;
+
+
+exInit:=(
+Print[" -- Exceptional Cases -- "];
+<< BASIC/lpent.m;
+<< BASIC/lhex.m;
+<< BASIC/lhept.m;
+<< BASIC/loct.m;
+ConfigurationList={};
+<< LPm.m;
+<< BASIC/l.sum; (* contains archive function *)
+<< MathToCplexExcept.m;
+);
+exInit; 
+
+pentInit:=(<< MathToCplexPent.m);
+(* pentInit; *)
+
+quadInit:=(
+<< lquad.m;
+<< LPm.m;
+ConfigurationList = lquad;
+(* gen:= Table[WRITEOUT[i]; Print[i],{i,1,Length[ConfigurationList]}]; *)
+);
+
+Print[" -- CPLEX Initialized -- "];
+!seticon MToCplex
+!settitle MathToCplex
+Fix[x_] := Edit[Definition[x]]
+SetAttributes[Fix,HoldFirst];
+(Unprotect[In,Out]; Format[In]=MathToCplexIn;
+    Format[Out]=MathToCplexOut; Protect[In,Out];)
+
+@

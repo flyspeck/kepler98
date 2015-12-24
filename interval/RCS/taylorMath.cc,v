@@ -1,0 +1,826 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@// @;
+
+
+1.1
+date	97.09.13.18.13.29;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@interval package, taylor functions for simplices
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@//  copyright (c) 1997, Thomas C. Hales, all rights reserved.
+
+extern "C"
+{
+#include <math.h>
+#include <stdlib.h>
+}
+#include "interval.h"
+#include "taylorInterval.h"
+#include "secondDerive.h"
+
+static series swap_vor(const double x[6])
+	{
+	return swap_Vor(x[0],x[1],x[2],x[3],x[4],x[5]);
+	}
+
+static series swap_upright_vorVc(const double x[6])
+	{
+	return swap_uprightVorVc(x[0],x[1],x[2],x[3],x[4],x[5]);
+	}
+
+static series vor_analytic(const double x[6])
+	{ return vor_analytic(x[0],x[1],x[2],x[3],x[4],x[5]); }
+
+static series vorVc(const double x[6])
+	{ return VorVc(x[0],x[1],x[2],x[3],x[4],x[5]); }
+
+static series upright_vorVc(const double x[6])
+	{ return uprightVorVc(x[0],x[1],x[2],x[3],x[4],x[5]); }
+
+static series vorSqc(const double x[6])
+	{ return VorSqc(x[0],x[1],x[2],x[3],x[4],x[5]); }
+
+static series gamma(const double x[6])
+	{
+	return gamma(x[0],x[1],x[2],x[3],x[4],x[5]);
+	}
+
+static series solid(const double x[6])
+	{
+	return solid(x[0],x[1],x[2],x[3],x[4],x[5]);
+	}
+
+static series dih(const double x[6])
+	{
+	return dih(x[0],x[1],x[2],x[3],x[4],x[5]);
+	}
+
+static series dih2(const double x[6])
+	{
+	return dih2(x[0],x[1],x[2],x[3],x[4],x[5]);
+	}
+
+static series dih3(const double x[6])
+	{
+	return dih3(x[0],x[1],x[2],x[3],x[4],x[5]);
+	}
+
+static series constantseries(const double [6])
+	{
+	static const series s(one);
+	return s;
+	}
+
+static series x1_series(const double x[6])
+	{
+	series s=interval(x[0],x[0]);
+	s.Df[0]=one;
+	return s;
+	}
+
+static series y1_series(const double x[6])
+	{
+	series s = sqrt(interval(x[0],x[0]));
+	s.Df[0]= one/(two*s.f);
+	return s;
+	}
+
+static series x2_series(const double x[6])
+	{
+	series s=interval(x[1],x[1]);
+	s.Df[1]=one;
+	return s;
+	}
+
+static series y2_series(const double x[6])
+	{
+	series s = sqrt(interval(x[1],x[1]));
+	s.Df[1]= one/(two*s.f);
+	return s;
+	}
+
+static series x3_series(const double x[6])
+	{
+	series s=interval(x[2],x[2]);
+	s.Df[2]=one;
+	return s;
+	}
+
+static series y3_series(const double x[6])
+	{
+	series s = sqrt(interval(x[2],x[2]));
+	s.Df[2]= one/(two*s.f);
+	return s;
+	}
+
+static series x4_series(const double x[6])
+	{
+	series s=interval(x[3],x[3]);
+	s.Df[3]=one;
+	return s;
+	}
+
+static series y4_series(const double x[6])
+	{
+	series s = sqrt(interval(x[3],x[3]));
+	s.Df[3]= one/(two*s.f);
+	return s;
+	}
+
+static series x5_series(const double x[6])
+	{
+	series s=interval(x[4],x[4]);
+	s.Df[4]=one;
+	return s;
+	}
+
+static series y5_series(const double x[6])
+	{
+	series s = sqrt(interval(x[4],x[4]));
+	s.Df[4]= one/(two*s.f);
+	return s;
+	}
+
+static series x6_series(const double x[6])
+	{
+	series s=interval(x[5],x[5]);
+	s.Df[5]=one;
+	return s;
+	}
+
+static series y6_series(const double x[6])
+	{
+	series s = sqrt(interval(x[5],x[5]));
+	s.Df[5]= one/(two*s.f);
+	return s;
+	}
+
+static series eta2_126_series(const double x[6]) 
+        {
+        return eta2(x[0],x[1],x[5]);
+        }
+
+static series eta2_135_series(const double x[6]) 
+        {
+        series s = eta2(x[0],x[2],x[4]);
+	s.Df[2]=s.Df[1]; s.Df[1]=zero;
+	s.Df[4]=s.Df[5]; s.Df[5]=zero;
+	return s;
+        }
+
+static series eta2_234_series(const double x[6]) 
+        {
+        series s = eta2(x[1],x[2],x[3]);
+	s.Df[3]=s.Df[5]; s.Df[5]=zero;
+	s.Df[2]=s.Df[1]; 
+	s.Df[1]=s.Df[0]; s.Df[1]=zero;
+	return s;
+        }
+
+static series eta2_456_series(const double x[6]) 
+        {
+        series s = eta2(x[3],x[4],x[5]);
+	s.Df[4]=s.Df[1]; s.Df[1]=zero;
+	s.Df[3]=s.Df[0]; s.Df[0]=zero;
+	return s;
+        }
+
+static const double etaUV = 0.095; //based on SECOUT/out.eta2:upright X-long:upright Z-long.
+// these bounds hold also for flat and quasi-regular.
+
+static int set_eta2(double DD[6][6],int k1,int k2,int k3)
+	{	
+	int i,j;
+	int k[3]={k1,k2,k3};
+	for (i=0;i<6;i++) for (j=0;j<6;j++) DD[i][j]=0.0;
+	for (i=0;i<3;i++) for (j=0;j<3;j++) DD[k[i]][k[j]]=etaUV;
+	return 1;
+	}
+
+static int compute_eta2_126(const double [6],const double [6],double DD[6][6])
+	{ return set_eta2(DD,0,1,2); }
+static int compute_eta2_135(const double [6],const double [6],double DD[6][6])
+	{ return set_eta2(DD,0,2,4); }
+static int compute_eta2_234(const double [6],const double [6],double DD[6][6])
+	{ return set_eta2(DD,1,2,3); }
+static int compute_eta2_456(const double [6],const double [6],double DD[6][6])
+	{ return set_eta2(DD,3,4,5); }
+	
+
+static int compute_sol(const double x[6],const double z[6],double DD[6][6])
+	{
+	int i,j;
+	interval sqrt_d,Dsqrt_d[6],DDsqrt_d[6][6],DDx[6][6];
+	if (!(compute_sqrtdelta(x,z,sqrt_d,Dsqrt_d,DDsqrt_d))) return 0;
+	if (!(solidPartials(x,z,sqrt_d,Dsqrt_d,DDsqrt_d,DDx))) return 0;
+	for (i=0;i<6;i++) for (j=i;j<6;j++) 
+		DD[i][j]=abs(DDx[i][j]);
+	for (i=0;i<6;i++) for (j=0;j<i;j++) DD[i][j]=DD[j][i];
+	return 1;
+	}
+
+static int compute_dih2(const double x[6],const double z[6],double DD[6][6])
+	{
+	int k[6]={1,0,2,4,3,5};
+	double xx[6],zz[6];
+	int i,j;
+	for (i=0;i<6;i++) {xx[i]=x[k[i]]; zz[i]=z[k[i]]; }
+	double RR[6][6];
+	if (!(computeDihedral(xx,zz,RR))) return 0;
+	for (i=0;i<6;i++) for (j=0;j<6;j++)
+		DD[i][j] = RR[k[i]][k[j]];
+	return 1;
+	}
+
+static int compute_dih3(const double x[6],const double z[6],double DD[6][6])
+	{
+	int k[6]={2,1,0,5,4,3};
+	double xx[6],zz[6];
+	int i,j;
+	for (i=0;i<6;i++) {xx[i]=x[k[i]]; zz[i]=z[k[i]]; }
+	double RR[6][6];
+	if (!(computeDihedral(xx,zz,RR))) return 0;
+	for (i=0;i<6;i++) for (j=0;j<6;j++)
+		DD[i][j] = RR[k[i]][k[j]];
+	return 1;
+	}
+
+// When no second bounds are available.  
+static int compute_voranalytic(const double x[6],const double z[6],double DD[6][6])
+        {
+        static const interval f3("1.33333333333333333333333333333");
+	static const double d3=sup(f3);
+        int i,j;
+        interval sqrtd,Dsqrtd[6],DDsqrtd[6][6];
+        interval DDy[6][6];
+	interval DDx[6][6];
+        if (!compute_sqrtdelta(x,z,sqrtd,Dsqrtd,DDsqrtd)) return 0;
+        vor_analytic34(x,z,sqrtd,Dsqrtd,DDsqrtd,DDx,DDy);
+	up();
+        for (i=0;i<6;i++) for (j=i;j<6;j++)
+		DD[i][j]= d3*sup(max(DDx[i][j],-DDx[i][j]));
+        for (i=0;i<6;i++) for (j=0;j<i;j++)
+                DD[i][j] = DD[j][i];
+	return 1;
+        }
+
+/*
+// This variant is used in FORM/formulation.cc:
+static int compute_vor(double x[6],double z[6],double DD[6][6],int*)
+        {
+	return compute_voranalytic(x,z,DD);
+	}
+*/
+
+static int compute_rad2(const double x[6],const double z[6],double DD[6][6])
+        {
+	// chi^2/(4 u delta) + eta^2 = rad^2;
+	// bound on eta2 computed in SECOUT/out.eta2
+	static const double XX = 0.04;
+	static const int k[3] = {0,1,5};
+        int i,j;
+        if (!compute_chi2over4udelta(x,z,DD)) return 0;
+	up();
+        for (i=0;i<3;i++) for (j=0;j<3;j++)
+		DD[k[i]][k[j]]= DD[k[i]][k[j]]+ XX;
+	return 1;
+        }
+
+static series rad2(const double x[6])
+	{
+	return rad2(x[0],x[1],x[2],x[3],x[4],x[5]);
+	}
+
+// Table[VORANq[i,j] 1.3,{i,0,5},{j,0,5}], VORANq in int;SECOUT/out.sec.Q
+static const double vorsecq[6][6]={{0.4764018743941502, 0.331659346562304,0.331659346562304,
+    0.21298711106907, 0.2569456978991421, 0.2569456978991421},
+   {0.331659346562304, 0.4642103520429511, 0.3189822170847934,
+    0.2518613355451742, 0.2130737168159708, 0.2518613355451746},
+   {0.331659346562304, 0.3189822170847934, 0.4642103520429511,
+    0.2518613355451742, 0.2518613355451746, 0.2130737168159708},
+   {0.21298711106907, 0.2518613355451742, 0.2518613355451742,
+    0.2378845709065222, 0.1907110592742963, 0.1907110592742963},
+   {0.2569456978991421, 0.2130737168159708, 0.2518613355451746,
+    0.1907110592742963, 0.2378845709065225, 0.1997072630942962},
+   {0.2569456978991421, 0.2518613355451746, 0.2130737168159708,
+    0.1907110592742963, 0.1997072630942962, 0.2378845709065225}};
+
+
+static int copy(double DD[6][6],const double sec[6][6])
+	{
+	for (int i=0;i<6;i++) for (int j=0;j<6;j++)
+		DD[i][j]=sec[i][j];
+	return 1;
+	}
+
+static int compute_vorsecq(const double [6],const double [6],double DD[6][6])
+	{ return copy(DD,vorsecq); }
+
+// Table[VORANf[i,j] 1.3,{i,0,5},{j,0,5}], VORANf in int;SECOUT/out.sec.F
+static const double vorsecf[6][6]= {{0.4667858608452715, 0.548215749659522, 0.548215749659522
+,
+    0.3543884477421286, 0.4340960290926191, 0.4340960290926191},
+   {0.548215749659522, 0.7416603405713062, 0.6544254881497676,
+    0.4297356554522379, 0.4700440458574503, 0.5336426912566655},
+   {0.548215749659522, 0.6544254881497676, 0.7416603405713062,
+    0.4297356554522379, 0.5336426912566655, 0.4700440458574503},
+   {0.3543884477421286, 0.4297356554522379, 0.4297356554522379,
+    0.515880504594417, 0.4687480083372963, 0.4687480083372963},
+   {0.4340960290926191, 0.4700440458574503, 0.5336426912566655,
+    0.4687480083372963, 0.5353733609797348, 0.4451072893510121},
+   {0.4340960290926191, 0.5336426912566655, 0.4700440458574503,
+    0.4687480083372963, 0.4451072893510121, 0.5353733609797348}};
+
+static int compute_vorsecf(const double [6],const double [6],double DD[6][6])
+	{ return copy(DD,vorsecf); }
+
+// Table[VORANu[i,j] 1.3,{i,0,5},{j,0,5}], VORANu in int;SECOUT/out.sec.U
+static const double vorsecu[6][6]=  {{0.4281487180299025, 0.5849864343593457, 
+	0.5849864343593457,
+    0.349067754637769, 0.5565204830263398, 0.5565204830263398},
+   {0.5849864343593457, 0.6525017708105887, 0.5686451859032814,
+    0.3123580298119767, 0.4792689926768498, 0.4981758511336457},
+   {0.5849864343593457, 0.5686451859032814, 0.6525017708105887,
+    0.3123580298119767, 0.4981758511336457, 0.4792689926768498},
+   {0.349067754637769, 0.3123580298119767, 0.3123580298119767,
+    0.2264624414472072, 0.2174821857633429, 0.2174821857633429},
+   {0.5565204830263398, 0.4792689926768498, 0.4981758511336457,
+    0.2174821857633429, 0.4622578807953082, 0.4831762324598516},
+   {0.5565204830263398, 0.4981758511336457, 0.4792689926768498,
+    0.2174821857633429, 0.4831762324598516, 0.4622578807953082}};
+
+static int compute_vorsecu(const double [6],const double [6],double DD[6][6])
+	{ return copy(DD,vorsecu); }
+
+static int compute_swap_vorsecu(const double x[6],const double z[6],double DD[6][6])
+	{ 
+        double xx[6],zz[6],DDxz[6][6];
+        int i,j;
+        int k[6]={0,5,4,3,2,1};
+        for (i=0;i<6;i++) { xx[i]=x[k[i]]; zz[i]=z[k[i]]; }
+        if (!compute_vorsecu(xx,zz,DDxz)) return 0;
+        for (i=0;i<6;i++) for (j=0;j<6;j++) DD[i][j]=DDxz[k[i]][k[j]];
+        return 1;
+        }
+
+static const double vorVcsecu[6][6]= // Sc[Vc]= 
+		// Vc[i__]:= SOLu[i]*0.5666365478933326 + 
+			// DIHVcu[i]+DIH2Vcu[i]+DIH3Vcu[i]+QUOIN[i];
+		// DIH3Vcu[i_,j_]:= DIH2Vcu[K[[i+1]],K[[j+1]]];
+		// K = {0, 2, 1, 3, 5, 4};
+		//   2*maxab(out.quoin.simplex.1255:DD[i,j]) is about 0.01242
+		// QUOIN[i_,j_]:= 0.0125 /; ((i>0)&&(i<4)&&(j>0)&&(j<4));
+		// QUOIN[i_,j_]:= 0 /; ((i==0)||(i>3)||(j==0)||(j>3));
+    {{0.1782227307193559, 0.131733343537643, 0.131733343537643, 
+    0.0921731861203008, 0.07792820729509741, 0.07792820729509741}, 
+   {0.131733343537643, 0.2049667790628317, 0.1441228966927744, 
+    0.1174938110075899, 0.0875545068468916, 0.095864100034125}, 
+   {0.131733343537643, 0.1441228966927744, 0.2049667790628317, 
+    0.1174938110075899, 0.095864100034125, 0.0875545068468916}, 
+   {0.0921731861203008, 0.1174938110075899, 0.1174938110075899, 
+    0.0833074490709164, 0.06820300088610705, 0.06820300088610705}, 
+   {0.07792820729509741, 0.0875545068468916, 0.095864100034125, 
+    0.06820300088610705, 0.07517458966537904, 0.05616291825796102}, 
+   {0.07792820729509741, 0.095864100034125, 0.0875545068468916, 
+    0.06820300088610705, 0.05616291825796102, 0.07517458966537904}};
+
+static int compute_vorVcsecu(const double [6],const double [6],double DD[6][6])
+	{ return copy(DD,vorVcsecu); }
+
+static int compute_swap_vorVcsecu(const double x[6],const double z[6],double DD[6][6])
+	{ 
+        double xx[6],zz[6],DDxz[6][6];
+        int i,j;
+        int k[6]={0,5,4,3,2,1};
+        for (i=0;i<6;i++) { xx[i]=x[k[i]]; zz[i]=z[k[i]]; }
+        if (!compute_vorVcsecu(xx,zz,DDxz)) return 0;
+        for (i=0;i<6;i++) for (j=0;j<6;j++) DD[i][j]=DDxz[k[i]][k[j]];
+        return 1;
+        }
+
+/* 
+	GAMMAq[i_,j_]:= DOCT/12 SQRTDELTAq[i,j] + 1/3 SOLq[i,j] +
+	1/3 SOLq[INV1[i],INV1[j]] + 1/3 SOLq[INV2[i],INV2[j]] +
+	1/3 SOLq[INV3[i],INV3[j]]//N; 
+	INV1[i_]:= {0,5,4,3,2,1}[[i+1]];
+	INV2[i_]:= {5,1,3,2,4,0}[[i+1]];
+	INV3[i_]:= {4,3,2,1,0,5}[[i+1]];
+	Table[GAMMAq[i,j] 1.3//N,{i,0,5},{j,0,5}];
+	SQRTDELTAq, SOLq, in SECOUT/out.sec.U; 
+*/
+static const double gamsecq[6][6]=
+	  {{0.1505081218334406, 0.0987415739454046, 0.0987415739454046, 
+    0.0904416359075526, 0.0989502641265695, 0.0989502641265695}, 
+   {0.0987415739454046, 0.1472361623948175, 0.0972711666314722, 
+    0.0972711666314722, 0.0899978329092247, 0.0980605035191848}, 
+   {0.0987415739454046, 0.0972711666314722, 0.1472361623948175, 
+    0.0972711666314722, 0.0980605035191848, 0.0899978329092247}, 
+   {0.0904416359075526, 0.0972711666314722, 0.0972711666314722, 
+    0.1472361623948175, 0.0980605035191848, 0.0980605035191848}, 
+   {0.0989502641265695, 0.0899978329092247, 0.0980605035191848, 
+    0.0980605035191848, 0.1483489164399885, 0.0976885469938018}, 
+   {0.0989502641265695, 0.0980605035191848, 0.0899978329092247, 
+    0.0980605035191848, 0.0976885469938018, 0.1483489164399885}};
+
+/*	
+        GAMMAu[i_,j_]:= DOCT/12 SQRTDELTAu[i,j] + 1/3 SOLu[i,j] +
+        1/3 SOLu[INV1[i],INV1[j]] + 1/3 SOLf[INV2[i],INV2[j]] +
+        1/3 SOLf[INV3[i],INV3[j]]//N;
+        INV1[i_]:= {0,5,4,3,2,1}[[i+1]];
+        INV2[i_]:= {3,1,5,0,4,2}[[i+1]];
+        INV3[i_]:= {3,4,2,0,1,5}[[i+1]];
+        Table[GAMMAu[i,j] 1.3//N,{i,0,5},{j,0,5}];
+        SQRTDELTAu, SOLu, in SECOUT/out.sec.U;
+                  , SOLf, in SECOUT/out.sec.F;
+*/
+static const double gamsecu[6][6]=
+	  {{0.1815102008803288, 0.1721285491194339, 0.1721285491194339, 
+    0.1853730180004061, 0.1721285491194339, 0.1721285491194339}, 
+   {0.1721285491194339, 0.2208078073704521, 0.152027658695586, 
+    0.1843101578751823, 0.1222038974472756, 0.1670368118212326}, 
+   {0.1721285491194339, 0.152027658695586, 0.2208078073704521, 
+    0.1843101578751823, 0.1670368118212326, 0.1222038974472756}, 
+   {0.1853730180004061, 0.1843101578751823, 0.1843101578751823, 
+    0.2311488956759207, 0.1843101578751823, 0.1843101578751823}, 
+   {0.1721285491194339, 0.1222038974472756, 0.1670368118212326, 
+    0.1843101578751823, 0.2208078073704521, 0.1520276586955861}, 
+   {0.1721285491194339, 0.1670368118212326, 0.1222038974472756, 
+    0.1843101578751823, 0.1520276586955861, 0.2208078073704521}};
+
+/*
+        GAMMAf[i_,j_]:= DOCT/12 SQRTDELTAf[i,j] + 1/3 SOLf[i,j] +
+        1/3 SOLf[INV1[i],INV1[j]] + 1/3 SOLu[INV2[i],INV2[j]] +
+        1/3 SOLu[INV3[i],INV3[j]]//N;
+        INV1[i_]:= {0,5,4,3,2,1}[[i+1]];
+        INV2[i_]:= {3,1,5,0,4,2}[[i+1]];
+        INV3[i_]:= {3,4,2,0,1,5}[[i+1]];
+        Table[GAMMAf[i,j] 1.3//N,{i,0,5},{j,0,5}];
+        SQRTDELTAf, SOLf, in SECOUT/out.sec.F;
+                  , SOLu, in SECOUT/out.sec.U;
+*/
+static const double gamsecf[6][6]=
+	  {{0.2328615196697771, 0.1855111040967506, 0.1855111040967506, 
+    0.1854394137033798, 0.1855111040967506, 0.1855111040967506}, 
+   {0.1855111040967506, 0.2208078073704518, 0.1670368118212323, 
+    0.1709276028978653, 0.1222038974472753, 0.1520276586955859}, 
+   {0.1855111040967506, 0.1670368118212323, 0.2208078073704518, 
+    0.1709276028978653, 0.1520276586955859, 0.1222038974472753}, 
+   {0.1854394137033798, 0.1709276028978653, 0.1709276028978653, 
+    0.1796647854805246, 0.1709276028978653, 0.1709276028978653}, 
+   {0.1855111040967506, 0.1222038974472753, 0.1520276586955859, 
+    0.1709276028978653, 0.2208078073704518, 0.1670368118212323}, 
+   {0.1855111040967506, 0.1520276586955859, 0.1222038974472753, 
+    0.1709276028978653, 0.1670368118212323, 0.2208078073704518}};
+
+static int compute_gamsecf(const double [6],const double [6],double DD[6][6])
+	{ return copy(DD,gamsecf); }
+
+static int compute_gamsecu(const double [6],const double [6],double DD[6][6])
+	{ return copy(DD,gamsecu); }
+
+static int compute_gamsecq(const double [6],const double [6],double DD[6][6])
+	{ return copy(DD,gamsecq); }
+
+	// out.sec.F:SOLf scaled by 1.3 for a margin of error.
+static const double solsecf[6][6]=
+  {{0.04371155939967812, 0.07916064652631018, 0.07916064652631018, 
+    0.0603529187865793, 0.03769056080178152, 0.03769056080178152}, 
+   {0.07916064652631018, 0.0871215068555988, 0.07271729668978311, 
+    0.06570022301527903, 0.04820917216443769, 0.0637099938590001}, 
+   {0.07916064652631018, 0.07271729668978311, 0.0871215068555988, 
+    0.06570022301527903, 0.0637099938590001, 0.04820917216443769}, 
+   {0.0603529187865793, 0.06570022301527903, 0.06570022301527903, 
+    0.06899272510468771, 0.05543073847641561, 0.05543073847641561}, 
+   {0.03769056080178152, 0.04820917216443769, 0.0637099938590001, 
+    0.05543073847641561, 0.05715793121958739, 0.03250602234159555}, 
+   {0.03769056080178152, 0.0637099938590001, 0.04820917216443769, 
+    0.05543073847641561, 0.03250602234159555, 0.05715793121958739}};
+
+	// output from out.sec.U:SOLu scaled by 1.3 to give a margin of error.
+static const double solsecu[6][6]=
+	  {{0.04371155939967812, 0.07916064652631018, 0.07916064652631018, 
+    0.0603529187865793, 0.03769056080178152, 0.03769056080178152}, 
+   {0.07916064652631018, 0.0871215068555988, 0.07271729668978311, 
+    0.06570022301527903, 0.04820917216443769, 0.0637099938590001}, 
+   {0.07916064652631018, 0.07271729668978311, 0.0871215068555988, 
+    0.06570022301527903, 0.0637099938590001, 0.04820917216443769}, 
+   {0.0603529187865793, 0.06570022301527903, 0.06570022301527903, 
+    0.06899272510468771, 0.05543073847641561, 0.05543073847641561}, 
+   {0.03769056080178152, 0.04820917216443769, 0.0637099938590001, 
+    0.05543073847641561, 0.05715793121958739, 0.03250602234159555}, 
+   {0.03769056080178152, 0.0637099938590001, 0.04820917216443769, 
+    0.05543073847641561, 0.03250602234159555, 0.05715793121958739}};
+	
+
+	// output out.sec.Q:SOLq scaled by 1.3 for a margin of error.
+static const double solsecq[6][6]=
+	 {{0.1008221003655132, 0.1001966108010378, 0.1001966108010378, 
+    0.04170470709398239, 0.03597275361874876, 0.03597275361874876}, 
+   {0.1001966108010378, 0.0974838382300004, 0.0978286001379002, 
+    0.03534668307525432, 0.04101049501981311, 0.03534668307525433}, 
+   {0.1001966108010378, 0.0978286001379002, 0.0974838382300004, 
+    0.03534668307525432, 0.03534668307525433, 0.04101049501981311}, 
+   {0.04170470709398239, 0.03534668307525432, 0.03534668307525432, 
+    0.03468054377737053, 0.03085232133983355, 0.03085232133983355}, 
+   {0.03597275361874876, 0.04101049501981311, 0.03534668307525433, 
+    0.03085232133983355, 0.0346805437773705, 0.03085232133983355}, 
+   {0.03597275361874876, 0.03534668307525433, 0.04101049501981311, 
+    0.03085232133983355, 0.03085232133983355, 0.0346805437773705}};
+
+
+
+
+static int compute_solsecq(const double [6],const double [6],double DD[6][6])
+	{ return copy(DD,solsecq); }
+
+static int compute_solsecu(const double [6],const double [6],double DD[6][6])
+	{ return copy(DD,solsecu); }
+
+static int compute_solsecf(const double [6],const double [6],double DD[6][6])
+	{ return copy(DD,solsecf); }
+
+static const double dihsecf[6][6]= // scaled by 1.3 from SECOUT/..sec.F:DIHf.
+	  {{0.1371343611737817, 0.149151795097861, 0.149151795097861, 
+    0.1273324155461821, 0.149151795097861, 0.149151795097861}, 
+   {0.149151795097861, 0.1595285638511244, 0.1560411887442528, 
+    0.1162997089898195, 0.0993520398363286, 0.1305530477917785}, 
+   {0.149151795097861, 0.1560411887442528, 0.1595285638511244, 
+    0.1162997089898195, 0.1305530477917785, 0.0993520398363286}, 
+   {0.1273324155461821, 0.1162997089898195, 0.1162997089898195, 
+    0.0827475622584163, 0.1216060002379419, 0.1216060002379419}, 
+   {0.149151795097861, 0.0993520398363286, 0.1305530477917785, 
+    0.1216060002379419, 0.1595285638511244, 0.1560411887442529}, 
+   {0.149151795097861, 0.1305530477917785, 0.0993520398363286, 
+    0.1216060002379419, 0.1560411887442529, 0.1595285638511244}};
+
+static const double dihsecu[6][6]= // scaled by 1.3 from SECOUT/..sec.U:DIHu.
+	  {{0.1450836193962311, 0.1736955268004009, 0.1736955268004009, 
+    0.145991732400618, 0.1736955268004009, 0.1736955268004009}, 
+   {0.1736955268004009, 0.1828764947216819, 0.17708957643007, 
+    0.1362446891095055, 0.1250091320874734, 0.1632783546843728}, 
+   {0.1736955268004009, 0.17708957643007, 0.1828764947216819, 
+    0.1362446891095055, 0.1632783546843728, 0.1250091320874734}, 
+   {0.145991732400618, 0.1362446891095055, 0.1362446891095055, 
+    0.089061331879941, 0.1405282551255984, 0.1405282551255984}, 
+   {0.1736955268004009, 0.1250091320874734, 0.1632783546843728, 
+    0.1405282551255984, 0.1828764947216819, 0.1770895764300701}, 
+   {0.1736955268004009, 0.1632783546843728, 0.1250091320874734, 
+    0.1405282551255984, 0.1770895764300701, 0.1828764947216819}};
+
+// Sc[x_]:= Table[x[i,j] 1.3,{i,0,5},{j,0,5}]//InputForm; Sc[DIHq]=
+static const double dihsecq[6][6]= 
+	  {{0.05615705015025188, 0.05954781700907451, 0.05954781700907451, 
+    0.05135019867517077, 0.05954781700907451, 0.05954781700907451}, 
+   {0.05954781700907451, 0.06197838551869915, 0.0742743789801271, 
+    0.04627781366683503, 0.04075662992838126, 0.05212400198046736}, 
+   {0.05954781700907451, 0.0742743789801271, 0.06197838551869915, 
+    0.04627781366683503, 0.05212400198046736, 0.04075662992838126}, 
+   {0.05135019867517077, 0.04627781366683503, 0.04627781366683503, 
+    0.03592041571837889, 0.04974975917075734, 0.04974975917075734}, 
+   {0.05954781700907451, 0.04075662992838126, 0.05212400198046736, 
+    0.04974975917075734, 0.06197838551869915, 0.07427437898012714}, 
+   {0.05954781700907451, 0.05212400198046736, 0.04075662992838126, 
+    0.04974975917075734, 0.07427437898012714, 0.06197838551869915}};
+
+static int compute_dihsecf(const double [6],const double [6],double DD[6][6])
+	{ return copy(DD,dihsecf); }
+
+static int compute_dihsecu(const double [6],const double [6],double DD[6][6])
+	{ return copy(DD,dihsecu); }
+
+static int compute_dihsecq(const double [6],const double [6],double DD[6][6])
+	{ return copy(DD,dihsecq); }
+
+
+static const double dih2secf[6][6] =// Sc[DIH2f]= (updated 4/5/97)
+	 {{0.0866641704247729, 0.111953793126292, 0.1348380593047117, 
+    0.0995680672164788, 0.07673812070208658, 0.110270246493761}, 
+   {0.111953793126292, 0.1506142217431531, 0.1352723298502763, 
+    0.1021232978892872, 0.06864316838329634, 0.1254130397993319}, 
+   {0.1348380593047117, 0.1352723298502763, 0.1421190843523113, 
+    0.1037352281264406, 0.0960127830707552, 0.101973644747935}, 
+   {0.0995680672164788, 0.1021232978892872, 0.1037352281264406, 
+    0.0853458268382053, 0.0801690053219753, 0.1223072946085182}, 
+   {0.07673812070208658, 0.06864316838329634, 0.0960127830707552, 
+    0.0801690053219753, 0.0946617011988348, 0.0986654632788401}, 
+   {0.110270246493761, 0.1254130397993319, 0.101973644747935, 
+    0.1223072946085182, 0.0986654632788401, 0.137920585495589}};
+
+static const double dih2secu[6][6]= // Sc[DIH2u]=  (updated 4/3/97)
+	 {{0.0870588345543171, 0.1040770926934109, 0.1241944881406908, 
+    0.1033345528534029, 0.0805005544907577, 0.1178349703632916}, 
+   {0.1040770926934109, 0.1506142217431533, 0.1254130397993321, 
+    0.1099999983221686, 0.06864316838329656, 0.1352723298502765}, 
+   {0.1241944881406908, 0.1254130397993321, 0.1379205854955892, 
+    0.1021420651987885, 0.0958952636383356, 0.1044244179653125}, 
+   {0.1033345528534029, 0.1099999983221686, 0.1021420651987885, 
+    0.0849465464054507, 0.07926035097080792, 0.1326754368537853}, 
+   {0.0805005544907577, 0.06864316838329656, 0.0958952636383356, 
+    0.07926035097080792, 0.0946617011988349, 0.1005169535734457}, 
+   {0.1178349703632916, 0.1352723298502765, 0.1044244179653125, 
+    0.1326754368537853, 0.1005169535734457, 0.1421190843523115}};
+
+
+
+
+static int compute_dih2secu(const double [6],const double [6],double DD[6][6])
+	{ return copy(DD,dih2secu); }
+
+static int compute_dih2secf(const double [6],const double [6],double DD[6][6])
+	{ return copy(DD,dih2secf); }
+
+static int compute_dih2secq(const double [6],const double [6],double DD[6][6])
+	{ 
+	int k[6]={1,0,2,4,3,5};
+	for (int i=0;i<6;i++) for (int j=0;j<6;j++) 
+		DD[i][j]= dihsecq[k[i]][k[j]];
+	return 1;
+	}
+
+static int compute_dih3secq(const double [6],const double [6],double DD[6][6])
+	{ 
+	int k[6]={2,1,0,5,4,3};
+	for (int i=0;i<6;i++) for (int j=0;j<6;j++) 
+		DD[i][j]= dihsecq[k[i]][k[j]];
+	return 1;
+	}
+
+static int compute_dih3secf(const double [6],const double [6],double DD[6][6])
+	{ 
+	int k[6]={0,2,1,3,5,4};
+	for (int i=0;i<6;i++) for (int j=0;j<6;j++) 
+		DD[i][j]= dihsecf[k[i]][k[j]];
+	return 1;
+	}
+
+static int compute_dih3secu(const double [6],const double [6],double DD[6][6])
+	{ 
+	int k[6]={0,2,1,3,5,4};
+	for (int i=0;i<6;i++) for (int j=0;j<6;j++) 
+		DD[i][j]= dihsecu[k[i]][k[j]];
+	return 1;
+	}
+
+static int compute_zero(const double [6],const double [6],double DD[6][6])
+	{
+	for (int i=0;i<6;i++) for (int j=0;j<6;j++)
+		DD[i][j]=0.0;
+	return 1;
+	}
+
+static int compute_2_y1(const double x[6],const double z[6],double DD[6][6])
+	{
+	up();
+	double r = sqrt(x[0]); r = r*r*r*4.0;
+	compute_zero(x,z,DD);
+	down();
+	DD[0][0]= 1.0/r;
+	return 1;
+	}
+
+static int compute_2_y2(const double x[6],const double z[6],double DD[6][6])
+	{
+	up();
+	double r = sqrt(x[1]); r = r*r*r*4.0;
+	compute_zero(x,z,DD);
+	down();
+	DD[1][1]= 1.0/r;
+	return 1;
+	}
+
+static int compute_2_y3(const double x[6],const double z[6],double DD[6][6])
+	{
+	up();
+	double r = sqrt(x[2]); r = r*r*r*4.0;
+	compute_zero(x,z,DD);
+	down();
+	DD[2][2]= 1.0/r;
+	return 1;
+	}
+
+static int compute_2_y4(const double x[6],const double z[6],double DD[6][6])
+	{
+	up();
+	double r = sqrt(x[3]); r = r*r*r*4.0;
+	compute_zero(x,z,DD);
+	down();
+	DD[3][3]= 1.0/r;
+	return 1;
+	}
+
+static int compute_2_y5(const double x[6],const double z[6],double DD[6][6])
+	{
+	up();
+	double r = sqrt(x[4]); r = r*r*r*4.0;
+	compute_zero(x,z,DD);
+	down();
+	DD[4][4]= 1.0/r;
+	return 1;
+	}
+
+static int compute_2_y6(const double x[6],const double z[6],double DD[6][6])
+	{
+	up();
+	double r = sqrt(x[5]); r = r*r*r*4.0;
+	compute_zero(x,z,DD);
+	down();
+	DD[5][5]= 1.0/r;
+	return 1;
+	}
+
+static combo simple( series (*fn)(const double[6]),
+                int (*sec)(const double[6],const double[6],double[6][6])
+                )
+	{
+	static const interval uno("1.0");
+	combo X;
+	for (int i=0;i<20;i++) // inserted 6/30/97
+		{
+		X.constant[i]=uno;
+		X.fnarray[i]=NULL;
+		X.secarray[i]=NULL;
+		}
+	X.length=1;
+	X.constant[0]=uno;
+	X.fnarray[0]=fn;
+	X.secarray[0]=sec;
+	return X;
+	}
+
+
+static const interval zetapt("0.10044457142705639500004992359");
+static const interval C32("3.2");
+
+combo simplex::scalar = simple(constantseries,compute_zero);
+combo simplex::x1 = simple(x1_series,compute_zero);
+combo simplex::x2 = simple(x2_series,compute_zero);
+combo simplex::x3 = simple(x3_series,compute_zero);
+combo simplex::x4 = simple(x4_series,compute_zero);
+combo simplex::x5 = simple(x5_series,compute_zero);
+combo simplex::x6 = simple(x6_series,compute_zero);
+combo simplex::y1 = simple(y1_series,compute_2_y1);
+combo simplex::y2 = simple(y2_series,compute_2_y2);
+combo simplex::y3 = simple(y3_series,compute_2_y3);
+combo simplex::y4 = simple(y4_series,compute_2_y4);
+combo simplex::y5 = simple(y5_series,compute_2_y5);
+combo simplex::y6 = simple(y6_series,compute_2_y6);
+combo simplex::eta2_126 =simple(eta2_126_series,compute_eta2_126);
+combo simplex::eta2_135 =simple(eta2_135_series,compute_eta2_135);
+combo simplex::eta2_234 =simple(eta2_234_series,compute_eta2_234);
+combo simplex::eta2_456 =simple(eta2_456_series,compute_eta2_456);
+combo simplex::dih =simple(::dih,computeDihedral);
+combo simplex::dih2 =simple(::dih2,compute_dih2);
+combo simplex::dih3 =simple(::dih3,compute_dih3);
+combo simplex::sol =simple(::solid,compute_sol);
+combo simplex::vorVc =simple(::vorVc,compute_vorVc);
+combo simplex::vorSqc =simple(::vorSqc,compute_vorSqc);
+combo simplex::vor = simple(::vor_analytic,compute_voranalytic);
+combo simplex::anchoredvorVc= simple(::upright_vorVc,compute_vorVc);
+
+combo flat::gamma = simple(::gamma,compute_gamsecf);
+combo flat::vor = simple(::vor_analytic,compute_vorsecf);
+combo flat::sol =simple(::solid,compute_solsecf);
+combo flat::dih=simple(::dih,compute_dihsecf);
+combo flat::dih2 =simple(::dih2,compute_dih2secf);
+combo flat::dih3 =simple(::dih3,compute_dih3secf);
+
+combo qrtet::gamma = simple(::gamma,compute_gamsecq);
+combo qrtet::vor =simple(::vor_analytic,compute_vorsecq);
+combo qrtet::sol =simple(::solid,compute_solsecq);
+combo qrtet::rad2 =simple(::rad2,compute_rad2);
+combo qrtet::dih =simple(::dih,compute_dihsecq);
+combo qrtet::dih2 =simple(::dih2,compute_dih2secq);
+combo qrtet::dih3 =simple(::dih3,compute_dih3secq);
+combo qrtet::gamma1 = qrtet::gamma - qrtet::sol*zetapt;
+combo qrtet::gamma32= qrtet::gamma - qrtet::sol*zetapt*C32;
+combo qrtet::vor1 = qrtet::vor - qrtet::sol*zetapt;
+combo qrtet::vor32= qrtet::vor - qrtet::sol*zetapt*C32;
+
+combo upright::gamma = simple(::gamma,compute_gamsecu);
+combo upright::vor = simple(::vor_analytic,compute_vorsecu);
+combo upright::sol =simple(::solid,compute_solsecu);
+combo upright::dih = simple(::dih,compute_dihsecu);
+combo upright::dih2 =simple(::dih2,compute_dih2secu);
+combo upright::dih3 =simple(::dih3,compute_dih3secu);
+combo upright::vorVc =simple(::upright_vorVc,compute_vorVcsecu);
+combo upright::swap_vor =simple(::swap_vor,compute_swap_vorsecu); 
+combo upright::swap_vorVc =simple(::swap_upright_vorVc,compute_swap_vorVcsecu); 
+
+
+
+
+@

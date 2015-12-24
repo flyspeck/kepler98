@@ -1,0 +1,46 @@
+Welcome to sphere packing routines, relation testing division.
+Welcome to OctaGmaCorr.  Using partials to reduce complexity.
+Subdivisions:	2
+
+Enter slop:  		Slop = 1e-05
+Starting time:  	Thu Jul 17 18:34:57 1997
+
+Starting case 1:
+cellcount    =             6377		maxdepth = 8
+sccutcount   =                9
+gmacount     =             2970		vorcount     =             1212
+dualcount    =             2195		verifycount  =             4938
+partialcount =                0		diff         =             1430
+Verification succeeded.
+
+Starting case 2:
+cellcount    =             2893		maxdepth = 9
+sccutcount   =              226
+gmacount     =             2076		vorcount     =              218
+dualcount    =              599		verifycount  =             2216
+partialcount =                0		diff         =              451
+Verification succeeded.
+
+Starting case 3:
+cellcount    =             2045		maxdepth = 9
+sccutcount   =              134
+gmacount     =             1440		vorcount     =              140
+dualcount    =              465		verifycount  =             1591
+partialcount =                0		diff         =              320
+Verification succeeded.
+
+Starting case 4:
+cellcount    =             1643		maxdepth = 9
+sccutcount   =              110
+gmacount     =             1126		vorcount     =              108
+dualcount    =              409		verifycount  =             1304
+partialcount =                0		diff         =              229
+Verification succeeded.
+
+Done.
+Ending time:    	Thu Jul 17 18:35:09 1997
+
+Elapsed time: 12 seconds
+diff = 11.3662		1079.83 cells per second
+
+

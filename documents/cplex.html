@@ -1,0 +1,56 @@
+<HTML>
+<body background="paperbackground.JPG" alink=blue vlink=red>
+
+<TITLE>Linear Programming</TITLE>
+<H3>Linear Programming Resources for Sphere Packings</H3>
+
+<p>
+
+This project makes extensive use of linear programming to produce
+bounds on the scores of various decomposition stars.  Any linear
+programming package would do.  The programs that appear here are
+for <a href="http://www.cplex.com">CPLEX</a>.  Various public
+domain and home-grown LP solvers were tried, and none of them compare
+favorably to this commercial package.
+
+<p>
+The data for the bounds is produced as follows.
+<p>
+
+<UL>
+<LI> The planar graph archive applet generates graphs.
+<LI> A short java program (<a href="graph/tt.java">view code</a>) 
+	converts it to a Mathematica format
+<LI> A Mathematica program 
+	(code <a href="cplex/MathToCplex.m">MathToCplex.m</a>) 
+	takes the inequalities
+	from Sphere Packings III and the graphs in Mathematica format and
+	produces files containing the linear programming in the LP format
+	of cplex.
+<LI>CPLEX is run on each of the LP format files 
+	(<a href = "cplex.lp300">sample input</a>) to produce a bound
+	on the score of the decomposition stars with a given graph.
+	You might want to view a <a href="cplex/lquad.log">sample</a> 
+	(1.5 Meg) of the
+	output produced from cplex. This sample is the output 
+	of the LP session producing the bounds on the 1749 graphs that
+	arise in Sphere Packings III.
+<LI>A short <a href="cplex/getValues">sed utility</a> 
+grabs the output from the CPLEX log file
+	and formats it in a form that can be analyzed in Mathematica.
+</UL>
+
+<p>
+If you want to get involved in this part of the project and do not
+want to purchase CPLEX, it will be necessary to rewrite the file
+MathToCplex.m to produce linear programming files in a format that
+your linear programming package can understand.
+<p>
+
+<p><br><p><br><p>
+<font size=4 color=#CD2626><hr>
+This page is available for historical purposes only.  It is a copy
+from www.math.lsa.umich.edu/~hales/countdown.  It has not been
+maintained since 1998.<hr></font>
+</p>
+</HTML>

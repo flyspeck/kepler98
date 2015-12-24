@@ -1,0 +1,103 @@
+
+LPm[x_, y__] := LPmax[StringJoin["DFINAL/cep.lp", ToString[x]], y]
+addTcount[r_]:= {Map["-sigma{"<>S[#]<>"}-0.42755 solid{"<>S[#]<>"} "&,r],
+	" > 0.016\n"}//StringJoin;
+
+(******* archive 12513 ***************)
+
+LPm[513,"-dih{1}12-dih{1}13"] < -4.86
+
+(******* archive 12777 ****************)
+
+LPm[777,"-dih{1}2"] < -3.1634936824
+{LPm[777,"y(1,2)"] < 2.41,
+ LPm[777,"y(2,6)"] < 2.34}
+
+Proceed as in 12784
+
+
+(******* archive 12784 *****************)
+
+LPm[784,"-dih{1}8"] <  -3.604. So not convex.
+LPm[784,"y(8,3)"] < 2.5091,
+LPm[784,"y(8,9)"] < 2.309,
+Pivot v8 around v13 stretching (v8,v3) and (v8,v9).  By the
+estimates these edges never stretch out to 2T.  So eventually
+a diagonal (v8,vX) in the pentagon forms, reducing this pentagon
+case to a quadrilateral case.
+
+
+
+
+(**** archive 12920 ********************)
+
+bound920 = {LPm[920,"y(1)"] < 2.072,
+	LPm[920,"y(2)"] < 2.11,
+	LPm[920,"y(3)"] < 2.075,
+	LPm[920,"y(1,2)"] < 2.37,
+	LPm[920,"y(1,3)"] < 2.32,
+	LPm[920,"dih{12}1"] < 1.53,
+	LPm[920,"-sigma{12}-0.42755 solid{12}"] < 0.0848
+}
+
+These imply by intervals that y(2,3) < 2.82 (Hyp)
+Break off (1,2,3) for a separate squander bound.
+
+R(3,1) = 0.0155 (see case 2 of Theorem 6.3.1).
+
+The flat quarter squanders > 0.029 = 0.0135+R(3,1),  (Hyp)
+pent squanders > 0.0135 + t5 = 0.0135 + 0.076 = 0.0895 > 0.0848, done.
+
+(Sean does though by excess T-count.)
+
+(**** archive 12638 ********************)
+
+bound638 = {LPm[638,"y(4)"] < 2.03,
+			LPm[638,"y(5)"] < 2.03,
+			LPm[638,"y(10)"] < 2.03,
+			LPm[638,"y(4,10)"] < 2.14,
+			LPm[638,"y(4,5)"] < 2.14,
+			LPm[638,"dih{1}4"] <1.44}
+But the first five ineqs imply dih{1}4 > 1.52 (Hyp).
+
+(Sean does this one by adding excess T-count.)
+
+(***** archive 12786 *******************)
+
+bound786 = {LPm[786,"y(6)"] < 2.03,
+			LPm[786,"y(11)"] < 2.01,
+			LPm[786,"y(7)"] < 2.03,
+			LPm[786,"y(6,7)"] < 2.181,
+			LPm[786,"y(6,11)"] < 2.21,
+			LPm[786,"dih{1}6"] < 1.492 }
+The first five ineqs imply dih > 1.4925 (Hyp).
+
+(Sean does this one by adding in excess T-count.)
+
+(****** archive 13035 *******************)
+
+bound1035 = {LPm[1035,"y(9)"] < 2.01,
+			 LPm[1035,"y(14)"] < 2.01,
+			 LPm[1035,"y(12)"] < 2.03,
+			 LPm[1035,"y(9,12)"] < 2.2,
+			LPm[1035,"y(9,14)"] < 2.01,
+			LPm[1035,"dih{1}9"] < 1.4}
+But the first five imply dih{1}9 > 1.53 (Hyp)
+
+(Sean does this one by adding in excess T-count.)
+
+(******** archive 13057 ****************)
+
+The figure is not convex.  Use the deformation lemma for
+faces to stretch edge (v10,v13). (Pivot v13 around v12.)
+All other cases have been done at this point.  Eventually
+the graph changes by a new edge forming or (v10,v13) stretches
+beyond 2T.  So we reduce to a case already done.
+
+
+
+
+
+
+
+

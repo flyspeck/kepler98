@@ -1,0 +1,42 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	97.10.09.14.33.48;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@Sphere Packings IV
+Makefile for part4sec2.cc
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@# for Silicon graphics cc compiler
+CC = CC
+CCOPTS1 = -O2 -g -dalign
+
+# make -f makefile -f part3makefile part3open
+
+part4sec2 : numerical.h numerical.o morefn.o constants.o morefn.h constants.h part4sec2.cc\
+	gradient.o gradient.cc gradient.h ineq.cc constants.cc constrained_min.o \
+	part4sec2.o
+	$(CC) $(CCOPTS1) ineq.cc gradient.o numerical.o morefn.o part4sec2.o\
+	constrained_min.o cfsqp.o qld.o \
+	constants.o -lm -o part4sec2
+
+part4sec2.o : part4sec2.cc
+	$(CC) $(CCOPTS1) -c part4sec2.cc
+
+
+@

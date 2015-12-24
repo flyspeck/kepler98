@@ -1,0 +1,31 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	98.11.10.21.05.20;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@package archive;
+
+class test {
+static public void main(String arc[])
+	{
+	System.out.print(" "+graphY.data.length+"\n");
+	}
+};
+@

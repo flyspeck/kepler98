@@ -1,0 +1,404 @@
+<HTML><TITLE>Kepler conjecture - history</TITLE></HTML>
+
+<body background="paperbackground.JPG" alink=blue vlink=red>
+
+<font face="helvetica, arial">
+
+<H2>The history of the Kepler conjecture</H2>
+<p>
+
+<LI> <a href="#atomism"> Harriot</a> and the rise of modern atomism
+<LI> <a href="#influence"> Harriot's</a> influence on Kepler.
+<LI> <a href="#etrenne"> Kepler</a>.
+<LI> <a href="#hilbert"> Hilbert's 18th </a> problem.
+<LI> <a href="#comment"> Kantor's commentary</a> on Hilbert's 18th problem.
+<LI> <a href="#other"> Fejes T&oacute;th</a>
+
+<hr>
+<p>
+<a name= "atomism"></a>
+<H2>Thomas Harriot and the rise of atomism</H2>
+
+<p>
+[In 1591 Thomas Harriot prepared a large triangular
+chart of numbers, with the the explanatory note:]
+
+<BLOCKQUOTE>
+<p>
+"There are three speciall groundplats vpon the which may be
+orderly piled bullets: The triangle: the square: and the oblonge.
+Concerning pilong there are two questions: one; the nomber of
+bulletes to be piled being geven with the forme of the gound plat,
+to know how many must be placed in every rank, with how many
+rankes in the sayd ground plat.
+
+<p>
+"The second a pile being made to knowe the nomber of bulletes therein
+conteyned.
+
+<p>
+"ffor the aunsweringe of which two questions this table I haue calculated
+for the purpose."
+
+<p>
+Obviously, this is a quick reference chart prepared for Ralegh
+to give information on the ground space required for the storage of
+cannon balls in connection with the stacking of armaments for his 
+marauding vessels.  The chart is ingeniously arranged so that it is
+possible to read directly the number of cannon balls on the ground or in
+a pyramid pile with triangular, square, or oblong base.   All of this
+Harriot had worked out by the laws of mathematical progression (not
+as Miss Rukeyser suggests by experiment), as the rough
+calculations accompanying the chart make clear.  It is interesting
+to note that on adjacent sheets, Harriot moved, as a mathematician
+naturally would, into the theory of the sums of the squares, and
+attempted to determine graphically all the possible configurations
+that discrete particles could assume -- a study which led him inevitably
+to the corpuscular or atomic theory of matter originally deriving
+from Lucretius and Epicurus. 
+</BLOCKQUOTE>
+
+<p>
+
+quoted from <I>Thomas Harriot: A Biography</I> by John W. Shirley, Oxford, 1983, page 242.</I>
+
+<hr>
+<a name="influence"></a>
+<H2><B>Robert Kargon on Harriot's correspondence with Kepler</B></H2>
+
+<p>
+<BLOCKQUOTE>
+Hariot's theory of matter appears to have been virtually that
+of Democritus, Hero of Alexandria, and, in a large measure,
+that of Epicurus and Lucretius.  According to Hariot the universe
+is composed of atoms with void space interposed.  The atoms
+themselves are eternal and continuous.  Physical properties
+result from the magnitude, shape, and motion of these atoms, or
+corpuscles compounded from them...
+
+<p>
+Probably the most interesting application of Hariot's atomic theory
+was in the field of optics.  In a letter to Kepler on 2 December 1606
+Hariot outlined his views.  Why, he asked, when a light ray falls
+upon the surface of a transparent medium, is it partially reflected
+and partially refracted?  Since by the principle of uniformity,
+a single point cannot both reflect and transmit light, the answer must
+lie in the supposition that the ray is resisted by some points
+and not others.
+
+<p>
+"A dense diaphanous body, therefore, which to the sense appears
+to be continuous in all parts, is not actually continuous.  But it
+has corporeal parts which resist the rays, and incorporeal parts
+vacua which the rays penetrate..."
+
+<p>
+It was here that Hariot advised Kepler to abstract himself
+mathematically into an atom in order to enter `Nature's house'.
+In his reply of 2 August 1607, Kepler declined to follow
+Harriot, <I>ad atomos et vacua</I>.  Kepler preferred to think
+of the reflection-refraction problem in terms of the union of two
+opposing qualities--transparence and opacity.  Hariot was surprised.
+`If those assumptions and reasons satisfy you, I am amazed."
+</BLOCKQUOTE>
+<p>
+<I>The preceding passage is quoted from R. Kargon, Atomism in England
+from Hariot to Newton, Oxford, 1966, page 18.</I>
+
+
+
+
+<hr>
+<a href="etrenne"></a>
+<H2><B>Robert Halleux's commentary on constructions
+in Kepler's Strena</B></H2>
+
+<BLOCKQUOTE>
+<p>
+A premi&egrave;re vue, ces constructions &eacute;voquent l'atomisme et ne sont pas
+sans analogies, mutatis mutandis, avec les repr&eacute;sentations modernes
+de la structure cristilline.  On pense ici aux premi&egrave;res &eacute;bauches de
+la philosophie m&eacute;caniste et corpusculaire qui se font jour dans la
+premi&egrave;re moiti&eacute; du XVIIe si&egrave;cle.  Cecil Schneer pense m&ecirc;me que
+Kepler tente ici une conciliation entre atomisme et pythagorisme.
+
+<p>
+Colin Hardie remarque &agrave; ce propos que le math&eacute;maticien anglais
+Thomas Harriot (1560-1621) &eacute;tudia d&egrave;s 1600 le <I>close-packing</I>
+d'atomes sph&eacute;riques.  On connait peu de chose de Harriot, dont
+l'oeuvre est en grande partie manuscrite.  On sait seulement qu'il
+fut un des tenants de l'atomisme.  Harriot fut en correspondance avec
+Kepler &agrave; propos de questions d'optique.  Kepler expliquait l'arc-en-ciel
+en prenant comme plus petit &eacute;l&eacute;ment composant une goutte d'eau
+parfaitement ronde.  Dans une lettre de 2 d&eacute;cembre 1606, Harriot invite
+Kepler &agrave; recourir aux atomes pour expliquer la r&eacute;fraction de la
+lumi&egrave;re.  Dans sa r&eacute;ponse, dat&eacute;e du 2 ao&ucirc;t 1607, Kepler refuse
+de le suivre jusqu'aux atomes et au vide.  La discussion se
+poursuit en 1608 et en 1609.
+
+<p>
+On le voit, il ne s'agit pas dans la <I>Strena</I> ni d'atomes, ni
+de corpuscules.  L'unit&eacute; &eacute;l&eacute;mentaire est la plus petite partie
+visible, la goutte d'eau.  C'est la repr&eacute;sentation que Kepler adopte
+en optique, par exemple dans les <I>Paralipom&egrave;nes &agrave; Vitellion</I>.
+
+<p>
+Si Kepler est tributaire d'une influence quelconque dans cet atomisme
+sans atomes, c'est du c&ocirc;t&eacute; des math&eacute;matiques qu'il faut la chercher.
+Un rapprochement s'impose avec l'arithmo-g&eacute;om&eacute;trie des anciens
+Pythagoriciens, qui est un v&eacute;ritable atomisme math&eacute;matique,
+puisqu'elle repr&eacute;sente les nombres par des points group&eacute;s de
+mani&egrave;re &agrave; former des figures....
+</BLOCKQUOTE>
+<p>
+<I>quoted from p24, Introduction by R. Halleux to  l'Etrenne, C.N.R.S. 1975.</I>
+
+
+
+
+
+<hr>
+<p>
+<a name="etrenne"></a>
+<H2><B>A passage from Kepler's Strena, written 1609</B></H2>
+<p>
+<BLOCKQUOTE>
+For in general equal pellets when collected in any vessel,
+come to a mutual arrangement in two modes according to the two modes
+of arranging them in a plane. <p> 
+
+If equal pellets are loose in the same horizontal plane and you
+drive them together so tightly that they touch each other, they
+come together either in a three-cornered or in a four-cornered
+pattern.  In the former case six surround one; in the latter four.
+Throughout there is the same pattern of contact between all the
+pellets except the outermost.  With a five-sided pattern
+uniformity cannot be maintained.  A six-sided pattern breaks up
+into three-sided.  Thus there are only the two patterns as
+described. <p>
+
+Now if you proceed to pack the solid bodies as tightly as possible,
+and set the files that are first arranged on the level on top of 
+others, layer on layer, the pellets will be either squared (A in diagram),
+or in triangles (B in diagram).  If squared, either each single
+pellet of the upper range will rest on a single pellet of the lower,
+or, on the other hand, each single pellet of the upper range will settle
+between every four of the lower.  In the former mode any
+pellet is touched by four neighbours in the same plane, and
+by one above and one below, and so on throughout, each
+touched by six others.  The arrangement will be cubic, and the
+pellets, when subjected to pressure, will become cubes.  But this
+will not be the tightest pack.      In the second mode not only
+is every pellet touched by it four neighbours in the same plane,
+but also by four in the plane above and by four below, and so throughout
+one will be touched by twelve, and under pressure spherical pellets
+will become rhomboid.  This arrangement will be more
+comparable to the octahedron and pyramid.  <em> This arrangement
+will be the tightest possible, so that in no other arrangement could
+more pellets be stuffed into the same container.</em>
+
+
+</BLOCKQUOTE>
+
+Quoted from <it>the Six-cornered snowflake</it> Oxford, 1966.
+<p>
+<hr>
+[Here it is in French. The Kepler conjecture stems from the italicized
+claim of the third paragraph.]
+
+<BLOCKQUOTE>
+<p>
+En g&eacute;n&eacute;ral, des globules &eacute;gaux, rassembl&eacute;es dans un
+r&eacute;cipient quelconque, s'ordonnent de deux mani&egrave;res, selon
+les deux modes de leur disposition dans un plan quelconque.
+
+<p>
+En effet, si vous r'eunissez &agrave; l'&eacute;troit des globules &eacute;gaux
+errant sur un m&ecirc;me plan horizontal en sorte qu'ils se touchent
+r&eacute;ciproquement, ils s'unissent ou bien en forme triangulaire
+ou bien en forme carr&eacute;e : dans le premier cas, six globules
+en entourent un, dan l'autre cas, il y en a quatre.  La proportion
+du contact est la m&ecirc;me pour tous les globules sauf les derniers.
+L'&eacute;galit&eacute; ne peut &ecirc;tre gard&eacute;e par la forme pentagonale,
+l'hexagone se r&eacute;sout en triangles :  de telle sorte que les
+duex ordres pr&eacute;cit&eacute;s sont les seuls.
+
+<p>
+Si on en arrive &agrave; la construction solide la plus serr&eacute;e qui
+puisse se faire, et qu'on superpose les uns aux autres les
+rangs d'abord ajust&eacute;s en plan, ils seront ou bien en carr&eacute; <I>A</I>
+ou en triangle <I>B</I>.
+S'ils sont en carr&eacute;, ou bien un globe de l'ordre sup&eacute;rieur sera
+au-dessus d'un globe de l'ordre inf&eacute;rieur, ou, au contraire, chaque
+globe du rang sup&eacute;riur sera touch&eacute; par les quatre qui l&eacute;ntourent
+dans le m&ecirc;me plan, par un au-dessus de lui et par un en dessous,
+et ainsi au total par six autres.  L'ordre sera cubique, et apr&egrave;s
+compression on obtiendra des cubes, mais ce ne sera pas la disposition
+la plus serr&eacute;e.  Dans la seconde mani&egrave;re, chaque globe est en contact,
+non seulement avec les quatre globes qui l'entourent dans le m&ecirc;me plan,
+mais aussi avec quatre en dessous de lui, avec quatre au-dessus de lui
+et ainsi au total avec douze : par compression, ces globes donneront
+des rhombiques.  On rapprochera plut&ocirc;t cet ordre-ci de l'octa&egrave;dre
+et de la pyramide.  
+<I>L'assemblage sera tr&egrave;s serr&eacute;, de sorte qu'ensuite
+aucunce disposition ne permettra d'entasser un plus grand nombre de
+globules dans le m&ecirc;me r&eacute;cipient.</I>
+
+<p>
+D'autre part, si les dispositions constuites en plan sont triangulaires,
+alors, dans la construction solide, ou bien chaque globe de la couche
+sup&eacute;rieure se superpose &agrave; un globe de la couche inf&eacute;rieure dans une
+adaptation de nouveau l&acirc;che, ou bien chaque globe de la couche sup&eacute;rieure
+se trouve entre trois de l'ordre inf&eacute;rieur.  De la premi&egrave;re mani&egrave;re,
+chaque globe est touch&eacute; par six qui l'entourent dans le m&ecirc;me plan,
+par un au-dessus et par un en dessous,  c'est-&agrave;-dire au total par huit
+autres.  Cet order sera assimil&eacute; au prisme, et par compression, on
+obtiendra &agrave; la place des globules, des colonnes de six c&ocirc;t&eacute;s 
+quadrilat&egrave;res avec deux bases hexagonales.  De la deuxi&egrave;me mani&egrave;re,
+on obtiendra la m&ecirc;me chose que plus haut dans la deuxi&egrave;me 
+possibilit&eacute; de l'ordre carr&eacute;.
+<p>
+</BLOCKQUOTE>
+
+<I>Quoted from the the translation l'Etrenne by Robert Halleux, C.N.R.S., 1975</I>
+
+<hr>
+<p>
+<a name="hilbert"></a>
+<H2><B>Mathematical Problems</B></H2>
+
+<p>
+<H2><center>Lecture delivered before the International Congress of
+	Mathematicians at Paris in 1900</center></H2>
+
+<p>
+<I><center>by Professor David Hilbert</center></I>
+
+<p>
+<BLOCKQUOTE>
+18. <B>Building up of Space from Congruent Polyhedra.</B>
+
+<p>
+If we enquire for those groups of motions in the plane for
+which a fundamental region exists, we obtain various answers,
+according as the plane considered is Riemann's (elliptic),
+Euclid's, or Lobachevsky's (hyperbolic)  .... 
+
+<p>
+Now, while
+the results and methods of proof applicable to elliptic
+and hyperbolic space hold directly for n-dimensional space
+also, the generalization of the theorem for euclidean
+space seems to offer decided difficulties.  The investigation
+of the following question is therefore desirable:
+<I>Is there in n-dimensional euclidean space also only a 
+finite number of essentially different kinds of groups of motions
+with a fundamental region?</I>
+
+<p>
+A fundamental region of each group of motions, together with
+the congruent regions arising from the group, evidently fills
+up space completely.  The question arises : <I>Whether polyhedra
+also exist which do not appear as fundamental regions of groups
+of motions, by means of which nevertheless by a suitable juxtaposition
+of congruent copies a complete filling up of all space is possible.</I>
+I point out the following question, related to the preceding one,
+and important to number theory and perhaps sometimes useful to
+physics and chemistry:  How can one arrange most densely in space an
+infinite number of equal solids of given form, <I>e.g.</I>, spheres
+with given radii or regular tetrahedra with given edges (or in
+prescribed position), that is, how can one so fit them together
+that the ratio of the filled to the unfilled sapce may be as great
+as possible?
+
+
+<p>
+</BLOCKQUOTE>
+<I>quoted from Proceedings of Symposia in Pure Mathematics, AMS, vol 28, 1976.</I>
+<hr>
+<a name="comment"></a>
+<H2><center>Kantor's commentary</a> on Hilbert's 18th problem.</center></H2>
+<BLOCKQUOTE>
+<B>Problem 18:</B> "To rebuild space with congruent polyhedra."
+Hilbert's problem is divided into three distinct parts.<p>
+
+<B>A:</B> "In Euclidean space of n dimensions, show that there are
+only finitely many different kinds of groups of displacements with
+a (compact) fundamental domain."  In other words, one looks for
+discrete subgroups with compact quotient of the group E(n) of
+isometries of <B>R</B>n.  The result was proved by Bieberbach
+in 1910.  The classification of these groups is important in
+crystallography and it generalizes to questions about lattices in Lie
+groups.<p>
+
+<B>B:</B> "Tiling of space by a single polyhedron which is not a
+fundamental domain as in <B>A</B>."<p>
+
+J. Milnor's remarks in Gen. Ref. still apply: This is a very lively
+topic today.  Important developments have been the theory of Penrose
+tilings and the closely related physical problem of anomalous
+crystal structure..., as well as Thurston's theory of self-similar
+fractal tilings.<p>
+
+<B>C:</B> "Packing of spheres.  How should spheres of the same
+radius be arranged in space (of any dimensionality) so as to
+achieve the greatest density of packing?"<p>
+
+Hilbert's text gives the impression that he did not anticipate
+the success and the developments this problem would have.  The
+hexagonal packing in the plane is the densest (proof by Thue in
+1892, completed by Fejes in 1940).  In space, the problem is still
+not solved.  There is very recent progress by Hales.  For spheres
+whose centers lie on a lattice, the problem is solved in up to
+eight dimensions.  The subject has various ramifications: application
+to the geometry of numbers, deep relations between coding theory
+and sphere-packing theory, the very rich geometry of the densest
+known lattices.
+
+
+</BLOCKQUOTE>
+Quoted from Jean-Michel Kantor, Math. Intelligencer, Winter 1996, page 27.
+<hr>
+<a name="other"></a>
+<H2><B>L. Fejes T&oacute;th</B></H2>
+
+
+<p>
+<quote><I>Thus it seems that the problem can be reduced to the
+determination of the minimum of a function of a finite number of variables,
+providing a programme realizable in principle.  In view of the intricacy
+of this function we are far from attempting to determine the exact
+minimum.  But, mindful of the rapid development of our computers,
+it is imaginable that the minimum may be approximated with great
+exactitude.</I></quote>
+<center><I>-L. Fejes T&oacute;th (on his approach to the conjecture)</I></center
+>
+<!--Regular Figures, p300-->
+<p>
+
+<hr>
+
+<quote><I>There is a common misconception among researchers in
+optimization that it is impossible to obtain infallible bounds ...
+computationally.  The argument is that we can only sample f(x) and
+a few derivatives of f(x) at a finite number of points.  It is
+possible to interpolate a function having the necessary values and
+derivatives values at these points and still have its
+global minimum at any other arbitrary point.  The fallacy of this
+argument is that interval analysis can provide bounds on a function over
+an entire box; that is over a continuum of points....
+  This is what our algorithm does.
+</I></quote>
+<center><I>-E. Hansen</I></center>
+<!--Global Optimization Using Interval Analysis, Numer. Math. 34,
+        247--270 (1980)  (page 248) -->
+
+	<hr>
+	<p><br><p><br><p>
+<font size=4 color=#CD2626><hr>
+This page is available for historical purposes only.  It is a copy
+from www.math.lsa.umich.edu/~hales/countdown.  It has not been
+maintained since 1998.<hr></font>
+</p>
+</HTML>
+

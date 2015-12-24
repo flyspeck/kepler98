@@ -1,0 +1,563 @@
+%\magnification=\magstep1
+\documentstyle{amsppt}
+
+\topmatter
+\parskip=\baselineskip
+\baselineskip=1.1\baselineskip  % was 1.1
+\parindent=0pt
+\loadmsbm
+\UseAMSsymbols
+\raggedbottom
+\hoffset=0.75truein
+\voffset=0.5truein
+
+
+\def\reft{\relax}  % items
+\def\refz{\relax}
+\def\bul{\noindent$\bullet$\quad }
+\def\lb#1{\line{$\bullet$ #1 \hfill}}
+\def\cir{\noindent$\circ$\quad }
+\def\heads#1{\rightheadtext{#1}}
+\def\doct{\delta_{oct}}
+\def\pt{\hbox{\it pt}}
+\def\Vol{\hbox{vol}}
+\def\and{\operatorname{and}}
+\def\Tan{\operatorname{Tan}}
+\def\sol{\operatorname{sol}}
+\def\quo{\operatorname{quo}}
+\def\anc{\operatorname{anc}}
+\def\cro{\operatorname{crown}}
+\def\vor{\operatorname{vor}}
+\def\octavor{\operatorname{octavor}}
+\def\dih{\operatorname{dih}}
+\def\arc{\operatorname{arc}}
+\def\rad{\operatorname{rad}}
+\def\if{\operatorname{if}}
+\def\A{{\bold A}}
+\def\squander{(4\pi\zeta-8)\,\pt}
+\def\score{8\,\pt}
+\def\Sfour{\Cal{\bold S}_4^+}
+\def\Sminus{\Cal{\bold S}_3^-}
+\def\Splus{\Cal{\bold S}_3^+}
+\def\maxpi{\pi_{\max}}
+\def\xiG{\xi_\Gamma}
+\def\xiV{\xi_V}
+\def\xik{\xi_\kappa}
+\def\xikG{\xi_{\kappa,\Gamma}}
+
+\def\rom{\uppercase\romannumeral}
+
+
+\font\twrm=cmr8
+\def\DLP{\operatorname{D}_{\hbox{\twrm LP}}}
+\def\ZLP{\operatorname{Z}_{\hbox{\twrm LP}}}
+\def\tLP{\operatorname{\hbox{$\tau$}LP}}  % 3 args small LP.
+\def\tlp{\tau_{\hbox{\twrm LP}}}  % 2 args (p,q) tri, quad
+\def\slp{\sigma_{\hbox{\twrm LP}}}  % 2 args (p,q) tri, quad
+\def\sLP{\operatorname{\hbox{$\sigma$}LP}}
+\def\LPmin{\operatorname{LP-min}}
+\def\LPmax{\operatorname{LP-max}}
+\def\geom{{\operatorname{g}}}
+\def\anal{{\operatorname{an}}}
+
+
+
+\def\sol{\operatorname{sol}}
+\def\dih{\operatorname{dih}}
+\def\V{\operatorname{V}}
+\def\vol{\operatorname{vol}}
+\def\Area{\operatorname{Area}}
+\def\Per{\operatorname{Per}}
+\def\rad{\operatorname{rad}}
+\def\quo{\operatorname{quo}}
+
+\def\R{{\Bbb R}}
+\def\ldot{\cdot}
+\def\S{{\Cal S}}
+\def\del{\partial}
+\def\B#1{{\bold #1}}
+\def\tri#1#2{\langle#1;#2\rangle}
+\def\ha{ \hangindent=20pt \hangafter=1\relax }
+\def\ho{ \hangindent=20pt \hangafter=0\relax }
+\def\i{I}
+\def\was#1{\relax}
+
+\def\diag|#1|#2|{\vbox to #1in {\vskip.3in\centerline{\tt Diagram #2}\vss} }
+\def\v{\hskip -3.5pt }
+% to place a fig file  align the bottom left corner at (0,-11).
+% save as left justified.
+% resize so that the box is just under 5 in width
+\def\gram|#1|#2|#3|{
+        {
+        \smallskip
+        \hbox to \hsize
+        {\hfill
+        \vrule \vbox{ \hrule \vskip 6pt \centerline{\it Diagram #2}
+         \vskip #1in %
+             \special{psfile=#3 hoffset=5 voffset=5 }\hrule }
+        \v\vrule\hfill
+        }
+\smallskip}}
+
+\def\today{\ifcase\month\or
+    January\or February\or March\or April\or May\or June\or
+    July\or August\or September\or October\or November\or December\fi
+    \space\number\day, \number\year}
+
+
+
+
+\bigskip
+
+\centerline{{\bf Appendix 3. Pentagon Cases.}}
+
+\bigskip
+
+\proclaim{Theorem 1} The graph shown 
+squanders more than the target.  \endproclaim
+
+\gram|2.1|1|dia39.ps|  %  ceq0
+
+
+We have the following inequalities by [L].\newline
+
+$\dih_7(2) < 1.701$ \newline
+$y(7) < 2.219$ \newline
+$y(1) < 2.330$ \newline
+$y(6) < 2.207$ \newline
+$y(7) + y(1) + y(6) < 6.406$ \newline
+$y(1) + y(6) < 4.399$ \newline
+
+Using these constraints, we find by [I] that
+
+$y(1,6)<3.179$ \newline
+
+\proclaim{Lemma 1} Inequality (*) holds for this situation. \endproclaim
+
+{\bf Proof:}
+
+
+The only case which is different than the proof of (*) in 
+the quad case is case 3.  We adjust the constants.
+
+{\it Case 3:} If $x_1\le 2.25841, 3.1\ge y_4\ge 2.95,2.25841 \ge x_7 \ge 2$,
+
+$$\align \vol(A)>-0.166 y_1 & - 0.114552 y_2 - 0.114552 y_3 + 0.115382 y_4 + 0.143 y_5 \\& + 0.143 y_6-0.153420(\dih_1(A)-1.76) +0.22. \endalign$$
+$$\align \vol(B)>-0.166 y_7 & -0.051448 y_2 -0.051448 y_3 - 0.115382 y_4 + 0.143 y_8 \\& + 0.143 y_9 +0.55. \endalign$$
+
+
+
+Optimizing with (*) gives
+
+$\dih_3(1) < 1.681$ \newline
+$\dih_1(1) < 1.917$ \newline
+$y(1)<2.329$ \newline
+$y(2)<2.207$ \newline
+$y(3)<2.161$ \newline
+$y(4)<2.280$ \newline
+$y(5)<2T$ \newline
+$y(2)+y(4)<4.307$ \newline
+$y(3)+y(2)+y(4)<6.313$ \newline
+$y(2)+y(5)<4.657$ \newline
+$y(1)+y(5)+y(2)<6.757$ \newline
+
+With these constraints, we have
+
+$y(2,4) < 3.101$ \newline
+$y(2,5) < 3.611$ \newline
+
+by interval arithmetic.
+
+Similarly, using all the above inequalities we have
+
+$\vol(A) > .273$ \newline
+$\vol(B)+\vol(C) > .50$ \newline
+
+So $\vol(1)>0.773$,
+
+Adding this constraint to the linear optimizer we find
+
+$\dih_1(1)<1.875$ \newline
+$dih_3(1)<1.634$ \newline
+$y(1)<2.263$ \newline
+$y(2)<2.134$ \newline
+$y(3)<2.126$ \newline
+$y(4)<2.169$ \newline
+$y(2)+y(5)<4.616$ \newline
+$y(1)+y(2)+y(5)<6.702$ \newline
+
+There is a problem in this case in that the edge $y(5)$ is bounded above only by 2T.  This ``loose'' edge allows the volume of the simplices to be small.
+We solve this by using $\mu$ when the edge is long and vol when it is short.
+
+Case 1: Suppose $y(5)<2.26$.
+
+Then 
+
+$\vol(A)>.283$ \newline
+$\vol(B)>.277$ \newline
+$\vol(C)>.335$ \newline
+
+so $\vol\{1\}>0.924.$  
+
+This is adequate to push this graph over the target.
+
+Case 2 : Suppose $y(5)>2.26.$
+
+Then
+
+$\mu(A)>0.0156$ \newline
+$\mu(B)>0.0304$ \newline
+$\mu(C)>0.0406$ \newline
+
+so $\mu(1)>.0866$
+
+Again, this is adequate to eliminate the graph.
+
+This completes the proof of Theorem 1.
+
+\qed
+
+
+
+\bigskip
+
+
+
+\proclaim{Theorem 2} The graph shown 
+squanders more than the target.  \endproclaim
+
+\gram|2.1|2|dia39.ps|  %  ceq2
+
+We have 
+
+$\dih_5(1) < 1.705$ \newline
+$\dih_8(1) < 1.682$ \newline
+$y(5)<2.207$ \newline
+$y(12)<2.222$ \newline
+$y(8)<2.206$ \newline
+$y(13)<2.181$ \newline
+$y(11)<2.199$ \newline
+
+These imply 
+
+$y(11,12)<3.188$ \newline
+$y(12,13)<3.146$ \newline
+
+which in turn imply
+
+$\vol(A)>.278$ \newline
+$\vol(B)>.277$ \newline
+$\vol(C)>.362$ \newline
+
+so $\vol(1)>0.917$ which pushes the graph over the target. \qed
+
+
+
+\bigskip
+
+
+
+\proclaim{Theorem 3} The graph shown 
+squanders more than the target.  \endproclaim
+
+\gram|2.1|3|dia39.ps|  %  ceq3
+
+
+We have the following inequalities by [L].
+
+$\dih_7(12) < 1.676$ \newline
+$y(7) < 2.176$ \newline
+$y(3) < 2.343$ \newline
+$y(6) < 2.205$ \newline
+$y(3,7)+y(6,7) < 4.965$ \newline
+$y(2) + y(3) < 4.386$ \newline
+
+Using these constraints, we find by [I] that
+
+$y(3,6)<3.126.$
+
+\proclaim{Lemma 1} Inequality (*) holds for this situation. \endproclaim
+
+{\bf Proof:}
+
+The reader may check that the edge and dihedral constraints are tighter than those used in the proof of (*) in Theorem 1.  Thus, (*) holds here as well. \qed
+
+Optimizing with (*) gives
+
+$\dih_4(1) < 1.685$ \newline
+$\dih_3(1) < 1.828$ \newline
+$y(1)<2.221$ \newline
+$y(4)<2.165$ \newline
+$y(9)<2.202$ \newline
+$y(8)<2.230$ \newline
+$y(3)<2.343$ \newline
+
+
+With these constraints, we have
+
+$y(1,9) < 3.161$ \newline
+$y(1,8) < 3.370$ \newline
+
+by interval arithmetic.
+
+Similarly, using all the above inequalities we have
+
+$\vol(A) > 0.277$ \newline
+$\vol(B) > 0.272$ \newline
+$\vol(C)> 0.360$ \newline
+
+So $\vol(1)>0.909$, which pushes the graph over the target.
+
+\qed
+
+
+\bigskip
+
+
+
+\proclaim{Theorem 4} The graph shown 
+squanders more than the target.  \endproclaim
+
+\gram|2.1|4|dia39.ps|  %  ceq4
+
+We have 
+
+$\dih_3(1) < 1.713$ \newline
+$\dih_1(1) < 1.319$ \newline
+$y(1)<2.243$ \newline
+$y(2)<2.269$ \newline
+$y(3)<2.169$ \newline
+$y(4)<2.360$ \newline
+$y(5)<2T$ \newline
+
+These imply 
+
+$y(2,4)<2.683$ \newline
+$y(2,5)<3.390$ \newline
+
+which in turn imply
+
+$\vol(A)>.320$ \newline
+$\vol(B)>.247$ \newline
+$\vol(C)>.300$ \newline
+
+so $\vol(1)>0.865$ which pushes the graph over the target. \qed
+
+
+
+\bigskip
+
+
+
+\proclaim{Theorem 5} The graph shown 
+squanders more than the target.  \endproclaim
+
+\gram|2.1|5|dia39.ps|  %  ceq6
+
+
+We have the following inequalities by [L].
+
+$dih_9(1) < 1.314$ \newline
+$dih_1(1) < 1.684$ \newline
+$y(9)<2.194$ \newline
+$y(4)<2.314$ \newline
+$y(1)<2.153$ \newline
+$y(5)<2.174$ \newline
+$y(10)<2T$ \newline
+
+
+Case 1: Suppose $y(5)<2.26$.
+
+Then 
+
+$y(4,10)<2.697$ \newline
+$y(4,5)<3.365$ \newline
+
+$\vol(A)>.328$ \newline
+$\vol(B)>.272$ \newline
+$\vol(C)>.350$ \newline
+
+so $\vol(1)>0.950$.  
+
+This is adequate to push this graph over the target.
+
+Case 2 : Suppose $y(5)>2.26$.
+
+Then
+
+$y(4,10)<2.807$ \newline
+$y(4,5)<3.365$ \newline
+
+$\mu(A)>0.0453$ \newline
+$\mu(B)>0.0156$ \newline
+$\mu(C)>0.0480$ \newline
+
+so $\mu\{1\}>.1089$
+
+Again, this is adequate to eliminate the graph.
+
+This completes the proof of Theorem 5.
+
+\qed
+
+\bigskip
+
+
+
+\proclaim{Theorem 6} The graph shown 
+squanders more than the target.  \endproclaim
+
+\gram|2.1|6|dia39.ps|  %  ceq7
+
+We have 
+
+$dih_2(1) < 1.577$ \newline
+$dih_4(1) < 1.610$ \newline
+
+$y(2)<2.123$ \newline
+$y(6)<2.150$ \newline
+$y(7)<2.217$ \newline
+$y(11)<2.095$ \newline
+$y(12)<2.101$ \newline
+
+Use the proof of Theorem 2 to show $\vol(1)>0.900$ which pushes the graph over the target. \qed
+
+\bigskip
+
+\proclaim{Theorem 7} The graph shown 
+squanders more than the target.  \endproclaim
+
+\gram|2.1|7|dia39.ps|  %  ceq9
+
+
+We have the following inequalities by [L].
+
+$\dih_2(1) < 1.735$ \newline
+$\dih_4(1) < 1.735$ \newline
+$y(1)<2T$ \newline
+$y(2)<2.199$ \newline
+$y(3)<2.206$ \newline
+$y(4)<2.199$ \newline
+$y(5)<2T$ \newline
+
+
+Case 1: Suppose $y(1)<2.26$.
+
+Then 
+
+$y(1,3)<3.254$ \newline
+$y(4,5)<3.396$ \newline
+
+$\vol(A)>.275$ \newline
+$\vol(B)>.275$ \newline
+$\vol(C)>.357$ \newline
+
+so $\vol(1)>0.907$.  
+
+This is adequate to push this graph over the target.
+
+Now, interchange $y(1)$ with $y(5)$.  The solutions are the same.
+Therefore, both $y(1)$ and $y(5)$ must be greater than 2.26.
+
+
+
+Case 2 : Suppose $y(5),y(1)>2.26.$
+
+
+Then
+
+$y(1,3)<3.396$ \newline
+$y(4,5)<3.396$ \newline
+
+$\mu(A)>0.0313$ \newline
+$\mu(B)>0.0313$ \newline
+$\mu(C)>0.0336$ \newline
+
+so $\mu\{1\}>.0962$
+
+Again, this is adequate to eliminate the graph.
+
+This completes the proof of Theorem 7.
+
+\qed
+
+
+\bigskip
+
+
+
+\proclaim{Theorem 8} The graph shown 
+squanders more than the target.  \endproclaim
+
+\gram|2.1|8|dia39.ps|  %  ceq11
+
+We have 
+
+$\dih_2(1) < 1.637$ \newline
+$\dih_4(1) < 1.625$ \newline
+$y(1)<2.329$ \newline
+$y(2)<2.130$ \newline
+$y(3)<2.179$ \newline
+$y(4)<2.189$ \newline
+$y(5)<2.373$ \newline
+
+These imply 
+
+$y(1,3)<3.139$ \newline
+$y(3,5)<3.145$ \newline
+
+which in turn imply
+
+$\vol(A)>.271$ \newline
+$\vol(B)>.267$ \newline
+$\vol(C)>.346$ \newline
+
+so $\vol(1)>0.884$.
+
+Add this inequality to the linear optimizer.
+
+Then
+
+$dih_6(12)<1.545$ \newline
+$y(6)<2.078$ \newline
+$y(1)<2.167$ \newline
+$y(12)<2.076$ \newline
+
+which imply
+
+$y(1,12)<2.87.$ \newline
+
+As these constraints easily satisfy the proof of (*) from
+quad case 1, add (*) to push the graph over the target.
+
+\qed
+
+\bigskip
+
+\proclaim{Theorem 9} The graph shown 
+squanders more than the target.  \endproclaim
+
+\gram|2.1|9|dia39.ps|  %  ceq13
+
+
+We have 
+
+$dih_3(1) < 1.519$ \newline
+$dih_1(1) < 1.636$ \newline
+$y(1)<2.206$ \newline
+$y(2)<2.122$ \newline
+$y(3)<2.191$ \newline
+$y(4)<2.113$ \newline
+$y(5)<2.077$ \newline
+
+These imply 
+so $\vol(1)>0.911$ by the proof of Theorem 2, which pushes the graph over the target. \qed
+
+\bigskip
+
+This completes the list of pentagon graphs.
+
+
+
+
+\bye

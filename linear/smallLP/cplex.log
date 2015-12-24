@@ -1,0 +1,4547 @@
+
+Log started (V4.0.9) Tue Feb 10 12:49:36 1998
+
+
+Problem 'table51.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 17 rows and 7 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    2.6176057917e-01
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Variable Name           Solution Value
+t0pt                          0.087254
+t1pt                          8.792778
+d0                            1.214395
+d1                            1.153000
+d2                            1.320000
+t0                            0.004832
+t1                            0.486888
+
+Log started (V4.0.9) Thu Feb 12 09:46:49 1998
+
+
+Problem 'table51.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 17 rows and 7 columns.
+All rows and columns eliminated.
+Presolve time =    0.01 sec.
+
+Primal - Optimal:  Objective =    6.0275385838e+00
+Solution time =    0.01 sec.    Iterations = 0 (0)
+
+
+Problem 'table51.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 17 rows and 7 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    7.2028251161e+00
+Solution time =    0.01 sec.    Iterations = 0 (0)
+
+
+Log started (V4.0.9) Sun Feb 15 20:37:48 1998
+
+
+Problem 'part4tau.lp' read.
+Read time =    0.00 sec.
+LP Presolve eliminated 12 rows and 5 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 13 rows, 3 columns, and 26 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.149966
+Switched to Devex.
+Iteration:     3    Objective     =            12.711614
+
+Primal - Optimal:  Objective =    9.5973782450e+00
+Solution time =    0.01 sec.    Iterations = 6 (2)
+
+
+Problem 'part4tau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 11 rows and 4 columns.
+Reduced LP has 14 rows, 5 columns, and 29 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.070515
+Switched to Devex.
+Iteration:     3    Objective     =            19.380548
+
+Primal - Optimal:  Objective =    5.4654737889e+00
+Solution time =    0.01 sec.    Iterations = 10 (2)
+
+
+Variable Name           Solution Value
+taumupt                       0.894372
+taunupt                       1.391179
+tauompt                      62.845781
+d2                            2.186927
+d                             1.365420
+taumu                         0.049525
+taunu                         0.077035
+tauom                         3.480000
+All other variables in the range 1-9 are zero.
+
+Problem 'part4tau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 13 rows, 3 columns, and 26 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.149966
+Switched to Devex.
+Iteration:     3    Objective     =            21.659332
+
+Primal - Optimal:  Objective =    1.7536448994e+01
+Solution time =    0.01 sec.    Iterations = 6 (2)
+
+
+Variable Name           Solution Value
+taumupt                       2.191283
+taunupt                       5.481300
+tauompt                      -4.708738
+d2                            1.444959
+d                             1.131089
+d3                            6.700000
+taumu                         0.121339
+taunu                         0.303520
+tauom                        -0.260740
+
+Problem 'part4tau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 10 rows and 5 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 13 rows, 3 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.078711
+Switched to Devex.
+Iteration:     3    Objective     =            60.807901
+
+Primal - Optimal:  Objective =    1.7536448994e+01
+Solution time =    0.00 sec.    Iterations = 8 (2)
+
+
+Variable Name           Solution Value
+taumupt                       2.191283
+taunupt                       5.481300
+tauompt                      -4.708738
+d                             1.131089
+d2                            1.444959
+d3                            6.700000
+taumu                         0.121339
+taunu                         0.303520
+tauom                        -0.260740
+
+Problem 'part4tau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 10 rows and 5 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 13 rows, 3 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.072758
+Switched to Devex.
+Iteration:     3    Objective     =            62.780550
+
+Primal - Optimal:  Objective =    1.0731828547e+01
+Solution time =    0.00 sec.    Iterations = 8 (2)
+
+
+Variable Name           Solution Value
+taumupt                       1.676469
+taunupt                       4.025951
+tauompt                      -4.708738
+d                             1.167812
+d2                            1.611935
+d3                            6.700000
+taumu                         0.092832
+taunu                         0.222932
+tauom                        -0.260740
+
+Problem 'part4tau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 10 rows and 5 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 13 rows, 3 columns, and 26 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.078711
+Switched to Devex.
+Iteration:     3    Objective     =            60.807901
+
+Primal - Optimal:  Objective =    1.7536448994e+01
+Solution time =    0.01 sec.    Iterations = 8 (2)
+
+
+Variable Name           Solution Value
+taumupt                       2.191283
+taunupt                       5.481300
+tauompt                      -4.708738
+d                             1.131089
+d2                            1.444959
+d3                            6.700000
+taumu                         0.121339
+taunu                         0.303520
+tauom                        -0.260740
+
+Log started (V4.0.9) Tue Feb 17 22:17:04 1998
+
+
+Problem 'small.lp' read.
+Read time =    0.00 sec.
+LP Presolve eliminated 23 rows and 9 columns.
+Aggregator did 1 substitutions.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    7.7253692438e-01
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+CPLEX Error  1616: Line 9: Expected identifier, found '>'.
+Problem contains quadratic objective coefficients, ignored.
+No file read.
+
+Problem 'small.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 23 rows and 9 columns.
+Aggregator did 1 substitutions.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    1.7424843973e+00
+Solution time =    0.01 sec.    Iterations = 0 (0)
+
+
+Log started (V4.0.9) Sun Mar  8 10:05:29 1998
+
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 23 rows and 9 columns.
+Aggregator did 1 substitutions.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    1.7186579347e+00
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 23 rows and 9 columns.
+Aggregator did 1 substitutions.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    1.7185790392e+00
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 23 rows and 9 columns.
+Aggregator did 1 substitutions.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    1.7424843973e+00
+Solution time =    0.01 sec.    Iterations = 0 (0)
+
+
+Log started (V4.0.9) Thu Mar 19 18:47:58 1998
+
+
+Problem 'upsig.lp' read.
+Read time =    0.03 sec.
+LP Presolve eliminated 23 rows and 9 columns.
+Aggregator did 1 substitutions.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    2.5870052695e+00
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Log started (V4.0.9) Sun Mar 22 13:58:44 1998
+
+
+Problem 'uptau.lp' read.
+Read time =    0.03 sec.
+LP Presolve eliminated 18 rows and 7 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            15.539448
+
+Primal - Optimal:  Objective =    1.5539447577e+01
+Solution time =    0.00 sec.    Iterations = 2 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 18 rows and 7 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =             5.051330
+
+Primal - Optimal:  Objective =    5.0513303327e+00
+Solution time =    0.00 sec.    Iterations = 2 (1)
+
+
+Log started (V4.0.9) Sun Mar 22 14:32:25 1998
+
+
+Problem 'upsig.lp' read.
+Read time =    0.03 sec.
+LP Presolve eliminated 23 rows and 10 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =   -9.1284399542e+01
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 23 rows and 10 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =   -4.5247023846e+00
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 12 rows, 3 columns, and 24 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000017
+Switched to Devex.
+Iteration:     3    Objective     =           -43.225749
+
+Primal - Optimal:  Objective =   -1.1673553297e+01
+Solution time =    0.00 sec.    Iterations = 8 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 18 rows and 7 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            15.518923
+
+Primal - Optimal:  Objective =    7.2394294047e+00
+Solution time =    0.01 sec.    Iterations = 4 (1)
+
+
+Log started (V4.0.9) Sun Mar 22 14:40:23 1998
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 18 rows and 7 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            15.518923
+
+Primal - Optimal:  Objective =    7.2394294047e+00
+Solution time =    0.01 sec.    Iterations = 4 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =            18.948115
+
+Primal - Optimal:  Objective =    1.6285655531e+01
+Solution time =    0.00 sec.    Iterations = 6 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 19 rows and 7 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            11.639192
+
+Primal - Optimal:  Objective =    9.0604510330e+00
+Solution time =    0.00 sec.    Iterations = 3 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 19 rows and 7 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            11.639192
+
+Primal - Optimal:  Objective =    9.0604510330e+00
+Solution time =    0.01 sec.    Iterations = 3 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =            68.089605
+
+Primal - Optimal:  Objective =    2.1231865819e+01
+Solution time =    0.00 sec.    Iterations = 4 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 19 rows and 7 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            24.577047
+
+Primal - Optimal:  Objective =    2.4577047111e+01
+Solution time =    0.00 sec.    Iterations = 2 (1)
+
+
+Log started (V4.0.9) Sat Mar 28 16:51:28 1998
+
+
+Problem 'upsig.lp' read.
+Read time =    0.03 sec.
+LP Presolve eliminated 16 rows and 7 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            -2.484937
+
+Primal - Optimal:  Objective =   -2.4849372840e+00
+Solution time =    0.01 sec.    Iterations = 2 (1)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 16 rows and 7 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            -1.866598
+
+Primal - Optimal:  Objective =   -1.8665983426e+00
+Solution time =    0.00 sec.    Iterations = 2 (1)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 16 rows and 8 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            -2.715000
+
+Primal - Optimal:  Objective =   -2.7150000000e+00
+Solution time =    0.00 sec.    Iterations = 2 (1)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 23 rows and 10 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    1.3743970103e-03
+Solution time =    0.01 sec.    Iterations = 0 (0)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 12 rows, 3 columns, and 24 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =           -61.778918
+
+Primal - Optimal:  Objective =   -6.9278557740e+00
+Solution time =    0.00 sec.    Iterations = 7 (1)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 23 rows and 10 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =   -3.0796757629e+00
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 12 rows, 3 columns, and 24 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =          -185.339502
+
+Primal - Optimal:  Objective =   -1.0556660676e+02
+Solution time =    0.01 sec.    Iterations = 6 (1)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 12 rows, 3 columns, and 24 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.039799
+Switched to Devex.
+Iteration:     3    Objective     =            -7.775824
+
+Primal - Optimal:  Objective =   -1.0349647199e+00
+Solution time =    0.00 sec.    Iterations = 8 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 12 rows, 3 columns, and 24 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.119502
+Switched to Devex.
+Iteration:     3    Objective     =           -15.555020
+
+Primal - Optimal:  Objective =   -3.7171439317e+00
+Solution time =    0.01 sec.    Iterations = 8 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 12 rows, 3 columns, and 24 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.108151
+Switched to Devex.
+Iteration:     3    Objective     =           -12.684755
+
+Primal - Optimal:  Objective =   -7.6970640169e+00
+Solution time =    0.00 sec.    Iterations = 6 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 23 rows and 10 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =   -3.0796757629e+00
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 12 rows, 3 columns, and 24 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =           -61.778918
+
+Primal - Optimal:  Objective =   -6.9278557740e+00
+Solution time =    0.01 sec.    Iterations = 7 (1)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 23 rows and 10 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =   -1.6113924483e+00
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 12 rows, 3 columns, and 24 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.025886
+Switched to Devex.
+Iteration:     3    Objective     =           -33.682865
+
+Primal - Optimal:  Objective =   -5.8845971624e+00
+Solution time =    0.02 sec.    Iterations = 8 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 12 rows, 3 columns, and 24 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.181973
+Switched to Devex.
+Iteration:     3    Objective     =           -61.553240
+
+Primal - Optimal:  Objective =   -1.3383294584e+01
+Solution time =    0.00 sec.    Iterations = 5 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 23 rows and 10 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =   -2.7575994371e+01
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 19 rows and 7 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            15.518923
+
+Primal - Optimal:  Objective =    2.4650123401e+00
+Solution time =    0.00 sec.    Iterations = 6 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =            71.969336
+
+Primal - Optimal:  Objective =    3.9954411527e+00
+Solution time =    0.01 sec.    Iterations = 13 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =           128.419749
+
+Primal - Optimal:  Objective =    7.2187579540e+00
+Solution time =    0.00 sec.    Iterations = 11 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =            71.969336
+
+Primal - Optimal:  Objective =    3.9954411527e+00
+Solution time =    0.01 sec.    Iterations = 13 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =           105.787846
+
+Primal - Optimal:  Objective =    1.1685963416e+01
+Solution time =    0.00 sec.    Iterations = 10 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 19 rows and 7 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            19.398654
+
+Primal - Optimal:  Objective =    6.6245793220e+00
+Solution time =    0.00 sec.    Iterations = 5 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =            75.849067
+
+Primal - Optimal:  Objective =    1.0731828547e+01
+Solution time =    0.01 sec.    Iterations = 10 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =           132.299480
+
+Primal - Optimal:  Objective =    1.7536448994e+01
+Solution time =    0.00 sec.    Iterations = 9 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 19 rows and 7 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            11.639192
+
+Primal - Optimal:  Objective =    1.8487592551e+00
+Solution time =    0.00 sec.    Iterations = 6 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 19 rows and 7 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            11.639192
+
+Primal - Optimal:  Objective =    3.7638971674e+00
+Solution time =    0.01 sec.    Iterations = 5 (1)
+
+
+Variable Name           Solution Value
+tauQuarterpt                  1.254632
+tau2pt                       -5.308301
+tau3pt                       -4.708738
+d                             1.274395
+d2                            6.700000
+d3                            6.700000
+tauQuarter                    0.069474
+tau2                         -0.293940
+tau3                         -0.260740
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =            68.089605
+
+Primal - Optimal:  Objective =    8.4629279434e+00
+Solution time =    0.00 sec.    Iterations = 9 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =            97.184904
+
+Primal - Optimal:  Objective =    1.6018363509e+01
+Solution time =    0.00 sec.    Iterations = 7 (2)
+
+
+Log started (V4.0.9) Sat Mar 28 18:48:52 1998
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 23 rows and 10 columns.
+All rows and columns eliminated.
+Presolve time =    0.01 sec.
+
+Primal - Optimal:  Objective =    1.3743970103e-03
+Solution time =    0.01 sec.    Iterations = 0 (0)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 12 rows, 3 columns, and 24 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.039799
+Switched to Devex.
+Iteration:     3    Objective     =            -7.775824
+
+Primal - Optimal:  Objective =   -9.6919261861e-01
+Solution time =    0.00 sec.    Iterations = 8 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 12 rows, 3 columns, and 24 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.119502
+Switched to Devex.
+Iteration:     3    Objective     =           -15.555020
+
+Primal - Optimal:  Objective =   -3.6268482695e+00
+Solution time =    0.01 sec.    Iterations = 8 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 12 rows, 3 columns, and 24 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.108151
+Switched to Devex.
+Iteration:     3    Objective     =           -12.684755
+
+Primal - Optimal:  Objective =   -7.6662876136e+00
+Solution time =    0.01 sec.    Iterations = 6 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 23 rows and 10 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =   -2.8539366076e+00
+Solution time =    0.01 sec.    Iterations = 0 (0)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 12 rows, 3 columns, and 24 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =           -61.778918
+
+Primal - Optimal:  Objective =   -6.8047501607e+00
+Solution time =    0.00 sec.    Iterations = 7 (1)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 17 rows and 8 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            -9.383529
+
+Primal - Optimal:  Objective =   -1.4759489551e+00
+Solution time =    0.00 sec.    Iterations = 5 (1)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =           -68.035978
+
+Primal - Optimal:  Objective =   -5.8845971624e+00
+Solution time =    0.01 sec.    Iterations = 9 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =           -92.916301
+
+Primal - Optimal:  Objective =   -1.3383294584e+01
+Solution time =    0.00 sec.    Iterations = 7 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =           -71.163821
+
+Primal - Optimal:  Objective =   -9.6919261861e-01
+Solution time =    0.01 sec.    Iterations = 11 (2)
+
+
+Variable Name           Solution Value
+sigpt                        -0.004847
+sig2pt                       -0.954652
+d                             1.384168
+d2                            2.130681
+d3                            6.700000
+pt                            0.055374
+sig                          -0.000268
+sig2                         -0.052863
+sig3                          0.149469
+sig3pt                        2.699280
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 17 rows and 8 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            -9.383529
+
+Primal - Optimal:  Objective =   -7.8362595719e+00
+Solution time =    0.00 sec.    Iterations = 3 (1)
+
+
+Log started (V4.0.9) Sun Mar 29 08:11:15 1998
+
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =           -71.163821
+
+Primal - Optimal:  Objective =   -9.6919261861e-01
+Solution time =    0.00 sec.    Iterations = 11 (2)
+
+
+Variable Name           Solution Value
+sigpt                        -0.004847
+sig2pt                       -0.954652
+d                             1.384168
+d2                            2.130681
+d3                            6.700000
+pt                            0.055374
+sig                          -0.000268
+sig2                         -0.052863
+sig3                          0.149469
+sig3pt                        2.699280
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =           -74.035223
+
+Primal - Optimal:  Objective =   -1.8577019339e+00
+Solution time =    0.01 sec.    Iterations = 11 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 11 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =           -14.597201
+
+Primal - Optimal:  Objective =   -9.6919261861e-01
+Solution time =    0.00 sec.    Iterations = 9 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 11 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259425
+Switched to Devex.
+Iteration:     3    Objective     =           -13.101002
+
+Primal - Optimal:  Objective =   -9.6919261861e-01
+Solution time =    0.00 sec.    Iterations = 9 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 11 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.479812
+Switched to Devex.
+Iteration:     3    Objective     =           -12.354618
+
+Primal - Optimal:  Objective =   -9.6919261861e-01
+Solution time =    0.01 sec.    Iterations = 9 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 11 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.244589
+Switched to Devex.
+Iteration:     3    Objective     =           -11.055516
+
+Primal - Optimal:  Objective =   -9.6919261861e-01
+Solution time =    0.00 sec.    Iterations = 8 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 11 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.132366
+Switched to Devex.
+Iteration:     3    Objective     =           -10.621663
+
+Primal - Optimal:  Objective =   -9.6919261861e-01
+Solution time =    0.00 sec.    Iterations = 8 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 11 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.090178
+Switched to Devex.
+Iteration:     3    Objective     =           -10.207856
+
+Primal - Optimal:  Objective =   -1.1464817550e+00
+Solution time =    0.01 sec.    Iterations = 6 (2)
+
+
+Log started (V4.0.9) Wed Apr  8 20:41:01 1998
+
+CPLEX Error  1423: Could not open file 'qrttettau.lp' for reading.
+Problem contains quadratic objective coefficients, ignored.
+No file read.
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 17 rows and 7 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    1.5317195514e+01
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 17 rows and 7 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    6.0275055574e+00
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Log started (V4.0.9) Thu Apr  9 15:04:17 1998
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 18 rows and 8 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            -9.383529
+
+Primal - Optimal:  Objective =   -3.2215459631e-01
+Solution time =    0.01 sec.    Iterations = 5 (1)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 18 rows and 8 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            -9.383529
+
+Primal - Optimal:  Objective =   -1.4759489551e+00
+Solution time =    0.00 sec.    Iterations = 5 (1)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 18 rows and 8 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            -9.383529
+
+Primal - Optimal:  Objective =   -1.4759489551e+00
+Solution time =    0.00 sec.    Iterations = 5 (1)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 18 rows and 8 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            -9.383529
+
+Primal - Optimal:  Objective =   -3.2215459631e-01
+Solution time =    0.00 sec.    Iterations = 5 (1)
+
+
+Log started (V4.0.9) Mon Apr 13 15:14:57 1998
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.00 sec.
+LP Presolve eliminated 17 rows and 7 columns.
+All rows and columns eliminated.
+Presolve time =    0.01 sec.
+
+Primal - Optimal:  Objective =    1.9628705802e+00
+Solution time =    0.01 sec.    Iterations = 0 (0)
+
+
+Log started (V4.0.9) Sat Apr 18 11:16:51 1998
+
+
+Problem 'uptau.lp' read.
+Read time =    0.03 sec.
+LP Presolve eliminated 4 rows and 3 columns.
+Reduced LP has 21 rows, 6 columns, and 43 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             5.486057
+Switched to Devex.
+Iteration:     4    Objective     =            75.398528
+
+Primal - Optimal:  Objective =    8.1608357651e+00
+Solution time =    0.02 sec.    Iterations = 17 (3)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =            22.377307
+
+Primal - Optimal:  Objective =    9.1029135762e+00
+Solution time =    0.00 sec.    Iterations = 11 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =            15.068384
+
+Primal - Optimal:  Objective =    9.5695848918e+00
+Solution time =    0.00 sec.    Iterations = 8 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 19 rows and 7 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            52.709553
+
+Primal - Optimal:  Objective =    5.2709553093e+01
+Solution time =    0.00 sec.    Iterations = 2 (1)
+
+CPLEX Error  1423: Could not open file 'upttau.lp' for reading.
+Problem contains quadratic objective coefficients, ignored.
+No file read.
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 19 rows and 7 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            57.418291
+
+Primal - Optimal:  Objective =    5.7418291281e+01
+Solution time =    0.00 sec.    Iterations = 2 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 4 rows and 3 columns.
+Reduced LP has 21 rows, 6 columns, and 43 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             5.486057
+Switched to Devex.
+Iteration:     4    Objective     =            75.398528
+
+Primal - Optimal:  Objective =    8.1608357651e+00
+Solution time =    0.00 sec.    Iterations = 17 (3)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+Row 'c1' infeasible, all entries at implied bounds.
+Presolve time =    0.00 sec.
+CPLEX Error  1101: Presolve determines problem is infeasible or unbounded.
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =            63.380867
+
+Primal - Optimal:  Objective =    3.7541897548e+00
+Solution time =    0.01 sec.    Iterations = 9 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =            68.089605
+
+Primal - Optimal:  Objective =    8.4629279434e+00
+Solution time =    0.00 sec.    Iterations = 9 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =           128.419749
+
+Primal - Optimal:  Objective =    7.2187579540e+00
+Solution time =    0.00 sec.    Iterations = 11 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 4 rows and 3 columns.
+Reduced LP has 21 rows, 6 columns, and 43 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             5.486057
+Switched to Devex.
+Iteration:     4    Objective     =            75.398528
+
+Primal - Optimal:  Objective =    8.1608357651e+00
+Solution time =    0.01 sec.    Iterations = 17 (3)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =            22.377307
+
+Primal - Optimal:  Objective =    9.1029135762e+00
+Solution time =    0.00 sec.    Iterations = 11 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 11 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =           -68.035978
+
+Primal - Optimal:  Objective =   -5.8845971624e+00
+Solution time =    0.00 sec.    Iterations = 9 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =          -129.816270
+
+Primal - Optimal:  Objective =   -3.6268482695e+00
+Solution time =    0.00 sec.    Iterations = 10 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =          -129.816270
+
+Primal - Optimal:  Objective =   -3.6268482695e+00
+Solution time =    0.00 sec.    Iterations = 10 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 4 rows and 4 columns.
+Reduced LP has 19 rows, 6 columns, and 39 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             9.367195
+Switched to Devex.
+Iteration:     4    Objective     =          -132.687672
+
+Primal - Optimal:  Objective =   -4.6728364473e+00
+Solution time =    0.00 sec.    Iterations = 16 (3)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =          -135.559074
+
+Primal - Optimal:  Objective =   -5.7188246250e+00
+Solution time =    0.00 sec.    Iterations = 10 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 5 rows and 4 columns.
+Reduced LP has 19 rows, 6 columns, and 39 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.384757
+Switched to Devex.
+Iteration:     4    Objective     =           -70.305209
+
+Primal - Optimal:  Objective =   -8.1538282828e+00
+Solution time =    0.01 sec.    Iterations = 10 (3)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 11 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =           -68.035978
+
+Primal - Optimal:  Objective =   -5.8845971624e+00
+Solution time =    0.00 sec.    Iterations = 9 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 18 rows and 8 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            -9.383529
+
+Primal - Optimal:  Objective =   -1.4759489551e+00
+Solution time =    0.00 sec.    Iterations = 5 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 20 rows and 7 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            11.639192
+
+Primal - Optimal:  Objective =    3.7638971674e+00
+Solution time =    0.00 sec.    Iterations = 5 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 19 rows and 7 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =             6.330891
+
+Primal - Optimal:  Objective =   -3.4595421300e+00
+Solution time =    0.00 sec.    Iterations = 6 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =            71.969336
+
+Primal - Optimal:  Objective =    3.9954411527e+00
+Solution time =    0.00 sec.    Iterations = 13 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =           -74.035223
+
+Primal - Optimal:  Objective =   -1.8577019339e+00
+Solution time =    0.00 sec.    Iterations = 11 (2)
+
+
+Log started (V4.0.9) Sat May  9 12:00:41 1998
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 20 rows and 7 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            15.540553
+
+Primal - Optimal:  Objective =    1.5540552777e+01
+Solution time =    0.00 sec.    Iterations = 2 (1)
+
+
+Log started (V4.0.9) Sat May  9 13:46:06 1998
+
+
+Problem 'uptau.lp' read.
+Read time =    0.03 sec.
+LP Presolve eliminated 20 rows and 7 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            15.518923
+
+Primal - Optimal:  Objective =    7.2394951923e+00
+Solution time =    0.00 sec.    Iterations = 4 (1)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 18 rows and 8 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =           -12.511372
+
+Primal - Optimal:  Objective =   -4.5247618660e+00
+Solution time =    0.00 sec.    Iterations = 4 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 20 rows and 7 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            11.639192
+
+Primal - Optimal:  Objective =    9.0605177308e+00
+Solution time =    0.00 sec.    Iterations = 3 (1)
+
+
+Log started (V4.0.9) Fri May 22 12:02:51 1998
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =           -71.163821
+
+Primal - Optimal:  Objective =   -9.6919261861e-01
+Solution time =    0.01 sec.    Iterations = 11 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =            -3.940600
+
+Primal - Optimal:  Objective =   -5.3667728647e-02
+Solution time =    0.00 sec.    Iterations = 11 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =            -7.188400
+
+Primal - Optimal:  Objective =   -2.0083181097e-01
+Solution time =    0.00 sec.    Iterations = 10 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =            -5.556521
+
+Primal - Optimal:  Objective =   -4.2451029391e-01
+Solution time =    0.00 sec.    Iterations = 9 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 17 rows and 8 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            -0.866000
+
+Primal - Optimal:  Objective =   -1.5803287447e-01
+Solution time =    0.00 sec.    Iterations = 5 (1)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =            -4.113800
+
+Primal - Optimal:  Objective =   -3.7680382426e-01
+Solution time =    0.00 sec.    Iterations = 10 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 10 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =            -7.361600
+
+Primal - Optimal:  Objective =   -7.3286843604e-01
+Solution time =    0.01 sec.    Iterations = 9 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 11 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.125329
+Switched to Devex.
+Iteration:     3    Objective     =            -0.582428
+
+Primal - Optimal:  Objective =   -1.4455647447e-01
+Solution time =    0.00 sec.    Iterations = 6 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 5 rows and 4 columns.
+Reduced LP has 19 rows, 6 columns, and 39 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.384757
+Switched to Devex.
+Iteration:     4    Objective     =            -3.830228
+
+Primal - Optimal:  Objective =   -3.8867939817e-01
+Solution time =    0.00 sec.    Iterations = 10 (3)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 5 rows and 4 columns.
+Reduced LP has 19 rows, 6 columns, and 39 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.384757
+Switched to Devex.
+Iteration:     4    Objective     =            -5.207942
+
+Primal - Optimal:  Objective =   -8.0390961216e-01
+Solution time =    0.01 sec.    Iterations = 8 (3)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 11 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.090178
+Switched to Devex.
+Iteration:     3    Objective     =            -0.565246
+
+Primal - Optimal:  Objective =   -6.3484874467e-02
+Solution time =    0.00 sec.    Iterations = 6 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 11 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =            -4.099600
+
+Primal - Optimal:  Objective =   -1.0286772865e-01
+Solution time =    0.00 sec.    Iterations = 11 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 12 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.261924
+Switched to Devex.
+Iteration:     3    Objective     =            -4.099600
+
+Primal - Optimal:  Objective =   -1.0650976968e-01
+Solution time =    0.01 sec.    Iterations = 11 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 12 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.090178
+Switched to Devex.
+Iteration:     3    Objective     =            -0.565246
+
+Primal - Optimal:  Objective =   -7.0984874467e-02
+Solution time =    0.00 sec.    Iterations = 6 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 11 rows and 6 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.261924
+Switched to Devex.
+Iteration:     3    Objective     =            -3.940600
+
+Primal - Optimal:  Objective =   -5.7309769681e-02
+Solution time =    0.00 sec.    Iterations = 11 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 18 rows and 7 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            15.518923
+
+Primal - Optimal:  Objective =    2.4650123401e+00
+Solution time =    0.00 sec.    Iterations = 6 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 18 rows and 7 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =             0.859339
+
+Primal - Optimal:  Objective =    1.3649671989e-01
+Solution time =    0.00 sec.    Iterations = 6 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 10 rows and 5 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             3.985205
+
+Primal - Optimal:  Objective =    2.2124214268e-01
+Solution time =    0.00 sec.    Iterations = 13 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 10 rows and 5 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             7.111070
+
+Primal - Optimal:  Objective =    3.9972894511e-01
+Solution time =    0.00 sec.    Iterations = 11 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 10 rows and 5 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             5.857859
+
+Primal - Optimal:  Objective =    6.4709439750e-01
+Solution time =    0.00 sec.    Iterations = 10 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 18 rows and 7 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =             1.074174
+
+Primal - Optimal:  Objective =    3.6682710808e-01
+Solution time =    0.00 sec.    Iterations = 5 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 10 rows and 5 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             4.200039
+
+Primal - Optimal:  Objective =    5.9426047132e-01
+Solution time =    0.00 sec.    Iterations = 10 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 10 rows and 5 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             7.325905
+
+Primal - Optimal:  Objective =    9.7105711290e-01
+Solution time =    0.00 sec.    Iterations = 9 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 19 rows and 7 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =             0.644505
+
+Primal - Optimal:  Objective =    2.0842070808e-01
+Solution time =    0.01 sec.    Iterations = 5 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 20 rows and 8 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            -0.013995
+
+Primal - Optimal:  Objective =   -4.5007929192e-01
+Solution time =    0.00 sec.    Iterations = 5 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 20 rows and 8 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =             0.578655
+
+Primal - Optimal:  Objective =    1.4257070808e-01
+Solution time =    0.01 sec.    Iterations = 5 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 20 rows and 8 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =             0.644505
+
+Primal - Optimal:  Objective =    2.0842070808e-01
+Solution time =    0.01 sec.    Iterations = 5 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 12 rows and 6 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             3.770370
+
+Primal - Optimal:  Objective =    4.6862317326e-01
+Solution time =    0.01 sec.    Iterations = 9 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 12 rows and 6 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             3.704520
+
+Primal - Optimal:  Objective =    4.0277317326e-01
+Solution time =    0.00 sec.    Iterations = 9 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 12 rows and 6 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             5.315632
+
+Primal - Optimal:  Objective =    8.2114518516e-01
+Solution time =    0.00 sec.    Iterations = 7 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 20 rows and 8 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =             0.578655
+
+Primal - Optimal:  Objective =    3.6522539916e-02
+Solution time =    0.01 sec.    Iterations = 6 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 20 rows and 8 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =             0.578655
+
+Primal - Optimal:  Objective =    1.4257070808e-01
+Solution time =    0.00 sec.    Iterations = 5 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 12 rows and 6 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.171060
+Switched to Devex.
+Iteration:     3    Objective     =             0.666443
+
+Primal - Optimal:  Objective =    2.3035870808e-01
+Solution time =    0.00 sec.    Iterations = 7 (2)
+
+CPLEX Error  1616: Line 5: Expected identifier, found '*'.
+Problem contains quadratic objective coefficients, ignored.
+No file read.
+No problem exists.
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 12 rows and 6 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.171060
+Switched to Devex.
+Iteration:     3    Objective     =             0.732293
+
+Primal - Optimal:  Objective =    2.9620870808e-01
+Solution time =    0.00 sec.    Iterations = 7 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 12 rows and 6 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             3.985205
+
+Primal - Optimal:  Objective =    2.2124214268e-01
+Solution time =    0.00 sec.    Iterations = 13 (2)
+
+
+Log started (V4.0.9) Sat May 30 18:38:03 1998
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 17 rows and 7 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    5.7622600929e+00
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 14 rows and 5 columns.
+Reduced LP has 3 rows, 2 columns, and 6 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Infeasibility =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =             3.094928
+
+Primal - Optimal:  Objective =    0.0000000000e+00
+Solution time =    0.00 sec.    Iterations = 3 (1)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 17 rows and 7 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    4.1396948966e+00
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 17 rows and 7 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    6.3395263497e+00
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 17 rows and 7 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    1.4765917539e+01
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 8 rows and 3 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 8 rows, 3 columns, and 16 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.313680
+Switched to Devex.
+Iteration:     3    Objective     =            14.877085
+
+Primal - Optimal:  Objective =    8.5006962398e+00
+Solution time =    0.00 sec.    Iterations = 6 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 8 rows and 3 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 8 rows, 3 columns, and 16 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.313680
+Switched to Devex.
+Iteration:     3    Objective     =             8.661131
+
+Primal - Optimal:  Objective =    3.6426426663e+00
+Solution time =    0.00 sec.    Iterations = 6 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 9 rows and 3 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 7 rows, 3 columns, and 14 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.008621
+Switched to Devex.
+Iteration:     3    Objective     =             4.673933
+
+Primal - Optimal:  Objective =    3.7812053437e+00
+Solution time =    0.01 sec.    Iterations = 6 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 10 rows and 3 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 6 rows, 3 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.313680
+Switched to Devex.
+Iteration:     3    Objective     =            11.225514
+
+Primal - Optimal:  Objective =    1.1225514003e+01
+Solution time =    0.00 sec.    Iterations = 3 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 17 rows and 7 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    1.5181013552e+01
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 8 rows and 3 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 8 rows, 3 columns, and 16 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Infeasibility =             0.517400
+Switched to Devex.
+Iteration:     3    Objective     =            15.765893
+
+Primal - Optimal:  Objective =    7.2844175031e+00
+Solution time =    0.01 sec.    Iterations = 7 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 8 rows and 3 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 8 rows, 3 columns, and 16 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.313680
+Switched to Devex.
+Iteration:     3    Objective     =            13.489798
+
+Primal - Optimal:  Objective =    4.7567754808e+00
+Solution time =    0.00 sec.    Iterations = 6 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 9 rows and 3 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 7 rows, 3 columns, and 14 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.015915
+Switched to Devex.
+Iteration:     3    Objective     =             8.964470
+
+Primal - Optimal:  Objective =    8.3341388367e+00
+Solution time =    0.00 sec.    Iterations = 6 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 10 rows and 3 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 6 rows, 3 columns, and 12 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.313680
+Switched to Devex.
+Iteration:     3    Objective     =            16.111502
+
+Primal - Optimal:  Objective =    1.6111501655e+01
+Solution time =    0.01 sec.    Iterations = 3 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 17 rows and 7 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    7.1351632212e+00
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 10 rows and 3 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 6 rows, 3 columns, and 12 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Infeasibility =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =             7.908895
+
+Primal - Optimal:  Objective =    7.1351632212e+00
+Solution time =    0.01 sec.    Iterations = 3 (1)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 10 rows and 3 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 6 rows, 3 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Infeasibility =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            13.984101
+
+Primal - Optimal:  Objective =    1.2981486763e+01
+Solution time =    0.00 sec.    Iterations = 3 (1)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 12 rows and 3 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 4 rows, 3 columns, and 8 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Infeasibility =             0.502939
+Switched to Devex.
+Iteration:     3    Objective     =            20.997489
+
+Primal - Optimal:  Objective =    2.0997489308e+01
+Solution time =    0.01 sec.    Iterations = 3 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 17 rows and 7 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    1.0649713159e+01
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 10 rows and 3 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 6 rows, 3 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.015727
+Switched to Devex.
+Iteration:     3    Objective     =            17.628835
+
+Primal - Optimal:  Objective =    1.7628834688e+01
+Solution time =    0.00 sec.    Iterations = 3 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 17 rows and 7 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    2.3932206656e+01
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 12 rows and 3 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 4 rows, 3 columns, and 8 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.248344
+Switched to Devex.
+
+Primal - Optimal:  Objective =    3.2358597846e+01
+Solution time =    0.01 sec.    Iterations = 2 (2)
+
+
+Log started (V4.0.9) Wed Jun  3 20:18:08 1998
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.00 sec.
+LP Presolve eliminated 17 rows and 7 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    2.6176057917e-01
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Log started (V4.0.9) Thu Jun  4 17:18:14 1998
+
+
+Problem 'qrtetsig.lp' read.
+Read time =    0.03 sec.
+LP Presolve eliminated 17 rows and 7 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =   -2.0093019151e+00
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Log started (V4.0.9) Thu Jun  4 17:20:04 1998
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 17 rows and 7 columns.
+All rows and columns eliminated.
+Presolve time =    0.01 sec.
+
+Primal - Optimal:  Objective =    6.0275385838e+00
+Solution time =    0.01 sec.    Iterations = 0 (0)
+
+
+Log started (V4.0.9) Sun Jun  7 17:58:22 1998
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 24 rows and 10 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    1.7424934313e+00
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Log started (V4.0.9) Wed Jun 10 11:32:10 1998
+
+
+Problem 'upsig.lp' read.
+Read time =    0.00 sec.
+LP Presolve eliminated 12 rows and 6 columns.
+Reduced LP has 12 rows, 4 columns, and 24 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             1.966493
+Switched to Devex.
+Iteration:     3    Objective     =            -0.849914
+
+Primal - Optimal:  Objective =   -3.1667216842e-01
+Solution time =    0.00 sec.    Iterations = 9 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 13 rows and 7 columns.
+Reduced LP has 12 rows, 4 columns, and 24 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             1.966493
+Switched to Devex.
+Iteration:     3    Objective     =            -0.503825
+
+Primal - Optimal:  Objective =   -3.9413583287e-01
+Solution time =    0.00 sec.    Iterations = 8 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 7 rows and 5 columns.
+Reduced LP has 18 rows, 6 columns, and 37 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             8.074263
+Switched to Devex.
+Iteration:     4    Objective     =            -4.149142
+
+Primal - Optimal:  Objective =   -2.5875198970e-01
+Solution time =    0.00 sec.    Iterations = 14 (3)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+Dual infeasible due to empty column 'sig4'.
+Presolve time =    0.00 sec.
+CPLEX Error  1101: Presolve determines problem is infeasible or unbounded.
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 14 rows and 8 columns.
+Reduced LP has 12 rows, 4 columns, and 24 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             1.966493
+Switched to Devex.
+Iteration:     3    Objective     =            -0.569142
+
+Primal - Optimal:  Objective =   -3.2585159817e-01
+Solution time =    0.00 sec.    Iterations = 8 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 13 rows and 9 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =            -7.506400
+
+Primal - Optimal:  Objective =   -3.1667216842e-01
+Solution time =    0.01 sec.    Iterations = 10 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 13 rows and 9 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =            -7.506400
+
+Primal - Optimal:  Objective =   -3.0702127571e-01
+Solution time =    0.01 sec.    Iterations = 10 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 7 rows and 7 columns.
+Reduced LP has 19 rows, 6 columns, and 39 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             9.367195
+Switched to Devex.
+Iteration:     4    Objective     =            -7.347400
+
+Primal - Optimal:  Objective =   -2.5875198970e-01
+Solution time =    0.01 sec.    Iterations = 16 (3)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 7 rows and 7 columns.
+Reduced LP has 19 rows, 6 columns, and 39 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             9.349195
+Switched to Devex.
+Iteration:     4    Objective     =            -7.347400
+
+Primal - Optimal:  Objective =   -2.5392654334e-01
+Solution time =    0.01 sec.    Iterations = 16 (3)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 22 rows and 11 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =             2.658000
+
+Primal - Optimal:  Objective =    2.6579996630e+00
+Solution time =    0.01 sec.    Iterations = 2 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             7.389670
+
+Primal - Optimal:  Objective =    5.0406151092e-01
+Solution time =    0.00 sec.    Iterations = 11 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             7.389670
+
+Primal - Optimal:  Objective =    5.0406151092e-01
+Solution time =    0.00 sec.    Iterations = 11 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             3.909670
+
+Primal - Optimal:  Objective =    5.2990280299e-01
+Solution time =    0.00 sec.    Iterations = 9 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 7 rows and 7 columns.
+Reduced LP has 21 rows, 6 columns, and 43 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =            11.028232
+Switched to Devex.
+Iteration:     4    Objective     =             7.250370
+
+Primal - Optimal:  Objective =    4.5189522801e-01
+Solution time =    0.00 sec.    Iterations = 18 (3)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             3.770370
+
+Primal - Optimal:  Objective =    4.6862317326e-01
+Solution time =    0.01 sec.    Iterations = 9 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.04 sec.
+LP Presolve eliminated 13 rows and 9 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =            -4.099600
+
+Primal - Optimal:  Objective =   -1.0286772865e-01
+Solution time =    0.00 sec.    Iterations = 11 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.00 sec.
+LP Presolve eliminated 20 rows and 11 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            -0.519600
+
+Primal - Optimal:  Objective =   -8.1728674467e-02
+Solution time =    0.01 sec.    Iterations = 5 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             4.124505
+
+Primal - Optimal:  Objective =    2.7374214268e-01
+Solution time =    0.01 sec.    Iterations = 13 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 22 rows and 11 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =             0.644505
+
+Primal - Optimal:  Objective =    2.0842070808e-01
+Solution time =    0.00 sec.    Iterations = 5 (1)
+
+
+Log started (V4.0.9) Tue Jun 16 10:38:17 1998
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.03 sec.
+LP Presolve eliminated 13 rows and 5 columns.
+Reduced LP has 4 rows, 2 columns, and 8 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Infeasibility =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =             2.321196
+
+Primal - Optimal:  Objective =    0.0000000000e+00
+Solution time =    0.00 sec.    Iterations = 3 (1)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 17 rows and 7 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    2.9921498579e-01
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 17 rows and 7 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    3.1649088579e-01
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 11 rows and 4 columns.
+Reduced LP has 7 rows, 4 columns, and 14 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.313680
+Switched to Devex.
+Iteration:     3    Objective     =             2.109926
+
+Primal - Optimal:  Objective =    6.0432173482e-01
+Solution time =    0.01 sec.    Iterations = 4 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 10 rows and 4 columns.
+Reduced LP has 8 rows, 4 columns, and 16 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.313680
+Switched to Devex.
+Iteration:     3    Objective     =             1.643326
+
+Primal - Optimal:  Objective =    1.8617202490e-01
+Solution time =    0.00 sec.    Iterations = 7 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 11 rows and 4 columns.
+Reduced LP has 7 rows, 4 columns, and 14 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.313680
+Switched to Devex.
+Iteration:     3    Objective     =             2.109926
+
+Primal - Optimal:  Objective =    6.0432173482e-01
+Solution time =    0.01 sec.    Iterations = 4 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 11 rows and 4 columns.
+Reduced LP has 7 rows, 4 columns, and 14 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.313680
+Switched to Devex.
+Iteration:     3    Objective     =             1.197179
+
+Primal - Optimal:  Objective =    6.9672084559e-01
+Solution time =    0.01 sec.    Iterations = 5 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 11 rows and 4 columns.
+Reduced LP has 7 rows, 4 columns, and 14 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.313680
+Switched to Devex.
+Iteration:     3    Objective     =             0.953653
+
+Primal - Optimal:  Objective =    4.1726884559e-01
+Solution time =    0.01 sec.    Iterations = 5 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Reduced LP has 8 rows, 4 columns, and 16 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.313680
+Switched to Devex.
+Iteration:     3    Objective     =             1.176726
+
+Primal - Optimal:  Objective =    2.6547224824e-01
+Solution time =    0.00 sec.    Iterations = 6 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 10 rows and 5 columns.
+Reduced LP has 9 rows, 4 columns, and 18 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.313680
+Switched to Devex.
+Iteration:     3    Objective     =             1.176726
+
+Primal - Optimal:  Objective =    1.6296492490e-01
+Solution time =    0.00 sec.    Iterations = 7 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Reduced LP has 8 rows, 4 columns, and 16 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.313680
+Switched to Devex.
+Iteration:     3    Objective     =             1.176726
+
+Primal - Optimal:  Objective =    2.1294802490e-01
+Solution time =    0.00 sec.    Iterations = 7 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 14 rows and 5 columns.
+Reduced LP has 5 rows, 4 columns, and 10 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Infeasibility =             0.834899
+Switched to Devex.
+Iteration:     3    Objective     =             0.974843
+
+Primal - Optimal:  Objective =    9.2268068385e-01
+Solution time =    0.00 sec.    Iterations = 4 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 10 rows and 5 columns.
+Reduced LP has 9 rows, 4 columns, and 18 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.313680
+Switched to Devex.
+Iteration:     3    Objective     =             1.420253
+
+Primal - Optimal:  Objective =    4.3938024824e-01
+Solution time =    0.00 sec.    Iterations = 5 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 12 rows and 5 columns.
+Reduced LP has 7 rows, 4 columns, and 14 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.313680
+Switched to Devex.
+Iteration:     3    Objective     =             1.420253
+
+Primal - Optimal:  Objective =    4.9215224824e-01
+Solution time =    0.00 sec.    Iterations = 5 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Reduced LP has 8 rows, 4 columns, and 16 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.313680
+Switched to Devex.
+Iteration:     3    Objective     =             1.643326
+
+Primal - Optimal:  Objective =    2.3615512490e-01
+Solution time =    0.00 sec.    Iterations = 7 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 19 rows and 9 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    3.9884668579e-01
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 19 rows and 9 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    3.3376678579e-01
+Solution time =    0.01 sec.    Iterations = 0 (0)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 20 rows and 10 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    2.0378964579e-01
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 20 rows and 10 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    2.6886954579e-01
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+CPLEX Error  1423: Could not open file 'qrettau.lp' for reading.
+Problem contains quadratic objective coefficients, ignored.
+No file read.
+
+Problem 'qrtettau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 19 rows and 9 columns.
+All rows and columns eliminated.
+Presolve time =    0.01 sec.
+
+Primal - Optimal:  Objective =    3.1649088579e-01
+Solution time =    0.01 sec.    Iterations = 0 (0)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 19 rows and 9 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    3.3376678579e-01
+Solution time =    0.01 sec.    Iterations = 0 (0)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 19 rows and 9 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    3.9884668579e-01
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+CPLEX Error  1616: Line 6: Expected identifier, found '<'.
+Problem contains quadratic objective coefficients, ignored.
+No file read.
+
+Problem 'qrtetsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 18 rows and 8 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =   -2.0093019151e+00
+Solution time =    0.01 sec.    Iterations = 0 (0)
+
+
+Problem 'qrtetsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 18 rows and 8 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =   -1.1126237229e-01
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'qrtetsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 10 rows and 4 columns.
+Reduced LP has 8 rows, 4 columns, and 16 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.466471
+Switched to Devex.
+Iteration:     3    Objective     =            -0.106178
+
+Primal - Optimal:  Objective =   -1.0617811236e-01
+Solution time =    0.00 sec.    Iterations = 3 (2)
+
+
+Log started (V4.0.9) Sat Jul 25 13:26:32 1998
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 22 rows and 11 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =             0.383765
+
+Primal - Optimal:  Objective =   -1.5433677364e-01
+Solution time =    0.01 sec.    Iterations = 6 (1)
+
+
+Log started (V4.0.9) Sat Jul 25 13:27:27 1998
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             4.124505
+
+Primal - Optimal:  Objective =    9.0179981216e-01
+Solution time =    0.01 sec.    Iterations = 8 (2)
+
+
+Variable Name           Solution Value
+tauQuarter                    0.187775
+tau2                         -0.293940
+tau3                          0.338476
+pen                           0.065850
+d                             1.046067
+d2                            6.700000
+d3                            1.494983
+d4                            1.650000
+tauQuarterpt                  3.391045
+tau2pt                       -5.308301
+tau3pt                        6.112588
+All other variables in the range 1-13 are zero.
+
+Log started (V4.0.9) Tue Jul 28 10:28:09 1998
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 22 rows and 11 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =             1.790474
+
+Primal - Optimal:  Objective =    1.7904738630e+00
+Solution time =    0.01 sec.    Iterations = 2 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 22 rows and 11 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =             0.859339
+
+Primal - Optimal:  Objective =    1.3649671989e-01
+Solution time =    0.00 sec.    Iterations = 6 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.00 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             3.985205
+
+Primal - Optimal:  Objective =    2.2124214268e-01
+Solution time =    0.00 sec.    Iterations = 13 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             7.111070
+
+Primal - Optimal:  Objective =    3.9972894511e-01
+Solution time =    0.01 sec.    Iterations = 11 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             5.857859
+
+Primal - Optimal:  Objective =    6.4709439750e-01
+Solution time =    0.00 sec.    Iterations = 10 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 22 rows and 11 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =             1.074174
+
+Primal - Optimal:  Objective =    3.6682710808e-01
+Solution time =    0.00 sec.    Iterations = 5 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             4.200039
+
+Primal - Optimal:  Objective =    5.9426047132e-01
+Solution time =    0.01 sec.    Iterations = 10 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             7.325905
+
+Primal - Optimal:  Objective =    9.7105711290e-01
+Solution time =    0.00 sec.    Iterations = 9 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 22 rows and 11 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =             0.644505
+
+Primal - Optimal:  Objective =    2.0842070808e-01
+Solution time =    0.00 sec.    Iterations = 5 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             3.770370
+
+Primal - Optimal:  Objective =    4.6862317326e-01
+Solution time =    0.01 sec.    Iterations = 9 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             5.381482
+
+Primal - Optimal:  Objective =    8.8699518516e-01
+Solution time =    0.00 sec.    Iterations = 7 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             4.124505
+
+Primal - Optimal:  Objective =    2.4105488391e+00
+Solution time =    0.00 sec.    Iterations = 6 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             4.124505
+
+Primal - Optimal:  Objective =    2.7374214268e-01
+Solution time =    0.01 sec.    Iterations = 13 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 7 rows and 7 columns.
+Reduced LP has 21 rows, 6 columns, and 43 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =            11.028232
+Switched to Devex.
+Iteration:     4    Objective     =             7.250370
+
+Primal - Optimal:  Objective =    4.5189522801e-01
+Solution time =    0.01 sec.    Iterations = 18 (3)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 7 rows and 7 columns.
+Reduced LP has 21 rows, 6 columns, and 43 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =            11.028232
+Switched to Devex.
+Iteration:     4    Objective     =             8.861482
+
+Primal - Optimal:  Objective =    6.9839439750e-01
+Solution time =    0.01 sec.    Iterations = 15 (3)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             4.339339
+
+Primal - Optimal:  Objective =    6.5336047132e-01
+Solution time =    0.00 sec.    Iterations = 10 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 7 rows and 7 columns.
+Reduced LP has 21 rows, 6 columns, and 43 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =            11.028232
+Switched to Devex.
+Iteration:     4    Objective     =             7.465205
+
+Primal - Optimal:  Objective =    1.0448462886e+00
+Solution time =    0.01 sec.    Iterations = 12 (3)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             3.909670
+
+Primal - Optimal:  Objective =    5.2990280299e-01
+Solution time =    0.01 sec.    Iterations = 9 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             5.308285
+
+Primal - Optimal:  Objective =    1.0653216589e+00
+Solution time =    0.00 sec.    Iterations = 5 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             7.389670
+
+Primal - Optimal:  Objective =    3.4756055302e+00
+Solution time =    0.00 sec.    Iterations = 4 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             7.389670
+
+Primal - Optimal:  Objective =    5.0406151092e-01
+Solution time =    0.01 sec.    Iterations = 11 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             7.389670
+
+Primal - Optimal:  Objective =    5.0406151092e-01
+Solution time =    0.01 sec.    Iterations = 11 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             3.909670
+
+Primal - Optimal:  Objective =    5.2990280299e-01
+Solution time =    0.01 sec.    Iterations = 9 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 7 rows and 7 columns.
+Reduced LP has 21 rows, 6 columns, and 43 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =            11.026832
+Switched to Devex.
+Iteration:     4    Objective     =            10.730370
+
+Primal - Optimal:  Objective =    1.5555612405e+00
+Solution time =    0.00 sec.    Iterations = 10 (3)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 7 rows and 7 columns.
+Reduced LP has 21 rows, 6 columns, and 43 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =            11.026832
+Switched to Devex.
+Iteration:     4    Objective     =             8.648985
+
+Primal - Optimal:  Objective =    7.4969439750e-01
+Solution time =    0.01 sec.    Iterations = 15 (3)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 7 rows and 7 columns.
+Reduced LP has 21 rows, 6 columns, and 43 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =            11.026832
+Switched to Devex.
+Iteration:     4    Objective     =             7.035535
+
+Primal - Optimal:  Objective =    9.6349518516e-01
+Solution time =    0.01 sec.    Iterations = 10 (3)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 20 rows and 11 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            -0.692800
+
+Primal - Optimal:  Objective =    7.6105373057e-05
+Solution time =    0.00 sec.    Iterations = 6 (1)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 13 rows and 9 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =            -3.940600
+
+Primal - Optimal:  Objective =   -5.3667728647e-02
+Solution time =    0.01 sec.    Iterations = 11 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 13 rows and 9 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =            -7.188400
+
+Primal - Optimal:  Objective =   -2.0083181097e-01
+Solution time =    0.00 sec.    Iterations = 10 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 13 rows and 9 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =            -5.556521
+
+Primal - Optimal:  Objective =   -4.2451029391e-01
+Solution time =    0.00 sec.    Iterations = 9 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 20 rows and 11 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            -0.866000
+
+Primal - Optimal:  Objective =   -1.5803287447e-01
+Solution time =    0.00 sec.    Iterations = 5 (1)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 13 rows and 9 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =            -4.113800
+
+Primal - Optimal:  Objective =   -3.7680382426e-01
+Solution time =    0.00 sec.    Iterations = 10 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 13 rows and 9 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =            -7.361600
+
+Primal - Optimal:  Objective =   -7.3286843604e-01
+Solution time =    0.00 sec.    Iterations = 9 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 13 rows and 9 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =            -4.099600
+
+Primal - Optimal:  Objective =   -9.3867728647e-02
+Solution time =    0.01 sec.    Iterations = 11 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 7 rows and 7 columns.
+Reduced LP has 19 rows, 6 columns, and 39 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             9.349195
+Switched to Devex.
+Iteration:     4    Objective     =            -7.347400
+
+Primal - Optimal:  Objective =   -2.5392654334e-01
+Solution time =    0.00 sec.    Iterations = 16 (3)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 7 rows and 7 columns.
+Reduced LP has 19 rows, 6 columns, and 39 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             9.349195
+Switched to Devex.
+Iteration:     4    Objective     =            -8.725114
+
+Primal - Optimal:  Objective =   -4.9251029391e-01
+Solution time =    0.01 sec.    Iterations = 14 (3)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 13 rows and 9 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =            -4.272800
+
+Primal - Optimal:  Objective =   -4.4480382426e-01
+Solution time =    0.01 sec.    Iterations = 10 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 13 rows and 9 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =            -7.506400
+
+Primal - Optimal:  Objective =   -2.9737038301e-01
+Solution time =    0.00 sec.    Iterations = 10 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 7 rows and 7 columns.
+Reduced LP has 19 rows, 6 columns, and 39 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             9.331195
+Switched to Devex.
+Iteration:     4    Objective     =            -8.435479
+
+Primal - Optimal:  Objective =   -5.6051029391e-01
+Solution time =    0.00 sec.    Iterations = 13 (3)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 20 rows and 11 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            -0.519600
+
+Primal - Optimal:  Objective =   -8.1728674467e-02
+Solution time =    0.00 sec.    Iterations = 5 (1)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 13 rows and 9 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =            -3.767400
+
+Primal - Optimal:  Objective =   -3.2585159817e-01
+Solution time =    0.00 sec.    Iterations = 9 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 13 rows and 9 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =            -5.145114
+
+Primal - Optimal:  Objective =   -7.4108181216e-01
+Solution time =    0.00 sec.    Iterations = 7 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 20 rows and 11 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =             0.644505
+
+Primal - Optimal:  Objective =    2.0842070808e-01
+Solution time =    0.01 sec.    Iterations = 5 (1)
+
+
+Log started (V4.0.9) Wed Jul 29 10:46:19 1998
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Reduced LP has 8 rows, 4 columns, and 16 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.313680
+Switched to Devex.
+Iteration:     3    Objective     =             1.643326
+
+Primal - Optimal:  Objective =    2.3615512490e-01
+Solution time =    0.01 sec.    Iterations = 7 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Reduced LP has 8 rows, 4 columns, and 16 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.313680
+Switched to Devex.
+Iteration:     3    Objective     =             1.643326
+
+Primal - Optimal:  Objective =    2.3615512490e-01
+Solution time =    0.00 sec.    Iterations = 7 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Reduced LP has 8 rows, 4 columns, and 16 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.313680
+Switched to Devex.
+Iteration:     3    Objective     =             1.643326
+
+Primal - Optimal:  Objective =    2.3615512490e-01
+Solution time =    0.00 sec.    Iterations = 7 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.00 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Reduced LP has 8 rows, 4 columns, and 16 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.313680
+Switched to Devex.
+Iteration:     3    Objective     =             1.643326
+
+Primal - Optimal:  Objective =    2.3615512490e-01
+Solution time =    0.01 sec.    Iterations = 7 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Reduced LP has 8 rows, 4 columns, and 16 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.313680
+Switched to Devex.
+Iteration:     3    Objective     =             1.643326
+
+Primal - Optimal:  Objective =    2.3615512490e-01
+Solution time =    0.01 sec.    Iterations = 7 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Reduced LP has 8 rows, 4 columns, and 16 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.313680
+Switched to Devex.
+Iteration:     3    Objective     =             1.643326
+
+Primal - Optimal:  Objective =    2.3615512490e-01
+Solution time =    0.00 sec.    Iterations = 7 (2)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 20 rows and 10 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =   -6.2831853072e+00
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+CPLEX Error  1616: Line 7: Expected identifier, found '<'.
+Problem contains quadratic objective coefficients, ignored.
+No file read.
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 20 rows and 9 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =   -3.2879821042e+00
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 20 rows and 9 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    3.6427628579e-01
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 20 rows and 9 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    3.7674668579e-01
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.00 sec.
+LP Presolve eliminated 20 rows and 9 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    2.4504668579e-01
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.00 sec.
+LP Presolve eliminated 20 rows and 9 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    4.4253305491e+00
+Solution time =    0.01 sec.    Iterations = 0 (0)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 20 rows and 9 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    1.2346782795e+00
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 20 rows and 9 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    1.7751881129e+00
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 20 rows and 9 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    1.5049331962e+00
+Solution time =    0.01 sec.    Iterations = 0 (0)
+
+
+Log started (V4.0.9) Wed Jul 29 11:35:33 1998
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 20 rows and 11 columns.
+Reduced LP has 6 rows, 2 columns, and 12 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =             0.644505
+
+Primal - Optimal:  Objective =    2.0842070808e-01
+Solution time =    0.01 sec.    Iterations = 5 (1)
+
+
+Constraint Name             Dual Price
+c1                           -0.219160
+c5                            0.219160
+c12                          -3.000000
+All other dual prices in the range 1-26 are zero.
+ c1:  3 d + d4 <= 6.2831853072
+ c2:  special  = 0
+ c3:  pen  = 0.06585
+ c4:  tau4  = 0
+ c5:  d4 >= 2.46
+ c6:  tauQuarter - 0.055373645668 tauQuarterpt  = 0
+ c7:  tau2 - 0.055373645668 tau2pt  = 0
+ c8:  tau3 - 0.055373645668 tau3pt  = 0
+ c9:  - tauQuarter - 4.16523 d <= -4.42873
+ c10: - tauQuarter - 0.78701 d <= -1.01104
+ c11: - tauQuarter - 0.77627 d <= -0.99937
+ c12: - tauQuarter - 0.21916 d <= -0.34877
+ c13: - tauQuarter - 0.05107 d <= -0.11434
+ c14: - tauQuarter + 0.07106 d <= 0.07749
+ c15: - tau2 - 2.1747 d2 <= -3.3407
+ c16: - tau2 - 1.87427 d2 <= -2.945
+ c17: - tau2 - 0.83046 d2 <= -1.5035
+ c18: - tau2 - 0.48263 d2 <= -1.0009
+ c19: - tau2 - 0.34833 d2 <= -0.7787
+ c20: - tau2 - 0.1694 d2 <= -0.4475
+ c21: - tau2 - 0.0822 d2 <= -0.2568
+ c22: - tau3 - 2.1747 d3 <= -3.48
+ c23: - tau3 - 1.87427 d3 <= -3.06
+ c24: - tau3 - 0.83046 d3 <= -1.58
+ c25: - tau3 - 0.48263 d3 <= -1.06
+ c26: - tau3 - 0.34833 d3 <= -0.83
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 15 rows and 9 columns.
+Reduced LP has 12 rows, 4 columns, and 24 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            13.259298
+
+Primal - Optimal:  Objective =    1.4022706861e-01
+Solution time =    0.00 sec.    Iterations = 6 (1)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 12 rows, 4 columns, and 24 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             6.702852
+Switched to Devex.
+Iteration:     3    Objective     =             4.124505
+
+Primal - Optimal:  Objective =    1.4022706861e-01
+Solution time =    0.00 sec.    Iterations = 12 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 15 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.171060
+Switched to Devex.
+Iteration:     3    Objective     =             0.732293
+
+Primal - Optimal:  Objective =    2.9620870808e-01
+Solution time =    0.00 sec.    Iterations = 7 (2)
+
+
+Constraint Name             Dual Price
+c1                           -0.219160
+c2                            0.136960
+c3                           -0.001400
+c13                          -3.000000
+c29                          -1.000000
+All other dual prices in the range 1-29 are zero.
+ c1:  3 d + d3 <= 6.2831853072
+ c2:  d3 >= 2.46
+ c3:  special  = 0
+ c4:  pen  = 0.06585
+ c5:  tau4  = 0
+ c6:  d4 >= 2.46
+ c7:  tauQuarter - 0.055373645668 tauQuarterpt  = 0
+ c8:  tau2 - 0.055373645668 tau2pt  = 0
+ c9:  tau3 - 0.055373645668 tau3pt  = 0
+ c10: - tauQuarter - 4.16523 d <= -4.42873
+ c11: - tauQuarter - 0.78701 d <= -1.01104
+ c12: - tauQuarter - 0.77627 d <= -0.99937
+ c13: - tauQuarter - 0.21916 d <= -0.34877
+ c14: - tauQuarter - 0.05107 d <= -0.11434
+ c15: - tauQuarter + 0.07106 d <= 0.07749
+ c16: - tau2 - 2.1747 d2 <= -3.3407
+ c17: - tau2 - 1.87427 d2 <= -2.945
+ c18: - tau2 - 0.83046 d2 <= -1.5035
+ c19: - tau2 - 0.48263 d2 <= -1.0009
+ c20: - tau2 - 0.34833 d2 <= -0.7787
+ c21: - tau2 - 0.1694 d2 <= -0.4475
+ c22: - tau2 - 0.0822 d2 <= -0.2568
+ c23: - tau3 - 2.1747 d3 <= -3.48
+ c24: - tau3 - 1.87427 d3 <= -3.06
+ c25: - tau3 - 0.83046 d3 <= -1.58
+ c26: - tau3 - 0.48263 d3 <= -1.06
+ c27: - tau3 - 0.34833 d3 <= -0.83
+ c28: - tau3 - 0.1694 d3 <= -0.5
+ c29: - tau3 - 0.0822 d3 - 0.0014 special <= -0.29
+
+Log started (V4.0.9) Wed Jul 29 11:52:10 1998
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 15 rows, 4 columns, and 30 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536775
+Switched to Devex.
+Iteration:     3    Objective     =             4.124505
+
+Primal - Optimal:  Objective =    2.7479035444e-01
+Solution time =    0.00 sec.    Iterations = 14 (2)
+
+
+Constraint Name             Dual Price
+c1                           -0.082200
+c12                          -0.555595
+c13                          -2.444405
+patch                        -1.000000
+All other dual prices in the range 1-29 are zero.
+ c1:    3 d + d3 <= 6.2831853072
+ c2:    special  = 0
+ c3:    pen  = 0.06585
+ c4:    tau4  = 0
+ c5:    d4 >= 2.46
+ c6:    tauQuarter - 0.055373645668 tauQuarterpt  = 0
+ c7:    tau2 - 0.055373645668 tau2pt  = 0
+ c8:    tau3 - 0.055373645668 tau3pt  = 0
+ c9:    - tauQuarter - 4.16523 d <= -4.42873
+ c10:   - tauQuarter - 0.78701 d <= -1.01104
+ c11:   - tauQuarter - 0.77627 d <= -0.99937
+ c12:   - tauQuarter - 0.21916 d <= -0.34877
+ c13:   - tauQuarter - 0.05107 d <= -0.11434
+ c14:   - tauQuarter + 0.07106 d <= 0.07749
+ c15:   - tau2 - 2.1747 d2 <= -3.3407
+ c16:   - tau2 - 1.87427 d2 <= -2.945
+ c17:   - tau2 - 0.83046 d2 <= -1.5035
+ c18:   - tau2 - 0.48263 d2 <= -1.0009
+ c19:   - tau2 - 0.34833 d2 <= -0.7787
+ c20:   - tau2 - 0.1694 d2 <= -0.4475
+ c21:   - tau2 - 0.0822 d2 <= -0.2568
+ c22:   - tau3 - 2.1747 d3 <= -3.48
+ c23:   - tau3 - 1.87427 d3 <= -3.06
+ c24:   - tau3 - 0.83046 d3 <= -1.58
+ c25:   - tau3 - 0.48263 d3 <= -1.06
+ c26:   - tau3 - 0.34833 d3 <= -0.83
+ c27:   - tau3 - 0.1694 d3 <= -0.5
+ c28:   - tau3 - 0.0822 d3 - 0.0014 special <= -0.29
+ patch: - tau3 - 0.0822 d3 <= -0.318
+
+Primal - Optimal:  Objective =    2.7479035444e-01
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Log started (V4.0.9) Thu Jul 30 12:18:56 1998
+
+CPLEX Error  1603: Line 4: RHS sense in objective.
+Problem contains quadratic objective coefficients, ignored.
+No file read.
+
+Problem 'qrtettau.lp' read.
+Read time =    0.03 sec.
+Primal unbounded due to dual bounds, variable 't0'.
+Presolve time =    0.00 sec.
+CPLEX Error  1101: Presolve determines problem is infeasible or unbounded.
+
+Problem 'qrtettau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 15 rows and 7 columns.
+Reduced LP has 4 rows, 2 columns, and 8 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Infeasibility =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =            -0.214323
+
+Primal - Optimal:  Objective =   -3.1760857143e-01
+Solution time =    0.00 sec.    Iterations = 5 (1)
+
+
+Log started (V4.0.9) Thu Jul 30 12:37:15 1998
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 19 rows and 9 columns.
+All rows and columns eliminated.
+Presolve time =    0.00 sec.
+
+Primal - Optimal:  Objective =    1.5005297014e+00
+Solution time =    0.00 sec.    Iterations = 0 (0)
+
+
+Log started (V4.0.9) Thu Jul 30 12:53:13 1998
+
+
+Problem 'qrtettau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 11 rows and 5 columns.
+Reduced LP has 8 rows, 4 columns, and 16 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.313680
+Switched to Devex.
+Iteration:     3    Objective     =             2.808084
+
+Primal - Optimal:  Objective =    2.4198339281e-01
+Solution time =    0.01 sec.    Iterations = 6 (2)
+
+
+Variable Name           Solution Value
+t1                            0.241983
+d0                            1.230538
+d1                            1.271572
+d1p                           1.153000
+d2p                           1.320000
+d2                            1.320000
+t1pt                          4.370010
+All other variables in the range 1-9 are zero.
+ c1: 3 d0 + d1 + d2 <= 6.2831853072
+ c2: d2 >= 1.32
+ c3: d1 >= 1.153
+ c4: d1p  = 1.153
+ c5: d2p  = 1.32
+ c6: d0 >= 0
+ c7: 0.055373645668 t0pt - t0  = 0
+ c8: - t1 + 0.055373645668 t1pt  = 0
+ B1: - 0.3897 d0 - t0 <= -0.4666
+ B2: - 0.2993 d0 - t0 <= -0.3683
+ B3: - t0 <= 0
+ B4: 0.1689 d0 - t0 <= 0.208
+ B5: 0.2529 d0 - t0 <= 0.3442
+ E1: - t1 - 4.49461 d1 <= -0.581446
+ E2: - t1 - 2.1406 d1 <= -2.955
+ E3: - t1 - 0.316 d1 <= -0.6438
+ E4: - t1 <= -0.1317
+ E5: - t1 + 0.2365 d1 <= 0.3825
+ E6: - t1 + 0.4747 d1 <= 1.071
+
+Constraint Name             Dual Price
+c1                           -0.316000
+c2                            0.316000
+c7                           54.177397
+B2                           -3.167391
+B3                          -51.010007
+E3                           -1.000000
+All other dual prices in the range 1-19 are zero.
+CPLEX Error  1423: Could not open file 'qrtetau.lp' for reading.
+Problem contains quadratic objective coefficients, ignored.
+No file read.
+
+Problem 'qrtettau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 15 rows and 7 columns.
+Reduced LP has 4 rows, 2 columns, and 8 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Infeasibility =             0.000000
+Switched to Devex.
+Iteration:     2    Objective     =             0.386459
+
+Primal - Optimal:  Objective =    3.8645940265e-01
+Solution time =    0.00 sec.    Iterations = 2 (1)
+
+
+Log started (V4.0.9) Thu Jul 30 14:48:22 1998
+
+
+Problem 'uptau.lp' read.
+Read time =    0.00 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             3.909670
+
+Primal - Optimal:  Objective =    5.2990280299e-01
+Solution time =    0.01 sec.    Iterations = 9 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.00 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             7.389670
+
+Primal - Optimal:  Objective =    5.0406151092e-01
+Solution time =    0.00 sec.    Iterations = 11 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.00 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             3.909670
+
+Primal - Optimal:  Objective =    5.2990280299e-01
+Solution time =    0.00 sec.    Iterations = 9 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 13 rows and 9 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =            -7.506400
+
+Primal - Optimal:  Objective =   -3.1667216842e-01
+Solution time =    0.01 sec.    Iterations = 10 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 13 rows and 9 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =            -3.926400
+
+Primal - Optimal:  Objective =   -3.9413583287e-01
+Solution time =    0.01 sec.    Iterations = 9 (2)
+
+
+Problem 'upsig.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 13 rows and 9 columns.
+Reduced LP has 13 rows, 4 columns, and 26 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.259424
+Switched to Devex.
+Iteration:     3    Objective     =            -7.506400
+
+Primal - Optimal:  Objective =   -2.9737038301e-01
+Solution time =    0.01 sec.    Iterations = 10 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             7.389670
+
+Primal - Optimal:  Objective =    5.0406151092e-01
+Solution time =    0.01 sec.    Iterations = 11 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             3.909670
+
+Primal - Optimal:  Objective =    5.2990280299e-01
+Solution time =    0.00 sec.    Iterations = 9 (2)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.02 sec.
+LP Presolve eliminated 7 rows and 7 columns.
+Reduced LP has 21 rows, 6 columns, and 43 nonzeros.
+Presolve time =    0.00 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =            11.028232
+Switched to Devex.
+Iteration:     4    Objective     =             7.250370
+
+Primal - Optimal:  Objective =    4.5189522801e-01
+Solution time =    0.01 sec.    Iterations = 18 (3)
+
+
+Problem 'uptau.lp' read.
+Read time =    0.01 sec.
+LP Presolve eliminated 14 rows and 9 columns.
+Reduced LP has 14 rows, 4 columns, and 28 nonzeros.
+Presolve time =    0.01 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             3.536776
+Switched to Devex.
+Iteration:     3    Objective     =             3.770370
+
+Primal - Optimal:  Objective =    4.6862317326e-01
+Solution time =    0.01 sec.    Iterations = 9 (2)
+

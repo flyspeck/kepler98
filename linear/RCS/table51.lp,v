@@ -1,0 +1,59 @@
+head	1.1;
+access;
+symbols;
+locks
+	hales:1.1; strict;
+comment	@# @;
+
+
+1.1
+date	97.09.13.23.15.51;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@The lp format file for checking the table entries of 5.1
+in Sphere Packings III
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@
+Minimize
+		7 t0pt + 0 t1pt
+
+ST
+7 d0 + 0 d1 = 6.2831853071795864769252867666
+
+0.05537364566846414 t0pt - t0 = 0
+0.05537364566846414 t1pt - t1 = 0
+
+
+-t0 - 0.3897 d0 < - 0.4666
+-t0 - 0.2993 d0 < - 0.3683
+-t0 < 0
+-t0 + 0.1689 d0 < 0.208
+-t0 + 0.2529 d0 < 0.3442
+
+-t1 - 4.49461 d1 < -0.581446 
+-t1 - 2.1406 d1 < -2.955 
+-t1 - 0.316 d1 < -0.6438
+-t1 < -0.1317
+-t1 + 0.2365 d1 < 0.3825
+-t1 + 0.4747 d1 < 1.071
+
+
+BOUNDS
+
+t0 free
+t1 free
+0 < d0 < 10
+0 < t1 < 10
+
+END
+@

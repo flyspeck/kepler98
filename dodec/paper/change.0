@@ -1,0 +1,162 @@
+193,195c193
+< (Note: All edge lengths are 2 except for the two marked by an x.  Here 
+< the dihedral angles must sum to $2\pi$ and we have an approximate value for x 
+< of 2.70588.)
+---
+> \gram|2.1|1.1|dia1.1.ps|  % counterexample
+197d194
+< \gram|2.1|1.1|dia1.1.ps|  % 1.1.fig   counterexample
+199d195
+< 
+307c303
+< figure shown in Diagram 2.1.  We rotate $x_2$ in a circle about $x_4$ of radius
+---
+> figure shown in Diagram 2.2.2.  We rotate $x_2$ in a circle about $x_4$ of radius
+321c317
+< \gram|2.1|2|dia2.1.ps|  % 2.1.fig  
+---
+> %\gram|2.1|2.4|dia39.ps|  %  
+535c531
+< \gram|2.1|3.1|dia3.1.ps|  % 3.1.fig
+---
+> %\gram|2.1|1.2|dia39.ps|  % counterexample
+623c619
+< \gram|2.1|4.1|dia4.1.ps|  % need this from Formulation
+---
+> %\gram|2.1|1.2|dia39.ps|  % counterexample
+1044c1040
+< \gram|2.1|6.1|dia6.1.ps|  % 6.1.fig
+---
+> %\gram|2.1|1.2|dia39.ps|  % counterexample
+1460c1456
+< \gram|2.1|q1|diaq1.ps|  % q1.fig
+---
+> %\gram|2.1|1.2|dia39.ps|  % counterexample
+1607,1608c1603,1604
+< \gram|2.1|q2|diaq2.ps|  % q2.fig
+< \gram|2.1|q3|diaq3.ps|  % q3.fig
+---
+> %\gram|2.1|1.2|dia39.ps|  % counterexample
+> %\gram|2.1|1.2|dia39.ps|  % counterexample
+1610,1611c1606
+< {\bf Proof:} These remaining two quad cases are much simpler.  We use the methods of finding upper bounds on diagonals and dihedrals as in the previous proof. 
+< On graph 2, We have the diagonals of face 1 are less than 3.1 and a dihedral angle less than 1.76.  We apply (*) to that face and the graph passes. \qed
+---
+> {\bf Proof:} These remaining two quad cases are much simpler.  We use the methods of finding upper bounds on diagonals and dihedrals as in the previous proof.  On graph 3, we know that both diagonals on one of the three quads are at most 2.8.  We apply (*) to that face and the graph passes.  On graph 2, We have the diagonals of one of the faces are less than 3.1 and a dihedral angle less than 1.76.  We apply (*) to that face and the graph passes. \qed
+1613,1615d1607
+<  On graph 3, we know that both diagonals of face 1 are at most 2.8.  We apply (*) to that face and the graph passes.  
+< 
+< 
+1629c1621
+< \gram|2.1|p1|diap1.ps|  %p1.fig
+---
+> %\gram|2.1|1|dia39.ps|  %  ceq0
+1639a1632
+> 
+1644c1637
+< \proclaim{Lemma 1} Inequality (*) holds for face 2 (quad). \endproclaim
+---
+> \proclaim{Lemma 1} Inequality (*) holds for this situation. \endproclaim
+1738c1731
+< \gram|2.1|p2|diap2.ps|  % p2.fig
+---
+> %\gram|2.1|2|dia39.ps|  %  ceq2
+1772c1765
+< \gram|2.1|p3|diap3.ps|  % p3.fig
+---
+> %\gram|2.1|3|dia39.ps|  %  ceq3
+1830c1823
+< \gram|2.1|p4|diap4.ps|  %  
+---
+> %\gram|2.1|4|dia39.ps|  %  ceq4
+1864c1857
+< \gram|2.1|p5|diap5.ps|  %p5.fig  
+---
+> %\gram|2.1|5|dia39.ps|  %  ceq6
+1904c1897
+< so $\mu(1)>.1089$
+---
+> so $\mu\{1\}>.1089$
+1919c1912
+< \gram|2.1|6|diap6.ps|  % p6.fig
+---
+> %\gram|2.1|6|dia39.ps|  %  ceq7
+1924c1917
+< $dih_{11}(1) < 1.610$ \newline
+---
+> $dih_4(1) < 1.610$ \newline
+1939c1932
+< \gram|2.1|p7|diap7.ps|  %p7.fig
+---
+> %\gram|2.1|7|dia39.ps|  %  ceq9
+1985c1978
+< so $\mu(1)>.0962$
+---
+> so $\mu\{1\}>.0962$
+2001c1994
+< \gram|2.1|8|diap8.ps|  % p8.fig
+---
+> %\gram|2.1|8|dia39.ps|  %  ceq11
+2049c2042
+< \gram|2.1|9|diap9.ps|  %  ceq13
+---
+> %\gram|2.1|9|dia39.ps|  %  ceq13
+2054,2060c2047,2053
+< $dih_3(1) < 1.592$ \newline
+< $dih_7(1) < 1.637$ \newline
+< $y(8)<2.206$ \newline
+< $y(3)<2.122$ \newline
+< $y(2)<2.191$ \newline
+< $y(7)<2.113$ \newline
+< $y(13)<2.077$ \newline
+---
+> $dih_3(1) < 1.519$ \newline
+> $dih_1(1) < 1.636$ \newline
+> $y(1)<2.206$ \newline
+> $y(2)<2.122$ \newline
+> $y(3)<2.191$ \newline
+> $y(4)<2.113$ \newline
+> $y(5)<2.077$ \newline
+2063c2056
+< so $\vol(1)>0.917$ by the proof of Theorem 2, which pushes the graph over the target. \qed
+---
+> so $\vol(1)>0.911$ by the proof of Theorem 2, which pushes the graph over the target. \qed
+2069a2063
+> \bigskip
+2070a2065,2100
+> 
+> 
+> {\bf References.}
+> 
+> [H1] Hales, T.C. {\it Sphere Packings 1}, Dis. and Comp. Geom., 
+> {\bf 17} (1997), 1-51.
+> 
+> [H3] Hales, T.C. {\it Sphere Packings 3}, Preprint.
+> 
+> [H4] Hales, T.C. {\it Sphere Packings 4}, Preprint.
+> 
+> [1] Leech, John.  {\it The Problem of the Thirteen Spheres},  Math. Gazette,  
+> Feb. 1956, 22-23.
+> 
+> [2] L. Fejes T\'oth, {\it Uber die dichteste Kugellagerung}, Math 
+> Z., {\bf 48} (1943), 676-684.
+> 
+> [3] L. Fejes T\'oth, {\it Regular Figures}, Pergamon Press, Oxford-London-New York, 1964.
+> 
+> 
+> [4] C.A. Rogers, {\it The packing of equal spheres}, J. London Math. Soc.,
+> {\bf 3/8} (1958),609-620.
+> 
+> [5] D.J. Muder, {\it Putting the best face on a Voronoi polyhedron}, 
+> Proc. London Math. Soc., {\bf 3/56} (1988),329-348.
+> 
+> [6] D.J. Muder, {\it A new bound on the local density of sphere packings}, 
+> Discrete and Comp. Geom., {\bf 10} (1993), 351-375.
+> 
+> [7] W.-Y. Hsiang, {\it On the sphere packing problem and teh proof of Kepler's conjecture},
+> Int. J. Math., {\bf 4/5} (1993),739-831.
+> 
+> [8] K. Bezdek, {\it Isoperimetric inequalities and the dodecahedral conjecture}, Int. J. Math.,
+> {\bf 8/6} (1997), 759-780.
+> 
+> 

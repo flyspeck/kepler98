@@ -1,0 +1,55 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	97.09.14.16.14.26;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@sed file that grabs the optimization results from a cplex.log file.
+Syntax: sed -f getValues cplex.log
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@# usage:  sed -f getValues cplex.log
+# this grabs the lp file numbers and the optimization results from cplex.log
+
+# Thomas C. Hales
+# Aug 7, 1997
+
+# replace each line stating Problem file with the lp number only and hold
+/^Problem/{
+s/Pro.*lp/ /g
+s/'.*$/},/g
+h
+d
+}
+
+# grab number, replace e by *10^, join with problem number, print
+/^Primal/{
+s/Pri.*=/{/g
+s/e/*10^/g
+s/$/,/g
+G
+s/\n//g
+p
+}
+
+# delete all other lines
+/^.*$/{
+d
+}
+
+#
+@

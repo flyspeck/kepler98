@@ -1,0 +1,71 @@
+ Section A17:
+
+
+
+ The next case is broken into 6 subcases. 
+ +1: (1,1,1);    +2 : (1,0,2);    +3:  (0,3,0); 
+ +4: (0,2,1);    +5 : (0,1,2);    +6:  (0,0,3); 
+
+New Case = 645264497
+numargs = 6
+0.0112305647762942218
+{2, 2, 2, 2, 2.50999999999999979, 2.82842712474618985}
+
+New Case = 645264498
+numargs = 6
+0.0308901598349301532
+{2.50999999999999979, 2, 2, 2, 2.82842712474618985, 2.82842712474618985}
+
+New Case = 645264499
+numargs = 6
+0.0233620656368750124
+{2, 2, 2, 2.50999999999999979, 2.50999999999999979, 2.50999999999999979}
+
+New Case = 645264500
+numargs = 6
+0.0485377190251232438
+{2.50999999999999979, 2, 2, 2.50999999999999979, 2.50999999999999979, 2.82842712474618985}
+
+New Case = 645264501
+numargs = 6
+0.101611498475839584
+{2.50999999999999979, 2, 2, 2.50999999999999979, 2.82842712474618985, 2.82842712474618985}
+
+New Case = 645264502
+numargs = 6
+0.185426619640624596
+{2.50999999999999979, 2.50999999999999979, 2, 2.82842712474618985, 2.82842712474618985, 2.82842712474618985}
+
+New Case = 910154674
+numargs = 6
+0.0244506954850925717
+{2, 2, 2, 2, 2.60000000000000009, 2.82842712474618985}
+
+New Case = 877743345
+numargs = 6
+0.025808919749195719
+{2.50999999999999979, 2, 2, 2, 2.50999999999999979, 3.20000000000000018}
+
+
+ Exiting cfsqp numerical optimizer.
+
+
+
+
+
+ Cfsqp numerical optimizer for Sphere Packings IV 
+
+ The inequalities in the appendix are divided into 24 sections.
+ Sections 1-24 are tested numerically here. 
+
+ Select section number (1--24): 
+ The inequalities are written in the form F>0.
+ This program minimizes F subject to constraints.
+ If the returned value is positive, the inequality passes the numerical check. 
+ Each inequality is test with 80 random initial configurations. 
+
+ Optimizing.... 
+
+
+
+

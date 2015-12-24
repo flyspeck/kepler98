@@ -1,0 +1,54 @@
+Welcome to sphere packing routines, relation testing division.
+Welcome to PentaDihCut.
+
+Not using partials.
+Enter slop:  		Slop = -1e-08
+Starting time:  	Wed Jul 16 12:16:51 1997
+
+Starting case 1:
+cellcount    =              545		maxdepth = 12
+sccutcount   =               83		dihcutcount  =              246
+gmacount     =              523		vorcount     =                1
+dualcount    =               21		verifycount  =              147
+partialcount =                0		diff         =              315
+Verification succeeded.
+
+Starting case 2:
+cellcount    =              273		maxdepth = 2
+sccutcount   =                0		dihcutcount  =              256
+gmacount     =              252		vorcount     =                0
+dualcount    =               21		verifycount  =                0
+partialcount =                0		diff         =              273
+Verification succeeded.
+
+Starting case 3:
+cellcount    =             6097		maxdepth = 13
+sccutcount   =             2426		dihcutcount  =             2056
+gmacount     =             6045		vorcount     =                0
+dualcount    =               52		verifycount  =             1234
+partialcount =                0		diff         =             2437
+Verification succeeded.
+
+Starting case 4:
+cellcount    =             6145		maxdepth = 13
+sccutcount   =             2422		dihcutcount  =             2047
+gmacount     =             5887		vorcount     =               10
+dualcount    =              248		verifycount  =             1282
+partialcount =                0		diff         =             2441
+Verification succeeded.
+
+Starting case 5:
+cellcount    =              289		maxdepth = 3
+sccutcount   =                0		dihcutcount  =              271
+gmacount     =              242		vorcount     =                0
+dualcount    =               47		verifycount  =                0
+partialcount =                0		diff         =              289
+Verification succeeded.
+
+Done.
+Ending time:    	Wed Jul 16 12:17:05 1997
+
+Elapsed time: 14 seconds
+diff = 13.8661		953.5 cells per second
+
+

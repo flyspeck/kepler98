@@ -1,0 +1,2357 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@// @;
+
+
+1.1
+date	99.01.12.14.41.20;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@#include <iomanip.h>
+#include <stdlib.h>
+#include "numerical.h"
+#include "constants.h"
+#include "morefn.h"
+#include "quoinfn.h"
+#include <math.h>
+#include "temp355.cc" 
+
+int C355=0; /* 0..52 */
+
+class iter {
+    double* xmin;
+	double* xmax;
+	double* x;
+    int numiter,numargs,nconstr;
+    void (*func)(int numargs,int whichFn,double* x,double* ret,void*);
+    void (*constraintfunc)
+        (int numargs,int which,double* x,double* ret,void*);
+    iter(int);
+    ~iter();
+    };
+
+iter::~iter() 
+	{ delete[] xmin; 
+	  delete[] xmax; 
+		delete[] x; }
+
+double SeanVol(double y1,double y2,double y3,double y4,
+    double y5,double y6)
+    // dodecrad truncated volume of VOronoi
+    {
+    double dr = global::dodecrad/2.;
+    double dt = 0.7209029495174648;
+    return
+        (-1./dt)*(vorVc(y1,y2,y3,y4,y5,y6,dr)/4.
+            -solid(y1,y2,y3,y4,y5,y6)/3.);
+    }
+
+double VorAx(double y1,double y2,double y3,double y4,
+    double y5,double y6)
+	{
+	return vorVc(y1,y2,y3,y4,y5,y6)+0.419351*solid(y1,y2,y3,y4,y5,y6);
+	}
+
+static double vorAnchor3(double y1,double y2,double y6) // was 2
+    {
+	double x = y2+y6;
+     return (0.0002  
+	-0.2695279326151798 + 0.1833230667013778*y1 - 0.02783887375001181*y1*y1
+	-0.0152253
+	+0.7557773828234548 - 0.3239044460786886*x + 0.0346916048615081*x*x);
+	//(- 0.027*(y2-2.)-0.0264*(y6-2.));
+    }
+
+static double vorAnchor2(double y1,double y2,double y6) 
+    {
+	double x = y2+y6;
+     return (0.00011
+	-0.2695279326151798 + 0.1833230667013778*y1 - 0.02783887375001181*y1*y1
+	-0.0152253
+	+0.4384851103526791 - 0.167484482694134*x + 0.01541738104479281*x*x);
+    }
+
+static double dih2R(double y1,double y2,double y6) // used in A1...
+	{
+	return dihR(y2/2.,radf(y1,y2,y6),y1/(2.*cos(arc(y1,1.255,1.6))));
+	}
+
+static double gammaA(double y1,double y2,double y3,double y4,double y5,double y6)
+	{
+	return gamma(y1,y2,y3,y4,y5,y6)+0.419351*solid(y1,y2,y3,y4,y5,y6);
+	}
+static double vorAc(double y1,double y2,double y3,double y4,double y5,double y6)
+	{
+	return vorVc(y1,y2,y3,y4,y5,y6)+0.419351*solid(y1,y2,y3,y4,y5,y6);
+	}
+
+static void nofunc(int numargs,int whichFn,double* x,double* ret,void*)
+    {
+    cout << "nofunc should not be called" << endl << flush;
+    }
+
+double dips(double x[16])
+    {
+    return
+        dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])
+            +dihedraly(x[0],x[2],x[7],x[6],  x[8],x[4])
+            +dihedraly(x[0],x[7],x[11],x[9], x[10],x[8])
+            +dihedraly(x[0],x[11],x[13],x[12],x[14],x[10])
+            +dihedraly(x[0],x[13],x[1],x[15],x[5],x[14])
+            -2.0*global::pi;
+    }
+
+double gammaAX(double y1,double y2,double y3,double y4,double y5,double y6)
+	{
+	return gamma(y1,y2,y3,y4,y5,y6)+0.419351*solid(y1,y2,y3,y4,y5,y6);
+	}
+
+double dihConstraint(double x[6],double dihmax)
+	{
+	double x1=x[0]*x[0], x2=x[1]*x[1], x3=x[2]*x[2],
+		x4=x[3]*x[3], x5=x[4]*x[4], x6=x[5]*x[5];
+	double d4 = -(x2*x3) - x1*x4 + x2*x5 + x3*x6 - x5*x6 + 
+			x1*(-x1 + x2 + x3 - x4 + x5 + x6);
+	double t = tan(dihmax-global::pi/2.0);
+	return (d4*d4- delta(x1,x2,x3,x4,x5,x6)*
+					4.*x1*t*t);
+	}
+
+// If this is negative, then dih< dihmax
+double dihConstraintRetry(double x[6],double dihmax)
+	{
+	double x1=x[0]*x[0], x2=x[1]*x[1], x3=x[2]*x[2],
+		x4=x[3]*x[3], x5=x[4]*x[4], x6=x[5]*x[5];
+	double d4 = -(x2*x3) - x1*x4 + x2*x5 + x3*x6 - x5*x6 + 
+			x1*(-x1 + x2 + x3 - x4 + x5 + x6);
+	double t = tan(dihmax-global::pi/2.0);
+	return (-d4- safesqrt(delta(x1,x2,x3,x4,x5,x6))*
+					2.*x[0]*t);
+	}
+
+static double deltay(double y1,double y2,double y3,double y4,double y5,
+    double y6)
+    {
+    return delta(y1*y1,y2*y2,y3*y3,y4*y4,y5*y5,y6*y6);
+    }
+
+
+
+int INEQ_NUMBER=0;
+static void generic(int numargs,int whichFn,double* x, double* ret,void*)
+	{
+	switch (INEQ_NUMBER) {
+
+
+	case 348940660+1: // bug corrected in this case on 6/20/98.
+	*ret= 2.06*global::pt
+		-(
+		gamma(x[0],x[1],x[2],x[3],x[4],x[5])
+		+gamma(x[0],x[2],x[7],x[6],x[8],x[4])
+		+gamma(x[0],x[7],x[11],x[9],x[10],x[8])
+		+gamma(x[0],x[11],x[13],x[12],x[14],x[10])
+		+(vor_analytic(x[0],x[13],x[1],x[15],x[5],x[14]))
+		);
+		break;
+	case 2:
+	*ret = -x[3]; break;
+
+		case 91:
+            *ret=-gamma(x[0],x[1],x[2],x[3],x[4],x[5])
+                -0.12*(x[0]-2.)-0.081*(x[1]+x[2]-4.)
+				+0.029*(x[3]-2.51)
+                -0.113*(x[4]+x[5]-4.); break;
+        case 92:
+            *ret=-vorVc(x[0],x[1],x[2],x[3],x[4],x[5])
+                -0.12*(x[0]-2.)-0.081*(x[1]+x[2]-4.)
+				+0.029*(x[3]-2.51)
+                -0.113*(x[4]+x[5]-4.); break;
+        case 93:
+            *ret=-vorVc(x[0],x[1],x[2],x[3],x[4],x[5]) +0.014
+                -0.12*(x[0]-2.)-0.081*(x[1]+x[2]-4.)
+				+0.029*(x[3]-2.51)
+                -0.113*(x[4]+x[5]-4.); 
+				break;
+        case 94: case 95:
+            *ret=-vorVc(x[0],x[1],x[2],x[3],x[4],x[5])
+                -0.12*(x[0]-2.)-0.081*(x[1]+x[2]-4.)
+				+0.029*(x[3]-2.51)
+                -0.113*(x[4]+x[5]-4.); break;
+		case 96:
+			*ret = dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])
+				-1.69
+				+0.155*(x[4]-2.)
+				+0.395*(x[5]-2.51)
+				+0.58*(x[2]-2.) 
+				+0.40*(x[1]-2.) 
+				-0.214*(x[0]-2.); break;
+		case 97:
+			*ret = x[12]+x[3]+x[6]+x[9]+2.1*(x[0]-2.); break;
+		case 98:
+			*ret = (x[1]+x[5])+(x[2]+x[4])+(x[7]+x[8])+(x[10]+x[11])
+					+(x[13]+x[14]); break;
+		case 99: // bug corrected in this case on 6/20/98
+			*ret = 
+		-(
+		gammaAX(x[0],x[1],x[2],x[3],x[4],x[5])
+		+gammaAX(x[0],x[2],x[7],x[6],x[8],x[4])
+		+gammaAX(x[0],x[7],x[11],x[9],x[10],x[8])
+		+gammaAX(x[0],x[11],x[13],x[12],x[14],x[10])
+		+gammaAX(x[0],x[13],x[1],x[15],x[5],x[14])
+		);
+		case 100:
+			*ret = octavorVc(x[0],x[1],x[2],x[3],x[4],x[5])-
+				gamma(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+		case 101: // old:
+		case 102:
+			*ret = dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])
+				- 0.49*(x[0]-2.51)
+				+0.440*(x[1]+x[2]+x[4]+x[5]-8.)
+				-0.82*(x[3]-2) - 1.392; 
+			*ret = -dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])
+				+0.495*(x[0]-2.51)
+				-0.214*(x[1]+x[2]+x[4]+x[5]-8.)
+				+1.05*(x[3]-2.)+ 1.395;
+			*ret = dihedraly(x[1],x[0],x[2],x[4],x[3],x[5])
+				+0.38*(x[0]-2.51)-0.15*(x[1]-2.)+0.09*(x[2]-2.)
+				+0.54*(x[3]-2.)-0.57*(x[4]-2.)+0.24*(x[5]-2.)-1.086;
+			*ret = -dihedraly(x[1],x[0],x[2],x[4],x[3],x[5])
+				-0.375*(x[0]-2.51) +0.33*(x[1]-2.)+ 0.11*(x[2]-2.)
+				-0.36*(x[3]-2.) +0.72*(x[4]-2.)+0.034*(x[5]-2.)+1.0881;
+			*ret = solid(x[0],x[1],x[2],x[3],x[4],x[5])
+				+0.42*(x[0]-2.51)
+				+0.165*(x[1]+x[2]-4.) - 0.06*(x[3]-2.)-0.135*(x[4]+x[5]-4.)
+				- 0.4266;
+			*ret = -solid(x[0],x[1],x[2],x[3],x[4],x[5])
+				-0.265*(x[0]-2.51) - 0.06*(x[1]+x[2]-4.)
+				+0.124*(x[3]-2.)+0.296*(x[4]+x[5]-4.)
+				+0.42715;
+		
+			{
+			double sig =
+			(INEQ_NUMBER==102 ? vorNu(x[0],x[1],x[2],x[3],x[4],x[5]) :
+				gammaNu(x[0],x[1],x[2],x[3],x[4],x[5]));	
+			double dih1 = dihedraly(x[0],x[1],x[2],x[3],x[4],x[5]);
+			*ret = -sig 
+				+0.112*(x[0]-2.51)
+				-0.142*(x[1]+x[2]-4.) - 0.16*(x[3]-2.)
+				-0.074*(x[4]+x[5]-4.) ;
+			*ret = -sig
+				//+4.10113*dih1 -4.3223;
+				//+0.80449*dih1 -0.9871;
+				//+0.70186* dih1 -0.8756;
+				//+0.24573*dih1 -0.3404;
+				//+0.00154* dih1 -0.0024;
+				-0.07611*dih1+  0.11; // new constant.
+			}
+
+			/*
+			*ret = -gammaNu(x[0],x[1],x[2],x[3],x[4],x[5]);
+
+				{
+				double dih1 = dihedraly(x[0],x[1],x[2],x[3],x[4],x[5]);
+				double ta = 
+				(INEQ_NUMBER==102 ? tauVnu(x[0],x[1],x[2],x[3],x[4],x[5]):
+					tauGnu(x[0],x[1],x[2],x[3],x[4],x[5]));
+				// *ret = ta +4.16523*dih1 - 4.42873;
+				// *ret = ta +0.78701*dih1 - 1.01104;
+				// *ret = ta + 0.77627 *dih1-  0.99937;
+				// *ret = ta + 0.21916 *dih1-  0.34877;
+				// *ret = ta + 0.05107 *dih1-  0.11434;
+				// *ret = ta  -0.07106* dih1+ 0.06429;
+				}
+			*/
+				
+		break;
+	case 103:
+		*ret = -gamma(x[0],x[1],x[2],x[3],x[4],x[5])
+			-0.145*(x[0]-2.) - 0.081*(x[1]+x[2]-4.)
+			-0.133*(x[4]+x[5]-4.);
+		break;
+	case 104:
+		*ret = x[0]+x[1]+x[2]; break;
+	case 105:
+		*ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5])
+				-0.058*(x[0]-2.)-0.1*(x[1]+x[2]-4.)
+			-0.165*(x[3]-2.)-0.12*(x[4]-2.51)-0.115*(x[5]-2.77)
+			-0.0777;
+		*ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5])
+				-0.058*(x[0]-2.)-0.05*(x[1]+x[2]-4.)
+			-0.16*(x[3]-2.314)-0.13*(x[4]-2.51)-0.13*(x[5]-2.51)
+			-0.09337;
+		*ret = -vor_analytic(x[0],x[1],x[2],x[3],x[4],x[5])
+				-0.058*(x[0]-2.)-0.08*(x[1]+x[2]-4.)
+			-0.16*(x[3]-2.)-0.21*(x[4]+x[5]-2.0*2.51)
+			-0.0571;
+			break;
+	case 106:
+		*ret = -gamma(x[0],x[1],x[2],x[3],x[4],x[5])
+			-0.145*(x[0]-2.) - 0.081*(x[1]+x[2]-4.)
+			-0.16*(x[4]+x[5]-4.)
+			+0.001;
+		break;
+		*ret = -gamma(x[0],x[1],x[2],x[3],x[4],x[5])
+			-0.03*(x[0]-2.) - 0.03*(x[1]+x[2]-4.)
+			-0.16*(x[4]+x[5]-4.);
+			
+		break;
+	case 107:
+		*ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+	case 108:
+		*ret = vorAnchor2(x[0],x[1],x[2])-vorAnchor(x[0],x[1],x[2]);
+			break;
+	case 109:
+		*ret = -gamma(x[0],x[1],x[2],x[3],x[4],x[5])
+			-0.03*(x[0]-2.) - 0.03*(x[1]+x[2]-4.)
+			-0.16*(x[4]+x[5]-4.);
+		break;
+	case 110:
+		*ret = -gamma(x[0],x[1],x[2],x[3],x[4],x[5])
+			-0.03*(x[0]-2.) - 0.03*(x[1]+x[2]-4.)
+			-0.094*(x[4]+x[5]-4.3)
+			-0.0481;
+		break;
+	case 111:
+		*ret = -vor_analytic(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 112:
+		*ret = -gamma(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 113: case 114:
+		*ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 115:
+		*ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 116:
+		*ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 117:
+		*ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5])-
+			vorVc(x[6],x[1],x[2],x[3],x[7],x[8]); break;
+	case 118:
+		*ret=dihedraly(x[1],x[2],x[0],x[4],x[5],x[3])-
+                beta(arc(x[0],1.255,1.6),x[0],x[1],x[5]); break;
+	case 119:
+		*ret=dihedraly(x[1],x[2],x[0],x[4],x[5],x[3])-
+                beta(arc(x[0],1.255,1.6),x[0],x[1],x[5]); break;
+	case 120:
+		*ret=dihedraly(x[1],x[0],x[2],x[4],x[3],x[5])
+			-dih2R(x[0],x[1],x[5]); break;
+	case 121:
+		{
+		double y1=x[0],y2=x[1],y3=x[2],y4=x[3],y5=x[4],y6=x[5];
+		*ret=dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])
+		 - dihR(y1/2.,radf(y1,y2,y6),y1/(2.*cos(arc(y1,1.255,1.6))))
+		 - dihR(y1/2.,radf(y1,y3,y5),y1/(2.*cos(arc(y1,1.255,1.6))));
+		}
+		break;
+	case 122: case 657011065:*ret=
+            -0.29+0.0014+0.0822*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])
+            +tauVc(x[6],x[1],x[2],x[3],x[7],x[8])
+            +tauVc(x[0],x[1],x[2],x[3],x[4],x[5])
+            -0.06585;
+            break;
+	case 123:
+		*ret=tauVc(x[0],x[1],x[2],x[3],x[4],x[5])-0.4*(x[1]+x[2]-4.)+
+			0.4*(x[3]-3.)-0.025; break;
+	case 124: /* case 355 : */
+		{
+        double y1 = x[0], y2=x[1], y3=x[2], y4=x[3], y5=x[4], y6=x[5];
+        double dih1=dihedraly(x[0],x[1],x[2],x[3],x[4],x[5]);
+        double dih2=dihedraly(x[1],x[0],x[2],x[4],x[3],x[5]);
+        double dih3=dihedraly(x[2],x[0],x[1],x[5],x[3],x[4]);
+        double pi = global::pi;
+        double sig = octavor(x[0],x[1],x[2],x[3],x[4],x[5]);
+        double Fsig = sig + (-0.1906) + dih2*(0.198867);
+
+		double slack = 0.002;
+		double rad135 = radf(x[0],x[2],x[4]);
+		double rad126 = radf(x[0],x[1],x[5]);
+		double correct = Case355Data[C355][12]*(2-rad126*rad126)
+			+Case355Data[C355][13]*(rad135*rad135-2);
+        *ret= -(correct -slack
+		+Fsig+ 0.051272725+y1*(-0.171087) +y2*(0.282483) +y3*(0.0423759)
+            +y5*(-0.0269357) +y6*(-0.0813089) +(dih1-pi/2)*(0.0761186));
+		if (Case355Data[C355][14]<0) *ret=0;
+        }
+        break;
+
+	case 125:
+		*ret=
+		SeanVol(x[0],x[1],x[2],x[3],x[4],x[5])+
+		SeanVol(x[6],x[1],x[2],x[3],x[7],x[8])+
+		(x[0]+x[1]+x[2]+x[6]-8.)*0.166
+		-(x[4]+x[5]+x[7]+x[8])*0.143;
+		break;
+
+	case 126:
+		*ret = 
+			3.0*(x[0]-2.)
+			-0.5*(x[1]+x[5]+x[2]+x[4]+x[7]+x[8]+x[10]+x[11]+x[13]+x[14]-20.)
+			+(x[3]+x[6]+x[9]+x[12]+x[15]-10.) - 0.177;
+			break;
+	case 127:
+		*ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5])
+			-0.419351*solid(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+	case 128:
+		*ret = -gammaA(x[0],x[1],x[2],x[3],x[4],x[5])
+			-vorAc(x[0],x[2],x[7],x[6],x[8],x[4])
+			-gammaA(x[0],x[7],x[11],x[9],x[10],x[8]); break;
+	case 129:
+		*ret = -vor_analytic(x[0],x[1],x[2],x[3],x[4],x[5])
+			-0.1208*(x[0]+x[1]+x[2])
+			-0.0781*(x[3]+x[4]+x[5])
+			+1.2436;
+			break;
+	case 130:
+		*ret = -x[3]; break;
+	case 131:
+		*ret= dihedraly(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 132:
+		*ret= -dihedraly(x[1],x[0],x[2],x[4],x[3],x[5])
+			+0.96
+			-0.35*(x[0]-2)
+			+0.24*(x[1]-2)
+			-0.05*(x[2]-2)
+			-0.35*(x[3]-global::sqrt8)
+			+0.72*(x[4]-2.)
+			+0.18*(x[5]-2.)
+			;
+			
+			break;
+	case 133:
+		*ret= +dihedraly(x[1],x[0],x[2],x[4],x[3],x[5])
+			-0.955
+			+0.59*(x[0]-2)
+			+0.1*(x[1]-2)
+			+0.1*(x[2]-2)
+			+0.55*(x[3]-global::sqrt8)
+			-0.60*(x[4]-2.)
+			-0.12*(x[5]-2.)
+			;
+			
+			break;
+			
+	case 134:
+		*ret = dihedraly(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 135:
+		*ret = dihedraly(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 136:
+		*ret = vorVc(x[0],x[1],x[2],x[3],x[4],x[5])-
+			gamma(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 137:
+		*ret = tauVc(x[0],x[1],x[2],x[3],x[4],x[5]) - 0.2529*
+			dihedraly (x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 138:
+		*ret = tauVc(x[0],x[1],x[2],x[3],x[4],x[5])/2.8836117980;
+		//*ret = x[1]+x[2]; break;
+		break;
+	case 139:
+		*ret = SeanVol(x[0],x[1],x[2],x[3],x[4],x[5])+
+			SeanVol(x[6],x[1],x[2],x[3],x[7],x[8])
+			+0.166*(x[0]+x[1]+x[2]+x[6])
+			-0.143*(x[4]+x[5]+x[7]+x[8])
+			-0.77; break;
+	case 140:
+		*ret = tauVc(x[0],x[1],x[2],x[3],x[4],x[5]) - 0.2529*
+            dihedraly (x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 141:
+		*ret = 1.05382 - 0.153*(x[3]+x[4]+x[5])
+			-vorVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 142:
+		*ret= -(gamma(x[0],x[1],x[2],x[3],x[4],x[5])
+		+gamma(x[0],x[2],x[7],x[6],x[8],x[4])
+		+gamma(x[0],x[7],x[11],x[9],x[10],x[8])
+		+gamma(x[0],x[11],x[13],x[12],x[14],x[10])
+		+gamma(x[0],x[13],x[1],x[15],x[5],x[14])); break;
+	case 143:
+		*ret = -0.055 -vor_analytic(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 144:
+		*ret = tau_analytic(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 145:
+		*ret = -vor_analytic(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 146:
+		*ret = tau_analytic(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 147:
+		*ret = -gamma(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 148:
+		*ret = -vor_analytic(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 149:
+		*ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 150:
+		*ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 151:
+		*ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 152:
+		*ret = tau(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 153:
+		*ret = tau_analytic(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 154:
+		*ret = tauVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 155:
+		*ret = tauVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 156:
+		*ret = tauVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 157:
+		*ret = -vor_analytic(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 158:
+		*ret = tau_analytic(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 159:
+		*ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 160:
+		*ret = tauVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 161:
+		*ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 162:
+		*ret = tauVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 163:
+		*ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5])
+				-vorVc(2,x[1],x[2],x[3],2,2); break;
+	case 164:
+		*ret = tauVc(x[0],x[1],x[2],x[3],x[4],x[5])
+			+tauVc(2,x[1],x[2],x[3],2,2); break;
+	case 165:
+		*ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5])
+				-vorVc(2.51,x[1],x[2],x[3],2,2); break;
+	case 166:
+		*ret = tauVc(x[0],x[1],x[2],x[3],x[4],x[5])
+			+tauVc(2.51,x[1],x[2],x[3],2,2); break;
+	case 167:
+		*ret = 0.3138-0.157*x[4]-gamma(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+	case 168:
+		*ret = 
+			0.597 + 0.0238*(x[5]+x[4]+x[8]-6)
+			-VorAx(x[0],x[1],x[2],x[3],x[4],x[5])
+			-VorAx(x[6],x[1],x[2],x[3],x[7],x[8]);
+			break;
+
+	case 169:
+		*ret = 
+				-0.19*(x[0]+x[1]+x[2]-6)
+				+0.309
+			-gamma(x[0],x[1],x[2],x[3],x[4],x[5])
+			-0.419351*solid(x[0],x[1],x[2],x[3],x[4],x[5]);
+		break;
+	case 170:
+		*ret = 
+				-0.19*(x[0]+x[1]+x[2]-6)
+				+0.309
+			-vor_analytic(x[0],x[1],x[2],x[3],x[4],x[5])
+			-0.419351*solid(x[0],x[1],x[2],x[3],x[4],x[5]);
+		break;
+	case 171: case 172: case 173:
+		*ret = 
+				-0.19*(x[0]+x[1]+x[2]-6)
+				+0.309
+			-vorVc(x[0],x[1],x[2],x[3],x[4],x[5])
+			-0.419351*solid(x[0],x[1],x[2],x[3],x[4],x[5]);
+		break;
+	case 174: *ret = -vor_analytic(x[0],x[1],x[2],x[3],x[4],x[5])
+			-0.419351*solid(x[0],x[1],x[2],x[3],x[4],x[5]);
+		break;
+	case 175: case 176: *ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5])
+			-0.419351*solid(x[0],x[1],x[2],x[3],x[4],x[5]);
+		break;
+
+	case 177:
+	 *ret = 0.15975+0.0436*(x[4]+x[5]-4)
+			+0.079431*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])
+			-gamma(x[0],x[1],x[2],x[3],x[4],x[5])
+			-0.419351*solid(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+	case 231:
+	 *ret = 0.145+0.0436*(x[4]+x[5]-4)
+			+0.079431*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])
+			-gamma(x[0],x[1],x[2],x[3],x[4],x[5])
+			-0.419351*solid(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+	case 178:
+	 *ret = 0.15975+0.0436*(x[4]+x[5]-4)
+			+0.079431*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])
+			-vor_analytic(x[0],x[1],x[2],x[3],x[4],x[5])
+			-0.419351*solid(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+	case 179: case 180: case 181:
+	 *ret = 0.15975+0.0436*(x[4]+x[5]-4)
+			+0.079431*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])
+			-vorVc(x[0],x[1],x[2],x[3],x[4],x[5])
+			-0.419351*solid(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+	case 182:
+	 *ret = 0.181 -gammaNu(x[0],x[1],x[2],x[3],x[4],x[5])
+			-0.419351*solid(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+	case 183:
+	 *ret = 0.181 -vorNu(x[0],x[1],x[2],x[3],x[4],x[5])
+			-0.419351*solid(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+	case 184: 
+	 *ret = -vor_analytic(x[0],x[1],x[2],x[3],x[4],x[5])
+			-0.419351*solid(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+
+	case 185:
+	 *ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5])
+			-0.419351*solid(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+	case 186:
+	 *ret = -0.017+vorVc(x[0],x[1],x[2],x[3],x[4],x[5])
+		  -vor_analytic(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 187:
+	 *ret = -0.017+octavorVc(x[0],x[1],x[2],x[3],x[4],x[5])
+		  -octavor(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 188:
+	 *ret = -gammaNu(x[0],x[1],x[2],x[3],x[4],x[5])
+			-0.015*(x[0]-2.51)
+			-0.16*(x[1]+x[2]-4)-0.0738*(x[4]+x[5]-4)
+			-0.16*(x[3]-2);
+			break;
+	case 189:
+	 *ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 190:
+	 *ret = -vor_analytic(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 191:
+	 *ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 192:
+	 *ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 193:
+	 *ret = -x[3]; break;
+	case 194:
+	 *ret = 
+		0.01
+		-0.15*(x[4]+x[5]-4)
+		-0.1*(x[0]-2.)-0.05*(x[1]+x[2]-4)
+		-vorVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 195:
+	 *ret = 
+		-0.084
+		-0.1*(x[0]-2.)-0.1*(x[1]-2.)-0.03*(x[2]-2.0)
+		-0.17*(x[4]-2.51) -0.16*(x[5]-2.0)
+		-vorVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 196:
+		*ret=-vorVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+		//*ret=deltay(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 197:
+		*ret = 0 - 0.1*(x[0]-2)-0.15*(x[1]+x[2]-4)
+			-0.15*(x[4]+x[5]-4)
+		-gamma(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 198:
+		 *ret=-x[3]; break;
+
+	case 199:
+		*ret = 
+		0.009
+		-0.1*(x[0]-2) - 0.08*(x[1]+x[2]-4) 
+		+0.04*(x[3]-global::sqrt8) - 0.15*(x[4]+x[5]-4)
+		-vorVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+
+	case 200:
+		*ret = 
+		-0.0838
+		-0.1*(x[0]-2) - 0.06*(x[1]+x[2]-4) 
+		-0.04*(x[3]-global::sqrt8) - 0.12*(x[4]+x[5]-4.51)
+		-vorVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+
+	case 201: 
+		*ret = 
+		-vorVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 202: 
+		*ret = 
+		-vorVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 203:
+		*ret = 
+		-vorVc(x[0],x[1],x[2],x[3],x[4],x[5])
+		-vorVc(x[6],x[1],x[2],x[3],x[7],x[8]);
+		break;
+
+	case 204: 
+		*ret = 
+		tauVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 205: 
+		*ret = 
+		tauVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 206:
+		*ret = 
+		tauVc(x[0],x[1],x[2],x[3],x[4],x[5])
+		+tauVc(x[6],x[1],x[2],x[3],x[7],x[8]);
+		break;
+
+	case 207: case 208: case 209:
+		*ret = 
+		-vorVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 210: case 211: case 212:
+		*ret = 
+		tauVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 213: *ret = -vor_analytic(x[0],x[1],x[2],x[3],x[4],x[5])
+			+0.3011+0.028*(x[5]-2.)
+			-0.419351*solid(x[0],x[1],x[2],x[3],x[4],x[5]);
+		break;
+	case 214: case 215: *ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5])
+			+0.3011+0.028*(x[5]-2.)
+			-0.419351*solid(x[0],x[1],x[2],x[3],x[4],x[5]);
+		break;
+	case 216:  *ret = -solid(x[0],x[1],x[2],x[3],x[4],x[5])
+			+0.828
+			-0.22*(x[0]+x[1]+x[2]-6.)
+			+0.6*(x[5]-2.)
+			+0.35*(x[3]+x[4]-2.51*2.);
+		break;
+	    case 217+0:
+        *ret= 0.114
+            -0.419351*solid(x[0],x[1],x[2],x[3],x[4],x[5])
+            -0.419351*solid(x[0],x[2],x[7],x[6],x[8],x[4])
+            -0.419351*solid(x[0],x[7],x[11],x[9],x[10],x[8])
+            -0.419351*solid(x[0],x[11],x[13],x[12],x[14],x[10])
+            -0.419351*solid(x[0],x[13],x[1],x[15],x[5],x[14])
+			
+            -gamma(x[0],x[1],x[2],x[3],x[4],x[5])
+            -gamma(x[0],x[2],x[7],x[6],x[8],x[4])
+            -gamma(x[0],x[7],x[11],x[9],x[10],x[8])
+            -gamma(x[0],x[11],x[13],x[12],x[14],x[10])
+            -gamma(x[0],x[13],x[1],x[15],x[5],x[14]);
+            break;
+    case 217+1:
+        *ret= 
+            -0.419351*solid(x[0],x[1],x[2],x[3],x[4],x[5])
+            -0.419351*solid(x[0],x[2],x[7],x[6],x[8],x[4])
+            -0.419351*solid(x[0],x[7],x[11],x[9],x[10],x[8])
+            -0.419351*solid(x[0],x[11],x[13],x[12],x[14],x[10])
+            -0.419351*solid(x[0],x[13],x[1],x[15],x[5],x[14])
+            -gamma(x[0],x[1],x[2],x[3],x[4],x[5])
+            -gamma(x[0],x[2],x[7],x[6],x[8],x[4])
+            -gamma(x[0],x[7],x[11],x[9],x[10],x[8])
+            -gamma(x[0],x[11],x[13],x[12],x[14],x[10])
+            -vor_analytic(x[0],x[13],x[1],x[15],x[5],x[14]);
+            break;
+    case 217+2:
+        *ret= 
+            -0.419351*solid(x[0],x[1],x[2],x[3],x[4],x[5])
+            -0.419351*solid(x[0],x[2],x[7],x[6],x[8],x[4])
+            -0.419351*solid(x[0],x[7],x[11],x[9],x[10],x[8])
+            -0.419351*solid(x[0],x[11],x[13],x[12],x[14],x[10])
+            -0.419351*solid(x[0],x[13],x[1],x[15],x[5],x[14])
+            -gamma(x[0],x[1],x[2],x[3],x[4],x[5])
+            -gamma(x[0],x[2],x[7],x[6],x[8],x[4])
+            -gamma(x[0],x[7],x[11],x[9],x[10],x[8])
+            -gamma(x[0],x[11],x[13],x[12],x[14],x[10])
+            -vorVc(x[0],x[13],x[1],x[15],x[5],x[14]);
+            break;
+    case 217+3:
+        *ret= 
+            -0.419351*solid(x[0],x[1],x[2],x[3],x[4],x[5])
+            -0.419351*solid(x[0],x[2],x[7],x[6],x[8],x[4])
+            -0.419351*solid(x[0],x[7],x[11],x[9],x[10],x[8])
+            -0.419351*solid(x[0],x[11],x[13],x[12],x[14],x[10])
+            -0.419351*solid(x[0],x[13],x[1],x[15],x[5],x[14])
+            -gamma(x[0],x[1],x[2],x[3],x[4],x[5])
+            -gamma(x[0],x[2],x[7],x[6],x[8],x[4])
+            -gamma(x[0],x[7],x[11],x[9],x[10],x[8])
+            -gamma(x[0],x[11],x[13],x[12],x[14],x[10])
+            -vorVc(x[0],x[13],x[1],x[15],x[5],x[14]);
+            break;
+    case 217+4:
+        *ret= 
+            -0.419351*solid(x[0],x[1],x[2],x[3],x[4],x[5])
+            -0.419351*solid(x[0],x[2],x[7],x[6],x[8],x[4])
+            -0.419351*solid(x[0],x[7],x[11],x[9],x[10],x[8])
+            -0.419351*solid(x[0],x[11],x[13],x[12],x[14],x[10])
+            -0.419351*solid(x[0],x[13],x[1],x[15],x[5],x[14])
+            -gamma(x[0],x[1],x[2],x[3],x[4],x[5])
+            -gamma(x[0],x[2],x[7],x[6],x[8],x[4])
+            -gamma(x[0],x[7],x[11],x[9],x[10],x[8])
+            -gamma(x[0],x[11],x[13],x[12],x[14],x[10])
+            -vorVc(x[0],x[13],x[1],x[15],x[5],x[14]);
+            break;
+	case 222:
+			*ret=-x[3]-x[4]-x[5]; break;
+	case 223:
+			*ret = -gamma(x[0],x[1],x[2],x[3],x[4],x[5])
+				-0.419351*solid(x[0],x[1],x[2],x[3],x[4],x[5])
+				+0.308526
+				-0.0162028*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+	case 224:
+			*ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5])
+				-0.419351*solid(x[0],x[1],x[2],x[3],x[4],x[5])
+				+0.289;
+				//+0.308526
+				//-0.0162028*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+	case 225:
+			*ret = -gamma(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 226:
+			*ret = -gamma(x[0],x[1],x[2],x[3],x[4],x[5])
+			-0.419351*solid(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 227:
+			*ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 228:
+			*ret= x[1]+x[4]+x[7]+x[10]+x[13]
+             +x[2]+x[5]+x[8]+x[11]+x[14]-20.72;
+        break;
+	case 229:
+			*ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5])
+			-0.08*(x[0]+x[1]+x[2]-6)
+			-0.142*(x[4]+x[5]-4)
+			+0.0132;
+		break;
+	case 230:
+			*ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5])
+			-0.419351*solid(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+	case 232:
+			*ret = -gamma(x[0],x[1],x[2],x[3],x[4],x[5])
+			-0.044
+			-0.1*(x[0]+x[1]+x[2]-6)
+			-0.17*(x[4]-2) -0.11*(x[5]-2.27) ;
+			*ret = -gamma(x[0],x[1],x[2],x[3],x[4],x[5])
+			+1.1457
+			-0.1*(x[0]+x[1]+x[2])
+			-0.17*(x[4]) -0.11*(x[5]) ;
+			;
+			break;
+ 
+	case 233:
+			*ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5])
+			; break;
+	case 234:
+			*ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5])
+			-0.1
+			-0.1*(x[0]+x[1]+x[2]-6)
+			-0.17*(x[4]+x[5]-2.7-2.7)
+			-0.19*(x[3]-2)
+			; break;
+	case 235: case 238: case 240:
+			*ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5])
+			; break;
+	case 236:
+			*ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5])
+			-0.0688
+			-0.10*(x[0]+x[1]+x[2]-6) -0.16*(x[3]-2)
+			-0.12*(x[4]-2.7)-0.16*(x[5]-2.51);
+			; break;
+	case 239:
+			*ret = 1.69*x[3]+x[4]+x[5]
+			; break;
+
+	case 241:
+			*ret = -vor_analytic(x[0],x[1],x[2],x[3],x[4],x[5])
+			; break;
+	case 242:
+			*ret = -vorVc(x[0],x[1],x[2],x[3],x[4],x[5],global::sqrt2)
+			; break;
+	case 243:
+			*ret = tauVc(x[0],x[1],x[2],x[3],x[4],x[5])
+				+tauVc(2,x[1],x[2],x[3],2,2)
+			; break;
+	case 244:
+			*ret = tauVc(x[0],x[1],x[2],x[3],x[4],x[5])
+				+tauVc(2.51,x[1],x[2],x[3],2,2)
+			; break;
+	case 245:
+			*ret= dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])*-1 + 1.23;
+				break;
+	case 246:
+			*ret= 
+			tauVc(x[0],x[1],x[2],x[3],x[4],x[5])
+				+0.0822*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5]);
+				break;
+
+	case 247:
+			*ret= 
+			tau(x[0],x[1],x[2],x[3],x[4],x[5])
+				+0.316*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5]);
+				break;
+
+	case 248: case 249:
+			*ret= 
+			tau_analytic(x[0],x[1],x[2],x[3],x[4],x[5])
+				+0.316*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5]);
+				break;
+
+	case 250:
+			*ret= 
+			tauVc(x[0],x[1],x[2],x[3],x[4],x[5])
+				+0.316*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5]);
+				break;
+
+	case 251:
+			*ret= 
+			tauGnu(x[0],x[1],x[2],x[3],x[4],x[5])
+				+0.0*(dihedraly(x[1],x[0],x[2],x[4],x[3],x[5])-1.55/2.)
+				+0.316*dihedraly(x[1],x[0],x[2],x[4],x[3],x[5]);
+				break;
+
+	case 252: case 253:
+			*ret= 
+			tauVnu(x[0],x[1],x[2],x[3],x[4],x[5])
+				+0.0*(dihedraly(x[1],x[0],x[2],x[4],x[3],x[5])-1.55/2.)
+				+0.316*dihedraly(x[1],x[0],x[2],x[4],x[3],x[5]);
+				break;
+
+	case 254:
+			*ret= 
+			tau(x[0],x[1],x[2],x[3],x[4],x[5])
+				+0.316*dihedraly(x[1],x[0],x[2],x[4],x[3],x[5])
+				+0.316*dihedraly(x[2],x[1],x[0],x[5],x[4],x[3]);
+				break;
+
+	case 255: case 256:
+			*ret= 
+			tau_analytic(x[0],x[1],x[2],x[3],x[4],x[5])
+				+0.316*dihedraly(x[1],x[0],x[2],x[4],x[3],x[5])
+				+0.316*dihedraly(x[2],x[1],x[0],x[5],x[4],x[3]);
+				break;
+
+	case 257:
+			*ret=
+			tauVc(2.51,2,x[2],x[3],2,2)-
+				tauVc(2,2,x[2],x[3],2,2); break;
+
+	case 258:
+			*ret=
+			-vorVc(2.51,2,x[2],x[3],2,2)+
+				vorVc(2,2,x[2],x[3],2,2); break;
+
+	case 259:
+			*ret= -0.128
+			-vorVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+
+	case 260:
+			*ret= -0.36925
+			+tauVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+
+	case 265:
+			*ret= -0.31
+			+tauVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+
+	case 261:
+			*ret= -0.137 - (x[4]-global::sqrt8)*0.14
+			-vorVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+
+	case 262:
+			*ret= -0.31 - (x[4]-global::sqrt8)*0.14
+			+tauVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+
+	case 268:
+			*ret= -0.31 - (x[4]-global::sqrt8)*0.14
+			-(x[5]-3.105)*0.19
+			+tauVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+
+	case 263:
+			*ret= 0.009 + (x[4]-global::sqrt8)*0.14
+			-vorVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+
+	case 264:
+			*ret= -0.05925 + (x[4]-global::sqrt8)*0.14
+			+tauVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+
+	case 266:
+			*ret= -0.05925 
+			+tauVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+
+	case 267:
+			*ret= (x[3]-3.105)*0.19
+			+tauVc(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+
+
+	
+
+
+	//Z-ineq
+		// start of first page of inequalities for Section 2, SPIV.
+		default : cout << "generic default "<< INEQ_NUMBER << endl << flush;
+			*ret=0;
+		}
+	}
+
+
+static void ConstraintPage1(int numargs,int whichFn,double* x,double* ret,void*)
+    {
+	*ret = 0;
+	switch (INEQ_NUMBER) {
+
+    case 348940660+1 :
+        switch(whichFn) {
+        case 1 : *ret=dips(x); break;
+        case 3 : *ret= -(radf(x[1],x[13],x[15])-global::sqrt2); break;
+        case 2 : *ret=-(radf(x[5],x[14],x[15])-global::sqrt2); break;
+        }
+        break;
+	case 2 :
+		switch(whichFn) {
+		case 1 : *ret=dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])-1.771;
+		break;
+		case 2 : *ret=x[4]+x[5]+x[1]+x[2]-9.319; break;
+		}
+		break;
+	case 91: 
+            switch(whichFn) {
+            case 1: *ret=radf(x[3],x[4],x[5])-global::sqrt2; break;
+            case 2: *ret=radf(x[1],x[2],x[3])-global::sqrt2; break;
+            }
+            break;
+	case 94: 
+            *ret=global::sqrt2-radf(x[3],x[4],x[5]); break;
+	case 95: 
+            *ret=global::sqrt2-radf(x[3],x[2],x[1]); break;
+	case 97:
+			*ret=global::pi*2.-dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])
+			-dihedraly(x[0],x[2],x[7],x[6],x[8],x[4])
+			-dihedraly(x[0],x[7],x[11],x[9],x[10],x[8])
+			-dihedraly(x[0],x[11],x[1],x[12],x[5],x[10]);
+			break;
+	case 98:
+			*ret=-global::pi*2.
+			+dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])
+			+dihedraly(x[0],x[2],x[7],x[6],x[8],x[4])
+			+dihedraly(x[0],x[7],x[11],x[9],x[10],x[8])
+			+dihedraly(x[0],x[11],x[13],x[12],x[14],x[10])
+			+dihedraly(x[0],x[13],x[1],x[15],x[5],x[14]);
+			break;
+	case 99:
+		switch(whichFn)
+			{
+			case 1:
+			*ret=-global::pi*2.
+			+dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])
+			+dihedraly(x[0],x[2],x[7],x[6],x[8],x[4])
+			+dihedraly(x[0],x[7],x[11],x[9],x[10],x[8])
+			+dihedraly(x[0],x[11],x[13],x[12],x[14],x[10])
+			+dihedraly(x[0],x[13],x[1],x[15],x[5],x[14]);
+			break;
+		case 2:
+			*ret=-global::sqrt2+radf(x[13],x[1],x[15]); break;
+		case 3:
+			*ret=-global::sqrt2+radf(x[15],x[5],x[14]); break;
+		case 4:
+			-1.41+rady(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+		case 5:
+			-1.41+rady(x[0],x[2],x[7],x[6],x[8],x[4]); break;
+		case 6:
+			-1.41+rady(x[0],x[7],x[11],x[9],x[10],x[8]); break;
+		case 7:
+			-1.41+rady(x[0],x[11],x[13],x[12],x[14],x[10]); break;
+		}
+		break;
+	case 102:
+		*ret= global::sqrt2-radf(x[0],x[1],x[5]); break;
+	case 103:
+		switch(whichFn)
+		{
+		case 1: *ret=-global::sqrt2+radf(x[1],x[2],x[3]); break;
+		case 2: *ret=-global::sqrt2+radf(x[3],x[4],x[5]); break;
+		}
+		break;
+	case 104:
+		*ret = +global::sqrt2-radf(x[0],x[1],x[2]); break;
+	case 105: case 107:
+		*ret = global::sqrt2-radf(x[3],x[4],x[5]); break;
+	case 106:
+		*ret = -gamma(x[0],x[1],x[2],x[3],x[4],x[5])-0.0514; break;
+	case 109:
+		*ret = -4.3+x[4]+x[5]; break;
+	case 110:
+		switch(whichFn)
+		{
+		case 1 : *ret = 4.3-x[4]-x[5]; break;
+		case 2 : *ret = -global::sqrt2+radf(x[3],x[4],x[5]); break;
+		}
+		break;
+	case 117:
+		switch(whichFn)
+		{
+		case 1 : *ret=crossdiag(x)-3.2; break;
+		case 2 : *ret=-crossdiag(x)+global::sqrt8; break;
+		}
+		break;
+	case 108:
+		*ret = x[1]+x[2]-2.*2.29; break;
+	case 122: case 657011065:
+            *ret=dihConstraint(x,2.46); break;
+            break;
+	case 123: switch(whichFn)
+		{
+		case 1: *ret=-deltay(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+		case 2: *ret=x[1]+x[2]-4.4; break;
+		}
+		break;
+
+	case 125:
+			*ret = -crossdiag(x)+x[3]; break;
+
+	case 126:
+		*ret= -(-global::pi*2.
+		+dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])
+		+dihedraly(x[0],x[2],x[7],x[6],x[8],x[4])
+		+dihedraly(x[0],x[7],x[11],x[9],x[10],x[8])
+		+dihedraly(x[0],x[11],x[13],x[12],x[14],x[10])
+		+dihedraly(x[0],x[13],x[1],x[15],x[5],x[14]));
+		break;
+	case 127: 
+		*ret=dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])-2.12; break;
+	case 128:
+		switch(whichFn)
+		{
+		case 1:
+		*ret=dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])-2.12; break;
+		case 2:
+		*ret=rady(x[0],x[1],x[2],x[3],x[4],x[5])-1.41; break;
+		case 3:
+		*ret=rady(x[0],x[7],x[11],x[9],x[10],x[8])-1.41; break;
+		}
+		break;
+	case 129:
+		switch(whichFn)
+		{
+		case 1:
+		*ret=-rady(x[0],x[1],x[2],x[3],x[4],x[5])+1.41; break;
+		case 2:
+		*ret=6.25-x[3]-x[4]-x[5]; break;
+		}
+		break;
+	case 130:
+		switch (whichFn)
+		{
+		case 1:
+            *ret=dihConstraint(x,1.694); break;
+		case 2:
+			*ret=x[1]+x[2]+x[4]+x[5]-8.709; break;
+		}
+		break;
+	case 131:
+			*ret= x[1]+x[2]+x[4]+x[5]-8.65; break;
+	case 134:
+			*ret= x[1]+x[2]+x[4]+x[5]-8.59; break;
+	case 135:
+			*ret = x[1]+x[2]-4.6; break;
+	case 136: 
+			*ret = radf(x[3],x[4],x[5])-global::sqrt2; break;
+	case 137:
+			*ret = 1.2 - dihedraly(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 138:
+		switch(whichFn)
+		{
+		case 1:
+			*ret = dihConstraint(x,1.614);  break;
+		case 2:
+			*ret = 4.66-x[1]-x[2]; break;
+		}
+		break;
+	case 139:
+		switch(whichFn)
+		{
+		case 1: *ret=dihConstraint(x,2.419); break;
+		case 2: *ret=dihedraly(x[6],x[1],x[2],x[3],x[7],x[8])-1.76; break;
+		}
+		break;
+	case 140:
+		{
+		*ret=-deltay(x[4],2,2,global::sqrt8,2.51,x[5]);  break;
+		}
+	case 142:
+		switch(whichFn)
+		{
+		case 1:
+		*ret= dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])
+		+dihedraly(x[0],x[2],x[7],x[6],x[8],x[4])
+		+dihedraly(x[0],x[7],x[11],x[9],x[10],x[8])
+		+dihedraly(x[0],x[11],x[13],x[12],x[14],x[10])
+		+dihedraly(x[0],x[13],x[1],x[15],x[5],x[14])-global::pi*2.0; break;
+		case 2:
+		*ret = -radf(x[5],x[14],x[15])+global::sqrt2; break;
+		}
+		break;
+	case 144:
+		*ret =1.41 - rady(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+	case 148: case 153:
+		*ret = global::sqrt2 - radf(x[1],x[2],x[3]); break;
+	case 151: case 156:
+		*ret = global::sqrt2 - radf(x[3],x[4],x[5]); break;
+	case 163: case 164:
+		{
+		double y[9]={x[0],x[1],x[2],x[3],x[4],x[5],2,2,2};
+		*ret = -crossdiag(y)+2.51; break;
+		}
+	case 165: case 166:
+		{
+		double y[9]={x[0],x[1],x[2],x[3],x[4],x[5],2.51,2,2};
+		*ret = -crossdiag(y)+2.51; break;
+		}
+	case 168:
+		*ret = -crossdiag(x)+global::sqrt8; break;
+
+	case 169: case 177: case 231:
+		*ret = radf(x[3],x[4],x[5])-global::sqrt2; break;
+	case 170: case 178:
+		*ret = -radf(x[3],x[2],x[1])+global::sqrt2; break;
+	case 173: case 176: case 181: case 215:
+		*ret = -radf(x[3],x[4],x[5])+global::sqrt2; break;
+	case 183: case 186: case 187: case 189: case 190:
+		*ret = -radf(x[0],x[2],x[4])+global::sqrt2; break;
+	case 191:
+		*ret=dihConstraint(x,2.5); break;
+	case 192:
+		*ret=dihConstraint(x,1.8); break;
+	case 193:
+		switch(whichFn) 
+		{
+		case 1 : *ret=dihConstraint(x,1.72); break;
+		case 2 : *ret=x[4]+x[5]-4.892; break;
+		//case 2 : *ret=x[1]+x[2]+x[4]+x[5]-9.0;  break;
+		}
+		break;
+	case 194:
+		*ret=dihConstraint(x,1.9); break;
+	case 195:
+		*ret=dihConstraint(x,2.0); break;
+	case 196:
+		*ret=global::sqrt2-radf(x[0],x[2],x[4]);  break;
+	case 198:
+		switch(whichFn)
+		{
+		case 1 : *ret=dihConstraint(x,1.678); break;
+		case 2 : *ret=x[4]+x[5]+x[1]+x[2]-8.77; break;
+		}
+		break;
+	case 203: case 206:
+		*ret=-crossdiag(x)+global::sqrt8;
+		break;
+
+	case 217+1:
+        switch(whichFn) {
+        case 1 : *ret= dips(x);  break;
+        case 2 : *ret= global::sqrt2-radf(x[1],x[13],x[15]); break;
+		case 3: *ret= -7+x[3]+x[4]+x[5]; break;
+		case 4: *ret= -7+x[6]+x[8]+x[4]; break;
+		case 5: *ret= -7+x[8]+x[10]+x[9]; break;
+		case 6: *ret= -7+x[10]+x[12]+x[14]; break;
+        }
+        break;
+    case 217+0:
+    case 217+2:
+    case 217+3:
+		switch(whichFn) {
+		case 1: *ret=dips(x); break;
+		case 2: *ret= -7+x[3]+x[4]+x[5]; break;
+		case 3: *ret= -7+x[6]+x[8]+x[4]; break;
+		case 4: *ret= -7+x[8]+x[10]+x[9]; break;
+		case 5: *ret= -7+x[10]+x[12]+x[14]; break;
+		}
+		break;
+    case 217+4:
+        switch(whichFn) {
+        case 1 : *ret= dips(x);  break;
+        case 2 : *ret= global::sqrt2-radf(x[5],x[14],x[15]); break;
+		case 3: *ret= -7+x[3]+x[4]+x[5]; break;
+		case 4: *ret= -7+x[6]+x[8]+x[4]; break;
+		case 5: *ret= -7+x[8]+x[10]+x[9]; break;
+		case 6: *ret= -7+x[10]+x[12]+x[14]; break;
+        }
+        break;
+	case 222:
+		*ret = -gamma(x[0],x[1],x[2],x[3],x[4],x[5])- 0.064; break;
+	case 223:
+		*ret= rady(x[0],x[1],x[2],x[3],x[4],x[5]) - 1.41; break;
+	case 224:
+		*ret= -rady(x[0],x[1],x[2],x[3],x[4],x[5]) + 1.41; break;
+	case 226:
+		*ret = -global::sqrt2+radf(x[3],x[4],x[5]); break;
+	case 227:
+		*ret = global::sqrt2-radf(x[3],x[4],x[5]); break;
+    case 228:
+        *ret=dips(x); break;
+	case 233: case 235: case 238: case 239: case 240: case 242:
+		*ret= global::sqrt2-radf(x[3],x[4],x[5]); break;
+
+	case 243: 
+		{
+		double y[9]={x[0],x[1],x[2],x[3],x[4],x[5],2,2,2};
+		switch(whichFn)
+		{
+		case 1: *ret = 2.46-dihedraly(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+		case 2: *ret= -crossdiag(y) +2.51; break;
+			}} break;
+
+	case 244: 
+		{
+		double y[9]={x[0],x[1],x[2],x[3],x[4],x[5],2.51,2,2};
+		switch(whichFn)
+		{
+		case 1: *ret = 2.46-dihedraly(x[0],x[1],x[2],x[3],x[4],x[5]); break;
+		case 2: *ret= -crossdiag(y) +2.51; break;
+			}} break;
+
+
+	case 249:
+		switch(whichFn)
+	{
+	case 1: *ret= global::sqrt2-radf(x[3],x[4],x[5]); break;
+	case 2: *ret= dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])-1.55; break;
+	}
+	break;
+
+	case 248:
+		switch(whichFn)
+	{
+	case 1: *ret= global::sqrt2-radf(x[3],x[2],x[1]); break;
+	case 2: *ret= dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])-1.55; break;
+	}
+	break;
+		
+	
+
+	case 247: case 250:
+		switch(whichFn)
+	{
+	case 1: *ret= dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])-1.55; break;
+	}
+	break;
+
+	case 253: 
+	 *ret= global::sqrt2-radf(x[0],x[1],x[5]); break;
+	case 252: 
+	 *ret= global::sqrt2-radf(x[0],x[2],x[4]); break;
+
+	case 255: 
+	 *ret= global::sqrt2-radf(x[1],x[2],x[3]); break;
+	case 256: 
+	 *ret= global::sqrt2-radf(x[3],x[4],x[5]); break;
+
+		//Z-con
+		default : cout << "unexpected case in constraint " << INEQ_NUMBER<< endl;
+		}
+    }
+
+iter::iter(int ineqSwitch) {
+	numiter = 80; numargs = 6; nconstr=0; // numiter was 20;
+	switch(ineqSwitch)
+		{
+		case 348940660+1 : numargs=16;
+		case 97:numargs=13;
+		case 98:numargs=16;
+		case 99:numargs=16;
+		case 117:numargs=9;
+		case 125:numargs=9;
+		case 126:numargs=16;
+		case 128:numargs=12;
+		case 139:numargs=9;
+		case 142: numargs=16;
+		case 168: numargs=9;
+		case 203: case 206: numargs=9;
+	case 217+0:
+    case 217+1:
+    case 217+2:
+    case 217+3:
+    case 217+4:
+            numargs=16; break;
+	case 228:
+            numargs=16; break;
+	
+
+
+		}
+	// temp: 
+	xmin = new double[numargs];
+	xmax = new double[numargs];
+	x = new double[numargs];
+	constraintfunc = nofunc;
+	func = generic;
+	int i;
+	for (i=0;i<numargs;i++) { xmin[i]=x[i]=2.0; xmax[i]=2.51; }
+	INEQ_NUMBER = ineqSwitch;
+	switch (ineqSwitch)
+		{
+		case 348940660+1 :
+		xmin[15]=2.51; xmax[15]=global::sqrt8;
+		nconstr=2;
+		break;
+
+		case 2:
+		xmax[0]=2.21; xmax[1]=2.144; xmax[2]=2.245;
+		xmin[4]=2.51; xmax[4]=global::sqrt8;
+		xmin[3]=2.51; xmax[3]=3.2;
+		nconstr=2;
+		break;
+
+	        case 91: 
+            xmin[3]=2.51; xmax[3]=global::sqrt8;
+            //nconstr=2;
+            break;
+        case 92: 
+            xmin[3]=2.6; xmax[3]=global::sqrt8;
+            xmin[0]=2.2;
+            break;
+        case 93: 
+            xmin[3]=2.7; xmax[3]=global::sqrt8;
+            xmax[0]=2.2;
+            break;
+        case 94: 
+            xmin[3]=2.51; xmax[3]=global::sqrt8;
+            nconstr=1;
+            break;
+		case 95: 
+            xmin[3]=2.51; xmax[3]=global::sqrt8;
+            nconstr=1;
+            break;
+		case 96:
+			xmin[3]=xmax[3]=global::sqrt8;
+			xmin[5]=2.51; xmax[5]=global::sqrt8;
+			break;
+		case 97:
+			xmin[12]=2.51; xmax[12]=global::sqrt8;
+			nconstr=1;
+			break;
+		case 98:
+			xmin[15]=xmax[15]=2.7;
+			nconstr=1;
+			break;
+		case 99:
+			xmin[15]=2.51; xmax[15]=global::sqrt8;
+			nconstr=7;
+			break;
+		case 100:
+			xmin[0]=2.51; xmax[0]=global::sqrt8;
+			xmin[0]=2.696;
+			xmin[3]=2.1;
+			break;
+		case 101:
+			xmin[0]=2.51; xmax[0]=2.696;
+			break;
+		case 102:
+			xmin[0]=2.51; xmax[0]=2.696;
+			nconstr=1;
+			break;
+		case 103:
+			xmin[3]=2.51; xmax[3]=global::sqrt8;
+			xmax[0]=xmax[1]=xmax[2]=2.1;
+			nconstr=2;
+			break;
+		case 104:
+			xmax[3]=xmax[4]=xmax[5]=2.;
+			xmin[0]=2.51; xmax[0]=2.7;
+			xmin[1]=2.51; xmax[1]=2.7;
+			nconstr=1;
+			break;
+		case 105:
+			xmin[4]=2.51; xmax[4]=2.77; //global::sqrt8;
+			xmin[5]=2.51; xmax[5]=2.77; //2.77; xmax[5]=global::sqrt8;
+			//nconstr=1;
+			break;
+		case 106:
+			xmin[3]=2.51; xmax[3]=global::sqrt8;
+			xmax[4]=xmax[5]=2.3;
+			xmax[0]=xmax[1]=xmax[2]=2.1;
+			nconstr=1;
+			break;
+		case 107:
+			xmin[3]=2.51; xmax[3]=2.7;
+			nconstr=1;
+			break;
+		case 108:
+			xmax[3]=xmax[4]=xmax[5]=2.;
+			xmin[0]=2.51; xmax[0]=2.57;
+			xmax[1]=xmax[2]=2.25;
+			//nconstr=1;
+			break;
+		case 109:
+			xmax[4]=xmax[5]=2.3;
+			xmin[3]=2.51; xmax[3]=global::sqrt8;
+			nconstr=1;
+			break;
+		case 110:
+			xmin[3]=2.51; xmax[3]=global::sqrt8;
+			nconstr=2;
+			break;
+		case 111:
+			xmin[0]=2.696; xmax[0]=global::sqrt8;
+			xmin[1]=xmin[5]=2.45;
+			break;
+		case 112:
+			xmin[0]=2.45;
+			break;
+		case 113:
+			xmin[0]=2.696; xmax[0]=global::sqrt8;
+			xmin[3]=global::sqrt8; xmax[3]=3.2;
+			xmin[1]=2.45; xmin[5]=2.45;
+			break;
+		case 114:
+			xmin[1]=2.45;
+			xmin[3]=global::sqrt8; xmax[3]=3.2;
+			break;
+		case 115:
+			xmin[0]=2.51; xmax[0]=2.696;
+			xmin[3]=2.51; xmax[3]=global::sqrt8;
+			break;
+		case 116:
+			xmin[0]=xmax[0]=2.696;
+			xmin[2]=2.51;
+			xmax[3]=2.;
+			xmin[4]=2.51; xmax[4]=3.17;
+			xmin[5]=xmax[5]=2.;
+			break;
+		case 117:
+			xmin[1]=xmax[1]=2.;
+			xmin[2]=xmax[2]=2.696;
+			xmin[3]=2.51; xmax[3]=3.17;
+			xmin[4]=xmax[4]=2.;
+			xmin[5]=xmax[5]=2.;
+			xmin[8]=xmax[8]=2.;
+			nconstr=2;
+			break;
+		case 118:
+			xmax[3]=3.2;
+			xmin[4]=xmax[4]=xmin[5]=xmax[5]=2.51;
+			break;
+		case 119:
+			xmax[3]=3.2;
+			xmin[4]=xmax[4]=3.2;
+			xmin[5]=xmax[5]=2.;
+			xmin[0]=2.2;
+			break;
+		case 120:
+			xmax[0]=2.2; xmin[2]=2.51; xmin[3]=xmax[3]=3.2;
+			xmin[4]=xmax[4]=3.2; xmax[5]=2.;
+			break;
+		case 121:
+			xmin[3]=xmax[3]=3.2;
+			xmin[4]=xmax[4]=2.;
+			xmin[5]=xmax[5]=2.51;
+			break;
+		case 122:       case 657011065:
+            xmin[0]=2.51; xmax[0]=global::sqrt8;
+            xmin[3]=global::sqrt8; xmax[3]=3.2;
+			xmin[3]=3.; xmax[1]=xmax[2]=2.2;
+            nconstr=1;
+            break;
+		case 123:
+			xmin[0]=2.51;
+			xmax[4]=xmax[5]=2.;
+			xmin[3]=3; xmax[3]=3.2;
+			xmax[1]=xmax[2]=2.2;
+			nconstr=2;
+			break;
+		case 124:
+			{
+double ymin[6],ymax[6];
+ymin[0]=2.51;
+ymin[1]=2;
+ymin[2]=2;
+ymin[3]=2;
+ymin[4]=2;
+ymin[5]=2;
+ 
+ymax[0]=2.828427125;
+ymax[1]=2.255;
+ymax[2]=2.51;
+ymax[3]=2.255;
+ymax[4]=2.51;
+ymax[5]=2.255;
+
+int i;
+double rmin[6],rmax[6]; 
+for (i=0;i<6;i++) rmin[i]= Case355Data[C355][i];
+for (i=0;i<6;i++) rmax[i]= Case355Data[C355][6+i];
+for (i=0;i<6;i++) 
+	{
+	xmin[i]= ymin[i]*(1-rmin[i])+ymax[i]*rmin[i];
+	xmax[i]= ymin[i]*(1-rmax[i])+ymax[i]*rmax[i];
+	}
+
+
+
+
+			}
+			break;
+
+	case 125:
+		xmin[3]=global::dodecrad;  xmax[3]=global::dodecrad*global::sqrt2;
+		nconstr=1;
+		break;
+
+	case 126:
+		nconstr=1;
+		break;
+	case 127:
+		xmin[3]=global::sqrt8; xmax[3]=3.2;
+		xmax[0]=2.26; xmax[1]=2.26; xmax[2]=2.26;
+		nconstr=1;
+		break;
+	case 128:
+		xmin[6]=global::sqrt8; xmax[6]=3.2;
+		xmax[0]=xmax[1]=xmax[2]=xmax[7]=xmax[11]=2.26;
+		nconstr=3;
+		break;
+	case 129:
+		nconstr=2;
+		break;
+	case 130:
+		xmin[3]=2.8; xmax[3]=3.0;
+		xmax[0]=xmax[1]=xmax[2]=2.13;
+		nconstr=2;
+		break;
+	case 131:
+		xmin[3]=xmax[3]=3.0;
+		nconstr=1;
+		break;
+	case 132:
+		xmin[3]=global::sqrt8; xmax[3]=2.93;
+		xmax[0]=xmax[1]=xmax[2]=2.13;
+		break;
+	case 133:
+		xmin[3]=global::sqrt8; xmax[3]=2.93;
+		xmax[0]=xmax[1]=xmax[2]=2.13;
+		break;
+	case 134:
+		xmin[3]=xmax[3]=global::sqrt8; 
+		nconstr=1; break;
+	case 135:
+		xmin[0]=2.51; xmax[0]=global::sqrt8;
+		xmin[3]=xmax[3]=3.2;
+		nconstr=1;
+		break;
+	case 136:
+		xmax[0]=2.168;
+		xmin[3]=2.51; xmax[3]=global::sqrt8;
+		nconstr=1;
+		break;
+
+	case 137:
+		xmin[4]=2.51; xmax[4]=3.2;
+		xmin[5]=2.51; xmax[5]=3.2;
+		xmin[3]=2.51; xmax[3]=global::sqrt8;
+		nconstr=1;
+		break;
+	case 138:
+		xmin[3]=3.1; xmax[3]=3.2;
+		nconstr=1;
+		break;
+	case 139:
+		xmin[3]=2.9; xmax[3]=3.1;
+		nconstr=2;
+		break;
+	case 140:
+		xmax[1]=xmax[2]=2.168;
+		xmin[4]=2.51; xmax[4]=3.488;
+		xmin[5]=2.51;
+		//nconstr=1;
+		break;
+	case 141:
+		xmin[3]=2.77; xmax[3]=global::sqrt8;
+		break;
+	case 142:
+		xmin[15]=2.51; xmax[15]=global::sqrt8;
+		nconstr=1;
+		break;
+	case 143:
+		xmin[0]=2.696; xmax[0]=global::sqrt8;
+		xmin[1]=2.45;
+		xmin[5]=2.45;
+		break;
+	case 144:
+		nconstr=1;
+		break;
+
+	case 145: case 146:
+		xmin[0]=2.696; xmax[0]=global::sqrt8;
+		xmin[1]=2.45; xmax[1]=2.51; 
+		xmin[5]=2.45; xmax[5]=2.51;
+		xmin[3]=2.51; xmax[3]=global::sqrt8;
+		break;
+	case 147: case 152:
+		xmin[3]=2.51; xmax[3]=global::sqrt8;
+		xmin[1]=2.45; xmax[1]=2.51;
+		break;
+	case 148: case 153:
+		xmin[3]=2.51; xmax[3]=global::sqrt8;
+		xmin[1]=2.45; xmax[1]=2.51;
+		nconstr=1;
+		break;
+	case 149: case 154:
+		xmin[3]=2.6; xmax[3]=global::sqrt8;
+		xmin[1]=2.45; xmax[1]=2.51;
+		xmin[0]=2.2;
+		break;
+	case 150: case 155:
+		xmin[3]=2.7; xmax[3]=global::sqrt8;
+		xmin[1]=2.45; xmax[1]=2.51;
+		break;
+	case 151: case 156:
+		xmin[3]=2.51; xmax[3]=global::sqrt8;
+		xmin[1]=2.45; xmax[1]=2.51;
+		nconstr=1;
+		break;
+	case 157: case 158:
+		xmin[0]=2.696; xmax[0]=global::sqrt8;
+		xmin[1]=2.45; xmax[1]=2.51; 
+		xmin[5]=2.45; xmax[5]=2.51;
+		break;
+	case 159: case 160:
+		xmin[0]=2.696; xmax[0]=global::sqrt8;
+		xmin[1]=2.45; xmax[1]=2.51; 
+		xmin[5]=2.45; xmax[5]=2.51;
+		xmin[4]=2.51;
+		break;
+	case 161: case 162:
+		xmin[0]=2.696; xmax[0]=global::sqrt8;
+		xmin[4]=2.51;
+		break;
+	case 163: case 164:
+	case 165: case 166:
+		xmin[0]=2.696; xmax[0]=global::sqrt8;
+		xmin[1]=2.45; xmax[1]=2.51; 
+		xmin[5]=2.45; xmax[5]=2.51;
+		xmin[3]=global::sqrt8; xmax[3]=3.2;
+		nconstr=1;
+		break;
+	case 167:
+		xmin[3]=2.51; xmax[3]=2.6;
+		xmax[4]=2.138;
+		break;
+	case 168:
+		xmin[3]=global::sqrt8; xmax[3]=3.2;
+		xmin[7]=2.51; xmax[7]=global::sqrt8;
+		nconstr=1;
+		break;
+	case 169: case 170: case 173:
+	case 177: case 178: case 181: case 231:
+		xmin[3]=2.51; xmax[3]=global::sqrt8;
+		nconstr=1;
+		break;
+	case 171:
+	case 179:
+		xmin[3]=2.6; xmax[3]=global::sqrt8;
+		xmin[0]=2.2;
+		break;
+	case 172:
+	case 180:
+		xmin[3]=2.7; xmax[3]=global::sqrt8;
+		break;
+
+	case 174:
+		xmin[3]=2.51; xmax[3]=2.77;
+		xmin[4]=2.51; xmax[4]=2.77;
+		break;
+	case 175:
+		xmin[3]=2.77; xmax[3]=global::sqrt8;
+		xmin[4]=2.51; xmax[4]=global::sqrt8;
+		break;
+	case 176:
+		xmin[3]=2.51; xmax[3]=2.77;
+		xmin[4]=2.51; xmax[4]=2.77;
+		nconstr=1;
+		break;
+
+	case 182:
+		xmin[0]=2.51; xmax[0]=2.696;
+		break;
+	case 183:
+		xmin[0]=2.51; xmax[0]=2.696;
+		nconstr=1;
+		break;
+	case 184:
+		xmin[0]=2.51; xmax[0]=2.696;
+		xmin[3]=2.51; xmax[3]=global::sqrt8;
+		break;
+	case 185:
+		xmin[0]=2.51; xmax[0]=2.696;
+		xmin[3]=2.77; xmax[3]=global::sqrt8;
+		break;
+	case 186: case 187:
+		xmin[0]=2.51; xmax[0]=2.696;
+		nconstr=1;
+		break;
+	case 188:
+		xmin[0]=2.51; xmax[0]=2.696;
+		break;
+	case 189:
+		xmin[0]=2.51; xmax[0]=2.696;
+		xmin[3]=2.77; xmax[3]=global::sqrt8;
+		nconstr=1;
+		break;
+	case 190:
+		xmin[0]=2.51; xmax[0]=2.696;
+		xmin[3]=2.51; xmax[3]=global::sqrt8;
+		nconstr=1;
+		break;
+	case 191:
+		xmin[3]=global::sqrt8; xmax[3]=3.2;
+		xmin[0]=2.51; xmax[0]=2.696;
+		nconstr=1;
+		break;
+	case 192:
+		xmin[3]=global::sqrt8; xmax[3]=3.2;
+		xmax[0]=2.12;
+		nconstr=1;
+		break;
+	case 193:
+		nconstr=2;
+		xmax[0]=xmax[1]=xmax[2]=2.13;
+		xmin[3]=2.51; xmax[3]=3.3;
+		break;
+	case 194:
+		nconstr=1;
+		xmin[3]=global::sqrt8; xmax[3]=3.4;
+		xmax[0]=2.2;
+		break;
+	case 195:
+		nconstr=1;
+		xmin[4]=2.51; xmax[4]=global::sqrt8;
+		xmin[3]=global::sqrt8; xmax[3]=3.4;
+		break;
+	case 196:
+		nconstr=1;
+		xmin[0]=2.51; xmax[0]=2.696;
+		xmin[3]=global::sqrt8; xmax[3]=3.2;
+		break;
+	case 197:
+		xmin[3]=2.51; xmax[3]=global::sqrt8;
+		xmax[1]=xmax[2]=xmax[0]=2.2;
+		xmax[4]=xmax[5]=2.35;
+		break;
+	case 198:
+		xmin[3]=2.51; xmax[3]=3.;
+		nconstr=2;
+		break;
+	case 199:
+		xmin[3]=global::sqrt8; xmax[3]=3.;
+		xmax[0]=2.08;
+		break;
+	case 200:
+		xmin[3]=global::sqrt8; xmax[3]=3.;
+		xmin[4]=2.51; xmax[4]=global::sqrt8;
+		break;
+
+	case 201: case 204:
+		xmin[0]=2.45;
+		xmin[3]=2.51; xmax[3]=global::sqrt8; 
+		xmin[4]=global::sqrt8; xmax[4]=3.2;
+		break;
+	case 202: case 205:
+		xmin[0]=2.45;
+		xmin[5]=2.51; xmax[5]=global::sqrt8; 
+		xmin[4]=global::sqrt8; xmax[4]=3.2;
+		break;
+	case 203: case 206:
+		xmin[0]=2.45;
+		xmin[3]=global::sqrt8;  xmax[3]=3.4;
+		xmin[5]=2.51; xmax[5]=global::sqrt8; 
+		nconstr=1;
+		break;
+
+	case 207: case 210:
+		xmin[0]=2.45;
+		xmin[3]=2.51; xmax[3]=global::sqrt8; 
+		xmin[4]=2.51; xmax[4]=global::sqrt8;
+		break;
+
+	case 208: case 211:
+		xmin[0]=2.45;
+		xmin[5]=2.51; xmax[5]=global::sqrt8; 
+		xmin[4]=2.51; xmax[4]=global::sqrt8;
+		break;
+
+	case 209: case 212:
+		xmin[0]=2.696; xmax[0]=global::sqrt8;
+		xmin[1]=2.45;
+		xmin[5]=2.45;
+		xmin[3]=global::sqrt8; xmax[3]=3.2;
+		break;
+
+	case 213:
+		xmin[3]=2.51; xmax[3]=2.77;
+		xmin[4]=2.51; xmax[4]=2.77;
+		break;
+	case 214:
+		xmin[3]=2.77; xmax[3]=global::sqrt8;
+		xmin[4]=2.51; xmax[4]=global::sqrt8;
+		break;
+	case 215:
+		xmin[3]=2.51; xmax[3]=2.77;
+		xmin[4]=2.51; xmax[4]=2.77;
+		nconstr=1;
+		break;
+	case 216:
+		xmin[3]=2.51; xmax[3]=global::sqrt8;
+		xmin[4]=2.51; xmax[4]=global::sqrt8;
+		break;
+    case 217+0:
+        xmin[15]=2.51; xmax[15]=global::sqrt8;
+        nconstr=1+4;
+        break;
+    case 217+1:
+    case 217+4:
+        xmin[15]=2.51; xmax[15]=global::sqrt8;
+        nconstr=2+4;
+        break;
+    case 217+2:
+        xmin[15]=2.6; xmax[15]=global::sqrt8;
+        xmin[0]=2.2;
+        nconstr=1+4;
+        break;
+    case 217+3:
+        xmin[15]=2.7; xmax[15]=global::sqrt8;
+        nconstr=1+4;
+        break;
+	case 222:
+		nconstr=1+4;
+		break;
+	case 223:
+		nconstr=1;
+		break;
+	case 224:
+		xmin[4]=2.51; xmax[4]=2.77;
+		xmin[5]=2.51; xmax[5]=2.77;
+		//nconstr=1;
+		break;
+	case 225: 
+		xmin[3]=2.51; xmax[3]=global::sqrt8;
+		xmin[5]=2.35;
+		break;
+	 case 226:
+		xmin[3]=2.51; xmax[3]=global::sqrt8;
+		xmin[5]=2.35;
+		nconstr=1;
+		break;
+	 case 227:
+		xmin[3]=2.51; xmax[3]=2.72;
+		nconstr=1;
+		break;
+	case 228:
+        xmin[15]=xmax[15]=2.77;
+		xmax[1]=xmax[2]=xmax[7]=xmax[11]=xmax[13]=2.13;
+        nconstr=1;
+        break;
+	case 229: case 230:
+		xmin[3]=2.7; xmax[3]=global::sqrt8;
+		break;
+	case 232:
+		xmin[3]=2.51; xmax[3]=2.67;
+		xmin[5]=2.27; xmax[5]=2.43;
+		xmax[4]=2.1;
+		xmax[0]=xmax[1]=xmax[2]=2.13;
+		break;
+	case 233:
+		xmin[3]=2.59; xmax[3]=2.64;
+		xmin[4]=2.47;
+		xmin[5]=2.1;
+		nconstr=1;
+		break;
+	case 234:
+		xmin[4]=2.7; xmax[4]=2.77;
+		xmin[5]=2.7; xmax[5]=2.77;
+		xmin[3]=2.; xmax[3]=2.51;
+		xmax[0]=xmax[1]=xmax[2]=2.13;
+		break;
+	case 235:
+		xmin[3]=2.7; xmax[3]=2.74;
+		xmax[0]=xmax[1]=xmax[2]=2.13;
+		nconstr=1;
+		break;
+	case 236:
+		xmin[4]=2.7; xmax[4]=2.77;
+		xmin[5]=2.51; xmax[5]=2.77;
+		xmax[0]=xmax[1]=xmax[2]=2.13;
+		break;
+
+	case 238: case 239:
+		xmin[3]=2.7; xmax[3]=2.77;
+		xmax[0]=xmax[1]=xmax[2]=2.13;
+		nconstr=1;
+		break;
+
+	case 240:
+		xmin[3]=2.7; xmax[3]=2.747;
+		xmax[0]=xmax[1]=xmax[2]=2.13;
+		nconstr=1;
+		break;
+	case 241:
+	xmin[0]=2.51; xmax[0]=global::sqrt8;
+	xmin[3]=2.51; xmax[3]=2.6961;
+		break;
+	case 242:
+		xmin[3]=2.51; xmax[3]=2.6961;
+		xmin[3]=2.51; xmax[3]=2.6961;
+		xmax[0]=xmax[1]=xmax[2]=2.13;
+		nconstr=1;
+		break;
+	case 243: case 244:
+		xmin[0]=2.51; xmax[0]=global::sqrt8;
+		xmin[3]=global::sqrt8; xmax[3]=3.2;
+		nconstr=2;
+		break;
+	case 245:
+		xmin[0]=2.51; xmax[0]=global::sqrt8;
+		xmin[5]=2.75; xmax[5]=3.2;
+		xmin[3]=xmax[3]=2;
+		xmin[1]=xmax[1]=2;
+			break;
+
+	case 246:
+		xmin[0]=2.51; xmax[0]=global::sqrt8;
+		xmin[5]=2.51; xmax[5]=2.75;
+		xmin[3]=xmax[3]=2;
+		xmin[1]=xmax[1]=2;
+			break;
+		
+
+	case 247:
+		xmin[3]=2.51; xmax[3]=global::sqrt8;
+		nconstr=1;
+			break;
+
+	case 250:
+		xmin[3]=global::sqrt8; xmax[3]=3.4;
+		nconstr=1;
+			break;
+		
+		
+
+	case 248: case 249:
+		xmin[3]=2.51; xmax[3]=global::sqrt8;
+		nconstr=2;
+			break;
+		
+
+	case 252: case 253:
+		xmin[0]=2.51; xmax[0]=global::sqrt8;
+		nconstr=1;
+		break;
+
+	case 251: 
+		xmin[0]=2.51; xmax[0]=global::sqrt8;
+		break;
+
+
+	case 254: 
+		xmin[3]=2.51; xmax[3]=global::sqrt8;
+		break;
+		
+
+	case 256: 
+	case 255: 
+		xmin[3]=2.51; xmax[3]=global::sqrt8;
+		nconstr=1;
+		break;
+
+	case 257: case 258:
+		xmin[0]=xmax[0]=2;
+		xmin[1]=xmax[1]=2;
+		xmin[3]=global::sqrt8; xmax[3]=3.06;
+		xmin[4]=xmax[4]=2;
+		xmin[5]=xmax[5]=2;
+			break;
+
+	case 259:
+		xmin[0]=xmax[0]=2;
+		xmin[1]=xmax[1]=2;
+		xmin[3]=xmax[3]=2;
+		xmin[4]=xmin[5]=3.06;
+		xmax[4]=xmax[5]=3.23;
+		break;
+
+	case 260:
+		xmin[0]=xmax[0]=2;
+		xmin[1]=xmax[1]=2;
+		xmax[2]=2;
+		xmin[3]=xmax[3]=2;
+		xmin[4]=xmin[5]=3.06;
+		xmax[4]=xmax[5]=3.23;
+		break;
+
+	case 265:
+		xmin[0]=xmax[0]=2;
+		xmin[1]=xmax[1]=2;
+		xmin[2]=2.51;
+		xmin[3]=xmax[3]=2;
+		xmin[4]=xmin[5]=3.06;
+		xmax[4]=xmax[5]=3.23;
+		break;
+
+	case 261:
+		xmin[0]=xmax[0]=2;
+		xmin[3]=xmax[3]=2;
+		xmin[4]=global::sqrt8;
+		xmin[5]=3.06;
+		xmax[4]=xmax[5]=3.23;
+		break;
+
+	 case 262:
+		xmin[0]=xmax[0]=2;
+		xmin[3]=xmax[3]=2;
+		xmin[4]=global::sqrt8;
+		xmin[5]=3.105;
+		xmax[4]=xmax[5]=3.23;
+		break;
+
+	 case 268:
+		xmin[0]=xmax[0]=2;
+		xmin[3]=xmax[3]=2;
+		xmin[4]=global::sqrt8;
+		xmin[5]=3.06;
+		xmax[5]=3.105;
+		xmax[4]=3.23;
+		break;
+
+	case 263: case 264:
+		xmin[0]=xmax[0]=2;
+		xmin[3]=xmax[3]=2;
+		xmax[1]=xmax[5]=2;
+		xmin[4]=global::sqrt8;
+		xmax[4]=3.23;
+		break;
+
+	case 266: 
+		xmin[2]=2.51;
+		xmax[4]=xmax[5]=2;
+		xmin[3]=global::sqrt8;
+		xmax[3]=3.23;
+		break;
+
+	case 267: 
+		xmin[0]=2.51;
+		xmax[1]=xmax[2]=2;
+		xmin[3]=3.06; xmax[3]=3.105;
+		xmax[4]=xmax[5]=2;
+		break;
+
+
+
+		//Z-vars
+		default : cout << "error " << ineqSwitch << ": not installed " << endl;
+		}
+
+	if (nconstr>0) constraintfunc=ConstraintPage1;
+	}
+
+double /*ineq.cc*/minimize2(int);
+
+void page1()
+	{
+	/* // an inequality for flat quarters, 4/19/98, 91--95 are together
+	minimize2(91);
+	minimize2(92);
+	minimize2(93);
+	minimize2(94);
+	minimize2(95);
+
+	minimize2(96);
+	minimize2(97); // 3 qrtets & a flat, what is the sum of the opposite edges?
+	minimize2(98); // 4 qrtets & a flat, what is the sum of the edges?
+	minimize2(99); // 5 simplices of various shapes, ax+b inequality.
+			// This is bugged a 3 should be replaced by an index 8.
+	minimize2(100); // 4/26/98, erasing upright above 2.696 diagonal.
+	minimize2(101); // 4/27/98, upright<2.696,adapt ExceptUprightEquations.
+	minimize2(102); // 4/27/98, vor version of #101.
+	minimize2(103); // 4/28/98, flat gamma
+	minimize2(104); // 4/28/98, linearize eta.
+	minimize2(105); // 4/28/98, VorVc, two edges>2.51.
+	minimize2(107); // 4/29/98, flat vorVc, (for hex 156-17-67-6-*)
+	minimize2(106); // 4/29/98, flat gamma, (for hex 156-17-67-6-*)
+					// 4/29/98, adapted to (hex 156-17-67-1-*)
+	minimize2(108); // anchor2-anchor /4/29/98 for Sam's kappa verifications
+	minimize2(109); // 5/1/98, flat gamma, two cases.
+	minimize2(110); // 5/1/98, flat gamma, two cases.
+	minimize2(111); // 5/4/98, VorAnalytic, on ht>2.696.
+	minimize2(112); // 5/4/98, Gamma, on ht>2.45. qrtet
+	minimize2(113); // 5/4/98, VorVc on ht>2.45, weird quad.
+	minimize2(114); // 5/4/98, VorVc on ht>2.45, weird quad.
+	minimize2(115); // 5/4/98, VorVc on S_C and related.
+	minimize2(116); // 5/5/98, VorVc weird quad. ht=2.696.
+	minimize2(117); // 5/5/98, VorVc weird quad. ht=2.696.
+	minimize2(118); // new beta ineq for Part IV.
+	minimize2(119); // new beta ineq for Part IV.
+	minimize2(120); // new beta ineq.
+	minimize2(121); // 5/12/98: Cortau, do cut away pieces overlap?
+	minimize2(122); // 5/17/98: check specials in Part IV.
+	minimize2(123); // 5/17/98: check specials in Part IV.
+	for (C355=0;C355<52;C355++)
+	{
+	minimize2(124); // 5/17/98: try octahedral case of SP.III.
+	}
+	cout.precision(16);
+	cout << "dodecrad = " << global::dodecrad << endl;
+	minimize2(125); // dodec.
+	minimize2(126); // 5/29/98. edge distortion from type (5,0).
+	minimize2(127); // 5/29/98. vor0 on 1/2 a quad
+	minimize2(128); // 5/29/98. vor0 on 1/2 a quad + qrtet neighbors
+	minimize2(129); // 5/30/98. vor_an on qrtet. Branch 
+	minimize2(130); // 6/1/98. max x[3] st dih<1.694
+	minimize2(131); // 5/29/98. max dih st edges.
+	minimize2(133); // 6/1/98. dih & edge length.
+	minimize2(132); // 6/1/98. dih & edge length.
+	minimize2(134); // 6/4/98. 
+	minimize2(135); // 6/5/98. dih angle.
+	minimize2(136); // 6/9/98. mu and vorVc.
+	minimize2(137); // 6/9/98. tau-dih.
+	minimize2(138); // 6/9/98. Sean's bad case.
+	minimize2(139); // 6/9/98. Sean's sig-edge
+	minimize2(140); // 6/10/98. pent in hept.
+	minimize2(141); // 6/11/98. VI.4.4. slack?
+	minimize2(142); // 6/14/98. VI.4.4.3, 0.0875 lemma. 
+	minimize2(143); // 6/26/98. voran < -0.055 on penalty arena.
+	minimize2(144); // 6/26/98. taumin on qrtet
+
+	minimize2(145); // 6/27/98. 2.45 lift on anchored.
+	minimize2(146); // 6/27/98. 2.45 lift on anchored.
+	minimize2(147); // 6/27/98. 2.45 lift on anchored.
+	minimize2(148); // 6/27/98. 2.45 lift on anchored.
+	minimize2(149); // 6/27/98. 2.45 lift on anchored.
+	minimize2(150); // 6/27/98. 2.45 lift on anchored.
+	minimize2(151); // 6/27/98. 2.45 lift on anchored.
+	minimize2(152); // 6/27/98. 2.45 lift on anchored.
+	minimize2(153); // 6/27/98. 2.45 lift on anchored.
+	minimize2(154); // 6/27/98. 2.45 lift on anchored.
+	minimize2(155); // 6/27/98. 2.45 lift on anchored.
+	minimize2(156); // 6/27/98. 2.45 lift on anchored.
+	minimize2(157); // 6/27/98. 2.45 lift on anchored.
+	minimize2(158); // 6/27/98. 2.45 lift on anchored.
+	minimize2(159); // 6/27/98. 2.45 lift on anchored.
+	minimize2(160); // 6/27/98. 2.45 lift on anchored.
+	minimize2(161); // 6/27/98. 2.45 lift on anchored.
+	minimize2(162); // 6/27/98. 2.45 lift on anchored.
+	minimize2(163); // 6/27/98. 2.45 lift on anchored.
+	minimize2(164); // 6/27/98. 2.45 lift on anchored.
+	minimize2(165); // 6/27/98. 2.45 lift on anchored.
+	minimize2(166); // 6/27/98. 2.45 lift on anchored.
+	minimize2(167); // 6/28/98. test flat gamma.
+	minimize2(168); // 6/29/98. quad ineq ax+b.
+
+	minimize2(169); // 6/29/98. ineq ax+b.
+	minimize2(170); // 6/29/98. ineq ax+b.
+	minimize2(171); // 6/29/98. ineq ax+b.
+	minimize2(172); // 6/29/98. ineq ax+b.
+	minimize2(173); // 6/29/98. ineq ax+b.
+	minimize2(174); // 6/29/98. ineq ax+b. type A.
+	minimize2(175); // 6/29/98. ineq ax+b.
+	minimize2(176); // 6/29/98. ineq ax+b.
+
+	minimize2(177); // 6/29/98. ineq ax+b.
+	minimize2(178); // 6/29/98. ineq ax+b.
+	minimize2(179); // 6/29/98. ineq ax+b.
+	minimize2(180); // 6/29/98. ineq ax+b.
+	minimize2(181); // 6/29/98. ineq ax+b.
+	minimize2(182); // 6/29/98. ineq ax+b. on uprights. (not used)
+	minimize2(183); // 6/29/98. ineq ax+b. on uprights. (not used)
+	minimize2(184); // 6/29/98. ineq ax+b. on anchored simplices. (not used)
+	minimize2(185); // 6/29/98. ineq ax+b. on anchored simplices. (not used)
+	minimize2(186); // 6/29/98. vorNu < vorVc 
+	minimize2(187); // 6/29/98. vorNu < vorVc 
+	minimize2(188); // 6/30/98. gamma-edge on upright
+	minimize2(189); // 6/30/98. vorVc on anchored simplex 
+	minimize2(190); // 6/30/98. vorVc on anchored simplex 
+	minimize2(191); // 6/30/98. vorVc on anchored simplex
+	minimize2(192); // 6/30/98. vorVc on special
+	minimize2(193); // 6/30/98. dih .
+	minimize2(194); // 7/1/98.  quad VorVc
+	minimize2(195); // 7/1/98.  quad VorVc
+	minimize2(196); // 7/2/98. anchored simplex.
+	minimize2(197); // 7/2/98. gamma-edge on flat.
+	minimize2(198); // 7/3/98. dih. edge
+	minimize2(199); // 7/3/98. special-edge length
+	minimize2(200); // 7/3/98. special-edge length
+	minimize2(201); // 7/5/98. lift 2.45.
+	minimize2(202); // 7/5/98. lift 2.45.
+	minimize2(203); // 7/5/98. lift 2.45.
+	minimize2(204); // 7/5/98. lift 2.45.
+	minimize2(205); // 7/5/98. lift 2.45.
+	minimize2(206); // 7/5/98. lift 2.45.
+	minimize2(207); // 7/5/98. lift 2.45.
+	minimize2(208); // 7/5/98. lift 2.45.
+	minimize2(209); // 7/5/98. lift 2.45.
+	minimize2(210); // 7/5/98. lift 2.45.
+	minimize2(211); // 7/5/98. lift 2.45.
+	minimize2(212); // 7/5/98. lift 2.45.
+	minimize2(213); // 7/7/98 ineq ax+b. type A. // cases 174,175,176 etc.
+	minimize2(214); // 7/7/98 ineq ax+b.
+	minimize2(215); // 7/7/98 ineq ax+b.
+	minimize2(216); // solid on type A.
+	*/
+	/*	
+	minimize2(174); // 6/29/98. ineq ax+b. type A.
+	minimize2(175); // 6/29/98. ineq ax+b.
+	minimize2(176); // 6/29/98. ineq ax+b.
+
+	minimize2(177); // 6/29/98. ineq ax+b.
+	minimize2(178); // 6/29/98. ineq ax+b.
+	minimize2(179); // 6/29/98. ineq ax+b.
+	minimize2(180); // 6/29/98. ineq ax+b.
+	minimize2(181); // 6/29/98. ineq ax+b.
+
+	minimize2(217+0); // 7/8/98. ax+b on 5 pieces.
+	minimize2(217+1); // 7/8/98. ax+b on 5 pieces.
+	minimize2(217+2); // 7/8/98. ax+b on 5 pieces.
+	minimize2(217+3); // 7/8/98. ax+b on 5 pieces.
+	minimize2(217+4); // 7/8/98. ax+b on 5 pieces.
+
+	minimize2(222); // 0.06389; 7/8/98.
+	minimize2(223); // Part III.Group 3.15.
+	minimize2(224); // Part III.Group 3.15.
+	minimize2(225);
+	minimize2(226);
+	minimize2(227); // 7/12/98. vor_a on flat
+	minimize2(228); // 7/12/98. edge distortion
+	minimize2(229); // 7/12/98. vorVc on flat. 
+	minimize2(230); // 7/12/98. vorVc on flat. 
+	minimize2(224);
+	
+	minimize2(177); // 6/29/98. ineq ax+b.
+	minimize2(178); // 6/29/98. ineq ax+b.
+	minimize2(179); // 6/29/98. ineq ax+b.
+	minimize2(180); // 6/29/98. ineq ax+b.
+	minimize2(181); // 6/29/98. ineq ax+b.
+	minimize2(231); // adapt 177:
+	minimize2(232); // 7/13/98.
+	minimize2(233); // 7/14/98
+	minimize2(234); // 7/14/98
+	minimize2(235); // 7/14/98
+	minimize2(238); // 7/25/98
+	minimize2(239); // 7/25/98
+	minimize2(240); // 7/25/98
+	minimize2(241); // 7/26/98
+	minimize2(242); // 7/26/98
+	minimize2(243); // 7/28/98
+	minimize2(244); // 7/28/98
+	minimize2(245); // 7/28/98
+	minimize2(246); // 7/28/98
+	minimize2(247); // 7/30/98
+	minimize2(248); // 7/30/98
+	minimize2(249); // 7/30/98
+	minimize2(250); // 7/30/98
+	minimize2(251); // 7/30/98
+	minimize2(252); // 7/30/98
+	minimize2(253); // 7/30/98
+	minimize2(254); // 7/30/98
+	minimize2(255); // 7/30/98
+	minimize2(256); // 7/30/98
+
+	minimize2(257); // 7/30/98
+	minimize2(258); // 7/30/98
+	minimize2(259); // 7/30/98
+	minimize2(260); // 7/30/98
+	minimize2(261); // 7/30/98
+	minimize2(262); // 7/30/98
+
+	minimize2(263); // 7/30/98
+	minimize2(264); // 7/30/98
+	minimize2(265); // 7/30/98
+	minimize2(266); // 7/30/98
+	minimize2(267); // 7/30/98
+	minimize2(268); // 7/30/98
+	
+	*/
+	minimize2(246);
+	}
+@

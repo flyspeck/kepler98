@@ -1,0 +1,219 @@
+head	1.2;
+access;
+symbols;
+locks
+	hales:1.2; strict;
+comment	@// @;
+
+
+1.2
+date	97.09.16.19.13.21;	author hales;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	97.09.14.20.28.01;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@ineq.cc inequality checker
+@
+
+
+1.2
+log
+@Version of ineq.cc used in part3*.cc verifications.
+Sphere Packings III
+@
+text
+@#include <iomanip.h>
+#include <iostream.h>
+#include <fstream.h>
+#include <math.h>
+#include <stdlib.h>
+#include "numerical.h"
+#include "gradient.h"
+#include "morefn.h"
+#include "constants.h"
+#include "float.h"
+
+// from CFSQP:
+double constrained_min(double xmin[], double xmax[], double x[],
+		int numargs,int nconstr,
+        void (*func)(int numargs,int whichFn,double* x,double* ret,void*),
+        void (*constraintfunc)
+			(int numargs,int which,double* x,double* ret,void*));
+
+double iter_constrained_min(double xmin[], double xmax[], double x[],
+		int numiter,int numargs,int nconstr,
+        void (*func)(int numargs,int whichFn,double* x,double* ret,void*),
+        void (*constraintfunc)
+			(int numargs,int which,double* x,double* ret,void*))
+	{
+	double currentMin=DBL_MAX;
+	int i;
+	double* y;
+	y = new double[numargs];
+	for (i=0;i<numargs;i++) x[i]=xmin[i];
+	for (i=0;i<numiter;i++) 
+			{
+			double t = constrained_min(xmin,xmax,y,numargs,nconstr,
+				func,constraintfunc);
+			t = constrained_min(xmin,xmax,y,numargs,nconstr,
+				func,constraintfunc);
+			if (t<currentMin) {
+				currentMin=t;
+				for (int j=0;j<numargs;j++) { x[j]=y[j]; }
+				}
+			}
+	delete [] y;
+	return currentMin;
+	}
+
+class iter 
+{
+public:
+	double* xmin;
+	double* xmax;
+	double* x;
+	int numiter,numargs,nconstr;
+	void (*func)(int numargs,int whichFn,double* x,double* ret,void*);
+	void (*constraintfunc)
+		(int numargs,int which,double* x,double* ret,void*);
+	iter(int);
+	~iter();
+};
+
+
+double vorvol(double y[6])
+	{
+	return (vor_analytic(y[0],y[1],y[2],y[3],y[4],y[5])
+		-(4.0/3.0)*solid(y[0],y[1],y[2],y[3],y[4],y[5]))/(-4.0*doct);
+	}
+
+double vorIP(double y[6]) { return
+	vorVc(y[0],y[1],y[2],y[3],y[4],y[5],1.385);
+	}
+
+double tauIP(double y[6]) { return
+	-vorIP(y)+global::zetapt*solid(y[0],y[1],y[2],y[3],y[4],y[5]);
+	}
+
+double mustbepositive(double x)
+	{
+	return (x>0.0 ? 0.0 : -5000.0*x*x);
+	}
+
+
+double triangle(double y1,double y2,double y6)
+	{
+	return acos( (y1*y1+y2*y2-y6*y6)/(2*y1*y2) );
+	}
+double psi (double y) { return triangle(y,1.255,1.6); }
+double beta (double y0,double y1,double y6)
+	{
+	double p = cos(psi(y1));
+	double t = cos(triangle(y0,y1,y6));
+	return acos( sqrt((p*p-t*t)/(1.0-t*t)) );
+	}
+
+double betahack(double y0,double y1, double y6)
+	{
+	double p = y0/2.77;
+	double t = cos(triangle(y0,y1,y6));
+	return acos ( sqrt((p*p-t*t)/(1.0-t*t)));
+	}
+double beta0(double y0,double y1,double y5)
+	{
+	if (delta(y0*y0,y1*y1,1.255*1.255,1.6*1.6,1.6*1.6,y5*y5)>0.002)
+	return dihedraly(y0,y1,1.255,1.6,1.6,y5);
+	return 0;
+	}
+double rad(double y[6])
+	{
+	return sqrt(circum2(y[0]*y[0],y[1]*y[1],y[2]*y[2],y[3]*y[3],
+			y[4]*y[4],y[5]*y[5]));
+	}
+
+double fnTemp1(double y[4])   // put your favorite inequality here.
+	{
+	double u = 0.0,v=0.0;
+	double t = 10.0;
+	t=delta(y[0]*y[0],y[1]*y[1],y[2]*y[2],y[3]*y[3],y[4]*y[4],y[5]*y[5]);
+	double f126= radf(y[0],y[1],y[5])-global::sqrt2;
+	double y1=y[0],y2=y[1],y3=y[2],y4=y[3],y5=y[4],y6=y[5];
+	if ((t > 0.05) && (t > 0.05) )
+		{
+		u = -tau_analytic(y[0],y[1],y[2],y[3],y[4],y[5])
+			+0.0658 + 0.1*(y1-2)+0.061*(y2+y3-4) + 0.166*(y5+y6-4);
+		}
+	return u 
+		+mustbepositive(t)
+		+mustbepositive(-global::sqrt2+radf(y[3],y[4],y[5]))
+		//+mustbepositive(-global::sqrt2+radf(y[1],y[2],y[3]))
+		;
+	}
+
+
+void PARTIV(double y[])
+	{
+	int numargs=6;
+	int numiters= 20; // was 20;
+	double ymin[15], ymax[15];
+	int i;
+	for (i=0;i<15;i++) { ymin[i]=2.0; ymax[i]=2.51; }
+	// ADJUST HERE: Temp
+	ymin[3]=2.51; ymax[3]=global::sqrt8;
+	double t = unconstrained_iterated_max(numiters,ymin,
+			ymax,y,numargs,*fnTemp1);
+	cout << t << endl << "{";
+	for (i=0;i<numargs;i++) cout << y[i] << (i+1<numargs ? ",": "}");
+	cout << endl;
+	}
+
+double lowest = DBL_MAX;
+void minimize2(int j)
+	{
+	cout << "\nNew Case = " << j << "\n";
+	iter X(j);
+	int i;
+	double t = iter_constrained_min(X.xmin,X.xmax,X.x,
+			X.numiter,X.numargs,X.nconstr,
+			X.func,
+			X.constraintfunc);
+	cout.precision(18);
+	cout << t << endl << "{";
+	for (i=0;i<X.numargs;i++) cout << X.x[i] << (i+1<X.numargs ? ",": "}");
+	cout << endl;
+	if (t<lowest) lowest=t;
+	}
+
+int main()
+	{
+	for (int j=0;j<25;j++) 
+		{
+		for (int i=0;i<16;i++) minimize2(j*1000+i);
+		cout << "\n smallest case = " << lowest << endl << endl;
+		cout << "---------\n\n";
+		lowest = DBL_MAX;
+		}
+	}
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d149 1
+d157 1
+a157 1
+	cout << "\nNew Case = " << j << "\n" <<  t << endl << "{";
+d165 7
+a171 2
+	for (int i=5001;i<5029;i++) minimize2(i);
+	cout << "smallest case = " << lowest << endl;
+@

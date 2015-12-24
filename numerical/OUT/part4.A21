@@ -1,0 +1,46 @@
+ Section A21:
+
+
+New Case = 275286804
+numargs = 6
+0.0634404496734379958
+{2.82842712474618985, 2.82842712474618985, 2, 2, 2, 2}
+
+New Case = 627654828
+numargs = 6
+0.0910748498037010634
+{2.82842712474618985, 2.82842712474618985, 2, 2, 2, 2}
+
+New Case = 995177961
+numargs = 6
+0.104781538287420928
+{2, 2, 2, 2.82842712474618985, 2.82842712474618985, 2.82842712474618985}
+
+New Case = 735892048
+numargs = 6
+0.0534995021315282093
+{2, 2, 2, 2.82842712474618985, 2.82842712474618985, 2.82842712474618985}
+
+
+ Exiting cfsqp numerical optimizer.
+
+
+
+
+
+ Cfsqp numerical optimizer for Sphere Packings IV 
+
+ The inequalities in the appendix are divided into 24 sections.
+ Sections 1-24 are tested numerically here. 
+
+ Select section number (1--24): 
+ The inequalities are written in the form F>0.
+ This program minimizes F subject to constraints.
+ If the returned value is positive, the inequality passes the numerical check. 
+ Each inequality is test with 80 random initial configurations. 
+
+ Optimizing.... 
+
+
+
+

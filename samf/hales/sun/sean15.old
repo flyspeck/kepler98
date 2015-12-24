@@ -1,0 +1,111 @@
+Welcome to sphere packing routines, relation testing division.
+sean_val = [2.51682000000000005713, 2.51682000000000005713]
+Welcome to Section A15.  
+Enter cell count limit:  Enter slop:  		Slop = 0
+Starting time:  	Thu Jun 11 09:17:09 1998
+
+Starting case 1:
+	Checking -tau0.
+2.000000000000000000	2.516820000000000057
+2.000000000000000000	2.516820000000000057
+2.000000000000000000	2.516820000000000057
+2.828427124746189847	4.000000000000000000
+2.000000000000000000	2.000000000000000000
+2.000000000000000000	2.000000000000000000
+
+cellcount    =          5281859		maxdepth = 8
+discards2    =          1626200
+largecut     =                0		discards     =            33606
+smallcut     =                0		verifycount  =          3291936
+partialcount =                0		diff         =           330117
+Verification succeeded.
+
+Starting case 2:
+	Checking -tau0.
+2.000000000000000000	2.516820000000000057
+2.000000000000000000	2.516820000000000057
+2.000000000000000000	2.516820000000000057
+2.828427124746189847	4.516820000000000057
+2.000000000000000000	2.000000000000000000
+2.516820000000000057	2.516820000000000057
+
+cellcount    =          7517559		maxdepth = 9
+discards2    =          2365103
+largecut     =                0		discards     =            29833
+smallcut     =                0		verifycount  =          4652773
+partialcount =                0		diff         =           469850
+Verification succeeded.
+
+Starting case 3:
+	Checking -tau0.
+2.000000000000000000	2.516820000000000057
+2.000000000000000000	2.516820000000000057
+2.000000000000000000	2.516820000000000057
+2.828427124746189847	5.033640000000000114
+2.516820000000000057	2.516820000000000057
+2.516820000000000057	2.516820000000000057
+
+cellcount    =          3835271		maxdepth = 9
+discards2    =          2154137
+largecut     =                0		discards     =             8920
+smallcut     =                0		verifycount  =          1432507
+partialcount =                0		diff         =           239707
+Verification succeeded.
+
+Starting case 4:
+	Checking -tau0.
+2.000000000000000000	2.516820000000000057
+2.000000000000000000	2.516820000000000057
+2.000000000000000000	2.516820000000000057
+2.828427124746189847	4.828427124746190735
+2.000000000000000000	2.000000000000000000
+2.828427124746189847	2.828427124746190291
+
+cellcount    =         19251751		maxdepth = 9
+discards2    =          7553864
+largecut     =                0		discards     =            35487
+smallcut     =                0		verifycount  =         10459163
+partialcount =                0		diff         =          1203237
+Verification succeeded.
+
+Starting case 5:
+	Checking -tau0.
+2.000000000000000000	2.516820000000000057
+2.000000000000000000	2.516820000000000057
+2.000000000000000000	2.516820000000000057
+2.828427124746189847	5.033640000000000114
+2.516820000000000057	2.516820000000000057
+2.828427124746189847	2.828427124746190291
+
+cellcount    =          5526263		maxdepth = 9
+discards2    =          2567006
+largecut     =                0		discards     =             6296
+smallcut     =                0		verifycount  =          2607567
+partialcount =                0		diff         =           345394
+Verification succeeded.
+
+Starting case 6:
+	Checking -tau0.
+2.000000000000000000	2.516820000000000057
+2.000000000000000000	2.516820000000000057
+2.000000000000000000	2.516820000000000057
+2.828427124746189847	5.033640000000000114
+2.828427124746189847	2.828427124746190291
+2.828427124746189847	2.828427124746190291
+
+cellcount    =          6086055		maxdepth = 9
+discards2    =          3644623
+largecut     =                0		discards     =             3579
+smallcut     =                0		verifycount  =          2057472
+partialcount =                0		diff         =           380381
+Verification succeeded.
+
+All verifications succeeded.
+
+Done.
+Ending time:    	Thu Jun 11 16:57:28 1998
+
+Elapsed time: 27619 seconds,		diff = 1830.31
+47498758 cells considered,		1719.79 cells per second
+
+

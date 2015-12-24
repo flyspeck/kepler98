@@ -1,0 +1,94 @@
+Welcome to sphere packing routines, relation testing division.
+Welcome to Section A.3.8.2b.  
+Enter cell count limit:  Enter slop:  		Slop = 0
+Starting time:  	Mon Jul 27 12:46:29 1998
+
+Case 1:
+rhs = 0.239099999999999979
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.168000000000000149
+2.000000000000000000	2.168000000000000149
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.509999999999999787	4.678000000000000824
+
+cellcount    =            99127		maxdepth = 6
+partialpushes=                0
+largecut     =                0		discards     =            89576
+smallcut     =             7952		verifycount  =                0
+partialcount =                0		diff         =            91175
+Verification succeeded.
+
+Case 2:
+rhs = 0.137599999999999972
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.168000000000000149
+2.000000000000000000	2.168000000000000149
+2.000000000000000000	2.510000000000000231
+2.509999999999999787	2.510000000000000231
+2.509999999999999787	4.678000000000000824
+
+cellcount    =            11383		maxdepth = 6
+partialpushes=                0
+largecut     =                0		discards     =            10154
+smallcut     =              845		verifycount  =                0
+partialcount =                0		diff         =            10538
+Verification succeeded.
+
+Case 3:
+rhs = 0.265999999999999959
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.168000000000000149
+2.000000000000000000	2.168000000000000149
+2.509999999999999787	2.828427124746190291
+2.000000000000000000	2.510000000000000231
+2.509999999999999787	4.678000000000000824
+
+cellcount    =           356263		maxdepth = 7
+partialpushes=                0
+largecut     =                0		discards     =           339595
+smallcut     =            11071		verifycount  =                0
+partialcount =                0		diff         =           345192
+Verification succeeded.
+
+Case 4:
+rhs = 0.119999999999999996
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.168000000000000149
+2.000000000000000000	2.168000000000000149
+2.509999999999999787	2.828427124746190291
+2.509999999999999787	2.510000000000000231
+2.509999999999999787	4.678000000000000824
+
+cellcount    =            27575		maxdepth = 7
+partialpushes=                0
+largecut     =                0		discards     =            25062
+smallcut     =             1633		verifycount  =                0
+partialcount =                0		diff         =            25942
+Verification succeeded.
+
+Case 5:
+rhs = 0.145299999999999985
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.168000000000000149
+2.000000000000000000	2.168000000000000149
+2.000000000000000000	2.510000000000000231
+2.509999999999999787	3.488000000000000433
+2.509999999999999787	2.510000000000000231
+
+cellcount    =             4051		maxdepth = 5
+partialpushes=                0
+largecut     =                0		discards     =             3910
+smallcut     =                0		verifycount  =                0
+partialcount =                0		diff         =             4051
+Verification succeeded.
+
+All verifications succeeded.
+
+Done.
+Ending time:    	Mon Jul 27 12:46:39 1998
+
+Elapsed time: 10 seconds,		diff = 6.33
+498399 cells considered,		49839.9 cells per second
+
+

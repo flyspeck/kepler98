@@ -1,0 +1,85 @@
+
+    if ((extrarow>0)&&(1==0))
+        {
+        // make more rowspace, rownamespace nzspace.
+        int i;
+        char* rownamestore_old = rownamestore;
+        rownamestore = (char*)malloc(rownamespace+10*extrarow);
+        if (!rownamestore)
+            {
+            cout << "fatal: allocation failed";
+            exit(1);
+            }
+        for (i=0;i<rownamespace;i++)
+            rownamestore[i]=rownamestore_old[i];
+        rownamespace += 10*extrarow;
+        // matind and matval; (nzspace)
+        int* matind_old = matind;
+        matind = (int*)malloc(sizeof(int)*(nzspace+10*extrarow));
+        if (!matind)
+            {
+            cout << "fatal: allocation(m) failed";
+            exit(1);
+            }
+        double* matval_old = matval;
+        matval = (double*)malloc(sizeof(double)*(nzspace+10*extrarow));
+        if (!matval)
+            {
+            cout << "fatal: allocation(mv) failed";
+            exit(1);
+            }
+        for (i=0;i<nzspace;i++)
+            {
+            matind[i]=matind_old[i];
+            matval[i]=matval_old[i];
+            }
+        nzspace += 10*extrarow;
+        // rhs, sense, and rngval. (rowspace)
+        double* rhs_old = rhs;
+        rhs = (double*)malloc(sizeof(double)*(rowspace+extrarow));
+        if (!rhs)
+            {
+            cout << "fatal: allocation(rhs) failed";
+            exit(1);
+            }
+        char* sense_old = sense;
+        sense = (char*)malloc(sizeof(char)*(rowspace+extrarow));
+        if (!sense)
+            {
+            cout << "fatal: allocation(sense) failed";
+            exit(1);
+            }
+        double* rngval_old = rngval;
+        if (rngval)
+            {
+            rngval =
+            (double*)malloc(sizeof(double)*(rowspace+extrarow));
+            char c;
+            cout << "rngval, press key" << endl;
+            for (i=0;i<rowspace;i++) rngval[i]=rngval_old[i];
+            cin >> c;
+            if (!rngval)
+                {
+                cout << "fatal: allocation(r) failed";
+                exit(1);
+                }
+            }
+        for (i=0;i<rowspace;i++)
+            {
+            rhs[i]=rhs_old[i];
+            sense[i]=sense_old[i];
+            }
+        /*
+        if (!rngval_old)
+            {
+            //delete [] rngval;
+            char c;
+            cout << "deleting old, press key" << endl;
+            rngval=0;
+            }
+        else for (i=0;i<rowspace;i++) rngval[i]=rngval_old[i];
+        */
+        rowspace += extrarow;
+        }
+ 
+

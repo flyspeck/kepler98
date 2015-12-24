@@ -1,0 +1,203 @@
+PM[6,131].F17.C58 (* Experimental *)
+
+(* Experiments with 
+SHORT/HEX/LP/cplexE.lp6.131.F17.C58 *)
+(*
+bf= "SHORT/HEX/LP/cplexE.lp6.131.F17.C58";
+
+(* Highest is 2905 *)
+AB[2905,32]== {91,25};
+bb=Branch[Band[6,131],91]<>ineq[25]<>"ht213=0\n";
+LPdisplay[bf,bb]== 0.466346
+
+tabHi[[25]]=={2, 4, 4, 2, 0.493442};
+*)
+psel = PSelect[valB,#[[1]]>0.4429&];
+pp=Map[AB[#,32][[2]]&,psel]//Union;
+tabHi[[ pp]];
+Map[{#[[2]],#[[3]]}&,%]//Union == {{2, 1}, {4, 1}, {4, 2}, {4, 4}}
+
+(* So the diagonal is <= 2.77 *)
+grab[i_]:= PSelect[valB,#[[1]]>0.4429&&AB[#,32][[2]]==i&]
+
+(*
+vv= Map[LPdisplay[bf,ineq[#]<>"ht213=0\n"]&,pp];
+pp2= pp[[ PSelect[vv,#>0.4429&] ]] == 
+*)
+	pp2= {12, 13, 19, 21, 22, 24, 25, 26, 29, 31, 32};
+IneqCode[i_]:= AB[i,32][[2]]
+BranchCode[i_]:= AB[i,32][[1]];
+psel2 = Select[psel,Inside[IneqCode[#],pp2]&]; //Length == 555;
+(*
+vv=Map[LPdisplay[
+	bf,Branch[Band[6,131],BranchCode[#]]<>ineq[IneqCode[#]]<>"ht213=0\n"]&,
+	psel2];
+
+pvv=PSelect[vv,#>0.4429&];
+
+psel3 = psel2[[pvv]] == ; Length[psel3]==456;
+pp3=Map[AB[#,32][[2]]&,psel3]//Union == {12, 13, 19, 21, 22, 24, 25, 29, 31};
+tabHi[[ pp3 ]] ==
+ {{1, 4, 4, 1, 0.481742}, {1, 4, 4, 2, 0.492137}, {2, 4, 1, 1, 0.477067}, 
+    {2, 4, 2, 1, 0.456679}, {2, 4, 2, 2, 0.455953}, {2, 4, 4, 1, 0.489594}, 
+    {2, 4, 4, 2, 0.493442}, {3, 4, 1, 1, 0.47433}, {3, 4, 4, 1, 0.46364}}
+
+-> to here.
+*)
+
+(*
+vv=Table[
+	{"read ","cplexE.lp6.131.F17.C58"," lp\n",
+	 "add \n",
+	Branch[{14,15,10,11},j],
+	Branch[Band[6,131],BranchCode[psel2[[i]]]],
+	ineq[IneqCode[psel2[[i]]]],
+	"ht213=0\n",
+	"end\n",
+	"opt\n\n"},{i,1,Length[psel2]},{j,1,2^4}]//StringJoin;
+
+Module[{stream},
+	stream = OpenWrite["SHORT/HEX/LP/cplexB131.58E.exec"];
+	    WriteString[stream,                                     
+        "set logfile cplexB131.58E.log\n"<>                  
+        "set preprocessing presolve no\n"                   
+        ];                                                  
+	WriteString[stream,vv];
+	Close[stream]
+	];
+*)
+
+<< SHORT/HEX/cplexB131.58E.sum;
+valE=values;
+pvalE = PSelect[valE,#[[1]]>0.4429&]; Length[pvalE]== 435;
+(* valE[[pvalE]//Sort//Last == {0.468695, 6, 131, 17, 58}; *)
+ppvalE = Map[AB[#,16]&,pvalE];
+Map[Last,ppvalE]//Union == {1};
+psel4 = Map[psel2[[First[#]]]&,ppvalE];
+pp4=Map[AB[#,32][[2]]&,psel4]//Union == {12, 13, 19, 21, 22, 24, 25, 29, 31};
+tabHi[[pp4]];
+bineq[i_]:= Branch[{14,15,10,11},1]<>
+	Branch[Band[6,131],BranchCode[i]]<>
+	ineq[IneqCode[i]]<>
+	"ht213=0\n";  (* i in psel4 *)
+tabIt[i_]:= tabHi[[ AB[i,32][[2]] ]];
+fbranch[i_,j_]:=
+	Switch[i,
+		0,"",
+		1,"e{17}57018=0\n",
+		2,"f{17}57018=0\n"]<>
+	Switch[j,
+		0,"",
+		1,"e{17}61693=0\n",
+		2,"f{17}61693=0\n"];
+
+(* Example *)
+(*
+524 = psel4[[2]];
+LPdisplay[bf,bineq[524]];
+Table[LPdisplay[bf,bineq[524]<>fbranch[i,j]],{i,1,2},{j,1,2}]//Max ==0.428706;
+*)
+
+ff[i_]:= (* i in psel4 *) Module[{j,k,u,j1,j2,k1,k2},
+	u = tabIt[i];
+	Print["NEW CASES>>> ",i];
+	j1=k1=1; j2=k2=2;
+	If[u[[1]]>2,j1=j2=0];
+	If[u[[4]]>2,k1=k2=0];
+	Table[LPdisplay[bf,bineq[i]<>fbranch[j,k]],{j,j1,j2},{k,k1,k2}]//Max
+	];
+
+(* type2=Select[psel4,tabIt[#][[1]]==2&]
+Map[LPmax[bf,"y(5)",bineq[#]]&,type2]//Max =  2.0417146177
+type2a=Select[psel4,tabIt[#][[4]]==2&]
+Map[LPmax[bf,"y(8)",bineq[#]]&,type2a]//Max = 2.0417119589
+We add constraints if y<2.0418  (see extra )
+*)
+
+(* vvsel4= Map[ff,psel4] *)
+(* vvsel4//Max == 0.448261
+PSelect[vvsel4,#>0.4429&]==  *)
+  pX4=
+	{6, 34, 46, 47, 54, 63, 65, 66, 69, 83, 107, 122, 123, 128, 137, 139, 140,  
+   147, 159, 173, 199, 208, 226, 234, 235, 242, 245, 248, 251, 271, 288, 294, 
+   320, 321, 326, 329, 332, 337, 355, 379, 412, 422}                      ;
+psel5= psel4[[pX4]]; Length[psel5]== 42;
+pp5=(* Map[AB[#,32][[2]]&,psel5]//Union == *) {12, 13, 19, 24};
+tabHi[[pp5]];
+
+ff2[i_]:= (* i in psel4 *) Module[{j,k,u,j1,j2,k1,k2},
+	u = tabIt[i];
+	Print["NEW CASES>>> ",i];
+	j1=k1=1; j2=k2=2;
+	If[u[[1]]>2,j1=j2=0];
+	If[u[[4]]>2,k1=k2=0];
+	Flatten[
+	Table[{i,j,k,LPdisplay[bf,bineq[i]<>fbranch[j,k]]},{j,j1,j2},{k,k1,k2}],
+	1]
+	];
+vv2 = Flatten[Map[ff2,psel5],1];
+vv2hi = Select[vv2,Last[#]>0.4429&];
+vv2x = Map[{#,tabHi[[AB[First[#],32][[2]] ]]}&,vv2hi];
+
+hi2 = Select[vv2x,#[[2,4]]==2&];
+(*
+Map[LPmax[bf,"y(8)",bineq[#[[1,1]]]<>fbranch[#[[1,2]],#[[1,3]]]]&,hi2]//Max
+	==  2.0104662109
+Map[LPmax[bf,"y(9,12)",bineq[#[[1,1]]]<>fbranch[#[[1,2]],#[[1,3]]]]&,hi2]//Max
+		== 2.7462621262
+Map[#[[2,4]]&,hi2]//Union == {2};
+Map[#[[1,3]]&,hi2]//Union == {2}; (* so f{17}6193 = 0, etop>sqrt2 *)
+Map[LPdisplay[bf,
+	"sigma{17}61693 < -0.058\n"<> 
+	bineq[#[[1,1]]]<>fbranch[#[[1,2]],#[[1,3]]]]&,hi2]//Max ==
+	0.442337;
+*)
+
+hi2b = Select[vv2x,#[[2,1]]==2&&#[[2,4]]!=2&];
+(*
+Map[LPmax[bf,"y(5)",bineq[#[[1,1]]]<>fbranch[#[[1,2]],#[[1,3]]]]&,hi2b]//Max
+	==  2.0104662204
+Map[LPmax[bf,"y(10,11)",bineq[#[[1,1]]]<>fbranch[#[[1,2]],#[[1,3]]]]&,hi2b]//Max
+		== 2.746261966 
+Map[#[[2,1]]&,hi2b]//Union == {2};
+Map[#[[1,2]]&,hi2b]//Union == {2}; (* so f{17}57018 = 0, etop>sqrt2 *)
+Map[LPdisplay[bf,
+	"sigma{17}57018 < -0.058\n"<> 
+	bineq[#[[1,1]]]<>fbranch[#[[1,2]],#[[1,3]]]]&,hi2b]
+//Max ==0.442833
+	
+*)
+
+hi2c = Select[vv2x,#[[2,1]]!=2&&#[[2,4]]!=2&];
+(*
+Map[LPmax[bf,"y(10,12)",
+	bineq[#[[1,1]]]<>fbranch[#[[1,2]],#[[1,3]]]]&,hi2c]//Max
+	== 2.6212608645
+Map[LPmax[bf,"y(10,11)",
+	bineq[#[[1,1]]]<>fbranch[#[[1,2]],#[[1,3]]]]&,hi2c]//Max
+	== 2.6960445746   
+Enclosed[2,2,2,2.6961,2.622,2.51,2.51,2,2]^2 > 8
+Enclosed[2,2,2,2.6961,2.622,2.51,2,2.51,2]^2 > 8
+Enclosed[2,2,2,2.6961,2.622,2.51,2,2,2.51]^2 > 8
+
+Map[LPmax[bf,"-sigma{17}62305",
+	bineq[#[[1,1]]]<>fbranch[#[[1,2]],#[[1,3]]]]&,hi2c]//Max
+	== 0.0775748
+
+Hyp: anchored simplex vor< -0.078/2 y1 in[2.51,2sq], y4in[2.51,2.6961].
+Hyp: vor(S,sqrt2)< -0.078. y5,y6 in[2.51,2.6961], etatop>sqrt2.
+
+So if there is an upright diag we have the two anchored simplieces
+and the result.  Otherwise truncate at sqrt2 and use the other estimate.
+
+So done.
+
+
+*)
+
+(* Example:
+LPdisplay[bf,bineq[621]<>fbranch[1,2]]
+Array[LPdisplay[bf,bineq[621]<>fbranch[1,2]<>Branch[{1,2,5,6},#]]&,16];
+br = bineq[621]<>fbranch[1,2];
+LPmax[bf,"y(9,12)",br]== 2.7325106329
+*)

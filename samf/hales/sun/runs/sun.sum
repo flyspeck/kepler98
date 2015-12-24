@@ -1,0 +1,84 @@
+Welcome to sphere packing routines, relation testing division.
+Welcome to QRSphSecParBds.  Enter subdivisions:  Subdivisions:	16
+
+Starting time:  	Tue Jul 22 17:48:15 1997
+
+Starting case 1:
+cellcount    =         16777216
+ubv_ij bounds = [-0.072914025414674094,		48.1930040000000233]
+
+
+Final bounds = [-0.072914025414674094,	48.1930040000000233]
+
+Done.
+Ending time:    	Wed Jul 23 09:00:39 1997
+
+Elapsed time: 54744 seconds
+diff = 1446.46		306.467 cells per second
+
+
+Welcome to sphere packing routines, relation testing division.
+Welcome to QRVorSecParBds.  Enter subdivisions:  Subdivisions:	16
+
+Starting time:  	Sun Jul 20 13:53:28 1997
+
+Starting case 1:
+cellcount    =         16777216
+ubv_ij bounds = [-8.91208010539402728,		6.48229663890793884]
+
+
+Final bounds = [-0.185668335529042244,	0.135047846643915392]
+
+Done.
+Ending time:    	Mon Jul 21 14:49:07 1997
+
+Elapsed time: 89739 seconds
+diff = -1015.41		186.956 cells per second
+
+
+Welcome to sphere packing routines, relation testing division.
+Welcome to SphSecParBds.  Enter subdivisions:  Subdivisions:	16
+
+Starting time:  	Mon Jul 21 14:49:09 1997
+
+Starting case 1:
+cellcount    =         16777216
+ubv_ij bounds = [-0.0756452358277007602,		55.8351442077345937]
+
+Starting case 2:
+cellcount    =         16777216
+ubv_ij bounds = [-0.104007455665872147,		45.3063785000000295]
+
+
+Final bounds = [-0.104007455665872148,	55.8351442077345936]
+
+Done.
+Ending time:    	Tue Jul 22 17:48:14 1997
+
+Elapsed time: 97145 seconds
+diff = -1660.31		345.406 cells per second
+
+
+Welcome to sphere packing routines, relation testing division.
+Welcome to VorSecParBds.  Enter subdivisions:  Subdivisions:	16
+
+Starting time:  	Fri Jul 18 10:11:44 1997
+
+Starting case 1:
+cellcount    =         16777216
+ubv_ij bounds = [-9.94039926576943067,		7.89264342154473653]
+
+Starting case 2:
+cellcount    =         16777216
+ubv_ij bounds = [-11.394683435984966,		9.57206883972559198]
+
+
+Final bounds = [-0.237389238249686801,	0.199418100827616518]
+
+Done.
+Ending time:    	Sun Jul 20 13:53:26 1997
+
+Elapsed time: 186102 seconds
+diff = -693.037		180.301 cells per second
+
+

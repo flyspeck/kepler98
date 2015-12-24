@@ -1,0 +1,1012 @@
+
+Log started (V4.0.9) Sun Nov  1 08:00:03 1998
+
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+85 repeated row warnings not printed.
+
+Problem 'ceh.lp11' read.
+Read time =    0.20 sec.
+LP Presolve eliminated 675 rows and 11 columns.
+Aggregator did 23 substitutions.
+Reduced LP has 2720 rows, 139 columns, and 8937 nonzeros.
+Presolve time =    0.15 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           672.637332
+Switched to Devex.
+Iteration:   106    Scaled Infeas =             6.952368
+Iteration:   206    Scaled Infeas =             0.040555
+Iteration:   213    Objective     =            -7.111917
+Iteration:   312    Objective     =            -6.261505
+Iteration:   412    Objective     =            -5.789778
+Iteration:   512    Objective     =            -5.583084
+Iteration:   612    Objective     =            -5.553205
+Iteration:   712    Objective     =            -5.545801
+Removing shift (66).
+Iteration:   798    Scaled Infeas =             0.000584
+Iteration:   801    Objective     =            -5.543853
+
+Primal - Optimal:  Objective =   -5.5438449110e+00
+Solution time =    4.99 sec.    Iterations = 810 (215)
+
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+85 repeated row warnings not printed.
+
+Problem 'ceh.lp11' read.
+Read time =    0.24 sec.
+LP Presolve eliminated 674 rows and 10 columns.
+Aggregator did 23 substitutions.
+Reduced LP has 2723 rows, 140 columns, and 8959 nonzeros.
+Presolve time =    0.15 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           683.299978
+Switched to Devex.
+Iteration:   108    Scaled Infeas =            10.749914
+Iteration:   208    Scaled Infeas =             0.757205
+Iteration:   250    Objective     =            -6.832482
+Iteration:   349    Objective     =            -5.965664
+Iteration:   449    Objective     =            -5.669320
+Iteration:   549    Objective     =            -5.570222
+Iteration:   649    Objective     =            -5.547041
+Removing shift (50).
+
+Primal - Optimal:  Objective =   -5.5439165872e+00
+Solution time =    4.28 sec.    Iterations = 735 (249)
+
+
+Variable Name           Solution Value
+sigma{1}                     -1.027677
+sigma{2}                     -0.241798
+sigma{3}                     -0.242597
+sigma{4}                     -0.241798
+sigma{5}                     -0.278571
+sigma{6}                     -0.245171
+sigma{7}                     -0.245063
+sigma{8}                     -0.254761
+sigma{9}                     -0.254692
+sigma{10}                    -0.244993
+sigma{11}                    -0.245263
+sigma{12}                    -0.278613
+sigma{13}                    -0.241798
+sigma{14}                    -0.252961
+sigma{15}                    -0.252961
+sigma{16}                    -0.252961
+sigma{17}                    -0.247482
+sigma{18}                    -0.241798
+sigma{19}                    -0.252961
+solid{1}                      2.120633
+
+Variable Name           Solution Value
+sigma{10}                    -0.244993
+sigma{11}                    -0.245263
+sigma{12}                    -0.278613
+sigma{13}                    -0.241798
+sigma{14}                    -0.252961
+sigma{15}                    -0.252961
+sigma{16}                    -0.252961
+sigma{17}                    -0.247482
+sigma{18}                    -0.241798
+sigma{19}                    -0.252961
+solid{1}                      2.120633
+solid{5}                      0.628567
+solid{6}                      0.570347
+solid{7}                      0.570153
+solid{8}                      0.587536
+c                             1.000000
+solid{9}                      0.587413
+solid{10}                     0.570029
+solid{11}                     0.570511
+solid{12}                     0.628640
+y(5,10)                       2.291160
+
+Variable Name           Solution Value
+sigma{1}                     -1.027677
+
+Log started (V4.0.9) Sun Nov  1 08:38:18 1998
+
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+85 repeated row warnings not printed.
+
+Problem 'ceh.lp0' read.
+Read time =    0.21 sec.
+LP Presolve eliminated 689 rows and 10 columns.
+Aggregator did 27 substitutions.
+Reduced LP has 2818 rows, 147 columns, and 9210 nonzeros.
+Presolve time =    0.18 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           680.785249
+Switched to Devex.
+Iteration:   108    Scaled Infeas =             7.731372
+Iteration:   208    Scaled Infeas =             0.006926
+Iteration:   212    Objective     =            -8.150076
+Iteration:   311    Objective     =            -6.284731
+Iteration:   411    Objective     =            -5.882958
+Iteration:   511    Objective     =            -5.659042
+Iteration:   611    Objective     =            -5.633671
+Removing shift (23).
+
+Primal - Optimal:  Objective =   -5.6318953342e+00
+Solution time =    4.01 sec.    Iterations = 654 (211)
+
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+85 repeated row warnings not printed.
+
+Problem 'ceh.lp0' read.
+Read time =    0.24 sec.
+LP Presolve eliminated 689 rows and 10 columns.
+Aggregator did 27 substitutions.
+Reduced LP has 2818 rows, 147 columns, and 9210 nonzeros.
+Presolve time =    0.18 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           680.785249
+Switched to Devex.
+Iteration:   108    Scaled Infeas =             7.731372
+Iteration:   208    Scaled Infeas =             0.006926
+Iteration:   212    Objective     =            -8.150076
+Iteration:   311    Objective     =            -6.284731
+Iteration:   411    Objective     =            -5.882958
+Iteration:   511    Objective     =            -5.659042
+Iteration:   611    Objective     =            -5.633671
+Removing shift (23).
+
+Primal - Optimal:  Objective =   -5.6318953342e+00
+Solution time =    4.05 sec.    Iterations = 654 (211)
+
+Line 3554: Name 'y(2)' does not exist.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+75 repeated row warnings not printed.
+
+Problem 'ceh.lp1' read.
+Read time =    0.24 sec.
+LP Presolve eliminated 615 rows and 11 columns.
+Aggregator did 24 substitutions.
+Reduced LP has 2516 rows, 131 columns, and 8216 nonzeros.
+Presolve time =    0.15 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           656.656880
+Switched to Devex.
+Iteration:   109    Scaled Infeas =             2.702066
+Iteration:   169    Objective     =            -8.478457
+Iteration:   268    Objective     =            -6.051211
+Iteration:   368    Objective     =            -5.713713
+Iteration:   468    Objective     =            -5.601232
+Iteration:   568    Objective     =            -5.572228
+Removing shift (23).
+Iteration:   636    Scaled Infeas =             0.000000
+Iteration:   637    Objective     =            -5.569474
+
+Primal - Optimal:  Objective =   -5.5694742517e+00
+Solution time =    3.48 sec.    Iterations = 637 (169)
+
+Line 3559: Name 'y(7)' does not exist.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+75 repeated row warnings not printed.
+
+Problem 'ceh.lp2' read.
+Read time =    0.24 sec.
+LP Presolve eliminated 616 rows and 12 columns.
+Aggregator did 23 substitutions.
+Reduced LP has 2516 rows, 131 columns, and 8216 nonzeros.
+Presolve time =    0.15 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           544.895826
+Switched to Devex.
+Iteration:   112    Scaled Infeas =             2.427437
+Iteration:   182    Objective     =            -8.311626
+Iteration:   281    Objective     =            -6.309754
+Iteration:   381    Objective     =            -5.906068
+Iteration:   481    Objective     =            -5.641882
+Iteration:   581    Objective     =            -5.569878
+Iteration:   681    Objective     =            -5.564317
+Removing shift (39).
+Iteration:   700    Scaled Infeas =             0.000000
+Iteration:   701    Objective     =            -5.564273
+
+Primal - Optimal:  Objective =   -5.5642733279e+00
+Solution time =    3.94 sec.    Iterations = 701 (182)
+
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+85 repeated row warnings not printed.
+
+Problem 'ceh.lp3' read.
+Read time =    0.23 sec.
+LP Presolve eliminated 691 rows and 12 columns.
+Aggregator did 25 substitutions.
+Reduced LP has 2817 rows, 147 columns, and 9200 nonzeros.
+Presolve time =    0.17 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           630.267013
+Switched to Devex.
+Iteration:   107    Scaled Infeas =             7.593340
+Iteration:   207    Scaled Infeas =             0.420792
+Iteration:   259    Objective     =            -7.972080
+Iteration:   358    Objective     =            -6.302569
+Iteration:   458    Objective     =            -5.912634
+Iteration:   558    Objective     =            -5.665235
+Iteration:   658    Objective     =            -5.596304
+Iteration:   758    Objective     =            -5.573252
+Removing shift (22).
+Iteration:   807    Scaled Infeas =             0.000000
+Iteration:   808    Objective     =            -5.572808
+
+Primal - Optimal:  Objective =   -5.5728076819e+00
+Solution time =    5.01 sec.    Iterations = 808 (259)
+
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+75 repeated row warnings not printed.
+
+Problem 'ceh.lp4' read.
+Read time =    0.24 sec.
+LP Presolve eliminated 614 rows and 9 columns.
+Aggregator did 24 substitutions.
+Reduced LP has 2516 rows, 134 columns, and 8208 nonzeros.
+Presolve time =    0.14 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           632.073960
+Switched to Devex.
+Iteration:   108    Scaled Infeas =             2.654338
+Iteration:   171    Objective     =           -10.082280
+Iteration:   270    Objective     =            -6.312703
+Iteration:   370    Objective     =            -5.941228
+Iteration:   470    Objective     =            -5.656181
+Iteration:   570    Objective     =            -5.582217
+Iteration:   670    Objective     =            -5.569819
+Removing shift (2).
+
+Primal - Optimal:  Objective =   -5.5698199927e+00
+Solution time =    3.71 sec.    Iterations = 672 (170)
+
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+85 repeated row warnings not printed.
+
+Problem 'ceh.lp11' read.
+Read time =    0.21 sec.
+LP Presolve eliminated 674 rows and 10 columns.
+Aggregator did 23 substitutions.
+Reduced LP has 2723 rows, 140 columns, and 8959 nonzeros.
+Presolve time =    0.13 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           683.299978
+Switched to Devex.
+Iteration:   108    Scaled Infeas =            10.749914
+Iteration:   208    Scaled Infeas =             0.757205
+Iteration:   250    Objective     =            -6.832482
+Iteration:   349    Objective     =            -5.965664
+Iteration:   449    Objective     =            -5.669320
+Iteration:   549    Objective     =            -5.570222
+Iteration:   649    Objective     =            -5.547041
+Removing shift (50).
+
+Primal - Optimal:  Objective =   -5.5439165872e+00
+Solution time =    4.38 sec.    Iterations = 735 (249)
+
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+85 repeated row warnings not printed.
+
+Problem '11' read.
+Read time =    0.23 sec.
+LP Presolve eliminated 674 rows and 11 columns.
+Aggregator did 23 substitutions.
+Reduced LP has 2724 rows, 140 columns, and 8968 nonzeros.
+Presolve time =    0.15 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           738.626657
+Switched to Devex.
+Iteration:   112    Scaled Infeas =             9.485243
+Iteration:   191    Objective     =            -6.951628
+Iteration:   290    Objective     =            -6.027386
+Iteration:   390    Objective     =            -5.797607
+Iteration:   490    Objective     =            -5.750413
+Iteration:   590    Objective     =            -5.738615
+Removing shift (56).
+
+Primal - Optimal:  Objective =   -5.7374548877e+00
+Solution time =    3.67 sec.    Iterations = 628 (190)
+
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+85 repeated row warnings not printed.
+
+Problem '11' read.
+Read time =    0.23 sec.
+LP Presolve eliminated 674 rows and 10 columns.
+Aggregator did 23 substitutions.
+Reduced LP has 2724 rows, 140 columns, and 8969 nonzeros.
+Presolve time =    0.13 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           738.626657
+Switched to Devex.
+Iteration:   109    Scaled Infeas =             8.686862
+Iteration:   210    Scaled Infeas =             0.141615
+Iteration:   229    Objective     =            -6.362674
+Iteration:   328    Objective     =            -5.893761
+Iteration:   428    Objective     =            -5.620639
+Iteration:   528    Objective     =            -5.552006
+Iteration:   628    Objective     =            -5.544264
+Removing shift (82).
+
+Primal - Optimal:  Objective =   -5.5441631460e+00
+Solution time =    3.97 sec.    Iterations = 645 (228)
+
+
+Variable Name           Solution Value
+sigma{1}                     -1.025831
+
+Constraint Name             Dual Price
+c2                            0.027565
+c3                            0.069401
+c6                           -0.011260
+c12                          -0.004397
+c13                          -0.030230
+c16                          -0.009070
+c17                          -0.000353
+c18                          -0.032601
+c22                          -0.000345
+c24                          -0.031589
+c28                          -0.006380
+c29                          -0.004818
+c33                          -0.012428
+dihsum1                      -0.512210
+dihsum2                      -0.512210
+dihsum3                      -0.543904
+dihsum4                      -0.467028
+dihsum5                      -0.427550
+dihsum6                      -0.458923
+dihsum7                      -0.427550
+All other dual prices in the range 1-40 are zero.
+
+Variable Name           Solution Value
+sigma{1}                     -1.025831
+sigma{2}                     -0.243596
+sigma{3}                     -0.244512
+sigma{4}                     -0.247203
+sigma{5}                     -0.287647
+sigma{6}                     -0.247203
+sigma{7}                     -0.241613
+sigma{8}                     -0.251420
+sigma{9}                     -0.256325
+sigma{10}                    -0.246652
+sigma{11}                    -0.246652
+sigma{12}                    -0.274322
+sigma{13}                    -0.241154
+sigma{14}                    -0.248760
+sigma{15}                    -0.252798
+sigma{16}                    -0.252865
+sigma{17}                    -0.245054
+sigma{18}                    -0.241798
+sigma{19}                    -0.248760
+solid{1}                      2.116315
+solid{5}                      0.644667
+solid{6}                      0.573988
+solid{7}                      0.563969
+solid{8}                      0.581548
+c                             1.000000
+solid{9}                      0.590339
+solid{10}                     0.573001
+solid{11}                     0.573001
+solid{12}                     0.621162
+solid{2}                      0.567524
+
+Variable Name           Solution Value
+sigma{1}                     -1.025831
+sigma{2}                     -0.243596
+sigma{3}                     -0.244512
+sigma{4}                     -0.247203
+sigma{5}                     -0.287647
+sigma{6}                     -0.247203
+sigma{7}                     -0.241613
+sigma{8}                     -0.251420
+sigma{9}                     -0.256325
+sigma{10}                    -0.246652
+sigma{11}                    -0.246652
+sigma{12}                    -0.274322
+sigma{13}                    -0.241154
+sigma{14}                    -0.248760
+sigma{15}                    -0.252798
+
+Variable Name           Solution Value
+y(1)                          2.000000
+
+Variable Name           Solution Value
+y(3)                          2.030988
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+85 repeated row warnings not printed.
+
+Problem '11' read.
+Read time =    0.23 sec.
+LP Presolve eliminated 674 rows and 10 columns.
+Aggregator did 23 substitutions.
+Reduced LP has 2724 rows, 140 columns, and 8978 nonzeros.
+Presolve time =    0.13 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           683.299978
+Switched to Devex.
+Iteration:   106    Scaled Infeas =            13.521851
+Iteration:   206    Scaled Infeas =             1.580634
+Iteration:   306    Scaled Infeas =             0.681220
+Iteration:   406    Scaled Infeas =             0.150988
+Iteration:   506    Scaled Infeas =             0.025003
+Iteration:   606    Scaled Infeas =             0.000079
+Iteration:   610    Objective     =             1.375927
+Iteration:   709    Objective     =             1.567365
+Removing shift (8).
+
+Primal - Optimal:  Objective =    1.5888113932e+00
+Solution time =    5.59 sec.    Iterations = 786 (609)
+
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+85 repeated row warnings not printed.
+
+Problem '11' read.
+Read time =    0.24 sec.
+LP Presolve eliminated 674 rows and 10 columns.
+Aggregator did 23 substitutions.
+Reduced LP has 2724 rows, 140 columns, and 8978 nonzeros.
+Presolve time =    0.14 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           734.823077
+Switched to Devex.
+Iteration:   109    Scaled Infeas =            10.636193
+Iteration:   209    Scaled Infeas =             0.988806
+Iteration:   309    Scaled Infeas =             0.487720
+Iteration:   409    Scaled Infeas =             0.175643
+Iteration:   509    Scaled Infeas =             0.031369
+Iteration:   609    Scaled Infeas =             0.007468
+Iteration:   653    Objective     =             5.054221
+Iteration:   752    Objective     =             5.110378
+Removing shift (43).
+
+Primal - Optimal:  Objective =    5.1165532064e+00
+Solution time =    5.54 sec.    Iterations = 794 (652)
+
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+85 repeated row warnings not printed.
+
+Problem '11' read.
+Read time =    0.23 sec.
+LP Presolve eliminated 674 rows and 10 columns.
+Aggregator did 23 substitutions.
+Reduced LP has 2724 rows, 140 columns, and 8978 nonzeros.
+Presolve time =    0.14 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           683.299978
+Switched to Devex.
+Iteration:   104    Scaled Infeas =            16.038383
+Iteration:   205    Scaled Infeas =             1.763381
+Iteration:   305    Scaled Infeas =             0.603407
+Iteration:   405    Scaled Infeas =             0.247973
+Iteration:   505    Scaled Infeas =             0.076397
+Iteration:   605    Scaled Infeas =             0.031388
+Iteration:   705    Scaled Infeas =             0.007021
+Iteration:   737    Objective     =             3.828756
+Iteration:   836    Objective     =             3.921958
+Removing shift (48).
+
+Primal - Optimal:  Objective =    3.9357732845e+00
+Solution time =    6.61 sec.    Iterations = 892 (736)
+
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+85 repeated row warnings not printed.
+
+Problem '11' read.
+Read time =    0.23 sec.
+LP Presolve eliminated 674 rows and 10 columns.
+Aggregator did 23 substitutions.
+Reduced LP has 2724 rows, 140 columns, and 8978 nonzeros.
+Presolve time =    0.13 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           683.299978
+Switched to Devex.
+Iteration:   105    Scaled Infeas =            14.344623
+Iteration:   205    Scaled Infeas =             2.570073
+Iteration:   305    Scaled Infeas =             0.807157
+Iteration:   405    Scaled Infeas =             0.281885
+Iteration:   505    Scaled Infeas =             0.076174
+Iteration:   605    Scaled Infeas =             0.009562
+Iteration:   665    Objective     =             1.489590
+Iteration:   764    Objective     =             1.634433
+Removing shift (43).
+Iteration:   803    Scaled Infeas =             0.000000
+Iteration:   805    Objective     =             1.644777
+
+Primal - Optimal:  Objective =    1.6448297975e+00
+Solution time =    6.31 sec.    Iterations = 807 (666)
+
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+85 repeated row warnings not printed.
+
+Problem '11' read.
+Read time =    0.23 sec.
+LP Presolve eliminated 674 rows and 10 columns.
+Aggregator did 23 substitutions.
+Reduced LP has 2724 rows, 140 columns, and 8978 nonzeros.
+Presolve time =    0.13 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           683.299978
+Switched to Devex.
+Iteration:   106    Scaled Infeas =            12.394361
+Iteration:   206    Scaled Infeas =             1.180555
+Iteration:   306    Scaled Infeas =             0.546908
+Iteration:   406    Scaled Infeas =             0.160637
+Iteration:   506    Scaled Infeas =             0.063380
+Iteration:   606    Scaled Infeas =             0.021153
+Iteration:   679    Objective     =             1.337204
+Iteration:   778    Objective     =             1.559374
+Removing shift (46).
+
+Primal - Optimal:  Objective =    1.5888114555e+00
+Solution time =    6.07 sec.    Iterations = 859 (678)
+
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+85 repeated row warnings not printed.
+
+Problem '11' read.
+Read time =    0.23 sec.
+LP Presolve eliminated 674 rows and 10 columns.
+Aggregator did 23 substitutions.
+Reduced LP has 2724 rows, 140 columns, and 8978 nonzeros.
+Presolve time =    0.14 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           683.299978
+Switched to Devex.
+Iteration:   105    Scaled Infeas =            12.045530
+Iteration:   205    Scaled Infeas =             2.026979
+Iteration:   305    Scaled Infeas =             0.691855
+Iteration:   405    Scaled Infeas =             0.289128
+Iteration:   505    Scaled Infeas =             0.050735
+Iteration:   605    Scaled Infeas =             0.004559
+Iteration:   645    Objective     =             1.482976
+Iteration:   744    Objective     =             1.611802
+Iteration:   844    Objective     =             1.644397
+Removing shift (43).
+
+Primal - Optimal:  Objective =    1.6448297975e+00
+Solution time =    5.85 sec.    Iterations = 855 (644)
+
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+85 repeated row warnings not printed.
+
+Problem '11' read.
+Read time =    0.25 sec.
+LP Presolve eliminated 674 rows and 10 columns.
+Aggregator did 23 substitutions.
+Reduced LP has 2724 rows, 140 columns, and 8978 nonzeros.
+Presolve time =    0.13 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           683.299978
+Switched to Devex.
+Iteration:   103    Scaled Infeas =            16.483556
+Iteration:   203    Scaled Infeas =             1.475120
+Iteration:   303    Scaled Infeas =             0.565385
+Iteration:   403    Scaled Infeas =             0.143730
+Iteration:   503    Scaled Infeas =             0.037666
+Iteration:   603    Scaled Infeas =             0.010423
+Iteration:   682    Objective     =             1.006067
+Iteration:   781    Objective     =             1.065951
+Removing shift (41).
+
+Primal - Optimal:  Objective =    1.0701489979e+00
+Solution time =    6.02 sec.    Iterations = 815 (681)
+
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+85 repeated row warnings not printed.
+
+Problem '11' read.
+Read time =    0.25 sec.
+LP Presolve eliminated 674 rows and 10 columns.
+Aggregator did 23 substitutions.
+Reduced LP has 2724 rows, 140 columns, and 8978 nonzeros.
+Presolve time =    0.14 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           683.299978
+Switched to Devex.
+Iteration:   106    Scaled Infeas =            14.442986
+Iteration:   206    Scaled Infeas =             1.651917
+Iteration:   306    Scaled Infeas =             0.257563
+Iteration:   406    Scaled Infeas =             0.034802
+Iteration:   506    Scaled Infeas =             0.013594
+Iteration:   543    Objective     =             2.079218
+Iteration:   642    Objective     =             2.199030
+Removing shift (63).
+
+Primal - Optimal:  Objective =    2.2199719283e+00
+Solution time =    5.00 sec.    Iterations = 686 (542)
+
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+85 repeated row warnings not printed.
+
+Problem '11' read.
+Read time =    0.24 sec.
+LP Presolve eliminated 674 rows and 10 columns.
+Aggregator did 23 substitutions.
+Reduced LP has 2724 rows, 140 columns, and 8978 nonzeros.
+Presolve time =    0.14 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           683.299978
+Switched to Devex.
+Iteration:   106    Scaled Infeas =            14.442986
+Iteration:   206    Scaled Infeas =             1.651917
+Iteration:   306    Scaled Infeas =             0.257563
+Iteration:   406    Scaled Infeas =             0.034802
+Iteration:   506    Scaled Infeas =             0.013594
+Iteration:   543    Objective     =            -2.077018
+Iteration:   642    Objective     =            -2.054522
+Removing shift (61).
+
+Primal - Optimal:  Objective =   -2.0517643577e+00
+Solution time =    5.19 sec.    Iterations = 717 (542)
+
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+85 repeated row warnings not printed.
+
+Problem '11' read.
+Read time =    0.24 sec.
+LP Presolve eliminated 674 rows and 10 columns.
+Aggregator did 23 substitutions.
+Reduced LP has 2724 rows, 140 columns, and 8978 nonzeros.
+Presolve time =    0.14 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           690.880294
+Switched to Devex.
+Iteration:   110    Scaled Infeas =            13.932331
+Iteration:   211    Scaled Infeas =             2.274562
+Iteration:   311    Scaled Infeas =             0.841472
+Iteration:   411    Scaled Infeas =             0.146603
+Iteration:   511    Scaled Infeas =             0.022029
+Iteration:   580    Objective     =             2.001113
+Iteration:   679    Objective     =             2.100278
+Removing shift (49).
+Iteration:   719    Scaled Infeas =             0.000000
+Iteration:   720    Objective     =             2.105591
+
+Primal - Optimal:  Objective =    2.1055905544e+00
+Solution time =    5.19 sec.    Iterations = 720 (580)
+
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+85 repeated row warnings not printed.
+
+Problem '11' read.
+Read time =    0.25 sec.
+LP Presolve eliminated 674 rows and 10 columns.
+Aggregator did 23 substitutions.
+Reduced LP has 2724 rows, 140 columns, and 8978 nonzeros.
+Presolve time =    0.14 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           690.880294
+Switched to Devex.
+Iteration:   106    Scaled Infeas =            14.203250
+Iteration:   206    Scaled Infeas =             1.323300
+Iteration:   306    Scaled Infeas =             0.471890
+Iteration:   406    Scaled Infeas =             0.045755
+Iteration:   506    Scaled Infeas =             0.004903
+Iteration:   536    Objective     =             2.003776
+Iteration:   635    Objective     =             2.145277
+Removing shift (27).
+Iteration:   636    Scaled Infeas =             0.000609
+Iteration:   638    Objective     =             2.144925
+
+Primal - Optimal:  Objective =    2.1452217173e+00
+Solution time =    4.51 sec.    Iterations = 642 (537)
+
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+85 repeated row warnings not printed.
+
+Problem '11' read.
+Read time =    0.25 sec.
+LP Presolve eliminated 674 rows and 10 columns.
+Aggregator did 23 substitutions.
+Reduced LP has 2724 rows, 140 columns, and 8978 nonzeros.
+Presolve time =    0.14 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           690.880294
+Switched to Devex.
+Iteration:   109    Scaled Infeas =            14.247213
+Iteration:   209    Scaled Infeas =             4.916884
+Iteration:   309    Scaled Infeas =             1.175625
+Iteration:   409    Scaled Infeas =             0.519910
+Iteration:   509    Scaled Infeas =             0.158140
+Iteration:   609    Scaled Infeas =             0.018520
+Iteration:   709    Scaled Infeas =             0.002659
+Iteration:   754    Objective     =             2.003456
+Iteration:   853    Objective     =             2.090921
+Removing shift (52).
+Iteration:   911    Scaled Infeas =             0.000000
+Iteration:   912    Objective     =             2.105548
+
+Primal - Optimal:  Objective =    2.1055905544e+00
+Solution time =    6.92 sec.    Iterations = 916 (754)
+
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+85 repeated row warnings not printed.
+
+Problem '11' read.
+Read time =    0.24 sec.
+LP Presolve eliminated 674 rows and 10 columns.
+Aggregator did 23 substitutions.
+Reduced LP has 2724 rows, 140 columns, and 8978 nonzeros.
+Presolve time =    0.14 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           690.880294
+Switched to Devex.
+Iteration:   106    Scaled Infeas =            14.203250
+Iteration:   206    Scaled Infeas =             1.323300
+Iteration:   306    Scaled Infeas =             0.471890
+Iteration:   406    Scaled Infeas =             0.045755
+Iteration:   506    Scaled Infeas =             0.004903
+Iteration:   536    Objective     =             2.000627
+Iteration:   635    Objective     =             2.112372
+Removing shift (26).
+
+Primal - Optimal:  Objective =    2.1158542574e+00
+Solution time =    4.65 sec.    Iterations = 675 (535)
+
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+85 repeated row warnings not printed.
+
+Problem '11' read.
+Read time =    0.25 sec.
+LP Presolve eliminated 674 rows and 10 columns.
+Aggregator did 23 substitutions.
+Reduced LP has 2724 rows, 140 columns, and 8978 nonzeros.
+Presolve time =    0.14 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           690.880294
+Switched to Devex.
+Iteration:   107    Scaled Infeas =            15.700302
+Iteration:   207    Scaled Infeas =             2.549968
+Iteration:   307    Scaled Infeas =             0.510971
+Iteration:   407    Scaled Infeas =             0.077657
+Iteration:   507    Scaled Infeas =             0.009252
+Iteration:   575    Objective     =             2.000859
+Iteration:   674    Objective     =             2.111019
+Removing shift (36).
+
+Primal - Optimal:  Objective =    2.1158542574e+00
+Solution time =    5.43 sec.    Iterations = 725 (574)
+
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+85 repeated row warnings not printed.
+
+Problem '11' read.
+Read time =    0.26 sec.
+LP Presolve eliminated 674 rows and 10 columns.
+Aggregator did 23 substitutions.
+Reduced LP has 2724 rows, 140 columns, and 8978 nonzeros.
+Presolve time =    0.16 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           690.880294
+Switched to Devex.
+Iteration:   110    Scaled Infeas =            13.932331
+Iteration:   211    Scaled Infeas =             2.274562
+Iteration:   311    Scaled Infeas =             0.841472
+Iteration:   411    Scaled Infeas =             0.146603
+Iteration:   511    Scaled Infeas =             0.022029
+Iteration:   580    Objective     =             2.001829
+Iteration:   679    Objective     =             2.196583
+Removing shift (46).
+Iteration:   733    Scaled Infeas =             0.000062
+Iteration:   735    Objective     =             2.214330
+
+Primal - Optimal:  Objective =    2.2145002490e+00
+Solution time =    5.29 sec.    Iterations = 739 (581)
+
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+85 repeated row warnings not printed.
+
+Problem '11' read.
+Read time =    0.23 sec.
+LP Presolve eliminated 674 rows and 10 columns.
+Aggregator did 23 substitutions.
+Reduced LP has 2724 rows, 140 columns, and 8978 nonzeros.
+Presolve time =    0.15 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           683.299979
+Switched to Devex.
+Iteration:   106    Scaled Infeas =            15.530019
+Iteration:   206    Scaled Infeas =             1.651817
+Iteration:   306    Scaled Infeas =             0.522117
+Iteration:   406    Scaled Infeas =             0.144032
+Iteration:   506    Scaled Infeas =             0.045403
+Iteration:   606    Scaled Infeas =             0.005920
+Iteration:   645    Objective     =            -5.028146
+Iteration:   744    Objective     =            -4.847963
+Removing shift (27).
+Iteration:   828    Scaled Infeas =             0.000000
+Iteration:   829    Objective     =            -4.780875
+
+Primal - Optimal:  Objective =   -4.7801435263e+00
+Solution time =    6.00 sec.    Iterations = 835 (645)
+
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+85 repeated row warnings not printed.
+
+Problem '11' read.
+Read time =    0.23 sec.
+LP Presolve eliminated 674 rows and 10 columns.
+Aggregator did 23 substitutions.
+Reduced LP has 2724 rows, 140 columns, and 8978 nonzeros.
+Presolve time =    0.14 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           683.299978
+Switched to Devex.
+Iteration:   104    Scaled Infeas =            16.038383
+Iteration:   205    Scaled Infeas =             1.763380
+Iteration:   305    Scaled Infeas =             0.624994
+Iteration:   405    Scaled Infeas =             0.115802
+Iteration:   505    Scaled Infeas =             0.028740
+Iteration:   605    Scaled Infeas =             0.000791
+Iteration:   620    Objective     =            -3.736187
+Removing shift (43).
+Iteration:   701    Scaled Infeas =             0.000002
+
+Primal - Optimal:  Objective =   -3.6570489494e+00
+Solution time =    5.38 sec.    Iterations = 702 (621)
+
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+Row 'VE10' repeats.
+85 repeated row warnings not printed.
+
+Problem '11' read.
+Read time =    0.24 sec.
+LP Presolve eliminated 674 rows and 10 columns.
+Aggregator did 23 substitutions.
+Reduced LP has 2724 rows, 140 columns, and 8978 nonzeros.
+Presolve time =    0.14 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           683.299978
+Switched to Devex.
+Iteration:   103    Scaled Infeas =            16.483556
+Iteration:   203    Scaled Infeas =             1.475120
+Iteration:   303    Scaled Infeas =             0.565385
+Iteration:   403    Scaled Infeas =             0.143730
+Iteration:   503    Scaled Infeas =             0.037666
+Iteration:   603    Scaled Infeas =             0.010423
+Iteration:   682    Objective     =             2.281804
+Iteration:   781    Objective     =             2.459886
+Removing shift (39).
+
+Primal - Optimal:  Objective =    2.5168200000e+00
+Solution time =    6.08 sec.    Iterations = 831 (681)
+

@@ -1,0 +1,52 @@
+Welcome to sphere packing routines, relation testing division.
+Welcome to PentaCap.  Using partials to reduce complexity.
+Enter slop:  		Slop = -1e-08
+Starting time:  	Wed Jul 16 12:17:05 1997
+
+Starting case 1:
+cellcount    =             3330		maxdepth = 21
+sccutcount   =              847		dihcutcount  =              257
+gmacount     =             3304		vorcount     =                1
+dualcount    =               25		verifycount  =             1805
+partialcount =                0		diff         =              678
+Verification succeeded.
+
+Starting case 2:
+cellcount    =             6878		maxdepth = 7
+sccutcount   =             2557		dihcutcount  =                0
+gmacount     =             6822		vorcount     =                0
+dualcount    =               56		verifycount  =             3888
+partialcount =                0		diff         =              433
+Verification succeeded.
+
+Starting case 3:
+cellcount    =            11004		maxdepth = 21
+sccutcount   =             3498		dihcutcount  =             1079
+gmacount     =            10901		vorcount     =                1
+dualcount    =              102		verifycount  =             5715
+partialcount =                1		diff         =             1790
+Verification succeeded.
+
+Starting case 4:
+cellcount    =             6956		maxdepth = 21
+sccutcount   =             1957		dihcutcount  =              689
+gmacount     =             6749		vorcount     =                4
+dualcount    =              203		verifycount  =             3851
+partialcount =                1		diff         =             1147
+Verification succeeded.
+
+Starting case 5:
+cellcount    =             5158		maxdepth = 7
+sccutcount   =             1949		dihcutcount  =                0
+gmacount     =             5013		vorcount     =                4
+dualcount    =              141		verifycount  =             2880
+partialcount =                0		diff         =              329
+Verification succeeded.
+
+Done.
+Ending time:    	Wed Jul 16 12:17:51 1997
+
+Elapsed time: 46 seconds
+diff = 35.7652		724.478 cells per second
+
+

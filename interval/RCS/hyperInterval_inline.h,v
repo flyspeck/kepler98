@@ -1,0 +1,99 @@
+head	1.1;
+access;
+symbols;
+locks
+	hales:1.1; strict;
+comment	@ * @;
+
+
+1.1
+date	97.09.13.18.11.21;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@interval package, inline
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@//  copyright (c) 1997, Thomas C. Hales, all rights reserved.
+
+#ifdef HYPERINTERVAL_H
+#ifndef HYPERINTERVAL_INLINE_H
+#define HYPERINTERVAL_INLINE_H
+
+#include "interval.h"
+
+inline series series::operator*(series a)
+        {
+        series temp;
+        temp.f = f*a.f;
+        int i;
+        for (i=0;i<6;i++) temp.Df[i]= f*a.Df[i]+a.f*Df[i];
+        return temp;
+        }
+
+inline series series::operator*(interval a)
+        {
+        series temp;
+        temp.f = f*a;
+        for (int i=0;i<6;i++) temp.Df[i]= Df[i]*a;
+        return temp;
+        }
+
+inline series series::operator/(series a)
+        {
+        series temp;
+        interval ra = interConstant::one/a.f;
+        temp.f = f*ra;
+        interval ra2 = ra*ra;
+        for (int i=0;i<6;i++) temp.Df[i]= (Df[i]*a.f - a.Df[i]*f)*ra2;
+        return temp;
+        }
+
+inline series series::operator+(series a)
+        {
+        series temp;
+        temp.f = f+a.f;
+        int i;
+        interMath::up();
+        for (i=0;i<6;i++) temp.Df[i].hi=Df[i].hi+a.Df[i].hi;
+        interMath::down();
+        for (i=0;i<6;i++) temp.Df[i].lo=Df[i].lo+a.Df[i].lo;
+        return temp;
+        }
+
+inline series series::operator-()
+        {
+        series temp;
+        temp.f = -f;
+        int i;
+        for (i=0;i<6;i++) temp.Df[i]=-Df[i];
+        return temp;
+        }
+
+inline series series::operator-(series a)
+        {
+        series temp;
+        temp.f = f- a.f;
+        int i;
+        interMath::up();
+        for (i=0;i<6;i++) temp.Df[i].hi=Df[i].hi-a.Df[i].lo;
+        interMath::down();
+        for (i=0;i<6;i++) temp.Df[i].lo=Df[i].lo-a.Df[i].hi;
+        return temp;
+        }
+
+
+
+
+
+#endif
+#endif
+@

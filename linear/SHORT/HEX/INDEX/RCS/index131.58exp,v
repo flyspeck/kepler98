@@ -1,0 +1,70 @@
+head	1.1;
+access;
+symbols;
+locks
+	hales:1.1; strict;
+comment	@# @;
+
+
+1.1
+date	98.07.26.03.35.36;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@PM[6,131].F17.C58 (* Experimental *)
+
+(* Experiments with 
+SHORT/HEX/LP/cplexE.lp6.131.F17.C58 *)
+
+bf= "SHORT/HEX/LP/cplexE.lp6.131.F17.C58";
+
+(* Highest is 2905 *)
+AB[2905,32]== {91,25};
+bb=Branch[Band[6,131],91]<>ineq[25]<>"ht213=0\n";
+LPdisplay[bf,bb]== 0.466346
+
+tabHi[[25]]=={2, 4, 4, 2, 0.493442};
+
+psel = PSelect[valB,#[[1]]>0.4429&];
+pp=Map[AB[#,32][[2]]&,psel]//Union;
+tabHi[[ pp]];
+Map[{#[[2]],#[[3]]}&,%]//Union == {{2, 1}, {4, 1}, {4, 2}, {4, 4}}
+
+(* So the diagonal is <= 2.77 *)
+grab[i_]:= PSelect[valB,#[[1]]>0.4429&&AB[#,32][[2]]==i&]
+
+vv= Map[LPdisplay[bf,ineq[#]<>"ht213=0\n"]&,pp];
+pp2= pp[[ PSelect[vv,#>0.4429&] ]] == 
+	{12, 13, 19, 21, 22, 24, 25, 26, 29, 31, 32};
+IneqCode[i_]:= AB[i,32][[2]]
+BranchCode[i_]:= AB[i,32][[1]];
+psel2 = Select[psel,Inside[IneqCode[#],pp2]&]; //Length == 555;
+
+vv=Map[LPdisplay[
+	bf,Branch[Band[6,131],BranchCode[#]]<>ineq[IneqCode[#]]<>"ht213=0\n"]&,
+	psel2];
+
+pvv=PSelect[vv,#>0.4429&];
+
+psel3 = psel2[[pvv]] == ; Length[psel3]==456;
+pp3=Map[AB[#,32][[2]]&,psel3]//Union == {12, 13, 19, 21, 22, 24, 25, 29, 31};
+tabHi[[ pp3 ]] ==
+ {{1, 4, 4, 1, 0.481742}, {1, 4, 4, 2, 0.492137}, {2, 4, 1, 1, 0.477067}, 
+    {2, 4, 2, 1, 0.456679}, {2, 4, 2, 2, 0.455953}, {2, 4, 4, 1, 0.489594}, 
+    {2, 4, 4, 2, 0.493442}, {3, 4, 1, 1, 0.47433}, {3, 4, 4, 1, 0.46364}}
+
+
+-> to here.
+
+
+@

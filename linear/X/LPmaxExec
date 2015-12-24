@@ -1,0 +1,11 @@
+set logfile /tmp/Z/LPmax.log
+set preprocessing presolve no
+set output results n /tmp/Z/y.log
+set output dialog n /tmp/Z/x.log
+read SHORT/PENT/LP/cplexE.lp5.365.F17.C22 lp
+add 
+slack{17}2696=0
+
+end
+opt
+quit

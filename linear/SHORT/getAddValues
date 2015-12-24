@@ -1,0 +1,50 @@
+# usage:  sed -f getValues cplex.log
+# this grabs the lp file numbers and the optimization results from cplex.log
+
+# Thomas C. Hales
+# Aug 7, 1997
+
+# replace Log starting line with values = {... 
+/^Log/{
+s/L.*/values = {/g
+p
+}
+
+# replace each line stating Problem file with the lp number only and hold
+/^Problem '/{
+s/Pro.*lp/ /g
+s/'.*$/},/g
+s/\./,/g
+s/F/(*F*)/g
+s/C/(*C*)/g
+h
+d
+}
+
+# grab number, replace e by *10^, join with problem number, print
+/^Primal.*Objective/{
+s/Pri.*=/{/g
+s/e/*10^/g
+s/$/,/g
+G
+s/\n//g
+p
+}
+
+# If infeasibile print Infeasible
+/^Primal.*Infeasibility/{
+s/Pri.*/{Infeasible/g
+s/$/,/g
+G
+s/\n//g
+p
+}
+
+# delete all other lines
+/^.*$/{
+d
+}
+
+
+
+#

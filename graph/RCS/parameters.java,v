@@ -1,0 +1,282 @@
+head	1.5;
+access;
+symbols;
+locks
+	hales:1.5; strict;
+comment	@# @;
+
+
+1.5
+date	98.01.13.20.21.09;	author hales;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	97.11.04.22.57.05;	author hales;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	97.10.15.01.40.58;	author hales;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	97.10.15.01.15.36;	author hales;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	97.09.13.16.46.47;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@graph generator, class parameters (Kepler version)
+@
+
+
+1.5
+log
+@array fixedScoreVertex was deleted.
+constant -3090 changed to -3030 in fixedScoreFace.
+@
+text
+@// Put pass dependent constraints here.
+// Kepler conjecture parameters
+
+class parameters {
+	static { System.out.print(" -- parameters $Revision: 1.4 $ -- \n"); }
+	// true means that we are excluding a vertex with only two
+	// standard clusters, a qrtet and a pentagonal.
+	final static boolean excludePentQRTet = true;
+	final static int vertexCountMin = 1; // There must be at least this many
+	final static int vertexCountMax = 100; // And at most this many vertices.
+	final static int faceCountMaxAtExceptionalVertex= 5; 
+			// This is the maximum number
+			// of faces that can be at a face with something
+			// with an exceptional face.
+	final static int faceCountMax = 6;
+
+	// values multiplied by 1000 and rounded down to nearest integer;
+	protected final static int 
+		fixedSquanderFace[]={0,0,0,0,2378,4896,7414,9932,10916};
+	protected final static int 
+		fixedScoreFace[] ={1000,1000,1000,1000,0,-1030,-2060,-3030,-3030};
+	final static int squanderTarget = 14800;
+	private final static int x = 14800; // any value over squander Target.
+	final static int scoreTarget = 8000;
+
+	// TCount[count] is the excess around a vertex at an exceptional cluster
+	// having count triangles, and faceCountMaxAtExceptionalVertex-count
+	// nontriangles. The length of the array must be fCMAEVertex.
+	protected final static int
+		excessTCount[] = {x,x,x,1400,1500};
+	protected final static int fixedSquanderVertex[][] = // type (i,j).
+		// PartIII. table 5.1:
+		// This must be a square array .
+		{{x,x,x,7135,10649,x,x},
+		 {x,x,6950,7135,x,x,x},
+		 {x,8500,4756,12981,x,x,x},
+		 {x,3642,8334,x,x,x,x},
+		 {4139,3781,x,x,x,x,x},
+		 {550,11220,x,x,x,x,x},
+		 {6339,x,x,x,x,x,x}
+		};
+
+	final static int quadCases[][] = {
+			{0,0,1,1,1}, //0
+			{0,1,0,1,1}, //1
+			{0,0,0,0,0,1}, //2
+			{1,1,1,1}, //3
+			{0,0,1}, //4
+			{0,0,0,1,1},
+			{0,0,1,0,1},
+			{0,1,1},
+			{0,1,1,1}, //8
+			{1,1,1},
+			{0,0,0,0,0,0},
+			{0,0,1,1}, //11
+			{1,0,1,0},
+			{0,0,0,1},
+			{0,0,0,0},
+			{0,0,0,0,1},
+			{0,0,0,0,0}
+			};
+
+	static void printParameters()
+		{
+		int i,j;
+		System.out.println("***\n*  Parameters for graph generator");
+		System.out.println("* vertexCountMin = "+vertexCountMin);
+		System.out.println("* vertexCountMax = "+vertexCountMax);
+		System.out.println("* faceCountMaxAtExceptionalVertex = "+
+			faceCountMaxAtExceptionalVertex);
+		System.out.print("* fixedSquanderFace = {");
+		for (i=0;i<fixedSquanderFace.length;i++)
+			System.out.print("("+i+","+fixedSquanderFace[i]+"),");
+			System.out.println("}");
+		System.out.println("* max # of edges on a face = "+
+			fixedSquanderFace.length);
+
+		System.out.print("* fixedScoreFace = {");
+		for (i=0;i<fixedScoreFace.length;i++)
+			System.out.print("("+i+","+fixedScoreFace[i]+"),");
+			System.out.println("}");
+		System.out.println("* scoreTarget = "+scoreTarget);
+		System.out.print("* squanderTarget = "+squanderTarget);
+
+		System.out.print("\n* fixedSquanderVertex = ");
+			for (i=0;i<fixedSquanderVertex.length;i++)
+			{
+			for (j=0;j<fixedSquanderVertex[i].length;j++)
+			if (fixedSquanderVertex[i][j]!=x)
+			System.out.print("("+i+","+j+","
+				+fixedSquanderVertex[i][j]+")");
+			System.out.print("\n*  ");
+			}
+		/*
+		System.out.print("\n* fixedScoreVertex = ");
+			for (i=0;i<fixedScoreVertex.length;i++)
+			{
+			for (j=0;j<fixedScoreVertex[i].length;j++)
+			if (fixedScoreVertex[i][j]!=0)
+			System.out.print("("+i+","+j+","
+				+fixedScoreVertex[i][j]+")");
+			System.out.print("\n*  ");
+			}
+		*/
+
+		System.out.println("\n***");
+		}
+
+
+	static {
+                int i,j;
+                int r = fixedSquanderVertex.length;
+                //"There are at most 6 faces around each Vertex"
+                if (r!=faceCountMax+1) System.out.print("faceCountMax required");
+ 
+                for (i=0;i<r;i++)
+                        if (r!= fixedSquanderVertex[i].length) 
+			System.out.println("Error:"+i+" matrix is not square"+
+					r+" "+fixedSquanderVertex[i].length);
+			/*
+                if (r!=fixedScoreVertex.length) 
+			System.out.println("Error: matrices of unequal size");
+                for (i=0;i<r;i++)
+                        if (r!= fixedScoreVertex[i].length) 
+			System.out.println("Error2: matrix is not square");
+			*/
+                if (vertexCountMin>vertexCountMax) 
+			System.out.println("Error: min>max");
+                if (vertexCountMin<0) 
+			System.out.println("Error: min<0");
+                if (fixedSquanderFace.length!=fixedScoreFace.length) 
+			System.out.println("Error: unequal faces ");
+                if (fixedSquanderFace.length>9) 
+			System.out.println("Error: nonagons not allowed");
+                for (i=0;i<fixedSquanderFace.length-1;i++)
+                        if (fixedSquanderFace[i]>fixedSquanderFace[i+1]) 
+			System.out.println("Error: need monotonicity");
+                for (i=0;i<fixedScoreFace.length-1;i++)
+                        if (fixedScoreFace[i]<fixedScoreFace[i+1]) 
+			System.out.println("Error: need score monotonicity");
+			if (fixedSquanderFace.length<=5)
+				System.out.println("Error: need at least pentagons");
+                }
+
+	}
+@
+
+
+1.4
+log
+@fixedSquanderFace[8] set to 10916 to make it compatible with
+the degree 6 case that has otherwise been excluded.
+Also many of the fixedScoreFace entries were off by a factor of 10.
+The error works in the right direction, so there is no need to rerun
+things.  But there may be some graphs in the archive that don't
+need to be there.
+@
+text
+@d5 1
+a5 1
+	static { System.out.print(" -- parameters $Revision: 1.3 $ -- \n"); }
+d21 1
+a21 1
+		fixedScoreFace[] ={1000,1000,1000,1000,0,-1030,-2060,-3090,-3030};
+a41 15
+	/*
+	// the following array is not used and can be deleted:
+	private final static int fixedScoreVertex[][] = // type (i,j).
+		// quad overlapping scores (sigma') of III.5.1:
+		// should be the same size as squanderVertex array
+		// round this list up
+		{{0,0,0,0,-1042,0,0},
+		 {0,0,-805,1,0,0,0},
+		 {0,-2739,2,-4281,0,0,0},
+		 {0,1935,-937,0,0,0,0},
+		 {330,2494,0,0,0,0,0},
+		 {4520,-4930,0,0,0,0,0},
+		 {-1542,0,0,0,0,0,0}
+		};
+	*/
+@
+
+
+1.3
+log
+@(1,3) squander constant changed to 7135
+@
+text
+@d5 1
+a5 1
+	static { System.out.print(" -- parameters $Revision$ -- \n"); }
+d19 1
+a19 1
+		fixedSquanderFace[]={0,0,0,0,2378,4896,7414,9932,11668};
+d21 1
+a21 1
+		fixedScoreFace[] ={1000,1000,1000,1000,0,-103,-206,-309,-412};
+@
+
+
+1.2
+log
+@excessTCount added, giving excess at a vertex with an exceptional,
+(2,2) entry of squander table adjusted to 2(tau4)
+@
+text
+@d5 1
+a5 3
+	static {
+		System.out.print(" -- parameters $Revision$ -- ");
+		}
+d35 1
+a35 1
+		 {x,x,6950,7133,x,x,x},
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d5 6
+d23 1
+a23 1
+		fixedScoreFace[] ={1000,1000,1000,1000,0,-1032,-2064,-3096,-4128};
+d27 6
+d38 1
+a38 1
+		 {x,8500,4753,12981,x,x,x},
+d44 1
+d58 1
+d111 1
+d121 1
+d137 1
+d143 1
+@

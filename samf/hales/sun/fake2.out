@@ -1,0 +1,24 @@
+Welcome to sphere packing routines, relation testing division.
+Welcome to Fake anchor 2
+Enter depth bound:  Enter slop:  Depth bound = 32
+slop = 7e-05
+Starting time:  	Thu Jun  4 11:43:36 1998
+
+Starting case 1:
+2.509999999999999786	2.569999999999999840
+2.000000000000000000	2.250000000000000000
+2.000000000000000000	2.250000000000000000
+cellcount    =         47647401		maxdepth = 12
+partialtries =                0
+impossible   =                0		domaincut    =                0
+acutecut     =                0		verifycount  =         41691476
+partialcount =                0		diff         =          5955925
+Verification succeeded.
+
+Done.
+Ending time:    	Thu Jun  4 15:13:19 1998
+
+Elapsed time: 12583 seconds
+diff = -1560.45		3786.65 cells per second
+
+

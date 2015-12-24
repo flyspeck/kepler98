@@ -1,0 +1,277 @@
+%\magnification=\magstep1
+\documentstyle{amsppt}
+
+\topmatter
+\parskip=\baselineskip
+\baselineskip=1.1\baselineskip  % was 1.1
+\parindent=0pt
+\loadmsbm
+\UseAMSsymbols
+\raggedbottom
+\hoffset=0.75truein
+\voffset=0.5truein
+
+
+\def\reft{\relax}  % items
+\def\refz{\relax}
+\def\bul{\noindent$\bullet$\quad }
+\def\lb#1{\line{$\bullet$ #1 \hfill}}
+\def\cir{\noindent$\circ$\quad }
+\def\heads#1{\rightheadtext{#1}}
+\def\doct{\delta_{oct}}
+\def\pt{\hbox{\it pt}}
+\def\Vol{\hbox{vol}}
+\def\and{\operatorname{and}}
+\def\Tan{\operatorname{Tan}}
+\def\sol{\operatorname{sol}}
+\def\quo{\operatorname{quo}}
+\def\anc{\operatorname{anc}}
+\def\cro{\operatorname{crown}}
+\def\vor{\operatorname{vor}}
+\def\octavor{\operatorname{octavor}}
+\def\dih{\operatorname{dih}}
+\def\arc{\operatorname{arc}}
+\def\rad{\operatorname{rad}}
+\def\if{\operatorname{if}}
+\def\A{{\bold A}}
+\def\squander{(4\pi\zeta-8)\,\pt}
+\def\score{8\,\pt}
+\def\Sfour{\Cal{\bold S}_4^+}
+\def\Sminus{\Cal{\bold S}_3^-}
+\def\Splus{\Cal{\bold S}_3^+}
+\def\maxpi{\pi_{\max}}
+\def\xiG{\xi_\Gamma}
+\def\xiV{\xi_V}
+\def\xik{\xi_\kappa}
+\def\xikG{\xi_{\kappa,\Gamma}}
+
+\def\rom{\uppercase\romannumeral}
+
+
+\font\twrm=cmr8
+\def\DLP{\operatorname{D}_{\hbox{\twrm LP}}}
+\def\ZLP{\operatorname{Z}_{\hbox{\twrm LP}}}
+\def\tLP{\operatorname{\hbox{$\tau$}LP}}  % 3 args small LP.
+\def\tlp{\tau_{\hbox{\twrm LP}}}  % 2 args (p,q) tri, quad
+\def\slp{\sigma_{\hbox{\twrm LP}}}  % 2 args (p,q) tri, quad
+\def\sLP{\operatorname{\hbox{$\sigma$}LP}}
+\def\LPmin{\operatorname{LP-min}}
+\def\LPmax{\operatorname{LP-max}}
+\def\geom{{\operatorname{g}}}
+\def\anal{{\operatorname{an}}}
+\def\min{{\operatorname{min}}}
+
+
+\def\sol{\operatorname{sol}}
+\def\dih{\operatorname{dih}}
+\def\V{\operatorname{V}}
+\def\vol{\operatorname{vol}}
+\def\Area{\operatorname{Area}}
+\def\Per{\operatorname{Per}}
+\def\rad{\operatorname{rad}}
+\def\quo{\operatorname{quo}}
+
+\def\R{{\Bbb R}}
+\def\ldot{\cdot}
+\def\S{{\Cal S}}
+\def\del{\partial}
+\def\B#1{{\bold #1}}
+\def\tri#1#2{\langle#1;#2\rangle}
+\def\ha{ \hangindent=20pt \hangafter=1\relax }
+\def\ho{ \hangindent=20pt \hangafter=0\relax }
+\def\i{I}
+\def\was#1{\relax}
+
+\def\diag|#1|#2|{\vbox to #1in {\vskip.3in\centerline{\tt Diagram #2}\vss} }
+\def\v{\hskip -3.5pt }
+% to place a fig file  align the bottom left corner at (0,-11).
+% save as left justified.
+% resize so that the box is just under 5 in width
+\def\gram|#1|#2|#3|{
+        {
+        \smallskip
+        \hbox to \hsize
+        {\hfill
+        \vrule \vbox{ \hrule \vskip 6pt \centerline{\it Diagram #2}
+         \vskip #1in %
+             \special{psfile=#3 hoffset=5 voffset=5 }\hrule }
+        \v\vrule\hfill
+        }
+\smallskip}}
+
+\def\today{\ifcase\month\or
+    January\or February\or March\or April\or May\or June\or
+    July\or August\or September\or October\or November\or December\fi
+    \space\number\day, \number\year}
+
+
+
+\bigskip
+
+\centerline{\bf Appendix 2. Quad Graphs}
+
+
+\bigskip
+
+\proclaim{Theorem 1} The graph shown 
+squanders more than the target.  \endproclaim
+
+
+\gram|2.1|1.2|dia39.ps|  % counterexample
+
+
+We discovered that for this graph, (our worst case), that (*) applied 
+to the two quads is enough to give the result.
+
+\proclaim{Lemma} (*) holds for the quads in this graph. \endproclaim
+
+Let $A$ be the part of the quad on the side of $y(9,10)$ which contains $y(4)$ and $B$ the part which contains $y(13)$.
+
+
+If $2T\le y_4 \le 2.8$ we have
+
+$$\vol(S) > .2952455 - 0.166 (y_1-2) - 0.083 (y_2+y_3-4)+0.143 (y_5+y_6-4)$$
+(Ap2.1.1.)
+
+
+which, when doubled, gives the result. 
+
+If $2.8 < y_4 \le 3.1$ then we can break the problem into five cases.
+
+{\it Case 1:} If $x_1\ge2.25841,3.1\ge y_4\ge 2.8$,
+
+$$\align \vol(A)>-0.166 y_1 & - 0.174893 y_2 - 0.174893 y_3 + 0.306136 y_4 + 0.143 y_5 \\& + 0.143 y_6-0.263488(\dih_1(A)-1.76) - 0.038250. \endalign$$
+$$\align \vol(B)>-0.166 y_7 & + 0.008893 y_2 + 0.008893 y_3 - 0.306136 y_4 + 0.143 y_8 \\& + 0.143 y_9 +0.80825. \endalign$$
+
+
+
+
+{\it Case 2:}  If $x_1\le 2.25841, 2.95\ge y_4\ge 2.8$,
+
+$$\align \vol(A)>-0.166 y_1 & - 0.120535 y_2 - 0.120535 y_3 + 0.107880 y_4 + 0.143 y_5 \\& + 0.143 y_6-0.104704(\dih_1(A)-1.76) +0.251657. \endalign$$
+$$\align \vol(B)>-0.166 y_7 & -0.045465 y_2 -0.045465 y_3 - 0.107880 y_4 + 0.143 y_8 \\& + 0.143 y_9 +0.518343. \endalign$$
+
+
+
+{\it Case 3:}  If $x_1\le 2.25841, 3.1\ge y_4\ge 2.95,2.25841 \ge x_7 \ge 2$,
+
+$$\align \vol(A)>-0.166 y_1 & - 0.114552 y_2 - 0.114552 y_3 + 0.115382 y_4 + 0.143 y_5 \\& + 0.143 y_6-0.153420(\dih_1(A)-1.76) +0.193572. \endalign$$
+$$\align \vol(B)>-0.166 y_7 & -0.051448 y_2 -0.051448 y_3 - 0.115382 y_4 + 0.143 y_8 \\& + 0.143 y_9 +0.576428. \endalign$$
+
+
+
+{\it Case 4:} If $x_1\le 2.25841, 3.1\ge y_4\ge 2.95,2T \ge x_7 \ge 2.25841,2.25841\ge y_2\ge 2$,
+
+$$\align \vol(A)>-0.166 y_1 & - 0.279805 y_2 - 0.340136 y_3 + 0.422343 y_4 + 0.143 y_5 \\& + 0.143 y_6-0.380615(\dih_1(A)-1.76) +0.147006. \endalign$$
+$$\align \vol(B)>-0.166 y_7 & +0.113805 y_2 +0.174136 y_3 - 0.422343 y_4 + 0.143 y_8 \\& + 0.143 y_9 +0.622994. \endalign$$
+
+
+
+{\it Case 5:} If $x_1\le 2.25841, 3.1\ge y_4\ge 2.95,2T \ge x_7 \ge 2.25841,2T\ge y_2\ge 2.25841$,
+
+$$\align \vol(A)>-0.166 y_1 & - 0.182394 y_2 - 0.147301 y_3 + 0.250100 y_4 + 0.143 y_5 \\& + 0.143 y_6-0.206213(\dih_1(A)-1.76) +0.001504. \endalign$$
+$$\align \vol(B)>-0.166 y_7 & +0.016394 y_2 +0.018699 y_3 - 0.250100 y_4 + 0.143 y_8 \\& + 0.143 y_9 +0.768496\endalign$$
+
+
+
+
+Finally, suppose $y_4 > 3.1$.  
+
+We suppose the volume of the Voronoi corresponding to the 
+graph is at most $\vol(D)$ and maximize variables to get upper
+ bounds which can not be broken without violating the volume 
+constraint.  
+We then use these bounds to find improved lower bounds on the 
+volume and squander of the quadrilateral regions which are
+ proved by interval arithmetic.
+  
+We will attach [L] to all bounds given by the linear optimizer.  
+We will attach [I] to bounds given by interval arithmetic.  All non-labelled bounds are proved by [I].
+
+Using the numbering system from the graph, let $y(i)$ denote 
+the length of vertex $i$.  Let $y(i,j)$ denote the length of 
+edge $(i,j)$. Let $\dih_i(j)$ denote the dihedral angle of face 
+$j$ at vertex $i$.
+
+\proclaim{Claim 1} $\dih_4(1)<1.719$ without loss of generality.
+\endproclaim 
+
+{\bf Proof:}  
+
+We find that $\dih_7(3)+\dih_4(1)<2(1.719)$.[L]., 
+so swap face 1 and 3 as necessary.\qed
+
+\proclaim{Claim 2} $y(9,10),y(4,13),y(7,13),y(11,12)<3.6$.\endproclaim
+
+{\bf Proof:} 
+
+We have $\dih_4(1)<1.860,\ \dih_9(1)<1.860,\ y(4)<2.273,\ y(9)<2.244$.[L]
+
+These bounds imply the claim. [I]  The arrangement is symmetric 
+and the proof and bounds are identical for face 3. \qed
+
+\proclaim{Proposition} The diagonals $y(9,10),y(11,12)$ both have length at most 3.1. \endproclaim
+
+{\bf Proof:}  We have the following table by [I]. We break the quad along the diagonal $y(9,10)$.  
+
+
+$$
+\matrix
+diagonal	        &       C1      &\min\ \mu(A)	& \min\ \mu(B)\\
+y_4\in[3.1,3.2] 	&	4.22	&	0.057	& 0.02	\\
+y_4\in[3.2,3.3] 	&	4.37 	&	0.069	& 0.016\\
+y_4\in[3.3,3.4]		&	4.53	&	0.083	& 0.009 \\	
+y_4\in[3.4,3.6]		&       4.8	&	0.11	& -0.02	\\
+\endmatrix
+$$
+
+(C1=''min (y(9) + y(10)) s.t. $dih_4(1)<1.719$.'')
+
+By [L], we have $\mu(1)<0.0887$.  Taking $A+B$ for each case, we find that $y(9,10)<3.3$.  
+
+If $y(9,10)\in[3.2,3.3]$, minimize $\dih_4(1)$ in [L] subject to the constraint that 
+$\mu(1)>0.069+0.016=0.085.$ We find $\dih_4(1)<1.532$.  With this constraint, $\mu(A)>0.129>0.0887$,[I],
+and the case passes easily.
+
+By the same argument, suppose $y(9,10)\in[3.1,3.2]$.  Then $\dih_4(1)<1.614$, [L], subject to
+the constraint $\mu(1)>0.057+0.02=0.077$.  With this constraint, $\mu(A)>0.076$,[I].  
+Then $\mu(A)+\mu(B)>0.76+0.02=0.96>0.0887$ and we are done.  We conclude that the diagonal $y(9,10)\le 3.1$.
+
+We now attack face 3.  First, add (*) to [L] at face 1.  
+We find that $\dih_7(3)<1.76$ and $\dih_{13}(3)<2.11$. [L].  We also have $\mu(3)<0.081$.  We make a new table.
+
+$$
+\matrix
+diagonal	        &       C2      &	\min\ \mu(C)	& \min\ \mu(D)\\
+y_4\in[3.1,3.2] 	&	4.134	&	0.049	& 0.024	\\
+y_4\in[3.2,3.3] 	&	4.29 	&	0.0617	& 0.020\\
+y_4\in[3.3,3.4]		&	4.44	&	0.074	& 0.020 \\	
+y_4\in[3.4,3.6]		&       4.64	&	0.093	& -0.01	\\
+\endmatrix
+$$
+
+(C2=''min (y(11)+y(12)) s.t. $\dih_7(3)<1.76$ and $\dih_7(3)<2.11$.)
+
+We conclude that $y(11,12)<3.2$.  If $y(11,12)\in[3.1,3.2]$, add $\mu(3)>0.073$ to [L] and we 
+find that $\dih_7(3)<1.625$.  Using [I] we have that $\mu(C)>0.074$ which implies $\mu(C)+\mu(D)>0.074+0.024=0.098>0.081$.
+This is the result. \qed
+
+{\bf Proof of Theorem 1.}  We apply (*) to the second
+quadrilateral face and optimize.  The graph passes easily.
+\qed
+
+\proclaim{Theorem 2} The two graphs shown below squander more than the target.\endproclaim
+
+\gram|2.1|1.2|dia39.ps|  % counterexample
+\gram|2.1|1.2|dia39.ps|  % counterexample
+
+{\bf Proof:} These remaining two quad cases are much simpler.  We use the methods of finding upper bounds on diagonals and dihedrals as in the previous proof.  On graph 3, we know that both diagonals on one of the three quads are at most 2.8.  We apply (*) to that face and the graph passes.  On graph 2, We have the diagonals of one of the faces are less than 3.1 and a dihedral angle less than 1.76.  We apply (*) to that face and the graph passes. \qed
+
+ 
+\bye
+
+
+
+
+
+

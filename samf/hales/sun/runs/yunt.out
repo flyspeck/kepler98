@@ -1,0 +1,20 @@
+Welcome to sphere packing routines, relation testing division.
+Welcome to QRSphSecParBds.  Enter subdivisions:  8
+Subdivisions:   8
+
+Starting time:          Wed Jul 23 15:24:43 1997
+
+Starting case 1:
+cellcount    =           262144
+ubv_ij bounds = [-0.254255826799827056,         48.1930040000000233]
+
+
+Final bounds = [-0.254255826799827056,  48.1930040000000233]
+
+Done.
+Ending time:            Wed Jul 23 15:33:57 1997
+
+Elapsed time: 554 seconds
+diff = 425.05           473.184 cells per second
+
+

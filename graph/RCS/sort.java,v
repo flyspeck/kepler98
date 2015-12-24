@@ -1,0 +1,151 @@
+head	1.3;
+access;
+symbols;
+locks
+	hales:1.3; strict;
+comment	@# @;
+
+
+1.3
+date	98.02.11.03.01.54;	author hales;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	97.10.15.01.43.02;	author hales;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	97.09.13.16.48.47;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@graph generator, compare two lists of graphs, and remove duplicates
+@
+
+
+1.3
+log
+@trivial changes.
+@
+text
+@import java.util.*;
+
+// typical use:
+/*
+	1.  pick an archive file graphA.java for the first section and a new list
+			of cases for the graphR.java in the second sectoin
+	2.  run the program saving output to graphNEW.java
+	3.  cat graphNEW.java >> graphA.java, remove the seam to get bigger
+			archive file.
+	4.  delete the files graphX.java graphNEW.java
+*/
+
+class sort {
+static { System.out.print(" -- sort $Revision: 1.2 $ -- \n"); }
+
+static public void main ( String ac[] )
+
+	{
+	final String dataArchive[] = archive.graphOCT.data;
+	// final String dataArchive2[] = archive.graphHEX.data;
+	final String dataRecent[]  = graphOCTa.data;
+
+	Stack stack = new Stack();
+
+	System.out.println("size = "+dataArchive.length);
+	// System.out.println("size2 = "+dataArchive2.length);
+	System.out.println("recent size = "+dataRecent.length);
+	for (int i=0;i<dataArchive.length;i++)
+		{
+		archive.GraphArrays u = new archive.GraphArrays(dataArchive[i]);
+		arrangeInvariant a = new arrangeInvariant(u);
+		a.setInvariant();
+		if (!a.isContainedIn(stack)) 
+			stack.push(a);
+		}
+
+	/*
+	for (int i=0;i<dataArchive2.length;i++)
+		{
+		archive.GraphArrays u = new archive.GraphArrays(dataArchive2[i]);
+		arrangeInvariant a = new arrangeInvariant(u);
+		a.setInvariant();
+		if (!a.isContainedIn(stack)) 
+			stack.push(a);
+		}
+	*/
+	Stack newstack = new Stack();
+	for (int i=0;i<dataRecent.length;i++)
+		{
+		arrangeInvariant a = new arrangeInvariant(new archive.GraphArrays(
+				dataRecent[i]));
+		a.setInvariant();
+		if (!a.isContainedIn(stack)) 
+			{
+			newstack.push(a);
+			stack.push(a);
+			}
+		}
+	System.out.println("//// combined size = "+stack.size());
+	System.out.println("//// addition size = "+newstack.size());
+	arrange.dumpStack(newstack);
+
+	}
+};
+@
+
+
+1.2
+log
+@printed comments were added.
+@
+text
+@d14 1
+a14 1
+static { System.out.print(" -- sort $Revision$ -- \n"); }
+d19 3
+a21 2
+	final String dataArchive[] = archive.graphQ.data;
+	final String dataRecent[]  = graphs.data;
+d26 1
+d28 1
+a28 1
+	for (int i=0;i<539;i++)
+d37 10
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d3 10
+d14 1
+d19 3
+d23 4
+a26 2
+	System.out.println("size = "+archive.graphQ.data.length);
+	for (int i=0;i<archive.graphQ.data.length;i++)
+d28 1
+a28 1
+		archive.GraphArrays u = new archive.GraphArrays(archive.graphQ.data[i]);
+d31 1
+a31 1
+		//if (!a.isContainedIn(stack)) 
+d36 1
+a36 1
+	for (int i=0;i<archive.graphQUAD.data.length;i++)
+d39 1
+a39 1
+				archive.graphQUAD.data[i]));
+d47 2
+a48 2
+	System.out.println("size = "+stack.size());
+	System.out.println("new size = "+newstack.size());
+d50 1
+@

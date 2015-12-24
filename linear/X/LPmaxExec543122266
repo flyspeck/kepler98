@@ -1,0 +1,17 @@
+set logfile X/LPmax.log543122266
+set preprocessing presolve no
+set output results n X/y.log
+set output dialog n X/x.log
+read SHORT/PENT/LP/cplexE.lp5.1454.F17.C6 lp
+change delete constraints sigsumX
+add 
+sigma{17}8389 + 0.419351 solid{17}8389 -0.0238 y(4,5) -0.0238 y(4,10) -0.0238 y(10,11) < 0.4492
+sigma{17}55862 + 0.419351 solid{17}55862 + 0.19 y(5)+0.19 y(6)+0.19 y(11) < 1.449
+Cqrs1600=0
+Cqrs1601=0
+
+sigsum > 0.4429
+y(1) - X =0
+end
+opt
+quit

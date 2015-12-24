@@ -1,0 +1,27 @@
+Welcome to sphere packing routines, relation testing division.
+Welcome to Section A_9.1.
+Enter depth bound:  Enter slop:  Depth bound = 32
+slop = 0.1
+Starting time:  	Wed Apr 29 14:17:59 1998
+
+Starting case 1:
+2.696000000000000174	2.828427124746190290
+2.450000000000000177	2.510000000000000230
+2.000000000000000000	2.510000000000000230
+2.770000000000000017	2.770000000000000017
+2.000000000000000000	2.510000000000000230
+2.450000000000000177	2.510000000000000230
+cellcount    =         17234785		maxdepth = 6
+deltacut     =                0
+impossible   =                0	domaincut    =                0
+acutecut     =                0		verifycount  =         16696198
+partialcount =                0		diff         =           538587
+Verification succeeded.
+
+Done.
+Ending time:    	Wed Apr 29 14:32:53 1998
+
+Elapsed time: 894 seconds
+diff = 732.89		19278.3 cells per second
+
+

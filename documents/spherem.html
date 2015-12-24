@@ -1,0 +1,159 @@
+<HTML>
+<body background="paperbackground.JPG" alink=blue vlink=red>
+
+
+<TITLE>Mathematica routines for sphere packings</TITLE>
+<H3>Mathematica Sphere Packing Code</H3>
+
+This file gives descriptions of functions appearing in
+a Mathematica package designed to assist in the exploration
+of packings in three dimensions.  Detailed descriptions of most
+of these functions can be found in Sphere Packings I.
+The <a href = "sphere.html">source code</a> is available. 
+Sean McLaughlin has also implemented many of these functions in 
+<a href="eqs.ms">Maple</a>.
+
+<DL>
+
+<DT>zeta, pt, doct
+<dd>Various constants
+
+<DT>chi
+<dd>A polynomial in six variables giving the orientation of a simplex
+	along the fourth, fifth and sixth edges
+
+<DT>eta
+<dd>eta[x,y,z] is the circumradius of a triangle with edges x,y,z.
+
+<DT>volR[a,b,c]
+<dd>the volume of the Rogers simplex R[a,b,c]
+
+<DT>solR[a,b,c]
+<dd>the solid angle of the Rogers simplex R[a,b,c]
+
+<DT>dihR[a,b,c]
+<dd>the dihedral angle of the Rogers simplex R[a,b,c]
+
+<DT>vorR[a,b,c]
+<dd>the voronoi score of the Rogers simplex R[a,b,c]
+
+<DT>denR[a,b,c]
+<dd>the packing density of the Rogers simplex R[a,b,c]
+
+<DT>tauR[a,b,c]
+<dd>the amount squandered by the Rogers simplex R[a,b,c]
+
+
+<DT>TRUNC
+<dd> 1.255
+
+<DT>Dihedral[y1,...,y6]
+<dd>The dihedral angle of a simplex with edges y1,...,y6.
+
+<DT>Dihedral2[y1,...,y6]
+<dd>The dihedral angle along the second edge
+	of a simplex with edges y1,...,y6.
+
+<DT>Dihedral3[y1,...,y6]
+<dd>The dihedral angle along the third edge
+	of a simplex with edges y1,...,y6.
+
+<DT>Chi[y1,...,y6]
+<dd>The function Chi along the top
+	face of a simplex with edges y1,...,y6
+
+<DT>tauAnalytic[y1,...,y6] 
+<dd>What the simplex S(y1,...,y6) squanders under the analytic Voronoi 
+	function.
+
+<DT>tau[y1,...,y6]
+<dd>What the simplex S(y1,...,y6) squanders under compression.
+
+<DT>VorAnalytic[y1,..,y6]
+<dd>The analytic voronoi function at the simplex S(y1,...,y6)
+
+<DT>Delta[y1,...,y6]
+<dd>The function delta expressed in terms of edge lengths.
+
+<DT>U[x1,x2,x6]
+<dd>The function U expressed in terms of squares of edge lengths.
+
+<DT>Rho[y1,...,y6]
+<dd>The function rho expressed in terms of edge lengths
+
+<DT>Rad[y1,...,y6]
+<dd>The circumradius of a simplex S(y1,...,y6)
+
+<DT>aSolid[y1,...,y6]
+<dd>The function a(y1,...,y6) appearing in the definition of solid angles
+
+<DT>Gamma[y1,...,y6]
+<dd>The compression of the simplex S(y1,...,y6)
+
+<DT>Solid[y1,...,y6]
+<dd>The solid angle of a simplex S(y1,...,y6)
+
+<DT>Density[x]
+<dd>The packing density corresponding to a score of x
+
+<DT>Norm[x]
+<dd>The length squared of a vector x
+
+<DT>Norm[x,y]
+<dd>The distance squared from x to y
+
+<DT>Distance[x,y]
+<dd>The Euclidean distance between vectors x and y
+
+<DT>FarFrom[v1,{u,v}]
+<dd>This function returns vector u or v depending on which has the
+	greatest distance from v1.
+
+<DT>ExtremePoint[{v1,v2,v3}]
+<dd>The circumcenter of the simplex with vertices 0,v1,v2,v3.
+
+<DT>Vertex[{v1,dist1},{v2,dist2},{v3,dist3}]
+<dd>This function returns a pairs of vectors {u1,u2}, where u1 and u2
+are the two vectors at distance dist1 from vector 1, dist2 from vector2,
+and dist3 from vector3.
+
+<DT>SimplexCoordinates[y1,...,y6]
+<dd>This function returns {v1,v2,v3}, where 0,v1,v2,v3 are the
+coordinate vectors of the four vertices of a simplex with
+edges y1,...,y6.
+
+<DT>Enclosed[y1,...,y6,z1,z2,z3]
+<dd>The function \\Cal E from Sphere Packings papers
+
+<DT>NullVector
+<dd>The vector {0,0,0}
+
+
+<DT>Keep[x]
+<dd>Place the definition of x in the file keep.m
+
+<DT>Fix[x]
+<dd>Edit the definition of x
+
+<DT>$SpherePrecision
+<dd>The working precision for calculations in the package
+
+<DT>Ns[x]
+<dd>Evaluate x to the precision $SpherePrecision
+
+
+
+
+
+
+
+
+</DL>
+<p><br><p><br><p>
+<font size=4 color=#CD2626><hr>
+This page is available for historical purposes only.  It is a copy
+from www.math.lsa.umich.edu/~hales/countdown.  It has not been
+maintained since 1998.<hr></font>
+</p>
+
+</HTML>

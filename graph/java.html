@@ -1,0 +1,25 @@
+
+1/1/98: Here are a few notes on the flow of the program.
+
+excessTCount only shows up in pqrExcess, which in turn
+	only shows up in ExcessAt, which is only in
+	ExcessNotAt.
+
+pqrExcess should issue an error message if called with exCount<=0,
+	but currently we are using it correctly, so this isn't an error.
+
+fixedSquanderVertex becomes squanderVertex and forecast (forecastD).
+	squanderVertex and forecast show up in ExcessAt, hence in
+	ExcessNotAt.  Otherwise when they are used they are used at
+	a single fixed vertex, often in combination with ExcessNotAt(that vertex).
+	
+This note is motivated by an (unfounded) worry I had that the excess 
+	in excessTCount get mingled with the fixedSquanderedVertex amounts
+	even if they are not properly disjoint.  To see that this doesn't
+	happen, note that since everything is being channeled through
+	ExcessNotAt, the disjointness rules of that procedure are applied.
+	That procedure allows any nonadjacent vertices except when they
+	occur on the same quadrilateral.  This is indeed the correct
+	rule to be using, so things are correct.
+
+

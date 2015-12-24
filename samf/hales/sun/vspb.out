@@ -1,0 +1,23 @@
+Welcome to sphere packing routines, relation testing division.
+Welcome to VorSecParBds.  Enter subdivisions:  Subdivisions:	16
+
+Starting time:  	Fri Jul 18 10:11:44 1997
+
+Starting case 1:
+cellcount    =         16777216
+ubv_ij bounds = [-9.94039926576943067,		7.89264342154473653]
+
+Starting case 2:
+cellcount    =         16777216
+ubv_ij bounds = [-11.394683435984966,		9.57206883972559198]
+
+
+Final bounds = [-0.237389238249686801,	0.199418100827616518]
+
+Done.
+Ending time:    	Sun Jul 20 13:53:26 1997
+
+Elapsed time: 186102 seconds
+diff = -693.037		180.301 cells per second
+
+

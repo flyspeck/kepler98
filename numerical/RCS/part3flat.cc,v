@@ -1,0 +1,151 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@// @;
+
+
+1.1
+date	97.09.16.03.10.56;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@Sphere Packings III,
+numerical verification of Hypothesis 4.1 and 4.2 for two flat quarters
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@#include <iomanip.h>
+#include <stdlib.h>
+#include "numerical.h"
+#include "constants.h"
+#include <math.h>
+
+class iter {
+    double* xmin;
+	double* xmax;
+	double* x;
+    int numiter,numargs,nconstr;
+    void (*func)(int numargs,int whichFn,double* x,double* ret,void*);
+    void (*constraintfunc)
+        (int numargs,int which,double* x,double* ret,void*);
+    iter(int);
+    ~iter();
+    };
+
+static void nofunc(int numargs,int whichFn,double* x,double* ret,void*)
+    {
+    cout << "nofunc should not be called" << endl << flush;
+    }
+
+/* generic function */
+double dihC=0,dih2C=0,solC=0,constC=0,gamC=0;
+int rC[3]={0,0,0};
+
+static void setConst(double d,double d2,double s,double c,
+		double g, int r0,int r1,int r2)
+	{ 
+	dihC=d; dih2C=d2; solC=s; constC=c; gamC=g; 
+	rC[0]=r0; rC[1]=r1; rC[2]=r2; 
+	}
+
+static double gv(double x1,double x2,double x3,double x4,double x5,
+	double x6,int r)
+	{
+	if (r) return vor_analytic(x1,x2,x3,x4,x5,x6);
+	return gamma(x1,x2,x3,x4,x5,x6);
+	}
+
+static void sigdihsol(int numargs,int whichFn,double* x, double* ret,void*)
+	{
+	*ret = 
+	dihC*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])
+		  
+	+ dih2C*(dihedraly(x[1],x[0],x[2],x[4],x[3],x[5])+
+				dihedraly(x[1],x[6],x[2],x[7],x[3],x[8])
+		 )
+	+ solC*(solid(x[1],x[0],x[2],x[4],x[3],x[5])+
+			solid(x[1],x[6],x[2],x[7],x[3],x[8])
+			)
+	+ constC 
+	+ gamC*(gv(x[1],x[0],x[2],x[4],x[3],x[5],rC[0]||rC[1])+
+			gv(x[1],x[6],x[2],x[7],x[3],x[8],rC[1]||rC[2])
+			);
+	}
+
+iter::~iter() 
+	{ delete[] xmin; 
+	  delete[] xmax; 
+		delete[] x; }
+
+
+
+static void radConstraint(int numargs,int whichFn,double* x,double* ret,void*)
+    {
+	switch(whichFn) {
+	case 1 : *ret = (radf(x[3],x[4],x[5])-global::sqrt2)*(rC[0]?-1:1); break;
+	case 2 : *ret = (radf(x[1],x[2],x[3])-global::sqrt2)*(rC[1]?-1:1); break;
+	case 3 : *ret = (radf(x[3],x[7],x[8])-global::sqrt2)*(rC[2]?-1:1); break;
+	default: *ret = 0; cout << "error!" << endl; break;
+	}
+    }
+
+iter::iter(int ineqSwitch) {
+	numiter = 20; numargs = 9; nconstr=3;
+	xmin = new double[numargs];
+	xmax = new double[numargs];
+	x = new double[numargs];
+	constraintfunc = radConstraint;
+	func = sigdihsol;
+	double zetapt = 0.1004445714270568;
+	double zetapt32 = 3.2*zetapt;
+	double pt = 0.0553736456684641;
+	int i;
+	for (i=0;i<numargs;i++) { xmin[i]=x[i]=2.0; xmax[i]=2.51; }
+	xmin[3]=2.51; xmax[3]=global::sqrt8;
+	double dihC,dih2C,constC,solC,gamC=-1;
+	int caseNumber = ineqSwitch/1000;
+	int flatType = (ineqSwitch % 1000) % 8;
+
+	dihC = (caseNumber>=21  ? DD::array[caseNumber-21][1] 
+							: CC::array[caseNumber][2]);
+	dih2C =(caseNumber >=21 ? dihC : 0);
+	solC  =(caseNumber >=21 ? 0 : CC::array[caseNumber][0]);
+	constC=(caseNumber >=21 ? DD::array[caseNumber-21][0] 
+							: CC::array[caseNumber][1]);
+	gamC = -1;
+	if ((ineqSwitch % 1000)/8) 
+			{
+			double temp = dihC; dihC=dih2C; dih2C=temp; 
+			}
+	int r0,r1,r2;
+	
+	switch (flatType) {
+	case 0 : r0=1; r1=1; r2=1; break;
+	case 1 : r0=0; r1=1; r2=1;  break;
+	case 2 : r0=1; r1=0; r2=1;  break;
+	case 3 : r0=1; r1=1; r2=0;  break;
+	case 4 : r0=0; r1=0; r2=1;  break;
+	case 5 : r0=0; r1=1; r2=0;  break;
+	case 6 : r0=1; r1=0; r2=0;  break;
+	case 7 : r0=0; r1=0; r2=0;  break;
+	}
+
+	setConst(dihC,dih2C,solC,constC,gamC,r0,r1,r2);
+	cout.precision(5);
+	cout << "parameters(d,d2,s,c,g,r0,r1,r2) = "
+		<< dihC << " " << dih2C << " " << solC << " " << constC << " " <<
+		gamC << "; " << r0 << " " << r1 << " " << r2 << endl;
+
+	}
+
+
+
+@

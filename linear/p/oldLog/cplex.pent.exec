@@ -1,0 +1,2271 @@
+read cplex4.lp1 lp
+optimize
+read cplex4.lp2 lp
+optimize
+read cplex4.lp3 lp
+optimize
+read cplex4.lp4 lp
+optimize
+read cplex4.lp5 lp
+optimize
+read cplex4.lp6 lp
+optimize
+read cplex4.lp7 lp
+optimize
+read cplex4.lp8 lp
+optimize
+read cplex4.lp9 lp
+optimize
+read cplex4.lp10 lp
+optimize
+read cplex4.lp11 lp
+optimize
+read cplex4.lp12 lp
+optimize
+read cplex4.lp13 lp
+optimize
+read cplex4.lp14 lp
+optimize
+read cplex4.lp15 lp
+optimize
+read cplex4.lp16 lp
+optimize
+read cplex4.lp17 lp
+optimize
+read cplex4.lp18 lp
+optimize
+read cplex4.lp19 lp
+optimize
+read cplex4.lp20 lp
+optimize
+read cplex4.lp21 lp
+optimize
+read cplex4.lp22 lp
+optimize
+read cplex4.lp23 lp
+optimize
+read cplex4.lp24 lp
+optimize
+read cplex4.lp25 lp
+optimize
+read cplex4.lp26 lp
+optimize
+read cplex4.lp27 lp
+optimize
+read cplex4.lp28 lp
+optimize
+read cplex4.lp29 lp
+optimize
+read cplex4.lp30 lp
+optimize
+read cplex4.lp31 lp
+optimize
+read cplex4.lp32 lp
+optimize
+read cplex4.lp33 lp
+optimize
+read cplex4.lp34 lp
+optimize
+read cplex4.lp35 lp
+optimize
+read cplex4.lp36 lp
+optimize
+read cplex4.lp37 lp
+optimize
+read cplex4.lp38 lp
+optimize
+read cplex4.lp39 lp
+optimize
+read cplex4.lp40 lp
+optimize
+read cplex4.lp41 lp
+optimize
+read cplex4.lp42 lp
+optimize
+read cplex4.lp43 lp
+optimize
+read cplex4.lp44 lp
+optimize
+read cplex4.lp45 lp
+optimize
+read cplex4.lp46 lp
+optimize
+read cplex4.lp47 lp
+optimize
+read cplex4.lp48 lp
+optimize
+read cplex4.lp49 lp
+optimize
+read cplex4.lp50 lp
+optimize
+read cplex4.lp51 lp
+optimize
+read cplex4.lp52 lp
+optimize
+read cplex4.lp53 lp
+optimize
+read cplex4.lp54 lp
+optimize
+read cplex4.lp55 lp
+optimize
+read cplex4.lp56 lp
+optimize
+read cplex4.lp57 lp
+optimize
+read cplex4.lp58 lp
+optimize
+read cplex4.lp59 lp
+optimize
+read cplex4.lp60 lp
+optimize
+read cplex4.lp61 lp
+optimize
+read cplex4.lp62 lp
+optimize
+read cplex4.lp63 lp
+optimize
+read cplex4.lp64 lp
+optimize
+read cplex4.lp65 lp
+optimize
+read cplex4.lp66 lp
+optimize
+read cplex4.lp67 lp
+optimize
+read cplex4.lp68 lp
+optimize
+read cplex4.lp69 lp
+optimize
+read cplex4.lp70 lp
+optimize
+read cplex4.lp71 lp
+optimize
+read cplex4.lp72 lp
+optimize
+read cplex4.lp73 lp
+optimize
+read cplex4.lp74 lp
+optimize
+read cplex4.lp75 lp
+optimize
+read cplex4.lp76 lp
+optimize
+read cplex4.lp77 lp
+optimize
+read cplex4.lp78 lp
+optimize
+read cplex4.lp79 lp
+optimize
+read cplex4.lp80 lp
+optimize
+read cplex4.lp81 lp
+optimize
+read cplex4.lp82 lp
+optimize
+read cplex4.lp83 lp
+optimize
+read cplex4.lp84 lp
+optimize
+read cplex4.lp85 lp
+optimize
+read cplex4.lp86 lp
+optimize
+read cplex4.lp87 lp
+optimize
+read cplex4.lp88 lp
+optimize
+read cplex4.lp89 lp
+optimize
+read cplex4.lp90 lp
+optimize
+read cplex4.lp91 lp
+optimize
+read cplex4.lp92 lp
+optimize
+read cplex4.lp93 lp
+optimize
+read cplex4.lp94 lp
+optimize
+read cplex4.lp95 lp
+optimize
+read cplex4.lp96 lp
+optimize
+read cplex4.lp97 lp
+optimize
+read cplex4.lp98 lp
+optimize
+read cplex4.lp99 lp
+optimize
+
+read cplex4.lp100 lp
+optimize
+read cplex4.lp101 lp
+optimize
+read cplex4.lp102 lp
+optimize
+read cplex4.lp103 lp
+optimize
+read cplex4.lp104 lp
+optimize
+read cplex4.lp105 lp
+optimize
+read cplex4.lp106 lp
+optimize
+read cplex4.lp107 lp
+optimize
+read cplex4.lp108 lp
+optimize
+read cplex4.lp109 lp
+optimize
+read cplex4.lp110 lp
+optimize
+read cplex4.lp111 lp
+optimize
+read cplex4.lp112 lp
+optimize
+read cplex4.lp113 lp
+optimize
+read cplex4.lp114 lp
+optimize
+read cplex4.lp115 lp
+optimize
+read cplex4.lp116 lp
+optimize
+read cplex4.lp117 lp
+optimize
+read cplex4.lp118 lp
+optimize
+read cplex4.lp119 lp
+optimize
+read cplex4.lp120 lp
+optimize
+read cplex4.lp121 lp
+optimize
+read cplex4.lp122 lp
+optimize
+read cplex4.lp123 lp
+optimize
+read cplex4.lp124 lp
+optimize
+read cplex4.lp125 lp
+optimize
+read cplex4.lp126 lp
+optimize
+read cplex4.lp127 lp
+optimize
+read cplex4.lp128 lp
+optimize
+read cplex4.lp129 lp
+optimize
+read cplex4.lp130 lp
+optimize
+read cplex4.lp131 lp
+optimize
+read cplex4.lp132 lp
+optimize
+read cplex4.lp133 lp
+optimize
+read cplex4.lp134 lp
+optimize
+read cplex4.lp135 lp
+optimize
+read cplex4.lp136 lp
+optimize
+read cplex4.lp137 lp
+optimize
+read cplex4.lp138 lp
+optimize
+read cplex4.lp139 lp
+optimize
+read cplex4.lp140 lp
+optimize
+read cplex4.lp141 lp
+optimize
+read cplex4.lp142 lp
+optimize
+read cplex4.lp143 lp
+optimize
+read cplex4.lp144 lp
+optimize
+read cplex4.lp145 lp
+optimize
+read cplex4.lp146 lp
+optimize
+read cplex4.lp147 lp
+optimize
+read cplex4.lp148 lp
+optimize
+read cplex4.lp149 lp
+optimize
+read cplex4.lp150 lp
+optimize
+read cplex4.lp151 lp
+optimize
+read cplex4.lp152 lp
+optimize
+read cplex4.lp153 lp
+optimize
+read cplex4.lp154 lp
+optimize
+read cplex4.lp155 lp
+optimize
+read cplex4.lp156 lp
+optimize
+read cplex4.lp157 lp
+optimize
+read cplex4.lp158 lp
+optimize
+read cplex4.lp159 lp
+optimize
+read cplex4.lp160 lp
+optimize
+read cplex4.lp161 lp
+optimize
+read cplex4.lp162 lp
+optimize
+read cplex4.lp163 lp
+optimize
+read cplex4.lp164 lp
+optimize
+read cplex4.lp165 lp
+optimize
+read cplex4.lp166 lp
+optimize
+read cplex4.lp167 lp
+optimize
+read cplex4.lp168 lp
+optimize
+read cplex4.lp169 lp
+optimize
+read cplex4.lp170 lp
+optimize
+read cplex4.lp171 lp
+optimize
+read cplex4.lp172 lp
+optimize
+read cplex4.lp173 lp
+optimize
+read cplex4.lp174 lp
+optimize
+read cplex4.lp175 lp
+optimize
+read cplex4.lp176 lp
+optimize
+read cplex4.lp177 lp
+optimize
+read cplex4.lp178 lp
+optimize
+read cplex4.lp179 lp
+optimize
+read cplex4.lp180 lp
+optimize
+read cplex4.lp181 lp
+optimize
+read cplex4.lp182 lp
+optimize
+read cplex4.lp183 lp
+optimize
+read cplex4.lp184 lp
+optimize
+read cplex4.lp185 lp
+optimize
+read cplex4.lp186 lp
+optimize
+read cplex4.lp187 lp
+optimize
+read cplex4.lp188 lp
+optimize
+read cplex4.lp189 lp
+optimize
+read cplex4.lp190 lp
+optimize
+read cplex4.lp191 lp
+optimize
+read cplex4.lp192 lp
+optimize
+read cplex4.lp193 lp
+optimize
+read cplex4.lp194 lp
+optimize
+read cplex4.lp195 lp
+optimize
+read cplex4.lp196 lp
+optimize
+read cplex4.lp197 lp
+optimize
+read cplex4.lp198 lp
+optimize
+read cplex4.lp199 lp
+optimize
+
+read cplex4.lp200 lp
+optimize
+read cplex4.lp201 lp
+optimize
+read cplex4.lp202 lp
+optimize
+read cplex4.lp203 lp
+optimize
+read cplex4.lp204 lp
+optimize
+read cplex4.lp205 lp
+optimize
+read cplex4.lp206 lp
+optimize
+read cplex4.lp207 lp
+optimize
+read cplex4.lp208 lp
+optimize
+read cplex4.lp209 lp
+optimize
+read cplex4.lp210 lp
+optimize
+read cplex4.lp211 lp
+optimize
+read cplex4.lp212 lp
+optimize
+read cplex4.lp213 lp
+optimize
+read cplex4.lp214 lp
+optimize
+read cplex4.lp215 lp
+optimize
+read cplex4.lp216 lp
+optimize
+read cplex4.lp217 lp
+optimize
+read cplex4.lp218 lp
+optimize
+read cplex4.lp219 lp
+optimize
+read cplex4.lp220 lp
+optimize
+read cplex4.lp221 lp
+optimize
+read cplex4.lp222 lp
+optimize
+read cplex4.lp223 lp
+optimize
+read cplex4.lp224 lp
+optimize
+read cplex4.lp225 lp
+optimize
+read cplex4.lp226 lp
+optimize
+read cplex4.lp227 lp
+optimize
+read cplex4.lp228 lp
+optimize
+read cplex4.lp229 lp
+optimize
+read cplex4.lp230 lp
+optimize
+read cplex4.lp231 lp
+optimize
+read cplex4.lp232 lp
+optimize
+read cplex4.lp233 lp
+optimize
+read cplex4.lp234 lp
+optimize
+read cplex4.lp235 lp
+optimize
+read cplex4.lp236 lp
+optimize
+read cplex4.lp237 lp
+optimize
+read cplex4.lp238 lp
+optimize
+read cplex4.lp239 lp
+optimize
+read cplex4.lp240 lp
+optimize
+read cplex4.lp241 lp
+optimize
+read cplex4.lp242 lp
+optimize
+read cplex4.lp243 lp
+optimize
+read cplex4.lp244 lp
+optimize
+read cplex4.lp245 lp
+optimize
+read cplex4.lp246 lp
+optimize
+read cplex4.lp247 lp
+optimize
+read cplex4.lp248 lp
+optimize
+read cplex4.lp249 lp
+optimize
+read cplex4.lp250 lp
+optimize
+read cplex4.lp251 lp
+optimize
+read cplex4.lp252 lp
+optimize
+read cplex4.lp253 lp
+optimize
+read cplex4.lp254 lp
+optimize
+read cplex4.lp255 lp
+optimize
+read cplex4.lp256 lp
+optimize
+read cplex4.lp257 lp
+optimize
+read cplex4.lp258 lp
+optimize
+read cplex4.lp259 lp
+optimize
+read cplex4.lp260 lp
+optimize
+read cplex4.lp261 lp
+optimize
+read cplex4.lp262 lp
+optimize
+read cplex4.lp263 lp
+optimize
+read cplex4.lp264 lp
+optimize
+read cplex4.lp265 lp
+optimize
+read cplex4.lp266 lp
+optimize
+read cplex4.lp267 lp
+optimize
+read cplex4.lp268 lp
+optimize
+read cplex4.lp269 lp
+optimize
+read cplex4.lp270 lp
+optimize
+read cplex4.lp271 lp
+optimize
+read cplex4.lp272 lp
+optimize
+read cplex4.lp273 lp
+optimize
+read cplex4.lp274 lp
+optimize
+read cplex4.lp275 lp
+optimize
+read cplex4.lp276 lp
+optimize
+read cplex4.lp277 lp
+optimize
+read cplex4.lp278 lp
+optimize
+read cplex4.lp279 lp
+optimize
+read cplex4.lp280 lp
+optimize
+read cplex4.lp281 lp
+optimize
+read cplex4.lp282 lp
+optimize
+read cplex4.lp283 lp
+optimize
+read cplex4.lp284 lp
+optimize
+read cplex4.lp285 lp
+optimize
+read cplex4.lp286 lp
+optimize
+read cplex4.lp287 lp
+optimize
+read cplex4.lp288 lp
+optimize
+read cplex4.lp289 lp
+optimize
+read cplex4.lp290 lp
+optimize
+read cplex4.lp291 lp
+optimize
+read cplex4.lp292 lp
+optimize
+read cplex4.lp293 lp
+optimize
+read cplex4.lp294 lp
+optimize
+read cplex4.lp295 lp
+optimize
+read cplex4.lp296 lp
+optimize
+read cplex4.lp297 lp
+optimize
+read cplex4.lp298 lp
+optimize
+read cplex4.lp299 lp
+optimize
+
+read cplex4.lp300 lp
+optimize
+read cplex4.lp301 lp
+optimize
+read cplex4.lp302 lp
+optimize
+read cplex4.lp303 lp
+optimize
+read cplex4.lp304 lp
+optimize
+read cplex4.lp305 lp
+optimize
+read cplex4.lp306 lp
+optimize
+read cplex4.lp307 lp
+optimize
+read cplex4.lp308 lp
+optimize
+read cplex4.lp309 lp
+optimize
+read cplex4.lp310 lp
+optimize
+read cplex4.lp311 lp
+optimize
+read cplex4.lp312 lp
+optimize
+read cplex4.lp313 lp
+optimize
+read cplex4.lp314 lp
+optimize
+read cplex4.lp315 lp
+optimize
+read cplex4.lp316 lp
+optimize
+read cplex4.lp317 lp
+optimize
+read cplex4.lp318 lp
+optimize
+read cplex4.lp319 lp
+optimize
+read cplex4.lp320 lp
+optimize
+read cplex4.lp321 lp
+optimize
+read cplex4.lp322 lp
+optimize
+read cplex4.lp323 lp
+optimize
+read cplex4.lp324 lp
+optimize
+read cplex4.lp325 lp
+optimize
+read cplex4.lp326 lp
+optimize
+read cplex4.lp327 lp
+optimize
+read cplex4.lp328 lp
+optimize
+read cplex4.lp329 lp
+optimize
+read cplex4.lp330 lp
+optimize
+read cplex4.lp331 lp
+optimize
+read cplex4.lp332 lp
+optimize
+read cplex4.lp333 lp
+optimize
+read cplex4.lp334 lp
+optimize
+read cplex4.lp335 lp
+optimize
+read cplex4.lp336 lp
+optimize
+read cplex4.lp337 lp
+optimize
+read cplex4.lp338 lp
+optimize
+read cplex4.lp339 lp
+optimize
+read cplex4.lp340 lp
+optimize
+read cplex4.lp341 lp
+optimize
+read cplex4.lp342 lp
+optimize
+read cplex4.lp343 lp
+optimize
+read cplex4.lp344 lp
+optimize
+read cplex4.lp345 lp
+optimize
+read cplex4.lp346 lp
+optimize
+read cplex4.lp347 lp
+optimize
+read cplex4.lp348 lp
+optimize
+read cplex4.lp349 lp
+optimize
+read cplex4.lp350 lp
+optimize
+read cplex4.lp351 lp
+optimize
+read cplex4.lp352 lp
+optimize
+read cplex4.lp353 lp
+optimize
+read cplex4.lp354 lp
+optimize
+read cplex4.lp355 lp
+optimize
+read cplex4.lp356 lp
+optimize
+read cplex4.lp357 lp
+optimize
+read cplex4.lp358 lp
+optimize
+read cplex4.lp359 lp
+optimize
+read cplex4.lp360 lp
+optimize
+read cplex4.lp361 lp
+optimize
+read cplex4.lp362 lp
+optimize
+read cplex4.lp363 lp
+optimize
+read cplex4.lp364 lp
+optimize
+read cplex4.lp365 lp
+optimize
+read cplex4.lp366 lp
+optimize
+read cplex4.lp367 lp
+optimize
+read cplex4.lp368 lp
+optimize
+read cplex4.lp369 lp
+optimize
+read cplex4.lp370 lp
+optimize
+read cplex4.lp371 lp
+optimize
+read cplex4.lp372 lp
+optimize
+read cplex4.lp373 lp
+optimize
+read cplex4.lp374 lp
+optimize
+read cplex4.lp375 lp
+optimize
+read cplex4.lp376 lp
+optimize
+read cplex4.lp377 lp
+optimize
+read cplex4.lp378 lp
+optimize
+read cplex4.lp379 lp
+optimize
+read cplex4.lp380 lp
+optimize
+read cplex4.lp381 lp
+optimize
+read cplex4.lp382 lp
+optimize
+read cplex4.lp383 lp
+optimize
+read cplex4.lp384 lp
+optimize
+read cplex4.lp385 lp
+optimize
+read cplex4.lp386 lp
+optimize
+read cplex4.lp387 lp
+optimize
+read cplex4.lp388 lp
+optimize
+read cplex4.lp389 lp
+optimize
+read cplex4.lp390 lp
+optimize
+read cplex4.lp391 lp
+optimize
+read cplex4.lp392 lp
+optimize
+read cplex4.lp393 lp
+optimize
+read cplex4.lp394 lp
+optimize
+read cplex4.lp395 lp
+optimize
+read cplex4.lp396 lp
+optimize
+read cplex4.lp397 lp
+optimize
+read cplex4.lp398 lp
+optimize
+read cplex4.lp399 lp
+optimize
+
+read cplex4.lp400 lp
+optimize
+read cplex4.lp401 lp
+optimize
+read cplex4.lp402 lp
+optimize
+read cplex4.lp403 lp
+optimize
+read cplex4.lp404 lp
+optimize
+read cplex4.lp405 lp
+optimize
+read cplex4.lp406 lp
+optimize
+read cplex4.lp407 lp
+optimize
+read cplex4.lp408 lp
+optimize
+read cplex4.lp409 lp
+optimize
+read cplex4.lp410 lp
+optimize
+read cplex4.lp411 lp
+optimize
+read cplex4.lp412 lp
+optimize
+read cplex4.lp413 lp
+optimize
+read cplex4.lp414 lp
+optimize
+read cplex4.lp415 lp
+optimize
+read cplex4.lp416 lp
+optimize
+read cplex4.lp417 lp
+optimize
+read cplex4.lp418 lp
+optimize
+read cplex4.lp419 lp
+optimize
+read cplex4.lp420 lp
+optimize
+read cplex4.lp421 lp
+optimize
+read cplex4.lp422 lp
+optimize
+read cplex4.lp423 lp
+optimize
+read cplex4.lp424 lp
+optimize
+read cplex4.lp425 lp
+optimize
+read cplex4.lp426 lp
+optimize
+read cplex4.lp427 lp
+optimize
+read cplex4.lp428 lp
+optimize
+read cplex4.lp429 lp
+optimize
+read cplex4.lp430 lp
+optimize
+read cplex4.lp431 lp
+optimize
+read cplex4.lp432 lp
+optimize
+read cplex4.lp433 lp
+optimize
+read cplex4.lp434 lp
+optimize
+read cplex4.lp435 lp
+optimize
+read cplex4.lp436 lp
+optimize
+read cplex4.lp437 lp
+optimize
+read cplex4.lp438 lp
+optimize
+read cplex4.lp439 lp
+optimize
+read cplex4.lp440 lp
+optimize
+read cplex4.lp441 lp
+optimize
+read cplex4.lp442 lp
+optimize
+read cplex4.lp443 lp
+optimize
+read cplex4.lp444 lp
+optimize
+read cplex4.lp445 lp
+optimize
+read cplex4.lp446 lp
+optimize
+read cplex4.lp447 lp
+optimize
+read cplex4.lp448 lp
+optimize
+read cplex4.lp449 lp
+optimize
+read cplex4.lp450 lp
+optimize
+read cplex4.lp451 lp
+optimize
+read cplex4.lp452 lp
+optimize
+read cplex4.lp453 lp
+optimize
+read cplex4.lp454 lp
+optimize
+read cplex4.lp455 lp
+optimize
+read cplex4.lp456 lp
+optimize
+read cplex4.lp457 lp
+optimize
+read cplex4.lp458 lp
+optimize
+read cplex4.lp459 lp
+optimize
+read cplex4.lp460 lp
+optimize
+read cplex4.lp461 lp
+optimize
+read cplex4.lp462 lp
+optimize
+read cplex4.lp463 lp
+optimize
+read cplex4.lp464 lp
+optimize
+read cplex4.lp465 lp
+optimize
+read cplex4.lp466 lp
+optimize
+read cplex4.lp467 lp
+optimize
+read cplex4.lp468 lp
+optimize
+read cplex4.lp469 lp
+optimize
+read cplex4.lp470 lp
+optimize
+read cplex4.lp471 lp
+optimize
+read cplex4.lp472 lp
+optimize
+read cplex4.lp473 lp
+optimize
+read cplex4.lp474 lp
+optimize
+read cplex4.lp475 lp
+optimize
+read cplex4.lp476 lp
+optimize
+read cplex4.lp477 lp
+optimize
+read cplex4.lp478 lp
+optimize
+read cplex4.lp479 lp
+optimize
+read cplex4.lp480 lp
+optimize
+read cplex4.lp481 lp
+optimize
+read cplex4.lp482 lp
+optimize
+read cplex4.lp483 lp
+optimize
+read cplex4.lp484 lp
+optimize
+read cplex4.lp485 lp
+optimize
+read cplex4.lp486 lp
+optimize
+read cplex4.lp487 lp
+optimize
+read cplex4.lp488 lp
+optimize
+read cplex4.lp489 lp
+optimize
+read cplex4.lp490 lp
+optimize
+read cplex4.lp491 lp
+optimize
+read cplex4.lp492 lp
+optimize
+read cplex4.lp493 lp
+optimize
+read cplex4.lp494 lp
+optimize
+read cplex4.lp495 lp
+optimize
+read cplex4.lp496 lp
+optimize
+read cplex4.lp497 lp
+optimize
+read cplex4.lp498 lp
+optimize
+read cplex4.lp499 lp
+optimize
+
+read cplex4.lp500 lp
+optimize
+read cplex4.lp501 lp
+optimize
+read cplex4.lp502 lp
+optimize
+read cplex4.lp503 lp
+optimize
+read cplex4.lp504 lp
+optimize
+read cplex4.lp505 lp
+optimize
+read cplex4.lp506 lp
+optimize
+read cplex4.lp507 lp
+optimize
+read cplex4.lp508 lp
+optimize
+read cplex4.lp509 lp
+optimize
+read cplex4.lp510 lp
+optimize
+read cplex4.lp511 lp
+optimize
+read cplex4.lp512 lp
+optimize
+read cplex4.lp513 lp
+optimize
+read cplex4.lp514 lp
+optimize
+read cplex4.lp515 lp
+optimize
+read cplex4.lp516 lp
+optimize
+read cplex4.lp517 lp
+optimize
+read cplex4.lp518 lp
+optimize
+read cplex4.lp519 lp
+optimize
+read cplex4.lp520 lp
+optimize
+read cplex4.lp521 lp
+optimize
+read cplex4.lp522 lp
+optimize
+read cplex4.lp523 lp
+optimize
+read cplex4.lp524 lp
+optimize
+read cplex4.lp525 lp
+optimize
+read cplex4.lp526 lp
+optimize
+read cplex4.lp527 lp
+optimize
+read cplex4.lp528 lp
+optimize
+read cplex4.lp529 lp
+optimize
+read cplex4.lp530 lp
+optimize
+read cplex4.lp531 lp
+optimize
+read cplex4.lp532 lp
+optimize
+read cplex4.lp533 lp
+optimize
+read cplex4.lp534 lp
+optimize
+read cplex4.lp535 lp
+optimize
+read cplex4.lp536 lp
+optimize
+read cplex4.lp537 lp
+optimize
+read cplex4.lp538 lp
+optimize
+read cplex4.lp539 lp
+optimize
+read cplex4.lp540 lp
+optimize
+read cplex4.lp541 lp
+optimize
+read cplex4.lp542 lp
+optimize
+read cplex4.lp543 lp
+optimize
+read cplex4.lp544 lp
+optimize
+read cplex4.lp545 lp
+optimize
+read cplex4.lp546 lp
+optimize
+read cplex4.lp547 lp
+optimize
+read cplex4.lp548 lp
+optimize
+read cplex4.lp549 lp
+optimize
+read cplex4.lp550 lp
+optimize
+read cplex4.lp551 lp
+optimize
+read cplex4.lp552 lp
+optimize
+read cplex4.lp553 lp
+optimize
+read cplex4.lp554 lp
+optimize
+read cplex4.lp555 lp
+optimize
+read cplex4.lp556 lp
+optimize
+read cplex4.lp557 lp
+optimize
+read cplex4.lp558 lp
+optimize
+read cplex4.lp559 lp
+optimize
+read cplex4.lp560 lp
+optimize
+read cplex4.lp561 lp
+optimize
+read cplex4.lp562 lp
+optimize
+read cplex4.lp563 lp
+optimize
+read cplex4.lp564 lp
+optimize
+read cplex4.lp565 lp
+optimize
+read cplex4.lp566 lp
+optimize
+read cplex4.lp567 lp
+optimize
+read cplex4.lp568 lp
+optimize
+read cplex4.lp569 lp
+optimize
+read cplex4.lp570 lp
+optimize
+read cplex4.lp571 lp
+optimize
+read cplex4.lp572 lp
+optimize
+read cplex4.lp573 lp
+optimize
+read cplex4.lp574 lp
+optimize
+read cplex4.lp575 lp
+optimize
+read cplex4.lp576 lp
+optimize
+read cplex4.lp577 lp
+optimize
+read cplex4.lp578 lp
+optimize
+read cplex4.lp579 lp
+optimize
+read cplex4.lp580 lp
+optimize
+read cplex4.lp581 lp
+optimize
+read cplex4.lp582 lp
+optimize
+read cplex4.lp583 lp
+optimize
+read cplex4.lp584 lp
+optimize
+read cplex4.lp585 lp
+optimize
+read cplex4.lp586 lp
+optimize
+read cplex4.lp587 lp
+optimize
+read cplex4.lp588 lp
+optimize
+read cplex4.lp589 lp
+optimize
+read cplex4.lp590 lp
+optimize
+read cplex4.lp591 lp
+optimize
+read cplex4.lp592 lp
+optimize
+read cplex4.lp593 lp
+optimize
+read cplex4.lp594 lp
+optimize
+read cplex4.lp595 lp
+optimize
+read cplex4.lp596 lp
+optimize
+read cplex4.lp597 lp
+optimize
+read cplex4.lp598 lp
+optimize
+read cplex4.lp599 lp
+optimize
+
+read cplex4.lp600 lp
+optimize
+read cplex4.lp601 lp
+optimize
+read cplex4.lp602 lp
+optimize
+read cplex4.lp603 lp
+optimize
+read cplex4.lp604 lp
+optimize
+read cplex4.lp605 lp
+optimize
+read cplex4.lp606 lp
+optimize
+read cplex4.lp607 lp
+optimize
+read cplex4.lp608 lp
+optimize
+read cplex4.lp609 lp
+optimize
+read cplex4.lp610 lp
+optimize
+read cplex4.lp611 lp
+optimize
+read cplex4.lp612 lp
+optimize
+read cplex4.lp613 lp
+optimize
+read cplex4.lp614 lp
+optimize
+read cplex4.lp615 lp
+optimize
+read cplex4.lp616 lp
+optimize
+read cplex4.lp617 lp
+optimize
+read cplex4.lp618 lp
+optimize
+read cplex4.lp619 lp
+optimize
+read cplex4.lp620 lp
+optimize
+read cplex4.lp621 lp
+optimize
+read cplex4.lp622 lp
+optimize
+read cplex4.lp623 lp
+optimize
+read cplex4.lp624 lp
+optimize
+read cplex4.lp625 lp
+optimize
+read cplex4.lp626 lp
+optimize
+read cplex4.lp627 lp
+optimize
+read cplex4.lp628 lp
+optimize
+read cplex4.lp629 lp
+optimize
+read cplex4.lp630 lp
+optimize
+read cplex4.lp631 lp
+optimize
+read cplex4.lp632 lp
+optimize
+read cplex4.lp633 lp
+optimize
+read cplex4.lp634 lp
+optimize
+read cplex4.lp635 lp
+optimize
+read cplex4.lp636 lp
+optimize
+read cplex4.lp637 lp
+optimize
+read cplex4.lp638 lp
+optimize
+read cplex4.lp639 lp
+optimize
+read cplex4.lp640 lp
+optimize
+read cplex4.lp641 lp
+optimize
+read cplex4.lp642 lp
+optimize
+read cplex4.lp643 lp
+optimize
+read cplex4.lp644 lp
+optimize
+read cplex4.lp645 lp
+optimize
+read cplex4.lp646 lp
+optimize
+read cplex4.lp647 lp
+optimize
+read cplex4.lp648 lp
+optimize
+read cplex4.lp649 lp
+optimize
+read cplex4.lp650 lp
+optimize
+read cplex4.lp651 lp
+optimize
+read cplex4.lp652 lp
+optimize
+read cplex4.lp653 lp
+optimize
+read cplex4.lp654 lp
+optimize
+read cplex4.lp655 lp
+optimize
+read cplex4.lp656 lp
+optimize
+read cplex4.lp657 lp
+optimize
+read cplex4.lp658 lp
+optimize
+read cplex4.lp659 lp
+optimize
+read cplex4.lp660 lp
+optimize
+read cplex4.lp661 lp
+optimize
+read cplex4.lp662 lp
+optimize
+read cplex4.lp663 lp
+optimize
+read cplex4.lp664 lp
+optimize
+read cplex4.lp665 lp
+optimize
+read cplex4.lp666 lp
+optimize
+read cplex4.lp667 lp
+optimize
+read cplex4.lp668 lp
+optimize
+read cplex4.lp669 lp
+optimize
+read cplex4.lp670 lp
+optimize
+read cplex4.lp671 lp
+optimize
+read cplex4.lp672 lp
+optimize
+read cplex4.lp673 lp
+optimize
+read cplex4.lp674 lp
+optimize
+read cplex4.lp675 lp
+optimize
+read cplex4.lp676 lp
+optimize
+read cplex4.lp677 lp
+optimize
+read cplex4.lp678 lp
+optimize
+read cplex4.lp679 lp
+optimize
+read cplex4.lp680 lp
+optimize
+read cplex4.lp681 lp
+optimize
+read cplex4.lp682 lp
+optimize
+read cplex4.lp683 lp
+optimize
+read cplex4.lp684 lp
+optimize
+read cplex4.lp685 lp
+optimize
+read cplex4.lp686 lp
+optimize
+read cplex4.lp687 lp
+optimize
+read cplex4.lp688 lp
+optimize
+read cplex4.lp689 lp
+optimize
+read cplex4.lp690 lp
+optimize
+read cplex4.lp691 lp
+optimize
+read cplex4.lp692 lp
+optimize
+read cplex4.lp693 lp
+optimize
+read cplex4.lp694 lp
+optimize
+read cplex4.lp695 lp
+optimize
+read cplex4.lp696 lp
+optimize
+read cplex4.lp697 lp
+optimize
+read cplex4.lp698 lp
+optimize
+read cplex4.lp699 lp
+optimize
+
+read cplex4.lp700 lp
+optimize
+read cplex4.lp701 lp
+optimize
+read cplex4.lp702 lp
+optimize
+read cplex4.lp703 lp
+optimize
+read cplex4.lp704 lp
+optimize
+read cplex4.lp705 lp
+optimize
+read cplex4.lp706 lp
+optimize
+read cplex4.lp707 lp
+optimize
+read cplex4.lp708 lp
+optimize
+read cplex4.lp709 lp
+optimize
+read cplex4.lp710 lp
+optimize
+read cplex4.lp711 lp
+optimize
+read cplex4.lp712 lp
+optimize
+read cplex4.lp713 lp
+optimize
+read cplex4.lp714 lp
+optimize
+read cplex4.lp715 lp
+optimize
+read cplex4.lp716 lp
+optimize
+read cplex4.lp717 lp
+optimize
+read cplex4.lp718 lp
+optimize
+read cplex4.lp719 lp
+optimize
+read cplex4.lp720 lp
+optimize
+read cplex4.lp721 lp
+optimize
+read cplex4.lp722 lp
+optimize
+read cplex4.lp723 lp
+optimize
+read cplex4.lp724 lp
+optimize
+read cplex4.lp725 lp
+optimize
+read cplex4.lp726 lp
+optimize
+read cplex4.lp727 lp
+optimize
+read cplex4.lp728 lp
+optimize
+read cplex4.lp729 lp
+optimize
+read cplex4.lp730 lp
+optimize
+read cplex4.lp731 lp
+optimize
+read cplex4.lp732 lp
+optimize
+read cplex4.lp733 lp
+optimize
+read cplex4.lp734 lp
+optimize
+read cplex4.lp735 lp
+optimize
+read cplex4.lp736 lp
+optimize
+read cplex4.lp737 lp
+optimize
+read cplex4.lp738 lp
+optimize
+read cplex4.lp739 lp
+optimize
+read cplex4.lp740 lp
+optimize
+read cplex4.lp741 lp
+optimize
+read cplex4.lp742 lp
+optimize
+read cplex4.lp743 lp
+optimize
+read cplex4.lp744 lp
+optimize
+read cplex4.lp745 lp
+optimize
+read cplex4.lp746 lp
+optimize
+read cplex4.lp747 lp
+optimize
+read cplex4.lp748 lp
+optimize
+read cplex4.lp749 lp
+optimize
+read cplex4.lp750 lp
+optimize
+read cplex4.lp751 lp
+optimize
+read cplex4.lp752 lp
+optimize
+read cplex4.lp753 lp
+optimize
+read cplex4.lp754 lp
+optimize
+read cplex4.lp755 lp
+optimize
+read cplex4.lp756 lp
+optimize
+read cplex4.lp757 lp
+optimize
+read cplex4.lp758 lp
+optimize
+read cplex4.lp759 lp
+optimize
+read cplex4.lp760 lp
+optimize
+read cplex4.lp761 lp
+optimize
+read cplex4.lp762 lp
+optimize
+read cplex4.lp763 lp
+optimize
+read cplex4.lp764 lp
+optimize
+read cplex4.lp765 lp
+optimize
+read cplex4.lp766 lp
+optimize
+read cplex4.lp767 lp
+optimize
+read cplex4.lp768 lp
+optimize
+read cplex4.lp769 lp
+optimize
+read cplex4.lp770 lp
+optimize
+read cplex4.lp771 lp
+optimize
+read cplex4.lp772 lp
+optimize
+read cplex4.lp773 lp
+optimize
+read cplex4.lp774 lp
+optimize
+read cplex4.lp775 lp
+optimize
+read cplex4.lp776 lp
+optimize
+read cplex4.lp777 lp
+optimize
+read cplex4.lp778 lp
+optimize
+read cplex4.lp779 lp
+optimize
+read cplex4.lp780 lp
+optimize
+read cplex4.lp781 lp
+optimize
+read cplex4.lp782 lp
+optimize
+read cplex4.lp783 lp
+optimize
+read cplex4.lp784 lp
+optimize
+read cplex4.lp785 lp
+optimize
+read cplex4.lp786 lp
+optimize
+read cplex4.lp787 lp
+optimize
+read cplex4.lp788 lp
+optimize
+read cplex4.lp789 lp
+optimize
+read cplex4.lp790 lp
+optimize
+read cplex4.lp791 lp
+optimize
+read cplex4.lp792 lp
+optimize
+read cplex4.lp793 lp
+optimize
+read cplex4.lp794 lp
+optimize
+read cplex4.lp795 lp
+optimize
+read cplex4.lp796 lp
+optimize
+read cplex4.lp797 lp
+optimize
+read cplex4.lp798 lp
+optimize
+read cplex4.lp799 lp
+optimize
+
+read cplex4.lp800 lp
+optimize
+read cplex4.lp801 lp
+optimize
+read cplex4.lp802 lp
+optimize
+read cplex4.lp803 lp
+optimize
+read cplex4.lp804 lp
+optimize
+read cplex4.lp805 lp
+optimize
+read cplex4.lp806 lp
+optimize
+read cplex4.lp807 lp
+optimize
+read cplex4.lp808 lp
+optimize
+read cplex4.lp809 lp
+optimize
+read cplex4.lp810 lp
+optimize
+read cplex4.lp811 lp
+optimize
+read cplex4.lp812 lp
+optimize
+read cplex4.lp813 lp
+optimize
+read cplex4.lp814 lp
+optimize
+read cplex4.lp815 lp
+optimize
+read cplex4.lp816 lp
+optimize
+read cplex4.lp817 lp
+optimize
+read cplex4.lp818 lp
+optimize
+read cplex4.lp819 lp
+optimize
+read cplex4.lp820 lp
+optimize
+read cplex4.lp821 lp
+optimize
+read cplex4.lp822 lp
+optimize
+read cplex4.lp823 lp
+optimize
+read cplex4.lp824 lp
+optimize
+read cplex4.lp825 lp
+optimize
+read cplex4.lp826 lp
+optimize
+read cplex4.lp827 lp
+optimize
+read cplex4.lp828 lp
+optimize
+read cplex4.lp829 lp
+optimize
+read cplex4.lp830 lp
+optimize
+read cplex4.lp831 lp
+optimize
+read cplex4.lp832 lp
+optimize
+read cplex4.lp833 lp
+optimize
+read cplex4.lp834 lp
+optimize
+read cplex4.lp835 lp
+optimize
+read cplex4.lp836 lp
+optimize
+read cplex4.lp837 lp
+optimize
+read cplex4.lp838 lp
+optimize
+read cplex4.lp839 lp
+optimize
+read cplex4.lp840 lp
+optimize
+read cplex4.lp841 lp
+optimize
+read cplex4.lp842 lp
+optimize
+read cplex4.lp843 lp
+optimize
+read cplex4.lp844 lp
+optimize
+read cplex4.lp845 lp
+optimize
+read cplex4.lp846 lp
+optimize
+read cplex4.lp847 lp
+optimize
+read cplex4.lp848 lp
+optimize
+read cplex4.lp849 lp
+optimize
+read cplex4.lp850 lp
+optimize
+read cplex4.lp851 lp
+optimize
+read cplex4.lp852 lp
+optimize
+read cplex4.lp853 lp
+optimize
+read cplex4.lp854 lp
+optimize
+read cplex4.lp855 lp
+optimize
+read cplex4.lp856 lp
+optimize
+read cplex4.lp857 lp
+optimize
+read cplex4.lp858 lp
+optimize
+read cplex4.lp859 lp
+optimize
+read cplex4.lp860 lp
+optimize
+read cplex4.lp861 lp
+optimize
+read cplex4.lp862 lp
+optimize
+read cplex4.lp863 lp
+optimize
+read cplex4.lp864 lp
+optimize
+read cplex4.lp865 lp
+optimize
+read cplex4.lp866 lp
+optimize
+read cplex4.lp867 lp
+optimize
+read cplex4.lp868 lp
+optimize
+read cplex4.lp869 lp
+optimize
+read cplex4.lp870 lp
+optimize
+read cplex4.lp871 lp
+optimize
+read cplex4.lp872 lp
+optimize
+read cplex4.lp873 lp
+optimize
+read cplex4.lp874 lp
+optimize
+read cplex4.lp875 lp
+optimize
+read cplex4.lp876 lp
+optimize
+read cplex4.lp877 lp
+optimize
+read cplex4.lp878 lp
+optimize
+read cplex4.lp879 lp
+optimize
+read cplex4.lp880 lp
+optimize
+read cplex4.lp881 lp
+optimize
+read cplex4.lp882 lp
+optimize
+read cplex4.lp883 lp
+optimize
+read cplex4.lp884 lp
+optimize
+read cplex4.lp885 lp
+optimize
+read cplex4.lp886 lp
+optimize
+read cplex4.lp887 lp
+optimize
+read cplex4.lp888 lp
+optimize
+read cplex4.lp889 lp
+optimize
+read cplex4.lp890 lp
+optimize
+read cplex4.lp891 lp
+optimize
+read cplex4.lp892 lp
+optimize
+read cplex4.lp893 lp
+optimize
+read cplex4.lp894 lp
+optimize
+read cplex4.lp895 lp
+optimize
+read cplex4.lp896 lp
+optimize
+read cplex4.lp897 lp
+optimize
+read cplex4.lp898 lp
+optimize
+read cplex4.lp899 lp
+optimize
+
+read cplex4.lp900 lp
+optimize
+read cplex4.lp901 lp
+optimize
+read cplex4.lp902 lp
+optimize
+read cplex4.lp903 lp
+optimize
+read cplex4.lp904 lp
+optimize
+read cplex4.lp905 lp
+optimize
+read cplex4.lp906 lp
+optimize
+read cplex4.lp907 lp
+optimize
+read cplex4.lp908 lp
+optimize
+read cplex4.lp909 lp
+optimize
+read cplex4.lp910 lp
+optimize
+read cplex4.lp911 lp
+optimize
+read cplex4.lp912 lp
+optimize
+read cplex4.lp913 lp
+optimize
+read cplex4.lp914 lp
+optimize
+read cplex4.lp915 lp
+optimize
+read cplex4.lp916 lp
+optimize
+read cplex4.lp917 lp
+optimize
+read cplex4.lp918 lp
+optimize
+read cplex4.lp919 lp
+optimize
+read cplex4.lp920 lp
+optimize
+read cplex4.lp921 lp
+optimize
+read cplex4.lp922 lp
+optimize
+read cplex4.lp923 lp
+optimize
+read cplex4.lp924 lp
+optimize
+read cplex4.lp925 lp
+optimize
+read cplex4.lp926 lp
+optimize
+read cplex4.lp927 lp
+optimize
+read cplex4.lp928 lp
+optimize
+read cplex4.lp929 lp
+optimize
+read cplex4.lp930 lp
+optimize
+read cplex4.lp931 lp
+optimize
+read cplex4.lp932 lp
+optimize
+read cplex4.lp933 lp
+optimize
+read cplex4.lp934 lp
+optimize
+read cplex4.lp935 lp
+optimize
+read cplex4.lp936 lp
+optimize
+read cplex4.lp937 lp
+optimize
+read cplex4.lp938 lp
+optimize
+read cplex4.lp939 lp
+optimize
+read cplex4.lp940 lp
+optimize
+read cplex4.lp941 lp
+optimize
+read cplex4.lp942 lp
+optimize
+read cplex4.lp943 lp
+optimize
+read cplex4.lp944 lp
+optimize
+read cplex4.lp945 lp
+optimize
+read cplex4.lp946 lp
+optimize
+read cplex4.lp947 lp
+optimize
+read cplex4.lp948 lp
+optimize
+read cplex4.lp949 lp
+optimize
+read cplex4.lp950 lp
+optimize
+read cplex4.lp951 lp
+optimize
+read cplex4.lp952 lp
+optimize
+read cplex4.lp953 lp
+optimize
+read cplex4.lp954 lp
+optimize
+read cplex4.lp955 lp
+optimize
+read cplex4.lp956 lp
+optimize
+read cplex4.lp957 lp
+optimize
+read cplex4.lp958 lp
+optimize
+read cplex4.lp959 lp
+optimize
+read cplex4.lp960 lp
+optimize
+read cplex4.lp961 lp
+optimize
+read cplex4.lp962 lp
+optimize
+read cplex4.lp963 lp
+optimize
+read cplex4.lp964 lp
+optimize
+read cplex4.lp965 lp
+optimize
+read cplex4.lp966 lp
+optimize
+read cplex4.lp967 lp
+optimize
+read cplex4.lp968 lp
+optimize
+read cplex4.lp969 lp
+optimize
+read cplex4.lp970 lp
+optimize
+read cplex4.lp971 lp
+optimize
+read cplex4.lp972 lp
+optimize
+read cplex4.lp973 lp
+optimize
+read cplex4.lp974 lp
+optimize
+read cplex4.lp975 lp
+optimize
+read cplex4.lp976 lp
+optimize
+read cplex4.lp977 lp
+optimize
+read cplex4.lp978 lp
+optimize
+read cplex4.lp979 lp
+optimize
+read cplex4.lp980 lp
+optimize
+read cplex4.lp981 lp
+optimize
+read cplex4.lp982 lp
+optimize
+read cplex4.lp983 lp
+optimize
+read cplex4.lp984 lp
+optimize
+read cplex4.lp985 lp
+optimize
+read cplex4.lp986 lp
+optimize
+read cplex4.lp987 lp
+optimize
+read cplex4.lp988 lp
+optimize
+read cplex4.lp989 lp
+optimize
+read cplex4.lp990 lp
+optimize
+read cplex4.lp991 lp
+optimize
+read cplex4.lp992 lp
+optimize
+read cplex4.lp993 lp
+optimize
+read cplex4.lp994 lp
+optimize
+read cplex4.lp995 lp
+optimize
+read cplex4.lp996 lp
+optimize
+read cplex4.lp997 lp
+optimize
+read cplex4.lp998 lp
+optimize
+read cplex4.lp999 lp
+optimize
+
+read cplex4.lp1000 lp
+optimize
+read cplex4.lp1001 lp
+optimize
+read cplex4.lp1002 lp
+optimize
+read cplex4.lp1003 lp
+optimize
+read cplex4.lp1004 lp
+optimize
+read cplex4.lp1005 lp
+optimize
+read cplex4.lp1006 lp
+optimize
+read cplex4.lp1007 lp
+optimize
+read cplex4.lp1008 lp
+optimize
+read cplex4.lp1009 lp
+optimize
+read cplex4.lp1010 lp
+optimize
+read cplex4.lp1011 lp
+optimize
+read cplex4.lp1012 lp
+optimize
+read cplex4.lp1013 lp
+optimize
+read cplex4.lp1014 lp
+optimize
+read cplex4.lp1015 lp
+optimize
+read cplex4.lp1016 lp
+optimize
+read cplex4.lp1017 lp
+optimize
+read cplex4.lp1018 lp
+optimize
+read cplex4.lp1019 lp
+optimize
+read cplex4.lp1020 lp
+optimize
+read cplex4.lp1021 lp
+optimize
+read cplex4.lp1022 lp
+optimize
+read cplex4.lp1023 lp
+optimize
+read cplex4.lp1024 lp
+optimize
+read cplex4.lp1025 lp
+optimize
+read cplex4.lp1026 lp
+optimize
+read cplex4.lp1027 lp
+optimize
+read cplex4.lp1028 lp
+optimize
+read cplex4.lp1029 lp
+optimize
+read cplex4.lp1030 lp
+optimize
+read cplex4.lp1031 lp
+optimize
+read cplex4.lp1032 lp
+optimize
+read cplex4.lp1033 lp
+optimize
+read cplex4.lp1034 lp
+optimize
+read cplex4.lp1035 lp
+optimize
+read cplex4.lp1036 lp
+optimize
+read cplex4.lp1037 lp
+optimize
+read cplex4.lp1038 lp
+optimize
+read cplex4.lp1039 lp
+optimize
+read cplex4.lp1040 lp
+optimize
+read cplex4.lp1041 lp
+optimize
+read cplex4.lp1042 lp
+optimize
+read cplex4.lp1043 lp
+optimize
+read cplex4.lp1044 lp
+optimize
+read cplex4.lp1045 lp
+optimize
+read cplex4.lp1046 lp
+optimize
+read cplex4.lp1047 lp
+optimize
+read cplex4.lp1048 lp
+optimize
+read cplex4.lp1049 lp
+optimize
+read cplex4.lp1050 lp
+optimize
+read cplex4.lp1051 lp
+optimize
+read cplex4.lp1052 lp
+optimize
+read cplex4.lp1053 lp
+optimize
+read cplex4.lp1054 lp
+optimize
+read cplex4.lp1055 lp
+optimize
+read cplex4.lp1056 lp
+optimize
+read cplex4.lp1057 lp
+optimize
+read cplex4.lp1058 lp
+optimize
+read cplex4.lp1059 lp
+optimize
+read cplex4.lp1060 lp
+optimize
+read cplex4.lp1061 lp
+optimize
+read cplex4.lp1062 lp
+optimize
+read cplex4.lp1063 lp
+optimize
+read cplex4.lp1064 lp
+optimize
+read cplex4.lp1065 lp
+optimize
+read cplex4.lp1066 lp
+optimize
+read cplex4.lp1067 lp
+optimize
+read cplex4.lp1068 lp
+optimize
+read cplex4.lp1069 lp
+optimize
+read cplex4.lp1070 lp
+optimize
+read cplex4.lp1071 lp
+optimize
+read cplex4.lp1072 lp
+optimize
+read cplex4.lp1073 lp
+optimize
+read cplex4.lp1074 lp
+optimize
+read cplex4.lp1075 lp
+optimize
+read cplex4.lp1076 lp
+optimize
+read cplex4.lp1077 lp
+optimize
+read cplex4.lp1078 lp
+optimize
+read cplex4.lp1079 lp
+optimize
+read cplex4.lp1080 lp
+optimize
+read cplex4.lp1081 lp
+optimize
+read cplex4.lp1082 lp
+optimize
+read cplex4.lp1083 lp
+optimize
+read cplex4.lp1084 lp
+optimize
+read cplex4.lp1085 lp
+optimize
+read cplex4.lp1086 lp
+optimize
+read cplex4.lp1087 lp
+optimize
+read cplex4.lp1088 lp
+optimize
+read cplex4.lp1089 lp
+optimize
+read cplex4.lp1090 lp
+optimize
+read cplex4.lp1091 lp
+optimize
+read cplex4.lp1092 lp
+optimize
+read cplex4.lp1093 lp
+optimize
+read cplex4.lp1094 lp
+optimize
+read cplex4.lp1095 lp
+optimize
+read cplex4.lp1096 lp
+optimize
+read cplex4.lp1097 lp
+optimize
+read cplex4.lp1098 lp
+optimize
+read cplex4.lp1099 lp
+optimize
+
+read cplex4.lp1100 lp
+optimize
+read cplex4.lp1101 lp
+optimize
+read cplex4.lp1102 lp
+optimize
+read cplex4.lp1103 lp
+optimize
+read cplex4.lp1104 lp
+optimize
+read cplex4.lp1105 lp
+optimize
+read cplex4.lp1106 lp
+optimize
+read cplex4.lp1107 lp
+optimize
+read cplex4.lp1108 lp
+optimize
+read cplex4.lp1109 lp
+optimize
+read cplex4.lp1110 lp
+optimize
+read cplex4.lp1111 lp
+optimize
+read cplex4.lp1112 lp
+optimize
+read cplex4.lp1113 lp
+optimize
+read cplex4.lp1114 lp
+optimize
+read cplex4.lp1115 lp
+optimize
+read cplex4.lp1116 lp
+optimize
+read cplex4.lp1117 lp
+optimize
+read cplex4.lp1118 lp
+optimize
+read cplex4.lp1119 lp
+optimize
+read cplex4.lp1120 lp
+optimize
+read cplex4.lp1121 lp
+optimize
+read cplex4.lp1122 lp
+optimize
+read cplex4.lp1123 lp
+optimize
+read cplex4.lp1124 lp
+optimize
+read cplex4.lp1125 lp
+optimize
+read cplex4.lp1126 lp
+optimize
+read cplex4.lp1127 lp
+optimize
+read cplex4.lp1128 lp
+optimize
+read cplex4.lp1129 lp
+optimize
+
+quit

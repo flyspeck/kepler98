@@ -1,0 +1,548 @@
+<HTML>
+<HEAD>
+<body background="paperbackground.JPG" alink=blue vlink=red>
+
+<font face="helvetica, arial">
+<TITLE>An Overview of the Kepler Conjecture</TITLE>
+<!-- (c) copyright, Thomas C. Hales, 1996 -->
+</HEAD>
+<center><H3>An Overview of the Kepler Conjecture</H3></center>
+<p>
+These web pages are based on two talks by 
+Thomas Hales in July 1996.   One was at Mt. Holyoke College, the
+other in Budapest.  This presentation is a good place to start
+learning 
+the methods
+that are being used to solved the Kepler conjecture.  It is intended
+as an informal introduction.  The published papers are more careful,
+rigorous treatments of the subject.
+
+<p>
+<hr>
+<p>
+<H3>Kepler and his conjecture</H3>
+<p>
+The business of packings started with Walter Raleigh if not before.
+Raleigh had stacks of cannonballs he wanted counted and asked
+his mathematical assistant Thomas Harriot to develop formulas for
+the number of cannonballs in a stack.
+
+<p>
+This Harriot did without much difficulty, but Harriot did not
+stop there.  Out of his reflections on cannonballs came two important
+developments: the study of close packings and a rebirth of the 
+atomic theory of
+nature.  He studied close packings as early as 1600, and was active
+in promoting the atomic theory in Europe. These two topics developed
+hand-in-hand.
+
+<p>
+What does this have to do with Kepler?  
+Harriot and Kepler shared
+an interest in optics and corresponded about their mutual interest.
+Harriot, in a letter to Kepler in 1606, urged Kepler to adopt an
+atomic theory in his study of optics.  The next year Kepler wrote
+back refusing to venture this far with Harriot.  Harriot
+wrote again to Kepler stating that 
+"If those assumptions and reasons satisfy you, I am amazed."
+
+<p>
+Finally, in 1611, Kepler adopted a restrained version of atomism.
+  He describes the face-centered cubic packing
+and then asserts that "the packing will be the tightest possible,
+so that in no other arrangement could more pellets be stuffed into
+the same container."   This claim has come to be known as the
+Kepler conjecture.
+
+<p>
+Rogers has stated that "many mathematicians believe,
+and all physicists know, that the density cannot cannot exceed
+pi/sqrt(18) = 0.7404..." the density of the face-centered cubic packing.
+True to Rogers's claim, Kepler was a physicist and not a mathematician
+and made his assertion as a matter of fact rather than conjecture.
+However, this innocent-sounding 
+assertion has turned out to be wildly difficult to prove!
+
+<p>
+<hr>
+<p>
+<H3>Early Progress</H3>
+<p>
+The first progress on this problem was made by Gauss,
+who demonstrated
+that the face-centered cubic packing is the densest lattice
+packing in three dimensions.
+Hilbert made the Kepler conjecture part of his 18th problem.
+Milnor wrote over 20 years ago that it was scandalous
+that the problem was still unsolved.
+
+<p>
+The Kepler conjecture is unsolved.  It has not been solved
+by Wu-Yi Hsiang, and it has not been solved by me.  (Hsiang published
+a paper in 1993 claiming to have proved the theorem, but his
+argument did not stand up to close scrutiny. For more information,
+read the assessment of his work in Math. Reviews.)  I would rather not
+dwell on the defects of Hsiang's argument, because that would
+lead us in an unproductive direction.  The program that I am describing
+here is independent of his work.
+
+<p>
+More than anything here, I want to convey a sense of the difficulty
+of the problem.  Until the problem has been completely solved, this
+is hard to do, but it is far enough along that there is a good picture.
+
+<p>
+<hr>
+<p>
+<H3>The first major breakthrough</H3>
+<p>
+The first really big progress was made by L. Fejes T&oacute;th in
+1953.  He reduced the Kepler conjecture to a finite but impossibly
+large calculation.  Later he imagined that computers might be used
+to solve the conjecture.
+<BLOCKQUOTE>
+"Thus it seems that the problem [the Kepler conjecture] can be
+reduced to the determination of the minimum of a function of a finite
+number of variables....
+Mindful of the rapid development of our computers, it is imaginable
+that the minimum may be determined with great exactitude."
+	- L. Fejes T&oacute;th, Regular Figures
+</BLOCKQUOTE>
+
+<p>
+I share this hope with L. Fejes T&oacute;th and have turned to the
+computer for assistance.  But I also have the stronger
+hope that our methods will not only give us "great exactitude" but
+complete mathematical rigor in the solution.  
+This hope is grounded in existing computer technology.
+Computer standards that were not available when L. Fejes T&oacute;th
+wrote Regular Figures now permit an efficient implementation of 
+rigorous methods of interval arithmetic.
+
+<p>
+<hr>
+<p>
+<H3>Nonlinear optimization</H3>
+<p>
+Before going into the details of the geometry, there is one picture that
+expresses the entire method.  We have a nonlinear function f that
+we wish to maximize.  It is a function of about 150 variables.  (Even
+the number of variables is extremely difficult to determine. This is
+not an easy problem by any account.)
+
+<p>
+We are taught in calculus to maximize a function by taking derivatives,
+checking for critical points, etc.  While that approach may work for
+simple problems, it would be really foolish to try such an approach
+on this problem.  There is no hope of applying such a method to a
+problem like this.
+
+<p>  Instead we draw a number of hyperplanes (indicated by colored lines)
+that lie above the graph of the function f.  We toss out the original
+optimization problem and ask for the highest point lie under all of the
+hyperplanes.  This point is indicated by the colored dot.  This
+point is always at least as high as the original maximum to the function.
+
+<p>  One of the key notions underlying this approach is that it is
+often enough to find the point X, the linear maximum.  
+After all, we are only after a bound
+on the density of the packing (pi/sqrt(18)), and for most components
+of the search space this bound is good enough.
+
+<p> The advantage of finding the point X, the linear maximum, rather than Y,
+the nonlinear maximum, is that linear
+programming methods can be used to find X.  Linear programming is one
+of the great mathematical successes in computation in the 20th century.
+Linear programs involving many more variables and constraints than
+appear in the Kepler conjecture are solved every day.
+
+<p> There is a catch however.  We are not free to use any hyperplane
+that lies above the graph f.  After all, what would stop us from drawing
+a horizontal plane through Y, so that the linear programming method
+gives exactly Y?  We are only allowed to use "computationally elementary
+hyperplanes."   These are hyperplanes that we can actually rigorously prove
+lie above the graph of our function.   Since we are working
+in very high dimensional space, such hyperplanes are extremely rare.
+  However, we have now found enough of them that we are
+starting to get good results.
+
+<p>
+<hr>
+<p>
+<H3>Some Geometry and Combinatorics</H3>
+<p>
+Take a sphere packings and connect centers of spheres that come within
+distance 2.51 of each other.  (There are a number of rather arbitrary
+sounding constants that enter into this theory.  The constant 2.51 is
+one of them.  There is no real justification for the constant other
+than that a cutoff had to be made somewhere, and after doing some
+experiments, this choice seemed as good as any.)
+All of these edges form a graph.  If we fix one sphere center and look at 
+just the edges between sphere centers that are within distance 2.51 of
+our fixed center, we get a finite graph.  This graph is the primary
+combinatorial object of our investigations.
+
+<p>
+Here are some examples.  If we start with the face-centered cubic packing
+we get a graph with 24 edges.  
+
+<p>
+The hexagonal close-packing.
+
+<p>
+The graph is an icosahedron if we take the arrangement of 12 spheres
+around a central sphere, each sphere being placed at the center of
+a face of the circumscribing dodecahedron.
+
+<p>
+The pentagonal prism is another interesting case that arises.  It
+is the configuration of 12 spheres around a central sphere, arranged
+in two bands of 5 spheres with the final two spheres being placed
+at the north and south poles.
+
+<p>
+To continue I must introduce a couple of decompositions of space.  Take
+an arrangement of spheres in space.  There is no harm in adding spheres
+until there is no longer room to add any more, because this can only
+improve the density.  Around each sphere we draw a convex polyhedron
+by taking all the points closer to the given sphere center than any
+other center.  The convex regions around each sphere are called
+Voronoi cells.
+
+<p>
+There is a decomposition that is dual to the Voronoi decomposition,
+called the Delaunay decomposition.  Every face of a Voronoi cell
+consists of points equidistant from two different sphere centers.
+Connect every such pair of sphere centers by an edge.  These edges
+divide space into simplices, called Delaunay simplices.  (There
+can be degeneracies that are discussed not here but in the published
+papers.)
+
+<p>
+A Delaunay star is defined as the union of all the Delaunay simplices
+around a common vertex.  The Delaunay stars overlap.  In fact, each
+Delaunay star lies in four Delaunay simplices, one for each of the
+four vertices of the simplex.
+
+<p>
+The graphs that were introduced earlier are actually associated
+with Delaunay stars.  To each Delaunay star, there is a graph.  Many
+different stars gives the same graph.
+
+<p>
+<hr>
+<p>
+<H3>The Kepler Conjecture reformulated</H3>
+<p>
+There is a function defined on the set of Delaunay stars, called the
+score of the star.  In practice it is easier to draw the graphs than
+the stars, so we think of the scoring function as a function on the
+graphs, but to be completely rigorous about all this, each time we
+mention the score, we should specify a particular Delaunay star.
+
+<p>
+The score is the sum of the scores for each of the faces of the
+planar graph.  A triangle scores at most 1 point.  We get exactly
+one point only for the triangle coming from a regular tetrahedron.
+Any other face gets a negative score.  (The square coming from
+a regular octahedron scores 0).
+
+<p>
+Return to the examples of graphs.  There are 8 triangles in 
+the graphs of the hexagonal-close packings and face centered cubic
+packings.  They score exactly 8 points.  The icosahedron has
+20 triangles,   and not all the triangles can
+be regular, so the score is less than 20 points.  The pentagonal
+prism has 10 triangles and it scores less than 10 points.
+
+
+<p>Fact: If the score of every Delaunay star is at most 8 points, then
+the Kepler conjecture is true.
+
+<p>
+It is conjectured that the score of every Delaunay star is at most 8 points.
+This new conjecture is an especially strong version of the Kepler conjecture.
+
+<p>The fact is actually easy to prove.  Just about any decomposition
+adapted to a sphere packing leads to a bound on the density.  To
+establish the fact, all one has to do is relate the score function
+to a decomposition of space.
+
+<p>
+The decomposition proposed by L. Fejes T&oacute;th was the Voronoi
+decomposition.  It is not enough to look at one Voronoi cell; it is
+necessary to look at several Voronoi cells at once.  If you
+look at just one cell, the dodecahedron gives a better "score" than
+the face-centered cubic packing.
+
+<p>
+A second decomposition was proposed in my earlier papers.  It was
+based on the Delaunay decomposition.  If you look at the natural
+"scoring function" for Delaunay stars, the pentagonal prism gives
+a better "score" than the face-centered cubic packing.
+
+<p>
+A better approach is based on a hybrid of the Voronoi and Delaunay
+decompositions.  Parts of space are broken into pieces according
+to the Voronoi decomposition and parts according to the Delaunay decomposition.
+We can choose which decomposition to use simplex by simplex and this
+leads to infinitely many possibilities for our decomposition and
+hence infinitely many possibilities for the definition of our scoring
+function.
+
+<p>
+Our conjecture that the score is at most 8 points should hold for
+a large selection of different scoring functions.  However, there
+are vast differences in the computational complexity of maximizing
+the various scoring functions.  Even small, seemingly innocent changes
+in the decomposition, can, after months of investigation turn
+out to present enormous differences in complexity.  One of the
+most difficult aspects of our optimization problem is choosing which
+optimization problem to use!
+
+<p>
+These hybrid decompositions were first seriously considered in the context
+of the Kepler conjecture in 1994, and seem
+to be one of the most important development in the problem.
+
+<p>
+These optimization problems (based on Voronoi, Delaunay, or hybrid
+decompositions) give nonlinear optimization problems in finitely
+many variables that imply the Kepler conjecture.  There are about
+150 variables.  The problems have no special properties such as convexity
+or linearity that would make them easy to solve.
+Even the slightest inefficiency in method becomes magnified to
+enormous proportions in a problem of this size.  We must keep
+everything extremely simple.
+
+<p>
+<hr>
+<p>
+<H3>A five step program</H3>
+<p>
+In 1994, a five step program was proposed for solving the problem.
+This division into steps is rather arbitrary, but they are of
+roughly the same size and give us a way of charting our progress toward
+the solution of the Kepler conjecture.  Let us start using the
+term "planar map" instead of "graph" for the graph associated to
+a sphere, because each graph has the additional structure of faces
+and such coming from its embedding on the unit sphere.
+
+<p>1.  Treat maps that only have triangular faces.
+	[Solved in 1994, to appear in Discrete and Computational Geometry.]
+
+<p>2.  Show that the face-centered cubic and hexagonal-close packings
+	are local maxima in the strong sense that they have a
+	higher score than any Delaunay star with the same graph.
+	[Solved in 1995, to appear in Discrete
+		and Computational Geometry.]
+
+<p>3.  Treat maps that contain only triangular and quadrilateral faces
+	(except the pentagonal prism)
+	[Partial results are described below.]
+
+<p>4.  Treat maps that contain something other than a triangle or
+	quadrilateral face.
+	[Partial results are described below.]
+
+<p>5.	Treat pentagonal prisms.
+	[This will be the subject of a forthcoming thesis by
+	Sam Ferguson at the University of Michigan. The results
+	are near completion.]
+
+<p>
+Recall that the pentagonal prism includes Delaunay stars that
+have higher "scores" than the hexagonal-close packing
+when a pure Delaunay decomposition is used.  Even when the 
+hybrid decompositions are used, the scores of pentagonal prisms
+come uncomfortably close to 8 points.  The estimates that must
+be done here are much more delicate than on the remaining cases
+in steps 3 and 4.  For that reason they have been separated into
+a separate step.  The fact that Sam Ferguson is doing the hardest
+case bolsters our confidence that the other cases can be done as well.
+
+<p>
+<hr>
+<p>
+<H3>A proof of the first step</H3>
+<p>
+Here is an example of how the proofs in step 1 go.  Let us
+prove that any Delaunay star whose graph is the icosahedron 
+scores less than 8 pt.
+<p>
+
+Suppose that the following inequality holds between the score
+and solid angle of each of the twenty tetrahedra in the Delaunay star:
+<p>
+
+(*) score(tetrahedron) < -0.419351 solid(tetrahedron) + 0.23856354
+<p>
+
+Sum over the tetrahedra, using the fact that the total solid angle is
+4 pi to get
+<p>
+
+    score(Del. star) < -0.419351 (4 pi) + 20(0.23856354).
+<p>
+
+The right hand side evaluates to about 7.99998 points, which is less
+than 8 points.<p>
+
+This illustrates the type of argument we wish to generalize.  The
+optimization problem over the icosahedron is replaced by the much
+smaller optimization problem over a single tetrahedron.<p>
+
+The general idea is to write down simplex inequalities for each 
+graph that imply the bound of 8 points.<p>
+
+How do we prove the inequality (*)?  The answer is that we don't --
+not directly, at least.  We have written a general computer program
+to prove inequalities of this sort.  It may be easier to prove
+a few inequalities like this by hand than write a general computer
+program, but we expect that eventually we will have hundreds of
+inequalities such as this to prove, and we have no intention of
+proving them all by hand.<p>
+
+One of the steps that has been solved is the bound of 8 points whenever
+the graph is a triangulation.  The first part of this problem is to
+classify all graphs that could conceivable give more than 8 points.
+For this, we write down a list of properties that such a graph must
+have.  These should all be simple properties that can be proved rigorously
+without too much trouble.  <p>
+
+For example, the argument with inequality
+(*) proves not only that the icosahedron scores less than 8 points,
+but any 12 vertex triangulation scores less than 8 points.  A similar
+argument shows that there can be at most 15 vertices.  This gives
+the inequality<p>
+
+<DI> 12 < N < 16, where N is the number of vertices.<p>
+
+Estimates of the size of the angles leads to condition that the degree
+of the graph at any vertex must be 4, 5, or 6.<p>
+
+There are eight other properties of a similar nature that can be
+proved about the graph without too much difficulty.<p>
+
+We must classify all graphs with these properties.  At first a computer
+program was used to classify all the graphs.  Then D. Muder found a 
+way of carrying out the classification by hand.  The result is that
+there is only one graph.<p>
+
+
+This has 14 vertices and can be eliminated by ad hoc methods without
+any difficulty.  By ruling out all possible graphs, we have established
+that the score of any Delaunay star scores less than 8 points, if its
+graph is a triangulation. This completes our sketch of the first step
+of the Kepler conjecture.<p>
+
+
+<hr>
+<p>
+<H3>Partial results on the third and fourth steps</H3>
+The second step of the Kepler conjecture has been solved.  It turned
+out to be rather easy, and will not be discussed in this overview.
+The work of Sam Ferguson on the fifth step is nearing completion.
+<p>
+
+Unfortunately, the proofs of
+the third and fourth steps are not complete.  However, the work is
+at a sufficiently advanced stage that we have a detailed idea about
+the complexity of these remaining steps.<p>
+
+
+We would like to imitate the first step in our proof of the third and
+fourth steps of the Kepler conjecture.  We will write down a number
+of properties that the graph must have if it corresponds to a Delaunay
+star scoring more than 8 points. Then we classify the graphs.<p>
+
+One indication of the complexity
+of the problem is the number of graphs that show up in the classification.
+If only a few graphs were to arise, as was the case with step 1, then
+we could hope that a few simple arguments would finish the Kepler conjecture.
+If however, there were millions of graphs, it would be a hopeless task
+to solve the Kepler conjecture by these methods, and we would give up
+in despair.
+<p>
+
+We have a preliminary classification of the graphs. This classification
+was done by computer.<p>
+
+A list of properties similar to the list used when the graphs
+were triangulations yields
+<DI>537 planar maps that have only triangles and quadrilaterals, and
+
+<DI>347 planar maps that have something other than triangles and quadrilaterals.
+
+
+As an earlier page states, the proof of the third and fourth
+steps are not complete.  One part of the proof that is not complete
+is a proof that all of these properties must hold.   We have tried
+to confine the list of properties to things that seem pretty easy
+to prove, so that even though they are still just hypotheses,
+this is not a major worry at this point.<p>
+
+Here are some pictures of the types of planar maps that arise.  In
+each of these cases the planar map is flattened out by deleting a
+vertex of degree five surrounded by five triangles.<p>
+
+For each of these several hundred planar maps, we have a non-linear
+optimization problem.  We must show that the score of any Delaunay
+star with the given planar map is at most 8 points.<p>
+
+Here we use the linear programming methods described in an earlier
+page.  We write down hundreds and hundreds of linear inequalities
+relating the score, the dihedral angles, and the solid angles of
+the various pieces of the Delaunay star.  A typical example is
+that the score (s), dihedral angle (d), and solid angle (a) 
+of a tetrahedron are related by the inequality<p>
+
+	<center>s < -0.419351 a + 0.0610397 d + 0.211419</center><p>
+
+There are dozens of such inequalities.  These inequalities
+need to be proved by computer.  This is work in progress: most of
+the inequalities have been proved, but there are some that require
+more work.
+We feed them into the
+simplex algorithm and get the following results<p>
+
+<DI>Of the 537 planar maps with only triangles and quadrilaterals,
+	531 can be discarded by linear programming methods. Five
+	more can be discarded by a refinement of the linear programming
+	methods.  This leaves one case.  This remaining case is
+	still giving a bound a little over 8 point (about 8.25 points),
+	and needs to be nudged a bit more before we are finished with
+	this case.
+	[Footnote 9/96: We were down to one case, but we continue to
+	fiddle with the scoring rules and inequalities.  
+	We are temporarily back up to 33 cases.]
+
+<DI>The inequalities for the 347 planar maps have not yet be written
+	down in a systematic way.  This is research that still has
+	to be done.  If we take that inequalities that were used
+	on the 537 cases, without trying to adapt them to the general
+	situation, we discard about 100 of the 347 planar maps.
+
+	I hope that the treatment of the remaining 347 planar maps 
+	will not differ in any substantial way from the 537 treated
+	above.<p>
+
+Let us summarize what remains to be done to prove the Kepler conjecture.
+Some of the properties used in the classification of planar maps
+need to be rigorously established, some of the linear inequalities
+used in the linear programs still need to be rigorously established.
+The bound on one remaining case out of 537 needs to be nudged below
+8 points.  Finally, what has been done for the 537 planar maps needs
+to be done for the 437.<p>
+
+When asked how long all this will take, I leave myself a year or two.
+But I hope these pages convince you that the end is in sight!<p>
+
+<hr>
+<p><br><p><br><p>
+<font size=4 color=#CD2626><hr>
+This page is available for historical purposes only.  It is a copy
+from www.math.lsa.umich.edu/~hales/countdown.  It has not been
+maintained since 1998.<hr></font>
+</p>
+</HTML>

@@ -1,0 +1,61 @@
+read cplex4.lp1 lp
+optimize
+read cplex4.lp2 lp
+optimize
+read cplex4.lp3 lp
+optimize
+read cplex4.lp4 lp
+optimize
+read cplex4.lp5 lp
+optimize
+read cplex4.lp6 lp
+optimize
+read cplex4.lp7 lp
+optimize
+read cplex4.lp8 lp
+optimize
+read cplex4.lp9 lp
+optimize
+read cplex4.lp10 lp
+optimize
+read cplex4.lp11 lp
+optimize
+read cplex4.lp12 lp
+optimize
+read cplex4.lp13 lp
+optimize
+read cplex4.lp14 lp
+optimize
+read cplex4.lp15 lp
+optimize
+read cplex4.lp16 lp
+optimize
+read cplex4.lp17 lp
+optimize
+read cplex4.lp18 lp
+optimize
+read cplex4.lp19 lp
+optimize
+read cplex4.lp20 lp
+optimize
+read cplex4.lp21 lp
+optimize
+read cplex4.lp22 lp
+optimize
+read cplex4.lp23 lp
+optimize
+read cplex4.lp24 lp
+optimize
+read cplex4.lp25 lp
+optimize
+read cplex4.lp26 lp
+optimize
+read cplex4.lp27 lp
+optimize
+read cplex4.lp28 lp
+optimize
+read cplex4.lp29 lp
+optimize
+read cplex4.lp30 lp
+optimize
+quit

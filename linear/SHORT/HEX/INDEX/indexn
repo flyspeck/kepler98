@@ -1,0 +1,51 @@
+How to do the hexagonal cases, no upright quarters.
+
+hh = Select[values,#[[1]]>0.4429&]
+shortHex=Union[Map[#[[3]]&,hh]];   Length[shortHex]==14 
+noups = PSelect[AllHex,Min[#]>0&] == Join[Range[31],Range[47,60]];
+NoUprightTypes = Select[hh,Inside[Last[#],noups]&]
+
+(* try heights *)
+vvh=Map[(Initialize[6,#[[3]]];
+	Table[ LPmax[
+	"SHORT/HEX/LP/cplexE.lp6."<>S[#[[3]]]<>".F"<>S[#[[4]]]<>".C"<>S[#[[5]]],
+	StringVar["y",i]
+		],{i,1,Max[GBLregions]}]//Max)&,
+	NoUprightTypes
+	];
+vvht213=PSelect[vvh,#<2.13&] == {};  (* wasn't worth the effort *)
+vvhtA = {};
+
+
+branchText[u_]:= Module[{j,h},
+	Table[{
+		"read ",fileText["cplexE.lp",6,u[[3]],u[[4]],u[[5]]]," lp\n",
+		"add \n",
+		Branch[Band[6,u[[3]]],j],
+		"end \n",
+		"opt \n"
+		}//StringJoin,{j,1,2^Length[Band[6,u[[3]]]]}] //StringJoin
+	];
+
+
+Module[{stream,vv},
+vv=Map[branchText,NoUprightTypes]//StringJoin;
+stream=OpenWrite["SHORT/HEX/cplexBn.exec"];
+        WriteString[stream,
+        "set logfile cplexBn.log\n"<>
+        "set preprocessing presolve no\n"
+        ];
+WriteString[stream,vv];
+Close[stream];
+];
+
+<< SHORT/HEX/cplexBn.sum;
+valHexn = values;
+valHexnHi=Select[valHexn,#[[1]]>0.4429&]; Length[valHexnHi]==1262;
+Map[#[[3]]&,valHexnHi]//Union == {59, 70, 131, 146, 248};
+pHHn = Map[Drop[#,1]&,valHexnHi]//Union == 
+	  {{6, 59, 17, 8}, {6, 59, 17, 24}, {6, 59, 17, 28}, {6, 59, 17, 53}, 
+   {6, 70, 19, 9}, {6, 131, 17, 1}, {6, 131, 17, 10}, {6, 131, 17, 20}, 
+   {6, 131, 17, 21}, {6, 131, 17, 29}, {6, 131, 17, 58}, {6, 146, 17, 57}, 
+   {6, 248, 16, 9}}
+

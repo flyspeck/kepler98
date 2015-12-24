@@ -1,0 +1,13 @@
+cplexF.lp6 patch
+The constants -0.297 and 0.504 for HexParameters= {0,2,2,2} were
+incorrectly listed in an early version.  The files cplexF.lp6
+give the corrected version.
+
+try[i_] := ((Initialize[6, i]; LPdisplay[fText[i, #1]]) & ) /@ uu        
+MathToCplexIn[16]:= uu                                                   
+MathToCplexOut[16]= {34, 36, 37, 38, 40, 42, 43, 45, 46}                 
+uu is the list of AllHex with HexParameters = {0,2,2,2}.
+fText is the filename.
+
+Map[try,lhexhi]//Max == 0.37461 
+So it patches just fine.

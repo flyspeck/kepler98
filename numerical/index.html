@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>The Kepler Conjecture</title>
+</head>
+
+<body background="../paperbackground.JPG" alink=blue vlink=red>
+
+<!-- HEADING -->
+
+<BR>
+<H2>Inequality Testing</H2>
+
+<p>
+The proofs of parts of the Kepler conjecture rely on several dozen
+inequalities.  These inequalities have been checked numerically.
+They have also been proved rigorously.
+This page describes resources that are available for checking the inequalities
+numerically.
+
+<p>
+There is an java applet that
+<a href="../optimize/max.html">tests</a>  various inequalities that
+arise.  
+This applet is inefficient for large scale testing, and we have
+used C++ for the serious tests described below.
+
+<p>
+Each of the inequalities has been given an identification number.
+There are several lines of C++ source code for each inequality.
+<UL>
+<LI>Part III, inequalities for <a href="part3tet.cc">tetrahedra</a>
+<LI>Part III, inequalities for <a href="part3oct.cc">octahedra</a>
+<LI>Part III, inequalities for <a href="part3flat.cc">flat</a> quarters
+<LI>Part III, inequalities for <a href="part3flat.cc">pure</a> quad clusters
+<LI>Part III, inequalities for <a href="part3flat.cc">flat</a> quarters
+<LI>Part IV, <a href="part4sec2.cc">all</a> inequalities
+</UL>
+
+<p>
+To check each inequality (F>0), we mimimized F by numerical methods
+using the program 
+<a href="http://www.isr.umd.edu/Labs/CACSE/FSQP/fsqp_dist.html">CFSQP</a>
+which is available, free of charge, to non-profit organizations
+from the Institute for Systems Research at the University
+of Maryland.  
+
+<p>
+Here is a sample of the <a href="part4.p1.out">output</a>, showing
+the first page of inequalities needed for Part IV.
+The output lists the ID of the inequality (F>0), the 
+numerically determined minimum value of
+F, and the values of the variables that attain the minimum.
+
+<p>
+
+<font size=1><IT>Copyright 1997, Thomas C. Hales</IT></font>
+
+</body>
+</html>
+
+
+
+
+
+

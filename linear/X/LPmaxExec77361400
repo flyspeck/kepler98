@@ -1,0 +1,12 @@
+set logfile X/LPmax.log77361400
+set preprocessing presolve no
+set output results n X/y.log
+set output dialog n X/x.log
+read SHORT/PENT/LPmany/cplexE.lp5.2246.F17.C21.F18.C16 lp
+add 
+slack{17}2696=0
+slack{18}2696=0
+
+end
+opt
+quit

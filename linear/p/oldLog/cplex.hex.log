@@ -1,0 +1,3848 @@
+
+Log started (V4.0.9) Mon Aug  4 00:53:41 1997
+
+
+Problem 'cplex4.lp1' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Reduced LP has 850 rows, 116 columns, and 3096 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           130.131480
+Iteration:    67    Scaled Infeas =             2.346104
+Switched to Devex.
+Iteration:   100    Objective     =            -2.090359
+Iteration:   159    Objective     =             0.013211
+Iteration:   219    Objective     =             0.333965
+Iteration:   255    Scaled Infeas =             0.000008
+Iteration:   260    Objective     =             0.468683
+Removing shift (2).
+
+Primal - Optimal:  Objective =    4.6868274393e-01
+Solution time =    0.51 sec.    Iterations = 261 (104)
+
+
+Problem 'cplex4.lp2' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 83 rows and 2 columns.
+Aggregator did 2 substitutions.
+Reduced LP has 874 rows, 103 columns, and 3112 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           140.168064
+Iteration:    66    Scaled Infeas =             4.216908
+Switched to Devex.
+Iteration:   126    Scaled Infeas =             0.129152
+Iteration:   140    Objective     =            -2.339997
+Iteration:   199    Objective     =            -0.668664
+Iteration:   259    Objective     =            -0.099848
+
+Primal - Optimal:  Objective =   -6.4758239830e-02
+Solution time =    0.57 sec.    Iterations = 301 (139)
+
+
+Problem 'cplex4.lp3' read.
+Read time =    0.08 sec.
+LP Presolve eliminated 94 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 1042 rows, 118 columns, and 4144 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           180.082367
+Switched to Devex.
+Iteration:    72    Scaled Infeas =             1.833469
+Iteration:   113    Objective     =            -4.151274
+Iteration:   172    Objective     =            -1.239542
+Iteration:   232    Objective     =             0.134372
+Iteration:   292    Objective     =             0.449008
+Iteration:   352    Objective     =             0.507131
+Removing shift (3).
+
+Primal - Optimal:  Objective =    5.0898056318e-01
+Solution time =    0.87 sec.    Iterations = 378 (112)
+
+
+Problem 'cplex4.lp4' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 82 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 869 rows, 106 columns, and 3034 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           144.743772
+Iteration:    68    Scaled Infeas =             2.181179
+Switched to Devex.
+Iteration:   102    Objective     =            -2.724490
+Iteration:   161    Objective     =            -0.689379
+Iteration:   221    Objective     =            -0.167038
+Iteration:   281    Objective     =             0.100484
+Iteration:   291    Scaled Infeas =             0.000003
+Iteration:   293    Objective     =             0.100597
+Removing shift (1).
+
+Primal - Optimal:  Objective =    1.0058926110e-01
+Solution time =    0.55 sec.    Iterations = 294 (103)
+
+
+Problem 'cplex4.lp5' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 82 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 869 rows, 106 columns, and 3034 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           151.191748
+Iteration:    69    Scaled Infeas =             1.980845
+Switched to Devex.
+Iteration:   100    Objective     =            -4.297177
+Iteration:   159    Objective     =            -0.636558
+Iteration:   220    Objective     =             0.026829
+Removing shift (2).
+
+Primal - Optimal:  Objective =    5.4050003158e-02
+Solution time =    0.46 sec.    Iterations = 256 (99)
+
+
+Problem 'cplex4.lp6' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 82 rows and 2 columns.
+Reduced LP has 878 rows, 107 columns, and 3135 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           166.401345
+Iteration:    68    Scaled Infeas =             1.043645
+Switched to Devex.
+Iteration:    90    Objective     =            -6.079867
+Iteration:   149    Objective     =            -1.245398
+Iteration:   209    Objective     =            -0.183797
+Iteration:   269    Objective     =             0.295424
+Iteration:   329    Objective     =             0.387882
+Iteration:   389    Objective     =             0.400002
+Removing shift (12).
+Iteration:   408    Scaled Infeas =             0.000002
+Iteration:   411    Objective     =             0.400177
+
+Primal - Optimal:  Objective =    4.0017708294e-01
+Solution time =    0.75 sec.    Iterations = 413 (92)
+
+
+Problem 'cplex4.lp7' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 82 rows and 2 columns.
+Reduced LP has 876 rows, 107 columns, and 3114 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           159.091367
+Iteration:    68    Scaled Infeas =             0.997644
+Switched to Devex.
+Iteration:    88    Objective     =            -5.818474
+Iteration:   148    Objective     =            -1.527382
+Iteration:   208    Objective     =            -0.280942
+Iteration:   268    Objective     =             0.317531
+Iteration:   328    Objective     =             0.372146
+Iteration:   388    Objective     =             0.396231
+Iteration:   448    Objective     =             0.408989
+Iteration:   450    Scaled Infeas =             0.000005
+Iteration:   453    Objective     =             0.408989
+Removing shift (12).
+Iteration:   455    Scaled Infeas =             0.000009
+Iteration:   457    Objective     =             0.408970
+
+Primal - Optimal:  Objective =    4.0896957008e-01
+Solution time =    0.82 sec.    Iterations = 458 (92)
+
+
+Problem 'cplex4.lp8' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 92 rows and 2 columns.
+Reduced LP has 956 rows, 116 columns, and 3236 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           169.156371
+Iteration:    71    Scaled Infeas =             0.278509
+Switched to Devex.
+Iteration:    80    Objective     =            -6.424483
+Iteration:   139    Objective     =            -0.965544
+Iteration:   199    Objective     =            -0.214549
+Iteration:   259    Objective     =             0.098638
+Iteration:   319    Objective     =             0.140335
+Iteration:   379    Objective     =             0.159614
+Removing shift (1).
+
+Primal - Optimal:  Objective =    1.5986007117e-01
+Solution time =    0.83 sec.    Iterations = 400 (79)
+
+
+Problem 'cplex4.lp9' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 95 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 1002 rows, 120 columns, and 3562 nonzeros.
+Presolve time =    0.06 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           161.812674
+Switched to Devex.
+Iteration:    69    Scaled Infeas =             1.807862
+Iteration:   111    Objective     =            -4.313716
+Iteration:   170    Objective     =            -1.133158
+Iteration:   230    Objective     =            -0.215505
+Iteration:   290    Objective     =             0.021876
+Iteration:   350    Objective     =             0.062640
+Iteration:   359    Scaled Infeas =             0.000006
+Iteration:   363    Objective     =             0.062919
+Removing shift (3).
+Iteration:   369    Scaled Infeas =             0.000018
+Iteration:   372    Objective     =             0.062909
+
+Primal - Optimal:  Objective =    6.2910016175e-02
+Solution time =    0.87 sec.    Iterations = 375 (117)
+
+
+Problem 'cplex4.lp10' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 83 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 868 rows, 106 columns, and 3032 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           150.639965
+Iteration:    68    Scaled Infeas =             2.002414
+Switched to Devex.
+Iteration:    98    Objective     =            -4.056400
+Iteration:   158    Objective     =            -1.074002
+Iteration:   218    Objective     =            -0.284283
+Iteration:   278    Objective     =            -0.189336
+Removing shift (2).
+
+Primal - Optimal:  Objective =   -1.8604782104e-01
+Solution time =    0.49 sec.    Iterations = 290 (97)
+
+
+Problem 'cplex4.lp11' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 82 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 869 rows, 107 columns, and 3034 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           144.540549
+Iteration:    71    Scaled Infeas =             1.689375
+Switched to Devex.
+Iteration:    96    Objective     =            -3.005285
+Iteration:   155    Objective     =            -1.315594
+Iteration:   215    Objective     =            -0.241696
+Iteration:   275    Objective     =             0.094445
+Removing shift (1).
+
+Primal - Optimal:  Objective =    1.0058936976e-01
+Solution time =    0.52 sec.    Iterations = 285 (95)
+
+
+Problem 'cplex4.lp12' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 83 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 875 rows, 106 columns, and 3114 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           146.834510
+Iteration:    68    Scaled Infeas =             1.488755
+Switched to Devex.
+Iteration:   100    Objective     =            -3.382988
+Iteration:   159    Objective     =            -0.598048
+Iteration:   219    Objective     =            -0.080504
+Iteration:   253    Scaled Infeas =             0.000001
+Iteration:   255    Objective     =            -0.058888
+
+Primal - Optimal:  Objective =   -5.8887520033e-02
+Solution time =    0.49 sec.    Iterations = 255 (101)
+
+
+Problem 'cplex4.lp13' read.
+Read time =    0.08 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 842 rows, 116 columns, and 3012 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           127.059904
+Iteration:    68    Scaled Infeas =             1.343291
+Switched to Devex.
+Iteration:    93    Objective     =            -2.376136
+Iteration:   152    Objective     =            -0.521090
+Iteration:   212    Objective     =             0.421083
+Iteration:   256    Scaled Infeas =             0.000005
+Iteration:   261    Objective     =             0.495262
+
+Primal - Optimal:  Objective =    4.9526220251e-01
+Solution time =    0.42 sec.    Iterations = 263 (97)
+
+
+Problem 'cplex4.lp14' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 94 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 1019 rows, 120 columns, and 3786 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           164.595958
+Switched to Devex.
+Iteration:    66    Scaled Infeas =             4.417604
+Iteration:   126    Scaled Infeas =             0.000000
+Iteration:   127    Objective     =            -3.634205
+Iteration:   186    Objective     =            -1.161418
+Iteration:   246    Objective     =            -0.167369
+Iteration:   306    Objective     =             0.255655
+Iteration:   366    Objective     =             0.459954
+Iteration:   426    Objective     =             0.476444
+Iteration:   486    Objective     =             0.484377
+Removing shift (6).
+
+Primal - Optimal:  Objective =    4.8444601290e-01
+Solution time =    1.10 sec.    Iterations = 492 (126)
+
+
+Problem 'cplex4.lp15' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 85 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 910 rows, 112 columns, and 3309 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           161.973252
+Iteration:    65    Scaled Infeas =             7.860358
+Switched to Devex.
+Iteration:   127    Scaled Infeas =             0.211703
+Iteration:   136    Objective     =            -1.683446
+Iteration:   195    Objective     =            -0.583553
+Iteration:   255    Objective     =            -0.086472
+Iteration:   311    Scaled Infeas =             0.000006
+Iteration:   316    Objective     =            -0.022115
+Iteration:   320    Scaled Infeas =             0.000000
+Iteration:   321    Objective     =            -0.022115
+
+Primal - Optimal:  Objective =   -2.2115245010e-02
+Solution time =    0.64 sec.    Iterations = 323 (141)
+
+
+Problem 'cplex4.lp16' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 73 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 785 rows, 98 columns, and 2882 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           132.061202
+Iteration:    65    Scaled Infeas =             2.889010
+Switched to Devex.
+Iteration:   112    Objective     =            -1.658644
+Iteration:   171    Objective     =            -0.341238
+Iteration:   231    Objective     =            -0.010473
+Removing shift (2).
+
+Primal - Optimal:  Objective =    7.9904975326e-02
+Solution time =    0.48 sec.    Iterations = 284 (111)
+
+
+Problem 'cplex4.lp17' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 73 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 772 rows, 98 columns, and 2734 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           126.799345
+Iteration:    68    Scaled Infeas =             2.163215
+Switched to Devex.
+Iteration:   104    Objective     =            -1.643108
+Iteration:   163    Objective     =            -0.620880
+Iteration:   223    Objective     =            -0.123652
+Iteration:   245    Scaled Infeas =             0.000001
+Iteration:   247    Objective     =            -0.113267
+
+Primal - Optimal:  Objective =   -1.1326723045e-01
+Solution time =    0.43 sec.    Iterations = 248 (105)
+
+
+Problem 'cplex4.lp18' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 73 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 772 rows, 98 columns, and 2734 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           133.419935
+Iteration:    71    Scaled Infeas =             2.619100
+Switched to Devex.
+Iteration:   131    Scaled Infeas =             0.031513
+Iteration:   138    Objective     =            -1.872262
+Iteration:   197    Objective     =            -0.773541
+Iteration:   256    Scaled Infeas =             0.000002
+Iteration:   258    Objective     =            -0.625538
+Removing shift (1).
+
+Primal - Optimal:  Objective =   -6.2554501671e-01
+Solution time =    0.43 sec.    Iterations = 260 (139)
+
+
+Problem 'cplex4.lp19' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 73 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 777 rows, 98 columns, and 2783 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           140.799639
+Iteration:    69    Scaled Infeas =             2.095423
+Switched to Devex.
+Iteration:   127    Objective     =            -1.895970
+Iteration:   186    Objective     =            -0.940290
+Iteration:   246    Objective     =            -0.648283
+Iteration:   250    Scaled Infeas =             0.000000
+Iteration:   251    Objective     =            -0.648024
+
+Primal - Optimal:  Objective =   -6.4802366045e-01
+Solution time =    0.45 sec.    Iterations = 252 (127)
+
+
+Problem 'cplex4.lp20' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 866 rows, 113 columns, and 3320 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           148.951854
+Iteration:    71    Scaled Infeas =             1.260969
+Switched to Devex.
+Iteration:   106    Objective     =            -2.734172
+Iteration:   165    Objective     =            -1.168524
+Iteration:   225    Objective     =            -0.395944
+Iteration:   285    Objective     =             0.030007
+Iteration:   345    Objective     =             0.429636
+Iteration:   392    Scaled Infeas =             0.000000
+Iteration:   394    Objective     =             0.442103
+Removing shift (8).
+
+Primal - Optimal:  Objective =    4.4210339401e-01
+Solution time =    0.74 sec.    Iterations = 394 (107)
+
+
+Problem 'cplex4.lp21' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 851 rows, 116 columns, and 3115 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           129.708500
+Iteration:    70    Scaled Infeas =             1.027942
+Switched to Devex.
+Iteration:   100    Objective     =            -2.551023
+Iteration:   159    Objective     =            -0.691870
+Iteration:   219    Objective     =             0.108029
+Iteration:   279    Objective     =             0.443275
+Iteration:   339    Objective     =             0.462691
+Removing shift (15).
+
+Primal - Optimal:  Objective =    4.6868375976e-01
+Solution time =    0.61 sec.    Iterations = 347 (99)
+
+
+Problem 'cplex4.lp22' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Reduced LP has 843 rows, 117 columns, and 3014 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           127.059904
+Iteration:    71    Scaled Infeas =             1.195384
+Switched to Devex.
+Iteration:    96    Objective     =            -2.812053
+Iteration:   155    Objective     =            -0.954001
+Iteration:   215    Objective     =             0.311260
+Iteration:   275    Objective     =             0.490948
+Iteration:   291    Scaled Infeas =             0.000011
+Iteration:   297    Objective     =             0.495262
+Removing shift (2).
+
+Primal - Optimal:  Objective =    4.9526209385e-01
+Solution time =    0.53 sec.    Iterations = 301 (101)
+
+
+Problem 'cplex4.lp23' read.
+Read time =    0.05 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Reduced LP has 843 rows, 117 columns, and 3014 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           127.059904
+Iteration:    71    Scaled Infeas =             0.403015
+Switched to Devex.
+Iteration:    86    Objective     =            -2.677665
+Iteration:   145    Objective     =            -1.280022
+Iteration:   205    Objective     =             0.249346
+Iteration:   265    Objective     =             0.495037
+Iteration:   276    Scaled Infeas =             0.000007
+Iteration:   281    Objective     =             0.495262
+Removing shift (1).
+
+Primal - Optimal:  Objective =    4.9526214818e-01
+Solution time =    0.50 sec.    Iterations = 284 (90)
+
+
+Problem 'cplex4.lp24' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Reduced LP has 843 rows, 117 columns, and 3014 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           127.059904
+Iteration:    71    Scaled Infeas =             0.776144
+Switched to Devex.
+Iteration:   101    Objective     =            -2.669914
+Iteration:   160    Objective     =            -0.769854
+Iteration:   220    Objective     =             0.467864
+Iteration:   275    Scaled Infeas =             0.000013
+Iteration:   282    Objective     =             0.495262
+Removing shift (3).
+Iteration:   286    Scaled Infeas =             0.000000
+
+Primal - Optimal:  Objective =    4.9526214818e-01
+Solution time =    0.48 sec.    Iterations = 286 (108)
+
+
+Problem 'cplex4.lp25' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Reduced LP has 841 rows, 117 columns, and 2990 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           127.482883
+Iteration:    70    Scaled Infeas =             0.149198
+Switched to Devex.
+Iteration:    80    Objective     =            -2.895285
+Iteration:   139    Objective     =            -0.912279
+Iteration:   199    Objective     =             0.105703
+Iteration:   259    Objective     =             0.494243
+Iteration:   268    Scaled Infeas =             0.000011
+Iteration:   275    Objective     =             0.495262
+Removing shift (2).
+
+Primal - Optimal:  Objective =    4.9526214818e-01
+Solution time =    0.48 sec.    Iterations = 276 (86)
+
+
+Problem 'cplex4.lp26' read.
+Read time =    0.08 sec.
+LP Presolve eliminated 94 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 1019 rows, 120 columns, and 3786 nonzeros.
+Presolve time =    0.06 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           199.828739
+Switched to Devex.
+Iteration:    69    Scaled Infeas =             2.359304
+Iteration:   116    Objective     =            -5.887673
+Iteration:   175    Objective     =            -2.442056
+Iteration:   235    Objective     =            -0.800858
+Iteration:   295    Objective     =            -0.019778
+Iteration:   355    Objective     =             0.400129
+Iteration:   415    Objective     =             0.474257
+Iteration:   475    Objective     =             0.477810
+Iteration:   484    Scaled Infeas =             0.000000
+Iteration:   485    Objective     =             0.477849
+Removing shift (6).
+Iteration:   487    Scaled Infeas =             0.000007
+
+Primal - Optimal:  Objective =    4.7784259743e-01
+Solution time =    1.11 sec.    Iterations = 488 (118)
+
+
+Problem 'cplex4.lp27' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 82 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 868 rows, 107 columns, and 3030 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           140.806615
+Iteration:    68    Scaled Infeas =             1.362058
+Switched to Devex.
+Iteration:    86    Objective     =            -3.634201
+Iteration:   145    Objective     =            -0.714770
+Iteration:   205    Objective     =            -0.153380
+Iteration:   265    Objective     =             0.069022
+Iteration:   325    Objective     =             0.164730
+Removing shift (17).
+
+Primal - Optimal:  Objective =    1.7703084410e-01
+Solution time =    0.68 sec.    Iterations = 373 (85)
+
+
+Problem 'cplex4.lp28' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 73 rows and 2 columns.
+Reduced LP has 777 rows, 99 columns, and 2781 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           124.063760
+Iteration:    67    Scaled Infeas =             2.182968
+Switched to Devex.
+Iteration:   110    Objective     =            -1.469073
+Iteration:   169    Objective     =            -0.328668
+Iteration:   229    Objective     =            -0.127178
+Removing shift (1).
+
+Primal - Optimal:  Objective =   -4.6818108761e-02
+Solution time =    0.50 sec.    Iterations = 271 (109)
+
+
+Problem 'cplex4.lp29' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 73 rows and 2 columns.
+Reduced LP has 773 rows, 99 columns, and 2736 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           132.195783
+Iteration:    65    Scaled Infeas =             3.579132
+Switched to Devex.
+Iteration:   115    Objective     =            -1.732328
+Iteration:   174    Objective     =            -0.533430
+Iteration:   234    Objective     =            -0.280910
+Removing shift (2).
+Iteration:   279    Scaled Infeas =             0.002585
+
+Primal - Optimal:  Objective =   -2.7130037222e-01
+Solution time =    0.49 sec.    Iterations = 280 (116)
+
+
+Problem 'cplex4.lp30' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 849 rows, 116 columns, and 3094 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           129.948955
+Iteration:    73    Scaled Infeas =             0.480367
+Switched to Devex.
+Iteration:    87    Objective     =            -2.694126
+Iteration:   146    Objective     =            -0.500669
+Iteration:   206    Objective     =             0.297304
+Iteration:   266    Objective     =             0.422548
+Iteration:   301    Scaled Infeas =             0.000007
+Iteration:   308    Objective     =             0.468683
+Removing shift (3).
+
+Primal - Optimal:  Objective =    4.6868274393e-01
+Solution time =    0.58 sec.    Iterations = 308 (93)
+
+
+Problem 'cplex4.lp31' read.
+Read time =    0.08 sec.
+LP Presolve eliminated 95 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 1002 rows, 121 columns, and 3562 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           189.058410
+Switched to Devex.
+Iteration:    71    Scaled Infeas =             2.842257
+Iteration:   107    Objective     =            -4.439755
+Iteration:   166    Objective     =            -1.424497
+Iteration:   226    Objective     =            -0.323262
+Iteration:   286    Objective     =            -0.102696
+Iteration:   346    Objective     =             0.056681
+Iteration:   373    Scaled Infeas =             0.000007
+Iteration:   378    Objective     =             0.062910
+
+Primal - Optimal:  Objective =    6.2910048681e-02
+Solution time =    0.80 sec.    Iterations = 379 (111)
+
+
+Problem 'cplex4.lp32' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 82 rows and 2 columns.
+Reduced LP has 876 rows, 107 columns, and 3114 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           159.514345
+Iteration:    71    Scaled Infeas =             0.757670
+Switched to Devex.
+Iteration:    88    Objective     =            -5.733124
+Iteration:   147    Objective     =            -2.006693
+Iteration:   207    Objective     =            -0.469915
+Iteration:   267    Objective     =             0.296546
+Iteration:   327    Objective     =             0.383243
+Iteration:   387    Objective     =             0.393645
+Iteration:   447    Objective     =             0.397720
+Removing shift (13).
+Iteration:   456    Scaled Infeas =             0.000003
+
+Primal - Optimal:  Objective =    3.9771045551e-01
+Solution time =    0.80 sec.    Iterations = 459 (91)
+
+
+Problem 'cplex4.lp33' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 83 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 874 rows, 106 columns, and 3110 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           152.956778
+Iteration:    67    Scaled Infeas =             0.886889
+Switched to Devex.
+Iteration:    84    Objective     =            -5.088876
+Iteration:   143    Objective     =            -1.859621
+Iteration:   203    Objective     =            -0.670188
+Iteration:   263    Objective     =            -0.137544
+Iteration:   323    Objective     =             0.019348
+Removing shift (4).
+
+Primal - Optimal:  Objective =    6.0115672586e-02
+Solution time =    0.65 sec.    Iterations = 362 (83)
+
+
+Problem 'cplex4.lp34' read.
+Read time =    0.08 sec.
+LP Presolve eliminated 94 rows and 2 columns.
+Reduced LP has 1012 rows, 121 columns, and 3686 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           172.677959
+Switched to Devex.
+Iteration:    71    Scaled Infeas =             2.419461
+Iteration:   115    Objective     =            -4.033432
+Iteration:   174    Objective     =            -1.141861
+Iteration:   234    Objective     =             0.129693
+Iteration:   294    Objective     =             0.472693
+Iteration:   354    Objective     =             0.485710
+Iteration:   377    Scaled Infeas =             0.000000
+Iteration:   378    Objective     =             0.486136
+Removing shift (9).
+Iteration:   381    Scaled Infeas =             0.000133
+Iteration:   387    Objective     =             0.486130
+
+Primal - Optimal:  Objective =    4.8613007759e-01
+Solution time =    0.83 sec.    Iterations = 387 (121)
+
+
+Problem 'cplex4.lp35' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 82 rows and 2 columns.
+Reduced LP has 867 rows, 108 columns, and 3008 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           152.174353
+Iteration:    70    Scaled Infeas =             0.125140
+Switched to Devex.
+Iteration:    78    Objective     =            -4.482154
+Iteration:   137    Objective     =            -1.511810
+Iteration:   197    Objective     =            -0.102349
+Iteration:   257    Objective     =             0.341579
+Iteration:   317    Objective     =             0.392725
+Iteration:   377    Objective     =             0.405456
+Iteration:   425    Scaled Infeas =             0.000001
+Iteration:   428    Objective     =             0.407385
+Removing shift (12).
+Iteration:   433    Scaled Infeas =             0.000009
+Iteration:   440    Objective     =             0.407368
+
+Primal - Optimal:  Objective =    4.0737175015e-01
+Solution time =    0.83 sec.    Iterations = 442 (87)
+
+
+Problem 'cplex4.lp36' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 73 rows and 2 columns.
+Reduced LP has 775 rows, 99 columns, and 2757 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           128.458183
+Iteration:    69    Scaled Infeas =             2.546113
+Switched to Devex.
+Iteration:   123    Objective     =            -2.017734
+Iteration:   182    Objective     =            -0.666796
+Iteration:   242    Objective     =            -0.196893
+Iteration:   302    Objective     =            -0.061953
+Removing shift (2).
+Iteration:   316    Scaled Infeas =             0.000000
+
+Primal - Optimal:  Objective =   -6.0409415550e-02
+Solution time =    0.54 sec.    Iterations = 316 (123)
+
+
+Problem 'cplex4.lp37' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 85 rows and 2 columns.
+Reduced LP has 904 rows, 113 columns, and 3229 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           153.819921
+Iteration:    71    Scaled Infeas =             2.043556
+Switched to Devex.
+Iteration:   111    Objective     =            -2.550643
+Iteration:   170    Objective     =            -0.824333
+Iteration:   230    Objective     =            -0.271137
+Iteration:   290    Objective     =            -0.042971
+Iteration:   350    Objective     =            -0.023438
+Removing shift (1).
+
+Primal - Optimal:  Objective =   -2.2544008973e-02
+Solution time =    0.66 sec.    Iterations = 364 (110)
+
+
+Problem 'cplex4.lp38' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 73 rows and 2 columns.
+Reduced LP has 777 rows, 99 columns, and 2781 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           117.645484
+Iteration:    70    Scaled Infeas =             1.767223
+Switched to Devex.
+Iteration:   115    Objective     =            -1.942338
+Iteration:   174    Objective     =            -0.335474
+Iteration:   234    Objective     =            -0.096479
+Iteration:   273    Scaled Infeas =             0.000001
+Iteration:   274    Objective     =             0.024595
+Removing shift (2).
+
+Primal - Optimal:  Objective =    2.4595122779e-02
+Solution time =    0.48 sec.    Iterations = 274 (115)
+
+
+Problem 'cplex4.lp39' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Reduced LP has 838 rows, 117 columns, and 2965 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           124.411304
+Iteration:    72    Scaled Infeas =             0.123326
+Switched to Devex.
+Iteration:    79    Objective     =            -2.510754
+Iteration:   138    Objective     =            -0.201840
+Iteration:   198    Objective     =             0.273839
+Iteration:   258    Objective     =             0.423847
+Removing shift (3).
+
+Primal - Optimal:  Objective =    4.2552213514e-01
+Solution time =    0.45 sec.    Iterations = 294 (78)
+
+
+Problem 'cplex4.lp40' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 83 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 876 rows, 107 columns, and 3131 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           141.982657
+Iteration:    68    Scaled Infeas =             0.210152
+Switched to Devex.
+Iteration:    82    Objective     =            -4.129369
+Iteration:   141    Objective     =            -1.426277
+Iteration:   201    Objective     =            -0.406300
+Iteration:   261    Objective     =             0.000043
+Iteration:   321    Objective     =             0.142215
+Iteration:   374    Scaled Infeas =             0.000000
+Iteration:   375    Objective     =             0.159351
+Removing shift (6).
+Iteration:   376    Scaled Infeas =             0.000010
+Iteration:   379    Objective     =             0.159340
+
+Primal - Optimal:  Objective =    1.5933950981e-01
+Solution time =    0.73 sec.    Iterations = 379 (85)
+
+
+Problem 'cplex4.lp41' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 82 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 878 rows, 104 columns, and 3137 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           159.517679
+Iteration:    69    Scaled Infeas =             1.584281
+Switched to Devex.
+Iteration:    94    Objective     =            -2.985874
+Iteration:   153    Objective     =            -0.594991
+Iteration:   213    Objective     =            -0.157425
+Iteration:   273    Objective     =             0.138281
+Iteration:   316    Scaled Infeas =             0.000005
+Iteration:   319    Objective     =             0.164612
+Removing shift (1).
+
+Primal - Optimal:  Objective =    1.6461250359e-01
+Solution time =    0.57 sec.    Iterations = 321 (96)
+
+
+Problem 'cplex4.lp42' read.
+Read time =    0.09 sec.
+LP Presolve eliminated 94 rows and 2 columns.
+Reduced LP has 1016 rows, 121 columns, and 3737 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           183.421046
+Switched to Devex.
+Iteration:    69    Scaled Infeas =             4.609556
+Iteration:   110    Objective     =            -5.508132
+Iteration:   169    Objective     =            -2.040142
+Iteration:   229    Objective     =            -0.563505
+Iteration:   289    Objective     =             0.042155
+Iteration:   349    Objective     =             0.429622
+Iteration:   409    Objective     =             0.477634
+Iteration:   469    Objective     =             0.493346
+Iteration:   497    Scaled Infeas =             0.000006
+Iteration:   500    Objective     =             0.494936
+Removing shift (8).
+Iteration:   503    Scaled Infeas =             0.000015
+Iteration:   507    Objective     =             0.494923
+
+Primal - Optimal:  Objective =    4.9492260653e-01
+Solution time =    1.08 sec.    Iterations = 509 (116)
+
+
+Problem 'cplex4.lp43' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 73 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 783 rows, 98 columns, and 2861 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           133.125958
+Iteration:    67    Scaled Infeas =             2.874564
+Switched to Devex.
+Iteration:   124    Objective     =            -1.880279
+Iteration:   184    Objective     =            -0.300564
+Iteration:   244    Objective     =            -0.053493
+Removing shift (1).
+
+Primal - Optimal:  Objective =   -4.7733256286e-02
+Solution time =    0.44 sec.    Iterations = 255 (123)
+
+
+Problem 'cplex4.lp44' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Reduced LP has 843 rows, 117 columns, and 3014 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           142.956093
+Iteration:    72    Scaled Infeas =             0.558958
+Switched to Devex.
+Iteration:    85    Objective     =            -2.501555
+Iteration:   144    Objective     =            -0.650970
+Iteration:   204    Objective     =             0.245566
+Iteration:   264    Objective     =             0.487916
+Iteration:   280    Scaled Infeas =             0.000006
+Iteration:   289    Objective     =             0.495262
+Removing shift (3).
+Iteration:   291    Scaled Infeas =             0.000001
+Iteration:   294    Objective     =             0.495262
+
+Primal - Optimal:  Objective =    4.9526209385e-01
+Solution time =    0.52 sec.    Iterations = 295 (96)
+
+
+Problem 'cplex4.lp45' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 82 rows and 2 columns.
+Reduced LP has 869 rows, 108 columns, and 3032 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           152.174351
+Iteration:    70    Scaled Infeas =             0.088031
+Switched to Devex.
+Iteration:    77    Objective     =            -4.950988
+Iteration:   136    Objective     =            -2.151302
+Iteration:   196    Objective     =            -0.166682
+Iteration:   256    Objective     =             0.370980
+Iteration:   316    Objective     =             0.397911
+Iteration:   359    Scaled Infeas =             0.000002
+Iteration:   361    Objective     =             0.407084
+Iteration:   366    Scaled Infeas =             0.000002
+Iteration:   372    Objective     =             0.407084
+Removing shift (3).
+Iteration:   374    Scaled Infeas =             0.000000
+Iteration:   380    Objective     =             0.407066
+
+Primal - Optimal:  Objective =    4.0706623516e-01
+Solution time =    0.74 sec.    Iterations = 384 (90)
+
+
+Problem 'cplex4.lp46' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 73 rows and 2 columns.
+Reduced LP has 773 rows, 99 columns, and 2736 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           132.195783
+Iteration:    65    Scaled Infeas =             2.681633
+Switched to Devex.
+Iteration:    97    Objective     =            -1.646449
+Iteration:   156    Objective     =            -0.438529
+Iteration:   216    Objective     =            -0.158620
+Removing shift (2).
+Iteration:   264    Scaled Infeas =             0.000128
+
+Primal - Optimal:  Objective =   -7.2220950334e-02
+Solution time =    0.42 sec.    Iterations = 265 (98)
+
+
+Problem 'cplex4.lp47' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 73 rows and 2 columns.
+Reduced LP has 800 rows, 99 columns, and 3085 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           123.479140
+Iteration:    61    Scaled Infeas =             8.962369
+Switched to Devex.
+Iteration:   121    Scaled Infeas =             0.720636
+Iteration:   141    Objective     =            -1.311950
+Iteration:   200    Objective     =             0.046265
+Iteration:   260    Objective     =             0.363255
+Removing shift (4).
+
+Primal - Optimal:  Objective =    4.4387534834e-01
+Solution time =    0.63 sec.    Iterations = 300 (140)
+
+
+Problem 'cplex4.lp48' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 73 rows and 2 columns.
+Reduced LP has 770 rows, 99 columns, and 2711 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           136.669643
+Iteration:    70    Scaled Infeas =             2.081707
+Switched to Devex.
+Iteration:    99    Objective     =            -2.448743
+Iteration:   158    Objective     =            -0.976571
+Iteration:   218    Objective     =            -0.471887
+Iteration:   278    Objective     =            -0.169724
+Iteration:   338    Objective     =            -0.123167
+Removing shift (1).
+
+Primal - Optimal:  Objective =   -1.1752579093e-01
+Solution time =    0.63 sec.    Iterations = 371 (98)
+
+
+Problem 'cplex4.lp49' read.
+Read time =    0.05 sec.
+LP Presolve eliminated 82 rows and 2 columns.
+Reduced LP has 864 rows, 108 columns, and 2983 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           145.004844
+Switched to Devex.
+Iteration:    68    Objective     =            -4.495497
+Iteration:   127    Objective     =            -1.185884
+Iteration:   187    Objective     =            -0.102093
+Iteration:   247    Objective     =             0.151748
+Iteration:   307    Objective     =             0.180370
+Removing shift (4).
+
+Primal - Optimal:  Objective =    1.8036474670e-01
+Solution time =    0.54 sec.    Iterations = 310 (67)
+
+
+Problem 'cplex4.lp50' read.
+Read time =    0.09 sec.
+LP Presolve eliminated 97 rows and 2 columns.
+Reduced LP has 1038 rows, 127 columns, and 3759 nonzeros.
+Presolve time =    0.06 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           175.647440
+Switched to Devex.
+Iteration:    68    Scaled Infeas =             9.014440
+Iteration:   129    Scaled Infeas =             0.314393
+Iteration:   151    Objective     =            -2.701010
+Iteration:   210    Objective     =            -1.508503
+Iteration:   270    Objective     =            -0.662079
+Iteration:   330    Objective     =            -0.167975
+Iteration:   390    Objective     =            -0.002066
+Iteration:   450    Objective     =             0.053897
+Removing shift (7).
+Iteration:   470    Scaled Infeas =             0.000131
+Iteration:   474    Objective     =             0.054844
+
+Primal - Optimal:  Objective =    5.4844194115e-02
+Solution time =    1.15 sec.    Iterations = 480 (154)
+
+
+Problem 'cplex4.lp51' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 85 rows and 2 columns.
+Reduced LP has 913 rows, 113 columns, and 3332 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           147.348982
+Iteration:    66    Scaled Infeas =             4.769337
+Iteration:   127    Scaled Infeas =             0.008323
+Switched to Devex.
+Iteration:   130    Objective     =            -2.394916
+Iteration:   189    Objective     =            -0.462334
+Iteration:   249    Objective     =            -0.000564
+Iteration:   309    Objective     =             0.085808
+Iteration:   357    Scaled Infeas =             0.000000
+Iteration:   358    Objective     =             0.111933
+Removing shift (1).
+
+Primal - Optimal:  Objective =    1.1193280471e-01
+Solution time =    0.71 sec.    Iterations = 359 (130)
+
+
+Problem 'cplex4.lp52' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 85 rows and 2 columns.
+Reduced LP has 907 rows, 113 columns, and 3254 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           167.107182
+Iteration:    68    Scaled Infeas =             4.655947
+Iteration:   128    Scaled Infeas =             0.004394
+Switched to Devex.
+Iteration:   132    Objective     =            -1.868694
+Iteration:   191    Objective     =            -0.430265
+Iteration:   251    Objective     =            -0.019922
+Iteration:   311    Objective     =             0.045249
+Removing shift (1).
+
+Primal - Optimal:  Objective =    4.6578343760e-02
+Solution time =    0.65 sec.    Iterations = 320 (131)
+
+
+Problem 'cplex4.lp53' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 83 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 891 rows, 104 columns, and 3336 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           135.114814
+Iteration:    63    Scaled Infeas =             3.055590
+Switched to Devex.
+Iteration:   106    Objective     =            -2.396313
+Iteration:   165    Objective     =            -0.633443
+Iteration:   225    Objective     =             0.046335
+Iteration:   285    Objective     =             0.346619
+Iteration:   345    Objective     =             0.367367
+Removing shift (3).
+
+Primal - Optimal:  Objective =    3.7372736048e-01
+Solution time =    0.80 sec.    Iterations = 403 (105)
+
+
+Problem 'cplex4.lp54' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 85 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 910 rows, 112 columns, and 3309 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           146.734607
+Iteration:    69    Scaled Infeas =             3.358867
+Switched to Devex.
+Iteration:   129    Scaled Infeas =             0.022237
+Iteration:   134    Objective     =            -2.380635
+Iteration:   193    Objective     =            -0.725737
+Iteration:   253    Objective     =            -0.120838
+Iteration:   313    Objective     =            -0.035996
+
+Primal - Optimal:  Objective =   -3.5904306671e-02
+Solution time =    0.60 sec.    Iterations = 317 (133)
+
+
+Problem 'cplex4.lp55' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 73 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 785 rows, 98 columns, and 2882 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           131.020482
+Iteration:    69    Scaled Infeas =             2.461809
+Switched to Devex.
+Iteration:   111    Objective     =            -1.521340
+Iteration:   170    Objective     =            -0.474013
+Iteration:   230    Objective     =            -0.060884
+Iteration:   290    Objective     =            -0.001045
+Removing shift (6).
+Iteration:   323    Scaled Infeas =             0.000015
+
+Primal - Optimal:  Objective =    2.7623499273e-02
+Solution time =    0.59 sec.    Iterations = 326 (114)
+
+
+Problem 'cplex4.lp56' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 73 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 772 rows, 98 columns, and 2734 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           148.430723
+Iteration:    67    Scaled Infeas =             2.680553
+Switched to Devex.
+Iteration:   101    Objective     =            -2.107856
+Iteration:   160    Objective     =            -0.452953
+Iteration:   220    Objective     =            -0.172627
+
+Primal - Optimal:  Objective =   -1.6067396988e-01
+Solution time =    0.42 sec.    Iterations = 231 (100)
+
+
+Problem 'cplex4.lp57' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 73 rows and 2 columns.
+Reduced LP has 773 rows, 99 columns, and 2736 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           126.799345
+Iteration:    67    Scaled Infeas =             2.762076
+Switched to Devex.
+Iteration:   120    Objective     =            -1.642466
+Iteration:   179    Objective     =            -0.631268
+Iteration:   239    Objective     =            -0.236959
+Iteration:   299    Objective     =            -0.107695
+Removing shift (4).
+
+Primal - Optimal:  Objective =   -1.0556711867e-01
+Solution time =    0.52 sec.    Iterations = 307 (119)
+
+
+Problem 'cplex4.lp58' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 83 rows and 2 columns.
+Reduced LP has 868 rows, 108 columns, and 3030 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           147.061979
+Iteration:    69    Scaled Infeas =             0.343687
+Switched to Devex.
+Iteration:    80    Objective     =            -3.439230
+Iteration:   139    Objective     =            -0.456415
+Iteration:   199    Objective     =             0.223454
+Iteration:   259    Objective     =             0.367816
+Iteration:   319    Objective     =             0.394333
+Removing shift (4).
+Iteration:   333    Scaled Infeas =             0.000010
+Iteration:   337    Objective     =             0.394594
+
+Primal - Optimal:  Objective =    3.9459602159e-01
+Solution time =    0.65 sec.    Iterations = 338 (83)
+
+
+Problem 'cplex4.lp59' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 85 rows and 2 columns.
+Reduced LP has 900 rows, 113 columns, and 3184 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           147.504368
+Iteration:    68    Scaled Infeas =             6.131639
+Switched to Devex.
+Iteration:   129    Scaled Infeas =             0.218470
+Iteration:   143    Objective     =            -1.757381
+Iteration:   202    Objective     =            -0.326887
+Iteration:   262    Objective     =            -0.119238
+Iteration:   322    Objective     =            -0.071584
+Iteration:   382    Objective     =            -0.058849
+Removing shift (3).
+
+Primal - Optimal:  Objective =   -5.7004788829e-02
+Solution time =    0.68 sec.    Iterations = 390 (142)
+
+
+Problem 'cplex4.lp60' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 82 rows and 2 columns.
+Reduced LP has 864 rows, 108 columns, and 2983 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           121.991159
+Switched to Devex.
+Iteration:    71    Objective     =            -3.397173
+Iteration:   130    Objective     =            -0.586267
+Iteration:   190    Objective     =             0.099976
+Iteration:   250    Objective     =             0.384893
+Iteration:   310    Objective     =             0.403237
+Removing shift (5).
+
+Primal - Optimal:  Objective =    4.0668518033e-01
+Solution time =    0.66 sec.    Iterations = 342 (70)
+
+
+Problem 'cplex4.lp61' read.
+Read time =    0.08 sec.
+LP Presolve eliminated 85 rows and 2 columns.
+Reduced LP has 950 rows, 113 columns, and 3891 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           179.106042
+Iteration:    68    Scaled Infeas =             3.096342
+Switched to Devex.
+Iteration:   106    Objective     =            -2.201731
+Iteration:   165    Objective     =            -0.710367
+Iteration:   225    Objective     =             0.239655
+Iteration:   285    Objective     =             0.516883
+Iteration:   345    Objective     =             0.528624
+Iteration:   392    Scaled Infeas =             0.000004
+Iteration:   394    Objective     =             0.532564
+Removing shift (4).
+Iteration:   396    Scaled Infeas =             0.000002
+Iteration:   398    Objective     =             0.532557
+
+Primal - Optimal:  Objective =    5.3255731774e-01
+Solution time =    0.90 sec.    Iterations = 403 (109)
+
+
+Problem 'cplex4.lp62' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Reduced LP has 843 rows, 117 columns, and 3014 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           127.059904
+Iteration:    71    Scaled Infeas =             0.470852
+Switched to Devex.
+Iteration:    88    Objective     =            -2.462626
+Iteration:   147    Objective     =            -0.636141
+Iteration:   207    Objective     =             0.277121
+Iteration:   267    Objective     =             0.473980
+Iteration:   327    Objective     =             0.495261
+Iteration:   333    Scaled Infeas =             0.000005
+Iteration:   336    Objective     =             0.495262
+Removing shift (3).
+
+Primal - Optimal:  Objective =    4.9526220251e-01
+Solution time =    0.61 sec.    Iterations = 338 (90)
+
+
+Problem 'cplex4.lp63' read.
+Read time =    0.08 sec.
+LP Presolve eliminated 94 rows and 2 columns.
+Reduced LP has 1003 rows, 122 columns, and 3562 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           169.637108
+Switched to Devex.
+Iteration:    69    Scaled Infeas =             2.774153
+Iteration:   108    Objective     =            -4.630242
+Iteration:   167    Objective     =            -1.421108
+Iteration:   227    Objective     =            -0.184051
+Iteration:   287    Objective     =             0.200240
+Iteration:   347    Objective     =             0.327188
+Iteration:   407    Scaled Infeas =             0.000006
+Iteration:   416    Objective     =             0.347630
+Removing shift (3).
+
+Primal - Optimal:  Objective =    3.4763021359e-01
+Solution time =    0.95 sec.    Iterations = 419 (116)
+
+
+Problem 'cplex4.lp64' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Reduced LP has 838 rows, 117 columns, and 2965 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           124.411304
+Switched to Devex.
+Iteration:    70    Objective     =            -2.588665
+Iteration:   129    Objective     =            -0.302705
+Iteration:   189    Objective     =             0.071677
+Iteration:   249    Objective     =             0.423720
+Removing shift (8).
+
+Primal - Optimal:  Objective =    4.2552176417e-01
+Solution time =    0.44 sec.    Iterations = 283 (69)
+
+
+Problem 'cplex4.lp65' read.
+Read time =    0.08 sec.
+LP Presolve eliminated 82 rows and 2 columns.
+Reduced LP has 864 rows, 108 columns, and 2983 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           145.004844
+Iteration:    70    Scaled Infeas =             0.305075
+Switched to Devex.
+Iteration:    82    Objective     =            -4.164511
+Iteration:   141    Objective     =            -0.858536
+Iteration:   201    Objective     =             0.027828
+Iteration:   261    Objective     =             0.162445
+Iteration:   321    Objective     =             0.187609
+Iteration:   338    Scaled Infeas =             0.000001
+Iteration:   340    Objective     =             0.192960
+Removing shift (2).
+
+Maximum unscaled bound infeasibility = 1.50522e-06.
+
+Primal - Optimal:  Objective =    1.9295374860e-01
+Solution time =    0.65 sec.    Iterations = 343 (83)
+
+
+Problem 'cplex4.lp66' read.
+Read time =    0.08 sec.
+LP Presolve eliminated 97 rows and 2 columns.
+Reduced LP has 1034 rows, 127 columns, and 3702 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           190.445890
+Switched to Devex.
+Iteration:    70    Scaled Infeas =             4.669186
+Iteration:   131    Scaled Infeas =             0.073336
+Iteration:   140    Objective     =            -2.703434
+Iteration:   199    Objective     =            -1.335228
+Iteration:   259    Objective     =            -0.837479
+Iteration:   319    Objective     =            -0.484561
+Iteration:   379    Objective     =            -0.152008
+Iteration:   439    Objective     =            -0.014211
+
+Primal - Optimal:  Objective =    1.5097122665e-02
+Solution time =    1.10 sec.    Iterations = 487 (139)
+
+
+Problem 'cplex4.lp67' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 85 rows and 2 columns.
+Reduced LP has 911 rows, 113 columns, and 3311 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           163.106470
+Iteration:    72    Scaled Infeas =             1.384165
+Switched to Devex.
+Iteration:    94    Objective     =            -2.445480
+Iteration:   153    Objective     =            -0.923752
+Iteration:   213    Objective     =            -0.128598
+Iteration:   273    Objective     =             0.117507
+Removing shift (6).
+Iteration:   324    Scaled Infeas =             0.000018
+Iteration:   327    Objective     =             0.132438
+
+Primal - Optimal:  Objective =    1.3249087016e-01
+Solution time =    0.63 sec.    Iterations = 330 (96)
+
+
+Problem 'cplex4.lp68' read.
+Read time =    0.10 sec.
+LP Presolve eliminated 97 rows and 2 columns.
+Reduced LP has 1077 rows, 127 columns, and 4339 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           162.024717
+Switched to Devex.
+Iteration:    65    Scaled Infeas =             8.348422
+Iteration:   126    Scaled Infeas =             0.022003
+Iteration:   129    Objective     =            -2.333843
+Iteration:   188    Objective     =            -0.818912
+Iteration:   248    Objective     =            -0.169701
+Iteration:   308    Objective     =             0.226683
+Iteration:   368    Objective     =             0.297770
+
+Primal - Optimal:  Objective =    3.0088843322e-01
+Solution time =    1.02 sec.    Iterations = 404 (128)
+
+
+Problem 'cplex4.lp69' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Reduced LP has 838 rows, 117 columns, and 2965 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           124.411304
+Iteration:    72    Scaled Infeas =             0.095617
+Switched to Devex.
+Iteration:    78    Objective     =            -2.653620
+Iteration:   137    Objective     =            -0.822400
+Iteration:   197    Objective     =             0.422656
+Iteration:   257    Objective     =             0.521847
+Iteration:   265    Scaled Infeas =             0.000016
+Iteration:   273    Objective     =             0.521841
+Removing shift (2).
+
+Primal - Optimal:  Objective =    5.2184149810e-01
+Solution time =    0.45 sec.    Iterations = 279 (85)
+
+
+Problem 'cplex4.lp70' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 92 rows and 2 columns.
+Reduced LP has 968 rows, 131 columns, and 3438 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           147.302818
+Iteration:    73    Scaled Infeas =             0.443597
+Switched to Devex.
+Iteration:    89    Objective     =            -2.982929
+Iteration:   148    Objective     =            -0.877024
+Iteration:   208    Objective     =             0.104393
+Iteration:   268    Objective     =             0.472878
+Iteration:   328    Objective     =             0.519010
+Removing shift (5).
+Iteration:   361    Scaled Infeas =             0.000025
+Iteration:   369    Objective     =             0.519666
+
+Primal - Optimal:  Objective =    5.1966604620e-01
+Solution time =    0.68 sec.    Iterations = 371 (96)
+
+
+Problem 'cplex4.lp71' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 94 rows and 2 columns.
+Reduced LP has 996 rows, 122 columns, and 3480 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           168.918194
+Iteration:    70    Scaled Infeas =             2.089345
+Switched to Devex.
+Iteration:   103    Objective     =            -3.918315
+Iteration:   162    Objective     =            -1.437764
+Iteration:   222    Objective     =            -0.243784
+Iteration:   282    Objective     =             0.015561
+Iteration:   342    Objective     =             0.224045
+Iteration:   402    Objective     =             0.274737
+Iteration:   462    Objective     =             0.286837
+Removing shift (2).
+
+Primal - Optimal:  Objective =    2.9526213856e-01
+Solution time =    1.02 sec.    Iterations = 505 (102)
+
+
+Problem 'cplex4.lp72' read.
+Read time =    0.08 sec.
+LP Presolve eliminated 97 rows and 2 columns.
+Reduced LP has 1047 rows, 127 columns, and 3883 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           185.437318
+Switched to Devex.
+Iteration:    70    Scaled Infeas =             5.229897
+Iteration:   125    Objective     =            -2.477186
+Iteration:   184    Objective     =            -1.099093
+Iteration:   244    Objective     =            -0.310729
+Iteration:   304    Objective     =            -0.029730
+Iteration:   364    Objective     =             0.114884
+Iteration:   424    Objective     =             0.157078
+Iteration:   481    Scaled Infeas =             0.000001
+Iteration:   484    Objective     =             0.171514
+Removing shift (5).
+Iteration:   487    Scaled Infeas =             0.000001
+Iteration:   489    Objective     =             0.171505
+
+Primal - Optimal:  Objective =    1.7150720682e-01
+Solution time =    1.13 sec.    Iterations = 492 (129)
+
+
+Problem 'cplex4.lp73' read.
+Read time =    0.09 sec.
+LP Presolve eliminated 97 rows and 2 columns.
+Reduced LP has 1051 rows, 127 columns, and 3934 nonzeros.
+Presolve time =    0.06 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           200.857316
+Switched to Devex.
+Iteration:    68    Scaled Infeas =             5.448901
+Iteration:   124    Objective     =            -2.283811
+Iteration:   183    Objective     =            -0.790508
+Iteration:   243    Objective     =            -0.335751
+Iteration:   303    Objective     =            -0.031957
+Iteration:   363    Objective     =             0.119265
+Iteration:   423    Objective     =             0.217543
+Removing shift (2).
+
+Primal - Optimal:  Objective =    2.1754580244e-01
+Solution time =    1.05 sec.    Iterations = 427 (123)
+
+
+Problem 'cplex4.lp74' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 866 rows, 115 columns, and 3320 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           132.577754
+Iteration:    65    Scaled Infeas =             1.724578
+Switched to Devex.
+Iteration:    96    Objective     =            -2.520184
+Iteration:   155    Objective     =            -0.479037
+Iteration:   215    Objective     =             0.030353
+Iteration:   265    Scaled Infeas =             0.000000
+Iteration:   266    Objective     =             0.442103
+Removing shift (2).
+Iteration:   267    Scaled Infeas =             0.000006
+
+Primal - Optimal:  Objective =    4.4210339401e-01
+Solution time =    0.51 sec.    Iterations = 268 (98)
+
+
+Problem 'cplex4.lp75' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Aggregator did 2 substitutions.
+Reduced LP has 850 rows, 115 columns, and 3113 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           129.929164
+Iteration:    71    Scaled Infeas =             0.800924
+Switched to Devex.
+Iteration:    97    Objective     =            -2.465389
+Iteration:   156    Objective     =            -0.741177
+Iteration:   216    Objective     =             0.105014
+Iteration:   276    Objective     =             0.376075
+Iteration:   336    Objective     =             0.460862
+Iteration:   371    Scaled Infeas =             0.000005
+Iteration:   375    Objective     =             0.467051
+Removing shift (3).
+
+Primal - Optimal:  Objective =    4.6704921932e-01
+Solution time =    0.68 sec.    Iterations = 378 (100)
+
+
+Problem 'cplex4.lp76' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 849 rows, 116 columns, and 3094 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           131.173107
+Iteration:    71    Scaled Infeas =             1.243280
+Switched to Devex.
+Iteration:    95    Objective     =            -2.468819
+Iteration:   154    Objective     =            -0.387348
+Iteration:   214    Objective     =             0.285485
+Iteration:   274    Objective     =             0.442763
+Iteration:   329    Scaled Infeas =             0.000000
+Iteration:   330    Objective     =             0.468683
+Removing shift (8).
+Iteration:   331    Scaled Infeas =             0.000024
+Iteration:   334    Objective     =             0.468683
+
+Primal - Optimal:  Objective =    4.6868274393e-01
+Solution time =    0.64 sec.    Iterations = 334 (98)
+
+
+Problem 'cplex4.lp77' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Aggregator did 2 substitutions.
+Reduced LP has 865 rows, 112 columns, and 3318 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           148.225320
+Iteration:    71    Scaled Infeas =             1.053942
+Switched to Devex.
+Iteration:    95    Objective     =            -2.322640
+Iteration:   154    Objective     =            -0.615215
+Iteration:   214    Objective     =            -0.049982
+Iteration:   274    Objective     =             0.164590
+Removing shift (3).
+
+Primal - Optimal:  Objective =    4.4210344834e-01
+Solution time =    0.67 sec.    Iterations = 332 (94)
+
+
+Problem 'cplex4.lp78' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 849 rows, 115 columns, and 3094 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           145.219853
+Iteration:    68    Scaled Infeas =             1.050956
+Switched to Devex.
+Iteration:   106    Objective     =            -2.420398
+Iteration:   165    Objective     =            -0.781088
+Iteration:   225    Objective     =            -0.059551
+Iteration:   285    Objective     =             0.183863
+Iteration:   345    Objective     =             0.467430
+Iteration:   349    Scaled Infeas =             0.000327
+Iteration:   357    Objective     =             0.467424
+Removing shift (2).
+
+Primal - Optimal:  Objective =    4.6742917317e-01
+Solution time =    0.66 sec.    Iterations = 368 (113)
+
+
+Problem 'cplex4.lp79' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 83 rows and 2 columns.
+Aggregator did 2 substitutions.
+Reduced LP has 867 rows, 106 columns, and 3030 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           166.333467
+Iteration:    68    Scaled Infeas =             2.599363
+Switched to Devex.
+Iteration:   102    Objective     =            -4.193010
+Iteration:   161    Objective     =            -1.058994
+Iteration:   221    Objective     =            -0.375996
+Iteration:   281    Objective     =            -0.272062
+Removing shift (1).
+
+Primal - Optimal:  Objective =   -1.8120534303e-01
+Solution time =    0.66 sec.    Iterations = 332 (101)
+
+
+Problem 'cplex4.lp80' read.
+Read time =    0.09 sec.
+LP Presolve eliminated 95 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 1018 rows, 121 columns, and 3784 nonzeros.
+Presolve time =    0.06 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           191.312348
+Switched to Devex.
+Iteration:    74    Scaled Infeas =             1.378899
+Iteration:   104    Objective     =            -3.478125
+Iteration:   163    Objective     =            -1.435834
+Iteration:   223    Objective     =            -0.629355
+Iteration:   283    Objective     =             0.072223
+Iteration:   343    Objective     =             0.268786
+Iteration:   403    Objective     =             0.457190
+Iteration:   463    Objective     =             0.482480
+Removing shift (7).
+
+Primal - Optimal:  Objective =    4.8444514181e-01
+Solution time =    1.15 sec.    Iterations = 504 (103)
+
+
+Problem 'cplex4.lp81' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 83 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 868 rows, 107 columns, and 3032 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           141.624299
+Iteration:    70    Scaled Infeas =             1.498713
+Switched to Devex.
+Iteration:   106    Objective     =            -4.743781
+Iteration:   165    Objective     =            -1.106091
+Iteration:   225    Objective     =            -0.241963
+Iteration:   285    Objective     =            -0.054573
+Removing shift (5).
+
+Primal - Optimal:  Objective =   -4.3939231920e-02
+Solution time =    0.54 sec.    Iterations = 311 (105)
+
+
+Problem 'cplex4.lp82' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 82 rows and 2 columns.
+Aggregator did 2 substitutions.
+Reduced LP has 875 rows, 103 columns, and 3114 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           142.330263
+Iteration:    68    Scaled Infeas =             1.285648
+Switched to Devex.
+Iteration:    97    Objective     =            -2.811667
+Iteration:   156    Objective     =            -0.637495
+Iteration:   216    Objective     =            -0.080422
+
+Primal - Optimal:  Objective =   -7.4190241156e-02
+Solution time =    0.40 sec.    Iterations = 221 (96)
+
+
+Problem 'cplex4.lp83' read.
+Read time =    0.09 sec.
+LP Presolve eliminated 94 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 1019 rows, 120 columns, and 3786 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           155.960797
+Switched to Devex.
+Iteration:    75    Scaled Infeas =             1.149962
+Iteration:    96    Objective     =            -3.656257
+Iteration:   155    Objective     =            -0.791925
+Iteration:   215    Objective     =             0.132089
+Iteration:   275    Objective     =             0.386557
+Iteration:   335    Objective     =             0.472134
+Removing shift (2).
+
+Primal - Optimal:  Objective =    4.7216993390e-01
+Solution time =    0.76 sec.    Iterations = 340 (95)
+
+
+Problem 'cplex4.lp84' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 849 rows, 115 columns, and 3094 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           128.907327
+Iteration:    70    Scaled Infeas =             0.317323
+Switched to Devex.
+Iteration:    85    Objective     =            -2.695341
+Iteration:   145    Objective     =            -0.561327
+Iteration:   205    Objective     =             0.446494
+Iteration:   258    Scaled Infeas =             0.000004
+Iteration:   264    Objective     =             0.468683
+Removing shift (4).
+
+Primal - Optimal:  Objective =    4.6868279826e-01
+Solution time =    0.45 sec.    Iterations = 264 (90)
+
+
+Problem 'cplex4.lp85' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 83 rows and 2 columns.
+Aggregator did 2 substitutions.
+Reduced LP has 867 rows, 105 columns, and 3030 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           161.190926
+Iteration:    67    Scaled Infeas =             2.994640
+Switched to Devex.
+Iteration:    96    Objective     =            -3.350577
+Iteration:   155    Objective     =            -0.813977
+Iteration:   215    Objective     =            -0.390284
+Iteration:   275    Objective     =            -0.221645
+
+Primal - Optimal:  Objective =   -2.0819661820e-01
+Solution time =    0.57 sec.    Iterations = 311 (95)
+
+
+Problem 'cplex4.lp86' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 82 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 869 rows, 106 columns, and 3034 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           158.541419
+Iteration:    70    Scaled Infeas =             0.251296
+Switched to Devex.
+Iteration:    88    Objective     =            -3.908192
+Iteration:   147    Objective     =            -1.242499
+Iteration:   207    Objective     =            -0.242969
+Iteration:   267    Objective     =            -0.052494
+Removing shift (2).
+
+Primal - Optimal:  Objective =    2.1140017773e-03
+Solution time =    0.57 sec.    Iterations = 313 (87)
+
+
+Problem 'cplex4.lp87' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 73 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 772 rows, 98 columns, and 2734 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           149.177422
+Iteration:    69    Scaled Infeas =             1.928193
+Switched to Devex.
+Iteration:   114    Objective     =            -1.920928
+Iteration:   173    Objective     =            -0.675621
+Iteration:   233    Objective     =            -0.405688
+Iteration:   243    Scaled Infeas =             0.000002
+Iteration:   245    Objective     =            -0.403172
+Removing shift (2).
+
+Primal - Optimal:  Objective =   -4.0317190774e-01
+Solution time =    0.41 sec.    Iterations = 246 (115)
+
+
+Problem 'cplex4.lp88' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 85 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 899 rows, 112 columns, and 3182 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           147.504368
+Iteration:    67    Scaled Infeas =             4.583188
+Iteration:   128    Scaled Infeas =             0.190272
+Switched to Devex.
+Iteration:   143    Objective     =            -1.803501
+Iteration:   202    Objective     =            -0.836593
+Iteration:   262    Objective     =            -0.636809
+Removing shift (1).
+
+Primal - Optimal:  Objective =   -6.1262964771e-01
+Solution time =    0.54 sec.    Iterations = 297 (142)
+
+
+Problem 'cplex4.lp89' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 73 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 772 rows, 98 columns, and 2734 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           133.419935
+Iteration:    65    Scaled Infeas =             2.364569
+Switched to Devex.
+Iteration:   109    Objective     =            -1.758616
+Iteration:   168    Objective     =            -0.809979
+Iteration:   228    Objective     =            -0.526014
+Iteration:   266    Scaled Infeas =             0.000003
+Iteration:   269    Objective     =            -0.403172
+
+Primal - Optimal:  Objective =   -4.0317219454e-01
+Solution time =    0.45 sec.    Iterations = 270 (111)
+
+
+Problem 'cplex4.lp90' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 85 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 904 rows, 112 columns, and 3231 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           154.664317
+Iteration:    67    Scaled Infeas =             4.775713
+Switched to Devex.
+Iteration:   128    Scaled Infeas =             0.182859
+Iteration:   140    Objective     =            -2.165135
+Iteration:   200    Objective     =            -0.719219
+Iteration:   260    Objective     =            -0.491746
+Iteration:   320    Objective     =            -0.348951
+Iteration:   324    Scaled Infeas =             0.000000
+Iteration:   325    Objective     =            -0.348877
+Removing shift (2).
+
+Primal - Optimal:  Objective =   -3.4888018058e-01
+Solution time =    0.64 sec.    Iterations = 325 (140)
+
+
+Problem 'cplex4.lp91' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Aggregator did 2 substitutions.
+Reduced LP has 836 rows, 115 columns, and 2961 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           124.411304
+Iteration:    70    Scaled Infeas =             0.422818
+Switched to Devex.
+Iteration:    80    Objective     =            -2.461476
+Iteration:   139    Objective     =            -0.321734
+Iteration:   199    Objective     =             0.240481
+Iteration:   259    Objective     =             0.521844
+Iteration:   261    Scaled Infeas =             0.000006
+Iteration:   266    Objective     =             0.521842
+Removing shift (3).
+
+Primal - Optimal:  Objective =    5.2184166110e-01
+Solution time =    0.47 sec.    Iterations = 267 (84)
+
+
+Problem 'cplex4.lp92' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 837 rows, 116 columns, and 2963 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           124.411304
+Iteration:    70    Scaled Infeas =             0.057186
+Switched to Devex.
+Iteration:    73    Objective     =            -2.798391
+Iteration:   132    Objective     =            -0.487468
+Iteration:   192    Objective     =             0.185192
+Iteration:   252    Objective     =             0.309849
+Iteration:   291    Scaled Infeas =             0.000001
+Iteration:   292    Objective     =             0.521842
+Removing shift (1).
+
+Primal - Optimal:  Objective =    5.2184182409e-01
+Solution time =    0.51 sec.    Iterations = 292 (73)
+
+
+Problem 'cplex4.lp93' read.
+Read time =    0.08 sec.
+LP Presolve eliminated 97 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 1029 rows, 126 columns, and 3655 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           169.374952
+Switched to Devex.
+Iteration:    68    Scaled Infeas =             6.959715
+Iteration:   128    Scaled Infeas =             1.041065
+Iteration:   177    Objective     =            -2.410719
+Iteration:   236    Objective     =            -1.068466
+Iteration:   296    Objective     =            -0.746267
+Iteration:   356    Objective     =            -0.543190
+Removing shift (3).
+
+Primal - Optimal:  Objective =   -5.4319499125e-01
+Solution time =    0.79 sec.    Iterations = 357 (176)
+
+
+Problem 'cplex4.lp94' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 73 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 783 rows, 98 columns, and 2861 nonzeros.
+Presolve time =    0.06 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           131.688279
+Iteration:    66    Scaled Infeas =             2.535224
+Switched to Devex.
+Iteration:   105    Objective     =            -1.916150
+Iteration:   164    Objective     =            -0.344166
+
+Primal - Optimal:  Objective =   -7.4190241156e-02
+Solution time =    0.39 sec.    Iterations = 218 (104)
+
+
+Problem 'cplex4.lp95' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 73 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 770 rows, 98 columns, and 2713 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           142.793549
+Iteration:    70    Scaled Infeas =             1.657314
+Switched to Devex.
+Iteration:   108    Objective     =            -1.964239
+Iteration:   167    Objective     =            -0.883550
+Iteration:   227    Objective     =            -0.461195
+
+Primal - Optimal:  Objective =   -4.1862416474e-01
+Solution time =    0.44 sec.    Iterations = 267 (107)
+
+
+Problem 'cplex4.lp96' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Reduced LP has 850 rows, 116 columns, and 3096 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           146.444005
+Iteration:    73    Scaled Infeas =             0.927421
+Switched to Devex.
+Iteration:    93    Objective     =            -2.635497
+Iteration:   152    Objective     =            -0.929643
+Iteration:   212    Objective     =             0.252276
+Iteration:   272    Objective     =             0.462921
+Iteration:   296    Scaled Infeas =             0.000002
+Iteration:   299    Objective     =             0.468676
+Removing shift (1).
+
+Primal - Optimal:  Objective =    4.6868279826e-01
+Solution time =    0.55 sec.    Iterations = 301 (95)
+
+
+Problem 'cplex4.lp97' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 840 rows, 116 columns, and 2988 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           126.258731
+Iteration:    69    Scaled Infeas =             0.766512
+Switched to Devex.
+Iteration:    85    Objective     =            -2.395227
+Iteration:   144    Objective     =            -0.413643
+Iteration:   204    Objective     =             0.451098
+Iteration:   264    Objective     =             0.493662
+Removing shift (5).
+Iteration:   300    Scaled Infeas =             0.000016
+
+Primal - Optimal:  Objective =    4.9526214818e-01
+Solution time =    0.53 sec.    Iterations = 308 (93)
+
+
+Problem 'cplex4.lp98' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 91 rows and 2 columns.
+Reduced LP has 957 rows, 116 columns, and 3238 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           151.586809
+Iteration:    71    Scaled Infeas =             0.061026
+Switched to Devex.
+Iteration:    75    Objective     =            -6.773083
+Iteration:   134    Objective     =            -1.167099
+Iteration:   194    Objective     =            -0.250878
+Iteration:   254    Objective     =             0.223907
+Iteration:   314    Objective     =             0.314901
+Iteration:   374    Objective     =             0.346676
+Iteration:   434    Objective     =             0.381041
+Removing shift (5).
+Iteration:   455    Scaled Infeas =             0.000008
+Iteration:   458    Objective     =             0.383758
+
+Primal - Optimal:  Objective =    3.8375890229e-01
+Solution time =    0.87 sec.    Iterations = 459 (77)
+
+
+Problem 'cplex4.lp99' read.
+Read time =    0.08 sec.
+LP Presolve eliminated 94 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 1002 rows, 121 columns, and 3560 nonzeros.
+Presolve time =    0.06 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           175.867036
+Switched to Devex.
+Iteration:    69    Scaled Infeas =             2.907907
+Iteration:   110    Objective     =            -4.208250
+Iteration:   169    Objective     =            -1.774675
+Iteration:   229    Objective     =            -0.641246
+Iteration:   289    Objective     =            -0.097355
+Iteration:   349    Objective     =             0.271534
+Iteration:   409    Objective     =             0.286789
+Iteration:   416    Scaled Infeas =             0.000005
+Iteration:   419    Objective     =             0.286826
+Removing shift (8).
+
+Primal - Optimal:  Objective =    2.8681879061e-01
+Solution time =    0.99 sec.    Iterations = 421 (112)
+
+
+Problem 'cplex4.lp100' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 94 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 1002 rows, 121 columns, and 3560 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           175.867036
+Switched to Devex.
+Iteration:    71    Scaled Infeas =             0.829531
+Iteration:    98    Objective     =            -4.824319
+Iteration:   157    Objective     =            -2.465220
+Iteration:   217    Objective     =            -0.263485
+Iteration:   277    Objective     =             0.348783
+Iteration:   337    Objective     =             0.459509
+Iteration:   397    Objective     =             0.486365
+Removing shift (8).
+Iteration:   432    Scaled Infeas =             0.000007
+Iteration:   435    Objective     =             0.492977
+
+Primal - Optimal:  Objective =    4.9297742098e-01
+Solution time =    0.95 sec.    Iterations = 437 (100)
+
+
+Problem 'cplex4.lp101' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 91 rows and 2 columns.
+Reduced LP has 960 rows, 115 columns, and 3263 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           146.530530
+Iteration:    69    Scaled Infeas =             0.432640
+Switched to Devex.
+Iteration:    87    Objective     =            -6.672674
+Iteration:   146    Objective     =            -1.635740
+Iteration:   206    Objective     =            -0.517365
+Iteration:   266    Objective     =             0.000682
+Iteration:   326    Objective     =             0.209453
+Iteration:   386    Objective     =             0.419289
+Iteration:   400    Scaled Infeas =             0.000001
+Iteration:   402    Objective     =             0.419300
+Removing shift (4).
+Iteration:   406    Scaled Infeas =             0.000007
+Iteration:   410    Objective     =             0.419286
+
+Primal - Optimal:  Objective =    4.1928849794e-01
+Solution time =    0.84 sec.    Iterations = 413 (92)
+
+
+Problem 'cplex4.lp102' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 73 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 772 rows, 98 columns, and 2734 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           132.195783
+Iteration:    69    Scaled Infeas =             2.908013
+Switched to Devex.
+Iteration:   120    Objective     =            -1.811935
+Iteration:   179    Objective     =            -0.642505
+Iteration:   230    Scaled Infeas =             0.000000
+Iteration:   231    Objective     =            -0.454795
+Removing shift (1).
+
+Primal - Optimal:  Objective =   -4.5479507160e-01
+Solution time =    0.36 sec.    Iterations = 232 (120)
+
+
+Problem 'cplex4.lp103' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 82 rows and 2 columns.
+Reduced LP has 869 rows, 108 columns, and 3032 nonzeros.
+Presolve time =    0.06 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           153.196189
+Iteration:    69    Scaled Infeas =             0.853878
+Switched to Devex.
+Iteration:    85    Objective     =            -4.824231
+Iteration:   144    Objective     =            -1.267335
+Iteration:   204    Objective     =            -0.317177
+Iteration:   264    Objective     =             0.264192
+Removing shift (3).
+
+Primal - Optimal:  Objective =    2.8104292483e-01
+Solution time =    0.59 sec.    Iterations = 318 (84)
+
+
+Problem 'cplex4.lp104' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 73 rows and 2 columns.
+Reduced LP has 770 rows, 99 columns, and 2711 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           125.239054
+Iteration:    70    Scaled Infeas =             1.521610
+Switched to Devex.
+Iteration:    94    Objective     =            -2.137938
+Iteration:   153    Objective     =            -0.886406
+Iteration:   213    Objective     =            -0.379239
+Iteration:   249    Scaled Infeas =             0.000000
+Iteration:   250    Objective     =            -0.364480
+Removing shift (1).
+
+Primal - Optimal:  Objective =   -3.6448055410e-01
+Solution time =    0.45 sec.    Iterations = 250 (94)
+
+
+Problem 'cplex4.lp105' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 85 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 910 rows, 112 columns, and 3309 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           145.645358
+Iteration:    68    Scaled Infeas =             2.800788
+Switched to Devex.
+Iteration:   121    Objective     =            -2.394239
+Iteration:   180    Objective     =            -0.793540
+Iteration:   240    Objective     =            -0.240306
+Iteration:   300    Objective     =            -0.102380
+Removing shift (1).
+
+Primal - Optimal:  Objective =   -7.5894502191e-02
+Solution time =    0.63 sec.    Iterations = 337 (120)
+
+
+Problem 'cplex4.lp106' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 73 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 772 rows, 98 columns, and 2734 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           132.195783
+Iteration:    72    Scaled Infeas =             1.928061
+Switched to Devex.
+Iteration:   113    Objective     =            -1.867625
+Iteration:   172    Objective     =            -0.545847
+Iteration:   232    Objective     =            -0.252450
+
+Primal - Optimal:  Objective =   -1.6804005686e-01
+Solution time =    0.42 sec.    Iterations = 269 (112)
+
+
+Problem 'cplex4.lp107' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 73 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 785 rows, 98 columns, and 2882 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           135.849528
+Iteration:    63    Scaled Infeas =             4.847856
+Switched to Devex.
+Iteration:   113    Objective     =            -1.708579
+Iteration:   172    Objective     =            -0.599140
+Iteration:   232    Objective     =            -0.003958
+Iteration:   292    Objective     =             0.028081
+Removing shift (5).
+Iteration:   299    Scaled Infeas =             0.000001
+Iteration:   305    Objective     =             0.028094
+
+Primal - Optimal:  Objective =    2.8094421483e-02
+Solution time =    0.54 sec.    Iterations = 306 (118)
+
+
+Problem 'cplex4.lp108' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 837 rows, 116 columns, and 2963 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           124.411304
+Iteration:    72    Scaled Infeas =             0.163623
+Switched to Devex.
+Iteration:    86    Objective     =            -2.755793
+Iteration:   145    Objective     =            -0.407002
+Iteration:   205    Objective     =             0.339692
+Iteration:   265    Objective     =             0.424861
+Removing shift (1).
+
+Primal - Optimal:  Objective =    4.2583883056e-01
+Solution time =    0.47 sec.    Iterations = 304 (85)
+
+
+Problem 'cplex4.lp109' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 837 rows, 116 columns, and 2963 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           124.411304
+Iteration:    72    Scaled Infeas =             0.239358
+Switched to Devex.
+Iteration:    79    Objective     =            -2.533790
+Iteration:   138    Objective     =            -0.251736
+Iteration:   198    Objective     =             0.411460
+Iteration:   258    Objective     =             0.425812
+Removing shift (2).
+
+Primal - Optimal:  Objective =    4.2583971612e-01
+Solution time =    0.42 sec.    Iterations = 262 (78)
+
+
+Problem 'cplex4.lp110' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 94 rows and 2 columns.
+Reduced LP has 996 rows, 122 columns, and 3480 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           162.654667
+Iteration:    70    Scaled Infeas =             0.854048
+Switched to Devex.
+Iteration:    90    Objective     =            -4.502193
+Iteration:   149    Objective     =            -1.470934
+Iteration:   209    Objective     =            -0.511572
+Iteration:   269    Objective     =             0.023969
+Iteration:   329    Objective     =             0.273723
+Iteration:   389    Objective     =             0.337771
+Iteration:   449    Objective     =             0.339329
+Removing shift (9).
+Iteration:   458    Scaled Infeas =             0.000020
+Iteration:   462    Objective     =             0.339321
+
+Primal - Optimal:  Objective =    3.3934144342e-01
+Solution time =    0.96 sec.    Iterations = 465 (93)
+
+
+Problem 'cplex4.lp111' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Reduced LP has 838 rows, 117 columns, and 2965 nonzeros.
+Presolve time =    0.06 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           123.187152
+Switched to Devex.
+Iteration:    72    Objective     =            -2.566975
+Iteration:   131    Objective     =            -0.705290
+Iteration:   191    Objective     =             0.512204
+Iteration:   245    Scaled Infeas =             0.000016
+Iteration:   258    Objective     =             0.521841
+Removing shift (1).
+
+Primal - Optimal:  Objective =    5.2184155243e-01
+Solution time =    0.46 sec.    Iterations = 262 (84)
+
+
+Problem 'cplex4.lp112' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 849 rows, 115 columns, and 3094 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           131.173107
+Iteration:    72    Scaled Infeas =             0.882579
+Switched to Devex.
+Iteration:    92    Objective     =            -2.160957
+Iteration:   151    Objective     =            -0.281803
+Iteration:   211    Objective     =             0.230191
+Iteration:   271    Objective     =             0.454211
+Iteration:   311    Scaled Infeas =             0.000002
+Iteration:   313    Objective     =             0.468683
+Removing shift (2).
+
+Primal - Optimal:  Objective =    4.6868274393e-01
+Solution time =    0.56 sec.    Iterations = 313 (93)
+
+
+Problem 'cplex4.lp113' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 84 rows and 2 columns.
+Aggregator did 2 substitutions.
+Reduced LP has 866 rows, 106 columns, and 3028 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           145.099647
+Iteration:    68    Scaled Infeas =             4.016764
+Switched to Devex.
+Iteration:   124    Objective     =            -3.706400
+Iteration:   183    Objective     =            -1.331553
+Iteration:   243    Objective     =            -0.330533
+Iteration:   303    Objective     =            -0.209911
+Removing shift (2).
+
+Primal - Optimal:  Objective =   -1.9212322090e-01
+Solution time =    0.57 sec.    Iterations = 334 (123)
+
+
+Problem 'cplex4.lp114' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 73 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 770 rows, 98 columns, and 2713 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           142.793549
+Iteration:    68    Scaled Infeas =             2.863081
+Switched to Devex.
+Iteration:   107    Objective     =            -1.462509
+Iteration:   166    Objective     =            -0.607234
+Iteration:   226    Objective     =            -0.475274
+Removing shift (1).
+
+Primal - Optimal:  Objective =   -4.7011773794e-01
+Solution time =    0.38 sec.    Iterations = 240 (106)
+
+
+Problem 'cplex4.lp115' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Aggregator did 2 substitutions.
+Reduced LP has 836 rows, 115 columns, and 2961 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           124.411304
+Iteration:    70    Scaled Infeas =             0.519792
+Switched to Devex.
+Iteration:    84    Objective     =            -2.627186
+Iteration:   143    Objective     =            -0.495873
+Iteration:   203    Objective     =             0.123665
+Iteration:   263    Objective     =             0.503019
+Iteration:   320    Scaled Infeas =             0.000014
+Iteration:   326    Objective     =             0.521841
+
+Primal - Optimal:  Objective =    5.2184155243e-01
+Solution time =    0.53 sec.    Iterations = 331 (89)
+
+
+Problem 'cplex4.lp116' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 837 rows, 116 columns, and 2963 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           123.187152
+Iteration:    72    Scaled Infeas =             0.001466
+Switched to Devex.
+Iteration:    75    Objective     =            -2.576063
+Iteration:   134    Objective     =            -0.709411
+Iteration:   194    Objective     =             0.097413
+Iteration:   254    Objective     =             0.415241
+Iteration:   312    Scaled Infeas =             0.000011
+Iteration:   321    Objective     =             0.521842
+Removing shift (3).
+
+Primal - Optimal:  Objective =    5.2184166110e-01
+Solution time =    0.52 sec.    Iterations = 323 (83)
+
+
+Problem 'cplex4.lp117' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 849 rows, 115 columns, and 3094 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           131.173107
+Iteration:    70    Scaled Infeas =             1.577288
+Switched to Devex.
+Iteration:   110    Objective     =            -2.552457
+Iteration:   169    Objective     =            -0.138656
+Iteration:   229    Objective     =             0.349508
+Iteration:   263    Scaled Infeas =             0.000000
+Iteration:   264    Objective     =             0.468683
+Removing shift (5).
+Iteration:   265    Scaled Infeas =             0.000009
+Iteration:   268    Objective     =             0.468679
+
+Primal - Optimal:  Objective =    4.6868279826e-01
+Solution time =    0.52 sec.    Iterations = 269 (113)
+
+
+Problem 'cplex4.lp118' read.
+Read time =    0.08 sec.
+LP Presolve eliminated 94 rows and 2 columns.
+Reduced LP has 1020 rows, 121 columns, and 3788 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           199.324657
+Switched to Devex.
+Iteration:    71    Scaled Infeas =             2.062804
+Iteration:   112    Objective     =            -5.845170
+Iteration:   171    Objective     =            -1.121850
+Iteration:   231    Objective     =            -0.124977
+Iteration:   291    Objective     =             0.214219
+Iteration:   351    Objective     =             0.306696
+Iteration:   411    Objective     =             0.317111
+Removing shift (4).
+
+Primal - Optimal:  Objective =    3.1771517195e-01
+Solution time =    1.00 sec.    Iterations = 438 (111)
+
+
+Problem 'cplex4.lp119' read.
+Read time =    0.08 sec.
+LP Presolve eliminated 95 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 1018 rows, 120 columns, and 3784 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           159.453417
+Switched to Devex.
+Iteration:    67    Scaled Infeas =             3.669712
+Iteration:   114    Objective     =            -4.144242
+Iteration:   173    Objective     =            -1.547664
+Iteration:   233    Objective     =            -0.461909
+Iteration:   293    Objective     =             0.231137
+Iteration:   353    Objective     =             0.346373
+Iteration:   413    Objective     =             0.472456
+Iteration:   473    Objective     =             0.477390
+Iteration:   483    Scaled Infeas =             0.000002
+Iteration:   485    Objective     =             0.477450
+Removing shift (11).
+Iteration:   489    Scaled Infeas =             0.000000
+
+Primal - Optimal:  Objective =    4.7744580316e-01
+Solution time =    1.08 sec.    Iterations = 489 (116)
+
+
+Problem 'cplex4.lp120' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 83 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 867 rows, 107 columns, and 3028 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           147.061979
+Iteration:    69    Scaled Infeas =             0.189547
+Switched to Devex.
+Iteration:    81    Objective     =            -4.467177
+Iteration:   140    Objective     =            -1.071278
+Iteration:   200    Objective     =             0.009421
+Iteration:   260    Objective     =             0.121962
+Removing shift (4).
+
+Maximum unscaled bound infeasibility = 1.05978e-06.
+
+Primal - Optimal:  Objective =    1.7035870722e-01
+Solution time =    0.54 sec.    Iterations = 302 (80)
+
+
+Problem 'cplex4.lp121' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 82 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 868 rows, 107 columns, and 3030 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           168.871715
+Iteration:    72    Scaled Infeas =             0.088486
+Switched to Devex.
+Iteration:    81    Objective     =            -4.471006
+Iteration:   140    Objective     =            -1.478293
+Iteration:   200    Objective     =            -0.409943
+Iteration:   260    Objective     =             0.153990
+Iteration:   320    Objective     =             0.199962
+Iteration:   323    Scaled Infeas =             0.000003
+Iteration:   326    Objective     =             0.200016
+Removing shift (3).
+
+Primal - Optimal:  Objective =    2.0001230363e-01
+Solution time =    0.60 sec.    Iterations = 328 (83)
+
+
+Problem 'cplex4.lp122' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 94 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 1002 rows, 121 columns, and 3560 nonzeros.
+Presolve time =    0.06 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           176.908663
+Switched to Devex.
+Iteration:    68    Scaled Infeas =             9.253032
+Iteration:   129    Scaled Infeas =             0.649765
+Iteration:   147    Objective     =            -4.902976
+Iteration:   206    Objective     =            -2.021528
+Iteration:   266    Objective     =            -0.221729
+Iteration:   326    Objective     =             0.292342
+Iteration:   386    Objective     =             0.419739
+Iteration:   446    Objective     =             0.480800
+Iteration:   505    Scaled Infeas =             0.000003
+Iteration:   507    Objective     =             0.492596
+Removing shift (4).
+
+Primal - Optimal:  Objective =    4.9258614415e-01
+Solution time =    1.19 sec.    Iterations = 511 (148)
+
+
+Problem 'cplex4.lp123' read.
+Read time =    0.09 sec.
+LP Presolve eliminated 106 rows and 2 columns.
+Reduced LP has 1139 rows, 136 columns, and 4134 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           181.191251
+Switched to Devex.
+Iteration:    71    Scaled Infeas =             2.555918
+Iteration:   116    Objective     =            -4.786497
+Iteration:   175    Objective     =            -1.813270
+Iteration:   235    Objective     =            -0.606472
+Iteration:   295    Objective     =             0.020029
+Iteration:   355    Objective     =             0.318640
+Iteration:   415    Objective     =             0.410053
+Iteration:   475    Objective     =             0.418874
+Removing shift (5).
+
+Primal - Optimal:  Objective =    4.2229655810e-01
+Solution time =    1.20 sec.    Iterations = 513 (115)
+
+
+Problem 'cplex4.lp124' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Reduced LP has 838 rows, 117 columns, and 2965 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           124.411304
+Iteration:    72    Scaled Infeas =             0.336354
+Switched to Devex.
+Iteration:    82    Objective     =            -2.580281
+Iteration:   141    Objective     =            -0.715367
+Iteration:   201    Objective     =             0.161477
+Iteration:   261    Objective     =             0.520597
+Iteration:   284    Scaled Infeas =             0.000018
+Iteration:   295    Objective     =             0.521841
+Removing shift (9).
+
+Primal - Optimal:  Objective =    5.2184155243e-01
+Solution time =    0.48 sec.    Iterations = 298 (92)
+
+
+Problem 'cplex4.lp125' read.
+Read time =    0.08 sec.
+LP Presolve eliminated 96 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 1018 rows, 120 columns, and 3786 nonzeros.
+Presolve time =    0.06 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           165.106612
+Switched to Devex.
+Iteration:    67    Scaled Infeas =             5.635982
+Iteration:   131    Scaled Infeas =             0.039385
+Iteration:   139    Objective     =            -2.712880
+Iteration:   198    Objective     =            -1.183038
+Iteration:   258    Objective     =            -0.669670
+Iteration:   318    Objective     =            -0.101680
+Iteration:   378    Objective     =             0.015547
+Iteration:   379    Scaled Infeas =             0.000009
+Iteration:   383    Objective     =             0.015544
+Removing shift (1).
+
+Primal - Optimal:  Objective =    1.5544801516e-02
+Solution time =    0.90 sec.    Iterations = 388 (142)
+
+
+Problem 'cplex4.lp126' read.
+Read time =    0.10 sec.
+LP Presolve eliminated 107 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 1168 rows, 135 columns, and 4590 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           180.489677
+Switched to Devex.
+Iteration:    62    Scaled Infeas =            19.260039
+Iteration:   129    Scaled Infeas =             0.000058
+Iteration:   131    Objective     =            -4.209412
+Iteration:   190    Objective     =            -1.209336
+Iteration:   250    Objective     =            -0.192437
+Iteration:   310    Objective     =             0.115087
+Iteration:   370    Objective     =             0.284293
+Iteration:   430    Objective     =             0.358056
+Iteration:   490    Objective     =             0.380474
+Iteration:   550    Objective     =             0.398355
+Removing shift (10).
+Iteration:   595    Scaled Infeas =             0.000008
+Iteration:   599    Objective     =             0.402311
+
+Primal - Optimal:  Objective =    4.0231114958e-01
+Solution time =    1.55 sec.    Iterations = 600 (134)
+
+
+Problem 'cplex4.lp127' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 85 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 902 rows, 112 columns, and 3207 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           155.877952
+Iteration:    68    Scaled Infeas =             3.365151
+Iteration:   128    Scaled Infeas =             0.115031
+Switched to Devex.
+Iteration:   136    Objective     =            -2.222314
+Iteration:   195    Objective     =            -0.834526
+Iteration:   255    Objective     =            -0.330387
+Iteration:   315    Objective     =            -0.195838
+Removing shift (5).
+
+Primal - Optimal:  Objective =   -1.8450226296e-01
+Solution time =    0.63 sec.    Iterations = 333 (135)
+
+
+Problem 'cplex4.lp128' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 82 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 863 rows, 107 columns, and 2981 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           151.321976
+Iteration:    71    Scaled Infeas =             0.133681
+Switched to Devex.
+Iteration:    79    Objective     =            -4.477199
+Iteration:   138    Objective     =            -2.344561
+Iteration:   198    Objective     =            -0.533680
+Iteration:   258    Objective     =            -0.107726
+Iteration:   318    Objective     =             0.124259
+Iteration:   356    Scaled Infeas =             0.000000
+Iteration:   357    Objective     =             0.148538
+Removing shift (3).
+Iteration:   358    Scaled Infeas =             0.000000
+
+Primal - Optimal:  Objective =    1.4852183530e-01
+Solution time =    0.67 sec.    Iterations = 358 (80)
+
+
+Problem 'cplex4.lp129' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Aggregator did 2 substitutions.
+Reduced LP has 836 rows, 115 columns, and 2961 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           123.187152
+Iteration:    73    Scaled Infeas =             0.205294
+Switched to Devex.
+Iteration:    81    Objective     =            -2.864168
+Iteration:   140    Objective     =            -0.777935
+Iteration:   200    Objective     =             0.173892
+Iteration:   260    Objective     =             0.520583
+Iteration:   294    Scaled Infeas =             0.000015
+Iteration:   306    Objective     =             0.521842
+Removing shift (6).
+Iteration:   307    Scaled Infeas =             0.000013
+Iteration:   313    Objective     =             0.521842
+
+Primal - Optimal:  Objective =    5.2184166110e-01
+Solution time =    0.52 sec.    Iterations = 313 (98)
+
+
+Problem 'cplex4.lp130' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 837 rows, 116 columns, and 2963 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           124.411304
+Iteration:    72    Scaled Infeas =             0.105567
+Switched to Devex.
+Iteration:    81    Objective     =            -2.927868
+Iteration:   140    Objective     =            -0.949027
+Iteration:   200    Objective     =            -0.087616
+Iteration:   260    Objective     =             0.448094
+Iteration:   301    Scaled Infeas =             0.000005
+Iteration:   304    Objective     =             0.521842
+
+Primal - Optimal:  Objective =    5.2184171543e-01
+Solution time =    0.48 sec.    Iterations = 306 (83)
+
+
+Problem 'cplex4.lp131' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 85 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 897 rows, 112 columns, and 3161 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           156.877982
+Iteration:    70    Scaled Infeas =             3.387316
+Iteration:   131    Scaled Infeas =             0.001497
+Switched to Devex.
+Iteration:   133    Objective     =            -2.238627
+Iteration:   192    Objective     =            -1.097896
+Iteration:   252    Objective     =            -0.504461
+
+Primal - Optimal:  Objective =   -4.1389707473e-01
+Solution time =    0.57 sec.    Iterations = 301 (132)
+
+
+Problem 'cplex4.lp132' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Aggregator did 2 substitutions.
+Reduced LP has 836 rows, 115 columns, and 2961 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           123.187152
+Switched to Devex.
+Iteration:    70    Objective     =            -2.651899
+Iteration:   129    Objective     =            -0.438839
+Iteration:   189    Objective     =             0.351189
+Iteration:   249    Objective     =             0.503298
+Iteration:   270    Scaled Infeas =             0.000013
+Iteration:   277    Objective     =             0.521841
+Removing shift (1).
+
+Primal - Optimal:  Objective =    5.2184155243e-01
+Solution time =    0.47 sec.    Iterations = 282 (76)
+
+
+Problem 'cplex4.lp133' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 837 rows, 116 columns, and 2963 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           124.411304
+Iteration:    71    Scaled Infeas =             0.213802
+Switched to Devex.
+Iteration:    77    Objective     =            -2.692469
+Iteration:   136    Objective     =            -0.676317
+Iteration:   196    Objective     =             0.190927
+Iteration:   256    Objective     =             0.513556
+Iteration:   275    Scaled Infeas =             0.000011
+Iteration:   285    Objective     =             0.521842
+Removing shift (6).
+
+Primal - Optimal:  Objective =    5.2184171543e-01
+Solution time =    0.44 sec.    Iterations = 287 (86)
+
+
+Problem 'cplex4.lp134' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 94 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 995 rows, 121 columns, and 3478 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           168.697531
+Iteration:    68    Scaled Infeas =             1.401857
+Switched to Devex.
+Iteration:   105    Objective     =            -5.103868
+Iteration:   164    Objective     =            -2.788278
+Iteration:   224    Objective     =            -0.807409
+Iteration:   284    Objective     =             0.119599
+Iteration:   344    Objective     =             0.230571
+Removing shift (2).
+
+Primal - Optimal:  Objective =    2.3220480660e-01
+Solution time =    0.78 sec.    Iterations = 363 (104)
+
+
+Problem 'cplex4.lp135' read.
+Read time =    0.08 sec.
+LP Presolve eliminated 109 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 1181 rows, 140 columns, and 4431 nonzeros.
+Presolve time =    0.06 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           184.426814
+Switched to Devex.
+Iteration:    69    Scaled Infeas =            10.424348
+Iteration:   131    Scaled Infeas =             1.989861
+Iteration:   181    Objective     =            -2.737715
+Iteration:   240    Objective     =            -1.448804
+Iteration:   300    Objective     =            -0.780440
+Iteration:   360    Objective     =            -0.435400
+Iteration:   420    Objective     =            -0.007172
+Iteration:   480    Objective     =             0.032249
+Removing shift (4).
+
+Primal - Optimal:  Objective =    4.0254336045e-02
+Solution time =    1.38 sec.    Iterations = 523 (180)
+
+
+Problem 'cplex4.lp136' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 97 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 1054 rows, 126 columns, and 3983 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           169.203129
+Switched to Devex.
+Iteration:    67    Scaled Infeas =             5.949779
+Iteration:   130    Scaled Infeas =             0.183897
+Iteration:   147    Objective     =            -2.511657
+Iteration:   206    Objective     =            -0.546261
+Iteration:   266    Objective     =            -0.129188
+Iteration:   326    Objective     =             0.039234
+Iteration:   386    Objective     =             0.124355
+Removing shift (7).
+
+Primal - Optimal:  Objective =    1.2584731911e-01
+Solution time =    0.98 sec.    Iterations = 419 (146)
+
+
+Problem 'cplex4.lp137' read.
+Read time =    0.08 sec.
+LP Presolve eliminated 97 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 1046 rows, 126 columns, and 3881 nonzeros.
+Presolve time =    0.06 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           169.476608
+Switched to Devex.
+Iteration:    69    Scaled Infeas =             6.175221
+Iteration:   131    Scaled Infeas =             0.445239
+Iteration:   152    Objective     =            -2.697700
+Iteration:   211    Objective     =            -1.061600
+Iteration:   271    Objective     =            -0.519260
+Iteration:   331    Objective     =            -0.222161
+Iteration:   391    Objective     =            -0.082289
+Iteration:   451    Objective     =             0.022870
+Removing shift (8).
+Iteration:   489    Scaled Infeas =             0.000005
+Iteration:   494    Objective     =             0.044307
+
+Primal - Optimal:  Objective =    4.4306912454e-02
+Solution time =    1.16 sec.    Iterations = 498 (156)
+
+
+Problem 'cplex4.lp138' read.
+Read time =    0.08 sec.
+LP Presolve eliminated 85 rows and 2 columns.
+Reduced LP has 900 rows, 113 columns, and 3184 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           161.488761
+Iteration:    67    Scaled Infeas =             3.518614
+Switched to Devex.
+Iteration:   128    Objective     =            -2.513991
+Iteration:   187    Objective     =            -0.929229
+Iteration:   247    Objective     =            -0.422959
+Iteration:   307    Objective     =            -0.223144
+Iteration:   367    Objective     =            -0.173412
+
+Primal - Optimal:  Objective =   -1.7341203188e-01
+Solution time =    0.71 sec.    Iterations = 370 (127)
+
+
+Problem 'cplex4.lp139' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 92 rows and 2 columns.
+Reduced LP has 968 rows, 131 columns, and 3438 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           147.725795
+Iteration:    73    Scaled Infeas =             0.676724
+Switched to Devex.
+Iteration:    93    Objective     =            -3.259554
+Iteration:   152    Objective     =            -1.130916
+Iteration:   212    Objective     =             0.107472
+Iteration:   272    Objective     =             0.504278
+Iteration:   332    Objective     =             0.518401
+Removing shift (1).
+
+Primal - Optimal:  Objective =    5.1966962601e-01
+Solution time =    0.63 sec.    Iterations = 355 (92)
+
+
+Problem 'cplex4.lp140' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 92 rows and 2 columns.
+Reduced LP has 970 rows, 131 columns, and 3462 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           145.655686
+Iteration:    72    Scaled Infeas =             0.814299
+Switched to Devex.
+Iteration:    95    Objective     =            -3.123162
+Iteration:   154    Objective     =            -0.880033
+Iteration:   214    Objective     =             0.054302
+Iteration:   274    Objective     =             0.242696
+Iteration:   334    Objective     =             0.484979
+Iteration:   394    Objective     =             0.517541
+Iteration:   433    Scaled Infeas =             0.000008
+Iteration:   436    Objective     =             0.519666
+Removing shift (7).
+Iteration:   439    Scaled Infeas =             0.000003
+
+Primal - Optimal:  Objective =    5.1966622206e-01
+Solution time =    0.87 sec.    Iterations = 440 (99)
+
+
+Problem 'cplex4.lp141' read.
+Read time =    0.09 sec.
+LP Presolve eliminated 104 rows and 2 columns.
+Reduced LP has 1104 rows, 145 columns, and 3992 nonzeros.
+Presolve time =    0.06 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           169.992011
+Switched to Devex.
+Iteration:    70    Scaled Infeas =             3.235984
+Iteration:   116    Objective     =            -3.137927
+Iteration:   175    Objective     =            -1.028860
+Iteration:   235    Objective     =            -0.261207
+Iteration:   295    Objective     =             0.385717
+Iteration:   355    Objective     =             0.471258
+Iteration:   415    Objective     =             0.481077
+Removing shift (4).
+
+Primal - Optimal:  Objective =    4.8400685772e-01
+Solution time =    0.94 sec.    Iterations = 468 (115)
+
+
+Problem 'cplex4.lp142' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 85 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 904 rows, 112 columns, and 3231 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           171.936611
+Iteration:    64    Scaled Infeas =            10.168455
+Iteration:   126    Scaled Infeas =             0.567721
+Switched to Devex.
+Iteration:   151    Objective     =            -1.883852
+Iteration:   210    Objective     =            -0.323711
+Iteration:   270    Objective     =            -0.078201
+Removing shift (1).
+
+Primal - Optimal:  Objective =   -4.1621844329e-02
+Solution time =    0.63 sec.    Iterations = 303 (150)
+
+
+Problem 'cplex4.lp143' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 837 rows, 116 columns, and 2963 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           124.411304
+Iteration:    71    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:    72    Objective     =            -2.897300
+Iteration:   131    Objective     =            -0.377907
+Iteration:   191    Objective     =             0.049540
+Iteration:   251    Objective     =             0.521712
+Iteration:   266    Scaled Infeas =             0.000012
+Iteration:   273    Objective     =             0.521841
+Removing shift (7).
+Iteration:   277    Scaled Infeas =             0.000002
+
+Primal - Optimal:  Objective =    5.2184166110e-01
+Solution time =    0.46 sec.    Iterations = 278 (80)
+
+
+Problem 'cplex4.lp144' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 837 rows, 116 columns, and 2963 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           124.411304
+Iteration:    72    Scaled Infeas =             0.112584
+Switched to Devex.
+Iteration:    81    Objective     =            -2.780683
+Iteration:   140    Objective     =            -1.107999
+Iteration:   200    Objective     =             0.223199
+Iteration:   260    Objective     =             0.520276
+Iteration:   296    Scaled Infeas =             0.000012
+Iteration:   307    Objective     =             0.521842
+Removing shift (10).
+Iteration:   311    Scaled Infeas =             0.000000
+Iteration:   313    Objective     =             0.521841
+
+Primal - Optimal:  Objective =    5.2184149810e-01
+Solution time =    0.51 sec.    Iterations = 314 (93)
+
+
+Problem 'cplex4.lp145' read.
+Read time =    0.08 sec.
+LP Presolve eliminated 97 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 1031 rows, 126 columns, and 3679 nonzeros.
+Presolve time =    0.06 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           170.395880
+Switched to Devex.
+Iteration:    69    Scaled Infeas =             6.061256
+Iteration:   129    Scaled Infeas =             1.167901
+Iteration:   174    Objective     =            -1.843930
+Iteration:   233    Objective     =            -0.912240
+Iteration:   293    Objective     =            -0.303353
+Iteration:   353    Objective     =            -0.114611
+Iteration:   413    Objective     =            -0.029990
+Removing shift (2).
+
+Primal - Optimal:  Objective =   -1.2936395835e-02
+Solution time =    1.07 sec.    Iterations = 436 (173)
+
+
+Problem 'cplex4.lp146' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 85 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 904 rows, 112 columns, and 3231 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           171.993479
+Iteration:    67    Scaled Infeas =             4.683176
+Switched to Devex.
+Iteration:   127    Scaled Infeas =             0.083285
+Iteration:   131    Objective     =            -1.782182
+Iteration:   190    Objective     =            -0.684126
+Iteration:   250    Objective     =            -0.287205
+Iteration:   310    Objective     =            -0.124380
+Removing shift (1).
+Iteration:   359    Scaled Infeas =             0.000000
+Iteration:   360    Objective     =            -0.081298
+
+Primal - Optimal:  Objective =   -8.1297576442e-02
+Solution time =    0.70 sec.    Iterations = 361 (131)
+
+
+Problem 'cplex4.lp147' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 97 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 1031 rows, 126 columns, and 3679 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           185.648429
+Switched to Devex.
+Iteration:    71    Scaled Infeas =             3.805891
+Iteration:   111    Objective     =            -2.909420
+Iteration:   170    Objective     =            -1.074944
+Iteration:   230    Objective     =            -0.386756
+Iteration:   290    Objective     =            -0.060683
+Iteration:   350    Objective     =            -0.014990
+
+Primal - Optimal:  Objective =   -1.2474414807e-02
+Solution time =    0.84 sec.    Iterations = 365 (110)
+
+
+Problem 'cplex4.lp148' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 85 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 904 rows, 112 columns, and 3231 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           155.888470
+Iteration:    67    Scaled Infeas =             3.696966
+Switched to Devex.
+Iteration:   119    Objective     =            -1.988602
+Iteration:   178    Objective     =            -0.726077
+Iteration:   238    Objective     =            -0.147746
+Iteration:   298    Objective     =            -0.050830
+Iteration:   320    Scaled Infeas =             0.000000
+Iteration:   321    Objective     =            -0.038836
+
+Primal - Optimal:  Objective =   -3.8836289971e-02
+Solution time =    0.60 sec.    Iterations = 321 (119)
+
+
+Problem 'cplex4.lp149' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 837 rows, 116 columns, and 2963 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           123.187152
+Iteration:    72    Scaled Infeas =             0.166851
+Switched to Devex.
+Iteration:    77    Objective     =            -2.589477
+Iteration:   136    Objective     =            -0.447170
+Iteration:   196    Objective     =             0.173998
+Iteration:   256    Objective     =             0.461301
+Iteration:   297    Scaled Infeas =             0.000019
+Iteration:   305    Objective     =             0.521841
+Removing shift (2).
+Iteration:   313    Scaled Infeas =             0.000000
+
+Primal - Optimal:  Objective =    5.2184144377e-01
+Solution time =    0.48 sec.    Iterations = 313 (85)
+
+
+Problem 'cplex4.lp150' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 94 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 995 rows, 121 columns, and 3478 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           169.120508
+Iteration:    69    Scaled Infeas =             1.516882
+Switched to Devex.
+Iteration:    97    Objective     =            -4.702924
+Iteration:   156    Objective     =            -2.020040
+Iteration:   216    Objective     =            -0.950779
+Iteration:   276    Objective     =             0.077647
+Iteration:   336    Objective     =             0.464912
+Iteration:   396    Objective     =             0.486315
+Iteration:   438    Scaled Infeas =             0.000002
+Iteration:   440    Objective     =             0.498597
+Removing shift (1).
+
+Primal - Optimal:  Objective =    4.9859682167e-01
+Solution time =    0.94 sec.    Iterations = 441 (98)
+
+
+Problem 'cplex4.lp151' read.
+Read time =    0.08 sec.
+LP Presolve eliminated 97 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 1031 rows, 126 columns, and 3679 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           184.993097
+Switched to Devex.
+Iteration:    71    Scaled Infeas =             5.331808
+Iteration:   134    Scaled Infeas =             0.029063
+Iteration:   140    Objective     =            -3.041194
+Iteration:   199    Objective     =            -1.494204
+Iteration:   259    Objective     =            -0.833698
+Iteration:   319    Objective     =            -0.322557
+Iteration:   379    Objective     =            -0.115082
+Iteration:   439    Objective     =            -0.076835
+Removing shift (6).
+
+Primal - Optimal:  Objective =   -1.7821303075e-02
+Solution time =    1.17 sec.    Iterations = 476 (139)
+
+
+Problem 'cplex4.lp152' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 94 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 995 rows, 121 columns, and 3478 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           168.697531
+Iteration:    70    Scaled Infeas =             1.027290
+Switched to Devex.
+Iteration:    98    Objective     =            -5.462482
+Iteration:   157    Objective     =            -1.865787
+Iteration:   217    Objective     =            -0.529948
+Iteration:   277    Objective     =             0.192480
+Iteration:   337    Objective     =             0.440206
+Iteration:   397    Objective     =             0.496504
+Iteration:   432    Scaled Infeas =             0.000000
+Iteration:   433    Objective     =             0.500272
+Removing shift (12).
+Iteration:   434    Scaled Infeas =             0.000002
+Iteration:   436    Objective     =             0.500265
+
+Primal - Optimal:  Objective =    5.0026497930e-01
+Solution time =    0.97 sec.    Iterations = 437 (100)
+
+
+Problem 'cplex4.lp153' read.
+Read time =    0.10 sec.
+LP Presolve eliminated 97 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 1119 rows, 126 columns, and 5052 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           169.490811
+Switched to Devex.
+Iteration:    69    Scaled Infeas =             4.919403
+Iteration:   131    Scaled Infeas =             0.142618
+Iteration:   140    Objective     =            -2.889786
+Iteration:   199    Objective     =            -1.512896
+Iteration:   259    Objective     =             0.083718
+Iteration:   319    Objective     =             0.479727
+Iteration:   379    Objective     =             0.578544
+Iteration:   439    Objective     =             0.596161
+Removing shift (15).
+
+Primal - Optimal:  Objective =    5.9772713076e-01
+Solution time =    1.28 sec.    Iterations = 476 (139)
+
+
+Problem 'cplex4.lp154' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 92 rows and 2 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 969 rows, 130 columns, and 3460 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           146.879839
+Iteration:    70    Scaled Infeas =             1.933460
+Switched to Devex.
+Iteration:   105    Objective     =            -2.874635
+Iteration:   164    Objective     =            -1.071560
+Iteration:   224    Objective     =            -0.088407
+Iteration:   284    Objective     =             0.334313
+Iteration:   344    Objective     =             0.507296
+Iteration:   404    Objective     =             0.510874
+Removing shift (4).
+
+Primal - Optimal:  Objective =    5.1237665781e-01
+Solution time =    0.77 sec.    Iterations = 431 (104)
+
+
+Problem 'cplex4.lp155' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 97 rows and 2 columns.
+Reduced LP has 1030 rows, 127 columns, and 3657 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           170.165608
+Switched to Devex.
+Iteration:    68    Scaled Infeas =             5.921419
+Iteration:   131    Scaled Infeas =             0.002567
+Iteration:   134    Objective     =            -2.367465
+Iteration:   193    Objective     =            -1.037573
+Iteration:   253    Objective     =            -0.371612
+Iteration:   313    Objective     =            -0.143481
+Iteration:   373    Objective     =            -0.082404
+
+Primal - Optimal:  Objective =   -8.1765928410e-02
+Solution time =    0.84 sec.    Iterations = 393 (133)
+
+
+Problem 'cplex4.lp156' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 92 rows and 2 columns.
+Reduced LP has 968 rows, 131 columns, and 3438 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           146.078665
+Iteration:    73    Scaled Infeas =             0.642614
+Switched to Devex.
+Iteration:    90    Objective     =            -3.120062
+Iteration:   149    Objective     =            -0.822839
+Iteration:   209    Objective     =            -0.131172
+Iteration:   269    Objective     =             0.292971
+Iteration:   329    Objective     =             0.510463
+Removing shift (3).
+
+Primal - Optimal:  Objective =    5.1966962957e-01
+Solution time =    0.64 sec.    Iterations = 349 (89)
+
+
+Problem 'cplex4.lp157' read.
+Read time =    0.09 sec.
+LP Presolve eliminated 106 rows and 2 columns.
+Reduced LP has 1126 rows, 136 columns, and 3953 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           184.322028
+Switched to Devex.
+Iteration:    74    Scaled Infeas =             1.121251
+Iteration:   106    Objective     =            -4.767853
+Iteration:   165    Objective     =            -1.633636
+Iteration:   225    Objective     =            -0.277878
+Iteration:   285    Objective     =             0.131657
+Iteration:   345    Objective     =             0.390615
+Iteration:   405    Objective     =             0.402720
+Iteration:   465    Objective     =             0.409457
+Removing shift (5).
+
+Primal - Optimal:  Objective =    4.0957844565e-01
+Solution time =    1.14 sec.    Iterations = 475 (105)
+
+
+Problem 'cplex4.lp158' read.
+Read time =    0.08 sec.
+LP Presolve eliminated 92 rows and 2 columns.
+Reduced LP has 970 rows, 131 columns, and 3462 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           146.879839
+Iteration:    72    Scaled Infeas =             0.724386
+Switched to Devex.
+Iteration:    93    Objective     =            -3.142417
+Iteration:   152    Objective     =            -1.099173
+Iteration:   212    Objective     =             0.065669
+Iteration:   272    Objective     =             0.474985
+Iteration:   332    Objective     =             0.512274
+Removing shift (3).
+
+Primal - Optimal:  Objective =    5.1967074429e-01
+Solution time =    0.65 sec.    Iterations = 374 (92)
+
+
+Problem 'cplex4.lp159' read.
+Read time =    0.08 sec.
+LP Presolve eliminated 106 rows and 2 columns.
+Reduced LP has 1130 rows, 136 columns, and 4010 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           184.322024
+Switched to Devex.
+Iteration:    73    Scaled Infeas =             0.913437
+Iteration:    97    Objective     =            -4.421033
+Iteration:   156    Objective     =            -2.274995
+Iteration:   216    Objective     =            -0.519192
+Iteration:   276    Objective     =             0.021973
+Iteration:   336    Objective     =             0.280042
+Iteration:   396    Objective     =             0.382780
+Iteration:   456    Objective     =             0.402528
+Iteration:   516    Objective     =             0.409488
+Removing shift (11).
+
+Primal - Optimal:  Objective =    4.0971337540e-01
+Solution time =    1.20 sec.    Iterations = 529 (96)
+
+
+Problem 'cplex4.lp160' read.
+Read time =    0.10 sec.
+LP Presolve eliminated 109 rows and 2 columns.
+Reduced LP has 1221 rows, 141 columns, and 5067 nonzeros.
+Presolve time =    0.06 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           183.778491
+Switched to Devex.
+Iteration:   109    Scaled Infeas =             0.983698
+Iteration:   136    Objective     =            -2.795996
+Iteration:   235    Objective     =            -0.293242
+Iteration:   335    Objective     =             0.161934
+Iteration:   435    Objective     =             0.324571
+Iteration:   535    Objective     =             0.346303
+Removing shift (11).
+Iteration:   558    Scaled Infeas =             0.000013
+Iteration:   561    Objective     =             0.348208
+
+Primal - Optimal:  Objective =    3.4821136474e-01
+Solution time =    1.61 sec.    Iterations = 564 (138)
+
+
+Problem 'cplex4.lp161' read.
+Read time =    0.08 sec.
+LP Presolve eliminated 92 rows and 2 columns.
+Reduced LP has 970 rows, 131 columns, and 3462 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           146.879839
+Iteration:    71    Scaled Infeas =             0.719954
+Switched to Devex.
+Iteration:   100    Objective     =            -3.281112
+Iteration:   159    Objective     =            -0.986072
+Iteration:   219    Objective     =            -0.177076
+Iteration:   279    Objective     =             0.285748
+Iteration:   339    Objective     =             0.484686
+Iteration:   399    Objective     =             0.519670
+Removing shift (7).
+Iteration:   401    Scaled Infeas =             0.000019
+Iteration:   410    Objective     =             0.519666
+
+Primal - Optimal:  Objective =    5.1966616911e-01
+Solution time =    0.81 sec.    Iterations = 413 (108)
+
+
+Problem 'cplex4.lp162' read.
+Read time =    0.09 sec.
+LP Presolve eliminated 109 rows and 2 columns.
+Reduced LP has 1182 rows, 141 columns, and 4433 nonzeros.
+Presolve time =    0.06 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           199.546576
+Switched to Devex.
+Iteration:    70    Scaled Infeas =             7.096452
+Iteration:   131    Scaled Infeas =             0.414978
+Iteration:   154    Objective     =            -2.923139
+Iteration:   213    Objective     =            -1.629205
+Iteration:   273    Objective     =            -0.759319
+Iteration:   333    Objective     =            -0.252333
+Iteration:   393    Objective     =            -0.017505
+Iteration:   453    Objective     =             0.044858
+Iteration:   513    Objective     =             0.053741
+Removing shift (6).
+
+Primal - Optimal:  Objective =    5.3736089621e-02
+Solution time =    1.34 sec.    Iterations = 513 (153)
+
+
+Problem 'cplex4.lp163' read.
+Read time =    0.08 sec.
+LP Presolve eliminated 106 rows and 2 columns.
+Reduced LP has 1130 rows, 136 columns, and 4010 nonzeros.
+Presolve time =    0.06 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           185.161338
+Switched to Devex.
+Iteration:    72    Scaled Infeas =             1.993025
+Iteration:   102    Objective     =            -4.871562
+Iteration:   161    Objective     =            -1.710754
+Iteration:   221    Objective     =            -0.619805
+Iteration:   281    Objective     =            -0.133374
+Iteration:   341    Objective     =             0.277359
+Iteration:   401    Objective     =             0.380682
+Iteration:   461    Objective     =             0.406213
+Iteration:   508    Scaled Infeas =             0.000000
+Removing shift (3).
+Iteration:   509    Scaled Infeas =             0.000000
+
+Primal - Optimal:  Objective =    4.0815339139e-01
+Solution time =    1.30 sec.    Iterations = 509 (103)
+
+
+Problem 'cplex4.lp164' read.
+Read time =    0.09 sec.
+LP Presolve eliminated 109 rows and 2 columns.
+Reduced LP has 1201 rows, 141 columns, and 4749 nonzeros.
+Presolve time =    0.07 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           185.542081
+Switched to Devex.
+Iteration:   110    Scaled Infeas =             0.866435
+Iteration:   149    Objective     =            -3.130070
+Iteration:   248    Objective     =            -0.799931
+Iteration:   348    Objective     =             0.140956
+Iteration:   448    Objective     =             0.291981
+Removing shift (2).
+
+Primal - Optimal:  Objective =    2.9954254369e-01
+Solution time =    1.40 sec.    Iterations = 477 (148)
+
+
+Problem 'cplex4.lp165' read.
+Read time =    0.09 sec.
+LP Presolve eliminated 104 rows and 2 columns.
+Reduced LP has 1104 rows, 145 columns, and 3992 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           185.446875
+Switched to Devex.
+Iteration:    73    Scaled Infeas =             3.005130
+Iteration:   110    Objective     =            -3.122156
+Iteration:   169    Objective     =            -1.240261
+Iteration:   229    Objective     =            -0.137355
+Iteration:   289    Objective     =             0.228397
+Iteration:   349    Objective     =             0.489216
+Removing shift (3).
+
+Primal - Optimal:  Objective =    4.8921555688e-01
+Solution time =    0.76 sec.    Iterations = 358 (109)
+
+
+Problem 'cplex4.lp166' read.
+Read time =    0.09 sec.
+LP Presolve eliminated 116 rows and 2 columns.
+Reduced LP has 1234 rows, 159 columns, and 4465 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           192.662862
+Switched to Devex.
+Iteration:   113    Scaled Infeas =             0.745973
+Iteration:   133    Objective     =            -3.926462
+Iteration:   232    Objective     =            -1.050702
+Iteration:   332    Objective     =             0.057715
+Iteration:   432    Objective     =             0.395620
+Iteration:   532    Objective     =             0.458757
+Removing shift (7).
+Iteration:   548    Objective     =             0.458757
+
+Primal - Optimal:  Objective =    4.5875664753e-01
+Solution time =    1.56 sec.    Iterations = 610 (132)
+
+
+Problem 'cplex4.lp167' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 85 rows and 2 columns.
+Reduced LP has 905 rows, 113 columns, and 3233 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           155.685247
+Iteration:    65    Scaled Infeas =             3.776882
+Switched to Devex.
+Iteration:   122    Objective     =            -2.283593
+Iteration:   181    Objective     =            -0.773573
+Iteration:   241    Objective     =            -0.398351
+Iteration:   301    Objective     =            -0.084890
+Removing shift (2).
+
+Primal - Optimal:  Objective =   -6.5855012838e-02
+Solution time =    0.64 sec.    Iterations = 325 (121)
+
+
+Problem 'cplex4.lp168' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Reduced LP has 846 rows, 116 columns, and 3039 nonzeros.
+Presolve time =    0.05 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           129.330308
+Iteration:    69    Scaled Infeas =             1.547566
+Switched to Devex.
+Iteration:    99    Objective     =            -2.340159
+Iteration:   158    Objective     =            -0.608369
+Iteration:   218    Objective     =             0.333416
+Removing shift (1).
+
+Primal - Optimal:  Objective =    4.6868274393e-01
+Solution time =    0.41 sec.    Iterations = 245 (98)
+
+
+Problem 'cplex4.lp169' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Reduced LP has 841 rows, 117 columns, and 2990 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           127.482883
+Iteration:    71    Scaled Infeas =             0.618051
+Switched to Devex.
+Iteration:    90    Objective     =            -2.699189
+Iteration:   149    Objective     =            -0.697694
+Iteration:   209    Objective     =             0.239941
+Iteration:   269    Objective     =             0.490821
+Iteration:   289    Scaled Infeas =             0.000005
+Iteration:   293    Objective     =             0.495262
+
+Primal - Optimal:  Objective =    4.9526209385e-01
+Solution time =    0.49 sec.    Iterations = 295 (93)
+
+
+Problem 'cplex4.lp170' read.
+Read time =    0.07 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Reduced LP has 841 rows, 117 columns, and 2990 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           127.482883
+Iteration:    73    Scaled Infeas =             0.085412
+Switched to Devex.
+Iteration:    79    Objective     =            -2.786535
+Iteration:   138    Objective     =            -0.500467
+Iteration:   198    Objective     =             0.434638
+Iteration:   257    Scaled Infeas =             0.000004
+Iteration:   260    Objective     =             0.495262
+Removing shift (2).
+Iteration:   262    Scaled Infeas =             0.000004
+
+Primal - Optimal:  Objective =    4.9526214818e-01
+Solution time =    0.46 sec.    Iterations = 264 (84)
+
+
+Problem 'cplex4.lp171' read.
+Read time =    0.06 sec.
+LP Presolve eliminated 80 rows and 2 columns.
+Reduced LP has 843 rows, 117 columns, and 3014 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           127.059904
+Iteration:    69    Scaled Infeas =             0.558557
+Switched to Devex.
+Iteration:    84    Objective     =            -2.196821
+Iteration:   143    Objective     =            -0.291637
+Iteration:   203    Objective     =             0.278567
+Iteration:   263    Objective     =             0.487479
+Iteration:   288    Scaled Infeas =             0.000008
+Iteration:   293    Objective     =             0.495262
+Removing shift (4).
+Iteration:   297    Scaled Infeas =             0.000001
+
+Primal - Optimal:  Objective =    4.9526209385e-01
+Solution time =    0.52 sec.    Iterations = 298 (90)
+

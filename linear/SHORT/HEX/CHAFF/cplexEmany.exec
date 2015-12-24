@@ -1,0 +1,441 @@
+set preprocessing presolve no
+read cplexE.lp158.F15.C64.F14.C1 lp
+opt
+read cplexE.lp158.F15.C64.F14.C2 lp
+opt
+read cplexE.lp158.F15.C64.F14.C3 lp
+opt
+read cplexE.lp158.F15.C64.F14.C4 lp
+opt
+read cplexE.lp158.F15.C64.F14.C5 lp
+opt
+read cplexE.lp158.F15.C64.F14.C6 lp
+opt
+read cplexE.lp158.F15.C64.F14.C7 lp
+opt
+read cplexE.lp158.F15.C64.F14.C8 lp
+opt
+read cplexE.lp158.F15.C64.F14.C9 lp
+opt
+read cplexE.lp158.F15.C64.F14.C10 lp
+opt
+read cplexE.lp158.F15.C64.F14.C11 lp
+opt
+read cplexE.lp158.F15.C64.F14.C12 lp
+opt
+read cplexE.lp158.F15.C64.F14.C13 lp
+opt
+read cplexE.lp158.F15.C64.F14.C14 lp
+opt
+read cplexE.lp158.F15.C64.F14.C15 lp
+opt
+read cplexE.lp158.F15.C64.F14.C16 lp
+opt
+read cplexE.lp158.F15.C64.F14.C17 lp
+opt
+read cplexE.lp158.F15.C64.F14.C18 lp
+opt
+read cplexE.lp158.F15.C64.F14.C19 lp
+opt
+read cplexE.lp158.F15.C64.F14.C20 lp
+opt
+read cplexE.lp158.F15.C64.F14.C21 lp
+opt
+read cplexE.lp158.F15.C64.F14.C22 lp
+opt
+read cplexE.lp158.F15.C66.F14.C1 lp
+opt
+read cplexE.lp158.F15.C66.F14.C2 lp
+opt
+read cplexE.lp158.F15.C66.F14.C3 lp
+opt
+read cplexE.lp158.F15.C66.F14.C4 lp
+opt
+read cplexE.lp158.F15.C66.F14.C5 lp
+opt
+read cplexE.lp158.F15.C66.F14.C6 lp
+opt
+read cplexE.lp158.F15.C66.F14.C7 lp
+opt
+read cplexE.lp158.F15.C66.F14.C8 lp
+opt
+read cplexE.lp158.F15.C66.F14.C9 lp
+opt
+read cplexE.lp158.F15.C66.F14.C10 lp
+opt
+read cplexE.lp158.F15.C66.F14.C11 lp
+opt
+read cplexE.lp158.F15.C66.F14.C12 lp
+opt
+read cplexE.lp158.F15.C66.F14.C13 lp
+opt
+read cplexE.lp158.F15.C66.F14.C14 lp
+opt
+read cplexE.lp158.F15.C66.F14.C15 lp
+opt
+read cplexE.lp158.F15.C66.F14.C16 lp
+opt
+read cplexE.lp158.F15.C66.F14.C17 lp
+opt
+read cplexE.lp158.F15.C66.F14.C18 lp
+opt
+read cplexE.lp158.F15.C66.F14.C19 lp
+opt
+read cplexE.lp158.F15.C66.F14.C20 lp
+opt
+read cplexE.lp158.F15.C66.F14.C21 lp
+opt
+read cplexE.lp158.F15.C66.F14.C22 lp
+opt
+read cplexE.lp158.F15.C68.F14.C1 lp
+opt
+read cplexE.lp158.F15.C68.F14.C2 lp
+opt
+read cplexE.lp158.F15.C68.F14.C3 lp
+opt
+read cplexE.lp158.F15.C68.F14.C4 lp
+opt
+read cplexE.lp158.F15.C68.F14.C5 lp
+opt
+read cplexE.lp158.F15.C68.F14.C6 lp
+opt
+read cplexE.lp158.F15.C68.F14.C7 lp
+opt
+read cplexE.lp158.F15.C68.F14.C8 lp
+opt
+read cplexE.lp158.F15.C68.F14.C9 lp
+opt
+read cplexE.lp158.F15.C68.F14.C10 lp
+opt
+read cplexE.lp158.F15.C68.F14.C11 lp
+opt
+read cplexE.lp158.F15.C68.F14.C12 lp
+opt
+read cplexE.lp158.F15.C68.F14.C13 lp
+opt
+read cplexE.lp158.F15.C68.F14.C14 lp
+opt
+read cplexE.lp158.F15.C68.F14.C15 lp
+opt
+read cplexE.lp158.F15.C68.F14.C16 lp
+opt
+read cplexE.lp158.F15.C68.F14.C17 lp
+opt
+read cplexE.lp158.F15.C68.F14.C18 lp
+opt
+read cplexE.lp158.F15.C68.F14.C19 lp
+opt
+read cplexE.lp158.F15.C68.F14.C20 lp
+opt
+read cplexE.lp158.F15.C68.F14.C21 lp
+opt
+read cplexE.lp158.F15.C68.F14.C22 lp
+opt
+read cplexE.lp158.F15.C72.F14.C1 lp
+opt
+read cplexE.lp158.F15.C72.F14.C2 lp
+opt
+read cplexE.lp158.F15.C72.F14.C3 lp
+opt
+read cplexE.lp158.F15.C72.F14.C4 lp
+opt
+read cplexE.lp158.F15.C72.F14.C5 lp
+opt
+read cplexE.lp158.F15.C72.F14.C6 lp
+opt
+read cplexE.lp158.F15.C72.F14.C7 lp
+opt
+read cplexE.lp158.F15.C72.F14.C8 lp
+opt
+read cplexE.lp158.F15.C72.F14.C9 lp
+opt
+read cplexE.lp158.F15.C72.F14.C10 lp
+opt
+read cplexE.lp158.F15.C72.F14.C11 lp
+opt
+read cplexE.lp158.F15.C72.F14.C12 lp
+opt
+read cplexE.lp158.F15.C72.F14.C13 lp
+opt
+read cplexE.lp158.F15.C72.F14.C14 lp
+opt
+read cplexE.lp158.F15.C72.F14.C15 lp
+opt
+read cplexE.lp158.F15.C72.F14.C16 lp
+opt
+read cplexE.lp158.F15.C72.F14.C17 lp
+opt
+read cplexE.lp158.F15.C72.F14.C18 lp
+opt
+read cplexE.lp158.F15.C72.F14.C19 lp
+opt
+read cplexE.lp158.F15.C72.F14.C20 lp
+opt
+read cplexE.lp158.F15.C72.F14.C21 lp
+opt
+read cplexE.lp158.F15.C72.F14.C22 lp
+opt
+read cplexE.lp158.F15.C73.F14.C1 lp
+opt
+read cplexE.lp158.F15.C73.F14.C2 lp
+opt
+read cplexE.lp158.F15.C73.F14.C3 lp
+opt
+read cplexE.lp158.F15.C73.F14.C4 lp
+opt
+read cplexE.lp158.F15.C73.F14.C5 lp
+opt
+read cplexE.lp158.F15.C73.F14.C6 lp
+opt
+read cplexE.lp158.F15.C73.F14.C7 lp
+opt
+read cplexE.lp158.F15.C73.F14.C8 lp
+opt
+read cplexE.lp158.F15.C73.F14.C9 lp
+opt
+read cplexE.lp158.F15.C73.F14.C10 lp
+opt
+read cplexE.lp158.F15.C73.F14.C11 lp
+opt
+read cplexE.lp158.F15.C73.F14.C12 lp
+opt
+read cplexE.lp158.F15.C73.F14.C13 lp
+opt
+read cplexE.lp158.F15.C73.F14.C14 lp
+opt
+read cplexE.lp158.F15.C73.F14.C15 lp
+opt
+read cplexE.lp158.F15.C73.F14.C16 lp
+opt
+read cplexE.lp158.F15.C73.F14.C17 lp
+opt
+read cplexE.lp158.F15.C73.F14.C18 lp
+opt
+read cplexE.lp158.F15.C73.F14.C19 lp
+opt
+read cplexE.lp158.F15.C73.F14.C20 lp
+opt
+read cplexE.lp158.F15.C73.F14.C21 lp
+opt
+read cplexE.lp158.F15.C73.F14.C22 lp
+opt
+read cplexE.lp158.F15.C85.F14.C1 lp
+opt
+read cplexE.lp158.F15.C85.F14.C2 lp
+opt
+read cplexE.lp158.F15.C85.F14.C3 lp
+opt
+read cplexE.lp158.F15.C85.F14.C4 lp
+opt
+read cplexE.lp158.F15.C85.F14.C5 lp
+opt
+read cplexE.lp158.F15.C85.F14.C6 lp
+opt
+read cplexE.lp158.F15.C85.F14.C7 lp
+opt
+read cplexE.lp158.F15.C85.F14.C8 lp
+opt
+read cplexE.lp158.F15.C85.F14.C9 lp
+opt
+read cplexE.lp158.F15.C85.F14.C10 lp
+opt
+read cplexE.lp158.F15.C85.F14.C11 lp
+opt
+read cplexE.lp158.F15.C85.F14.C12 lp
+opt
+read cplexE.lp158.F15.C85.F14.C13 lp
+opt
+read cplexE.lp158.F15.C85.F14.C14 lp
+opt
+read cplexE.lp158.F15.C85.F14.C15 lp
+opt
+read cplexE.lp158.F15.C85.F14.C16 lp
+opt
+read cplexE.lp158.F15.C85.F14.C17 lp
+opt
+read cplexE.lp158.F15.C85.F14.C18 lp
+opt
+read cplexE.lp158.F15.C85.F14.C19 lp
+opt
+read cplexE.lp158.F15.C85.F14.C20 lp
+opt
+read cplexE.lp158.F15.C85.F14.C21 lp
+opt
+read cplexE.lp158.F15.C85.F14.C22 lp
+opt
+read cplexE.lp158.F15.C89.F14.C1 lp
+opt
+read cplexE.lp158.F15.C89.F14.C2 lp
+opt
+read cplexE.lp158.F15.C89.F14.C3 lp
+opt
+read cplexE.lp158.F15.C89.F14.C4 lp
+opt
+read cplexE.lp158.F15.C89.F14.C5 lp
+opt
+read cplexE.lp158.F15.C89.F14.C6 lp
+opt
+read cplexE.lp158.F15.C89.F14.C7 lp
+opt
+read cplexE.lp158.F15.C89.F14.C8 lp
+opt
+read cplexE.lp158.F15.C89.F14.C9 lp
+opt
+read cplexE.lp158.F15.C89.F14.C10 lp
+opt
+read cplexE.lp158.F15.C89.F14.C11 lp
+opt
+read cplexE.lp158.F15.C89.F14.C12 lp
+opt
+read cplexE.lp158.F15.C89.F14.C13 lp
+opt
+read cplexE.lp158.F15.C89.F14.C14 lp
+opt
+read cplexE.lp158.F15.C89.F14.C15 lp
+opt
+read cplexE.lp158.F15.C89.F14.C16 lp
+opt
+read cplexE.lp158.F15.C89.F14.C17 lp
+opt
+read cplexE.lp158.F15.C89.F14.C18 lp
+opt
+read cplexE.lp158.F15.C89.F14.C19 lp
+opt
+read cplexE.lp158.F15.C89.F14.C20 lp
+opt
+read cplexE.lp158.F15.C89.F14.C21 lp
+opt
+read cplexE.lp158.F15.C89.F14.C22 lp
+opt
+read cplexE.lp158.F15.C94.F14.C1 lp
+opt
+read cplexE.lp158.F15.C94.F14.C2 lp
+opt
+read cplexE.lp158.F15.C94.F14.C3 lp
+opt
+read cplexE.lp158.F15.C94.F14.C4 lp
+opt
+read cplexE.lp158.F15.C94.F14.C5 lp
+opt
+read cplexE.lp158.F15.C94.F14.C6 lp
+opt
+read cplexE.lp158.F15.C94.F14.C7 lp
+opt
+read cplexE.lp158.F15.C94.F14.C8 lp
+opt
+read cplexE.lp158.F15.C94.F14.C9 lp
+opt
+read cplexE.lp158.F15.C94.F14.C10 lp
+opt
+read cplexE.lp158.F15.C94.F14.C11 lp
+opt
+read cplexE.lp158.F15.C94.F14.C12 lp
+opt
+read cplexE.lp158.F15.C94.F14.C13 lp
+opt
+read cplexE.lp158.F15.C94.F14.C14 lp
+opt
+read cplexE.lp158.F15.C94.F14.C15 lp
+opt
+read cplexE.lp158.F15.C94.F14.C16 lp
+opt
+read cplexE.lp158.F15.C94.F14.C17 lp
+opt
+read cplexE.lp158.F15.C94.F14.C18 lp
+opt
+read cplexE.lp158.F15.C94.F14.C19 lp
+opt
+read cplexE.lp158.F15.C94.F14.C20 lp
+opt
+read cplexE.lp158.F15.C94.F14.C21 lp
+opt
+read cplexE.lp158.F15.C94.F14.C22 lp
+opt
+read cplexE.lp167.F15.C68.F14.C1 lp
+opt
+read cplexE.lp167.F15.C68.F14.C2 lp
+opt
+read cplexE.lp167.F15.C68.F14.C3 lp
+opt
+read cplexE.lp167.F15.C68.F14.C4 lp
+opt
+read cplexE.lp167.F15.C68.F14.C5 lp
+opt
+read cplexE.lp167.F15.C68.F14.C6 lp
+opt
+read cplexE.lp167.F15.C68.F14.C7 lp
+opt
+read cplexE.lp167.F15.C68.F14.C8 lp
+opt
+read cplexE.lp167.F15.C68.F14.C9 lp
+opt
+read cplexE.lp167.F15.C68.F14.C10 lp
+opt
+read cplexE.lp167.F15.C68.F14.C11 lp
+opt
+read cplexE.lp167.F15.C68.F14.C12 lp
+opt
+read cplexE.lp167.F15.C68.F14.C13 lp
+opt
+read cplexE.lp167.F15.C68.F14.C14 lp
+opt
+read cplexE.lp167.F15.C68.F14.C15 lp
+opt
+read cplexE.lp167.F15.C68.F14.C16 lp
+opt
+read cplexE.lp167.F15.C68.F14.C17 lp
+opt
+read cplexE.lp167.F15.C68.F14.C18 lp
+opt
+read cplexE.lp167.F15.C68.F14.C19 lp
+opt
+read cplexE.lp167.F15.C68.F14.C20 lp
+opt
+read cplexE.lp167.F15.C68.F14.C21 lp
+opt
+read cplexE.lp167.F15.C68.F14.C22 lp
+opt
+read cplexE.lp167.F15.C85.F14.C1 lp
+opt
+read cplexE.lp167.F15.C85.F14.C2 lp
+opt
+read cplexE.lp167.F15.C85.F14.C3 lp
+opt
+read cplexE.lp167.F15.C85.F14.C4 lp
+opt
+read cplexE.lp167.F15.C85.F14.C5 lp
+opt
+read cplexE.lp167.F15.C85.F14.C6 lp
+opt
+read cplexE.lp167.F15.C85.F14.C7 lp
+opt
+read cplexE.lp167.F15.C85.F14.C8 lp
+opt
+read cplexE.lp167.F15.C85.F14.C9 lp
+opt
+read cplexE.lp167.F15.C85.F14.C10 lp
+opt
+read cplexE.lp167.F15.C85.F14.C11 lp
+opt
+read cplexE.lp167.F15.C85.F14.C12 lp
+opt
+read cplexE.lp167.F15.C85.F14.C13 lp
+opt
+read cplexE.lp167.F15.C85.F14.C14 lp
+opt
+read cplexE.lp167.F15.C85.F14.C15 lp
+opt
+read cplexE.lp167.F15.C85.F14.C16 lp
+opt
+read cplexE.lp167.F15.C85.F14.C17 lp
+opt
+read cplexE.lp167.F15.C85.F14.C18 lp
+opt
+read cplexE.lp167.F15.C85.F14.C19 lp
+opt
+read cplexE.lp167.F15.C85.F14.C20 lp
+opt
+read cplexE.lp167.F15.C85.F14.C21 lp
+opt
+read cplexE.lp167.F15.C85.F14.C22 lp
+opt

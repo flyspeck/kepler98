@@ -1,0 +1,21 @@
+Welcome to sphere packing routines, relation testing division.
+Welcome to OctaPeel.  Subdivisions:	2
+
+Enter slop:  		Slop = 0
+Starting time:  	Thu Jul 17 13:47:35 1997
+
+Starting case 1:
+cellcount    =          9191361		maxdepth = 7
+sccutcount   =                0
+gmacount     =          1002666		vorcount     =          6341572
+dualcount    =          1847123		verifycount  =          9047746
+partialcount =                0		diff         =           143615
+Verification succeeded.
+
+Done.
+Ending time:    	Thu Jul 17 18:34:57 1997
+
+Elapsed time: 17242 seconds
+diff = -16.9224		533.08 cells per second
+
+

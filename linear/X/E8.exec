@@ -1,0 +1,178 @@
+set preprocessing presolve no
+set logfile E8.log
+read E8.lp1.1 lp
+opt
+read E8.lp1.2 lp
+opt
+read E8.lp1.3 lp
+opt
+read E8.lp1.4 lp
+opt
+read E8.lp1.5 lp
+opt
+read E8.lp1.6 lp
+opt
+read E8.lp1.7 lp
+opt
+read E8.lp1.8 lp
+opt
+read E8.lp2.1 lp
+opt
+read E8.lp2.2 lp
+opt
+read E8.lp2.3 lp
+opt
+read E8.lp2.4 lp
+opt
+read E8.lp2.5 lp
+opt
+read E8.lp2.6 lp
+opt
+read E8.lp2.7 lp
+opt
+read E8.lp2.8 lp
+opt
+read E8.lp4.1 lp
+opt
+read E8.lp4.2 lp
+opt
+read E8.lp4.3 lp
+opt
+read E8.lp4.4 lp
+opt
+read E8.lp4.5 lp
+opt
+read E8.lp4.6 lp
+opt
+read E8.lp4.7 lp
+opt
+read E8.lp4.8 lp
+opt
+read E8.lp5.1 lp
+opt
+read E8.lp5.2 lp
+opt
+read E8.lp5.3 lp
+opt
+read E8.lp5.4 lp
+opt
+read E8.lp5.5 lp
+opt
+read E8.lp5.6 lp
+opt
+read E8.lp5.7 lp
+opt
+read E8.lp5.8 lp
+opt
+read E8.lp6.1 lp
+opt
+read E8.lp6.2 lp
+opt
+read E8.lp6.3 lp
+opt
+read E8.lp6.4 lp
+opt
+read E8.lp6.5 lp
+opt
+read E8.lp6.6 lp
+opt
+read E8.lp6.7 lp
+opt
+read E8.lp6.8 lp
+opt
+read E8.lp7.1 lp
+opt
+read E8.lp7.2 lp
+opt
+read E8.lp7.3 lp
+opt
+read E8.lp7.4 lp
+opt
+read E8.lp7.5 lp
+opt
+read E8.lp7.6 lp
+opt
+read E8.lp7.7 lp
+opt
+read E8.lp7.8 lp
+opt
+read E8.lp8.1 lp
+opt
+read E8.lp8.2 lp
+opt
+read E8.lp8.3 lp
+opt
+read E8.lp8.4 lp
+opt
+read E8.lp8.5 lp
+opt
+read E8.lp8.6 lp
+opt
+read E8.lp8.7 lp
+opt
+read E8.lp8.8 lp
+opt
+read E8.lp12.1 lp
+opt
+read E8.lp12.2 lp
+opt
+read E8.lp12.3 lp
+opt
+read E8.lp12.4 lp
+opt
+read E8.lp12.5 lp
+opt
+read E8.lp12.6 lp
+opt
+read E8.lp12.7 lp
+opt
+read E8.lp12.8 lp
+opt
+read E8.lp14.1 lp
+opt
+read E8.lp14.2 lp
+opt
+read E8.lp14.3 lp
+opt
+read E8.lp14.4 lp
+opt
+read E8.lp14.5 lp
+opt
+read E8.lp14.6 lp
+opt
+read E8.lp14.7 lp
+opt
+read E8.lp14.8 lp
+opt
+read E8.lp15.1 lp
+opt
+read E8.lp15.2 lp
+opt
+read E8.lp15.3 lp
+opt
+read E8.lp15.4 lp
+opt
+read E8.lp15.5 lp
+opt
+read E8.lp15.6 lp
+opt
+read E8.lp15.7 lp
+opt
+read E8.lp15.8 lp
+opt
+read E8.lp16.1 lp
+opt
+read E8.lp16.2 lp
+opt
+read E8.lp16.3 lp
+opt
+read E8.lp16.4 lp
+opt
+read E8.lp16.5 lp
+opt
+read E8.lp16.6 lp
+opt
+read E8.lp16.7 lp
+opt
+read E8.lp16.8 lp
+opt

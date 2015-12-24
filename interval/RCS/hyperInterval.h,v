@@ -1,0 +1,279 @@
+head	1.1;
+access;
+symbols;
+locks
+	hales:1.1; strict;
+comment	@ * @;
+
+
+1.1
+date	97.09.13.18.11.21;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@interval package, hyperIntervals
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@//  copyright (c) 1997, Thomas C. Hales, all rights reserved.
+
+#ifndef HYPERINTERVAL_H
+#define HYPERINTERVAL_H
+
+#include "interval.h"
+
+/*
+CLASS
+	hyperInterval
+
+	A hyperInterval is an interval version of a linear approximation to a 
+	function.  Many of the functions in the Kepler library return
+	hyperIntervals.
+
+OVERVIEW TEXT
+	A hyperInterval should be thought of as an interval version of a 
+	linear function.
+	Functions in the Kepler library typically return hyperIntervals.
+	This return value is a linearization of the function at the point
+	at which it is evaluated.
+	Upper and lower bounds on the function value are
+	obtained through the member functions hi() and low().  Interval
+	bounds on the partial derivatives of the hyperInterval are obtained
+	through the function partial(int).
+
+
+AUTHOR
+	Thomas C. Hales
+*/
+
+class hyperInterval 
+{ 
+public: 
+		interval f,Df[6];
+public:
+		//////////
+		// The upper bound on a hyperInterval
+		//
+	inline double hi();
+		
+		//////////
+		// The lower bound on a hyperInterval
+		//
+	inline double low();
+
+		//////////
+		// Interval bounds on the ith partial derivative of the hyperInterval
+		//
+	interval partial(int i);
+
+		//////////
+		// An interval can be promoted to a constant linear function (all
+		// partial derivatives are zero)
+		//
+	hyperInterval(interval);
+
+		//////////
+		// Do nothing to initialize.  Function values will be undefined.
+		//
+	hyperInterval();
+};
+
+/*
+CLASS
+	face
+
+	A triple of doubles representing the 
+	squares of the edge lengths of a triangular face
+	of a simplex
+
+*/
+
+
+class face 
+{
+private: 
+	double x[3];
+public:
+	inline double getValue(int i);
+	face(double,double,double);
+};
+
+/*
+CLASS
+	domain
+
+	Six doubles representing the squares of the edge lengths
+	of a simplex.
+
+*/
+class domain 
+{
+private: 
+	double x[6];
+public:
+	inline double getValue(int i);
+	domain(double,double,double,double,double,double);
+};
+
+/*
+CLASS 
+	hyperFunction
+
+	A class of static functions defined on a simplex in three
+	dimensions that return a hyperInterval
+
+OVERVIEW TEXT
+The class hyperFunction contains a number of static functions that return
+a hyperInterval.  The functions are defined on a simplex in
+three dimensions or on its faces.
+Most of these functions are described in
+the paper Sphere Packings I.  References to this paper will appear
+as SP I.X in the documentation that follows.
+
+There is one potential source of serious errors with these
+routines.  The domain is given as a function of the <EMP>squares</EMP> of
+the edges of the simplex.  The reason for this is that most of
+the functions that arise are more naturally expressed in terms
+of the squares of the edge lengths. (In Sphere Packings, I, the
+unsquared coordinates are y1,...,y6, and the squared coordinates
+are x1,...,x6.  These functions are always in terms of the 
+	variables x1,...,x6.)
+
+	The partial derivative information in the returned hyperInterval is
+	always with respect to the squared coordinates.
+
+AUTHOR
+	Thomas C. Hales
+
+*/
+
+class hyperFunction 
+{
+public:
+
+	//////////
+	// The volume of a simplex is sqrt(delta)/12.  This may be used as
+	// a definition of the polynomial delta.  Reference SP I.8.1.
+	//
+static hyperInterval delta(const domain&);
+
+	//////////
+	// The dihedral angle of a simplex along the first edge.  
+	// Explicit formulas for this function appear in SP I.8.3.1.
+	// The edge numbering conventions are given in SP I.1.
+	//
+static hyperInterval dih(const domain&);
+
+	//////////
+	// The dihedral angle of a simplex along the second edge.  
+	// Explicit formulas for this function appear in SP I.8.3.1.
+	// The edge numbering conventions are given in SP I.1.
+	//
+static hyperInterval dih2(const domain&);
+
+	//////////
+	// The dihedral angle of a simplex along the third edge.  
+	// Explicit formulas for this function appear in SP I.8.3.1.
+	// The edge numbering conventions are given in SP I.1.
+	//
+static hyperInterval dih3(const domain&);
+
+	//////////
+	// The solid angle of a simplex at its distinguished vertex.
+	// Explicit formulas for this function appear in SP I.8.4.
+	//
+static hyperInterval solid(const domain&);
+
+	//////////
+	// The compression of a simplex.
+	// Explicit formulas for this function appear in SP I.8.5.
+	//
+static hyperInterval gamma(const domain&);
+
+	//////////
+	// The circumradius squared of a triangle.
+	// Explicit formulas for this function appear in SP I.8.2.
+	// The variables are the lengths squared of the edges of the triangle.
+	//
+static hyperInterval eta2(const face&);
+
+	//////////
+	// The circumradius squared of a simplex.
+	// Explicit formulas for this function appear in SP I.8.2.
+	//
+static hyperInterval rad2(const domain&); 
+
+	//////////
+	// The analytic voronoi function.
+	// Explicit formulas for this function appear in SP I.8.6.3.
+	// The original domain of the function is the set of all simplices
+	// with edges of length in the interval [2,sqrt(8)], such that
+	// the simplex contains its own circumcenter.  This function is
+	// analytically continued using the formula of SP I.8.6.3.
+	//
+static hyperInterval vor_analytic(const domain&);
+
+	//////////
+	// The function chi determinining the orientation of simplices,
+	// where orientation is used in the sense of SP I.8.2.3.
+	// Explicit formulas for this function appear in SP I.8.2.
+	//
+static hyperInterval chi324(const domain&);
+
+	//////////
+	// The function vor(S,1.255) of [Formulation].
+	// This is the truncation of the Voronoi function at 1.255.
+	// Explicit formulas for this function appear in [Formulation].
+	//
+static hyperInterval VorVc(const domain&);
+static hyperInterval VorSqc(const domain&);
+static hyperInterval swap_VorVc(const domain&);
+static hyperInterval swap_Vor(const domain&);
+static hyperInterval uprightVorVc(const domain&);
+static hyperInterval swap_uprightVorVc(const domain&);
+
+hyper();
+};
+
+
+
+class edgeBound 
+{
+public:
+	/*
+   x1=min diag, x2,x3,x5=max, return lower bound on x6;
+   This is the "cross-diagonal" constraint from delta on a quad cluster.
+   x1=diag,x2,x3 meet x1 at a vertex, x2,x5 opposite, x3,x6 opposite. 
+	*/
+static double x6inf(double x1,double x2,double x3,double x5);
+
+	// similar to the last one: computes x1max if possible
+static int x1sup(double x0min,double x0pmin,double x1,double x2,double x3min,
+        double& x3,double x4,double x4p,double x5,double x5p);
+
+	// given upper bound theta on dih, find corresponding upper bd on x4.
+static int x4_upper_from_dih_upper(const double x[6],const double z[6],
+		double theta, double& new_x4_upper);
+
+	edgeBound();
+};
+
+
+class misc {
+public:
+
+static double chi234min(const domain&, const domain&); // for acute guys only
+
+	};
+
+
+
+#endif
+@

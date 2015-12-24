@@ -1,0 +1,3 @@
+0}~Drop~-1;
+Print[{values//Length,values//Sort//Last}];
+

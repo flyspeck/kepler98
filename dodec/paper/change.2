@@ -1,0 +1,349 @@
+312,313c312,313
+< that $(x_3,x_4)$ intersects $(x_1,x_2)$.  Then we have the quadrilateral 
+< figure shown in Diagram 2.2.1.  We rotate $x_2$ in a circle about $x_4$ of radius
+---
+> that $(x_3,x_4)$ intersects $(x_1,x_2)$.  
+> In this case, we rotate $x_2$ in a circle about $x_4$ of radius
+583,589c583,592
+< Let $\omega=\omega(S)$ denote the volume of the intersection of the 
+< Voronoi contained in the cone over $S$, and the ball of radius $T$.  $\omega$ is defined more generally on the cone over any standard region.
+< 
+< (Note: It has been important to distinguish when to use $\vol(S)$ and $\omega(S)$.  
+< When working with tetrahedra, we use $\omega(S)$ when $\eta(F) > \sqrt 2$ for some 
+< face $F$ of $S$.  We use $\vol(S)$ otherwise.  For regions with at least four edges
+< we consistently use $\omega$ as the volume function.)  
+---
+> If all the faces of $S$ has circumradii less than $\sqrt2$,
+> let $\omega=\omega(S)$ be the volume $\vol(S)$.
+> Otherwise, let $\omega(S)$ denote the volume of the intersection of the 
+> Voronoi contained in the cone over $S$, and the ball of radius $T$.  $\omega$ is defined more generally on the cone over any standard region as a
+> volume truncated at radius $T$.
+> 
+> %(Note: It has been important to distinguish when to use $\vol(S)$ and $\omega(S)$.  
+> %When working with tetrahedra, we use $\omega(S)$ when $\eta(F) > \sqrt 2$ for some 
+> %face $F$ of $S$.  We use $\vol(S)$ otherwise.  For regions with at least four edges
+> %we consistently use $\omega$ as the volume function.)  
+593c596
+< We define $\mu=\mu(S)$ and $\mu'=\mu'(S)$ to be the linear combination of volume 
+---
+> We define $\mu=\mu(S)$ to be the linear combination of volume 
+594a598,599
+> $$\mu(S)=\omega(S)-M \sol(S)$$
+> %$$\mu'(S)=\omega(S)-M \sol(S)$$
+596,604c601,606
+< $$\mu(S)=\vol(S)-M \sol(S)$$
+< $$\mu'(S)=\omega(S)-M \sol(S)$$
+< 
+< Like the distinction between $\vol$ and $\omega$, we use $\mu$ when all the faces 
+< of $S$ have circumradius less than $\sqrt 2$ and $\mu'$ otherwise.  
+< It may occur that when speaking of a simplex we use the terms $\vol$ or $\mu$ without 
+< the conditional phrase, ``unless the circumradius is greater than $\sqrt 2$.''
+< We universally mean that we use $\vol$ when the faces have circumradius less than 
+< $\sqrt 2$ and $\omega$ otherwise.  Likewise for $\mu$ and $\mu'$.
+---
+> %Like the distinction between $\vol$ and $\omega$, we use $\mu$ when all the faces 
+> %of $S$ have circumradius less than $\sqrt 2$ and $\mu'$ otherwise.  
+> %It may occur that when speaking of a simplex we use the terms $\vol$ or $\mu$ without 
+> %the conditional phrase, ``unless the circumradius is greater than $\sqrt 2$.''
+> %We universally mean that we use $\vol$ when the faces have circumradius less than 
+> %$\sqrt 2$ and $\omega$ otherwise.  Likewise for $\mu$ and $\mu'$.
+750c752
+< We have $$\mu(X)=\vol(X)-M \sol(X).$$
+---
+> We have $$\mu(X)=\omega(X)-M \sol(X).$$
+752c754
+< $$\sum \mu(X)=\sum \vol(X)-M \sum \sol(X).$$
+---
+> $$\sum \mu(X)=\sum \omega(X)-M \sum \sol(X).$$
+754c756
+< $$\sum \mu(X)=\vol(V(S_0))-4 \pi M.$$
+---
+> $$\sum \mu(X)=\omega(V(S_0))-4 \pi M.$$
+759c761
+< We also know that $\vol(X)>0$.
+---
+> We also know that $\omega(X)>0$.
+761c763
+< Also, we have $$\mu(D)=\vol(D)-4 \pi M \approx (5.55029\dots) -( 5.37275\dots) \approx 0.177540.$$  
+---
+> Also, we have $$\mu(D)=\omega(D)-4 \pi M \approx (5.55029\dots) -( 5.37275\dots) \approx 0.177540.$$  
+874c876
+< Take $k=3$, vertices $v_1,v_2,v_3$.  If there is an edge of length at least $\epsilon$ lying around only one of the $v_i$, then Inequality 5.2.3.1 reduces us to the case $k=2$.  If an edge of length at least $\epsilon$ lies around exactly two of the $v_i$, then it is an edge of two of the quasi-regular tetrahedra.  These quasi-regular tetrahedra give 2(0.004), and the quasi-regular tetrahedron around the third vertex $v_i$ gives 0.004 more.  If a top edge of length at least $\epsilon$ lies around all three vertices, then one of the endpoints of the edge lies in $\{v_1,v_2,v_3\}$, so the result follows from Claim 1.  Finally, if all top edges have length at most $\epsilon$, we use Inequalities 5.2.3.3, 5.2.3.6, and 5.2.3.7.  (There are two possible arrangements of the vertices up to symmetry.  Case 1 has a tetrahedron with vertices $v_1,v_2,v_3$.  This arrangement yields 
+---
+> Take $k=3$, vertices $v_1,v_2,v_3$.  If there is an edge of length at least $\epsilon$ lying around only one of the $v_i$, then Inequality 5.2.3.1 reduces us to the case $k=2$.  If an edge of length at least $\epsilon$ lies around exactly two of the $v_i$, then it is an edge of two of the quasi-regular tetrahedra.  These quasi-regular tetrahedra give 2(0.004), and the quasi-regular tetrahedron around the third vertex $v_i$ gives 0.004 more.  If a top edge of length at least $\epsilon$ lies around all three vertices, then one of the endpoints of the edge lies in $\{v_1,v_2,v_3\}$, so the result follows from Claim 1.  Finally, if all top edges have length at most $\epsilon$, we use Inequalities 5.2.3.3, 5.2.3.6, and 5.2.3.7.  (There are two possible arrangements of the vertices up to symmetry.)  Case 1 has a tetrahedron with vertices $v_1,v_2,v_3$.  This arrangement yields 
+933c935
+< \proclaim{Lemma 5.3.2} $\vol(V(S_0))=4 \pi M + \mu(V(S_0))$. \endproclaim
+---
+> \proclaim{Lemma 5.3.2} $\omega(V(S_0))=4 \pi M + \mu(V(S_0))$. \endproclaim
+935c937
+< {\bf Proof:} Let $R$ be a standard cluster.  From the definition of $\mu$ we have $$\vol(V(S_0))=\sum \vol(R_i)+ M (4\pi - \sum \sol(R_i)) = 4 \pi M + \sum \mu(R_i).$$ \qed
+---
+> {\bf Proof:} Let $R$ be a standard cluster.  From the definition of $\mu$ we have $$\omega(V(S_0))=\sum \omega(R_i)+ M (4\pi - \sum \sol(R_i)) = 4 \pi M + \sum \mu(R_i).$$ \qed
+943c945
+<  According to Table 5.2.1, we have $\mu_{LP}(p,q) > 0.177540$, the squander target, for $(p,q)=(0,2),(0,5),(1,5),(2,3), (3,3),(4,2),(5,1),(7,0)$.  \qed
+---
+>  According to Table 5.2.1, we have $\mu_{LP}(p,q) > 0.178$, the squander target, for $(p,q)=(0,2),(0,5),(1,5),(2,3), (3,3),(4,2),(5,1),(7,0)$.  \qed
+1283c1285
+< The linear optimization suceeded in eliminating all but 3 graphs consisting 
+---
+> The linear optimization succeeded in eliminating all but 3 graphs consisting 
+1317c1319
+< $1:  \vol(S) > 0.202804$\newline
+---
+> $1:  \omega(S) > 0.202804$\newline
+1331,1383c1333,1385
+< $1:  \vol(S) - 0.68 \sol(S) + 1.88718 \dih(S) > 1.54551 $\newline
+< $2:  \vol(S) - 0.68 \sol(S) + 0.90746 \dih(S) > 0.706725$\newline
+< $3:  \vol(S) - 0.68 \sol(S) + 0.46654 \dih(S) > 0.329233$\newline
+< $4:  \vol(S) - 0.55889 \sol(S) - 0 \dih(S) > -0.0736486$\newline
+< $5:  \vol(S) - 0.63214 \sol(S) - 0 \dih(S) > -0.13034$\newline
+< $6:  \vol(S) - 0.73256 \sol(S) - 0 \dih(S) > -0.23591$\newline
+< $7:  \vol(S) - 0.89346 \sol(S) - 0 \dih(S) > -0.40505$\newline
+< $8:  \vol(S) - 0.3 \sol(S) - 0.5734 \dih(S) > -0.978221$\newline
+< $9:  \vol(S) - 0.3 \sol(S) - 0.03668 \dih(S) > 0.024767$\newline
+< $10:  \vol(S) - 0.3 \sol(S) + 0.04165 \dih(S) > 0.121199$\newline
+< $11:  \vol(S) - 0.3 \sol(S) + 0.1234 \dih(S) > 0.209279$\newline
+< $12:  \vol(S) - 0.42755 \sol(S) - 0.11509 \dih(S) > -0.171859$\newline
+< $13:  \vol(S) - 0.42755 \sol(S) - 0.04078 \dih(S) > -0.050713$\newline
+< $14:  \vol(S) - 0.42755 \sol(S) + 0.11031 \dih(S) > 0.135633$\newline
+< $15:  \vol(S) - 0.42755 \sol(S) + 0.13091 \dih(S) > 0.157363$\newline
+< $16:  \vol(S) - 0.55792 \sol(S) - 0.21394 \dih(S) > -0.417998$\newline
+< $17:  \vol(S) - 0.55792 \sol(S) - 0.0068 \dih(S) > -0.081902$\newline
+< $18:  \vol(S) - 0.55792 \sol(S) + 0.0184 \dih(S) > -0.051224$\newline
+< $19:  \vol(S) - 0.55792 \sol(S) + 0.24335 \dih(S) > 0.193993$\newline
+< $20:  \vol(S) - 0.68 \sol(S) - 0.30651 \dih(S) > -0.648496$\newline
+< $21:  \vol(S) - 0.68 \sol(S) - 0.06965 \dih(S) > -0.278$\newline
+< $22:  \vol(S) - 0.68 \sol(S) + 0.0172 \dih(S) > -0.15662$\newline
+< $23:  \vol(S) - 0.68 \sol(S) + 0.41812 \dih(S) > 0.287778$\newline
+< $24:  \vol(S) - 0.64934 \sol(S) - 0 \dih(S) > -0.14843$\newline
+< $25:  \vol(S) - 0.6196 \sol(S) - 0 \dih(S) > -0.118$\newline
+< $26:  \vol(S) - 0.58402 \sol(S) - 0 \dih(S) > -0.090290$\newline
+< $27:  \vol(S) - 0.25181 \sol(S) - 0 \dih(S) > 0.096509$\newline
+< $28:  \vol(S) - 0.00909 \sol(S) - 0 \dih(S) > 0.199559$\newline
+< $29:  \vol(S) + 0.93877 \sol(S) - 0 \dih(S) > 0.537892$\newline
+< $30:  \vol(S) + 0.93877 \sol(S) - 0.20211 \dih(S) > 0.27313$\newline
+< $31:  \vol(S) + 0.93877 \sol(S) + 0.63517 \dih(S) > 1.20578$\newline
+< $32:  \vol(S) + 1.93877 \sol(S) - 0 \dih(S) > 0.854804$\newline
+< $33:  \vol(S) + 1.93877 \sol(S) - 0.20211 \dih(S) > 0.621886$\newline
+< $34:  \vol(S) + 1.93877 \sol(S) + 0.63517 \dih(S) > 1.57648$\newline
+< $35:  \vol(S) - 0.42775 \sol(S) - 0 \dih(S) > -0.000111$\newline
+< $36:  \vol(S) - 0.55792 \sol(S) - 0 \dih(S) > -0.073037$\newline
+< $37:  \vol(S) - 0 \sol(S) - 0.07853 \dih(S) > 0.08865$\newline
+< $38:  \vol(S) - 0 \sol(S) - 0.00339 \dih(S) > 0.198693$\newline
+< $39:  \vol(S) - 0 \sol(S) + 0.18199 \dih(S) > 0.396670$\newline
+< $40:  \vol(S) - 0.42755 \sol(S) - 0.2 \dih(S) > -0.332061$\newline
+< $41:  \vol(S) - 0.3 \sol(S) - 0.36373 \dih(S) > -0.58263$\newline
+< $42:  \vol(S) - 0.3 \sol(S) + 0.20583 \dih(S) > 0.279851$\newline
+< $43:  \vol(S) - 0.3 \sol(S) + 0.40035 \dih(S) > 0.446389$\newline
+< $44:  \vol(S) - 0.3 \sol(S) + 0.83259 \dih(S) > 0.816450$\newline
+< $45:  \vol(S) - 0.42755 \sol(S) - 0.51838 \dih(S) > -0.932759$\newline
+< $46:  \vol(S) - 0.42755 \sol(S) + 0.29344 \dih(S) > 0.296513$\newline
+< $47:  \vol(S) - 0.42755 \sol(S) + 0.57056 \dih(S) > 0.533768$\newline
+< $48:  \vol(S) - 0.42755 \sol(S) + 1.18656 \dih(S) > 1.06115$\newline
+< $49:  \vol(S) - 0.55792 \sol(S) - 0.67644 \dih(S) > -1.29062$\newline
+< $50:  \vol(S) - 0.55792 \sol(S) + 0.38278 \dih(S) > 0.313365$\newline
+< $51:  \vol(S) - 0.55792 \sol(S) + 0.74454 \dih(S) > 0.623085$\newline
+< $52:  \vol(S) - 0.55792 \sol(S) + 1.54837 \dih(S) > 1.31128$\newline
+< $53:  \vol(S) - 0.68 \sol(S) - 0.82445 \dih(S) > -1.62571$\newline
+---
+> $1:  \omega(S) - 0.68 \sol(S) + 1.88718 \dih(S) > 1.54551 $\newline
+> $2:  \omega(S) - 0.68 \sol(S) + 0.90746 \dih(S) > 0.706725$\newline
+> $3:  \omega(S) - 0.68 \sol(S) + 0.46654 \dih(S) > 0.329233$\newline
+> $4:  \omega(S) - 0.55889 \sol(S) - 0 \dih(S) > -0.0736486$\newline
+> $5:  \omega(S) - 0.63214 \sol(S) - 0 \dih(S) > -0.13034$\newline
+> $6:  \omega(S) - 0.73256 \sol(S) - 0 \dih(S) > -0.23591$\newline
+> $7:  \omega(S) - 0.89346 \sol(S) - 0 \dih(S) > -0.40505$\newline
+> $8:  \omega(S) - 0.3 \sol(S) - 0.5734 \dih(S) > -0.978221$\newline
+> $9:  \omega(S) - 0.3 \sol(S) - 0.03668 \dih(S) > 0.024767$\newline
+> $10:  \omega(S) - 0.3 \sol(S) + 0.04165 \dih(S) > 0.121199$\newline
+> $11:  \omega(S) - 0.3 \sol(S) + 0.1234 \dih(S) > 0.209279$\newline
+> $12:  \omega(S) - 0.42755 \sol(S) - 0.11509 \dih(S) > -0.171859$\newline
+> $13:  \omega(S) - 0.42755 \sol(S) - 0.04078 \dih(S) > -0.050713$\newline
+> $14:  \omega(S) - 0.42755 \sol(S) + 0.11031 \dih(S) > 0.135633$\newline
+> $15:  \omega(S) - 0.42755 \sol(S) + 0.13091 \dih(S) > 0.157363$\newline
+> $16:  \omega(S) - 0.55792 \sol(S) - 0.21394 \dih(S) > -0.417998$\newline
+> $17:  \omega(S) - 0.55792 \sol(S) - 0.0068 \dih(S) > -0.081902$\newline
+> $18:  \omega(S) - 0.55792 \sol(S) + 0.0184 \dih(S) > -0.051224$\newline
+> $19:  \omega(S) - 0.55792 \sol(S) + 0.24335 \dih(S) > 0.193993$\newline
+> $20:  \omega(S) - 0.68 \sol(S) - 0.30651 \dih(S) > -0.648496$\newline
+> $21:  \omega(S) - 0.68 \sol(S) - 0.06965 \dih(S) > -0.278$\newline
+> $22:  \omega(S) - 0.68 \sol(S) + 0.0172 \dih(S) > -0.15662$\newline
+> $23:  \omega(S) - 0.68 \sol(S) + 0.41812 \dih(S) > 0.287778$\newline
+> $24:  \omega(S) - 0.64934 \sol(S) - 0 \dih(S) > -0.14843$\newline
+> $25:  \omega(S) - 0.6196 \sol(S) - 0 \dih(S) > -0.118$\newline
+> $26:  \omega(S) - 0.58402 \sol(S) - 0 \dih(S) > -0.090290$\newline
+> $27:  \omega(S) - 0.25181 \sol(S) - 0 \dih(S) > 0.096509$\newline
+> $28:  \omega(S) - 0.00909 \sol(S) - 0 \dih(S) > 0.199559$\newline
+> $29:  \omega(S) + 0.93877 \sol(S) - 0 \dih(S) > 0.537892$\newline
+> $30:  \omega(S) + 0.93877 \sol(S) - 0.20211 \dih(S) > 0.27313$\newline
+> $31:  \omega(S) + 0.93877 \sol(S) + 0.63517 \dih(S) > 1.20578$\newline
+> $32:  \omega(S) + 1.93877 \sol(S) - 0 \dih(S) > 0.854804$\newline
+> $33:  \omega(S) + 1.93877 \sol(S) - 0.20211 \dih(S) > 0.621886$\newline
+> $34:  \omega(S) + 1.93877 \sol(S) + 0.63517 \dih(S) > 1.57648$\newline
+> $35:  \omega(S) - 0.42775 \sol(S) - 0 \dih(S) > -0.000111$\newline
+> $36:  \omega(S) - 0.55792 \sol(S) - 0 \dih(S) > -0.073037$\newline
+> $37:  \omega(S) - 0 \sol(S) - 0.07853 \dih(S) > 0.08865$\newline
+> $38:  \omega(S) - 0 \sol(S) - 0.00339 \dih(S) > 0.198693$\newline
+> $39:  \omega(S) - 0 \sol(S) + 0.18199 \dih(S) > 0.396670$\newline
+> $40:  \omega(S) - 0.42755 \sol(S) - 0.2 \dih(S) > -0.332061$\newline
+> $41:  \omega(S) - 0.3 \sol(S) - 0.36373 \dih(S) > -0.58263$\newline
+> $42:  \omega(S) - 0.3 \sol(S) + 0.20583 \dih(S) > 0.279851$\newline
+> $43:  \omega(S) - 0.3 \sol(S) + 0.40035 \dih(S) > 0.446389$\newline
+> $44:  \omega(S) - 0.3 \sol(S) + 0.83259 \dih(S) > 0.816450$\newline
+> $45:  \omega(S) - 0.42755 \sol(S) - 0.51838 \dih(S) > -0.932759$\newline
+> $46:  \omega(S) - 0.42755 \sol(S) + 0.29344 \dih(S) > 0.296513$\newline
+> $47:  \omega(S) - 0.42755 \sol(S) + 0.57056 \dih(S) > 0.533768$\newline
+> $48:  \omega(S) - 0.42755 \sol(S) + 1.18656 \dih(S) > 1.06115$\newline
+> $49:  \omega(S) - 0.55792 \sol(S) - 0.67644 \dih(S) > -1.29062$\newline
+> $50:  \omega(S) - 0.55792 \sol(S) + 0.38278 \dih(S) > 0.313365$\newline
+> $51:  \omega(S) - 0.55792 \sol(S) + 0.74454 \dih(S) > 0.623085$\newline
+> $52:  \omega(S) - 0.55792 \sol(S) + 1.54837 \dih(S) > 1.31128$\newline
+> $53:  \omega(S) - 0.68 \sol(S) - 0.82445 \dih(S) > -1.62571$\newline
+1395,1396c1397,1398
+< $5: \vol > 0.235702 -0.107 (y_1+y_2+y_3-6) + 0.116 (y_4+y_5+y_6-6)$\newline
+< $6: \vol > 0.235702 -0.0623 (y_1+y_2+y_3-6) + 0.0722 (y_4+y_5+y_6-6)$\newline
+---
+> $5: \omega > 0.235702 -0.107 (y_1+y_2+y_3-6) + 0.116 (y_4+y_5+y_6-6)$\newline
+> $6: \omega > 0.235702 -0.0623 (y_1+y_2+y_3-6) + 0.0722 (y_4+y_5+y_6-6)$\newline
+1501c1503
+< $$\vol(S) > .2952455 - 0.166 (y_1-2) - 0.083 (y_2+y_3-4)+0.143 (y_5+y_6-4)$$
+---
+> $$\omega(S) > .2952455 - 0.166 (y_1-2) - 0.083 (y_2+y_3-4)+0.143 (y_5+y_6-4)$$
+1512,1513c1514,1515
+< $$\align \vol(A)>-0.166 y_1 & - 0.174893 y_2 - 0.174893 y_3 + 0.306136 y_4 + 0.143 y_5 \\& + 0.143 y_6-0.263488(\dih_1(A)-1.76) - 0.038250. \endalign$$
+< $$\align \vol(B)>-0.166 y_7 & + 0.008893 y_2 + 0.008893 y_3 - 0.306136 y_4 + 0.143 y_8 \\& + 0.143 y_9 +0.80825. \endalign$$
+---
+> $$\align \omega(A)>-0.166 y_1 & - 0.174893 y_2 - 0.174893 y_3 + 0.306136 y_4 + 0.143 y_5 \\& + 0.143 y_6-0.263488(\dih_1(A)-1.76) - 0.038250. \endalign$$
+> $$\align \omega(B)>-0.166 y_7 & + 0.008893 y_2 + 0.008893 y_3 - 0.306136 y_4 + 0.143 y_8 \\& + 0.143 y_9 +0.80825. \endalign$$
+1520,1521c1522,1523
+< $$\align \vol(A)>-0.166 y_1 & - 0.120535 y_2 - 0.120535 y_3 + 0.107880 y_4 + 0.143 y_5 \\& + 0.143 y_6-0.104704(\dih_1(A)-1.76) +0.251657. \endalign$$
+< $$\align \vol(B)>-0.166 y_7 & -0.045465 y_2 -0.045465 y_3 - 0.107880 y_4 + 0.143 y_8 \\& + 0.143 y_9 +0.518343. \endalign$$
+---
+> $$\align \omega(A)>-0.166 y_1 & - 0.120535 y_2 - 0.120535 y_3 + 0.107880 y_4 + 0.143 y_5 \\& + 0.143 y_6-0.104704(\dih_1(A)-1.76) +0.251657. \endalign$$
+> $$\align \omega(B)>-0.166 y_7 & -0.045465 y_2 -0.045465 y_3 - 0.107880 y_4 + 0.143 y_8 \\& + 0.143 y_9 +0.518343. \endalign$$
+1527,1528c1529,1530
+< $$\align \vol(A)>-0.166 y_1 & - 0.114552 y_2 - 0.114552 y_3 + 0.115382 y_4 + 0.143 y_5 \\& + 0.143 y_6-0.153420(\dih_1(A)-1.76) +0.193572. \endalign$$
+< $$\align \vol(B)>-0.166 y_7 & -0.051448 y_2 -0.051448 y_3 - 0.115382 y_4 + 0.143 y_8 \\& + 0.143 y_9 +0.576428. \endalign$$
+---
+> $$\align \omega(A)>-0.166 y_1 & - 0.114552 y_2 - 0.114552 y_3 + 0.115382 y_4 + 0.143 y_5 \\& + 0.143 y_6-0.153420(\dih_1(A)-1.76) +0.193572. \endalign$$
+> $$\align \omega(B)>-0.166 y_7 & -0.051448 y_2 -0.051448 y_3 - 0.115382 y_4 + 0.143 y_8 \\& + 0.143 y_9 +0.576428. \endalign$$
+1534,1535c1536,1537
+< $$\align \vol(A)>-0.166 y_1 & - 0.279805 y_2 - 0.340136 y_3 + 0.422343 y_4 + 0.143 y_5 \\& + 0.143 y_6-0.380615(\dih_1(A)-1.76) +0.147006. \endalign$$
+< $$\align \vol(B)>-0.166 y_7 & +0.113805 y_2 +0.174136 y_3 - 0.422343 y_4 + 0.143 y_8 \\& + 0.143 y_9 +0.622994. \endalign$$
+---
+> $$\align \omega(A)>-0.166 y_1 & - 0.279805 y_2 - 0.340136 y_3 + 0.422343 y_4 + 0.143 y_5 \\& + 0.143 y_6-0.380615(\dih_1(A)-1.76) +0.147006. \endalign$$
+> $$\align \omega(B)>-0.166 y_7 & +0.113805 y_2 +0.174136 y_3 - 0.422343 y_4 + 0.143 y_8 \\& + 0.143 y_9 +0.622994. \endalign$$
+1541,1542c1543,1544
+< $$\align \vol(A)>-0.166 y_1 & - 0.182394 y_2 - 0.147301 y_3 + 0.250100 y_4 + 0.143 y_5 \\& + 0.143 y_6-0.206213(\dih_1(A)-1.76) +0.001504. \endalign$$
+< $$\align \vol(B)>-0.166 y_7 & +0.016394 y_2 +0.018699 y_3 - 0.250100 y_4 + 0.143 y_8 \\& + 0.143 y_9 +0.768496\endalign$$
+---
+> $$\align \omega(A)>-0.166 y_1 & - 0.182394 y_2 - 0.147301 y_3 + 0.250100 y_4 + 0.143 y_5 \\& + 0.143 y_6-0.206213(\dih_1(A)-1.76) +0.001504. \endalign$$
+> $$\align \omega(B)>-0.166 y_7 & +0.016394 y_2 +0.018699 y_3 - 0.250100 y_4 + 0.143 y_8 \\& + 0.143 y_9 +0.768496\endalign$$
+1681,1682c1683,1684
+< $$\align \vol(A)>-0.166 y_1 & - 0.114552 y_2 - 0.114552 y_3 + 0.115382 y_4 + 0.143 y_5 \\& + 0.143 y_6-0.153420(\dih_1(A)-1.76) +0.22. \endalign$$
+< $$\align \vol(B)>-0.166 y_7 & -0.051448 y_2 -0.051448 y_3 - 0.115382 y_4 + 0.143 y_8 \\& + 0.143 y_9 +0.55. \endalign$$
+---
+> $$\align \omega(A)>-0.166 y_1 & - 0.114552 y_2 - 0.114552 y_3 + 0.115382 y_4 + 0.143 y_5 \\& + 0.143 y_6-0.153420(\dih_1(A)-1.76) +0.22. \endalign$$
+> $$\align \omega(B)>-0.166 y_7 & -0.051448 y_2 -0.051448 y_3 - 0.115382 y_4 + 0.143 y_8 \\& + 0.143 y_9 +0.55. \endalign$$
+1709,1710c1711,1712
+< $\vol(A) > .273$ \newline
+< $\vol(B)+\vol(C) > .50$ \newline
+---
+> $\omega(A) > .273$ \newline
+> $\omega(B)+\omega(C) > .50$ \newline
+1712c1714
+< So $\vol(1)>0.773$,
+---
+> So $\omega(1)>0.773$,
+1732,1734c1734,1736
+< $\vol(A)>.283$ \newline
+< $\vol(B)>.277$ \newline
+< $\vol(C)>.335$ \newline
+---
+> $\omega(A)>.283$ \newline
+> $\omega(B)>.277$ \newline
+> $\omega(C)>.335$ \newline
+1736c1738
+< so $\vol(1)>0.924.$  
+---
+> so $\omega(1)>0.924.$  
+1785,1787c1787,1789
+< $\vol(A)>.278$ \newline
+< $\vol(B)>.277$ \newline
+< $\vol(C)>.362$ \newline
+---
+> $\omega(A)>.278$ \newline
+> $\omega(B)>.277$ \newline
+> $\omega(C)>.362$ \newline
+1789c1791
+< so $\vol(1)>0.917$ which pushes the graph over the target. \qed
+---
+> so $\omega(1)>0.917$ which pushes the graph over the target. \qed
+1843,1845c1845,1847
+< $\vol(A) > 0.277$ \newline
+< $\vol(B) > 0.272$ \newline
+< $\vol(C)> 0.360$ \newline
+---
+> $\omega(A) > 0.277$ \newline
+> $\omega(B) > 0.272$ \newline
+> $\omega(C)> 0.360$ \newline
+1847c1849
+< So $\vol(1)>0.909$, which pushes the graph over the target.
+---
+> So $\omega(1)>0.909$, which pushes the graph over the target.
+1879,1881c1881,1883
+< $\vol(A)>.320$ \newline
+< $\vol(B)>.247$ \newline
+< $\vol(C)>.300$ \newline
+---
+> $\omega(A)>.320$ \newline
+> $\omega(B)>.247$ \newline
+> $\omega(C)>.300$ \newline
+1883c1885
+< so $\vol(1)>0.865$ which pushes the graph over the target. \qed
+---
+> so $\omega(1)>0.865$ which pushes the graph over the target. \qed
+1916,1918c1918,1920
+< $\vol(A)>.328$ \newline
+< $\vol(B)>.272$ \newline
+< $\vol(C)>.350$ \newline
+---
+> $\omega(A)>.328$ \newline
+> $\omega(B)>.272$ \newline
+> $\omega(C)>.350$ \newline
+1920c1922
+< so $\vol(1)>0.950$.  
+---
+> so $\omega(1)>0.950$.  
+1964c1966
+< Use the proof of Theorem 2 to show $\vol(1)>0.900$ which pushes the graph over the target. \qed
+---
+> Use the proof of Theorem 2 to show $\omega(1)>0.900$ which pushes the graph over the target. \qed
+1993,1995c1995,1997
+< $\vol(A)>.275$ \newline
+< $\vol(B)>.275$ \newline
+< $\vol(C)>.357$ \newline
+---
+> $\omega(A)>.275$ \newline
+> $\omega(B)>.275$ \newline
+> $\omega(C)>.357$ \newline
+1997c1999
+< so $\vol(1)>0.907$.  
+---
+> so $\omega(1)>0.907$.  
+2054,2056c2056,2058
+< $\vol(A)>.271$ \newline
+< $\vol(B)>.267$ \newline
+< $\vol(C)>.346$ \newline
+---
+> $\omega(A)>.271$ \newline
+> $\omega(B)>.267$ \newline
+> $\omega(C)>.346$ \newline
+2058c2060
+< so $\vol(1)>0.884$.
+---
+> so $\omega(1)>0.884$.
+2098c2100
+< so $\vol(1)>0.911$ by the proof of Theorem 2, which pushes the graph over the target. \qed
+---
+> so $\omega(1)>0.911$ by the proof of Theorem 2, which pushes the graph over the target. \qed

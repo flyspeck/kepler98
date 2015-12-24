@@ -1,0 +1,147 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@// @;
+
+
+1.1
+date	99.08.11.17.33.14;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@
+HoneyCombPerimeter[n_Integer, x_] := 
+	(* u is the area of the regular n-gon, *)
+  Module[{u, ChordArea, PolygonRadius, PolygonEdge, rho, theta}, 
+	u = 1-x;
+	If[N[u]<0,Return["invalid"]];
+	If[n<3,Return["invalid"]];
+	If[Chop[N[u]]==0,Return[2 Sqrt[Pi n]]];
+	ChordArea := Abs[N[(1 - u)/n]]; 
+	If[n==2,
+		PolygonEdge:= "??"];
+	PolygonRadius := Sqrt[u/(n*Cos[Pi/n]*Sin[Pi/n])]; 
+	PolygonEdge := 2*PolygonRadius*Sin[Pi/n]; 
+    Bisectf= 
+     (#/Sin[#]^2 - Cos[#]/Sin[#] - (4*ChordArea)/PolygonEdge^2)&; 
+    theta := Bisect[{10^-8, 3.14}, 0.0001, Bisectf][[1]]; 
+    rho := PolygonEdge/(2*Sin[theta]); 
+	(*
+	Print[ChordArea];
+	Print[PolygonRadius];
+	Print[PolygonEdge];
+	Print[theta]; Print[rho];
+	*)
+	(* thetabak = theta; *)
+Return[2*n*theta*rho]; ]
+
+P[n_, x_] := HoneyCombPerimeter[n, x]
+
+HE[n_, x_] := P[n, x*(n - 6)]/(n - 6) + ((n - 7)*P[6, 0])/(n - 6)
+PE[n_, x_] := P[n, x*(6 - n)]/(6 - n) + ((5 - n)*P[6, 0])/(6 - n)
+
+Pslope6 := (P[6, 0.001] - P[6, 0])/0.001
+
+HHE[n_, x_] := HE[n, x] - x*Pslope6 - HE[7, 0]
+PPE[n_, x_] := PE[n, x] - x*Pslope6 - 3.77
+HHE[n_, x_] := HE[n, x] - x*Pslope6 - HE[7, 0]
+PPE[n_, x_] := PE[n, x] - x*Pslope6 - 3.77
+P7 := P[7, 0]
+P6 := P[6, 0]
+PP[n_, x_] := P[n, x] - x*Pslope6 - (n - 6)*P7 + (n - 7)*P6
+PP[n_, x_] := P[n, x] + x*12^(1/4) - P6 + (n - 6)*0.05049999999999998
+Pslope6 = -(Sqrt[2]*3^(1/4))
+HoneyEdge[polyedge_, x_] := 
+  Module[{u, ChordArea, PolygonRadius, PolygonEdge, rho, theta, Bisectf}, 
+   u = 1 - x; If[N[u] < 0, Return["invalid"]]; ChordArea = x; 
+    PolygonEdge = polyedge; Bisectf = 
+     #1/Sin[#1]^2 - Cos[#1]/Sin[#1] - (4*ChordArea)/PolygonEdge^2 & ; 
+    theta := Bisect[{10^(-8), 3.14}, 0.0001, Bisectf][[1]]; 
+    rho := PolygonEdge/(2*Sin[theta]); Return[2*theta*rho]; ]
+HoneyDoubleArea[u_, v_, t_] := 
+  Module[{r, uu, vv, tu, tv}, r = eta[u, v, t]; 
+    If[v > u, uu = v; vv = u, uu = u; vv = v]; tu = ArcSin[uu/(2*r)]; 
+    tv = ArcSin[vv/(2*r)]; If[uu^2 - t^2 - vv^2 > 0, tu = Pi - tu]; 
+    Return[r^2*(tu + tv) - r^2*(Cos[tu]*Sin[tu] + Cos[tv]*Sin[tv])]]
+HoneyDoublePerimeter[u_, v_, x_] := 
+  Module[{r, t, tt, uu, vv, tu, tv}, 
+   If[v > u, uu = v; vv = u, uu = u; vv = v]; 
+    Bisectf[t_] := 
+     Module[{}, r = eta[u, v, t]; tu = ArcSin[uu/(2*r)]; 
+       tv = ArcSin[vv/(2*r)]; If[uu^2 - t^2 - vv^2 > 0, tu = Pi - tu]; 
+       -x + r^2*(tu + tv) - r^2*(Cos[tu]*Sin[tu] + Cos[tv]*Sin[tv])]; 
+    tt = Bisect[{Abs[u - v] + 10^(-8), u + v - 10^(-8)}, 1.*^-7, Bisectf][[
+      1]]; Print[{tt, tu, tv}]; Return[2*eta[u, v, tt]*(tu + tv)]; ]
+HoneyEdge[polyedge_, x_] := 
+  Module[{ChordArea, PolygonRadius, PolygonEdge, rho, theta, Bisectf}, 
+   ChordArea = x; PolygonEdge = polyedge; 
+    Bisectf = #1/Sin[#1]^2 - Cos[#1]/Sin[#1] - 
+       (4*ChordArea)/PolygonEdge^2 & ; 
+    theta := Bisect[{10^(-8), 3.14}, 0.0001, Bisectf][[1]]; 
+    rho := PolygonEdge/(2*Sin[theta]); Return[2*theta*rho]; ]
+pp = 1.861209718204199
+Rf[x_] := Sqrt[1 + x]*2*Sqrt[M]*Sqrt[Tan[Pi/M]] - pp*x + 
+   (M - 6)*0.05049999999999998 - P6
+Rg[x_] := 2*Sqrt[Pi]*Sqrt[1 + 2*x] - pp*x + (M - 6)*0.05049999999999998 - P6
+PolyPerim[x_, M_] := Sqrt[1 + x]*2*Sqrt[M]*Sqrt[Tan[Pi/M]]
+Rq[x_] := (4*x*HoneyEdge[(PolyPerim[x, M]*3)/(4*x), 3/4])/3 - pp*x + 
+   (M - 6)*0.05049999999999998 - P6
+Rt[t_] := (P6*t)/2 + (M - 6)*0.05049999999999999 - P6
+Rf[x_] := 2*Sqrt[(1 - x)*M*Tan[Pi/M]] + Rt[x]
+Rg[x_] := 2*Sqrt[(1 - 2*x)*Pi] + Rt[x]
+Rgp[x_] := 2*Sqrt[Pi] + Rt[x]
+t0 := 2/3
+Rh[x_] := -(x*Sqrt[(2*Pi)/t0]) + Rt[x]
+Rh[x_] := -(x*Sqrt[(2*Pi)/t0]) + Rt[x]
+Rj[x_] := (HoneyEdge[(F[x]*t0)/Abs[x], t0]*Abs[x])/t0 + Rt[x]
+HexArea[alpha_] := 
+  Module[{beta, b, t, h1, h2, ell, area, perim, iso}, 
+   beta = Pi - alpha/2; b = 1; t = 
+     b/(2*(1/2 + Sin[beta - Pi/2] - Sin[alpha - Pi/2])); 
+    h1 = t*Cos[alpha - Pi/2]; h2 = t*Cos[beta - Pi/2]; 
+    ell = b/2 + t*Sin[alpha - Pi/2]; 
+    area = 2*((h1*b)/2 + (h1*(ell - b/2))/2 + (h2*t)/2 + (h2*(ell - t/2))/2); 
+    perim = 5*t + 1; iso = perim/Sqrt[area]; {area, perim, iso}]
+HeptArea[alpha_] := 
+  Module[{beta, b, t, h1, h2, h3, ell, ellp, area, perim, iso}, 
+   beta = Pi - (2*alpha)/5; b = 1; 
+    t = b/(2*(Sin[beta/2] + Sin[(3*beta)/2 - Pi] - Sin[alpha - Pi/2])); 
+    h1 = t*Cos[alpha - Pi/2]; h2 = t*Cos[(3*beta)/2 - Pi]; 
+    h3 = t*Cos[beta/2]; ell = b/2 + t*Sin[alpha - Pi/2]; 
+    ellp = t*Sin[beta/2]; area = 
+     2*((h1*b)/2 + (1*h1*(ell - b/2))/2 + h2*ellp + (1*h2*(ell - ellp))/2 + 
+        (h3*ellp)/2); perim = 6*t + 1; iso = perim/Sqrt[area]; 
+    {area, perim, iso}]
+F[x_] := 2*Sqrt[(1 - x)*M*Tan[Pi/M]]
+HeptArea[alpha_] := 
+  Module[{beta, b, t, h1, h2, h3, ell, ellp, area, perim, iso}, 
+   beta = Pi - (2*alpha)/5; b = 1; 
+    t = b/(2*(Sin[beta/2] + Sin[(3*beta)/2 - Pi] - Sin[alpha - Pi/2])); 
+    h1 = t*Cos[alpha - Pi/2]; h2 = t*Cos[(3*beta)/2 - Pi]; 
+    h3 = t*Cos[beta/2]; ell = b/2 + t*Sin[alpha - Pi/2]; 
+    ellp = t*Sin[beta/2]; area = 
+     2*((h1*b)/2 + (1*h1*(ell - b/2))/2 + h2*ellp + (1*h2*(ell - ellp))/2 + 
+        (h3*ellp)/2); perim = 6*t + 1; iso = perim/Sqrt[area]; 
+    {area, perim, iso}]
+Dv := -Du
+Dr := Du/(2*Sin[tu]) - (r*Dtu*Cos[tu])/Sin[tu]
+r := u/(2*Sin[tu])
+Dperim := 2*Dr*(tu + tv) + 2*r*Dtu + 2*r*Dtv
+E1 := Sin[tv]*Du + u*Cos[tv]*Dtv - Sin[tu]*Dv - v*Cos[tu]*Dtu
+E2 := 2*r*Dr*(tu - Cos[tu]*Sin[tu] + tv + Cos[tv]*Sin[tv]) + r^2*Dtu + 
+   r^2*(Sin[tu]^2 - Cos[tu]^2)*Dtu + r^2*Dtv + r^2*(Sin[tv]^2 - Cos[tv]^2)*Dtv
+E2 := 2*r*Dr*(tu - Cos[tu]*Sin[tu] + tv + Cos[tv]*Sin[tv]) + r^2*Dtu + 
+   r^2*(Sin[tu]^2 - Cos[tu]^2)*Dtu + r^2*Dtv + r^2*(Sin[tv]^2 - Cos[tv]^2)*Dtv
+Null
+@

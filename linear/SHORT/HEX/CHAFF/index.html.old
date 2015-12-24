@@ -1,0 +1,269 @@
+(* How to do the hexagonal cases *)
+f[i_] := (
+		exceptStem = "SHORT/HEX/LP/cplexE.lp";
+		Initialize[6,i]; Array[(Print[{i, #1}]; 
+        WRITEOUTexcept[6,i, Length[GBLregions], #1]) & , Length[AllHex]]
+		);
+Map[f,lhexhi];
+
+optText[n_,i_]:= Module[{},
+        Initialize[n,i];
+        Array[{"read ",
+            fileText["cplexE.lp",n,i,Length[GBLregions],#], " lp\n",
+            "opt\n"
+            }&, Length[AllHex]
+            ]//StringJoin
+        ];
+Module[{vv,stream},
+	vv = Map[optText[6,#]&,lhexhi]//StringJoin;
+	stream=OpenWrite["SHORT/HEX/cplexE.exec"];
+	WriteString[stream,
+		"set logfile cplexE.log\n"<>
+        "set preprocessing presolve no\n"
+        ];
+	WriteString[stream,vv];
+	Close[stream]
+	];
+
+(* << SHORT/HEX/cplexE.sum; *)
+hh = Select[values,#[[1]]>0.4429&]
+
+shortHex=Union[Map[#[[3]]&,hh]];   Length[shortHex]==14 
+
+type[i_]:= Module[{},
+    Initialize[6,i];
+    Map[Length,Select[GBLregions,Length[#]>3&]]
+    ];
+
+nonPent= Select[shortHex,Count[type[#],5]==0&];
+	Complement[shortHex,nonPent] == {226, 363};
+
+val[i_]:= Map[First,Select[values,#[[3]]==i&]]//Max;
+
+
+(* RUN 2.696-TEST on HEIGHT *)
+(* Everything that follows for a while is devoted exclusively to
+	the cases with upright quarters *)
+noups = PSelect[AllHex,Min[#]>0&] == Join[Range[31],Range[47,60]];
+NoUprightTypes = Select[hh,Inside[Last[#],noups]&]
+UprightTypes = Select[hh,!Inside[Last[#],noups]&];
+upPair = Map[{#[[3]],#[[5]]}&,UprightTypes];
+	(* function in MathToCplexPent.m;  *)
+vv=Map[DisplayHexLiftSinglet,Map[First,upPair]//Union];
+vv//Max == 0.388174.
+So all upright diagonals have height at most 2.696.
+
+vvu=Map[LPdisplay[
+	"SHORT/HEX/LP/cplexE.lp6."<>S[#[[3]]]<>".F"<>S[#[[4]]]<>".C"<>S[#[[5]]],
+	"slack{"<>S[#[[4]]]<>"}2696=0\n" 
+		]&,
+	UprightTypes 
+	];
+
+pA= PSelect[vvu,#>0.4429&] == 
+	 {4, 6, 8, 16, 17, 18, 19, 20, 21, 22, 23, 24, 26, 28, 31, 32, 33, 34};
+UprightTypesA = UprightTypes[[pA]];
+
+Note:
+{Map[#[[3]]&,UprightTypesA],Map[#[[3]]&,NoUprightTypes]}//Flatten//Union ==
+	{59, 70, 131, 146, 226, 248, 303},
+so at this point there are only these 7 planar maps left.
+	
+
+(* try heights *)
+vvh=Map[(Initialize[6,#[[3]]];
+	Table[ LPmax[
+	"SHORT/HEX/LP/cplexE.lp6."<>S[#[[3]]]<>".F"<>S[#[[4]]]<>".C"<>S[#[[5]]],
+	StringVar["y",i],
+	"slack{"<>S[#[[4]]]<>"}2696=0\n" 
+		],{i,1,Max[GBLregions]}]//Max)&,
+	UprightTypesA
+	];
+vvht213=PSelect[vvh,#<2.13&] == {3, 12, 13, 14};
+vvhtA = Map[Drop[#,1]&,UprightTypesA[[vvht213]] ];
+(* We can use ht213=0 on these *)
+
+
+
+Band[6,59]= {12,11,16,10,13,4,5,1,2,3}//Sort;
+Band[6,70]= {18,17,11,12,3,4,13,16,15,14}//Sort;
+Band[6,104]= {1,2,6, 4,5,10, 11,12}//Sort;
+Band[6,111]= {1,2,3,4, 10,11,8,9,6,5}//Sort;
+Band[6,131]={3,4,7,8,9,12,13,16}//Sort; 
+Band[6,146]= {2,4,3,1,10,11,12,9,5,6}//Sort;
+Band[6,226]= {4,5,10,9, 1,2,3, 8,13,12}//Sort;
+Band[6,248]= {1500,1501,1,2,3,4,5,9,10,14}//Sort; 
+ 
+Band[6,296]= {1500,1501,3,6,7,8,4,5,10,11}//Sort; 
+(* Band[6,302]= {1,2,3,4,6,12,13,14,5,11}//Sort; 6/15/98; *)
+Band[6,302]= {1500,1501,1,2,3,4}//Sort;
+(* Band[6,303]= {2,3,9,8,14,13,12,11,4,10}//Sort; 6/15/98; *)
+Band[6,303]= {1500,1501,3,2,8,9, 14,13,12,11}//Sort;
+Band[6,310]= {1500,1501,5,4,11,12,2,3,8,9}//Sort; 
+Band[6,363]= {3,10,9,8, 1,4, 2,6,5}//Sort;
+(* Band[6,385]= {11,12,13,14,1,2,3,4,5,10}//Sort; 6/15/98; *)
+Band[6,385]= {1500,1501,1,2,3,4,11,13,14}//Sort;
+
+branchText[u_]:= Module[{j,h},
+	h=If[Inside[Drop[u,1],vvhtA],"ht213=0\n",""];
+	Table[{
+		"read ",fileText["cplexE.lp",6,u[[3]],u[[4]],u[[5]]]," lp\n",
+		"add \n",
+		"slack{"<>S[u[[4]]]<>"}2696=0\n",
+		h,
+		Branch[Band[6,u[[3]]],j],
+		"end \n",
+		"opt \n"
+		}//StringJoin,{j,1,2^Length[Band[6,u[[3]]]]}] //StringJoin
+	];
+
+Module[{stream,vv},
+vv=Map[branchText,UprightTypesA]//StringJoin;
+stream=OpenWrite["SHORT/HEX/cplexBu.exec"];
+        WriteString[stream,
+        "set logfile cplexBu.log\n"<>
+        "set preprocessing presolve no\n"
+        ];
+WriteString[stream,vv];
+Close[stream];
+];
+
+(* << SHORT/HEX/cplexBu.sum; *)
+valHex=values;
+valHexHi=Select[valHex,#[[1]]>0.4429&]; Length[valHexHi]==860;
+Map[#[[3]]&,valHexHi]//Union == {131, 226, 248};
+
+
+PM[6,226];
+PM[6,226].F15.C68.
+Select[valHexHi,#[[3]]==226&] == 
+	{{0.443231, 6, 226, 15, 68}, {0.44323, 6, 226, 15, 94}};
+list68 = Select[valHex,#[[3]]==226&&#[[5]]==68&];  Length[list68]==1024;
+PSelect[list68,#[[1]]>0.4429&] == {1};
+Initialize[6,226];
+Array[
+	LPdisplay[
+	"SHORT/HEX/LP/cplexE.lp6.226.F15.C68",
+	Branch[Band[6,226],1]<>
+	Branch[{6,7,11},#]<>
+	"ht213=0\n"<>  (* cf vvhtA *)
+	"slack{15}2696=0\n"]&,
+	2^3
+	]//Max == 0.4399.
+PM[6,226].F15.C68 done
+
+PM[6,226].F15.C94
+list94 = Select[valHex,#[[3]]==226&&#[[5]]==94&];  Length[list94]==1024;
+PSelect[list94,#[[1]]>0.4429&] == {1};
+Array[
+	LPdisplay[
+	"SHORT/HEX/LP/cplexE.lp6.226.F15.C94",
+	Branch[Band[6,226],1]<>
+	Branch[{6,7,11},#]<>
+	"ht213=0\n"<>  (* cf vvhtA *)
+	"slack{15}2696=0\n"]&,
+	2^3
+	]//Max == 0.4399
+PM[6,226].F15.C94 done
+PM[6,226] done (upright cases)
+
+PM[6,248];
+PM[6,248].F16.C66.
+Map[Last,Select[valHexHi,#[[3]]==248&]]//Union == {66, 96}
+Mod[{66,96},4]== {2,0};
+list66 = Select[valHex,#[[3]]==248&&#[[5]]==66&];  Length[list66]==1024;
+PSelect[list66,#[[1]]>0.4429&] == {6, 134};
+Initialize[6,248];
+
+Table[Array[
+	LPmax[
+	"SHORT/HEX/LP/cplexE.lp6.248.F16.C66",
+	StringVar["y",#],
+	Branch[Band[6,248],{6,134}[[i]]]<>
+	"slack{16}2696=0\n"]&,
+	Max[GBLregions]
+	],{i,1,2}]
+	//Max == 2.0732353214
+Table[Array[
+	LPdisplay[
+	"SHORT/HEX/LP/cplexE.lp6.248.F16.C66",
+	Branch[Band[6,248],{6,134}[[i]]]<>
+	Branch[{6, 7, 8, 11, 12, 13},#]<>
+	"ht213=0\n"<>
+	"slack{16}2696=0\n"]&,
+	2^6],
+	{i,1,2}]//Max
+
+--> to here.
+
+PM[6,248].F16.C66 
+
+
+(* Break into two batches, 150s and 160s *)
+(* 
+Results of 160s are in SHORT/HEX/cplexB160.sum.
+<< SHORT/HEX/cplexB160.sum == {5696, {0.442567, 165, 16, 57}}
+So nonPent cases in 160s are done, that is, {163, 164, 165, 166, 169}.
+*)
+
+
+(* HP:  stuff for hex+pent combinations *)
+WRITEOUTtwin[u_]:= Module[{vv},
+	exceptStem = "SHORT/HEX/LPmany/cplexE.lp";
+	vv = Select[hh,#[[2]]==u&];
+	Table[WRITEOUTmany[u,{{vv[[i,3]],vv[[i,4]]},{vv[[i,3]]-1,j}}],
+		{i,1,Length[vv]},{j,1,Length[AllPent]}]
+	];
+fileList = Flatten[Map[WRITEOUTtwin,{167,158}]];
+
+manyText:= Map[{"read ",#," lp\n",
+            "opt\n"
+            }&, fileList
+            ]//StringJoin
+Module[{stream},
+	stream=OpenWrite["SHORT/HEX/cplexEmany.exec"];
+	WriteString[stream,manyText];
+	Close[stream]
+	];
+<< SHORT/HEX/cplexEmany.sum;
+hp = Select[values,#[[1]]>0.4429&] ==
+	  {{0.4529824345299999, 158, 15, 64, 14, 22}, 
+   {0.4529823515, 158, 15, 68, 14, 21}, 
+   {0.4529824174799999, 158, 15, 85, 14, 21}, 
+   {0.45298313383, 158, 15, 94, 14, 22}, 
+   {0.4464941894899999, 167, 15, 68, 14, 19}};
+
+HPbranchText[i_]:= Module[{j,u},
+	u  =Select[hp,#[[2]]==i&];
+	Map[Table[{
+		"read ",
+		filePentText["cplexE.lp",i,{{#[[3]],#[[4]]},{#[[5]],#[[6]]}}]
+		," lp\n",
+		"add \n",
+		Branch[Band[i],j],
+		"end \n",
+		"opt \n"
+		}//StringJoin,{j,1,2^Length[Band[i]]}]
+		&,u]//StringJoin
+	];
+
+vv = Map[HPbranchText,{167,158}]//StringJoin; (* put in cplexBmany.exec *)
+
+(*
+<< SHORT/HEX/cplexBmany.sum == {4608, {0.441206, 167, 15, 68, 14, 19}};
+So pent-hex cases are done.
+*)
+
+
+
+(* Try a ht 2.696 example....
+
+CheckHts[i_,f_,ppos_]:= Module[{bf,verticex},
+	bf = fileText["SHORT/HEX/LP/cplexE.lp",i,f,ppos];
+	Initialize[i];
+	verticex = Complement[Union[Flatten[UprightQuarters[AllHex[[ppos]] ]]],
+				{0}]/.VertexSub[f];
+	{verticex,Map[LPmax[bf,StringVar["y",#]]&,verticex]}//Transpose
+	];
+
+

@@ -1,0 +1,417 @@
+import java.util.*;
+
+public class arrangeMain extends arrangePlus {
+
+private static int inc(int i) { return i+1; }
+
+static class iterator {
+        int maxelement;
+        int list[];
+        iterator(int inner,int outer)
+                {
+                list = new int[inner];
+                maxelement = outer-1;
+                for (int i=0;i<list.length;i++) list[i]=0;
+				list [list.length-1] = maxelement;
+				list [list.length-2] = -1;
+                }
+        boolean next()
+                {
+				// always: list[list.length-1]==maxelement
+				// always: list[0]=0;
+                int r = list.length-2;
+                int newvalue;
+                while ((r>0)&&(list[r]==maxelement-1))
+                        {  r--; }
+                if (r<=0) return false;
+                newvalue = list[r]+1;
+                for (int i=r;i<list.length-1;i++) { list[i]=newvalue; }
+                return true;
+                }
+        }
+
+	// Push onto the stack all possible ngons constructed in face F
+	// using the edge terminating at vertex A.
+	// 
+static void generatePolygon(int ngon,arrangePlus a,vertex A,
+	face F,Stack tentative,Stack terminal,parameterUse p)
+        {
+	debug1(ngon,a,A,F);
+	int offset = F.incidentVertex.indexOf(A);       debug2(offset);
+	int outer = F.incidentVertex.size();			debug3(outer);
+	int i,j;
+
+	boolean nix[][] = new boolean[outer][outer];
+	/* nix variables */ {
+	for (i=0;i<outer;i++) for (j=i+1;j<outer;j++)
+		{
+		int posi = misc.mod(i+offset,outer);
+		int posj = misc.mod(j+offset,outer);
+		vertex vi = (vertex)F.incidentVertex.elementAt(posi);
+		vertex vj = (vertex)F.incidentVertex.elementAt(posj);
+		if (a.divideBoundaryLooksOK(posi,posj,F)) nix[i][j]=false;
+			else nix[i][j]=true;
+		}
+	for (i=0;i<outer;i++) for (j=0;j<i;j++)
+			nix[i][j]=nix[j][i];
+	for (i=0;i<outer;i++) nix[i][i]=false;
+	}
+
+	/* genpoly loop */
+	iterator it = new iterator(ngon,outer);
+	genpolyloop: while (it.next())
+		{
+		int poly[];
+		int newCount[];
+
+		/* debug */ if (false){
+		System.out.print("iterator:");
+		for (int q=0;q<it.list.length;q++) 
+			System.out.print(" "+it.list[q]);
+		for (int r=0;r<nix.length;r++) for (int s=0;s<nix.length;s++)
+			if (nix[r][s]) System.out.print("	nix"+r+s+"="+nix[r][s]);
+		System.out.print(" "); try { System.in.read(); } 
+		catch (java.io.IOException e ) {}
+		} /* debug */
+
+
+		/* GeneratePoly */ {
+		// look at whether edge (i,i+1) is nixed.
+		for (i=0;i+1<it.list.length;i++)
+		if ((it.list[i+1]>it.list[i])&&((i==0)||(it.list[i]>it.list[i-1])))
+			if (nix[it.list[i]][it.list[i+1]]) continue genpolyloop;
+		// convert to edge format.
+		int count = 1;
+		for (i=1;i<it.list.length;i++) if (it.list[i]!=it.list[i-1])
+			count++;
+		poly = new int[count];
+		newCount = new int [count];
+		for (i=0;i<count;i++) newCount[i]=0;
+		if (false) System.out.println("count = "+count);
+		poly[0]= offset;
+		int index=0;
+		for (i=1;i<it.list.length;i++)
+			if (it.list[i]!=it.list[i-1])
+			poly[++index] = misc.mod(it.list[i]+offset,outer);
+			else newCount[index]++;
+		}  /* GeneratePoly */
+
+		/* LooksOKToAdd */ { 
+		for (i=0;i<poly.length;i++)
+			{
+			int t,q,e,temp;
+			temp= -1;
+			if (ngon>4) e = ngon; else e =0;
+			if (ngon==4) q = 1; else q=0;
+			if (ngon==3) t = 1; else t=0;
+
+			/* forward */ if (i+1<poly.length) {
+			int gon= 1+misc.mod(poly[i+1]-poly[i],outer)+newCount[i];
+			if (gon==3) t += 1;
+			else if (gon>3) temp += 1;
+			} /* forward */
+
+			/* back */ if (i>0) { 
+			int gon = 1+misc.mod(poly[i]-poly[i-1],outer)+newCount[i-1];
+			if (gon==3) t += 1;
+			else if (gon>3) temp += 1;
+			} /*back*/
+			if (!a.LooksOKToAdd(t,q,e,temp,
+				(vertex)F.incidentVertex.elementAt(poly[i]),p)) 
+				continue genpolyloop;
+			}
+		} /* LooksOKToAdd */
+
+		/* PushClone */ { 
+		arrangePlus b = (arrangePlus)a.clone();
+		int faceIndex = a.faceList.indexOf(F);
+		face bF = (face)b.faceList.elementAt(faceIndex);
+		if (bF.incidentVertex.size()!= F.incidentVertex.size())
+			{ misc.warn("clone error"); }
+		if (bF.incidentVertex.size()<4) { misc.warn("bad face"); }
+		b.addPolygon(poly,newCount,bF);
+		tentativePush(b,tentative,terminal,p);
+		} /*PushClone*/
+
+		}
+	}
+
+static boolean passesScrutiny(arrangePlus a,parameterUse p)
+	{
+	if (a.vertexList.size()> p.vertexCountMax) return false;
+	if (a.vertexList.size()< p.vertexCountMin) return false;
+	for (int i=0;i<a.vertexList.size();i++)
+		{
+		vertex v = (vertex)a.vertexList.elementAt(i);
+		if ((v.exCount()>0)&&
+		    (v.incidentFace.size()>p.faceCountMaxAtExceptionalVertex))
+			return false;
+		if ((v.exCount()==0)&&
+			(v.incidentFace.size()>p.faceCountMax)) return false;
+		}
+	if (a.ExcessNotAt(null,p)+a.faceSquanderLowerBound(p)> p.squanderTarget) 
+		return false;
+	if (a.ScoreUpperBound(p) < p.scoreTarget) return false;
+	return true;
+	}
+        
+
+static void terminalPush(arrangePlus a,Stack terminal,parameterUse p)
+	{
+	if (!passesScrutiny(a,p)) return;
+	arrangeInvariant b = new arrangeInvariant(a);
+	if (b.isContainedIn(terminal)) return;
+	terminal.push(b);
+	}
+
+static void tentativePush(arrangePlus a,Stack tentative,Stack terminal,
+	parameterUse p)
+	{
+	face f;
+	boolean hasBoundary=false;
+	for (int i=0;i<a.faceList.size(); i++)
+		{
+		f = (face)a.faceList.elementAt(i);
+		if ((a.vertexList.size()>3)&&(f.incidentVertex.size() == 3)) 
+			f.isBoundary=false;
+		if (f.isBoundary) { hasBoundary = true; }
+		}
+	if (!hasBoundary)  { terminalPush(a,terminal,p); return ; }
+	tentative.push(a);
+	}
+
+static int PolyLimit(arrangePlus a,parameterUse p)
+	{
+	int polylimit = p.maxGon();
+	int lb = a.faceSquanderLowerBound(p) + a.ExcessNotAt(null,p);
+	while ((lb+p.squanderFace(polylimit)>=p.squanderTarget)&&
+			(polylimit>0))
+		polylimit --;
+	return polylimit;
+	}
+
+static boolean niceQuad(arrangePlus a,parameterUse p)
+	{
+	int s = a.faceSquanderLowerBound(p)+ a.ExcessNotAt(null,p);
+	boolean b = ((s +p.squanderFaceStartingAt(5)>=p.squanderTarget)&&
+		(s+p.fixedSquanderVertex[2][1]>=p.squanderTarget)&&
+		(s+p.fixedSquanderVertex[0][2]>=p.squanderTarget));
+	if (b) discard.addLine("nQ passes"); else discard.addLine("nQ fails");
+	return b;
+	}
+
+static void QuadCluster(arrangePlus a,face F,parameterUse p,Stack 
+	tentative,Stack terminal,vertex v[])
+	{
+	boolean doquad = true;
+	for (int i=0;i<4;i++)
+		if (!a.LooksOKToAdd(0,1,0,-1,v[i],p)) 
+			{ doquad=false; break; }
+	{ int debug=a.faceList.indexOf(F); 
+		if (doquad) discard.addLine("dQ on face "+(debug+1)); 
+		else discard.addLine("dQ fails on face "+(debug+1)); }
+	if (doquad)
+		{
+		arrangePlus b = (arrangePlus)a.clone();
+		int index = a.faceList.indexOf(F);
+		((face) b.faceList.elementAt(index)).isBoundary = false;
+		tentativePush(b,tentative,terminal,p);
+		}
+	}
+
+static void Do40(arrangePlus a,face F,parameterUse p,Stack 
+	tentative,Stack terminal,vertex v[]) {
+	boolean do40 = true;
+	if (a.faceSquanderLowerBound(p) +a.ExcessNotAt(null,p)+
+		p.forecast(4,0,0)>=
+		p.squanderTarget) do40=false;
+	else for (int i=0;i<4;i++)
+		if (!a.LooksOKToAdd(2,0,0,-1,v[i],p)) { do40=false; break; }
+	if (do40)
+		{
+		arrangePlus b = (arrangePlus)a.clone();
+		int index = a.faceList.indexOf(F);
+		face F40 = 
+			(face)b.faceList.elementAt(index);
+		vertex A1 = (vertex)F40.incidentVertex.elementAt(0);
+		vertex A2 = (vertex)F40.incidentVertex.elementAt(1);
+		vertex A3 = (vertex)F40.incidentVertex.elementAt(2);
+		vertex A4 = (vertex)F40.incidentVertex.elementAt(3);
+		b.divideBoundary(0,2,F40,1); 
+		index  = b.vertexList.size();
+		if (b.vertexList.size()!= a.vertexList.size()+1)
+			misc.warn("vertex was not added as expected");
+		index = b.faceList.size();
+		face F40p = (face)b.faceList.elementAt(index-1);
+		if (F40p.incidentVertex.size()!=4) misc.warn("quadrilateral expected");
+	 	index = F40p.incidentVertex.indexOf(A2);
+		if (index<0) misc.warn("A2 not found on F40p");
+		b.divideBoundary(index,misc.mod(index+2,4),F40p,0); 
+		index = F40.incidentVertex.indexOf(A4);
+		if (F40.incidentVertex.size()!=4) misc.warn("F40 quad expected");
+		if (index<0) misc.warn("A4 not found on F40");
+		b.divideBoundary(index,misc.mod(index+2,4),F40,0); 
+		tentativePush(b,tentative,terminal,p);
+		}
+	}
+
+static void Quad(arrangePlus a,face F,parameterUse p,Stack tentative,
+		Stack terminal)
+	{
+	vertex v[] = new vertex[4];
+	for (int i=0;i<4;i++) 
+		v[i]=(vertex)F.incidentVertex.elementAt(i);
+	QuadCluster(a,F,p,tentative,terminal,v);
+	Do40(a,F,p,tentative,terminal,v);
+
+	/* tri2: */ {
+	boolean dotri2=true;
+	if (!a.divideBoundaryLooksOK(1,3,F)) dotri2=false;
+	else for (int i=0;i<4;i++)
+		if (!a.LooksOKToAdd(1+misc.mod(i,2),0,0,-1,v[i],p))
+			{ dotri2=false; break; }
+	if (dotri2)
+		{
+		arrangePlus b = (arrangePlus)a.clone();
+		int index = a.faceList.indexOf(F);
+		face F0 =  
+			(face)b.faceList.elementAt(index);
+		b.divideBoundary(1,3,F0,0); 
+		tentativePush(b,tentative,terminal,p);
+		}
+	}
+
+	/* skewtri2: */ {
+	boolean doskewtri2=true;
+	if (!a.divideBoundaryLooksOK(0,2,F)) doskewtri2=false;
+	for (int i=0;i<4;i++)
+		if (!a.LooksOKToAdd(1+misc.mod(i+1,2),0,0,-1,v[i],p))
+			{ doskewtri2=false; break; }
+	if (doskewtri2)
+		{
+		arrangePlus b = (arrangePlus)a.clone();
+		int index = a.faceList.indexOf(F);
+		face F0 =  (face)b.faceList.elementAt(index);
+		b.divideBoundary(0,2,F0,0); 
+		tentativePush(b,tentative,terminal,p);
+		}
+	}
+
+
+	} // end quad.
+	
+
+private static int globalcount = 0;
+static boolean loop(Stack tentative,Stack terminal,parameterUse p)
+	{
+	arrangePlus a;
+	if (tentative.size()>0) 
+		{ a = (arrangePlus)tentative.pop();
+		  globalcount++;
+		  discard = new arrangeAnnotate(a);
+		  if (0==misc.mod(globalcount,1000))
+			{
+			System.out.println("stack sizes = "
+				+tentative.size()+" "+terminal.size());
+			System.out.println(" cases considered= "+globalcount);
+			}
+		}
+	else {  System.out.println("Total pops: "+globalcount); 
+			return false;
+		}
+	face Fsmall = (face)a.faceList.firstElement();
+	int outer = p.vertexCountMax+1;
+	for (int i=0;i<a.faceList.size();i++)
+		{
+		face F = (face)a.faceList.elementAt(i);
+		if ((F.isBoundary)&&(F.incidentVertex.size()<outer))
+			{ Fsmall = F; outer = F.incidentVertex.size(); }
+		}
+	/*shouldn't happen:*/{
+	if ((outer> p.vertexCountMax) ||(!Fsmall.isBoundary))
+			{ 
+			String S = "Unable to locate face; outer = "+outer;
+			discard.addLine(S);
+			(new graphException(S)).report(); 
+				return false; 
+			} }
+ 
+	/* ForcedTriangle: */ {
+	forcedTriangle: for (int i=0;i<a.vertexList.size();i++)
+		{
+		vertex v = (vertex)a.vertexList.elementAt(i);
+		if (v.tempCount()==0) continue forcedTriangle;
+		if (!a.ForcedTriangleAt(v,p)) continue forcedTriangle;
+		// if we get to here there is a forced triangle:
+		face F = (face)v.incidentFace.elementAt(0);
+		int j=0;
+		while (!F.isBoundary) F = (face)v.incidentFace.elementAt(++j);
+		int vpos = F.incidentVertex.indexOf(v);
+		vertex A = (vertex)F.incidentVertex.elementAt(misc.mod(vpos+1,outer));
+		vertex B = (vertex)F.incidentVertex.elementAt(misc.mod(vpos-1,outer));
+		discard.addLine("Forced triangle at vertex "+(i+1)+" face "+
+				(1+a.faceList.indexOf(F))+" between vertices "+
+				(1+a.vertexList.indexOf(A))+" "+(1+a.vertexList.indexOf(B)));
+		if (a.divideBoundaryLooksOK(i+1,i-1,Fsmall)&&
+			(a.LooksOKToAdd(1,0,0,-1,A,p))&&
+			(a.LooksOKToAdd(1,0,0,-1,B,p)))
+			{
+			a.divideBoundary(i+1,i-1,Fsmall,0);
+			tentativePush(a,tentative,terminal,p);
+			}
+		discard.addLine("But not added because it didn't look ok");
+		return true;
+		}
+	}/*ForcedTriangle*/
+
+	/*polygons*/ {
+	int startingIndex = a.selectVertex(Fsmall);
+	if ((outer==4)&&(niceQuad(a,p)))  
+		{ Quad(a,Fsmall,p,tentative,terminal); return true; }
+	int polylimit = PolyLimit(a,p);
+	discard.addLine("polylimit = "+polylimit);
+	if ((outer==4)&&(a.vertexList.size()>5)) 
+		polylimit = Math.min(polylimit,5);
+	vertex A = (vertex)Fsmall.incidentVertex.elementAt(startingIndex);
+	for (int i=3;i<=polylimit;i++)
+		{
+		generatePolygon(i,a,A,Fsmall,tentative,terminal,p);
+		}
+	return true;
+	}
+
+	}
+
+public static Stack generateAll(int NGON)
+	{
+	Stack tentative = new Stack();
+	Stack terminal = new Stack();
+	parameterUse p = new parameterUse(NGON);
+	tentative.push(new arrangePlus(arrange.makeNgon(NGON)));
+	while ( loop(tentative,terminal,p) ) {  } 
+	System.out.println("stack size = " + terminal.size());	
+	return terminal;
+	}
+
+public static void main(String arg[])
+    {
+	generateAll(7);
+	}
+
+
+private static void debug1(int ngon,arrange a,vertex A,face F)
+	{
+	discard.addLine("generating "+ngon+" on face "+inc(a.faceList.indexOf(F)));
+	discard.addLine("starting from vertex "+inc(a.vertexList.indexOf(A)));
+	}
+
+private static void debug2(int offset) {
+	if (offset<0) { (new graphException("generate Polygon A in F")).report();}}
+
+private static void debug3(int outer) { if (outer<4) misc.warn("illicit face"); }
+ 
+
+}
+
+
+

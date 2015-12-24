@@ -1,0 +1,21 @@
+
+Everything was rerun a (hopefully final) time on Feb 11, 1998.
+I checked that everything was already in the archive.
+
+invariant.java calculates the graph invariants.
+These were fed into mathematica, and the invariants for the new graphs
+were compared to the invariants in the archive.  An array was
+made giving how each new graph should match with an old.  This
+was placed in PENT.java,...,OCT.java.  These java programs verified
+that each matching of invariants actually corresponded to a graph
+isomorphism.
+
+So nothing new was found.  (I thought there was one new pent, and
+modified the archive, but then I realized it was there and changed
+the archive/graphPENT.java back to how it was.)
+
+I started this calculation late last night.  Pents finished around midnight.
+Hexes ran in a couple of hours on "maya", the others finished quickly.
+
+Tom Hales
+2/11/98.

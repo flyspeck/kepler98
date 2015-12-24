@@ -1,0 +1,280 @@
+%\magnification=\magstep1
+\documentstyle{amsppt}
+
+\topmatter
+\parskip=\baselineskip
+\baselineskip=1.1\baselineskip  % was 1.1
+\parindent=0pt
+\loadmsbm
+\UseAMSsymbols
+\raggedbottom
+\hoffset=0.75truein
+\voffset=0.5truein
+
+
+\def\reft{\relax}  % items
+\def\refz{\relax}
+\def\bul{\noindent$\bullet$\quad }
+\def\lb#1{\line{$\bullet$ #1 \hfill}}
+\def\cir{\noindent$\circ$\quad }
+\def\heads#1{\rightheadtext{#1}}
+\def\doct{\delta_{oct}}
+\def\pt{\hbox{\it pt}}
+\def\Vol{\hbox{vol}}
+\def\and{\operatorname{and}}
+\def\sol{\operatorname{sol}}
+\def\quo{\operatorname{quo}}
+\def\anc{\operatorname{anc}}
+\def\cro{\operatorname{crown}}
+\def\vor{\operatorname{vor}}
+\def\octavor{\operatorname{octavor}}
+\def\dih{\operatorname{dih}}
+\def\arc{\operatorname{arc}}
+\def\rad{\operatorname{rad}}
+\def\if{\operatorname{if}}
+\def\A{{\bold A}}
+\def\squander{(4\pi\zeta-8)\,\pt}
+\def\score{8\,\pt}
+\def\Sfour{\Cal{\bold S}_4^+}
+\def\Sminus{\Cal{\bold S}_3^-}
+\def\Splus{\Cal{\bold S}_3^+}
+\def\maxpi{\pi_{\max}}
+\def\xiG{\xi_\Gamma}
+\def\xiV{\xi_V}
+\def\xik{\xi_\kappa}
+\def\xikG{\xi_{\kappa,\Gamma}}
+
+\font\twrm=cmr8
+\def\DLP{\operatorname{D}_{\hbox{\twrm LP}}}
+\def\ZLP{\operatorname{Z}_{\hbox{\twrm LP}}}
+\def\tLP{\operatorname{\hbox{$\tau$}LP}}  % 3 args small LP.
+\def\tlp{\tau_{\hbox{\twrm LP}}}  % 2 args (p,q) tri, quad
+\def\slp{\sigma_{\hbox{\twrm LP}}}  % 2 args (p,q) tri, quad
+\def\sLP{\operatorname{\hbox{$\sigma$}LP}}
+\def\LPmin{\operatorname{LP-min}}
+\def\LPmax{\operatorname{LP-max}}
+\def\geom{{\operatorname{g}}}
+\def\anal{{\operatorname{an}}}
+
+
+
+\def\sol{\operatorname{sol}}
+\def\dih{\operatorname{dih}}
+\def\V{\operatorname{V}}
+\def\vol{\operatorname{vol}}
+\def\Area{\operatorname{Area}}
+\def\Per{\operatorname{Per}}
+\def\rad{\operatorname{rad}}
+\def\quo{\operatorname{quo}}
+
+\def\R{{\Bbb R}}
+\def\ldot{\cdot}
+\def\S{{\Cal S}}
+\def\del{\partial}
+\def\B#1{{\bold #1}}
+\def\tri#1#2{\langle#1;#2\rangle}
+\def\ha{ \hangindent=20pt \hangafter=1\relax }
+\def\ho{ \hangindent=20pt \hangafter=0\relax }
+\def\i{I}
+\def\was#1{\relax}
+
+\def\diag|#1|#2|{\vbox to #1in {\vskip.3in\centerline{\tt Diagram #2}\vss} }
+\def\v{\hskip -3.5pt }
+% to place a fig file  align the bottom left corner at (0,-11).
+% save as left justified.
+% resize so that the box is just under 5 in width
+\def\gram|#1|#2|#3|{
+        {
+        \smallskip
+        \hbox to \hsize
+        {\hfill
+        \vrule \vbox{ \hrule \vskip 6pt \centerline{\it Diagram #2}
+         \vskip #1in %
+             \special{psfile=#3 hoffset=5 voffset=5 }\hrule }
+        \v\vrule\hfill
+        }
+\smallskip}}
+
+\def\today{\ifcase\month\or
+    January\or February\or March\or April\or May\or June\or
+    July\or August\or September\or October\or November\or December\fi
+    \space\number\day, \number\year}
+
+
+
+
+\bigskip
+
+\centerline{\bf Appendix 1. Inequalities}
+
+\bigskip
+
+{\bf 1. Tetrahedral Inequalities.}
+
+\smallskip
+
+The inequalities in Sections 1-3 apply only to quasi-regular tetrahedra.
+The edges are numbered in the usual way.
+
+\smallskip
+
+{\bf 1.1 Function Bounds on Quasi-Regular Tetrahedra.}
+
+
+$1:  \vol(S) > 0.202804$\newline
+$2:  \sol(S) > 0.315696$\newline
+$3:  \sol(S) < 1.051232$\newline
+$4:  \dih(S) > 0.856147$\newline
+$5:  \dih(S) < 1.886730$\newline
+$6:  \mu(S) > 0$\newline
+
+
+\smallskip
+
+{\bf 1.2. Vol, Sol, Dih inequalities on Quasi-Regular Tetrahedra.}
+
+\smallskip
+
+$1:  \vol(S) - 0.68 \sol(S) + 1.88718 \dih(S) > 1.54551 $\newline
+$2:  \vol(S) - 0.68 \sol(S) + 0.90746 \dih(S) > 0.706725$\newline
+$3:  \vol(S) - 0.68 \sol(S) + 0.46654 \dih(S) > 0.329233$\newline
+$4:  \vol(S) - 0.55889 \sol(S) - 0 \dih(S) > -0.0736486$\newline
+$5:  \vol(S) - 0.63214 \sol(S) - 0 \dih(S) > -0.13034$\newline
+$6:  \vol(S) - 0.73256 \sol(S) - 0 \dih(S) > -0.23591$\newline
+$7:  \vol(S) - 0.89346 \sol(S) - 0 \dih(S) > -0.40505$\newline
+$8:  \vol(S) - 0.3 \sol(S) - 0.5734 \dih(S) > -0.978221$\newline
+$9:  \vol(S) - 0.3 \sol(S) - 0.03668 \dih(S) > 0.024767$\newline
+$10:  \vol(S) - 0.3 \sol(S) + 0.04165 \dih(S) > 0.121199$\newline
+$11:  \vol(S) - 0.3 \sol(S) + 0.1234 \dih(S) > 0.209279$\newline
+$12:  \vol(S) - 0.42755 \sol(S) - 0.11509 \dih(S) > -0.171859$\newline
+$13:  \vol(S) - 0.42755 \sol(S) - 0.04078 \dih(S) > -0.050713$\newline
+$14:  \vol(S) - 0.42755 \sol(S) + 0.11031 \dih(S) > 0.135633$\newline
+$15:  \vol(S) - 0.42755 \sol(S) + 0.13091 \dih(S) > 0.157363$\newline
+$16:  \vol(S) - 0.55792 \sol(S) - 0.21394 \dih(S) > -0.417998$\newline
+$17:  \vol(S) - 0.55792 \sol(S) - 0.0068 \dih(S) > -0.081902$\newline
+$18:  \vol(S) - 0.55792 \sol(S) + 0.0184 \dih(S) > -0.051224$\newline
+$19:  \vol(S) - 0.55792 \sol(S) + 0.24335 \dih(S) > 0.193993$\newline
+$20:  \vol(S) - 0.68 \sol(S) - 0.30651 \dih(S) > -0.648496$\newline
+$21:  \vol(S) - 0.68 \sol(S) - 0.06965 \dih(S) > -0.278$\newline
+$22:  \vol(S) - 0.68 \sol(S) + 0.0172 \dih(S) > -0.15662$\newline
+$23:  \vol(S) - 0.68 \sol(S) + 0.41812 \dih(S) > 0.287778$\newline
+$24:  \vol(S) - 0.64934 \sol(S) - 0 \dih(S) > -0.14843$\newline
+$25:  \vol(S) - 0.6196 \sol(S) - 0 \dih(S) > -0.118$\newline
+$26:  \vol(S) - 0.58402 \sol(S) - 0 \dih(S) > -0.090290$\newline
+$27:  \vol(S) - 0.25181 \sol(S) - 0 \dih(S) > 0.096509$\newline
+$28:  \vol(S) - 0.00909 \sol(S) - 0 \dih(S) > 0.199559$\newline
+$29:  \vol(S) + 0.93877 \sol(S) - 0 \dih(S) > 0.537892$\newline
+$30:  \vol(S) + 0.93877 \sol(S) - 0.20211 \dih(S) > 0.27313$\newline
+$31:  \vol(S) + 0.93877 \sol(S) + 0.63517 \dih(S) > 1.20578$\newline
+$32:  \vol(S) + 1.93877 \sol(S) - 0 \dih(S) > 0.854804$\newline
+$33:  \vol(S) + 1.93877 \sol(S) - 0.20211 \dih(S) > 0.621886$\newline
+$34:  \vol(S) + 1.93877 \sol(S) + 0.63517 \dih(S) > 1.57648$\newline
+$35:  \vol(S) - 0.42775 \sol(S) - 0 \dih(S) > -0.000111$\newline
+$36:  \vol(S) - 0.55792 \sol(S) - 0 \dih(S) > -0.073037$\newline
+$37:  \vol(S) - 0 \sol(S) - 0.07853 \dih(S) > 0.08865$\newline
+$38:  \vol(S) - 0 \sol(S) - 0.00339 \dih(S) > 0.198693$\newline
+$39:  \vol(S) - 0 \sol(S) + 0.18199 \dih(S) > 0.396670$\newline
+$40:  \vol(S) - 0.42755 \sol(S) - 0.2 \dih(S) > -0.332061$\newline
+$41:  \vol(S) - 0.3 \sol(S) - 0.36373 \dih(S) > -0.58263$\newline
+$42:  \vol(S) - 0.3 \sol(S) + 0.20583 \dih(S) > 0.279851$\newline
+$43:  \vol(S) - 0.3 \sol(S) + 0.40035 \dih(S) > 0.446389$\newline
+$44:  \vol(S) - 0.3 \sol(S) + 0.83259 \dih(S) > 0.816450$\newline
+$45:  \vol(S) - 0.42755 \sol(S) - 0.51838 \dih(S) > -0.932759$\newline
+$46:  \vol(S) - 0.42755 \sol(S) + 0.29344 \dih(S) > 0.296513$\newline
+$47:  \vol(S) - 0.42755 \sol(S) + 0.57056 \dih(S) > 0.533768$\newline
+$48:  \vol(S) - 0.42755 \sol(S) + 1.18656 \dih(S) > 1.06115$\newline
+$49:  \vol(S) - 0.55792 \sol(S) - 0.67644 \dih(S) > -1.29062$\newline
+$50:  \vol(S) - 0.55792 \sol(S) + 0.38278 \dih(S) > 0.313365$\newline
+$51:  \vol(S) - 0.55792 \sol(S) + 0.74454 \dih(S) > 0.623085$\newline
+$52:  \vol(S) - 0.55792 \sol(S) + 1.54837 \dih(S) > 1.31128$\newline
+$53:  \vol(S) - 0.68 \sol(S) - 0.82445 \dih(S) > -1.62571$\newline
+\smallskip
+
+{\bf 1.3. Edge length inequalities on Quasi-Regular Tetrahedra.}
+
+\smallskip
+
+$1: \sol(S) > 0.551285 - 0.245 (y_1+y_2+y_3-6) + 0.063 (y_4+y_5+y_6-6)$\newline
+$2: \sol(S) > 0.551285 - 0.3798 (y_1+y_2+y_3-6) + 0.198 (y_4+y_5+y_6-6)$\newline
+$3: \sol(S) < 0.551286 - 0.151 (y_1+y_2+y_3-6) + 0.323 (y_4+y_5+y_6-6)$\newline
+
+$4: \mu(S) > 0.0392 (y_1+y_2+y_3-6) + 0.0101 (y_4+y_5+y_6-6) $\newline
+$5: \vol > 0.235702 -0.107 (y_1+y_2+y_3-6) + 0.116 (y_4+y_5+y_6-6)$\newline
+$6: \vol > 0.235702 -0.0623 (y_1+y_2+y_3-6) + 0.0722 (y_4+y_5+y_6-6)$\newline
+$7: \dih(S) > 1.23095 + 0.237 (y_1-2) - 0.372 (y_2+y_3+y_5+y_6-8) + 0.708 (y_4-2) $\newline
+$8: \dih(S) > 1.23095 + 0.237 (y_1-2) - 0.363 (y_2+y_3+y_5+y_6-8) + 0.688 (y_4-2)$\newline
+$9: \dih(S) < 1.23096 + 0.505 (y_1-2) - 0.152(y_2+y_3+y_5+y_6-8) + 0.766 (y_4-2)$\newline
+
+
+
+\smallskip
+
+{\bf  2.Quadrilateral Inequalities}
+
+\smallskip
+
+We define $Q(x_1,x_2,x_3,x_4,x_5,x_6,x_7,x_8,x_9)$, abreviated as Q, to be a quad cluster with edge lengths $x_1,\dots, x_9$ with the following order on the edges.  The edges $x_1,\dots, x_6$ are ordered the same as a tetrahedron.  (Note: $x_4$ corresponds to a diagonal of the quadrilateral.  The two vertices which are connected by $x_4$ are {\sl NOT} close neighbors.) The edge $x_7$ refers to the vector connecting 0 and the 4th sphere.  Edge $x_8,x_9$ are opposite $x_2,x_3$ respectively.
+
+What follow are the quad cluster equivalent of the tetrahedral inequalities.
+The function $dih_1(Q)$ refers to the dihedral angle at edge 1 or 7.  Similarly, $dih_2(Q)$ refers to the dihedral angle at edge 2 or 3.  If simply $dih(Q)$ is used, the inequality holds for any choice of dihedral angle.  (Note that a quadrilateral is always truncated so we use $\omega$ consistently as the volume function.)
+
+{\bf 2.1. Function Bounds on Quadrilateral Clusters.}
+
+$1:  \omega(Q) > 0.455149$\newline
+$2:  \sol(Q) > 0.731937$\newline
+$3:  \sol(Q) < 2.85860$\newline
+$4:  \dih(Q) > 1.15242$\newline
+$5:  \dih(Q) < 3.25887$\newline
+$6:  \mu(Q) > 0.031350$\newline
+
+\smallskip
+
+{\bf 2.2. Vol,Sol,Dih inequalities on Quad Clusters.}
+
+\smallskip
+
+$1:  \omega(Q) - 0.42775 \sol(Q) - 0.15098 \dih(S) > -0.3670$\newline
+$2:  \omega(Q) - 0.42775 \sol(Q) - 0.09098 \dih(S) > -0.1737$\newline
+$3:  \omega(Q) - 0.42775 \sol(Q) - 0.00000 \dih(S) > 0.0310$\newline
+$4:  \omega(Q) - 0.42775 \sol(Q) + 0.18519 \dih(S) > 0.3183$\newline
+$5:  \omega(Q) - 0.42775 \sol(Q) + 0.20622 \dih(S) > 0.3438$\newline
+$6:  \omega(Q) - 0.55792 \sol(Q) - 0.30124 \dih(S) > -1.0173$\newline
+$7:  \omega(Q) - 0.55792 \sol(Q) - 0.02921 \dih(S) > -0.2101$\newline
+$8:  \omega(Q) - 0.55792 \sol(Q) - 0.00000 \dih(S) > -0.1393$\newline
+$9:  \omega(Q) - 0.55792 \sol(Q) + 0.05947 \dih(S) > -0.0470$\newline
+$10:  \omega(Q) - 0.55792 \sol(Q) + 0.39938 \dih(S) > 0.4305$\newline
+$11:  \omega(Q) - 0.55792 \sol(Q) + 2.50210 \dih(S) > 2.8976$\newline
+$12:  \omega(Q) - 0.68000 \sol(Q) - 0.44194 \dih(S) > -1.6264$\newline
+$13:  \omega(Q) - 0.68000 \sol(Q) - 0.10957 \dih(S) > -0.6753$\newline
+$14:  \omega(Q) - 0.68000 \sol(Q) - 0.00000 \dih(S) > -0.4029$\newline
+$15:  \omega(Q) - 0.68000 \sol(Q) + 0.86096 \dih(S) > 0.8262$\newline
+$16:  \omega(Q) - 0.68000 \sol(Q) + 2.44439 \dih(S) > 2.7002$\newline
+$17:  \omega(Q) - 0.30000 \sol(Q) - 0.12596 \dih(S) > -0.1279$\newline
+$18:  \omega(Q) - 0.30000 \sol(Q) - 0.02576 \dih(S) > 0.1320$\newline
+$19:  \omega(Q) - 0.30000 \sol(Q) + 0.00000 \dih(S) > 0.1945$\newline
+$20:  \omega(Q) - 0.30000 \sol(Q) + 0.03700 \dih(S) > 0.2480$\newline
+$21:  \omega(Q) - 0.30000 \sol(Q) + 0.22476 \dih(S) > 0.5111$\newline
+$22:  \omega(Q) - 0.30000 \sol(Q) + 2.31852 \dih(S) > 2.9625$\newline
+$23:  \omega(Q) - 0.23227 \dih(S) > -0.1042$\newline
+$24:  \omega(Q) + 0.07448 \dih(S) > 0.5591$\newline
+$25:  \omega(Q) + 0.22019 \dih(S) > 0.7627$\newline
+$26:  \omega(Q) + 0.80927 \dih(S) > 1.5048$\newline
+$27:  \omega(Q) + 5.84380 \dih(S) > 7.3468$\newline
+
+
+
+\smallskip
+
+{\bf 2.3. Edge Length Inequalities on Quad Clusters.}
+
+This inequality will be called (*) and is not used in the general linear programming problems.  It is applied as needed to disprove counterexamples.  It is 
+difficult to prove and will be discussed whenever it is used.
+
+\smallskip
+
+$(*): \omega(Q) > 0.590491 -0.166(y_1+y_2+y_3+y_7-8) + 0.143 (y_5+y_6+y_8+y_9-8)$\newline
+
+\smallskip
+
+
+\bye

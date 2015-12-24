@@ -1,0 +1,55 @@
+
+PentaDihCut 		< m1e-8.in > pdc.out ;
+PentaCap 			< m1e-8.in > pc.out ;
+PentaDihRel			< 1e-10.in > pdr.out ;
+
+
+QuadGma 			< 1e-5.in > qg.out ;
+QuadGmaBdry 		< 1e-5.in > qgb.out ;
+QuadVor 			< 1e-5.in > qv.out ;
+QuadVorBdry 		< 1e-5.in > qvb.out ;
+QuadVorCornerBdry 	< 1e-5.in > qvcb.out ;
+TestQuadVorBdry 	< 38.in   >	tqvb.out ;
+
+
+OctaDiagCutGma 		< 1e-10.in > odcg.out ;
+OctaGma 			< 1e-5.in > og.out ;
+OctaGmaBdry 		< 1e-5.in > ogb.out ;
+OctaVor 			< 1e-5.in > ov.out ;
+OctaVorBdry 		< 1e-5.in > ovb.out ;
+OctaPeel	 		< zero.in > op.out ;
+OctaGmaCorr 		< 1e-5.in > ogc.out ;
+OctaGmaCorrBdry 	< 1e-5.in > ogcb.out ;
+OctaVorCorr 		< 1e-5.in > ovc.out ;
+OctaVorCorrBdry 	< 1e-5.in > ovcb.out ;
+
+
+VorSecParBds 		< d16.in > vspb.out ;
+QRVorSecParBds 		< d16.in > qrvspb.out ;
+SphSecParBds 		< d16.in > sspb.out ;
+QRSphSecParBds 		< d16.in > qrsspb.out ;
+DihSecParBds 		< d16.in > dspb.out ;
+QRDihSecParBds 		< d16.in > qrdspb.out ;
+GmaVolSecParBds 	< d16.in > gvspb.out ;
+QRGmaVolSecParBds 	< d16.in > qrgvspb.out ;
+
+
+AcuteVoronoi	 	< 1e-5.in > av.out ;
+AcuteVoronoiBdry	< 1e-5.in > avb.out ;
+AcuteVoronoiBdry2	< 1e-5.in > avb2.out ;
+AcuteVorCorner		< 1e-5.in > avco.out ;
+AcuteVoronoiCut		< 1e-5.in > avcu.out ;
+ObtuseVoronoi		< 1e-5.in > ov.out ;
+ObtuseVoronoi2		< 1e-5.in > ov2.out ;
+
+
+BigPoly				< d16.in > bp.out ;
+
+
+QuarterCorner			< zero.in > quc.out ;
+QuarterCornPars			< 48.in   > qucp.out ;
+QuarterGma				< zero.in > qug.out ;
+QuarterOctaVor			< zero.in > quov.out ;
+QuarterVorPunch			< zero.in > quvp.out ;
+QuarterVorPunchBdry		< zero.in > quvpb.out
+

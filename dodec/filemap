@@ -1,0 +1,58 @@
+
+CONJECT Directory (directories in caps)
+
+Contains the computer files used in the proof of the Dodecahedral Conjecture
+by Thomas Hales and Sean McLaughlin.  This is a guide to the subdirectories
+where the files are kept.
+
+1) INEQS
+
+	A) INTERVAL 
+
+	   This is the interval arithmetic package used to verify inequalities
+	   using Taylors theorem.  It is described in detail on Tom Hales 
+	   web page.
+
+	    error.cc               lineInterval.cc        recurse.h
+            error.h                lineInterval.h         secondDerive.cc
+            interval.cc            lineInterval_inline.h  secondDerive.h
+            interval.h             notPortable.h          taylorInterval.cc
+            interval_inline.h      recurse.cc             taylorInterval.h
+
+
+ 	B) TETS
+
+	   These are the inequalities on quasi-regular tetrahedra.
+	   They are numbered as Appendix 1 of the paper 
+	   "A Proof of the Dodecahedral Conjecture"
+
+           T1.1.1.cc     T1.1.6.cc     T1.2.7-9.cc
+	   T1.1.2-5.cc   T1.2.1-53.cc  T1.3.1-6.cc
+
+	C) QUADS
+
+	   Inequalities on quad clusters.  
+
+	   Q2.1.1.cc     Q2.1.3.cc     Q2.1.6.cc
+	   Q2.1.2.cc     Q2.1.4-5.cc   Q2.2.1-27.cc
+
+	D) VERTEX
+
+	   Inequalities from Section 6.3.
+
+	   case1.cc  case2.cc
+
+	E) 5.2.3
+
+	   Ineqs from Section 5.2.3. used to prove Lemma 5.2.2.
+
+	   5.2.3.1.cc  5.2.3.3.cc  5.2.3.5.cc  5.2.3.7.cc
+	   5.2.3.2.cc  5.2.3.4.cc  5.2.3.6.cc
+		
+
+	F) 7.2
+
+	   Ineqs used in the proof of Lemma 7.2.
+
+	   7.2.1-5.cc
+

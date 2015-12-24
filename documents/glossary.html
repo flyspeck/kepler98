@@ -1,0 +1,377 @@
+<HTML>
+
+<body background="paperbackground.JPG" alink=blue vlink=red>
+<H3>Glossary of Terms</H3>
+<p>
+
+
+<DL>
+<LH>Glossary</LH>
+
+
+<p><DT><B>A<dd></B>
+
+<DT>
+anchor
+<dd>
+A vertex v is said to be the anchor of the diagonal of a quarter, if its
+distance is at most 2.51 from both endpoints of the the upright diagonal.
+
+<p><DT><B>C<dd></B>
+
+
+<DT>
+circumradius
+<dd>  The circumradius of a triangle is given by Heron's
+formula.  If the edges of the triangle are a,b,c, then eta(a,b,c)
+denotes the circumradius.
+<p>
+The circumradius of a simplex is given by formula I.8.X.  The
+circumradius of a simplex S is denoted rad(S).
+
+<DT>
+close neighbors 
+<dd>Two vertices are close neighbors if their distance
+from each other is no greater than 2.51.
+
+<DT>compression 
+<dd> The compression is a local measure of the tightness
+of a packing.  Greater compression corresponds to a greater local
+density.  If <IT>S</IT> is a simplex, we define the compression of <IT>S</IT>
+to be
+<PRE>
+	Gamma(S) = -doct Vol(S) +sum_{i=1}^4sol(S)/3
+</PRE>
+where
+	Vol(S) is the volume of the simplex <IT>S</IT>, and 
+	sum sol(S)
+is the sum of the solid angles at each of the vertices.
+
+<DT>
+cone 
+<dd> If X is a set in three space, the cone C(X) over X is the
+set of all nonnegative scalar multiples of vectors in X.
+
+<p><DT><B>D<dd></B>
+
+
+
+<DT>
+Delaunay decomposition
+<dd>  Begin with a saturated packing.  The Delaunay
+decomposition is a partition of space into (Delaunay) simplices with vertices
+at the sphere centers.  It is characterized by the property that
+if a circumscribing sphere is drawn around any of the simplices, then
+the interior of the circumscribing sphere contains none of the
+centers of the spheres in the packing.  The Delaunay decomposition
+is dual to the Voronoi decomposition: four sphere centers form a 
+simplex if and only if there is a vertex of a Voronoi cell whose
+closest sphere centers are those four points.
+<p>
+In degenerate arrangements of spheres (such as the fcc and hcp packings), 
+we do not obtain a well-defined decomposition.  In this case, perturb
+the sphere centers so that they are in generic position, draw the
+Delaunay decomposition, and then snap the sphere centers back into
+place.
+<p>
+The Delaunay decomposition has the following intuitive interpretation.
+Imagine that space, rather than being flat, is a 3-sphere of large
+radius sitting in 4-space.  Take the convex hull in 4-space of the
+sphere centers.  If the sphere centers are in generic position, each
+face of the hull is a simplex.  These are the simplices of the
+Delaunay decomposition.
+
+<DT>
+Delaunay star 
+<dd> Obsolete notion, see Decomposition star.
+
+
+<DT>
+delta
+<dd>
+delta(x1,...,x6) is a polynomial in 6 variables defined by formula
+I.8.1.1.  If x1,...,x6 are the squares of the edge lengths of a simplex.
+then sqrt(delta(x1,..,x6))/12 is the volume of the simplex.
+
+
+<DT>
+diagonal
+<dd>
+The longest edge of a quarter is said to be a diagonal.
+
+<DT>
+dihedral angle 
+<dd> Every simplex is assumed to be equipped with an
+ordering on the edges y1,...y6.  The dihedral angle of a simplex then
+refers to the dihedral angle along the first edge. Dihedral
+angles are measured in radians.  dih(S) denotes the dihedral angle
+of the simplex S.
+
+<DT>
+dimension reduction
+<dd>
+Some of the interval calculations performed by computer have such
+high dimension that they are difficult to prove directly.  An argument
+present in I.8.7 shows how to reduce the dimension of the problem
+to make it easier to prove by computer.
+
+<DT>
+Dirichlet region
+<dd>
+See Voronoi cell
+
+<DT>doct 
+<dd>is the constant (pi-4atan(sqrt(2))/sqrt(8), or 
+approximately 0.72093.
+This constant is to the octahedron what Rogers's density is to the
+tetrahedron.  Specifically, take a regular octahedron of edge length
+2 and volume v=8 sqrt(2)/3.  Place a ball of radius 1 at each
+vertex of the octahedron, and let s be the part of the volume
+of these balls inside the octahedron.
+doct= s/v.
+
+<p><DT><B>E<dd></B>
+
+<DT>
+enclosed vertex
+<dd>
+A vertex is enclosed over a standard region if it is contained
+in the interior of the cone over standard region.
+
+<DT>
+eta(y1,y2,y3)
+<dd>
+The circumradius of a triangle whose edges have lengths y1,y2,y3.
+
+<p><DT><B>F<dd></B>
+
+<DT>
+flat quarter
+<dd>
+If a quarter has a distinguished vertex, it is said to be flat
+when the three edges meeting at the distinguished vertex have lengths
+between 2 and 2.51.
+
+<p><DT><B>G<dd></B>
+
+<DT>
+Gamma
+<dd>See compression
+
+<p><DT><B>H<dd></B>
+
+<DT>
+height
+<dd>
+The height of a vertex is its distance from the origin.
+
+<p><DT><B>I, J, K, L<dd></B>
+
+<p><DT><B>M<dd></B>
+
+<DT>
+method of subdivision
+<dd>Although this term is not standard, it refers to a standard
+procedure in interval arithmetic of breaking the domain of a function
+into smaller regions as needed to produce good bounds on the
+range of a function over a given domain.
+
+<p><DT><B>N<dd></B>
+
+<p><DT><B>O<dd></B>
+
+<DT>
+overlap
+<dd>
+Two sets overlap if their relative interiors intersect.
+
+<DT>
+octahedron (quasi-regular)  
+<dd>An octahedron is quasi-regular if
+each edge has length between 2 and 2.51 and some diagonal has
+length between 2.51 and sqrt(8).
+
+<p><DT><B>P<dd></B>
+
+<DT>
+pentagonal prism
+<dd>  The pentagonal prisms are a special family of
+decomposition stars that come uncomfortably close to providing
+counterexamples to the decomposition star approach to the Kepler
+conjecture.  In fact, the pentagonal prisms are actual counterexamples
+to the earliest formulation of the Kepler conjecture with
+Delaunay stars.  One of the major steps in the proof of the Kepler
+conjecture is to show that pentagonal prisms score less than the
+decomposition stars of the close packings.  Detailed information
+about decomposition stars can be found in Ferguson's thesis.
+
+<DT>
+point  
+<dd>A point (abbreviated pt) is by definition the constant
+<PRE>
+-pi/3 + 4 atan(sqrt(2)/5).
+</PRE>
+It is equal to the compression of
+a regular tetrahedron of edge length 2.   Its significance comes from
+the formulation of the Kepler conjecture as an optimization problem
+in finitely many variables.  Often the scores of decomposition stars
+are measured in multiples of points because these numbers tend to
+be more intuitive.  For example, the decomposition stars in the
+close packings are exactly 8 points (one point comes from each tetrahedron
+around a fixed vertex).  The local formulation of the Kepler conjecture
+asserts that every decomposition star scores at most 8 points.
+
+<p><DT><B>Q<dd></B>
+
+<DT>
+Q-system
+<dd>
+A collection of nonoverlapping quarters in a packing is chosen according
+to a rather elaborate set of rules.  These quarters together with
+the quasi-regular tetrahedra in the packing form what is called a
+Q-system.
+
+<DT>
+quad cluster
+<dd>A standard cluster whose standard region is a quadrilateral.
+
+<DT>
+quarter
+<dd>
+A quarter is a simplex with five edges of length between 2 and 2.51
+and a sixth of length between 2.51 and 2sqrt(2).  They are one of the
+fundamental shapes used in the definition of a decomposition star.
+A quasi-regular  octahedron with a diagonal of length between 2.51 and
+2sqrt(2) breaks into four quarters along the diagonal.  This is the
+origin of the term.  Yet if a quarter is distored sufficiently
+it is possible to fit various numbers of quarters along a single edge.
+
+<DT>
+quasi-regular tetrahedron  
+<dd>A tetrahedron is quasi-regular if
+each edge has length between 2 and 2.51.
+
+<p><DT><B>R<dd></B>
+
+<DT>
+rad(S)
+<dd>See circumradius
+
+<DT>
+rho(x1,...,x6)
+<dd>
+rho is a polynomial used to express the circumradius of a simplex.
+The circumradius squared of a simplex is rho/(4 Delta), expressed
+as a function of the squares of the edge lengths of the simplex.
+
+<DT>
+Rogers simplex
+<dd>
+A Rogers simplex is a simplex with three edges meeting at right angles.
+It is determined by the lengths of the three edges.  When we speak of
+Rogers simplices in the context of sphere packings, we generally have in mind
+particular three-dimensional pieces of a Voronoi cell.  The vertices
+of the Rogers simplex are the center A of the sphere, the closest point
+B on an edge to A, an endpoint C of the edge, and the closest point D
+to A on a face containing the edge.  When the closest point isn't a
+perpendicular, certain complications arise; but this is all handled
+by Rogers.  We generally use coordinates R(a,b,c), for the Rogers simplex,
+where a = d(A,D), b = d(A,B), c = d(A,C), with d(,) the distance.
+
+<p><DT><B>S<dd></B>
+
+<DT>
+saturated packing.
+<dd>  A packing of spheres of radius 1
+is saturated if no point in space lies at a distance greater than
+2 from some sphere center.   Every packing can be saturated by
+adding additional spheres to empty regions of space.
+
+<DT>
+simplex
+<dd>Simplices in three dimensions are assumed to be endowed with
+a fixed ordering of edges 1..6.  The first three edges meet at
+a vertex, often referred to as the origin.  The fourth, fifth, and
+sixth edges are assumed to lie opposite the first, second, and third,
+respectively.
+
+<DT>
+solid angle
+<dd>  Every simplex is assumed to be equipped with a
+distinguished vertex, which is often placed at the origin.  The
+solid angle of a simplex, is the solid angle of the simplex at
+the distinguished vertex.  Solid angles are measured in steradians.
+sol(S) denotes the solid angle of the simplex S.
+
+<DT>
+standard region
+<dd>  A standard region is a region in the unit sphere.
+Take a sphere center of a packing, which we take to be the origin.
+Let <IT>v_1,...,v_k</IT> be the sphere centers that have distance at
+most 2.51 from the origin.  Project each edge <IT>(v_i,v_j)</IT> that has
+length at most 2.51 down to an edge <IT>(p_i,p_j)</IT> on the unit sphere.
+Two points <IT>p</IT> and <IT>p'</IT> on the unit
+sphere are taken to lie in the interior of the same standard region, 
+if a path can be traced from <IT>p</IT> to <IT>p'</IT> without crossing any of
+the projected edges.  The standard region is taken to be the
+closure, so that it includes the bounding edges <IT>(p_i,p_j)</IT>.
+
+<DT>
+standard cluster
+<dd>  Let <IT>V</IT> be the subset of {v_1,...,v_k}
+consisting of vertices lying over a fixed standard region.  The
+set of sphere centers <IT>V</IT> together with information about how
+they are grouped (into quarters in the Q-system, quasi-regular tetrahedra,
+octahedra, etc.) form a standard cluster.  Each decomposition star
+can be broken into its constituent standard clusters.  
+Standard clusters are the smallest groupings of spheres that can
+be easily studied in isolation from the rest of the packing.
+(On occasion we break standard clusters into subclusters, but this
+takes more work, and the subclusters are not as numerically stable
+as standard clusters.)
+
+<p><DT><B>T<dd></B>
+
+<DT>
+tetrahedron
+<dd>See quasi-regular tetrahedron
+
+<p><DT><B>U<dd></B>
+
+<DT>
+upright diagonal
+<dd>
+The longest edge of an upright quarter in the Q-system
+is called an upright
+diagonal.
+
+<DT>
+upright quarter
+<dd>
+If a quarter has a distinguished vertex, it is said to be upright
+if the longest edge has an endpoint at the distinguished vertex.
+
+<p><DT><B>V<dd></B>
+
+<DT>
+vertex 
+<dd>The centers of the spheres of a sphere packing are generally
+referred to as vertices.
+
+<DT>
+Voronoi cell or Dirichlet region
+<dd>
+The Voronoi cell around a sphere is the set of points closer to its
+center than to any other center of a sphere in a packing.  If the
+packing is saturated, then the Voronoi cells are bounded.
+
+
+<p><br><p><br><p>
+<font size=4 color=#CD2626><hr>
+This page is available for historical purposes only.  It is a copy
+from www.math.lsa.umich.edu/~hales/countdown.  It has not been
+maintained since 1998.<hr></font>
+</p>
+
+
+</HTML>

@@ -1,0 +1,37 @@
+head	1.1;
+access;
+symbols;
+locks
+	hales:1.1; strict;
+comment	@# @;
+
+
+1.1
+date	97.09.13.17.14.45;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@graph generator, misc things.
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@
+public class misc {
+	public static int mod(int i,int j) 
+		{ int r = i % j; return (r<0 ? r+j : r); }
+
+	public static void warn(String s)
+		{ System.err.println("Warning: "+s); }
+
+	public static int throwIndex(int index)
+		{  int a[] = new int[0]; 
+			return a[index]; }
+	}
+@

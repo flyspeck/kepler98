@@ -1,0 +1,63 @@
+<TITLE>Sphere Packing Ledger</TITLE>
+
+<body background="paperbackground.JPG" alink=blue vlink=red>
+
+<H3>Sphere Packing Ledger</H3>
+<p>
+
+The countdown clock started at 874120205 Unix Time.
+At that time a list was made of all that remained, and 
+27000 credits were allocated among the items, 
+according to the perceived difficulty
+of the item.  The clock estimates completion date by a linear extrapolation
+from the starting date.  The distribution follows.
+<p>
+
+<UL>
+<LI>Part III (9000 credits available).
+	<UL>
+	<LI>(1000) completion of a
+			final draft of III with clearly stated hypotheses
+			for unfinished material.
+	<LI>(1000) numerical testing of the stated hypotheses of III
+	<LI>(3000) rigorous verification of hypotheses stated in the paper.
+	<LI>(1000) numerical testing of the 18 remaining cases.
+	<LI>(3000) the 18 remaining cases, including the numerical
+			verification of the new inequalities that arise.
+	</UL>
+<LI>Part IV preliminaries (4000 credits available).
+	<UL>
+	<LI>(1000) completion of a final draft of IV with clearly stated
+		hypotheses for unfinished material.
+	<LI>(1000) numerical verification of the stated inequalities in IV.
+	<LI>(2000) rigorous verification of the inequalities in the paper
+	</UL>
+
+<LI>Final Cases of Part IV (10000 credits available)
+	<UL>
+	<LI>(2000) production of an explicit finite list of cases, based
+			on numerically checked inequalities, and passed through 
+			CPLEX.
+	<LI>(1000) rigorous proof of those inequalities produced
+	<LI>(6000) elimination of the explicit finite list of cases,
+			including the rigorous verification of the new cases that
+			are produced.
+	<LI>(1000) elimination of 
+			 the residual cases through CPLEX,
+			octagons posing as pentagons, those with type (5,1), etc.
+		All the exceptions that were set aside.
+	</UL>
+
+<LI>Computer Software (4000 credits available)
+	<UL>
+	<LI>(1000) post numerical verification software.
+	<LI>(2000) get interval package put back together and posted.
+	<LI>(1000) construct web pages for the project
+	</UL>
+</UL>
+
+The credits were determined by the perceived difficulty of completing
+each part of the Kepler conjecture.  Of course, as things progress,
+our judgements of the difficulty will change, but the credit allocations
+will remain the same, making some credits more difficult to earn than
+others.

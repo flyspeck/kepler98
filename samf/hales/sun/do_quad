@@ -1,0 +1,9 @@
+
+QuadGma 			< 1e-5.in > qg.out ;
+QuadGmaBdry 		< 1e-5.in > qgb.out ;
+QuadVor 			< 1e-5.in > qv.out ;
+QuadVorBdry 		< 1e-5.in > qvb.out ;
+QuadVorCornerBdry 	< 1e-5.in > qvcb.out ;
+TestQuadVorBdry 	< 38.in   > tqvb.out
+
+

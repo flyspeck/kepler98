@@ -1,0 +1,205 @@
+(***********************************************************************
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used on any computer system with Mathematica 3.0,
+MathReader 3.0, or any compatible application. The data for the notebook 
+starts with the line of stars above.
+
+To get the notebook into a Mathematica-compatible application, do one of 
+the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing the 
+word CacheID, otherwise Mathematica-compatible applications may try to 
+use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+***********************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      4165,        139]*)
+(*NotebookOutlinePosition[      4800,        162]*)
+(*  CellTagsIndexPosition[      4756,        158]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+    \(a = SimplexCoordinates[2  T, 2, 2, 2  T, 2, 2]\)], "Input"],
+
+Cell[BoxData[
+    RowBox[{"{", 
+      RowBox[{
+        RowBox[{"{", 
+          RowBox[{
+            StyleBox["2.51681714472963768`",
+              StyleBoxAutoDelete->True,
+              PrintPrecision->16], ",", "0", ",", "0"}], "}"}], ",", 
+        RowBox[{"{", 
+          RowBox[{
+            StyleBox["1.25840857236481884`",
+              StyleBoxAutoDelete->True,
+              PrintPrecision->16], ",", 
+            StyleBox["1.55447993393248351`",
+              StyleBoxAutoDelete->True,
+              PrintPrecision->16], ",", "0"}], "}"}], ",", 
+        RowBox[{"{", 
+          RowBox[{
+            StyleBox["1.25840857236481884`",
+              StyleBoxAutoDelete->True,
+              PrintPrecision->16], ",", 
+            RowBox[{"-", 
+              StyleBox["0.482975938521438852`",
+                StyleBoxAutoDelete->True,
+                PrintPrecision->16]}], ",", 
+            StyleBox["1.47754597485427634`",
+              StyleBoxAutoDelete->True,
+              PrintPrecision->16]}], "}"}]}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(v0 = NullVector; v1 = a[\([1]\)]; v2 = a[\([2]\)]; v5 = a[\([3]\)]; 
+    \)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(b = Vertex[{v1, 2  T}, {v0, 2}, {v2, 2  T}]\)], "Input"],
+
+Cell[BoxData[
+    \({{0.794654472291765934`, \(-0.107549969834338732`\), 
+        \(-1.83220011834278828`\)}, {0.794654472291765934`, 
+        \(-0.107549969834338732`\), 1.83220011834278828`}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(v3 = b[\([1]\)]\)], "Input"],
+
+Cell[BoxData[
+    \({0.794654472291765934`, \(-0.107549969834338732`\), 
+      \(-1.83220011834278828`\)}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(c = Vertex[{v0, 2}, {v3, 2  T}, {v5, 2  T}]\)], "Input"],
+
+Cell[BoxData[
+    \({{0.199997061504721163`, \(-1.97396355083039924`\), 
+        \(-0.251930695594074549`\)}, {1.25840857236481884`, 
+        1.55447993393248395`, 7.59079455738346453`*^-17}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(v4 = c[\([1]\)]\)], "Input"],
+
+Cell[BoxData[
+    \({0.199997061504721163`, \(-1.97396355083039924`\), 
+      \(-0.251930695594074549`\)}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(VL[v1 - v4]\)], "Input"],
+
+Cell[BoxData[
+    \(3.05412122768952665`\)], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"X 3.0",
+ScreenRectangle->{{0, 1152}, {0, 900}},
+WindowSize->{520, 600},
+WindowMargins->{{Automatic, 74}, {Automatic, 79}}
+]
+
+
+(***********************************************************************
+Cached data follows.  If you edit this Notebook file directly, not using
+Mathematica, you must remove the line containing CacheID at the top of 
+the file.  The cache data will then be recreated when you save this file 
+from within Mathematica.
+***********************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1731, 51, 79, 1, 40, "Input"],
+Cell[1813, 54, 1031, 27, 72, "Output"]
+}, Open  ]],
+Cell[2859, 84, 106, 2, 40, "Input"],
+
+Cell[CellGroupData[{
+Cell[2990, 90, 76, 1, 40, "Input"],
+Cell[3069, 93, 207, 3, 40, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3313, 101, 48, 1, 40, "Input"],
+Cell[3364, 104, 119, 2, 40, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3520, 111, 76, 1, 40, "Input"],
+Cell[3599, 114, 205, 3, 58, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3841, 122, 48, 1, 40, "Input"],
+Cell[3892, 125, 119, 2, 40, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4048, 132, 44, 1, 40, "Input"],
+Cell[4095, 135, 54, 1, 40, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+
+(***********************************************************************
+End of Mathematica Notebook file.
+***********************************************************************)
+

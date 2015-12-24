@@ -1,0 +1,271 @@
+head	1.2;
+access;
+symbols;
+locks
+	hales:1.2; strict;
+comment	@// @;
+
+
+1.2
+date	98.01.04.20.32.01;	author hales;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	97.12.17.02.15.41;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@Code to separate octahedral inequalities of III.4.2 into
+small verifiable pieces.  This has been run sucessfully
+on three of the four inequalities (output gamma.out)
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@#include <iomanip.h>
+#include "constants.h"
+#include "octeqns.h"
+
+/* This is a fully functional version, that gave data for
+three of the four inequalities in 4.2.  I'm about to redo
+it with three purposes in mind.  First to make use of the
+symmetries to reduce the number of cases.  Second to tweak
+things so that all four inequalities go through. Third,
+I would like the output to produce C++ code that can be
+compiled directly, rather than the output data is currently
+does in gamma.out.
+
+The data for the three cases can be found in gamma.out.
+
+Each inequality in this version involves 2^4 cases depending
+on whether each face is small or not.  Not all these cases
+are necessary.
+*/
+
+static int printIfSeparate
+	(const double ymin[13],const double ymax[13],
+	const double ineqCoeff[2], const int etaIndex[4])
+    {
+	static int count=0;
+	int i;
+    double CC[29];
+	double coeff[2]={ineqCoeff[0],ineqCoeff[1]};
+	double yminX[13],ymaxX[13];
+	for (i=0;i<13;i++) { yminX[i]=ymin[i]; ymaxX[i]=ymax[i]; }
+	int index[4]={etaIndex[0],etaIndex[1],etaIndex[2],etaIndex[3]};
+    separateChecked(yminX,ymaxX,CC,coeff,index); 
+	if (CC[28]>=0) return 0;
+
+	// report answer ...
+	cout << "\nf"<<count<<"[2]= {" << ineqCoeff[0] << "," << ineqCoeff[1] << "};\n";
+	cout << "T"<<count<<"[4]= {";
+	for (i=0;i<4;i++) cout << etaIndex[i] << (i==3 ? "};\n" : ",");
+	cout << "Dm"<<count<<"[13] = {"; 
+	for (i=0;i<13;i++) cout << ymin[i] << (i==12 ? "};\n" : ",");
+	cout << "DM"<<count<<"[13] = {"; 
+	for (i=0;i<13;i++) cout << ymax[i] << (i==12 ? "};\n" : ",");
+	cout << "C"<<count<<"[29]= {";
+	for (i=0;i<29;i++) cout << CC[i] << (i==28 ? "};\n" : ", ") 
+		<< ((i+1)%7 ? "" : "\n   " ); 
+	cout << flush;
+	count++;
+	return 1; 
+    }
+
+void pickSubIndex(const double ymin[13],const double ymax[13],
+	int subIndex[3])
+	{
+	double fat0=-1;
+	double fat1=-1;
+	double fat2=-1;
+	double temp =-1;
+	int i;
+	int pos0=-1,pos1=-1,pos2=-1;
+	for (i=0;i<13;i++) 
+		if (ymax[i]-ymin[i] > fat0)
+			{
+			fat0=ymax[i]-ymin[i]; pos0=i;
+			}
+	for (i=0;i<13;i++)
+		if ((ymax[i]-ymin[i] > fat1)&&(i!=pos0))
+			{
+			fat1=ymax[i]-ymin[i]; pos1=i;
+			}
+	for (i=0;i<13;i++)
+		if ((ymax[i]-ymin[i] > fat2)&&(i!=pos0)&&(i!=pos1))
+			{
+			fat2=ymax[i]-ymin[i]; pos2=i;
+			}
+	subIndex[0]=pos0; subIndex[1]=pos1; subIndex[2]=pos2;
+	return;
+	}
+
+void setz(const double ymin[13],const double ymax[13],
+	double zmin[13],double zmax[13],const int subIndex[3],
+	int binaryCode/*<8*/)
+	{
+	int i;
+	double w[3];
+	for (i=0;i<13;i++) { zmin[i]=ymin[i]; zmax[i]=ymax[i]; }
+	for (i=0;i<3;i++) 
+		{
+		w[i]= (ymax[subIndex[i]]-ymin[subIndex[i]])/2.0;
+		zmax[subIndex[i]] -= w[i];
+		}
+	int k=1;
+	for (i=0;i<3;i++) 
+		{
+		if (1 == ((binaryCode/k) % 2)) { zmin[subIndex[i]] += w[i]; zmax[subIndex[i]] += w[i]; }
+		k = 2*k;
+		}
+	}
+
+void subdivide(const double ymin[13],const double ymax[13],
+	const double ineqCoeff[2],const int etaIndex[4])
+    {
+	int i;
+	double zmin[13], zmax[13];
+	int subIndex[3];
+	int binaryCode;
+	pickSubIndex(ymin,ymax,subIndex);
+	cout << "\n// NewDivision: ";
+	for (i=0;i<3;i++) cout << subIndex[i] << " "; cout << endl;
+	for (binaryCode=0;binaryCode<8;binaryCode++) 
+		{
+		setz(ymin,ymax,zmin,zmax,subIndex,binaryCode);
+		if (!printIfSeparate(zmin,zmax,ineqCoeff,etaIndex))
+			{
+			subdivide(zmin,zmax,ineqCoeff,etaIndex);
+			}
+		}
+	cout << "//// EndDivision: ";
+	for (i=0;i<3;i++) cout << subIndex[i] << " "; cout << endl;
+    }
+
+main()
+	{
+    double f[4][2] = {{-3.0508,9.494},
+					 {-0.27605,1.0472},
+					 {0.198867,-0.7624},
+					 {0.844,-3.5926}};
+    double ymin[13];
+    double ymax[13];
+    int i;
+    for (i=0;i<13;i++) { ymin[i]=2; ymax[i]=2.51; }
+    ymin[0]=2.51; ymax[0]=global::sqrt8;
+	for (i=0;i<4;i++) // BUGBUG was i=0;i<4;i++
+		{
+		cout << "\n\n//********* STARTING NEW INEQUALITY *************\n";
+		cout << "// parameters = {" << f[i][0] << "," << f[i][1] << "}\n";
+		for (int i0=0;i0<2;i0++)
+		for (int i1=i0;i1<2;i1++) // use symmetry.
+		for (int i2=0;i2<2;i2++)
+		for (int i3=0;i3<2;i3++)
+			{
+			int etaIndex[4] = {i0,i1,i2,i3};
+			double ineqCoeff[2] = {f[i][0],f[i][1]};
+			subdivide(ymin,ymax,ineqCoeff,etaIndex);
+			}
+		}
+	}
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d21 3
+a23 3
+double fTest[2];
+int tType[4];
+static int test(double ymin[13],double ymax[13])
+d25 2
+d28 5
+a32 2
+    separateChecked(ymin,ymax,CC,fTest,tType); 
+	int i;
+d36 9
+a44 9
+	cout << "\nf= {" << fTest[0] << "," << fTest[1] << "}\n";
+	cout << "T= {";
+	for (i=0;i<4;i++) cout << tType[i] << (i==3 ? "}\n" : ",");
+	cout << "Dm = {"; 
+	for (i=0;i<13;i++) cout << ymin[i] << (i==12 ? "}\n" : ",");
+	cout << "DM = {"; 
+	for (i=0;i<13;i++) cout << ymax[i] << (i==12 ? "}\n" : ",");
+	cout << "C= {";
+	for (i=0;i<29;i++) cout << CC[i] << (i==28 ? "}\n" : ", ") 
+d47 1
+d51 2
+a52 1
+void getABC(double ymin[13],double ymax[13],int r[3])
+d75 1
+a75 1
+	r[0]=pos0; r[1]=pos1; r[2]=pos2;
+d79 3
+a81 2
+void setABC(double ymin[13],double ymax[13],double zmin[13],double zmax[13],
+		int r[3],int c)
+d88 2
+a89 2
+		w[i]= (ymax[r[i]]-ymin[r[i]])/2.0;
+		zmax[r[i]] -= w[i];
+d94 1
+a94 1
+		if (1 == ((c/k) % 2)) { zmin[r[i]] += w[i]; zmax[r[i]] += w[i]; }
+d99 2
+a100 1
+void subdivide(double ymin[13],double ymax[13])
+d104 6
+a109 6
+	int r[3];
+	int c;
+	getABC(ymin,ymax,r);
+	cout << "\n\\\\ NewDivision: ";
+	for (i=0;i<3;i++) cout << r[i] << " "; cout << endl;
+	for (c=0;c<8;c++) 
+d111 2
+a112 4
+		setABC(ymin,ymax,zmin,zmax,r,c);
+		//cout << " "; for (i=0;i<13;i++) cout << zmin[i] << " "; cout << endl;
+		//cout << " ";for (i=0;i<13;i++) cout << zmax[i] << " "; cout << endl;
+		if (!test(zmin,zmax))
+d114 1
+a114 1
+			subdivide(zmin,zmax);
+d117 2
+a118 2
+	cout << "\\\\ EndDivision: ";
+	for (i=0;i<3;i++) cout << r[i] << " "; cout << endl;
+d132 1
+a132 1
+	for (i=3;i<4;i++) // BUGBUG was i=0;...
+d134 2
+a135 3
+		cout << "\n\n\\********* STARTING NEW INEQUALITY *************\n";
+		cout << "\\parameters = {" << f[i][0] << "," << f[i][1] << "}\n";
+		fTest[0]= f[i][0]; fTest[1]=f[i][1];
+d137 1
+a137 1
+		for (int i1=0;i1<2;i1++)
+d141 3
+a143 2
+			tType[0]=i0; tType[1]=i1; tType[2]=i2; tType[3]=i3;
+			subdivide(ymin,ymax);
+a146 6
+
+/*
+
+
+
+*/
+@

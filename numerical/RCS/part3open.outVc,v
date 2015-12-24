@@ -1,0 +1,166 @@
+head	1.2;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	97.12.18.16.17.05;	author hales;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	97.12.18.16.15.51;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@The four cases that don't pass with ordinary vorVc
+all pass with (3/4) vorVc + (1/4) (-1.04 pt).  Here is
+the out file that verifies this numerically.
+@
+
+
+1.2
+log
+@We have appended the rcsdiff file indicating the
+code changes needed to generate this output file
+@
+text
+@
+New Case = 6000
+parameters(d,d2,s,c,g) = 0 0 -0.3 0.41717 -1
+numargs = 9
+0.0116378139637033917
+{2,2,2,2.82842712474618985,2.21917839813395457,2.21917841671967153,2,2.21917843843434826,2.21917846937397867}
+
+New Case = 6001
+parameters(d,d2,s,c,g) = 0 0 -0.3 0.41717 -1
+numargs = 9
+0.0116378139637031974
+{2,2,2,2.82842712474618985,2.21917842217913108,2.21917846115447182,2,2.21917842436174562,2.21917838520694088}
+
+ smallest case = 0.0116378139637031974
+
+---------
+
+
+New Case = 10000
+parameters(d,d2,s,c,g) = 0 0 0.10044 -0.1317 -1
+numargs = 9
+0.0201685098725171812
+{2,2,2,2.82842712474618985,1.99999999999999978,2,2,2,2}
+
+New Case = 10001
+parameters(d,d2,s,c,g) = 0 0 0.10044 -0.1317 -1
+numargs = 9
+0.0201685098725173893
+{2,2,2,2.82842712474618985,2,1.99999999999999978,2,2,2}
+
+ smallest case = 0.0201685098725171812
+
+---------
+
+
+New Case = 22000
+parameters(d,d2,s,c,g) = 0.27605 0.27605 0 -1.0472 -1
+numargs = 9
+0.0161456775340453607
+{2,2,2.50999999999999979,2.82842712474618985,2,2.15215074010447394,2,2,2}
+
+New Case = 22001
+parameters(d,d2,s,c,g) = 0.27605 0.27605 0 -1.0472 -1
+numargs = 9
+0.0161456775340449721
+{2,2,2.50999999999999979,2.82842712474618985,2,2.15215074010448104,2,2,2}
+
+ smallest case = 0.0161456775340449721
+
+---------
+
+
+New Case = 23000
+parameters(d,d2,s,c,g) = -0.19887 -0.19887 0 0.7624 -1
+numargs = 9
+0.0138342081838435868
+{2,2,2,2.82842712474618985,2,2,2,2.2847981125195842,2}
+
+New Case = 23001
+parameters(d,d2,s,c,g) = -0.19887 -0.19887 0 0.7624 -1
+numargs = 9
+0.0138342081838437256
+{2,2,2,2.82842712474618985,2,2,2,2.28479811231674645,2}
+
+ smallest case = 0.0138342081838435868
+
+---------
+
+29,30c29,30
+< 	{
+< 	return vorVc(x1,x2,x3,x4,x5,x6);
+---
+> 	{ // (3/4)*vorVc - (1/4) 1.04 pt :
+> 	return 0.75*vorVc(x1,x2,x3,x4,x5,x6)-0.01439714787380056;
+80,91d79
+< double triangle(double y1,double y2,double y6)
+< 	{
+< 	return acos( (y1*y1+y2*y2-y6*y6)/(2*y1*y2) );
+< 	}
+< double psi (double y) { return triangle(y,1.255,1.6); }
+< double beta (double y0,double y1,double y6)
+< 	{
+< 	double p = cos(psi(y1));
+< 	double t = cos(triangle(y0,y1,y6));
+< 	return acos( sqrt((p*p-t*t)/(1.0-t*t)) );
+< 	}
+< 
+156a145
+> 	cout << "numargs = " << X.numargs << endl;
+158c147
+< 	for (i=0;i<X.numargs;i++) cout << X.x[i] << (i+1<X.numargs ? ",": "}");
+---
+> 	for (i=0;i<X.numargs;i++) cout << X.x[i] << (i+1<X.numargs ? ",": "}") ;
+163c152,154
+< int main()
+---
+> //void /*part4sec2.cc*/page1();
+> 
+> int omain() // BUGBUG restore this.
+165,171c156,159
+< 	for (int j=0;j<25;j++) 
+< 		{
+< 		for (int i=0;i<16;i++) minimize2(j*1000+i);
+< 		cout << "\n smallest case = " << lowest << endl << endl;
+< 		cout << "---------\n\n";
+< 		lowest = DBL_MAX;
+< 		}
+---
+> 	//page1();
+> 	cout << "\n smallest case = " << lowest << endl << endl;
+> 	cout << "---------\n\n";
+> 	return 1;
+172a161,172
+> 
+> int main()
+>     {
+> 	int k[4]={6,10,22,23};
+>     for (int j=0;j<4;j++)
+>         {
+>         for (int i=0;i<2;i++) minimize2(k[j]*1000+i);
+>         cout << "\n smallest case = " << lowest << endl << endl;
+>         cout << "---------\n\n";
+>         lowest = DBL_MAX;
+>         }
+>     }
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d69 57
+@

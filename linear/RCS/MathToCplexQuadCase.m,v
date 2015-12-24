@@ -1,0 +1,640 @@
+head	1.4;
+access;
+symbols;
+locks
+	hales:1.4; strict;
+comment	@// @;
+
+
+1.4
+date	98.04.22.16.58.46;	author hales;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	98.02.15.16.13.38;	author hales;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	97.12.03.00.34.10;	author hales;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	97.11.24.15.41.55;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@This is a file containing extra inequalities that
+treat quads as a series of four cases : flat, skew flat,
+octahedral, and truncated(1.255) Voronoi.
+They have been used on the 18 cases to reduce to a smaller
+list of 7 cases, using WRITEOUTq in MathToCplex.m
+@
+
+
+1.4
+log
+@Quad inequalities in figures with exceptional clusters.
+@
+text
+@read:= << MathToCplexQuadCase.m; (* for testing *)
+MathToCplexQuadCase=1;
+
+(* division of quads into cases :
+	Case 1.  two flat quarters, split between vertices 1 & 3
+	Case 2.  two flat quarters, split between vertices 2 & 4,
+	Case 3.  octahedra, scored gamma/octavor on each upright quarter
+	Case 4.  no quarters, scored vorVc 
+  If there are several quads,
+	we give case {i1,i2,...,ik}, ij = 1,2,3,4.
+	ij is the case for the jth quarter.
+
+*)
+(* If no exceptions: *)
+<< QUAD18/cplex.18e.sum;
+<< QUAD18/cplex.18h.sum;
+
+flatEquations = 
+	{
+	"- dih2 + 0.35 y2 - 0.15 y1 - 0.15 y3 + 0.7022 y5 - 0.17 y4 > -0.0123",
+	"- dih3 + 0.35 y3 - 0.15 y1 - 0.15 y2 + 0.7022 y6 - 0.17 y4 > -0.0123",
+	"  dih2 - 0.13 y2 + 0.631 y1 + "<>
+               "0.31 y3 - 0.58 y5 + 0.413 y4 + 0.025 y6 > 2.63363 ",
+	"  dih3 - 0.13 y3 + 0.631 y1 + "<>
+               "0.31 y2 - 0.58 y6 + 0.413 y4 + 0.025 y5 > 2.63363 ",
+	" -dih1 + 0.714 y1 - 0.221 y2 - 0.221 y3 + "<>
+               "0.92 y4 - 0.221 y5 - 0.221 y6 > 0.3482",
+	"  dih1 - 0.315 y1 + 0.3972 y2 + 0.3972 y3 - "<>
+               "0.715 y4 +  0.3972 y5 + 0.3972 y6 > 2.37095",
+	"- solid - 0.187 y1 - 0.187 y2 - "<>
+               "0.187 y3 + 0.1185 y4 + 0.479 y5 + 0.479 y6 > 0.437235 ",
+	"+ solid + 0.488 y1 + 0.488 y2 + "<>
+               "0.488 y3 - 0.334 y5 - 0.334 y6 > 2.244 ",
+	"- sigma - 0.159 y1 - 0.081 y2 - 0.081 y3 - "<>
+               "0.133 y5 - 0.133 y6 > -1.17401",
+	"- sigma - 0.419351 solid + 0.0436 y5 + 0.0436 y6 + 0.079431 dih1 "<>
+				" > 0.0296 ", (* added 11/24/97, corrected 11/29/97 --
+								I had 0.436, woops! (harmless)  *)
+	" sigma + 0.197 y4 + 0.197 y5 + 0.197 y6 < 1.34521 ", (* added 11/29/97 *)
+	" y4 > 2.51",
+	" y4 < 2.8284271247462"
+	};
+fEquations= Apply[StringJoin,Map[(#<>"\n")&,flatEquations]];
+
+fInstall[f_,i_,j_,k_]:= (* quad f, vertices i,j,k in[1,2,3,4], *)
+	Module[{iv,jv,kv},
+		{iv,jv,kv}=Map[GBLregions[[f,#]]&,{i,j,k}];
+	  StringReplace[fEquations,
+		{"y2"->StringVar["y",iv],
+		 "y1"->StringVar["y",jv],
+		 "y3"->StringVar["y",kv],
+		 "y5"->StringVar["y",jv,kv],
+		 "y4"->StringVar["y",iv,kv],
+		 "y6"->StringVar["y",iv,jv],
+		 "dih2"->StringVar["dih",f,i,j],
+		 "dih1"->StringVar["dih",f,j],
+		 "dih3"->StringVar["dih",f,k,j],
+		 "solid"->StringVar["sol",f,j],
+		 "sigma"->StringVar["sig",f,j]}
+	]
+	];
+
+quadInstall[f_,i_]:= Switch[i,
+	1,"\\ fInstall 412\n"<>
+		fInstall[f,4,1,2]<>"\\ 234\n"<>fInstall[f,2,3,4],
+	2,"\\ fInstall 123\n"<>
+		fInstall[f,1,2,3]<>"\\ 341\n"<>fInstall[f,3,4,1],
+	3,"\\ oInstall\n"<>
+		oInstall[f,1,2]<>oInstall[f,2,3]<>oInstall[f,3,4]<>oInstall[f,4,1],
+	4,"\\ vInstall\n"<>
+		vInstall[f],
+	_,Print["BAD IDEA"];""];
+
+(* quadInstall[{2,2,2,2}], for example, if there are four quads in the fig *)
+quadInstall[u_]:= Module[{flist,i,tab},
+	flist=Select[Range[Length[GBLregions]],Length[GBLregions[[#]]]==4&];
+	If[Length[flist]!=Length[u],Return[""]];
+	tab = Table[quadInstall[flist[[i]],u[[i]]],{i,1,Length[u]}];
+	Apply[StringJoin,tab]
+	];
+
+StringVar["yoct",f_]:= "y(F"<>S[f]<>")";
+StringVar["yoct",f_,i_]:= "y(F"<>S[f]<>","<>S[GBLregions[[f,i]]]<>")";
+StringVar["solF",f_,i_,j_]:= Module[{i1,j1},
+    {i1,j1}=Sort[{GBLregions[[f,i]],GBLregions[[f,j]]}];
+    "sol(F"<>S[f]<>","<>S[i1]<>","<>S[j1]<>")"];
+StringVar["sigF",f_,i_,j_]:= Module[{i1,j1},
+    {i1,j1}=Sort[{GBLregions[[f,i]],GBLregions[[f,j]]}];
+    "sig(F"<>S[f]<>","<>S[i1]<>","<>S[j1]<>")"];
+StringVar["dihF",f_,i_,j_]:= Module[{i1,j1},
+    {i1,j1}=Sort[{GBLregions[[f,i]],GBLregions[[f,j]]}];
+    "dih(F"<>S[f]<>","<>S[i1]<>","<>S[j1]<>")"];
+StringVar["dihFx",i_,j_,f_]:="dih("<>S[GBLregions[[f,i]]]<>","<>
+        S[GBLregions[[f,j]]]<>",F"<>S[f]<>")";
+
+
+OctahedralEquations:= {
+	" y1 > 2.51 ",
+	" y1 < 2.8284271247462 ",
+	" y2 > 2 ",
+	" y3 > 2 ",
+	" y4 > 2 ",
+	" y5 > 2 ",
+	" y6 > 2 ",
+	" y2 < 2.51 ",
+	" y3 < 2.51 ",
+	" y4 < 2.51 ",
+	" y5 < 2.51 ",
+	" y6 < 2.51 ",
+	" dih1 - 0.636 y1 + 0.462 y2 + 0.462 y3 - 0.82 y4 + 0.462 y5 + "<>
+		" 0.462 y6 > 1.82419 ", (* case 20 *)
+	" - dih1 + 0.55 y1 - 0.214 y2 - 0.214 y3 + 1.24 y4 - 0.214 y5 "<>
+		" - 0.214 y6 > 0.75281 ",  (* case21 *)
+	" dih2 + 0.4 y1 - 0.15 y2 + 0.09 y3 + 0.631 y4 - 0.57 y5 + 0.23 y6 " <>
+	"  > 2.5481", (* case 22 *)
+	" - dih2 - 0.454 y1 + 0.34 y2 + 0.154 y3 - 0.346 y4 + " <>
+    	"0.805 y5 > -0.3429", (* case 23 *)
+	" dih3 + 0.4 y1 - 0.15 y3 + 0.09 y2 + 0.631 y4 - 0.57 y6 + 0.23 y5 " <>
+	"  > 2.5481", (* case 22 *)
+	" - dih3 - 0.454 y1 + 0.34 y3 + 0.154 y2 - 0.346 y4 + " <>
+    	"0.805 y6 > -0.3429", (* case 23 *)
+	" sol + 0.065 y2 + 0.065 y3 + 0.061 y4 - 0.115 y5 - "<>
+     	"0.115 y6 > 0.2618", (* case 24 *)
+	" - sol - 0.293 y1 - 0.03 y2 - 0.03 y3 + 0.12 y4 + " <>
+    	"0.325 y5 + 0.325 y6 > 0.2514", (* case 25 *)
+	" - sig - 0.054 y2 - 0.054 y3 - 0.083 y4 - 0.054 y5 - "<>
+    	"0.054 y6 > -0.59834", (* case 26,27,28 *)
+	" - sig - 0.419351 sol + 0.079431 dih2 - 0.0846 y1 > -0.30592 " ,
+				(* case 69,70,71, added 11/24/97 *)
+	" - sig - 0.419351 sol + 0.079431 dih3 - 0.0846 y1 > -0.30592 " 
+				(* case 69,70,71, added 11/24/97 *)
+	, OctExtra (* added 12/2/97 *)
+	};
+
+(* patch.... *)
+(* This equation holds if y2,y3 < 2.13 *)
+OctExtra := If[False," - sig + 0.07 y1 - 0.133 y2 - 0.133 y3 - 0.135 y4 - "<>
+   "0.133 y5 - 0.133 y6 > -1.1583 ","xxxxxx > 0"];
+
+oEquations= Apply[StringJoin,Map[(#<>"\n")&,OctahedralEquations]];
+
+oInstall[f_,i_,j_]:= (* quad f, vertices i,j,k in[1,2,3,4], *)
+	Module[{iv,jv},
+		{iv,jv}=Map[GBLregions[[f,#]]&,{i,j}];
+	  StringReplace[oEquations,
+		{"y1"->StringVar["yoct",f],
+		 "y2"->StringVar["y",iv],
+		 "y3"->StringVar["y",jv],
+		 "y4"->StringVar["y",iv,jv],
+		 "y5"->StringVar["yoct",f,j],
+		 "y6"->StringVar["yoct",f,i],
+		 "dih1"->StringVar["dihF",f,i,j],
+		 "dih2"->StringVar["dihFx",i,j,f],
+		 "dih3"->StringVar["dihFx",j,i,f],
+		 "sol"->StringVar["solF",f,i,j],
+		 "sig"->StringVar["sigF",f,i,j]}
+	]
+	];
+
+
+
+(* vorVc stuff *)
+(* This is based on the calculation of the
+	maximal dihedral angles of the narrow pair on the 18 remaining Part III
+	arrangements.  *)
+
+VcEquations = {
+	" dih1 - 0.372 y1 + 0.465 y2 + 0.465 y3 + 0.465 y5 + "<>
+     	" 0.465 y6 > 4.885" (* case 19 *),
+	" quo12 + 0.00748 y1 + 0.0115 y2 + 0.0115 y6 > 0.06333",
+	" quo13 + 0.00748 y1 + 0.0115 y3 + 0.0115 y5 > 0.06333",
+	" - Adih1 + A1 dih1  halfslopeXdihmin y1 > slopeXdihmin ",
+	" - Adih1  halfslopeXdihmax y1 > dihmaxXslopeMA1 "
+	}
+
+VcExtraEquations = { (* case 21 , assumes dih < 2.12.... *)
+	" - vor - 0.06 y2 - 0.06 y3 - 0.185 y5 - 0.185 y6 > -0.9978 "
+	}
+
+VcDefinition = {
+	"phi0 SF + Adih1+Adih2+Adih3+Adih4 -sig \n"<>
+	"   -4doct Quo12 -4doct Quo23 -4doct Quo34 -4doct Quo41 \n"<>
+	"   -4doct Quo21 -4doct Quo32 -4doct Quo43 -4doct Quo14 >0 "
+	}
+
+vInstall[f_]:= Module[{r,fX},
+		r = Select[GBLregions//Length//Range,Length[GBLregions[[#]]]==4&];
+		fX= AnyPosition[r,f];
+		AddVcAt[fX]
+		];
+
+AddVcAt[f_]:= 
+	StringJoin[AddVcAt[f,1],AddVcAt[f,2],AddVcAt[f,3],AddVcAt[f,4]];
+AddVcAt[f_,i_]:= 
+
+	(* f <= NumQuads[GBLconfig], i in {1,2,3,4} *)
+	(* A[h_]:= (1 - h/t0)*(phi[h, t0] - phi[t0, t0]) *)
+	(* unorthodox labels, dih4,quo42,etc. 4 refers to corner opposite 1,
+		this allows standard labels 1,2,3 on the front simplex...,
+		sig refers to full score, vor refers to score on front simplex,
+		SF  refers to full solid, sol refers to solid on front simplex, 
+		quo refers to simplex numbering 1,2,3,
+		Quo refers to quad numbering 1,2,3,4 *)
+
+	Module[{eqnlist,quadPos,imV,iV,ipV,im,ip,io,ioV,fV,dihmax,dihmin,hmax,A,h},
+
+	quadPos = Select[Range[Length[GBLregions]],Length[GBLregions[[#]]]==4&];
+	eqnlist = VcEquations;
+	If[VertexDihMax[GBLconfig,f,i]<2.12,
+		eqnlist = Join[eqnlist,VcExtraEquations]
+	  ];
+	If[i==1,eqnlist = Join[eqnlist,VcDefinition]];
+	eqnlist = Apply[StringJoin,Map[(#<>"\n")&,eqnlist]];
+	A[h_]:= (1.255-h)^2(h+2.51)0.480601966344976728560;
+	dihmax = VertexDihMax[GBLconfig,f,i];
+	dihmin = VertexDihMin[GBLconfig,f,i];
+	fV = quadPos[[f]];
+	im = IMod[i-1,4];
+	ip = IMod[i+1,4];
+	io = IMod[i+2,4];
+	{imV,iV,ipV,ioV}=Map[GBLregions[[fV,#]]&,{im,i,ip,io}];
+	hmax = VertexHeight[GBLconfig,iV]/2;
+	slope = (A[hmax]-A[1])/(hmax-1);
+	  StringReplace[eqnlist,
+		{"y1"->StringVar["y",iV],
+		 "y2"->StringVar["y",ipV],
+		 "y3"->StringVar["y",imV],
+		 "y4"->StringVar["y",ipV,imV],
+		 "y5"->StringVar["y",iV,imV],
+		 "y6"->StringVar["y",iV,ipV],
+		 "dih1"->StringVar["dih",fV,i],
+		 "dih2"->StringVar["dih",fV,ip,i],
+		 "dih3"->StringVar["dih",fV,im,i],
+		 "sol"->StringVar["sol",fV,i],
+		 "SF"->StringVar["sol",fV],
+		 "vor"->StringVar["sig",fV,i],
+		 "sig"->StringVar["sig",fV],
+		 "quo12"->StringVar["quo",fV,i,ip],
+		 "quo21"->StringVar["quo",fV,ip,i],
+		 "quo13"->StringVar["quo",fV,i,im],
+		 "quo31"->StringVar["quo",fV,im,i],
+		 "Quo12"->StringVar["quo",fV,i,ip],
+		 "Quo23"->StringVar["quo",fV,ip,io],
+		 "Quo34"->StringVar["quo",fV,io,im],
+		 "Quo41"->StringVar["quo",fV,im,i],
+		 "Quo21"->StringVar["quo",fV,ip,i],
+		 "Quo32"->StringVar["quo",fV,io,ip],
+		 "Quo43"->StringVar["quo",fV,im,io],
+		 "Quo14"->StringVar["quo",fV,i,im],
+		 "phi0" -> "-0.5666365478933329",
+		 "4doct" -> "2.883611798069859",
+		 "A1"->"0.109691511444153",
+		 "Adih1"->StringVar["Adih",fV,i],
+		 "Adih2"->StringVar["Adih",fV,ip],
+		 "Adih3"->StringVar["Adih",fV,io],
+		 "Adih4"->StringVar["Adih",fV,im],
+		 "halfslopeXdihmin"->SR[(1/2) slope dihmin],
+		 "slopeXdihmin"->S[slope dihmin],
+		 "halfslopeXdihmax"->SR[(1/2) slope dihmax],
+		 "dihmaxXslopeMA1"-> S[dihmax (slope - A[1])]
+		}
+	]
+	];
+
+WRITEOUTq[i_]:= Module[{Digit,u,r,Expansion,j,t},
+        r = (*cplex.18e.sum*)NumQuads[[i]];
+        Digit[n_, j_] := Mod[Floor[N[n/4^j]], 4];
+        Expansion[t_]:= 1+Table[Digit[t,j],{j,0,r-1}];
+        Do[WRITEOUTquad[i,Expansion[t]],{t,0,4^r-1}];
+        ];
+
+WRITEOUTq[i_,t_]:= Module[{Digit,u,r,q,Expansion,j},
+        r = (*cplex.18e.sum*)NumQuads[[i]];
+        Digit[n_, j_] := Mod[Floor[N[n/4^j]], 4];
+        Expansion[q_]:= 1+Table[Digit[q,j],{j,0,r-1}];
+        WRITEOUTquad[i,Expansion[t-1]]
+        ];
+
+WRITEOUTquad[i_,u_]:= Module[{stream,ext,j},
+        (* Read in MathToCplexQuadCase.m, install extra quad inequalities,
+            u is a vector {i1,...,ik}, with i in {1,2,3,4}, and
+            k = number of quads.  It specifies flat,skewflat,oct,or Vc,
+            for the extra inequalities *)
+        Initialize[i];
+		freeVar={};
+        Print[{i,u}];
+        ext = (u-1).Table[4^j,{j,0,Length[u]-1}];
+        stream=OpenWrite["/tmp/Z/cplex.lp"<>S[i]<>"."<>S[1+ext]];
+        WRITEOUTstd[stream];
+        WriteString[stream,quadInstall[u]];
+        WriteString[stream,bounds];
+        WriteString[stream,"\n\nEND\n\n"];
+        WriteString[stream,faceCode];
+        Close[stream];
+        ];
+
+WRITEOUTt[i_,t_,code_,bin_]:= Module[{Digit,u,r,q,Expansion,j},
+        r = (*cplex.18e.sum*)NumQuads[[i]];
+        Digit[n_, j_] := Mod[Floor[N[n/4^j]], 4];
+        Expansion[q_]:= 1+Table[Digit[q,j],{j,0,r-1}];
+        WRITEOUTqrtet[i,Expansion[t-1],code,bin]
+        ];
+
+WRITEOUTqrtet[i_,u_,code_,bin_]:= Module[{stream,ext,j},
+        (* Read in MathToCplexQuadCase.m, install extra quad inequalities,
+            u is a vector {i1,...,ik}, with i in {1,2,3,4}, and
+            k = number of quads.  It specifies flat,skewflat,oct,or Vc,
+            for the extra inequalities, *)
+        Initialize[i];
+		freeVar={};
+		If[Length[code]!=Length[GBLregions],Return[]];
+        Print[{i,u}];
+        ext = (u-1).Table[4^j,{j,0,Length[u]-1}];
+        stream=OpenWrite["/tmp/Z/cplex.lp"<>
+			S[i]<>"."<>S[1+ext]<>"."<>S[bin]];
+		Print["WritingStream = ","/tmp/Z/cplex.lp"<>
+            S[i]<>"."<>S[1+ext]<>"."<>S[bin]];
+		WriteString[stream,"\\\\ data = "<>S[u]<>" "<>S[code]<>"\n"];
+		WriteString[stream,"\\ File generated by MathToCplexQuadCase.m:WRITEOUTqrtet\n"];
+        WRITEOUTstd[stream];
+        WriteString[stream,quadInstall[u]];
+		WriteString[stream,MoreQRtet[code]];
+        WriteString[stream,bounds];
+        WriteString[stream,"\n\nEND\n\n"];
+        Close[stream];
+        ];
+
+
+
+(* Now break qrtets into 2 cases, y4+y5+y6 vs. 2.25 *)
+SmallQRtet = { (* partX.cc:cases 201--207 *)
+	" qrs.0 : y4 +y5 +y6 < 6.25 ",
+	" qrs.1 : sol + 0.377076 y1 + 0.377076 y2 + 0.377076 y3 - 0.221 y4 - "<>
+		" 0.221 y5 - 0.221 y6 > 1.487741 ",
+	" qrs.2 : 0.221 y4 + 0.221 y5 + 0.221 y6 - sol > 0.76822 ",
+	" qrs.3 : dih1 + 0.27 y2 + 0.27 y3 - 0.689 y4 + 0.27 y5 + 0.27 y6 > 2.01295 ",
+	" qrs.4 : dih2 + 0.27 y1 + 0.27 y3 - 0.689 y5 + 0.27 y4 + 0.27 y6 > 2.01295 ",
+	" qrs.5 : dih3 + 0.27 y1 + 0.27 y2 - 0.689 y6 + 0.27 y4 + 0.27 y5 > 2.01295 ",
+	" qrs.6 : - dih1 + 0.498 y1 + 0.731 y4 - 0.212 y5 - 0.212 y6 > 0.37884 ",
+	" qrs.7 : - dih2 + 0.498 y2 + 0.731 y5 - 0.212 y4 - 0.212 y6 > 0.37884 ",
+	" qrs.8 : - dih3 + 0.498 y3 + 0.731 y6 - 0.212 y4 - 0.212 y5 > 0.37884 ",
+	" qrs.9 : - sig - 0.14135 y1 - 0.14135 y2 - 0.14135 y3 - 0.14135 y4 - "<>
+		" 0.14135 y5 - 0.14135 y6 > -1.75157 ",
+	" qrs.10: - sig - 0.419351 sol - 0.2 y1 - 0.2 y2 - 0.2 y3 - 0.048 y4 - "<>
+		" 0.048 y5 - 0.048 y6 > -1.77465 ",
+	" qrs.11:tau - 0.0845696 y1 - 0.0845696 y2 - 0.0845696 y3 - 0.163 y4 - "<>
+		" 0.163 y5 - 0.163 y6 > -1.48542 "};
+
+LargeQRtet = { (* partX.cc:cases 208--212 *)
+	" qrl.0 : y4 +y5 +y6 > 6.25 ",
+	" qrl.1 : sol + 0.356 y1 + 0.356 y2 + 0.356 y3 - 0.1781 y4 - 0.1781 y5 - "<>
+		" 0.1781 y6 > 1.62945 ",
+	" qrl.2 : - sol - 0.254 y1 - 0.254 y2 - 0.254 y3 + 0.3405 y4 + 0.3405 y5 + "<>
+		" 0.3405 y6 > - 0.008855 ",
+	" qrl.3 : - sig - 0.167 y1 - 0.167 y2 - 0.167 y3 - 0.0781 y4 - 0.0781 y5 - "<>
+		" 0.0781 y6 > -1.51017 ",
+	" qrl.4 : - sig - 0.419351 sol - 0.2 y1 - 0.2 y2 - 0.2 y3 + 0.0106 y4 + "<>
+		" 0.0106 y5 + 0.0106 y6 > - 1.40816 "};
+
+QRtetsub[f_]:= 
+	{"qrl" -> "qrl"<>S[f],
+	 "qrs" -> "qrs"<>S[f],
+	 "sol" -> StringVar["sol",f],
+	 "dih1"-> StringVar["dih",f,1],
+	 "dih2"-> StringVar["dih",f,2],
+	 "dih3"-> StringVar["dih",f,3],
+	 "y1"->   StringVar["yG",f,1],
+	 "y2"->   StringVar["yG",f,2],
+	 "y3"->   StringVar["yG",f,3],
+	 "y4"->   StringVar["yG",f,2,3],
+	 "y5"->   StringVar["yG",f,1,3],
+	 "y6"->   StringVar["yG",f,1,2],
+	 "sig" -> StringVar["sig",f],
+	 "tau" -> StringVar["tau",f]}
+
+Combine[x_]:= Apply[StringJoin,Map[(#<>"\n")&,x]];
+
+QRAdd[f_,typ_]:= Module[{},
+	If[typ==0,Return[""]];
+	If[typ==1,Return[Combine[StringReplace[SmallQRtet,QRtetsub[f]]]]];
+	If[typ==2,Return[Combine[StringReplace[LargeQRtet,QRtetsub[f]]]]];
+	];
+
+MoreQRtet[v_]:= Module[{i},
+	If[Length[v]!=Length[GBLregions],Return];
+	Apply[StringJoin,Table[QRAdd[i,v[[i]]],{i,1,Length[v]}]]
+	];
+
+BaseDigit[n_, j_,base_] := Mod[Floor[n/base^j], base];
+BaseExpansion[t_,base_,arraysize_]:= 
+	Module[{j},Table[BaseDigit[t,j,base],{j,0,arraysize-1}]];
+
+
+Mko[config_,q_,flist_,bin_]:= Module[{i,tab,b},
+	Initialize[config];
+	freeVar={};
+	tab = Table[0,{i,1,Length[GBLregions]}];
+	b=1+BaseExpansion[bin,2,Length[flist]];
+	Print[b];
+	Do[tab[[flist[[i]]]]=b[[i]],{i,1,Length[b]}];
+	WRITEOUTt[config,q,tab,bin]; 
+	];
+
+(* Log Nov 25, 26, 1997:
+	Do[Mko[6,1,flist6,p],{p,0,1023}]; 
+	Do[Mko[6,3,flist6,p],{p,0,1023}];  all pass, see quad18.6.3.log !!! 
+	...add y4+y5+y6 vs. 2.25 ineqs.
+	Do[Mko[6,9,flist6,p],{p,0,1023}];
+	Do[Mko[6,1,flist6,p], p in over6 ].  Rerun with extra ineq.
+	 overs(6.1) =  (select over 0.4429)
+	  {17, 25, 33, 49, 51, 53, 57, 289, 297, 305, 513, 521, 528, 529, 531, 
+		534, 535, 536, 537, 540, 542, 545, 561, 569, 769, 787};
+	 enlarge flist6 to addition of {12,13,15,16}; 2^4 26 more cases
+	flist6plus = Join[flist6,{12,13,15,16}];
+	Do[Mko[6,1,flist6plus,1024 j+overs[[i]]],{j,0,15},{i,1,Length[overs]}];
+
+*)
+
+
+
+(* When we do the 2^10 cases on qrtets, these are the qrtets we choose. *)
+flist6 = {1,2,3,4,5,6,8,9,11,14};
+flist13 = {1,2,3,4,5,6,7,8,10,15};
+flist16 = {1,2,3,4,5,6,11,13,14,15};
+flist11 = {1,2,3,4,5,7,13,14,15,16};
+
+
+(* This was in int.m.  I'm not sure what it does... moved here 1/4/98 *)
+MakeX := Module[{r, j, s, i}, stream = OpenWrite["/tmp/Z/cplex.exec"];
+    s = "set logfile /tmp/Z/cplex.log\n";
+    Do[r = overs[[i]] + 1024*j;
+      s = StringJoin[s, "read /tmp/Z/cplex.lp11.4", S[r], " lp \n",
+        "optimize\n"], {i, 1, Length[overs]}, {j, 0, 31}];
+    s = StringJoin[s, "quit"]; WriteString[stream, s]; Close[stream]; ]
+
+
+(* moved from MathToCplex.m on 1/4/98 *)
+
+(* stuff for breaking quads, i == face number  *)
+(* solidAx[16] if Length[GBLregions[[16]]]==4, produces something like this:
+		 solid{16} -solid{16}1 -solid{16}7 = 0
+         solid{16} -solid{16}6 -solid{16}2 = 0
+         sigma{16} -sigma{16}1 -sigma{16}7 = 0
+         sigma{16} -sigma{16}6 -sigma{16}2 = 0
+          solid{16}1 -dih{16}1 -dih{16}6.s(1) -dih{16}2.s(1) +pi =0
+          dih{16}1 -dih{16}1.s(6) -dih{16}1.s(2) = 0
+          solid{16}6 -dih{16}6 -dih{16}1.s(6) -dih{16}7.s(6) +pi =0
+          dih{16}6 -dih{16}6.s(1) -dih{16}6.s(7) = 0
+          solid{16}7 -dih{16}7 -dih{16}6.s(7) -dih{16}2.s(7) +pi =0
+          dih{16}7 -dih{16}7.s(6) -dih{16}7.s(2) = 0
+          solid{16}2 -dih{16}2 -dih{16}7.s(2) -dih{16}1.s(2) +pi =0
+          dih{16}2 -dih{16}2.s(7) -dih{16}2.s(1) = 0
+         sig(F16,1,6) +sig(F16,6,7) +sig(F16,2,7) +sig(F16,1,2) -sigma{16} =0
+         dih(F16,1,6) +dih(F16,6,7) +dih(F16,2,7) +dih(F16,1,2) - 2 pi = 0
+         dih(1,6,F16) +dih(1,2,F16) -dih{16}1 =0
+         dih(6,7,F16) +dih(6,1,F16) -dih{16}6 =0
+         dih(7,2,F16) +dih(7,6,F16) -dih{16}7 =0
+         dih(2,1,F16) +dih(2,7,F16) -dih{16}2 =0
+         dih(F16,1,6) +dih(1,6,F16) +dih(6,1,F16) -sol(F16,1,6) - pi = 0
+         dih(F16,6,7) +dih(6,7,F16) +dih(7,6,F16) -sol(F16,6,7) - pi = 0
+         dih(F16,2,7) +dih(7,2,F16) +dih(2,7,F16) -sol(F16,2,7) - pi = 0
+         dih(F16,1,2) +dih(2,1,F16) +dih(1,2,F16) -sol(F16,1,2) - pi = 0 *)
+
+solidAx[i_]:= Module[{di,v,s,str,stx,vert,f,g,r,j},
+    vert = GBLregions[[i]];
+    v = GBLcharset[[i]];
+    str = "solid"<>v;
+    stx = "sigma"<>v;
+    di = "dih"<>v;
+    Do[f[j]=S[vert[[j]]],{j,1,4}];
+    g[r_,j_]:= di<>S[r]<>".s("<>S[j]<>")";
+    Do[AppendTo[freeVar,str<>f[j]],{j,1,4}];
+    Do[AppendTo[freeVar,stx<>f[j]],{j,1,4}];
+    Do[AppendTo[freeVar,g[vert[[j]],vert[[1+Mod[j,4] ]] ]],{j,1,4}];
+    Do[AppendTo[freeVar,g[vert[[1+Mod[j,4] ]],vert[[j]] ]],{j,1,4}];
+    Do[AppendTo[freeVar,StringVar["solF",i,j,AugMod[j,4]]],{j,1,4}];
+    Do[AppendTo[freeVar,StringVar["dihF",i,j,AugMod[j,4]]],{j,1,4}];
+    Do[AppendTo[freeVar,StringVar["sigF",i,j,AugMod[j,4]]],{j,1,4}];
+    Do[AppendTo[freeVar,StringVar["dihFx",j,AugMod[j,4],i]],{j,1,4}];
+    Do[AppendTo[freeVar,StringVar["dihFx",AugMod[j,4],j,i]],{j,1,4}];
+    (* use default positivity:
+       AppendTo[freeVar,StringVar["y",vert[[1]],vert[[3]] ]];
+       AppendTo[freeVar,StringVar["y",vert[[2]],vert[[4]] ]]; *)
+    s="";
+    s = str<>" -"<>str<>f[1] <>" -"<>str<>f[3]<>" = 0\n";
+    s = s<>str<>" -"<>str<>f[2]<>" -"<>str<>f[4]<>" = 0\n";
+    s = s<>stx<>" -"<>stx<>f[1]<>" -"<>stx<>f[3]<>" = 0\n";
+    s = s<>stx<>" -"<>stx<>f[2]<>" -"<>stx<>f[4]<>" = 0\n";
+    w = S[vert[[1]]];
+    s = s<>" "<>str<>w<>" -"<>di<>w<>" -"<>g[vert[[2]],vert[[1]]]<>" -" <>
+            g[vert[[4]],vert[[1]]]<>" +pi =0\n";
+    s = s<>" "<>di<>w<>" -"<>g[vert[[1]],vert[[2]]]<>" -"<>
+            g[vert[[1]],vert[[4]]]<> " = 0\n";
+    w = S[vert[[2]]];
+    s = s<>" "<>str<>w<>" -"<>di<>w<>" -"<>g[vert[[1]],vert[[2]]]<>" -" <>g[vert
+[[3]],vert[[2]]]<>" +pi =0\n";
+    s = s<>" "<>di<>w<>" -"<>g[vert[[2]],vert[[1]]]<>" -" <>g[vert[[2]],vert[[3]
+]]<> " = 0\n";
+    w = S[vert[[3]]];
+    s = s<>" "<>str<>w<>" -"<>di<>w<>" -"<>g[vert[[2]],vert[[3]]]<>" -"<>g[vert[
+[4]],vert[[3]]]<>" +pi =0\n";
+    s = s<>" "<>di<>w<>" -"<>g[vert[[3]],vert[[2]]]<>" -"<>g[vert[[3]],vert[[4]]
+]<> " = 0\n";
+    w = S[vert[[4]]];
+    s = s<>" "<>str<>w<>" -"<>di<>w<>" -"<>g[vert[[3]],vert[[4]]]<>" -"<>g[vert[
+[1]],vert[[4]]]<>" +pi =0\n";
+    s = s<>" "<>di<>w<>" -"<>g[vert[[4]],vert[[3]]]<>" -"<>g[vert[[4]],vert[[1]]
+]<> " = 0\n";
+    (* octahedral constraints *)
+    s = s<>StringVar["sigF",i,1,2]<>" +"<>
+           StringVar["sigF",i,2,3]<>" +"<>
+           StringVar["sigF",i,3,4]<>" +"<>
+           StringVar["sigF",i,4,1]<>" -"<>
+            StringVar["sig",i] <> " =0\n";
+    s = s<>StringVar["dihF",i,1,2]<>" +"<>
+           StringVar["dihF",i,2,3]<>" +"<>
+           StringVar["dihF",i,3,4]<>" +"<>
+           StringVar["dihF",i,4,1]<>" - 2 pi = 0\n";
+    Do[s = s<>StringVar["dihFx",j,AugMod[j,4],i]<>" +"<>
+            StringVar["dihFx",j,IMod[j+3,4],i]<>" -"<>
+            StringVar["dih",i,j]<>" =0\n",{j,1,4}];
+    Do[s = s<>StringVar["dihF",i,j,AugMod[j,4]]<>" +"<>
+            StringVar["dihFx",j,AugMod[j,4],i]<>" +"<>
+            StringVar["dihFx",AugMod[j,4],j,i]<>" -"<>
+            StringVar["solF",i,j,AugMod[j,4]]<>" - pi = 0\n",{j,1,4}];
+    s
+    ];
+
+@
+
+
+1.3
+log
+@A lot of material relating to quads was moved from
+MathToCplex.m into this file.
+@
+text
+@d14 1
+d186 1
+a186 1
+vInstall[f_]:= Module[{},
+a216 1
+	hmax = 
+d285 1
+d310 1
+d396 1
+d472 9
+a480 9
+    Do[AppendTo[brokenVar,str<>f[j]],{j,1,4}];
+    Do[AppendTo[brokenVar,stx<>f[j]],{j,1,4}];
+    Do[AppendTo[brokenVar,g[vert[[j]],vert[[1+Mod[j,4] ]] ]],{j,1,4}];
+    Do[AppendTo[brokenVar,g[vert[[1+Mod[j,4] ]],vert[[j]] ]],{j,1,4}];
+    Do[AppendTo[brokenVar,StringVar["solF",i,j,AugMod[j,4]]],{j,1,4}];
+    Do[AppendTo[brokenVar,StringVar["dihF",i,j,AugMod[j,4]]],{j,1,4}];
+    Do[AppendTo[brokenVar,StringVar["sigF",i,j,AugMod[j,4]]],{j,1,4}];
+    Do[AppendTo[brokenVar,StringVar["dihFx",j,AugMod[j,4],i]],{j,1,4}];
+    Do[AppendTo[brokenVar,StringVar["dihFx",AugMod[j,4],j,i]],{j,1,4}];
+d482 2
+a483 2
+       AppendTo[brokenVar,StringVar["y",vert[[1]],vert[[3]] ]];
+       AppendTo[brokenVar,StringVar["y",vert[[2]],vert[[4]] ]]; *)
+@
+
+
+1.2
+log
+@This is the version used for the treatment of the 18 cases
+that remained for Part III.
+@
+text
+@d2 1
+d14 2
+a15 2
+<< cplex.18e.sum;
+<< cplex.18h.sum;
+d81 15
+d418 1
+a418 1
+
+d423 103
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d34 4
+d110 6
+a115 1
+    	"0.054 y6 > -0.59834" (* case 26,27,28 *)
+d118 5
+d248 159
+a406 1
+	
+@

@@ -1,0 +1,1585 @@
+
+Log started (V4.0.7) Sat Jun 27 14:38:14 1998
+
+New value for presolve indicator: no
+
+Log started (V4.0.7) Sun Jun 28 18:57:36 1998
+
+
+Problem 'a.lp' read.
+Read time =    0.14 sec.
+Input file 'ufAdihtmp' successfully opened.
+CPLEX Error  1434: Line 1: Couldn't convert '"' to a number.
+
+Problem not changed.
+CPLEX Error  1436: Max or Min missing.
+Problem contains quadratic objective coefficients, ignored.
+No file read.
+
+Problem 'a.lp' read.
+Read time =    0.11 sec.
+Input file 'ufAdihtmp' successfully opened.
+
+Problem addition successful.
+LP Presolve eliminated 468 rows and 53 columns.
+Aggregator did 5 substitutions.
+Reduced LP has 1089 rows, 136 columns, and 4368 nonzeros.
+Presolve time =    0.07 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           145.058987
+Switched to Devex.
+Iteration:    66    Scaled Infeas =             4.346931
+Iteration:   126    Scaled Infeas =             0.010612
+Iteration:   130    Objective     =            -1.834768
+Iteration:   189    Objective     =            -0.577827
+Iteration:   249    Objective     =             0.468435
+Iteration:   309    Objective     =             0.548962
+Iteration:   369    Objective     =             0.555900
+Removing shift (8).
+Iteration:   413    Scaled Infeas =             0.000004
+Iteration:   415    Objective     =             0.557389
+
+Primal - Optimal:  Objective =    5.5738941072e-01
+Solution time =    1.26 sec.    Iterations = 428 (131)
+
+
+Variable Name           Solution Value
+solid{16}                     4.047940
+
+Variable Name           Solution Value
+dih{16}1                      2.694544
+
+Variable Name           Solution Value
+y(1,2)                        2.208914
+
+The variable 'Adih{16}1' is 0.
+
+The variable 'cquo{16}(1,5)' is 0.
+
+The variable 'cquo{16}(3,4)' is 0.
+
+The variable 'cquo{16}(1,2)' is 0.
+
+The variable 'cquo{16}(2,3)' is 0.
+
+The variable 'cquo{16}(4,5)' is 0.
+
+Variable Name           Solution Value
+sigma{16}389687              -0.128000
+
+Variable Name           Solution Value
+solid{16}389687               4.047940
+
+The variable 'Adih{16}15062' is 0.
+
+The variable 'Adih{16}20281' is 0.
+
+The variable 'Adih{16}25500' is 0.
+
+The variable 'Adih{16}20026' is 0.
+
+Variable Name           Solution Value
+Adih{16}25160                 2.165711
+
+Log started (V4.0.9) Mon Jun 29 10:29:16 1998
+
+
+Problem 'a.lp' read.
+Read time =    0.16 sec.
+LP Presolve eliminated 531 rows and 53 columns.
+Aggregator did 3 substitutions.
+Reduced LP has 1266 rows, 161 columns, and 5245 nonzeros.
+Presolve time =    0.11 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           209.247722
+Switched to Devex.
+Iteration:   104    Scaled Infeas =             7.177219
+Iteration:   199    Objective     =            -2.075828
+Iteration:   298    Objective     =            -0.316061
+Iteration:   398    Objective     =             0.373720
+Iteration:   498    Objective     =             0.509212
+Iteration:   598    Objective     =             0.596875
+Removing shift (8).
+Iteration:   624    Scaled Infeas =             0.000001
+Iteration:   627    Objective     =             0.598446
+
+Primal - Optimal:  Objective =    5.9844643940e-01
+Solution time =    2.11 sec.    Iterations = 628 (201)
+
+
+Variable Name           Solution Value
+sigma{18}25160               -0.021487
+
+Variable Name           Solution Value
+solid{18}25160                0.714885
+
+Variable Name           Solution Value
+sigma{18}438158              -0.075000
+
+Variable Name           Solution Value
+solid{18}438158               2.036708
+
+Variable Name           Solution Value
+y(2)                          2.026940
+
+Variable Name           Solution Value
+y(3)                          2.000000
+
+Variable Name           Solution Value
+y(4)                          2.000000
+
+Variable Name           Solution Value
+y(5)                          2.000000
+
+Variable Name           Solution Value
+y(2,3)                        2.280060
+
+Variable Name           Solution Value
+y(3,4)                        2.286670
+
+Variable Name           Solution Value
+y(4,5)                        2.196404
+
+Variable Name           Solution Value
+y(2,5)                        2.530629
+
+The variable 'y(2,4)' is 0.
+
+Variable Name           Solution Value
+dih{18}3                      1.632944
+
+Problem 'a.lp' read.
+Read time =    0.13 sec.
+LP Presolve eliminated 531 rows and 53 columns.
+Aggregator did 3 substitutions.
+Reduced LP has 1267 rows, 161 columns, and 5250 nonzeros.
+Presolve time =    0.09 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           209.202276
+Switched to Devex.
+Iteration:   105    Scaled Infeas =             7.011666
+Iteration:   163    Objective     =            -2.339994
+Iteration:   262    Objective     =            -0.488283
+Iteration:   362    Objective     =             0.353487
+Iteration:   462    Objective     =             0.465898
+Iteration:   562    Objective     =             0.496783
+
+Primal - Optimal:  Objective =    4.9688520932e-01
+Solution time =    1.97 sec.    Iterations = 578 (162)
+
+
+Variable Name           Solution Value
+sigma{18}25160               -0.041894
+
+Variable Name           Solution Value
+y(1)                          2.000000
+
+Variable Name           Solution Value
+y(2)                          2.036353
+
+Variable Name           Solution Value
+y(2,5)                        2.713192
+
+Variable Name           Solution Value
+y(3)                          2.000000
+
+Variable Name           Solution Value
+y(4)                          2.027720
+
+Variable Name           Solution Value
+y(5)                          2.000000
+
+Variable Name           Solution Value
+y(2,3)                        2.273690
+
+Variable Name           Solution Value
+y(3,4)                        2.300241
+
+Variable Name           Solution Value
+y(4,5)                        2.280690
+
+Variable Name           Solution Value
+dih{18}3                      1.612328
+
+Variable Name           Solution Value
+solid{18}25160                0.886235
+
+Variable Name           Solution Value
+y(1,5)                        2.247307
+
+Variable Name           Solution Value
+y(1,2)                        2.201033
+
+Variable Name           Solution Value
+y(1)                          2.000000
+
+Problem 'a.lp' read.
+Read time =    0.13 sec.
+LP Presolve eliminated 531 rows and 53 columns.
+Aggregator did 3 substitutions.
+Reduced LP has 1268 rows, 161 columns, and 5252 nonzeros.
+Presolve time =    0.09 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           213.684882
+Switched to Devex.
+Iteration:   103    Scaled Infeas =             9.016262
+Iteration:   199    Objective     =            -1.518073
+Iteration:   298    Objective     =             0.366253
+Iteration:   398    Objective     =             0.471962
+Removing shift (3).
+
+Primal - Optimal:  Objective =    4.8544087558e-01
+Solution time =    1.80 sec.    Iterations = 496 (198)
+
+
+Problem 'a.lp' read.
+Read time =    0.14 sec.
+LP Presolve eliminated 531 rows and 53 columns.
+Aggregator did 3 substitutions.
+Reduced LP has 1268 rows, 161 columns, and 5255 nonzeros.
+Presolve time =    0.08 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           206.204354
+Switched to Devex.
+Iteration:   106    Scaled Infeas =             7.459833
+Iteration:   181    Objective     =            -2.714584
+Iteration:   280    Objective     =            -0.166620
+Iteration:   380    Objective     =             0.406905
+Iteration:   480    Objective     =             0.466920
+Removing shift (3).
+
+Primal - Optimal:  Objective =    4.8248771868e-01
+Solution time =    1.96 sec.    Iterations = 577 (180)
+
+
+Log started (V4.0.9) Mon Jun 29 14:41:36 1998
+
+
+Problem 'a.lp' read.
+Read time =    0.12 sec.
+LP Presolve eliminated 536 rows and 51 columns.
+Aggregator did 2 substitutions.
+Reduced LP has 1283 rows, 168 columns, and 5338 nonzeros.
+Presolve time =    0.08 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           211.587271
+Switched to Devex.
+Iteration:   106    Scaled Infeas =            13.223605
+Iteration:   197    Objective     =            -2.579329
+Iteration:   296    Objective     =            -0.023711
+Iteration:   396    Objective     =             0.512624
+Iteration:   496    Objective     =             0.552610
+Removing shift (4).
+
+Primal - Optimal:  Objective =    5.7374874694e-01
+Solution time =    2.02 sec.    Iterations = 595 (196)
+
+
+Variable Name           Solution Value
+sigma{18}25160                0.006754
+
+Variable Name           Solution Value
+y(1)                          2.000000
+
+Variable Name           Solution Value
+y(5)                          2.000000
+
+Variable Name           Solution Value
+y(2)                          2.000000
+
+Variable Name           Solution Value
+y(2,5)                        2.542210
+
+Variable Name           Solution Value
+solid{18}25160                0.658017
+
+Variable Name           Solution Value
+sigma{18}20553                0.007116
+
+Variable Name           Solution Value
+solid{18}20553                0.653608
+
+Variable Name           Solution Value
+sigma{18}25755               -0.084362
+
+Variable Name           Solution Value
+solid{18}25755                1.283905
+
+Problem 'a.lp' read.
+Read time =    0.16 sec.
+LP Presolve eliminated 536 rows and 51 columns.
+Aggregator did 2 substitutions.
+Reduced LP has 1284 rows, 168 columns, and 5340 nonzeros.
+Presolve time =    0.09 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           204.784621
+Switched to Devex.
+Iteration:   106    Scaled Infeas =             9.695572
+Iteration:   206    Scaled Infeas =             0.500324
+Iteration:   246    Objective     =        -60106.353540
+Iteration:   345    Objective     =            -0.488215
+Iteration:   445    Objective     =             0.349825
+Iteration:   545    Objective     =             0.514907
+Iteration:   645    Objective     =             0.525119
+Removing shift (9).
+Iteration:   718    Scaled Infeas =             0.000000
+Iteration:   719    Objective     =             0.530081
+
+Primal - Optimal:  Objective =    5.3008118073e-01
+Solution time =    2.46 sec.    Iterations = 721 (246)
+
+
+Variable Name           Solution Value
+y(1)                          2.000000
+
+Variable Name           Solution Value
+y(5)                          2.000000
+
+Variable Name           Solution Value
+y(2)                          2.000000
+
+Variable Name           Solution Value
+y(1,5)                        2.320493
+
+Variable Name           Solution Value
+y(1,2)                        2.109284
+
+Variable Name           Solution Value
+y(2,5)                        2.659718
+
+Variable Name           Solution Value
+y(2)                          2.000000
+
+Variable Name           Solution Value
+y(4)                          2.000000
+
+Variable Name           Solution Value
+y(3)                          2.000000
+
+Variable Name           Solution Value
+y(2,4)                        2.635689
+
+Variable Name           Solution Value
+y(2,3)                        2.065823
+
+Variable Name           Solution Value
+y(3,4)                        2.351892
+
+Variable Name           Solution Value
+y(4,5)                        2.170398
+
+Variable Name           Solution Value
+sigma{18}25755               -0.093771
+
+Variable Name           Solution Value
+solid{18}25755                0.959271
+
+Variable Name           Solution Value
+sigma{18}25160               -0.038403
+
+Variable Name           Solution Value
+solid{18}25160                0.877805
+
+Variable Name           Solution Value
+sigma{18}20553               -0.037737
+
+Variable Name           Solution Value
+solid{18}20553                0.869180
+
+Problem 'a.lp' read.
+Read time =    0.12 sec.
+LP Presolve eliminated 536 rows and 51 columns.
+Aggregator did 2 substitutions.
+Reduced LP has 1286 rows, 168 columns, and 5350 nonzeros.
+Presolve time =    0.08 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           209.070552
+Switched to Devex.
+Iteration:   108    Scaled Infeas =            10.441696
+Iteration:   209    Scaled Infeas =             0.129665
+Iteration:   230    Objective     =        -79652.295613
+Iteration:   329    Objective     =             0.039991
+Iteration:   429    Objective     =             0.466523
+Iteration:   529    Objective     =             0.500667
+Iteration:   629    Objective     =             0.506899
+Removing shift (14).
+
+Primal - Optimal:  Objective =    5.0717229676e-01
+Solution time =    2.27 sec.    Iterations = 673 (229)
+
+
+Variable Name           Solution Value
+sigma{18}25160               -0.047458
+
+Variable Name           Solution Value
+solid{18}25160                0.850022
+
+Variable Name           Solution Value
+sigma{18}25755               -0.057237
+
+Variable Name           Solution Value
+solid{18}25755                0.872150
+
+Variable Name           Solution Value
+y(2,5)                        2.510000
+
+Variable Name           Solution Value
+y(2,4)                        2.510000
+
+Variable Name           Solution Value
+y(1,2)                        2.134056
+
+Variable Name           Solution Value
+y(1,5)                        2.337428
+
+Variable Name           Solution Value
+sigma{18}20553               -0.051506
+
+Variable Name           Solution Value
+solid{18}20553                0.859677
+
+Log started (V4.0.9) Mon Jun 29 16:39:35 1998
+
+
+Problem 'a.lp' read.
+Read time =    0.16 sec.
+LP Presolve eliminated 536 rows and 51 columns.
+Aggregator did 2 substitutions.
+Reduced LP has 1288 rows, 168 columns, and 5360 nonzeros.
+Presolve time =    0.09 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           219.899708
+Switched to Devex.
+Iteration:   105    Scaled Infeas =            11.093444
+Iteration:   206    Scaled Infeas =             0.107948
+Iteration:   220    Objective     =            -1.938089
+Iteration:   319    Objective     =            -0.345741
+Iteration:   419    Objective     =            -0.041561
+Iteration:   519    Objective     =            -0.001741
+Iteration:   619    Objective     =             0.006499
+Iteration:   651    Scaled Infeas =             0.000000
+Iteration:   652    Objective     =             0.006903
+Iteration:   654    Scaled Infeas =             0.000000
+Iteration:   655    Objective     =             0.006903
+Removing shift (15).
+
+Primal - Optimal:  Objective =    6.8940200778e-03
+Solution time =    2.22 sec.    Iterations = 655 (221)
+
+
+Variable Name           Solution Value
+sigma{18}25160               -0.292492
+
+Variable Name           Solution Value
+dih{18}1                      1.392318
+
+Variable Name           Solution Value
+solid{18}25160                0.843796
+
+Variable Name           Solution Value
+y(1)                          2.000000
+
+Variable Name           Solution Value
+y(2)                          2.008026
+
+Variable Name           Solution Value
+y(1,2)                        2.117690
+
+Variable Name           Solution Value
+y(1,5)                        2.468277
+
+Variable Name           Solution Value
+y(2,5)                        2.510000
+
+Log started (V4.0.9) Mon Jun 29 16:47:04 1998
+
+
+Problem 'a.lp' read.
+Read time =    0.14 sec.
+LP Presolve eliminated 536 rows and 51 columns.
+Aggregator did 2 substitutions.
+Reduced LP has 1288 rows, 168 columns, and 5360 nonzeros.
+Presolve time =    0.08 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           219.444095
+Switched to Devex.
+Iteration:   105    Scaled Infeas =            12.844100
+Iteration:   202    Objective     =            -2.122094
+Iteration:   301    Objective     =            -0.499627
+Iteration:   401    Objective     =             0.437722
+Iteration:   501    Objective     =             0.463001
+Iteration:   601    Objective     =             0.466680
+Removing shift (3).
+
+Primal - Optimal:  Objective =    4.6669366321e-01
+Solution time =    1.92 sec.    Iterations = 617 (201)
+
+
+Variable Name           Solution Value
+sigma{18}25160               -0.052445
+
+Variable Name           Solution Value
+solid{18}25160                0.816833
+
+Variable Name           Solution Value
+sigma{18}20553               -0.064090
+
+Variable Name           Solution Value
+solid{18}20553                0.851499
+
+Log started (V4.0.9) Mon Jun 29 17:35:38 1998
+
+CPLEX Error  1434: Line 1669: Couldn't convert '-0.2211.874444999999999' to a number.
+Problem contains quadratic objective coefficients, ignored.
+No file read.
+
+Log started (V4.0.9) Mon Jun 29 17:40:13 1998
+
+
+Problem 'a.lp' read.
+Read time =    0.14 sec.
+LP Presolve eliminated 526 rows and 51 columns.
+Aggregator did 5 substitutions.
+Reduced LP has 1246 rows, 153 columns, and 5142 nonzeros.
+Presolve time =    0.08 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           176.940707
+Switched to Devex.
+Iteration:   106    Scaled Infeas =             2.544955
+Iteration:   151    Objective     =            -2.391772
+Iteration:   250    Objective     =            -0.320933
+Iteration:   350    Objective     =             0.287792
+Iteration:   450    Objective     =             0.539984
+Removing shift (8).
+
+Primal - Optimal:  Objective =    5.4829351325e-01
+Solution time =    1.55 sec.    Iterations = 528 (150)
+
+
+Log started (V4.0.9) Mon Jun 29 18:45:03 1998
+
+
+Problem 'a.lp' read.
+Read time =    0.16 sec.
+LP Presolve eliminated 586 rows and 52 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 1379 rows, 183 columns, and 5740 nonzeros.
+Presolve time =    0.09 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           283.516000
+Switched to Devex.
+Iteration:   107    Scaled Infeas =            14.435163
+Iteration:   207    Scaled Infeas =             1.226461
+Iteration:   254    Objective     =        -13929.366277
+Iteration:   353    Objective     =            -0.361448
+Iteration:   453    Objective     =             0.336883
+Iteration:   553    Objective     =             0.483880
+Iteration:   653    Objective     =             0.509641
+Removing shift (2).
+
+Primal - Optimal:  Objective =    5.1085812525e-01
+Solution time =    2.33 sec.    Iterations = 679 (253)
+
+
+Variable Name           Solution Value
+sigma{18}25160               -0.016443
+
+Variable Name           Solution Value
+solid{18}25160                0.700495
+
+Variable Name           Solution Value
+sigma{18}25143               -0.050000
+
+Variable Name           Solution Value
+solid{18}25143                0.421233
+
+Variable Name           Solution Value
+sigma{18}15317               -0.024135
+
+Variable Name           Solution Value
+solid{18}15317                0.513176
+
+Variable Name           Solution Value
+sigma{18}20519               -0.032164
+
+Variable Name           Solution Value
+solid{18}20519                0.527872
+
+Variable Name           Solution Value
+sigma{18}25721               -0.019269
+
+Variable Name           Solution Value
+solid{18}25721                0.454491
+
+Variable Name           Solution Value
+y(180)                        2.696000
+
+Variable Name           Solution Value
+y(5)                          2.000000
+
+Variable Name           Solution Value
+y(4,5)                        2.139599
+
+Variable Name           Solution Value
+y(3,4)                        2.098429
+
+Variable Name           Solution Value
+y(2,3)                        2.000000
+
+Variable Name           Solution Value
+y(5,180)                      2.200409
+
+Variable Name           Solution Value
+y(2,5)                        2.521931
+
+Variable Name           Solution Value
+y(3,180)                      2.503611
+
+Variable Name           Solution Value
+y(2,180)                      2.000000
+
+Variable Name           Solution Value
+y(4,180)                      2.000000
+
+Log started (V4.0.9) Tue Jun 30 10:23:28 1998
+
+
+Problem 'a.lp' read.
+Read time =    0.14 sec.
+LP Presolve eliminated 579 rows and 53 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 1364 rows, 177 columns, and 5651 nonzeros.
+Presolve time =    0.09 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           274.790272
+Switched to Devex.
+Iteration:   109    Scaled Infeas =            15.739909
+Iteration:   210    Scaled Infeas =             0.907898
+Iteration:   248    Objective     =       -549422.770165
+Iteration:   347    Objective     =            -0.615413
+Iteration:   447    Objective     =             0.311037
+Iteration:   547    Objective     =             0.456213
+Iteration:   647    Objective     =             0.491904
+Removing shift (8).
+
+Primal - Optimal:  Objective =    4.9568613515e-01
+Solution time =    2.47 sec.    Iterations = 695 (247)
+
+
+Variable Name           Solution Value
+y(3)                          2.000000
+
+Variable Name           Solution Value
+y(2)                          2.000000
+
+Variable Name           Solution Value
+y(4)                          2.000000
+
+The variable 'y(2,4)' is 0.
+
+Variable Name           Solution Value
+y(2,180)                      2.000000
+
+Variable Name           Solution Value
+y(1)                          2.000000
+
+Variable Name           Solution Value
+y(5)                          2.000000
+
+Variable Name           Solution Value
+y(4)                          2.000000
+
+Variable Name           Solution Value
+y(4,5)                        2.119493
+
+Variable Name           Solution Value
+y(1,2)                        2.081767
+
+Variable Name           Solution Value
+y(1,5)                        2.229240
+
+Variable Name           Solution Value
+y(2,3)                        2.184938
+
+Variable Name           Solution Value
+y(3,4)                        2.375522
+
+Variable Name           Solution Value
+sigma{18}349401              -0.043000
+
+Variable Name           Solution Value
+solid{18}349401               1.359039
+
+Variable Name           Solution Value
+y(2,180)                      2.000000
+
+Variable Name           Solution Value
+y(4,180)                      2.423318
+
+Variable Name           Solution Value
+y(5,180)                      2.000000
+
+Variable Name           Solution Value
+y(1,180)                      2.510000
+
+Variable Name           Solution Value
+sigma{18}24854               -0.077106
+
+Variable Name           Solution Value
+sigma{18}10115               -0.031125
+
+Variable Name           Solution Value
+sigma{18}25721               -0.029592
+
+Log started (V4.0.9) Tue Jun 30 13:36:03 1998
+
+
+Problem 'a.lp' read.
+Read time =    0.16 sec.
+Input file 'a.out' successfully opened.
+
+Problem addition successful.
+LP Presolve eliminated 538 rows and 47 columns.
+Aggregator did 26 substitutions.
+Reduced LP has 1289 rows, 191 columns, and 5216 nonzeros.
+Presolve time =    0.09 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           302.216622
+Switched to Devex.
+Iteration:   107    Scaled Infeas =            12.381841
+Iteration:   196    Objective     =            -5.225581
+Iteration:   295    Objective     =            -0.452904
+Iteration:   395    Objective     =             0.209451
+Iteration:   495    Objective     =             0.455590
+Iteration:   595    Objective     =             0.486715
+Removing shift (4).
+Iteration:   649    Scaled Infeas =             0.000001
+Iteration:   651    Objective     =             0.488068
+
+Primal - Optimal:  Objective =    4.8806842444e-01
+Solution time =    1.90 sec.    Iterations = 653 (197)
+
+
+Log started (V4.0.9) Tue Jun 30 18:24:52 1998
+
+
+Problem 'a.lp' read.
+Read time =    0.16 sec.
+LP Presolve eliminated 543 rows and 56 columns.
+Aggregator did 23 substitutions.
+Reduced LP has 1300 rows, 192 columns, and 5283 nonzeros.
+Presolve time =    0.10 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           327.501175
+Switched to Devex.
+Iteration:   106    Scaled Infeas =            11.726476
+Iteration:   187    Objective     =            -2.699788
+Iteration:   286    Objective     =            -0.831382
+Iteration:   386    Objective     =             0.237413
+Iteration:   486    Objective     =             0.475097
+Iteration:   586    Objective     =             0.511148
+Iteration:   686    Objective     =             0.523617
+Removing shift (11).
+Iteration:   690    Scaled Infeas =             0.000001
+Iteration:   692    Objective     =             0.523612
+
+Primal - Optimal:  Objective =    5.2361197333e-01
+Solution time =    2.05 sec.    Iterations = 692 (188)
+
+
+Log started (V4.0.9) Tue Jun 30 18:39:01 1998
+
+
+Problem 'a.lp' read.
+Read time =    0.16 sec.
+LP Presolve eliminated 524 rows and 59 columns.
+Aggregator did 24 substitutions.
+Reduced LP has 1323 rows, 188 columns, and 5417 nonzeros.
+Presolve time =    0.09 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           332.936610
+Switched to Devex.
+Iteration:   107    Scaled Infeas =            12.891603
+Iteration:   207    Scaled Infeas =             0.177968
+Iteration:   217    Objective     =            -2.892661
+Iteration:   316    Objective     =            -0.365059
+Iteration:   416    Objective     =             0.401917
+Iteration:   516    Objective     =             0.475488
+Removing shift (12).
+Iteration:   615    Scaled Infeas =             0.000020
+Iteration:   624    Objective     =             0.479715
+
+Primal - Optimal:  Objective =    4.7971812756e-01
+Solution time =    2.06 sec.    Iterations = 630 (225)
+
+
+Variable Name           Solution Value
+sigma{16}                    -0.058136
+
+Variable Name           Solution Value
+sigma{17}                    -0.063600
+
+Variable Name           Solution Value
+y(1)                          2.006369
+
+Variable Name           Solution Value
+y(2)                          2.000000
+
+Variable Name           Solution Value
+y(3)                          2.000000
+
+Variable Name           Solution Value
+y(4)                          2.000000
+
+Variable Name           Solution Value
+y(5)                          2.000000
+
+Variable Name           Solution Value
+y(6)                          2.016167
+
+Variable Name           Solution Value
+y(7)                          2.000000
+
+Variable Name           Solution Value
+y(8)                          2.000000
+
+Variable Name           Solution Value
+y(9)                          2.000000
+
+Variable Name           Solution Value
+y(10)                         2.027482
+
+Variable Name           Solution Value
+y(11)                         2.000000
+
+Variable Name           Solution Value
+y(12)                         2.000000
+
+Variable Name           Solution Value
+y(5,6)                        2.000000
+
+Variable Name           Solution Value
+y(6,11)                       2.000000
+
+Variable Name           Solution Value
+y(10,11)                      2.170173
+
+Variable Name           Solution Value
+y(4,10)                       2.216148
+
+Variable Name           Solution Value
+y(4,5)                        2.510000
+
+Variable Name           Solution Value
+y(1,5)                        2.000000
+
+Variable Name           Solution Value
+y(1,2)                        2.205430
+
+Variable Name           Solution Value
+y(2,6)                        2.286630
+
+Variable Name           Solution Value
+y(2,7)                        2.154355
+
+Variable Name           Solution Value
+y(2,8)                        2.036021
+
+Variable Name           Solution Value
+y(2,3)                        2.069415
+
+Variable Name           Solution Value
+y(4,9)                        2.000000
+
+Variable Name           Solution Value
+y(3,4)                        2.000000
+
+Variable Name           Solution Value
+y(1,4)                        2.000000
+
+Variable Name           Solution Value
+dih{16}2                      1.669712
+
+Variable Name           Solution Value
+dih{16}6                      1.913205
+
+Variable Name           Solution Value
+dih{16}5                      2.102509
+
+Variable Name           Solution Value
+dih{16}1                      2.182111
+
+Variable Name           Solution Value
+sigma{16}                    -0.058136
+
+Variable Name           Solution Value
+sigsum                        0.479718
+
+Variable Name           Solution Value
+sigma{3}                     -0.000689
+
+Variable Name           Solution Value
+sigma{9}                      0.028923
+
+Variable Name           Solution Value
+sigma{17}8389                -0.075000
+
+Log started (V4.0.9) Wed Jul  1 08:03:51 1998
+
+
+Log started (V4.0.9) Wed Jul  1 08:04:28 1998
+
+
+Problem 'a.lp' read.
+Read time =    0.13 sec.
+LP Presolve eliminated 554 rows and 64 columns.
+Aggregator did 23 substitutions.
+Reduced LP has 1280 rows, 184 columns, and 5204 nonzeros.
+Presolve time =    0.10 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           320.458136
+Switched to Devex.
+Iteration:   107    Scaled Infeas =            14.033872
+Iteration:   194    Objective     =            -2.572026
+Iteration:   293    Objective     =            -0.605518
+Iteration:   393    Objective     =             0.280113
+Iteration:   493    Objective     =             0.494705
+Iteration:   593    Objective     =             0.510907
+Removing shift (10).
+Iteration:   685    Scaled Infeas =             0.000014
+Iteration:   689    Objective     =             0.514942
+
+Primal - Optimal:  Objective =    5.1494260624e-01
+Solution time =    2.06 sec.    Iterations = 693 (197)
+
+
+Variable Name           Solution Value
+y(4)                          2.000000
+
+Variable Name           Solution Value
+y(10)                         2.000000
+
+Variable Name           Solution Value
+y(11)                         2.000000
+
+Variable Name           Solution Value
+y(6)                          2.000000
+
+Variable Name           Solution Value
+y(5)                          2.004724
+
+Variable Name           Solution Value
+y(5,11)                       2.792270
+
+Variable Name           Solution Value
+y(5,6)                        2.024479
+
+Variable Name           Solution Value
+y(6,11)                       2.000007
+
+Variable Name           Solution Value
+y(10,11)                      2.196816
+
+Variable Name           Solution Value
+y(4,10)                       2.235148
+
+Variable Name           Solution Value
+y(4,5)                        2.510000
+
+Variable Name           Solution Value
+dih{17}4                      1.560310
+
+Variable Name           Solution Value
+dih{17}11                     2.625949
+
+Variable Name           Solution Value
+dih{17}50762                  1.599460
+
+Variable Name           Solution Value
+sigma{17}8389                -0.075000
+
+Log started (V4.0.9) Thu Jul  2 19:21:35 1998
+
+
+Problem 'a.lp' read.
+Read time =    0.16 sec.
+LP Presolve eliminated 518 rows and 66 columns.
+Aggregator did 7 substitutions.
+Reduced LP has 1207 rows, 172 columns, and 4770 nonzeros.
+Presolve time =    0.07 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           248.458324
+Switched to Devex.
+Iteration:   103    Scaled Infeas =            23.154145
+Iteration:   203    Scaled Infeas =             2.487872
+Iteration:   272    Objective     =         -8506.960541
+Iteration:   371    Objective     =            -0.037346
+Iteration:   471    Objective     =             0.299938
+Iteration:   571    Objective     =             0.454952
+Removing shift (6).
+
+Primal - Optimal:  Objective =    4.6729110370e-01
+Solution time =    1.91 sec.    Iterations = 627 (271)
+
+
+Variable Name           Solution Value
+y(8,9)                        2.217785
+
+Variable Name           Solution Value
+y(8,12)                       2.000000
+
+Variable Name           Solution Value
+y(9,12)                       2.640502
+
+Variable Name           Solution Value
+y(9)                          2.000000
+
+Variable Name           Solution Value
+y(8)                          2.000000
+
+Variable Name           Solution Value
+y(12)                         2.114656
+
+Variable Name           Solution Value
+sigma{18}61693               -0.024292
+
+Problem addition successful.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.064606
+Iteration:    94    Objective     =             0.418719
+Iteration:   193    Objective     =             0.450782
+Removing shift (12).
+Iteration:   196    Scaled Infeas =             0.000000
+Iteration:   197    Objective     =             0.450791
+
+Primal - Optimal:  Objective =    4.5079084557e-01
+Solution time =    0.90 sec.    Iterations = 197 (94)
+
+
+Variable Name           Solution Value
+y(8)                          2.000000
+
+Variable Name           Solution Value
+y(8,9)                        2.231933
+
+Variable Name           Solution Value
+y(8,12)                       2.000000
+
+Variable Name           Solution Value
+y(12)                         2.124422
+
+Variable Name           Solution Value
+y(9,12)                       2.628173
+
+Variable Name           Solution Value
+sigma{18}61693               -0.027040
+
+Log started (V4.0.9) Fri Jul  3 21:03:24 1998
+
+
+Problem 'a.lp' read.
+Read time =    0.14 sec.
+LP Presolve eliminated 460 rows and 69 columns.
+Aggregator did 6 substitutions.
+Reduced LP has 1222 rows, 171 columns, and 4654 nonzeros.
+Presolve time =    0.09 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           222.810188
+Switched to Devex.
+Iteration:   109    Scaled Infeas =            12.126487
+Iteration:   170    Objective     =            -2.410580
+Iteration:   269    Objective     =            -0.088989
+Iteration:   369    Objective     =             0.436327
+Iteration:   469    Objective     =             0.478362
+Removing shift (6).
+Iteration:   506    Scaled Infeas =             0.000001
+Iteration:   513    Objective     =             0.481806
+
+Primal - Optimal:  Objective =    4.8180718435e-01
+Solution time =    1.60 sec.    Iterations = 519 (176)
+
+
+Variable Name           Solution Value
+sigma{18}186175              -0.089747
+
+Variable Name           Solution Value
+sigma{17}472243              -0.090063
+
+The variable 'pen17' is 0.
+
+Variable Name           Solution Value
+sigma{17}                    -0.082006
+
+Variable Name           Solution Value
+sigma{17}55811                0.008057
+
+Variable Name           Solution Value
+solid{17}472243               1.205611
+
+Variable Name           Solution Value
+tau{17}472243                 0.211160
+
+Problem 'a.lp' read.
+Read time =    0.13 sec.
+LP Presolve eliminated 464 rows and 73 columns.
+Aggregator did 6 substitutions.
+Reduced LP has 1228 rows, 171 columns, and 4684 nonzeros.
+Presolve time =    0.07 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           232.635252
+Switched to Devex.
+Iteration:   108    Scaled Infeas =            10.508483
+Iteration:   208    Scaled Infeas =             0.541298
+Iteration:   231    Objective     =            -2.733280
+Iteration:   330    Objective     =            -0.398103
+Iteration:   430    Objective     =             0.219329
+Iteration:   530    Objective     =             0.435363
+Iteration:   630    Objective     =             0.477948
+Removing shift (14).
+Iteration:   677    Scaled Infeas =             0.000013
+Iteration:   682    Objective     =             0.481807
+
+Primal - Optimal:  Objective =    4.8180718487e-01
+Solution time =    2.15 sec.    Iterations = 682 (235)
+
+
+Variable Name           Solution Value
+sigma{17}472243              -0.089161
+
+Variable Name           Solution Value
+tau{17}472243                 0.211160
+
+Variable Name           Solution Value
+y(1)                          2.094861
+
+Variable Name           Solution Value
+y(5)                          2.000000
+
+Variable Name           Solution Value
+y(11)                         2.062034
+
+Variable Name           Solution Value
+y(2)                          2.000000
+
+Variable Name           Solution Value
+y(1,2)                        2.000000
+
+Variable Name           Solution Value
+y(1,5)                        2.277131
+
+Variable Name           Solution Value
+y(5,11)                       2.325846
+
+Variable Name           Solution Value
+y(2,11)                       2.828427
+
+Log started (V4.0.9) Sun Jul 12 17:24:52 1998
+
+
+Problem 'a.lp' read.
+Read time =    0.16 sec.
+LP Presolve eliminated 563 rows and 70 columns.
+Aggregator did 2 substitutions.
+Reduced LP has 1287 rows, 168 columns, and 5371 nonzeros.
+Presolve time =    0.06 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           207.725507
+Switched to Devex.
+Iteration:   107    Scaled Infeas =            10.640133
+Iteration:   199    Objective     =            -2.725593
+Iteration:   298    Objective     =             0.080490
+Iteration:   398    Objective     =             0.455057
+Iteration:   498    Objective     =             0.480742
+Removing shift (1).
+
+Primal - Optimal:  Objective =    4.8277820511e-01
+Solution time =    1.79 sec.    Iterations = 548 (198)
+
+
+Variable Name           Solution Value
+y(1)                          2.000000
+
+Variable Name           Solution Value
+y(2)                          2.000000
+
+Variable Name           Solution Value
+y(3)                          2.000000
+
+Variable Name           Solution Value
+y(4)                          2.000000
+
+Variable Name           Solution Value
+y(5)                          2.000000
+
+Variable Name           Solution Value
+y(1,5)                        2.373065
+
+Variable Name           Solution Value
+y(1,2)                        2.071111
+
+Variable Name           Solution Value
+y(2,3)                        2.098960
+
+Variable Name           Solution Value
+y(3,4)                        2.320385
+
+Variable Name           Solution Value
+y(4,5)                        2.154422
+
+Variable Name           Solution Value
+y(2,5)                        2.700000
+
+Variable Name           Solution Value
+y(2,4)                        2.700000
+
+Variable Name           Solution Value
+sigma{18}25160               -0.049873
+
+Variable Name           Solution Value
+sigma{18}20553               -0.046347
+
+Variable Name           Solution Value
+sigma{18}25755               -0.117238
+
+Variable Name           Solution Value
+sigsum                        0.482778
+
+Variable Name           Solution Value
+dih{18}1                      1.591579
+
+Variable Name           Solution Value
+solid{18}25160                0.847523
+
+Variable Name           Solution Value
+solid{18}20553                0.835720
+
+Variable Name           Solution Value
+solid{18}25755                1.015230
+
+Log started (V4.0.9) Tue Jul 14 12:56:00 1998
+
+
+Problem 'a.lp' read.
+Read time =    0.17 sec.
+LP Presolve eliminated 326 rows and 52 columns.
+Aggregator did 2 substitutions.
+Reduced LP has 1521 rows, 168 columns, and 6748 nonzeros.
+Presolve time =    0.09 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           266.431681
+Switched to Devex.
+Iteration:   109    Scaled Infeas =            13.256334
+Iteration:   210    Scaled Infeas =             0.431629
+Iteration:   239    Objective     =        -59875.506407
+Iteration:   338    Objective     =             0.250914
+Iteration:   438    Objective     =             0.435632
+Iteration:   538    Objective     =             0.473187
+Removing shift (12).
+Iteration:   572    Scaled Infeas =             0.000004
+Iteration:   576    Objective     =             0.473883
+
+Primal - Optimal:  Objective =    4.7388350795e-01
+Solution time =    2.18 sec.    Iterations = 578 (242)
+
+
+Log started (V4.0.9) Tue Jul 14 12:58:02 1998
+
+
+Problem 'a.lp' read.
+Read time =    0.16 sec.
+LP Presolve eliminated 344 rows and 70 columns.
+Aggregator did 2 substitutions.
+Reduced LP has 1526 rows, 168 columns, and 6770 nonzeros.
+Presolve time =    0.09 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           272.336671
+Switched to Devex.
+Iteration:   108    Scaled Infeas =            15.442425
+Iteration:   208    Scaled Infeas =             0.457806
+Iteration:   249    Objective     =          -244.577556
+Iteration:   348    Objective     =             0.295672
+Iteration:   448    Objective     =             0.404633
+Iteration:   548    Objective     =             0.439703
+Iteration:   648    Objective     =             0.443759
+Removing shift (7).
+
+Primal - Optimal:  Objective =    4.4375294408e-01
+Solution time =    2.50 sec.    Iterations = 668 (248)
+
+
+Variable Name           Solution Value
+y(1,5)                        2.510000
+
+Variable Name           Solution Value
+y(1,2)                        2.138398
+
+Variable Name           Solution Value
+y(2,5)                        2.613907
+
+Variable Name           Solution Value
+y(1)                          2.000000
+
+Variable Name           Solution Value
+y(1,6)                        2.284293
+
+Variable Name           Solution Value
+y(5,6)                        2.005379
+
+Variable Name           Solution Value
+sigma{2}                     -0.031447
+
+Variable Name           Solution Value
+sigma{18}25160               -0.064436
+
+Log started (V4.0.9) Tue Jul 14 15:03:31 1998
+
+
+Problem 'a.lp' read.
+Read time =    0.18 sec.
+LP Presolve eliminated 348 rows and 70 columns.
+Aggregator did 2 substitutions.
+Reduced LP has 1520 rows, 168 columns, and 6759 nonzeros.
+Presolve time =    0.11 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           264.315371
+Switched to Devex.
+Iteration:   107    Scaled Infeas =            14.589201
+Iteration:   209    Scaled Infeas =             0.538013
+Iteration:   268    Objective     =            -1.835700
+Iteration:   367    Objective     =             0.067976
+Iteration:   467    Objective     =             0.414360
+Iteration:   567    Objective     =             0.449934
+
+Primal - Optimal:  Objective =    4.5042324045e-01
+Solution time =    2.53 sec.    Iterations = 582 (267)
+
+
+Variable Name           Solution Value
+y(1)                          2.000000
+
+Variable Name           Solution Value
+y(5)                          2.000000
+
+Variable Name           Solution Value
+y(2)                          2.000000
+
+Variable Name           Solution Value
+y(1,5)                        2.309895
+
+Variable Name           Solution Value
+y(1,2)                        2.002988
+
+Variable Name           Solution Value
+y(2,5)                        2.700000
+
+Variable Name           Solution Value
+dih{18}1                      1.629573
+
+Variable Name           Solution Value
+sigma{18}25160               -0.031229
+
+Log started (V4.0.9) Sun Jul 19 01:53:32 1998
+
+
+Problem 'a.lp' read.
+Read time =    0.14 sec.
+Input file 'a.out' successfully opened.
+
+Problem addition successful.
+LP Presolve eliminated 452 rows and 72 columns.
+Aggregator did 2 substitutions.
+Reduced LP has 1297 rows, 168 columns, and 5369 nonzeros.
+Presolve time =    0.09 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           253.056553
+Switched to Devex.
+Iteration:   102    Scaled Infeas =            20.584704
+Iteration:   202    Scaled Infeas =             2.728900
+Iteration:   270    Objective     =      -1367359.213458
+Iteration:   369    Objective     =            -0.371704
+Iteration:   469    Objective     =             0.339419
+Iteration:   569    Objective     =             0.459520
+Iteration:   669    Objective     =             0.473208
+Removing shift (13).
+
+Primal - Optimal:  Objective =    4.7322681852e-01
+Solution time =    2.17 sec.    Iterations = 679 (269)
+
+
+Variable Name           Solution Value
+y(5,11)                       2.227386
+
+Variable Name           Solution Value
+y(5)                          2.000000
+
+Variable Name           Solution Value
+y(11)                         2.000000
+
+Variable Name           Solution Value
+y(12)                         2.000000
+
+Variable Name           Solution Value
+y(8)                          2.000000
+
+Variable Name           Solution Value
+y(9)                          2.000000
+
+Variable Name           Solution Value
+y(9)                          2.000000
+
+Variable Name           Solution Value
+y(10)                         2.000000
+
+Variable Name           Solution Value
+sigma{12}                     0.047057
+
+Variable Name           Solution Value
+sigma{3}                      0.044631
+
+Variable Name           Solution Value
+sigma{4}                      0.016045
+
+Variable Name           Solution Value
+sigma{13}                     0.002155
+
+Variable Name           Solution Value
+sigma{17}57018               -0.027444
+
+Variable Name           Solution Value
+solid{12}                     0.564608
+
+Variable Name           Solution Value
+solid{3}                      0.568429
+
+Variable Name           Solution Value
+solid{4}                      0.617401
+
+Variable Name           Solution Value
+solid{17}57018                0.786818
+
+Variable Name           Solution Value
+sigma{17}62305               -0.069837
+
+Variable Name           Solution Value
+solid{17}62305                0.902197
+
+Variable Name           Solution Value
+y(11,12)                      2.000000
+
+Variable Name           Solution Value
+y(10,11)                      2.700000
+
+Variable Name           Solution Value
+y(10,12)                      2.525441
+
+Variable Name           Solution Value
+sigma{17}61999               -0.071429
+
+Log started (V4.0.9) Sun Jul 19 11:31:34 1998
+
+
+Problem 'a.lp' read.
+Read time =    0.16 sec.
+Input file 'a.out' successfully opened.
+
+Problem addition successful.
+LP Presolve eliminated 452 rows and 72 columns.
+Aggregator did 2 substitutions.
+Reduced LP has 1297 rows, 168 columns, and 5369 nonzeros.
+Presolve time =    0.08 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           253.056553
+Switched to Devex.
+Iteration:   102    Scaled Infeas =            20.584704
+Iteration:   202    Scaled Infeas =             2.728900
+Iteration:   270    Objective     =      -1367359.213458
+Iteration:   369    Objective     =            -0.371704
+Iteration:   469    Objective     =             0.339419
+Iteration:   569    Objective     =             0.459520
+Iteration:   669    Objective     =             0.473208
+Removing shift (13).
+
+Primal - Optimal:  Objective =    4.7322681852e-01
+Solution time =    2.14 sec.    Iterations = 679 (269)
+
+
+Variable Name           Solution Value
+sigma{17}62305               -0.069837
+
+Variable Name           Solution Value
+sigma{17}61999               -0.071429
+
+Variable Name           Solution Value
+y(10,11)                      2.700000
+
+Variable Name           Solution Value
+y(11,12)                      2.000000
+
+Variable Name           Solution Value
+y(10,12)                      2.525441
+
+Variable Name           Solution Value
+y(5,11)                       2.227386
+
+Variable Name           Solution Value
+y(5,10)                       2.058839
+
+Variable Name           Solution Value
+y(5)                          2.000000
+
+Variable Name           Solution Value
+y(10)                         2.000000
+
+Variable Name           Solution Value
+sigma{17}57018               -0.027444
+
+Variable Name           Solution Value
+solid{17}62305                0.902197
+
+Variable Name           Solution Value
+y(9,10)                       2.052782
+
+Variable Name           Solution Value
+y(9,12)                       2.627777
+
+Problem addition successful.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =             0.072224
+Iteration:    96    Objective     =             0.450159
+Iteration:   195    Objective     =             0.465182
+Removing shift (3).
+Iteration:   225    Scaled Infeas =             0.000016
+Iteration:   250    Objective     =             0.466340
+Removing shift (2).
+
+Primal - Optimal:  Objective =    4.6634577667e-01
+Solution time =    1.11 sec.    Iterations = 272 (120)
+

@@ -1,0 +1,378 @@
+116c116
+< \centerline{10/10/98}
+---
+> \centerline{11/7/98}
+315c315,316
+< become colinear during the deformation, we have  $d(x_1,x_3)\ge2$, $d(x_2,x_3)\ge2$,
+---
+> become colinear during the deformation, we have  $d(x_1,x_3)\ge2$,
+> $d(x_2,x_3)\ge2$,
+365c366
+< from $x_0$ and $x_2$.  Do the same for $x_2$ and $0$.  The edge lengths of 
+---
+> from $x_0$ and $x_2$.  Do the same for $x_2$ and $x_0$.  The edge lengths of 
+368c369
+< We move $x_4$ toward the origin until $d(x_4,x_i)=2$ for $i=0,1,2$.  We choose coordinates
+---
+> We move $x_4$ toward $x_0$ until $d(x_4,x_i)=2$ for $i=0,1,2$.  We choose coordinates
+980c981
+< We follow the mentioned sections to the letter in proving lower bounds on the squander of exceptional regions.  We check that all the deformations work with the slightly larger domain and find the arguments hold.  Therefore, we leave the details to the reader and state the next theorem without proof, on the basis that the transition is easy enough not to require an entire 20 page recapitulation of the material of [H4].
+---
+> We follow the mentioned sections in proving lower bounds on the squander of exceptional regions.  We check that all the deformations work with the slightly larger domain and find the arguments hold.  Therefore, we leave the details to the reader and state the next theorem without proof, on the basis that the transition is easy enough not to require an entire 20 page recapitulation of the material of [H4].
+985a987,1118
+> What follows is a guide through [H4] for the interested reader.  
+> 
+> {\bf A Map Through SPIV.}
+> 
+> The proof of Theorem 6.1. follows steps layed out in [4].  As opposed to
+> copying the arguments, we draw a map through the paper, highlighting the
+> important steps which apply to 6.1 and those slight differences that require 
+> discussion.
+> 
+> (In the following discussion, *4.1* means we are talking about section 4.1 of
+> [4].  )
+> 
+> {\it The outline:}  We pose the question: What is the most dense packing of
+> spheres corresponding to an n-gon $n/ge 4$?  It seems intuitively that, since
+> non consecutive diagonals are at least 2T, that we make consecutive edges at
+> length 2 and the $n-3$ diagonals at length 2T.  This is precisely what we
+> prove to be the best situation.  The constants $t_n$ are just under the
+> squander of these figures.  We define 2 constants.  
+> Let $F(3,1)=/mu(S(2,2,2,2T,2,2))=0.0161$ and let 
+> $F(3,2)=/mu(S(2,2,2,2T,2T,2))=0.0496.$ 
+> Then $t_4=0.031<2F(3,1)=0.0322$, $t_5=0.076<2F(3,1)+F(3,2)=0.0818$, 
+> $t_6=0.121<2F(3,1)+2F(3,2)=0.1314$, $t_7=0.166<2F(3,1)+3F(3,2)=0.181$.
+> (Note:  We use F(n,k) here in order to avoid later confusion with the
+> equivalent function D(n,k) in SPIV.)
+> 
+> 
+> Thus, our lower bounds are conservative, but therefore are easier to prove.
+> 
+> Let us begin the study of SPIV.
+> 
+> Ignore everything up to Section 4, Distinguished Edges and Subregions.
+> 
+> *4.1. Positivity* Ignore. 
+> 
+> *4.2. Distinguished edge conditions.*  We draw the same set of {\it
+>       distinguished} edges.  We replace every occurence of 2.51 with 2T.
+>       Take note of the definition of a {\it special} simplex, one with 4th
+>       edge between $2\sqrt2$ and 3.2 and others at most 2T.
+>  
+> 	So after this step, we have drawn first all edges which are between 2T
+> 	and $2\sqrt2$, (these don't cross),  and second all remaining edges
+> 	of length at most 3.2
+> 	such that no special simplices or crossing edges. (Skip Step. 2.)
+> 
+> 	These are the distinguished edges.  The projections of which define
+>  the {\it subregions}.
+> 
+> (Note:  Throughout SPIV, we ignore anything about Q-systems, flat quarters,
+> $S_A,S_B$, the function $\vor$ and penalties.  They are techniques which are not necessary for a
+> proof of the dodecahedral bound.)
+> 
+> *4.3. Scoring subclusters.*  The ``score'' of a subcluster is the equivalent
+>       of its squander.  Here we wish to show that the formula for the
+>       truncated volume holds in the subclusters.  It is essential that the
+>       T-cone of a vertex does not cross an edge of the subregion.  The lemma 
+> proves this if the subregion is not a special simplex.  $\eta(X)$ is Hales'
+>       function for the geometric considerations argument.  The inequality from
+>       {\bf $A_1$} becomes $\beta_\psi(y_1,y_32,y_5)<\dih_3(S)$, provided
+>       $y_4=3.2,y_5=2T, y_6=2, \cos \phi=y_1/2T.$  The function $\beta$
+>       is described in Section 2.8 of SPIV.  The inequality holds by interval
+>       arithmetic.  As a consequence, our volume formula holds for non-special
+>       subregions.
+> 
+> *4.4. The main theorem.* Count edges of the subregion with multiplicities as
+>       is described here.  Then we have Theorem 5.1 and Corrolary 5.2. 
+> 
+> *4.5. Proof. Here we describe the breaking of the exceptional region into
+>       subregions and show that if we have lower bounds for squander on the
+>       subregions, the sum over all the subregions will yield a lower bound on
+>       the squander of the exceptional region.  The function $D(n,k)$ describes
+>       this action.  replace .06585 with F(3,1).  Replace the numbers $t_n$
+>       with $q_n$ from Theorem 5.1.  
+> 
+> *4.6-7* Ignore.
+> 
+> *4.8. Reduction to polygons.*  Replace 2.51 with 2T.  Replace $t_0$ with T.  Ignore $\vor_0$ and
+>       change $\tau_0$ to $\mu$.  Everythging else follows without adjustment.  
+> After this section we have reduced the messy exceptional region to a
+>       collection of polygons.
+> 
+> *4.9. Some Deformations.*  
+> 
+> \proclaim {Lemma} At an angle greater than $\pi$, if $y_6>y_5$ and
+> $x_i=y_i^2$, $ \partial \mu / \partial x_5 < 0$ \endproclaim
+> 
+> The proof is the same.  As $\mu$ is in linear relation to $\tau_0$, it seems
+> obvious that the derivatives will be the same.  We needed to check though
+> because there is a slightly larger domain in the dodecahedral case.
+> 
+> \proclaim {Lemma} At an angle less than $\pi$,
+>  $\partial \mu / \partial x_5 > 0$ if $y_1,y_2,y_3\in [2,2T]$, $\Delta>0$, and
+>  (i) $y_4 \in [2\sqrt2,3.2]$, $y_5,y_6\in [2,2T]$ 
+> 	or (ii) $y_4\ge3.2$, $y_5.y_6\in [2,3.2]$. \endproclaim
+> 
+> Again, the proof is the same.  The inequalities from both lemmas hold by interval arithmetic.
+> 
+> At vertices with dihedral angle greater than $\pi$ we stretch the adjacent
+> edges until they are both 3.2 or until a new distinguished edge forms.  $\mu $
+> decreases during these deformations by the first lemma.
+> 
+> *4.10 Corner Cells.* Again, $t_0\to T, 2.51\to 2T$.  This holds with insignificant
+>    adjustments to the constants in the argument.  After this section, we know
+>    the corner cells lie in the cone over the subregion and that they don't
+>    overlap each other nor the T-cones at the vertices.
+> 
+> *4.11. Convexity.*  
+> 
+> We have, by the explicit formula for the squander of a corner cell,
+> 
+> $$\mu(C(|v|,\lambda,\dih))\ge \mu(C(T,1.6,\pi))\ge 0.114.$$
+> 
+> Thus there is at most one angle greater than $\pi$.  Let $v$ be such a
+> corner.  Push $v$ toward the origin.  Solid angle is unchanged and volume is
+> decreasing.Eventually, $|v|=2$.  Then 
+> 
+> $$\mu(C)\ge\mu(C(2,1.945,\pi))>0.178$$ and we discard the graph.  We conclude
+> that all subregions can be deformed into convex polygons.
+> 
+> *5.1., 5.2., 5.3.,5.4.* We check that the first lemma holds for $\mu$ with the
+>       larger domain.  $2.51\to 2T$.  
+> 
+> * 5.5. Penalties. Ignore.
+> 
+> *5.6. Constants.* While of course the constants are different in the
+>       dodecahedral case, the method is the same.  We use the same Mathematica
+>       routine to check, with the necessary adjustments.  
+> 
+> *5.7-5.10* Follow without adjustment. 
+> 
+> *5.11. Loops.* Ignore.
+> 
+> This completes the brief tour through [4].
+1284a1418
+> 
+1286c1420
+< solely triangles and quadrilaterals, and 9 graphs with pentagons from consideration.  The  3 quad cases are dealt with individually in Appendix 2 and the pents are dealt with in Appendix 3.  All 12 exceptions squander more than the target.  
+---
+> solely triangles and quadrilaterals, and 9 graphs with pentagons, and one graph with a hexagon from consideration.  The  3 quad cases are dealt with individually in Appendix 2 and the pents are dealt with in Appendix 3.  Dihedral angle constraints in the hexagon graph force the hexagonal face to be non convex, so can be deformed by arguments of [4] to one of the other cases covered.  All 13 exceptions squander more than the target.  
+1709c1843,1844
+< Similarly, using all the above inequalities we have
+---
+> There is a problem in this case in that the edge $y(5)$ is bounded above only by 2T.  This ``loose'' edge allows the volume of the simplices to be small.
+> We solve this by using $\mu$ when the edge is long and vol when it is short.
+1711,1712c1846
+< $\omega(A) > .273$ \newline
+< $\omega(B)+\omega(C) > .50$ \newline
+---
+> Case 1: Suppose $y(5)<2.15$.
+1714c1848
+< So $\omega(1)>0.773$,
+---
+> Then 
+1716c1850
+< Adding this constraint to the linear optimizer we find
+---
+> $y(2,5)<3.427$ because $\dih_1(1)<1.917.$
+1718,1725c1852,1854
+< $\dih_1(1)<1.875$ \newline
+< $\dih_3(1)<1.634$ \newline
+< $y(1)<2.263$ \newline
+< $y(2)<2.134$ \newline
+< $y(3)<2.126$ \newline
+< $y(4)<2.169$ \newline
+< $y(2)+y(5)<4.616$ \newline
+< $y(1)+y(2)+y(5)<6.702$ \newline
+---
+> $\omega(A)>.279$ \newline
+> $\omega(B)>.270$ \newline
+> $\omega(C)>.328$ \newline
+1727,1728c1856
+< There is a problem in this case in that the edge $y(5)$ is bounded above only by 2T.  This ``loose'' edge allows the volume of the simplices to be small.
+< We solve this by using $\mu$ when the edge is long and vol when it is short.
+---
+> so $\omega(1)>0.877.$  
+1730c1858
+< Case 1: Suppose $y(5)<2.26$.
+---
+> Add this constraint to the linear optimizer.
+1732c1860
+< Then 
+---
+> $\dih_1(1)<1.798.$ [L]
+1734,1736c1862
+< $\omega(A)>.283$ \newline
+< $\omega(B)>.277$ \newline
+< $\omega(C)>.335$ \newline
+---
+> $y(2,5)<3.278$
+1738c1864,1868
+< so $\omega(1)>0.924.$  
+---
+> $\omega(A)>.279$ \newline
+> $\omega(B)>.270$ \newline
+> $\omega(C)>.358$ \newline
+> 
+> so $\omega(1)>0.1006.$ 
+1742c1872
+< Case 2 : Suppose $y(5)>2.26.$
+---
+> Case 2 : Suppose $y(5)>2.15.$
+1747,1748c1877,1878
+< $\mu(B)>0.0304$ \newline
+< $\mu(C)>0.0406$ \newline
+---
+> $\mu(B)>0.0263$ \newline
+> $\mu(C)>0.0597$ \newline
+1773c1903
+< $\dih_8(1) < 1.682$ \newline
+---
+> $\dih_8(1) < 1.705$ \newline
+1776,1777c1906,1907
+< $y(8)<2.206$ \newline
+< $y(13)<2.181$ \newline
+---
+> $y(8)<2.207$ \newline
+> $y(13)<2.199$ \newline
+1783c1913
+< $y(12,13)<3.146$ \newline
+---
+> $y(12,13)<3.188$ \newline
+1787c1917
+< $\omega(A)>.278$ \newline
+---
+> $\omega(A)>.277$ \newline
+1791c1921
+< so $\omega(1)>0.917$ which pushes the graph over the target. \qed
+---
+> so $\omega(1)>0.916$ which pushes the graph over the target. \qed
+1813c1943
+< $y(2) + y(3) < 4.386$ \newline
+---
+> $y(6) + y(3) < 4.386$ \newline
+1876,1877c2006,2007
+< $y(2,4)<2.683$ \newline
+< $y(2,5)<3.390$ \newline
+---
+> $y(2,4)<2.757$ \newline
+> $y(2,5)<3.308$ \newline
+1881,1883c2011,2013
+< $\omega(A)>.320$ \newline
+< $\omega(B)>.247$ \newline
+< $\omega(C)>.300$ \newline
+---
+> $\omega(A)>.287$ \newline
+> $\omega(B)>.264$ \newline
+> $\omega(C)>.318$ \newline
+1885c2015
+< so $\omega(1)>0.865$ which pushes the graph over the target. \qed
+---
+> so $\omega(1)>0.889$ which pushes the graph over the target. \qed
+1902c2032
+< $\dih_9(1) < 1.314$ \newline
+---
+> $\dih_9(1) < 1.342$ \newline
+1915,1916c2045,2046
+< $y(4,10)<2.697$ \newline
+< $y(4,5)<3.365$ \newline
+---
+> $y(4,10)<2.699$ \newline
+> $y(4,5)<3.196$ \newline
+1930,1931c2060,2061
+< $y(4,10)<2.807$ \newline
+< $y(4,5)<3.365$ \newline
+---
+> $y(4,10)<2.809$ \newline
+> $y(4,5)<3.196$ \newline
+1933c2063
+< $\mu(A)>0.0453$ \newline
+---
+> $\mu(A)>0.0451$ \newline
+1935c2065
+< $\mu(C)>0.0480$ \newline
+---
+> $\mu(C)>0.0627$ \newline
+1937c2067
+< so $\mu\{1\}>.1089$
+---
+> so $\mu\{1\}>.1234$
+1958c2088
+< $\dih_4(1) < 1.610$ \newline
+---
+> $\dih_{11}(1) < 1.610$ \newline
+1988c2118
+< Case 1: Suppose $y(1)<2.26$.
+---
+> Case 1: Suppose $y(1)<2.26$ and $y(2)<2.26.$
+1993c2123
+< $y(4,5)<3.396$ \newline
+---
+> $y(4,5)<3.254$ \newline
+2003,2004d2132
+< Now, interchange $y(1)$ with $y(5)$.  The solutions are the same.
+< Therefore, both $y(1)$ and $y(5)$ must be greater than 2.26.
+2005a2134
+> Case 2 : Suppose $y(5)>2.26$ and $y(1)<2.26.$
+2008c2137,2168
+< Case 2 : Suppose $y(5),y(1)>2.26.$
+---
+> Then
+> 
+> $y(1,3)<3.396$ \newline
+> $y(3,5)<3.396$ \newline
+> 
+> $\mu(A)>-0.0027$ \newline
+> $\mu(B)>0.0313$ \newline
+> $\mu(C)>0.0627$ \newline
+> 
+> so $\mu(1)>.0913$
+> 
+> Add this constraint to the linear optimizer.
+> 
+> We have
+> 
+> $\dih_2(1)<1.574$ \newline
+> $\dih_4(1)<1.574$ \newline
+> 
+> which implies
+> 
+> $y(1,3)<3.021$
+> $y(3,5)<3.157$
+> 
+> $\omega(A)>0.275$
+> $\omega(B)>0.249$
+> $\omega(C)>0.321$
+> 
+> so $\mu(1)>.0845.$
+> 
+> Again, this is adequate to eliminate the graph.
+> 
+> Case 3 : Suppose $y(5)>2.26$ and $y(1)>2.26.$
+2014c2174
+< $y(4,5)<3.396$ \newline
+---
+> $y(3,5)<3.396$ \newline
+2023a2184
+> 
+2091c2252
+< $\dih_3(1) < 1.519$ \newline
+---
+> $\dih_3(1) < 1.591$ \newline
+2093,2097c2254,2258
+< $y(1)<2.206$ \newline
+< $y(2)<2.122$ \newline
+< $y(3)<2.191$ \newline
+< $y(4)<2.113$ \newline
+< $y(5)<2.077$ \newline
+---
+> $y(8)<2.206$ \newline
+> $y(3)<2.122$ \newline
+> $y(2)<2.191$ \newline
+> $y(7)<2.113$ \newline
+> $y(3)<2.077$ \newline
+2100c2261
+< so $\omega(1)>0.911$ by the proof of Theorem 2, which pushes the graph over the target. \qed
+---
+> so $\omega(1)>0.916$ by the proof of Theorem 2, which pushes the graph over the target. \qed

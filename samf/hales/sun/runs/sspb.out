@@ -1,0 +1,23 @@
+Welcome to sphere packing routines, relation testing division.
+Welcome to SphSecParBds.  Enter subdivisions:  Subdivisions:	16
+
+Starting time:  	Mon Jul 21 14:49:09 1997
+
+Starting case 1:
+cellcount    =         16777216
+ubv_ij bounds = [-0.0756452358277007602,		55.8351442077345937]
+
+Starting case 2:
+cellcount    =         16777216
+ubv_ij bounds = [-0.104007455665872147,		45.3063785000000295]
+
+
+Final bounds = [-0.104007455665872148,	55.8351442077345936]
+
+Done.
+Ending time:    	Tue Jul 22 17:48:14 1997
+
+Elapsed time: 97145 seconds
+diff = -1660.31		345.406 cells per second
+
+

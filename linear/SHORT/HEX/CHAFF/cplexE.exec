@@ -1,0 +1,4681 @@
+set preprocessing presolve no
+read cplexE.lp150.F17.C1 lp
+opt
+read cplexE.lp150.F17.C2 lp
+opt
+read cplexE.lp150.F17.C3 lp
+opt
+read cplexE.lp150.F17.C4 lp
+opt
+read cplexE.lp150.F17.C5 lp
+opt
+read cplexE.lp150.F17.C6 lp
+opt
+read cplexE.lp150.F17.C7 lp
+opt
+read cplexE.lp150.F17.C8 lp
+opt
+read cplexE.lp150.F17.C9 lp
+opt
+read cplexE.lp150.F17.C10 lp
+opt
+read cplexE.lp150.F17.C11 lp
+opt
+read cplexE.lp150.F17.C12 lp
+opt
+read cplexE.lp150.F17.C13 lp
+opt
+read cplexE.lp150.F17.C14 lp
+opt
+read cplexE.lp150.F17.C15 lp
+opt
+read cplexE.lp150.F17.C16 lp
+opt
+read cplexE.lp150.F17.C17 lp
+opt
+read cplexE.lp150.F17.C18 lp
+opt
+read cplexE.lp150.F17.C19 lp
+opt
+read cplexE.lp150.F17.C20 lp
+opt
+read cplexE.lp150.F17.C21 lp
+opt
+read cplexE.lp150.F17.C22 lp
+opt
+read cplexE.lp150.F17.C23 lp
+opt
+read cplexE.lp150.F17.C24 lp
+opt
+read cplexE.lp150.F17.C25 lp
+opt
+read cplexE.lp150.F17.C26 lp
+opt
+read cplexE.lp150.F17.C27 lp
+opt
+read cplexE.lp150.F17.C28 lp
+opt
+read cplexE.lp150.F17.C29 lp
+opt
+read cplexE.lp150.F17.C30 lp
+opt
+read cplexE.lp150.F17.C31 lp
+opt
+read cplexE.lp150.F17.C32 lp
+opt
+read cplexE.lp150.F17.C33 lp
+opt
+read cplexE.lp150.F17.C34 lp
+opt
+read cplexE.lp150.F17.C35 lp
+opt
+read cplexE.lp150.F17.C36 lp
+opt
+read cplexE.lp150.F17.C37 lp
+opt
+read cplexE.lp150.F17.C38 lp
+opt
+read cplexE.lp150.F17.C39 lp
+opt
+read cplexE.lp150.F17.C40 lp
+opt
+read cplexE.lp150.F17.C41 lp
+opt
+read cplexE.lp150.F17.C42 lp
+opt
+read cplexE.lp150.F17.C43 lp
+opt
+read cplexE.lp150.F17.C44 lp
+opt
+read cplexE.lp150.F17.C45 lp
+opt
+read cplexE.lp150.F17.C46 lp
+opt
+read cplexE.lp150.F17.C47 lp
+opt
+read cplexE.lp150.F17.C48 lp
+opt
+read cplexE.lp150.F17.C49 lp
+opt
+read cplexE.lp150.F17.C50 lp
+opt
+read cplexE.lp150.F17.C51 lp
+opt
+read cplexE.lp150.F17.C52 lp
+opt
+read cplexE.lp150.F17.C53 lp
+opt
+read cplexE.lp150.F17.C54 lp
+opt
+read cplexE.lp150.F17.C55 lp
+opt
+read cplexE.lp150.F17.C56 lp
+opt
+read cplexE.lp150.F17.C57 lp
+opt
+read cplexE.lp150.F17.C58 lp
+opt
+read cplexE.lp150.F17.C59 lp
+opt
+read cplexE.lp150.F17.C60 lp
+opt
+read cplexE.lp150.F17.C61 lp
+opt
+read cplexE.lp150.F17.C62 lp
+opt
+read cplexE.lp150.F17.C63 lp
+opt
+read cplexE.lp150.F17.C64 lp
+opt
+read cplexE.lp150.F17.C65 lp
+opt
+read cplexE.lp150.F17.C66 lp
+opt
+read cplexE.lp150.F17.C67 lp
+opt
+read cplexE.lp150.F17.C68 lp
+opt
+read cplexE.lp150.F17.C69 lp
+opt
+read cplexE.lp150.F17.C70 lp
+opt
+read cplexE.lp150.F17.C71 lp
+opt
+read cplexE.lp150.F17.C72 lp
+opt
+read cplexE.lp150.F17.C73 lp
+opt
+read cplexE.lp150.F17.C74 lp
+opt
+read cplexE.lp150.F17.C75 lp
+opt
+read cplexE.lp150.F17.C76 lp
+opt
+read cplexE.lp150.F17.C77 lp
+opt
+read cplexE.lp150.F17.C78 lp
+opt
+read cplexE.lp150.F17.C79 lp
+opt
+read cplexE.lp150.F17.C80 lp
+opt
+read cplexE.lp150.F17.C81 lp
+opt
+read cplexE.lp150.F17.C82 lp
+opt
+read cplexE.lp150.F17.C83 lp
+opt
+read cplexE.lp150.F17.C84 lp
+opt
+read cplexE.lp150.F17.C85 lp
+opt
+read cplexE.lp150.F17.C86 lp
+opt
+read cplexE.lp150.F17.C87 lp
+opt
+read cplexE.lp150.F17.C88 lp
+opt
+read cplexE.lp150.F17.C89 lp
+opt
+read cplexE.lp150.F17.C90 lp
+opt
+read cplexE.lp150.F17.C91 lp
+opt
+read cplexE.lp150.F17.C92 lp
+opt
+read cplexE.lp150.F17.C93 lp
+opt
+read cplexE.lp150.F17.C94 lp
+opt
+read cplexE.lp150.F17.C95 lp
+opt
+read cplexE.lp150.F17.C96 lp
+opt
+read cplexE.lp150.F17.C97 lp
+opt
+read cplexE.lp150.F17.C98 lp
+opt
+read cplexE.lp150.F17.C99 lp
+opt
+read cplexE.lp150.F17.C100 lp
+opt
+read cplexE.lp150.F17.C101 lp
+opt
+read cplexE.lp150.F17.C102 lp
+opt
+read cplexE.lp150.F17.C103 lp
+opt
+read cplexE.lp150.F17.C104 lp
+opt
+read cplexE.lp150.F17.C105 lp
+opt
+read cplexE.lp150.F17.C106 lp
+opt
+read cplexE.lp150.F17.C107 lp
+opt
+read cplexE.lp150.F17.C108 lp
+opt
+read cplexE.lp150.F17.C109 lp
+opt
+read cplexE.lp150.F17.C110 lp
+opt
+read cplexE.lp150.F17.C111 lp
+opt
+read cplexE.lp150.F17.C112 lp
+opt
+read cplexE.lp150.F17.C113 lp
+opt
+read cplexE.lp150.F17.C114 lp
+opt
+read cplexE.lp150.F17.C115 lp
+opt
+read cplexE.lp150.F17.C116 lp
+opt
+read cplexE.lp150.F17.C117 lp
+opt
+read cplexE.lp151.F19.C1 lp
+opt
+read cplexE.lp151.F19.C2 lp
+opt
+read cplexE.lp151.F19.C3 lp
+opt
+read cplexE.lp151.F19.C4 lp
+opt
+read cplexE.lp151.F19.C5 lp
+opt
+read cplexE.lp151.F19.C6 lp
+opt
+read cplexE.lp151.F19.C7 lp
+opt
+read cplexE.lp151.F19.C8 lp
+opt
+read cplexE.lp151.F19.C9 lp
+opt
+read cplexE.lp151.F19.C10 lp
+opt
+read cplexE.lp151.F19.C11 lp
+opt
+read cplexE.lp151.F19.C12 lp
+opt
+read cplexE.lp151.F19.C13 lp
+opt
+read cplexE.lp151.F19.C14 lp
+opt
+read cplexE.lp151.F19.C15 lp
+opt
+read cplexE.lp151.F19.C16 lp
+opt
+read cplexE.lp151.F19.C17 lp
+opt
+read cplexE.lp151.F19.C18 lp
+opt
+read cplexE.lp151.F19.C19 lp
+opt
+read cplexE.lp151.F19.C20 lp
+opt
+read cplexE.lp151.F19.C21 lp
+opt
+read cplexE.lp151.F19.C22 lp
+opt
+read cplexE.lp151.F19.C23 lp
+opt
+read cplexE.lp151.F19.C24 lp
+opt
+read cplexE.lp151.F19.C25 lp
+opt
+read cplexE.lp151.F19.C26 lp
+opt
+read cplexE.lp151.F19.C27 lp
+opt
+read cplexE.lp151.F19.C28 lp
+opt
+read cplexE.lp151.F19.C29 lp
+opt
+read cplexE.lp151.F19.C30 lp
+opt
+read cplexE.lp151.F19.C31 lp
+opt
+read cplexE.lp151.F19.C32 lp
+opt
+read cplexE.lp151.F19.C33 lp
+opt
+read cplexE.lp151.F19.C34 lp
+opt
+read cplexE.lp151.F19.C35 lp
+opt
+read cplexE.lp151.F19.C36 lp
+opt
+read cplexE.lp151.F19.C37 lp
+opt
+read cplexE.lp151.F19.C38 lp
+opt
+read cplexE.lp151.F19.C39 lp
+opt
+read cplexE.lp151.F19.C40 lp
+opt
+read cplexE.lp151.F19.C41 lp
+opt
+read cplexE.lp151.F19.C42 lp
+opt
+read cplexE.lp151.F19.C43 lp
+opt
+read cplexE.lp151.F19.C44 lp
+opt
+read cplexE.lp151.F19.C45 lp
+opt
+read cplexE.lp151.F19.C46 lp
+opt
+read cplexE.lp151.F19.C47 lp
+opt
+read cplexE.lp151.F19.C48 lp
+opt
+read cplexE.lp151.F19.C49 lp
+opt
+read cplexE.lp151.F19.C50 lp
+opt
+read cplexE.lp151.F19.C51 lp
+opt
+read cplexE.lp151.F19.C52 lp
+opt
+read cplexE.lp151.F19.C53 lp
+opt
+read cplexE.lp151.F19.C54 lp
+opt
+read cplexE.lp151.F19.C55 lp
+opt
+read cplexE.lp151.F19.C56 lp
+opt
+read cplexE.lp151.F19.C57 lp
+opt
+read cplexE.lp151.F19.C58 lp
+opt
+read cplexE.lp151.F19.C59 lp
+opt
+read cplexE.lp151.F19.C60 lp
+opt
+read cplexE.lp151.F19.C61 lp
+opt
+read cplexE.lp151.F19.C62 lp
+opt
+read cplexE.lp151.F19.C63 lp
+opt
+read cplexE.lp151.F19.C64 lp
+opt
+read cplexE.lp151.F19.C65 lp
+opt
+read cplexE.lp151.F19.C66 lp
+opt
+read cplexE.lp151.F19.C67 lp
+opt
+read cplexE.lp151.F19.C68 lp
+opt
+read cplexE.lp151.F19.C69 lp
+opt
+read cplexE.lp151.F19.C70 lp
+opt
+read cplexE.lp151.F19.C71 lp
+opt
+read cplexE.lp151.F19.C72 lp
+opt
+read cplexE.lp151.F19.C73 lp
+opt
+read cplexE.lp151.F19.C74 lp
+opt
+read cplexE.lp151.F19.C75 lp
+opt
+read cplexE.lp151.F19.C76 lp
+opt
+read cplexE.lp151.F19.C77 lp
+opt
+read cplexE.lp151.F19.C78 lp
+opt
+read cplexE.lp151.F19.C79 lp
+opt
+read cplexE.lp151.F19.C80 lp
+opt
+read cplexE.lp151.F19.C81 lp
+opt
+read cplexE.lp151.F19.C82 lp
+opt
+read cplexE.lp151.F19.C83 lp
+opt
+read cplexE.lp151.F19.C84 lp
+opt
+read cplexE.lp151.F19.C85 lp
+opt
+read cplexE.lp151.F19.C86 lp
+opt
+read cplexE.lp151.F19.C87 lp
+opt
+read cplexE.lp151.F19.C88 lp
+opt
+read cplexE.lp151.F19.C89 lp
+opt
+read cplexE.lp151.F19.C90 lp
+opt
+read cplexE.lp151.F19.C91 lp
+opt
+read cplexE.lp151.F19.C92 lp
+opt
+read cplexE.lp151.F19.C93 lp
+opt
+read cplexE.lp151.F19.C94 lp
+opt
+read cplexE.lp151.F19.C95 lp
+opt
+read cplexE.lp151.F19.C96 lp
+opt
+read cplexE.lp151.F19.C97 lp
+opt
+read cplexE.lp151.F19.C98 lp
+opt
+read cplexE.lp151.F19.C99 lp
+opt
+read cplexE.lp151.F19.C100 lp
+opt
+read cplexE.lp151.F19.C101 lp
+opt
+read cplexE.lp151.F19.C102 lp
+opt
+read cplexE.lp151.F19.C103 lp
+opt
+read cplexE.lp151.F19.C104 lp
+opt
+read cplexE.lp151.F19.C105 lp
+opt
+read cplexE.lp151.F19.C106 lp
+opt
+read cplexE.lp151.F19.C107 lp
+opt
+read cplexE.lp151.F19.C108 lp
+opt
+read cplexE.lp151.F19.C109 lp
+opt
+read cplexE.lp151.F19.C110 lp
+opt
+read cplexE.lp151.F19.C111 lp
+opt
+read cplexE.lp151.F19.C112 lp
+opt
+read cplexE.lp151.F19.C113 lp
+opt
+read cplexE.lp151.F19.C114 lp
+opt
+read cplexE.lp151.F19.C115 lp
+opt
+read cplexE.lp151.F19.C116 lp
+opt
+read cplexE.lp151.F19.C117 lp
+opt
+read cplexE.lp152.F13.C1 lp
+opt
+read cplexE.lp152.F13.C2 lp
+opt
+read cplexE.lp152.F13.C3 lp
+opt
+read cplexE.lp152.F13.C4 lp
+opt
+read cplexE.lp152.F13.C5 lp
+opt
+read cplexE.lp152.F13.C6 lp
+opt
+read cplexE.lp152.F13.C7 lp
+opt
+read cplexE.lp152.F13.C8 lp
+opt
+read cplexE.lp152.F13.C9 lp
+opt
+read cplexE.lp152.F13.C10 lp
+opt
+read cplexE.lp152.F13.C11 lp
+opt
+read cplexE.lp152.F13.C12 lp
+opt
+read cplexE.lp152.F13.C13 lp
+opt
+read cplexE.lp152.F13.C14 lp
+opt
+read cplexE.lp152.F13.C15 lp
+opt
+read cplexE.lp152.F13.C16 lp
+opt
+read cplexE.lp152.F13.C17 lp
+opt
+read cplexE.lp152.F13.C18 lp
+opt
+read cplexE.lp152.F13.C19 lp
+opt
+read cplexE.lp152.F13.C20 lp
+opt
+read cplexE.lp152.F13.C21 lp
+opt
+read cplexE.lp152.F13.C22 lp
+opt
+read cplexE.lp152.F13.C23 lp
+opt
+read cplexE.lp152.F13.C24 lp
+opt
+read cplexE.lp152.F13.C25 lp
+opt
+read cplexE.lp152.F13.C26 lp
+opt
+read cplexE.lp152.F13.C27 lp
+opt
+read cplexE.lp152.F13.C28 lp
+opt
+read cplexE.lp152.F13.C29 lp
+opt
+read cplexE.lp152.F13.C30 lp
+opt
+read cplexE.lp152.F13.C31 lp
+opt
+read cplexE.lp152.F13.C32 lp
+opt
+read cplexE.lp152.F13.C33 lp
+opt
+read cplexE.lp152.F13.C34 lp
+opt
+read cplexE.lp152.F13.C35 lp
+opt
+read cplexE.lp152.F13.C36 lp
+opt
+read cplexE.lp152.F13.C37 lp
+opt
+read cplexE.lp152.F13.C38 lp
+opt
+read cplexE.lp152.F13.C39 lp
+opt
+read cplexE.lp152.F13.C40 lp
+opt
+read cplexE.lp152.F13.C41 lp
+opt
+read cplexE.lp152.F13.C42 lp
+opt
+read cplexE.lp152.F13.C43 lp
+opt
+read cplexE.lp152.F13.C44 lp
+opt
+read cplexE.lp152.F13.C45 lp
+opt
+read cplexE.lp152.F13.C46 lp
+opt
+read cplexE.lp152.F13.C47 lp
+opt
+read cplexE.lp152.F13.C48 lp
+opt
+read cplexE.lp152.F13.C49 lp
+opt
+read cplexE.lp152.F13.C50 lp
+opt
+read cplexE.lp152.F13.C51 lp
+opt
+read cplexE.lp152.F13.C52 lp
+opt
+read cplexE.lp152.F13.C53 lp
+opt
+read cplexE.lp152.F13.C54 lp
+opt
+read cplexE.lp152.F13.C55 lp
+opt
+read cplexE.lp152.F13.C56 lp
+opt
+read cplexE.lp152.F13.C57 lp
+opt
+read cplexE.lp152.F13.C58 lp
+opt
+read cplexE.lp152.F13.C59 lp
+opt
+read cplexE.lp152.F13.C60 lp
+opt
+read cplexE.lp152.F13.C61 lp
+opt
+read cplexE.lp152.F13.C62 lp
+opt
+read cplexE.lp152.F13.C63 lp
+opt
+read cplexE.lp152.F13.C64 lp
+opt
+read cplexE.lp152.F13.C65 lp
+opt
+read cplexE.lp152.F13.C66 lp
+opt
+read cplexE.lp152.F13.C67 lp
+opt
+read cplexE.lp152.F13.C68 lp
+opt
+read cplexE.lp152.F13.C69 lp
+opt
+read cplexE.lp152.F13.C70 lp
+opt
+read cplexE.lp152.F13.C71 lp
+opt
+read cplexE.lp152.F13.C72 lp
+opt
+read cplexE.lp152.F13.C73 lp
+opt
+read cplexE.lp152.F13.C74 lp
+opt
+read cplexE.lp152.F13.C75 lp
+opt
+read cplexE.lp152.F13.C76 lp
+opt
+read cplexE.lp152.F13.C77 lp
+opt
+read cplexE.lp152.F13.C78 lp
+opt
+read cplexE.lp152.F13.C79 lp
+opt
+read cplexE.lp152.F13.C80 lp
+opt
+read cplexE.lp152.F13.C81 lp
+opt
+read cplexE.lp152.F13.C82 lp
+opt
+read cplexE.lp152.F13.C83 lp
+opt
+read cplexE.lp152.F13.C84 lp
+opt
+read cplexE.lp152.F13.C85 lp
+opt
+read cplexE.lp152.F13.C86 lp
+opt
+read cplexE.lp152.F13.C87 lp
+opt
+read cplexE.lp152.F13.C88 lp
+opt
+read cplexE.lp152.F13.C89 lp
+opt
+read cplexE.lp152.F13.C90 lp
+opt
+read cplexE.lp152.F13.C91 lp
+opt
+read cplexE.lp152.F13.C92 lp
+opt
+read cplexE.lp152.F13.C93 lp
+opt
+read cplexE.lp152.F13.C94 lp
+opt
+read cplexE.lp152.F13.C95 lp
+opt
+read cplexE.lp152.F13.C96 lp
+opt
+read cplexE.lp152.F13.C97 lp
+opt
+read cplexE.lp152.F13.C98 lp
+opt
+read cplexE.lp152.F13.C99 lp
+opt
+read cplexE.lp152.F13.C100 lp
+opt
+read cplexE.lp152.F13.C101 lp
+opt
+read cplexE.lp152.F13.C102 lp
+opt
+read cplexE.lp152.F13.C103 lp
+opt
+read cplexE.lp152.F13.C104 lp
+opt
+read cplexE.lp152.F13.C105 lp
+opt
+read cplexE.lp152.F13.C106 lp
+opt
+read cplexE.lp152.F13.C107 lp
+opt
+read cplexE.lp152.F13.C108 lp
+opt
+read cplexE.lp152.F13.C109 lp
+opt
+read cplexE.lp152.F13.C110 lp
+opt
+read cplexE.lp152.F13.C111 lp
+opt
+read cplexE.lp152.F13.C112 lp
+opt
+read cplexE.lp152.F13.C113 lp
+opt
+read cplexE.lp152.F13.C114 lp
+opt
+read cplexE.lp152.F13.C115 lp
+opt
+read cplexE.lp152.F13.C116 lp
+opt
+read cplexE.lp152.F13.C117 lp
+opt
+read cplexE.lp153.F15.C1 lp
+opt
+read cplexE.lp153.F15.C2 lp
+opt
+read cplexE.lp153.F15.C3 lp
+opt
+read cplexE.lp153.F15.C4 lp
+opt
+read cplexE.lp153.F15.C5 lp
+opt
+read cplexE.lp153.F15.C6 lp
+opt
+read cplexE.lp153.F15.C7 lp
+opt
+read cplexE.lp153.F15.C8 lp
+opt
+read cplexE.lp153.F15.C9 lp
+opt
+read cplexE.lp153.F15.C10 lp
+opt
+read cplexE.lp153.F15.C11 lp
+opt
+read cplexE.lp153.F15.C12 lp
+opt
+read cplexE.lp153.F15.C13 lp
+opt
+read cplexE.lp153.F15.C14 lp
+opt
+read cplexE.lp153.F15.C15 lp
+opt
+read cplexE.lp153.F15.C16 lp
+opt
+read cplexE.lp153.F15.C17 lp
+opt
+read cplexE.lp153.F15.C18 lp
+opt
+read cplexE.lp153.F15.C19 lp
+opt
+read cplexE.lp153.F15.C20 lp
+opt
+read cplexE.lp153.F15.C21 lp
+opt
+read cplexE.lp153.F15.C22 lp
+opt
+read cplexE.lp153.F15.C23 lp
+opt
+read cplexE.lp153.F15.C24 lp
+opt
+read cplexE.lp153.F15.C25 lp
+opt
+read cplexE.lp153.F15.C26 lp
+opt
+read cplexE.lp153.F15.C27 lp
+opt
+read cplexE.lp153.F15.C28 lp
+opt
+read cplexE.lp153.F15.C29 lp
+opt
+read cplexE.lp153.F15.C30 lp
+opt
+read cplexE.lp153.F15.C31 lp
+opt
+read cplexE.lp153.F15.C32 lp
+opt
+read cplexE.lp153.F15.C33 lp
+opt
+read cplexE.lp153.F15.C34 lp
+opt
+read cplexE.lp153.F15.C35 lp
+opt
+read cplexE.lp153.F15.C36 lp
+opt
+read cplexE.lp153.F15.C37 lp
+opt
+read cplexE.lp153.F15.C38 lp
+opt
+read cplexE.lp153.F15.C39 lp
+opt
+read cplexE.lp153.F15.C40 lp
+opt
+read cplexE.lp153.F15.C41 lp
+opt
+read cplexE.lp153.F15.C42 lp
+opt
+read cplexE.lp153.F15.C43 lp
+opt
+read cplexE.lp153.F15.C44 lp
+opt
+read cplexE.lp153.F15.C45 lp
+opt
+read cplexE.lp153.F15.C46 lp
+opt
+read cplexE.lp153.F15.C47 lp
+opt
+read cplexE.lp153.F15.C48 lp
+opt
+read cplexE.lp153.F15.C49 lp
+opt
+read cplexE.lp153.F15.C50 lp
+opt
+read cplexE.lp153.F15.C51 lp
+opt
+read cplexE.lp153.F15.C52 lp
+opt
+read cplexE.lp153.F15.C53 lp
+opt
+read cplexE.lp153.F15.C54 lp
+opt
+read cplexE.lp153.F15.C55 lp
+opt
+read cplexE.lp153.F15.C56 lp
+opt
+read cplexE.lp153.F15.C57 lp
+opt
+read cplexE.lp153.F15.C58 lp
+opt
+read cplexE.lp153.F15.C59 lp
+opt
+read cplexE.lp153.F15.C60 lp
+opt
+read cplexE.lp153.F15.C61 lp
+opt
+read cplexE.lp153.F15.C62 lp
+opt
+read cplexE.lp153.F15.C63 lp
+opt
+read cplexE.lp153.F15.C64 lp
+opt
+read cplexE.lp153.F15.C65 lp
+opt
+read cplexE.lp153.F15.C66 lp
+opt
+read cplexE.lp153.F15.C67 lp
+opt
+read cplexE.lp153.F15.C68 lp
+opt
+read cplexE.lp153.F15.C69 lp
+opt
+read cplexE.lp153.F15.C70 lp
+opt
+read cplexE.lp153.F15.C71 lp
+opt
+read cplexE.lp153.F15.C72 lp
+opt
+read cplexE.lp153.F15.C73 lp
+opt
+read cplexE.lp153.F15.C74 lp
+opt
+read cplexE.lp153.F15.C75 lp
+opt
+read cplexE.lp153.F15.C76 lp
+opt
+read cplexE.lp153.F15.C77 lp
+opt
+read cplexE.lp153.F15.C78 lp
+opt
+read cplexE.lp153.F15.C79 lp
+opt
+read cplexE.lp153.F15.C80 lp
+opt
+read cplexE.lp153.F15.C81 lp
+opt
+read cplexE.lp153.F15.C82 lp
+opt
+read cplexE.lp153.F15.C83 lp
+opt
+read cplexE.lp153.F15.C84 lp
+opt
+read cplexE.lp153.F15.C85 lp
+opt
+read cplexE.lp153.F15.C86 lp
+opt
+read cplexE.lp153.F15.C87 lp
+opt
+read cplexE.lp153.F15.C88 lp
+opt
+read cplexE.lp153.F15.C89 lp
+opt
+read cplexE.lp153.F15.C90 lp
+opt
+read cplexE.lp153.F15.C91 lp
+opt
+read cplexE.lp153.F15.C92 lp
+opt
+read cplexE.lp153.F15.C93 lp
+opt
+read cplexE.lp153.F15.C94 lp
+opt
+read cplexE.lp153.F15.C95 lp
+opt
+read cplexE.lp153.F15.C96 lp
+opt
+read cplexE.lp153.F15.C97 lp
+opt
+read cplexE.lp153.F15.C98 lp
+opt
+read cplexE.lp153.F15.C99 lp
+opt
+read cplexE.lp153.F15.C100 lp
+opt
+read cplexE.lp153.F15.C101 lp
+opt
+read cplexE.lp153.F15.C102 lp
+opt
+read cplexE.lp153.F15.C103 lp
+opt
+read cplexE.lp153.F15.C104 lp
+opt
+read cplexE.lp153.F15.C105 lp
+opt
+read cplexE.lp153.F15.C106 lp
+opt
+read cplexE.lp153.F15.C107 lp
+opt
+read cplexE.lp153.F15.C108 lp
+opt
+read cplexE.lp153.F15.C109 lp
+opt
+read cplexE.lp153.F15.C110 lp
+opt
+read cplexE.lp153.F15.C111 lp
+opt
+read cplexE.lp153.F15.C112 lp
+opt
+read cplexE.lp153.F15.C113 lp
+opt
+read cplexE.lp153.F15.C114 lp
+opt
+read cplexE.lp153.F15.C115 lp
+opt
+read cplexE.lp153.F15.C116 lp
+opt
+read cplexE.lp153.F15.C117 lp
+opt
+read cplexE.lp154.F16.C1 lp
+opt
+read cplexE.lp154.F16.C2 lp
+opt
+read cplexE.lp154.F16.C3 lp
+opt
+read cplexE.lp154.F16.C4 lp
+opt
+read cplexE.lp154.F16.C5 lp
+opt
+read cplexE.lp154.F16.C6 lp
+opt
+read cplexE.lp154.F16.C7 lp
+opt
+read cplexE.lp154.F16.C8 lp
+opt
+read cplexE.lp154.F16.C9 lp
+opt
+read cplexE.lp154.F16.C10 lp
+opt
+read cplexE.lp154.F16.C11 lp
+opt
+read cplexE.lp154.F16.C12 lp
+opt
+read cplexE.lp154.F16.C13 lp
+opt
+read cplexE.lp154.F16.C14 lp
+opt
+read cplexE.lp154.F16.C15 lp
+opt
+read cplexE.lp154.F16.C16 lp
+opt
+read cplexE.lp154.F16.C17 lp
+opt
+read cplexE.lp154.F16.C18 lp
+opt
+read cplexE.lp154.F16.C19 lp
+opt
+read cplexE.lp154.F16.C20 lp
+opt
+read cplexE.lp154.F16.C21 lp
+opt
+read cplexE.lp154.F16.C22 lp
+opt
+read cplexE.lp154.F16.C23 lp
+opt
+read cplexE.lp154.F16.C24 lp
+opt
+read cplexE.lp154.F16.C25 lp
+opt
+read cplexE.lp154.F16.C26 lp
+opt
+read cplexE.lp154.F16.C27 lp
+opt
+read cplexE.lp154.F16.C28 lp
+opt
+read cplexE.lp154.F16.C29 lp
+opt
+read cplexE.lp154.F16.C30 lp
+opt
+read cplexE.lp154.F16.C31 lp
+opt
+read cplexE.lp154.F16.C32 lp
+opt
+read cplexE.lp154.F16.C33 lp
+opt
+read cplexE.lp154.F16.C34 lp
+opt
+read cplexE.lp154.F16.C35 lp
+opt
+read cplexE.lp154.F16.C36 lp
+opt
+read cplexE.lp154.F16.C37 lp
+opt
+read cplexE.lp154.F16.C38 lp
+opt
+read cplexE.lp154.F16.C39 lp
+opt
+read cplexE.lp154.F16.C40 lp
+opt
+read cplexE.lp154.F16.C41 lp
+opt
+read cplexE.lp154.F16.C42 lp
+opt
+read cplexE.lp154.F16.C43 lp
+opt
+read cplexE.lp154.F16.C44 lp
+opt
+read cplexE.lp154.F16.C45 lp
+opt
+read cplexE.lp154.F16.C46 lp
+opt
+read cplexE.lp154.F16.C47 lp
+opt
+read cplexE.lp154.F16.C48 lp
+opt
+read cplexE.lp154.F16.C49 lp
+opt
+read cplexE.lp154.F16.C50 lp
+opt
+read cplexE.lp154.F16.C51 lp
+opt
+read cplexE.lp154.F16.C52 lp
+opt
+read cplexE.lp154.F16.C53 lp
+opt
+read cplexE.lp154.F16.C54 lp
+opt
+read cplexE.lp154.F16.C55 lp
+opt
+read cplexE.lp154.F16.C56 lp
+opt
+read cplexE.lp154.F16.C57 lp
+opt
+read cplexE.lp154.F16.C58 lp
+opt
+read cplexE.lp154.F16.C59 lp
+opt
+read cplexE.lp154.F16.C60 lp
+opt
+read cplexE.lp154.F16.C61 lp
+opt
+read cplexE.lp154.F16.C62 lp
+opt
+read cplexE.lp154.F16.C63 lp
+opt
+read cplexE.lp154.F16.C64 lp
+opt
+read cplexE.lp154.F16.C65 lp
+opt
+read cplexE.lp154.F16.C66 lp
+opt
+read cplexE.lp154.F16.C67 lp
+opt
+read cplexE.lp154.F16.C68 lp
+opt
+read cplexE.lp154.F16.C69 lp
+opt
+read cplexE.lp154.F16.C70 lp
+opt
+read cplexE.lp154.F16.C71 lp
+opt
+read cplexE.lp154.F16.C72 lp
+opt
+read cplexE.lp154.F16.C73 lp
+opt
+read cplexE.lp154.F16.C74 lp
+opt
+read cplexE.lp154.F16.C75 lp
+opt
+read cplexE.lp154.F16.C76 lp
+opt
+read cplexE.lp154.F16.C77 lp
+opt
+read cplexE.lp154.F16.C78 lp
+opt
+read cplexE.lp154.F16.C79 lp
+opt
+read cplexE.lp154.F16.C80 lp
+opt
+read cplexE.lp154.F16.C81 lp
+opt
+read cplexE.lp154.F16.C82 lp
+opt
+read cplexE.lp154.F16.C83 lp
+opt
+read cplexE.lp154.F16.C84 lp
+opt
+read cplexE.lp154.F16.C85 lp
+opt
+read cplexE.lp154.F16.C86 lp
+opt
+read cplexE.lp154.F16.C87 lp
+opt
+read cplexE.lp154.F16.C88 lp
+opt
+read cplexE.lp154.F16.C89 lp
+opt
+read cplexE.lp154.F16.C90 lp
+opt
+read cplexE.lp154.F16.C91 lp
+opt
+read cplexE.lp154.F16.C92 lp
+opt
+read cplexE.lp154.F16.C93 lp
+opt
+read cplexE.lp154.F16.C94 lp
+opt
+read cplexE.lp154.F16.C95 lp
+opt
+read cplexE.lp154.F16.C96 lp
+opt
+read cplexE.lp154.F16.C97 lp
+opt
+read cplexE.lp154.F16.C98 lp
+opt
+read cplexE.lp154.F16.C99 lp
+opt
+read cplexE.lp154.F16.C100 lp
+opt
+read cplexE.lp154.F16.C101 lp
+opt
+read cplexE.lp154.F16.C102 lp
+opt
+read cplexE.lp154.F16.C103 lp
+opt
+read cplexE.lp154.F16.C104 lp
+opt
+read cplexE.lp154.F16.C105 lp
+opt
+read cplexE.lp154.F16.C106 lp
+opt
+read cplexE.lp154.F16.C107 lp
+opt
+read cplexE.lp154.F16.C108 lp
+opt
+read cplexE.lp154.F16.C109 lp
+opt
+read cplexE.lp154.F16.C110 lp
+opt
+read cplexE.lp154.F16.C111 lp
+opt
+read cplexE.lp154.F16.C112 lp
+opt
+read cplexE.lp154.F16.C113 lp
+opt
+read cplexE.lp154.F16.C114 lp
+opt
+read cplexE.lp154.F16.C115 lp
+opt
+read cplexE.lp154.F16.C116 lp
+opt
+read cplexE.lp154.F16.C117 lp
+opt
+read cplexE.lp155.F16.C1 lp
+opt
+read cplexE.lp155.F16.C2 lp
+opt
+read cplexE.lp155.F16.C3 lp
+opt
+read cplexE.lp155.F16.C4 lp
+opt
+read cplexE.lp155.F16.C5 lp
+opt
+read cplexE.lp155.F16.C6 lp
+opt
+read cplexE.lp155.F16.C7 lp
+opt
+read cplexE.lp155.F16.C8 lp
+opt
+read cplexE.lp155.F16.C9 lp
+opt
+read cplexE.lp155.F16.C10 lp
+opt
+read cplexE.lp155.F16.C11 lp
+opt
+read cplexE.lp155.F16.C12 lp
+opt
+read cplexE.lp155.F16.C13 lp
+opt
+read cplexE.lp155.F16.C14 lp
+opt
+read cplexE.lp155.F16.C15 lp
+opt
+read cplexE.lp155.F16.C16 lp
+opt
+read cplexE.lp155.F16.C17 lp
+opt
+read cplexE.lp155.F16.C18 lp
+opt
+read cplexE.lp155.F16.C19 lp
+opt
+read cplexE.lp155.F16.C20 lp
+opt
+read cplexE.lp155.F16.C21 lp
+opt
+read cplexE.lp155.F16.C22 lp
+opt
+read cplexE.lp155.F16.C23 lp
+opt
+read cplexE.lp155.F16.C24 lp
+opt
+read cplexE.lp155.F16.C25 lp
+opt
+read cplexE.lp155.F16.C26 lp
+opt
+read cplexE.lp155.F16.C27 lp
+opt
+read cplexE.lp155.F16.C28 lp
+opt
+read cplexE.lp155.F16.C29 lp
+opt
+read cplexE.lp155.F16.C30 lp
+opt
+read cplexE.lp155.F16.C31 lp
+opt
+read cplexE.lp155.F16.C32 lp
+opt
+read cplexE.lp155.F16.C33 lp
+opt
+read cplexE.lp155.F16.C34 lp
+opt
+read cplexE.lp155.F16.C35 lp
+opt
+read cplexE.lp155.F16.C36 lp
+opt
+read cplexE.lp155.F16.C37 lp
+opt
+read cplexE.lp155.F16.C38 lp
+opt
+read cplexE.lp155.F16.C39 lp
+opt
+read cplexE.lp155.F16.C40 lp
+opt
+read cplexE.lp155.F16.C41 lp
+opt
+read cplexE.lp155.F16.C42 lp
+opt
+read cplexE.lp155.F16.C43 lp
+opt
+read cplexE.lp155.F16.C44 lp
+opt
+read cplexE.lp155.F16.C45 lp
+opt
+read cplexE.lp155.F16.C46 lp
+opt
+read cplexE.lp155.F16.C47 lp
+opt
+read cplexE.lp155.F16.C48 lp
+opt
+read cplexE.lp155.F16.C49 lp
+opt
+read cplexE.lp155.F16.C50 lp
+opt
+read cplexE.lp155.F16.C51 lp
+opt
+read cplexE.lp155.F16.C52 lp
+opt
+read cplexE.lp155.F16.C53 lp
+opt
+read cplexE.lp155.F16.C54 lp
+opt
+read cplexE.lp155.F16.C55 lp
+opt
+read cplexE.lp155.F16.C56 lp
+opt
+read cplexE.lp155.F16.C57 lp
+opt
+read cplexE.lp155.F16.C58 lp
+opt
+read cplexE.lp155.F16.C59 lp
+opt
+read cplexE.lp155.F16.C60 lp
+opt
+read cplexE.lp155.F16.C61 lp
+opt
+read cplexE.lp155.F16.C62 lp
+opt
+read cplexE.lp155.F16.C63 lp
+opt
+read cplexE.lp155.F16.C64 lp
+opt
+read cplexE.lp155.F16.C65 lp
+opt
+read cplexE.lp155.F16.C66 lp
+opt
+read cplexE.lp155.F16.C67 lp
+opt
+read cplexE.lp155.F16.C68 lp
+opt
+read cplexE.lp155.F16.C69 lp
+opt
+read cplexE.lp155.F16.C70 lp
+opt
+read cplexE.lp155.F16.C71 lp
+opt
+read cplexE.lp155.F16.C72 lp
+opt
+read cplexE.lp155.F16.C73 lp
+opt
+read cplexE.lp155.F16.C74 lp
+opt
+read cplexE.lp155.F16.C75 lp
+opt
+read cplexE.lp155.F16.C76 lp
+opt
+read cplexE.lp155.F16.C77 lp
+opt
+read cplexE.lp155.F16.C78 lp
+opt
+read cplexE.lp155.F16.C79 lp
+opt
+read cplexE.lp155.F16.C80 lp
+opt
+read cplexE.lp155.F16.C81 lp
+opt
+read cplexE.lp155.F16.C82 lp
+opt
+read cplexE.lp155.F16.C83 lp
+opt
+read cplexE.lp155.F16.C84 lp
+opt
+read cplexE.lp155.F16.C85 lp
+opt
+read cplexE.lp155.F16.C86 lp
+opt
+read cplexE.lp155.F16.C87 lp
+opt
+read cplexE.lp155.F16.C88 lp
+opt
+read cplexE.lp155.F16.C89 lp
+opt
+read cplexE.lp155.F16.C90 lp
+opt
+read cplexE.lp155.F16.C91 lp
+opt
+read cplexE.lp155.F16.C92 lp
+opt
+read cplexE.lp155.F16.C93 lp
+opt
+read cplexE.lp155.F16.C94 lp
+opt
+read cplexE.lp155.F16.C95 lp
+opt
+read cplexE.lp155.F16.C96 lp
+opt
+read cplexE.lp155.F16.C97 lp
+opt
+read cplexE.lp155.F16.C98 lp
+opt
+read cplexE.lp155.F16.C99 lp
+opt
+read cplexE.lp155.F16.C100 lp
+opt
+read cplexE.lp155.F16.C101 lp
+opt
+read cplexE.lp155.F16.C102 lp
+opt
+read cplexE.lp155.F16.C103 lp
+opt
+read cplexE.lp155.F16.C104 lp
+opt
+read cplexE.lp155.F16.C105 lp
+opt
+read cplexE.lp155.F16.C106 lp
+opt
+read cplexE.lp155.F16.C107 lp
+opt
+read cplexE.lp155.F16.C108 lp
+opt
+read cplexE.lp155.F16.C109 lp
+opt
+read cplexE.lp155.F16.C110 lp
+opt
+read cplexE.lp155.F16.C111 lp
+opt
+read cplexE.lp155.F16.C112 lp
+opt
+read cplexE.lp155.F16.C113 lp
+opt
+read cplexE.lp155.F16.C114 lp
+opt
+read cplexE.lp155.F16.C115 lp
+opt
+read cplexE.lp155.F16.C116 lp
+opt
+read cplexE.lp155.F16.C117 lp
+opt
+read cplexE.lp156.F17.C1 lp
+opt
+read cplexE.lp156.F17.C2 lp
+opt
+read cplexE.lp156.F17.C3 lp
+opt
+read cplexE.lp156.F17.C4 lp
+opt
+read cplexE.lp156.F17.C5 lp
+opt
+read cplexE.lp156.F17.C6 lp
+opt
+read cplexE.lp156.F17.C7 lp
+opt
+read cplexE.lp156.F17.C8 lp
+opt
+read cplexE.lp156.F17.C9 lp
+opt
+read cplexE.lp156.F17.C10 lp
+opt
+read cplexE.lp156.F17.C11 lp
+opt
+read cplexE.lp156.F17.C12 lp
+opt
+read cplexE.lp156.F17.C13 lp
+opt
+read cplexE.lp156.F17.C14 lp
+opt
+read cplexE.lp156.F17.C15 lp
+opt
+read cplexE.lp156.F17.C16 lp
+opt
+read cplexE.lp156.F17.C17 lp
+opt
+read cplexE.lp156.F17.C18 lp
+opt
+read cplexE.lp156.F17.C19 lp
+opt
+read cplexE.lp156.F17.C20 lp
+opt
+read cplexE.lp156.F17.C21 lp
+opt
+read cplexE.lp156.F17.C22 lp
+opt
+read cplexE.lp156.F17.C23 lp
+opt
+read cplexE.lp156.F17.C24 lp
+opt
+read cplexE.lp156.F17.C25 lp
+opt
+read cplexE.lp156.F17.C26 lp
+opt
+read cplexE.lp156.F17.C27 lp
+opt
+read cplexE.lp156.F17.C28 lp
+opt
+read cplexE.lp156.F17.C29 lp
+opt
+read cplexE.lp156.F17.C30 lp
+opt
+read cplexE.lp156.F17.C31 lp
+opt
+read cplexE.lp156.F17.C32 lp
+opt
+read cplexE.lp156.F17.C33 lp
+opt
+read cplexE.lp156.F17.C34 lp
+opt
+read cplexE.lp156.F17.C35 lp
+opt
+read cplexE.lp156.F17.C36 lp
+opt
+read cplexE.lp156.F17.C37 lp
+opt
+read cplexE.lp156.F17.C38 lp
+opt
+read cplexE.lp156.F17.C39 lp
+opt
+read cplexE.lp156.F17.C40 lp
+opt
+read cplexE.lp156.F17.C41 lp
+opt
+read cplexE.lp156.F17.C42 lp
+opt
+read cplexE.lp156.F17.C43 lp
+opt
+read cplexE.lp156.F17.C44 lp
+opt
+read cplexE.lp156.F17.C45 lp
+opt
+read cplexE.lp156.F17.C46 lp
+opt
+read cplexE.lp156.F17.C47 lp
+opt
+read cplexE.lp156.F17.C48 lp
+opt
+read cplexE.lp156.F17.C49 lp
+opt
+read cplexE.lp156.F17.C50 lp
+opt
+read cplexE.lp156.F17.C51 lp
+opt
+read cplexE.lp156.F17.C52 lp
+opt
+read cplexE.lp156.F17.C53 lp
+opt
+read cplexE.lp156.F17.C54 lp
+opt
+read cplexE.lp156.F17.C55 lp
+opt
+read cplexE.lp156.F17.C56 lp
+opt
+read cplexE.lp156.F17.C57 lp
+opt
+read cplexE.lp156.F17.C58 lp
+opt
+read cplexE.lp156.F17.C59 lp
+opt
+read cplexE.lp156.F17.C60 lp
+opt
+read cplexE.lp156.F17.C61 lp
+opt
+read cplexE.lp156.F17.C62 lp
+opt
+read cplexE.lp156.F17.C63 lp
+opt
+read cplexE.lp156.F17.C64 lp
+opt
+read cplexE.lp156.F17.C65 lp
+opt
+read cplexE.lp156.F17.C66 lp
+opt
+read cplexE.lp156.F17.C67 lp
+opt
+read cplexE.lp156.F17.C68 lp
+opt
+read cplexE.lp156.F17.C69 lp
+opt
+read cplexE.lp156.F17.C70 lp
+opt
+read cplexE.lp156.F17.C71 lp
+opt
+read cplexE.lp156.F17.C72 lp
+opt
+read cplexE.lp156.F17.C73 lp
+opt
+read cplexE.lp156.F17.C74 lp
+opt
+read cplexE.lp156.F17.C75 lp
+opt
+read cplexE.lp156.F17.C76 lp
+opt
+read cplexE.lp156.F17.C77 lp
+opt
+read cplexE.lp156.F17.C78 lp
+opt
+read cplexE.lp156.F17.C79 lp
+opt
+read cplexE.lp156.F17.C80 lp
+opt
+read cplexE.lp156.F17.C81 lp
+opt
+read cplexE.lp156.F17.C82 lp
+opt
+read cplexE.lp156.F17.C83 lp
+opt
+read cplexE.lp156.F17.C84 lp
+opt
+read cplexE.lp156.F17.C85 lp
+opt
+read cplexE.lp156.F17.C86 lp
+opt
+read cplexE.lp156.F17.C87 lp
+opt
+read cplexE.lp156.F17.C88 lp
+opt
+read cplexE.lp156.F17.C89 lp
+opt
+read cplexE.lp156.F17.C90 lp
+opt
+read cplexE.lp156.F17.C91 lp
+opt
+read cplexE.lp156.F17.C92 lp
+opt
+read cplexE.lp156.F17.C93 lp
+opt
+read cplexE.lp156.F17.C94 lp
+opt
+read cplexE.lp156.F17.C95 lp
+opt
+read cplexE.lp156.F17.C96 lp
+opt
+read cplexE.lp156.F17.C97 lp
+opt
+read cplexE.lp156.F17.C98 lp
+opt
+read cplexE.lp156.F17.C99 lp
+opt
+read cplexE.lp156.F17.C100 lp
+opt
+read cplexE.lp156.F17.C101 lp
+opt
+read cplexE.lp156.F17.C102 lp
+opt
+read cplexE.lp156.F17.C103 lp
+opt
+read cplexE.lp156.F17.C104 lp
+opt
+read cplexE.lp156.F17.C105 lp
+opt
+read cplexE.lp156.F17.C106 lp
+opt
+read cplexE.lp156.F17.C107 lp
+opt
+read cplexE.lp156.F17.C108 lp
+opt
+read cplexE.lp156.F17.C109 lp
+opt
+read cplexE.lp156.F17.C110 lp
+opt
+read cplexE.lp156.F17.C111 lp
+opt
+read cplexE.lp156.F17.C112 lp
+opt
+read cplexE.lp156.F17.C113 lp
+opt
+read cplexE.lp156.F17.C114 lp
+opt
+read cplexE.lp156.F17.C115 lp
+opt
+read cplexE.lp156.F17.C116 lp
+opt
+read cplexE.lp156.F17.C117 lp
+opt
+read cplexE.lp157.F17.C1 lp
+opt
+read cplexE.lp157.F17.C2 lp
+opt
+read cplexE.lp157.F17.C3 lp
+opt
+read cplexE.lp157.F17.C4 lp
+opt
+read cplexE.lp157.F17.C5 lp
+opt
+read cplexE.lp157.F17.C6 lp
+opt
+read cplexE.lp157.F17.C7 lp
+opt
+read cplexE.lp157.F17.C8 lp
+opt
+read cplexE.lp157.F17.C9 lp
+opt
+read cplexE.lp157.F17.C10 lp
+opt
+read cplexE.lp157.F17.C11 lp
+opt
+read cplexE.lp157.F17.C12 lp
+opt
+read cplexE.lp157.F17.C13 lp
+opt
+read cplexE.lp157.F17.C14 lp
+opt
+read cplexE.lp157.F17.C15 lp
+opt
+read cplexE.lp157.F17.C16 lp
+opt
+read cplexE.lp157.F17.C17 lp
+opt
+read cplexE.lp157.F17.C18 lp
+opt
+read cplexE.lp157.F17.C19 lp
+opt
+read cplexE.lp157.F17.C20 lp
+opt
+read cplexE.lp157.F17.C21 lp
+opt
+read cplexE.lp157.F17.C22 lp
+opt
+read cplexE.lp157.F17.C23 lp
+opt
+read cplexE.lp157.F17.C24 lp
+opt
+read cplexE.lp157.F17.C25 lp
+opt
+read cplexE.lp157.F17.C26 lp
+opt
+read cplexE.lp157.F17.C27 lp
+opt
+read cplexE.lp157.F17.C28 lp
+opt
+read cplexE.lp157.F17.C29 lp
+opt
+read cplexE.lp157.F17.C30 lp
+opt
+read cplexE.lp157.F17.C31 lp
+opt
+read cplexE.lp157.F17.C32 lp
+opt
+read cplexE.lp157.F17.C33 lp
+opt
+read cplexE.lp157.F17.C34 lp
+opt
+read cplexE.lp157.F17.C35 lp
+opt
+read cplexE.lp157.F17.C36 lp
+opt
+read cplexE.lp157.F17.C37 lp
+opt
+read cplexE.lp157.F17.C38 lp
+opt
+read cplexE.lp157.F17.C39 lp
+opt
+read cplexE.lp157.F17.C40 lp
+opt
+read cplexE.lp157.F17.C41 lp
+opt
+read cplexE.lp157.F17.C42 lp
+opt
+read cplexE.lp157.F17.C43 lp
+opt
+read cplexE.lp157.F17.C44 lp
+opt
+read cplexE.lp157.F17.C45 lp
+opt
+read cplexE.lp157.F17.C46 lp
+opt
+read cplexE.lp157.F17.C47 lp
+opt
+read cplexE.lp157.F17.C48 lp
+opt
+read cplexE.lp157.F17.C49 lp
+opt
+read cplexE.lp157.F17.C50 lp
+opt
+read cplexE.lp157.F17.C51 lp
+opt
+read cplexE.lp157.F17.C52 lp
+opt
+read cplexE.lp157.F17.C53 lp
+opt
+read cplexE.lp157.F17.C54 lp
+opt
+read cplexE.lp157.F17.C55 lp
+opt
+read cplexE.lp157.F17.C56 lp
+opt
+read cplexE.lp157.F17.C57 lp
+opt
+read cplexE.lp157.F17.C58 lp
+opt
+read cplexE.lp157.F17.C59 lp
+opt
+read cplexE.lp157.F17.C60 lp
+opt
+read cplexE.lp157.F17.C61 lp
+opt
+read cplexE.lp157.F17.C62 lp
+opt
+read cplexE.lp157.F17.C63 lp
+opt
+read cplexE.lp157.F17.C64 lp
+opt
+read cplexE.lp157.F17.C65 lp
+opt
+read cplexE.lp157.F17.C66 lp
+opt
+read cplexE.lp157.F17.C67 lp
+opt
+read cplexE.lp157.F17.C68 lp
+opt
+read cplexE.lp157.F17.C69 lp
+opt
+read cplexE.lp157.F17.C70 lp
+opt
+read cplexE.lp157.F17.C71 lp
+opt
+read cplexE.lp157.F17.C72 lp
+opt
+read cplexE.lp157.F17.C73 lp
+opt
+read cplexE.lp157.F17.C74 lp
+opt
+read cplexE.lp157.F17.C75 lp
+opt
+read cplexE.lp157.F17.C76 lp
+opt
+read cplexE.lp157.F17.C77 lp
+opt
+read cplexE.lp157.F17.C78 lp
+opt
+read cplexE.lp157.F17.C79 lp
+opt
+read cplexE.lp157.F17.C80 lp
+opt
+read cplexE.lp157.F17.C81 lp
+opt
+read cplexE.lp157.F17.C82 lp
+opt
+read cplexE.lp157.F17.C83 lp
+opt
+read cplexE.lp157.F17.C84 lp
+opt
+read cplexE.lp157.F17.C85 lp
+opt
+read cplexE.lp157.F17.C86 lp
+opt
+read cplexE.lp157.F17.C87 lp
+opt
+read cplexE.lp157.F17.C88 lp
+opt
+read cplexE.lp157.F17.C89 lp
+opt
+read cplexE.lp157.F17.C90 lp
+opt
+read cplexE.lp157.F17.C91 lp
+opt
+read cplexE.lp157.F17.C92 lp
+opt
+read cplexE.lp157.F17.C93 lp
+opt
+read cplexE.lp157.F17.C94 lp
+opt
+read cplexE.lp157.F17.C95 lp
+opt
+read cplexE.lp157.F17.C96 lp
+opt
+read cplexE.lp157.F17.C97 lp
+opt
+read cplexE.lp157.F17.C98 lp
+opt
+read cplexE.lp157.F17.C99 lp
+opt
+read cplexE.lp157.F17.C100 lp
+opt
+read cplexE.lp157.F17.C101 lp
+opt
+read cplexE.lp157.F17.C102 lp
+opt
+read cplexE.lp157.F17.C103 lp
+opt
+read cplexE.lp157.F17.C104 lp
+opt
+read cplexE.lp157.F17.C105 lp
+opt
+read cplexE.lp157.F17.C106 lp
+opt
+read cplexE.lp157.F17.C107 lp
+opt
+read cplexE.lp157.F17.C108 lp
+opt
+read cplexE.lp157.F17.C109 lp
+opt
+read cplexE.lp157.F17.C110 lp
+opt
+read cplexE.lp157.F17.C111 lp
+opt
+read cplexE.lp157.F17.C112 lp
+opt
+read cplexE.lp157.F17.C113 lp
+opt
+read cplexE.lp157.F17.C114 lp
+opt
+read cplexE.lp157.F17.C115 lp
+opt
+read cplexE.lp157.F17.C116 lp
+opt
+read cplexE.lp157.F17.C117 lp
+opt
+read cplexE.lp158.F15.C1 lp
+opt
+read cplexE.lp158.F15.C2 lp
+opt
+read cplexE.lp158.F15.C3 lp
+opt
+read cplexE.lp158.F15.C4 lp
+opt
+read cplexE.lp158.F15.C5 lp
+opt
+read cplexE.lp158.F15.C6 lp
+opt
+read cplexE.lp158.F15.C7 lp
+opt
+read cplexE.lp158.F15.C8 lp
+opt
+read cplexE.lp158.F15.C9 lp
+opt
+read cplexE.lp158.F15.C10 lp
+opt
+read cplexE.lp158.F15.C11 lp
+opt
+read cplexE.lp158.F15.C12 lp
+opt
+read cplexE.lp158.F15.C13 lp
+opt
+read cplexE.lp158.F15.C14 lp
+opt
+read cplexE.lp158.F15.C15 lp
+opt
+read cplexE.lp158.F15.C16 lp
+opt
+read cplexE.lp158.F15.C17 lp
+opt
+read cplexE.lp158.F15.C18 lp
+opt
+read cplexE.lp158.F15.C19 lp
+opt
+read cplexE.lp158.F15.C20 lp
+opt
+read cplexE.lp158.F15.C21 lp
+opt
+read cplexE.lp158.F15.C22 lp
+opt
+read cplexE.lp158.F15.C23 lp
+opt
+read cplexE.lp158.F15.C24 lp
+opt
+read cplexE.lp158.F15.C25 lp
+opt
+read cplexE.lp158.F15.C26 lp
+opt
+read cplexE.lp158.F15.C27 lp
+opt
+read cplexE.lp158.F15.C28 lp
+opt
+read cplexE.lp158.F15.C29 lp
+opt
+read cplexE.lp158.F15.C30 lp
+opt
+read cplexE.lp158.F15.C31 lp
+opt
+read cplexE.lp158.F15.C32 lp
+opt
+read cplexE.lp158.F15.C33 lp
+opt
+read cplexE.lp158.F15.C34 lp
+opt
+read cplexE.lp158.F15.C35 lp
+opt
+read cplexE.lp158.F15.C36 lp
+opt
+read cplexE.lp158.F15.C37 lp
+opt
+read cplexE.lp158.F15.C38 lp
+opt
+read cplexE.lp158.F15.C39 lp
+opt
+read cplexE.lp158.F15.C40 lp
+opt
+read cplexE.lp158.F15.C41 lp
+opt
+read cplexE.lp158.F15.C42 lp
+opt
+read cplexE.lp158.F15.C43 lp
+opt
+read cplexE.lp158.F15.C44 lp
+opt
+read cplexE.lp158.F15.C45 lp
+opt
+read cplexE.lp158.F15.C46 lp
+opt
+read cplexE.lp158.F15.C47 lp
+opt
+read cplexE.lp158.F15.C48 lp
+opt
+read cplexE.lp158.F15.C49 lp
+opt
+read cplexE.lp158.F15.C50 lp
+opt
+read cplexE.lp158.F15.C51 lp
+opt
+read cplexE.lp158.F15.C52 lp
+opt
+read cplexE.lp158.F15.C53 lp
+opt
+read cplexE.lp158.F15.C54 lp
+opt
+read cplexE.lp158.F15.C55 lp
+opt
+read cplexE.lp158.F15.C56 lp
+opt
+read cplexE.lp158.F15.C57 lp
+opt
+read cplexE.lp158.F15.C58 lp
+opt
+read cplexE.lp158.F15.C59 lp
+opt
+read cplexE.lp158.F15.C60 lp
+opt
+read cplexE.lp158.F15.C61 lp
+opt
+read cplexE.lp158.F15.C62 lp
+opt
+read cplexE.lp158.F15.C63 lp
+opt
+read cplexE.lp158.F15.C64 lp
+opt
+read cplexE.lp158.F15.C65 lp
+opt
+read cplexE.lp158.F15.C66 lp
+opt
+read cplexE.lp158.F15.C67 lp
+opt
+read cplexE.lp158.F15.C68 lp
+opt
+read cplexE.lp158.F15.C69 lp
+opt
+read cplexE.lp158.F15.C70 lp
+opt
+read cplexE.lp158.F15.C71 lp
+opt
+read cplexE.lp158.F15.C72 lp
+opt
+read cplexE.lp158.F15.C73 lp
+opt
+read cplexE.lp158.F15.C74 lp
+opt
+read cplexE.lp158.F15.C75 lp
+opt
+read cplexE.lp158.F15.C76 lp
+opt
+read cplexE.lp158.F15.C77 lp
+opt
+read cplexE.lp158.F15.C78 lp
+opt
+read cplexE.lp158.F15.C79 lp
+opt
+read cplexE.lp158.F15.C80 lp
+opt
+read cplexE.lp158.F15.C81 lp
+opt
+read cplexE.lp158.F15.C82 lp
+opt
+read cplexE.lp158.F15.C83 lp
+opt
+read cplexE.lp158.F15.C84 lp
+opt
+read cplexE.lp158.F15.C85 lp
+opt
+read cplexE.lp158.F15.C86 lp
+opt
+read cplexE.lp158.F15.C87 lp
+opt
+read cplexE.lp158.F15.C88 lp
+opt
+read cplexE.lp158.F15.C89 lp
+opt
+read cplexE.lp158.F15.C90 lp
+opt
+read cplexE.lp158.F15.C91 lp
+opt
+read cplexE.lp158.F15.C92 lp
+opt
+read cplexE.lp158.F15.C93 lp
+opt
+read cplexE.lp158.F15.C94 lp
+opt
+read cplexE.lp158.F15.C95 lp
+opt
+read cplexE.lp158.F15.C96 lp
+opt
+read cplexE.lp158.F15.C97 lp
+opt
+read cplexE.lp158.F15.C98 lp
+opt
+read cplexE.lp158.F15.C99 lp
+opt
+read cplexE.lp158.F15.C100 lp
+opt
+read cplexE.lp158.F15.C101 lp
+opt
+read cplexE.lp158.F15.C102 lp
+opt
+read cplexE.lp158.F15.C103 lp
+opt
+read cplexE.lp158.F15.C104 lp
+opt
+read cplexE.lp158.F15.C105 lp
+opt
+read cplexE.lp158.F15.C106 lp
+opt
+read cplexE.lp158.F15.C107 lp
+opt
+read cplexE.lp158.F15.C108 lp
+opt
+read cplexE.lp158.F15.C109 lp
+opt
+read cplexE.lp158.F15.C110 lp
+opt
+read cplexE.lp158.F15.C111 lp
+opt
+read cplexE.lp158.F15.C112 lp
+opt
+read cplexE.lp158.F15.C113 lp
+opt
+read cplexE.lp158.F15.C114 lp
+opt
+read cplexE.lp158.F15.C115 lp
+opt
+read cplexE.lp158.F15.C116 lp
+opt
+read cplexE.lp158.F15.C117 lp
+opt
+read cplexE.lp159.F16.C1 lp
+opt
+read cplexE.lp159.F16.C2 lp
+opt
+read cplexE.lp159.F16.C3 lp
+opt
+read cplexE.lp159.F16.C4 lp
+opt
+read cplexE.lp159.F16.C5 lp
+opt
+read cplexE.lp159.F16.C6 lp
+opt
+read cplexE.lp159.F16.C7 lp
+opt
+read cplexE.lp159.F16.C8 lp
+opt
+read cplexE.lp159.F16.C9 lp
+opt
+read cplexE.lp159.F16.C10 lp
+opt
+read cplexE.lp159.F16.C11 lp
+opt
+read cplexE.lp159.F16.C12 lp
+opt
+read cplexE.lp159.F16.C13 lp
+opt
+read cplexE.lp159.F16.C14 lp
+opt
+read cplexE.lp159.F16.C15 lp
+opt
+read cplexE.lp159.F16.C16 lp
+opt
+read cplexE.lp159.F16.C17 lp
+opt
+read cplexE.lp159.F16.C18 lp
+opt
+read cplexE.lp159.F16.C19 lp
+opt
+read cplexE.lp159.F16.C20 lp
+opt
+read cplexE.lp159.F16.C21 lp
+opt
+read cplexE.lp159.F16.C22 lp
+opt
+read cplexE.lp159.F16.C23 lp
+opt
+read cplexE.lp159.F16.C24 lp
+opt
+read cplexE.lp159.F16.C25 lp
+opt
+read cplexE.lp159.F16.C26 lp
+opt
+read cplexE.lp159.F16.C27 lp
+opt
+read cplexE.lp159.F16.C28 lp
+opt
+read cplexE.lp159.F16.C29 lp
+opt
+read cplexE.lp159.F16.C30 lp
+opt
+read cplexE.lp159.F16.C31 lp
+opt
+read cplexE.lp159.F16.C32 lp
+opt
+read cplexE.lp159.F16.C33 lp
+opt
+read cplexE.lp159.F16.C34 lp
+opt
+read cplexE.lp159.F16.C35 lp
+opt
+read cplexE.lp159.F16.C36 lp
+opt
+read cplexE.lp159.F16.C37 lp
+opt
+read cplexE.lp159.F16.C38 lp
+opt
+read cplexE.lp159.F16.C39 lp
+opt
+read cplexE.lp159.F16.C40 lp
+opt
+read cplexE.lp159.F16.C41 lp
+opt
+read cplexE.lp159.F16.C42 lp
+opt
+read cplexE.lp159.F16.C43 lp
+opt
+read cplexE.lp159.F16.C44 lp
+opt
+read cplexE.lp159.F16.C45 lp
+opt
+read cplexE.lp159.F16.C46 lp
+opt
+read cplexE.lp159.F16.C47 lp
+opt
+read cplexE.lp159.F16.C48 lp
+opt
+read cplexE.lp159.F16.C49 lp
+opt
+read cplexE.lp159.F16.C50 lp
+opt
+read cplexE.lp159.F16.C51 lp
+opt
+read cplexE.lp159.F16.C52 lp
+opt
+read cplexE.lp159.F16.C53 lp
+opt
+read cplexE.lp159.F16.C54 lp
+opt
+read cplexE.lp159.F16.C55 lp
+opt
+read cplexE.lp159.F16.C56 lp
+opt
+read cplexE.lp159.F16.C57 lp
+opt
+read cplexE.lp159.F16.C58 lp
+opt
+read cplexE.lp159.F16.C59 lp
+opt
+read cplexE.lp159.F16.C60 lp
+opt
+read cplexE.lp159.F16.C61 lp
+opt
+read cplexE.lp159.F16.C62 lp
+opt
+read cplexE.lp159.F16.C63 lp
+opt
+read cplexE.lp159.F16.C64 lp
+opt
+read cplexE.lp159.F16.C65 lp
+opt
+read cplexE.lp159.F16.C66 lp
+opt
+read cplexE.lp159.F16.C67 lp
+opt
+read cplexE.lp159.F16.C68 lp
+opt
+read cplexE.lp159.F16.C69 lp
+opt
+read cplexE.lp159.F16.C70 lp
+opt
+read cplexE.lp159.F16.C71 lp
+opt
+read cplexE.lp159.F16.C72 lp
+opt
+read cplexE.lp159.F16.C73 lp
+opt
+read cplexE.lp159.F16.C74 lp
+opt
+read cplexE.lp159.F16.C75 lp
+opt
+read cplexE.lp159.F16.C76 lp
+opt
+read cplexE.lp159.F16.C77 lp
+opt
+read cplexE.lp159.F16.C78 lp
+opt
+read cplexE.lp159.F16.C79 lp
+opt
+read cplexE.lp159.F16.C80 lp
+opt
+read cplexE.lp159.F16.C81 lp
+opt
+read cplexE.lp159.F16.C82 lp
+opt
+read cplexE.lp159.F16.C83 lp
+opt
+read cplexE.lp159.F16.C84 lp
+opt
+read cplexE.lp159.F16.C85 lp
+opt
+read cplexE.lp159.F16.C86 lp
+opt
+read cplexE.lp159.F16.C87 lp
+opt
+read cplexE.lp159.F16.C88 lp
+opt
+read cplexE.lp159.F16.C89 lp
+opt
+read cplexE.lp159.F16.C90 lp
+opt
+read cplexE.lp159.F16.C91 lp
+opt
+read cplexE.lp159.F16.C92 lp
+opt
+read cplexE.lp159.F16.C93 lp
+opt
+read cplexE.lp159.F16.C94 lp
+opt
+read cplexE.lp159.F16.C95 lp
+opt
+read cplexE.lp159.F16.C96 lp
+opt
+read cplexE.lp159.F16.C97 lp
+opt
+read cplexE.lp159.F16.C98 lp
+opt
+read cplexE.lp159.F16.C99 lp
+opt
+read cplexE.lp159.F16.C100 lp
+opt
+read cplexE.lp159.F16.C101 lp
+opt
+read cplexE.lp159.F16.C102 lp
+opt
+read cplexE.lp159.F16.C103 lp
+opt
+read cplexE.lp159.F16.C104 lp
+opt
+read cplexE.lp159.F16.C105 lp
+opt
+read cplexE.lp159.F16.C106 lp
+opt
+read cplexE.lp159.F16.C107 lp
+opt
+read cplexE.lp159.F16.C108 lp
+opt
+read cplexE.lp159.F16.C109 lp
+opt
+read cplexE.lp159.F16.C110 lp
+opt
+read cplexE.lp159.F16.C111 lp
+opt
+read cplexE.lp159.F16.C112 lp
+opt
+read cplexE.lp159.F16.C113 lp
+opt
+read cplexE.lp159.F16.C114 lp
+opt
+read cplexE.lp159.F16.C115 lp
+opt
+read cplexE.lp159.F16.C116 lp
+opt
+read cplexE.lp159.F16.C117 lp
+opt
+read cplexE.lp160.F16.C1 lp
+opt
+read cplexE.lp160.F16.C2 lp
+opt
+read cplexE.lp160.F16.C3 lp
+opt
+read cplexE.lp160.F16.C4 lp
+opt
+read cplexE.lp160.F16.C5 lp
+opt
+read cplexE.lp160.F16.C6 lp
+opt
+read cplexE.lp160.F16.C7 lp
+opt
+read cplexE.lp160.F16.C8 lp
+opt
+read cplexE.lp160.F16.C9 lp
+opt
+read cplexE.lp160.F16.C10 lp
+opt
+read cplexE.lp160.F16.C11 lp
+opt
+read cplexE.lp160.F16.C12 lp
+opt
+read cplexE.lp160.F16.C13 lp
+opt
+read cplexE.lp160.F16.C14 lp
+opt
+read cplexE.lp160.F16.C15 lp
+opt
+read cplexE.lp160.F16.C16 lp
+opt
+read cplexE.lp160.F16.C17 lp
+opt
+read cplexE.lp160.F16.C18 lp
+opt
+read cplexE.lp160.F16.C19 lp
+opt
+read cplexE.lp160.F16.C20 lp
+opt
+read cplexE.lp160.F16.C21 lp
+opt
+read cplexE.lp160.F16.C22 lp
+opt
+read cplexE.lp160.F16.C23 lp
+opt
+read cplexE.lp160.F16.C24 lp
+opt
+read cplexE.lp160.F16.C25 lp
+opt
+read cplexE.lp160.F16.C26 lp
+opt
+read cplexE.lp160.F16.C27 lp
+opt
+read cplexE.lp160.F16.C28 lp
+opt
+read cplexE.lp160.F16.C29 lp
+opt
+read cplexE.lp160.F16.C30 lp
+opt
+read cplexE.lp160.F16.C31 lp
+opt
+read cplexE.lp160.F16.C32 lp
+opt
+read cplexE.lp160.F16.C33 lp
+opt
+read cplexE.lp160.F16.C34 lp
+opt
+read cplexE.lp160.F16.C35 lp
+opt
+read cplexE.lp160.F16.C36 lp
+opt
+read cplexE.lp160.F16.C37 lp
+opt
+read cplexE.lp160.F16.C38 lp
+opt
+read cplexE.lp160.F16.C39 lp
+opt
+read cplexE.lp160.F16.C40 lp
+opt
+read cplexE.lp160.F16.C41 lp
+opt
+read cplexE.lp160.F16.C42 lp
+opt
+read cplexE.lp160.F16.C43 lp
+opt
+read cplexE.lp160.F16.C44 lp
+opt
+read cplexE.lp160.F16.C45 lp
+opt
+read cplexE.lp160.F16.C46 lp
+opt
+read cplexE.lp160.F16.C47 lp
+opt
+read cplexE.lp160.F16.C48 lp
+opt
+read cplexE.lp160.F16.C49 lp
+opt
+read cplexE.lp160.F16.C50 lp
+opt
+read cplexE.lp160.F16.C51 lp
+opt
+read cplexE.lp160.F16.C52 lp
+opt
+read cplexE.lp160.F16.C53 lp
+opt
+read cplexE.lp160.F16.C54 lp
+opt
+read cplexE.lp160.F16.C55 lp
+opt
+read cplexE.lp160.F16.C56 lp
+opt
+read cplexE.lp160.F16.C57 lp
+opt
+read cplexE.lp160.F16.C58 lp
+opt
+read cplexE.lp160.F16.C59 lp
+opt
+read cplexE.lp160.F16.C60 lp
+opt
+read cplexE.lp160.F16.C61 lp
+opt
+read cplexE.lp160.F16.C62 lp
+opt
+read cplexE.lp160.F16.C63 lp
+opt
+read cplexE.lp160.F16.C64 lp
+opt
+read cplexE.lp160.F16.C65 lp
+opt
+read cplexE.lp160.F16.C66 lp
+opt
+read cplexE.lp160.F16.C67 lp
+opt
+read cplexE.lp160.F16.C68 lp
+opt
+read cplexE.lp160.F16.C69 lp
+opt
+read cplexE.lp160.F16.C70 lp
+opt
+read cplexE.lp160.F16.C71 lp
+opt
+read cplexE.lp160.F16.C72 lp
+opt
+read cplexE.lp160.F16.C73 lp
+opt
+read cplexE.lp160.F16.C74 lp
+opt
+read cplexE.lp160.F16.C75 lp
+opt
+read cplexE.lp160.F16.C76 lp
+opt
+read cplexE.lp160.F16.C77 lp
+opt
+read cplexE.lp160.F16.C78 lp
+opt
+read cplexE.lp160.F16.C79 lp
+opt
+read cplexE.lp160.F16.C80 lp
+opt
+read cplexE.lp160.F16.C81 lp
+opt
+read cplexE.lp160.F16.C82 lp
+opt
+read cplexE.lp160.F16.C83 lp
+opt
+read cplexE.lp160.F16.C84 lp
+opt
+read cplexE.lp160.F16.C85 lp
+opt
+read cplexE.lp160.F16.C86 lp
+opt
+read cplexE.lp160.F16.C87 lp
+opt
+read cplexE.lp160.F16.C88 lp
+opt
+read cplexE.lp160.F16.C89 lp
+opt
+read cplexE.lp160.F16.C90 lp
+opt
+read cplexE.lp160.F16.C91 lp
+opt
+read cplexE.lp160.F16.C92 lp
+opt
+read cplexE.lp160.F16.C93 lp
+opt
+read cplexE.lp160.F16.C94 lp
+opt
+read cplexE.lp160.F16.C95 lp
+opt
+read cplexE.lp160.F16.C96 lp
+opt
+read cplexE.lp160.F16.C97 lp
+opt
+read cplexE.lp160.F16.C98 lp
+opt
+read cplexE.lp160.F16.C99 lp
+opt
+read cplexE.lp160.F16.C100 lp
+opt
+read cplexE.lp160.F16.C101 lp
+opt
+read cplexE.lp160.F16.C102 lp
+opt
+read cplexE.lp160.F16.C103 lp
+opt
+read cplexE.lp160.F16.C104 lp
+opt
+read cplexE.lp160.F16.C105 lp
+opt
+read cplexE.lp160.F16.C106 lp
+opt
+read cplexE.lp160.F16.C107 lp
+opt
+read cplexE.lp160.F16.C108 lp
+opt
+read cplexE.lp160.F16.C109 lp
+opt
+read cplexE.lp160.F16.C110 lp
+opt
+read cplexE.lp160.F16.C111 lp
+opt
+read cplexE.lp160.F16.C112 lp
+opt
+read cplexE.lp160.F16.C113 lp
+opt
+read cplexE.lp160.F16.C114 lp
+opt
+read cplexE.lp160.F16.C115 lp
+opt
+read cplexE.lp160.F16.C116 lp
+opt
+read cplexE.lp160.F16.C117 lp
+opt
+read cplexE.lp161.F18.C1 lp
+opt
+read cplexE.lp161.F18.C2 lp
+opt
+read cplexE.lp161.F18.C3 lp
+opt
+read cplexE.lp161.F18.C4 lp
+opt
+read cplexE.lp161.F18.C5 lp
+opt
+read cplexE.lp161.F18.C6 lp
+opt
+read cplexE.lp161.F18.C7 lp
+opt
+read cplexE.lp161.F18.C8 lp
+opt
+read cplexE.lp161.F18.C9 lp
+opt
+read cplexE.lp161.F18.C10 lp
+opt
+read cplexE.lp161.F18.C11 lp
+opt
+read cplexE.lp161.F18.C12 lp
+opt
+read cplexE.lp161.F18.C13 lp
+opt
+read cplexE.lp161.F18.C14 lp
+opt
+read cplexE.lp161.F18.C15 lp
+opt
+read cplexE.lp161.F18.C16 lp
+opt
+read cplexE.lp161.F18.C17 lp
+opt
+read cplexE.lp161.F18.C18 lp
+opt
+read cplexE.lp161.F18.C19 lp
+opt
+read cplexE.lp161.F18.C20 lp
+opt
+read cplexE.lp161.F18.C21 lp
+opt
+read cplexE.lp161.F18.C22 lp
+opt
+read cplexE.lp161.F18.C23 lp
+opt
+read cplexE.lp161.F18.C24 lp
+opt
+read cplexE.lp161.F18.C25 lp
+opt
+read cplexE.lp161.F18.C26 lp
+opt
+read cplexE.lp161.F18.C27 lp
+opt
+read cplexE.lp161.F18.C28 lp
+opt
+read cplexE.lp161.F18.C29 lp
+opt
+read cplexE.lp161.F18.C30 lp
+opt
+read cplexE.lp161.F18.C31 lp
+opt
+read cplexE.lp161.F18.C32 lp
+opt
+read cplexE.lp161.F18.C33 lp
+opt
+read cplexE.lp161.F18.C34 lp
+opt
+read cplexE.lp161.F18.C35 lp
+opt
+read cplexE.lp161.F18.C36 lp
+opt
+read cplexE.lp161.F18.C37 lp
+opt
+read cplexE.lp161.F18.C38 lp
+opt
+read cplexE.lp161.F18.C39 lp
+opt
+read cplexE.lp161.F18.C40 lp
+opt
+read cplexE.lp161.F18.C41 lp
+opt
+read cplexE.lp161.F18.C42 lp
+opt
+read cplexE.lp161.F18.C43 lp
+opt
+read cplexE.lp161.F18.C44 lp
+opt
+read cplexE.lp161.F18.C45 lp
+opt
+read cplexE.lp161.F18.C46 lp
+opt
+read cplexE.lp161.F18.C47 lp
+opt
+read cplexE.lp161.F18.C48 lp
+opt
+read cplexE.lp161.F18.C49 lp
+opt
+read cplexE.lp161.F18.C50 lp
+opt
+read cplexE.lp161.F18.C51 lp
+opt
+read cplexE.lp161.F18.C52 lp
+opt
+read cplexE.lp161.F18.C53 lp
+opt
+read cplexE.lp161.F18.C54 lp
+opt
+read cplexE.lp161.F18.C55 lp
+opt
+read cplexE.lp161.F18.C56 lp
+opt
+read cplexE.lp161.F18.C57 lp
+opt
+read cplexE.lp161.F18.C58 lp
+opt
+read cplexE.lp161.F18.C59 lp
+opt
+read cplexE.lp161.F18.C60 lp
+opt
+read cplexE.lp161.F18.C61 lp
+opt
+read cplexE.lp161.F18.C62 lp
+opt
+read cplexE.lp161.F18.C63 lp
+opt
+read cplexE.lp161.F18.C64 lp
+opt
+read cplexE.lp161.F18.C65 lp
+opt
+read cplexE.lp161.F18.C66 lp
+opt
+read cplexE.lp161.F18.C67 lp
+opt
+read cplexE.lp161.F18.C68 lp
+opt
+read cplexE.lp161.F18.C69 lp
+opt
+read cplexE.lp161.F18.C70 lp
+opt
+read cplexE.lp161.F18.C71 lp
+opt
+read cplexE.lp161.F18.C72 lp
+opt
+read cplexE.lp161.F18.C73 lp
+opt
+read cplexE.lp161.F18.C74 lp
+opt
+read cplexE.lp161.F18.C75 lp
+opt
+read cplexE.lp161.F18.C76 lp
+opt
+read cplexE.lp161.F18.C77 lp
+opt
+read cplexE.lp161.F18.C78 lp
+opt
+read cplexE.lp161.F18.C79 lp
+opt
+read cplexE.lp161.F18.C80 lp
+opt
+read cplexE.lp161.F18.C81 lp
+opt
+read cplexE.lp161.F18.C82 lp
+opt
+read cplexE.lp161.F18.C83 lp
+opt
+read cplexE.lp161.F18.C84 lp
+opt
+read cplexE.lp161.F18.C85 lp
+opt
+read cplexE.lp161.F18.C86 lp
+opt
+read cplexE.lp161.F18.C87 lp
+opt
+read cplexE.lp161.F18.C88 lp
+opt
+read cplexE.lp161.F18.C89 lp
+opt
+read cplexE.lp161.F18.C90 lp
+opt
+read cplexE.lp161.F18.C91 lp
+opt
+read cplexE.lp161.F18.C92 lp
+opt
+read cplexE.lp161.F18.C93 lp
+opt
+read cplexE.lp161.F18.C94 lp
+opt
+read cplexE.lp161.F18.C95 lp
+opt
+read cplexE.lp161.F18.C96 lp
+opt
+read cplexE.lp161.F18.C97 lp
+opt
+read cplexE.lp161.F18.C98 lp
+opt
+read cplexE.lp161.F18.C99 lp
+opt
+read cplexE.lp161.F18.C100 lp
+opt
+read cplexE.lp161.F18.C101 lp
+opt
+read cplexE.lp161.F18.C102 lp
+opt
+read cplexE.lp161.F18.C103 lp
+opt
+read cplexE.lp161.F18.C104 lp
+opt
+read cplexE.lp161.F18.C105 lp
+opt
+read cplexE.lp161.F18.C106 lp
+opt
+read cplexE.lp161.F18.C107 lp
+opt
+read cplexE.lp161.F18.C108 lp
+opt
+read cplexE.lp161.F18.C109 lp
+opt
+read cplexE.lp161.F18.C110 lp
+opt
+read cplexE.lp161.F18.C111 lp
+opt
+read cplexE.lp161.F18.C112 lp
+opt
+read cplexE.lp161.F18.C113 lp
+opt
+read cplexE.lp161.F18.C114 lp
+opt
+read cplexE.lp161.F18.C115 lp
+opt
+read cplexE.lp161.F18.C116 lp
+opt
+read cplexE.lp161.F18.C117 lp
+opt
+read cplexE.lp162.F16.C1 lp
+opt
+read cplexE.lp162.F16.C2 lp
+opt
+read cplexE.lp162.F16.C3 lp
+opt
+read cplexE.lp162.F16.C4 lp
+opt
+read cplexE.lp162.F16.C5 lp
+opt
+read cplexE.lp162.F16.C6 lp
+opt
+read cplexE.lp162.F16.C7 lp
+opt
+read cplexE.lp162.F16.C8 lp
+opt
+read cplexE.lp162.F16.C9 lp
+opt
+read cplexE.lp162.F16.C10 lp
+opt
+read cplexE.lp162.F16.C11 lp
+opt
+read cplexE.lp162.F16.C12 lp
+opt
+read cplexE.lp162.F16.C13 lp
+opt
+read cplexE.lp162.F16.C14 lp
+opt
+read cplexE.lp162.F16.C15 lp
+opt
+read cplexE.lp162.F16.C16 lp
+opt
+read cplexE.lp162.F16.C17 lp
+opt
+read cplexE.lp162.F16.C18 lp
+opt
+read cplexE.lp162.F16.C19 lp
+opt
+read cplexE.lp162.F16.C20 lp
+opt
+read cplexE.lp162.F16.C21 lp
+opt
+read cplexE.lp162.F16.C22 lp
+opt
+read cplexE.lp162.F16.C23 lp
+opt
+read cplexE.lp162.F16.C24 lp
+opt
+read cplexE.lp162.F16.C25 lp
+opt
+read cplexE.lp162.F16.C26 lp
+opt
+read cplexE.lp162.F16.C27 lp
+opt
+read cplexE.lp162.F16.C28 lp
+opt
+read cplexE.lp162.F16.C29 lp
+opt
+read cplexE.lp162.F16.C30 lp
+opt
+read cplexE.lp162.F16.C31 lp
+opt
+read cplexE.lp162.F16.C32 lp
+opt
+read cplexE.lp162.F16.C33 lp
+opt
+read cplexE.lp162.F16.C34 lp
+opt
+read cplexE.lp162.F16.C35 lp
+opt
+read cplexE.lp162.F16.C36 lp
+opt
+read cplexE.lp162.F16.C37 lp
+opt
+read cplexE.lp162.F16.C38 lp
+opt
+read cplexE.lp162.F16.C39 lp
+opt
+read cplexE.lp162.F16.C40 lp
+opt
+read cplexE.lp162.F16.C41 lp
+opt
+read cplexE.lp162.F16.C42 lp
+opt
+read cplexE.lp162.F16.C43 lp
+opt
+read cplexE.lp162.F16.C44 lp
+opt
+read cplexE.lp162.F16.C45 lp
+opt
+read cplexE.lp162.F16.C46 lp
+opt
+read cplexE.lp162.F16.C47 lp
+opt
+read cplexE.lp162.F16.C48 lp
+opt
+read cplexE.lp162.F16.C49 lp
+opt
+read cplexE.lp162.F16.C50 lp
+opt
+read cplexE.lp162.F16.C51 lp
+opt
+read cplexE.lp162.F16.C52 lp
+opt
+read cplexE.lp162.F16.C53 lp
+opt
+read cplexE.lp162.F16.C54 lp
+opt
+read cplexE.lp162.F16.C55 lp
+opt
+read cplexE.lp162.F16.C56 lp
+opt
+read cplexE.lp162.F16.C57 lp
+opt
+read cplexE.lp162.F16.C58 lp
+opt
+read cplexE.lp162.F16.C59 lp
+opt
+read cplexE.lp162.F16.C60 lp
+opt
+read cplexE.lp162.F16.C61 lp
+opt
+read cplexE.lp162.F16.C62 lp
+opt
+read cplexE.lp162.F16.C63 lp
+opt
+read cplexE.lp162.F16.C64 lp
+opt
+read cplexE.lp162.F16.C65 lp
+opt
+read cplexE.lp162.F16.C66 lp
+opt
+read cplexE.lp162.F16.C67 lp
+opt
+read cplexE.lp162.F16.C68 lp
+opt
+read cplexE.lp162.F16.C69 lp
+opt
+read cplexE.lp162.F16.C70 lp
+opt
+read cplexE.lp162.F16.C71 lp
+opt
+read cplexE.lp162.F16.C72 lp
+opt
+read cplexE.lp162.F16.C73 lp
+opt
+read cplexE.lp162.F16.C74 lp
+opt
+read cplexE.lp162.F16.C75 lp
+opt
+read cplexE.lp162.F16.C76 lp
+opt
+read cplexE.lp162.F16.C77 lp
+opt
+read cplexE.lp162.F16.C78 lp
+opt
+read cplexE.lp162.F16.C79 lp
+opt
+read cplexE.lp162.F16.C80 lp
+opt
+read cplexE.lp162.F16.C81 lp
+opt
+read cplexE.lp162.F16.C82 lp
+opt
+read cplexE.lp162.F16.C83 lp
+opt
+read cplexE.lp162.F16.C84 lp
+opt
+read cplexE.lp162.F16.C85 lp
+opt
+read cplexE.lp162.F16.C86 lp
+opt
+read cplexE.lp162.F16.C87 lp
+opt
+read cplexE.lp162.F16.C88 lp
+opt
+read cplexE.lp162.F16.C89 lp
+opt
+read cplexE.lp162.F16.C90 lp
+opt
+read cplexE.lp162.F16.C91 lp
+opt
+read cplexE.lp162.F16.C92 lp
+opt
+read cplexE.lp162.F16.C93 lp
+opt
+read cplexE.lp162.F16.C94 lp
+opt
+read cplexE.lp162.F16.C95 lp
+opt
+read cplexE.lp162.F16.C96 lp
+opt
+read cplexE.lp162.F16.C97 lp
+opt
+read cplexE.lp162.F16.C98 lp
+opt
+read cplexE.lp162.F16.C99 lp
+opt
+read cplexE.lp162.F16.C100 lp
+opt
+read cplexE.lp162.F16.C101 lp
+opt
+read cplexE.lp162.F16.C102 lp
+opt
+read cplexE.lp162.F16.C103 lp
+opt
+read cplexE.lp162.F16.C104 lp
+opt
+read cplexE.lp162.F16.C105 lp
+opt
+read cplexE.lp162.F16.C106 lp
+opt
+read cplexE.lp162.F16.C107 lp
+opt
+read cplexE.lp162.F16.C108 lp
+opt
+read cplexE.lp162.F16.C109 lp
+opt
+read cplexE.lp162.F16.C110 lp
+opt
+read cplexE.lp162.F16.C111 lp
+opt
+read cplexE.lp162.F16.C112 lp
+opt
+read cplexE.lp162.F16.C113 lp
+opt
+read cplexE.lp162.F16.C114 lp
+opt
+read cplexE.lp162.F16.C115 lp
+opt
+read cplexE.lp162.F16.C116 lp
+opt
+read cplexE.lp162.F16.C117 lp
+opt
+read cplexE.lp163.F16.C1 lp
+opt
+read cplexE.lp163.F16.C2 lp
+opt
+read cplexE.lp163.F16.C3 lp
+opt
+read cplexE.lp163.F16.C4 lp
+opt
+read cplexE.lp163.F16.C5 lp
+opt
+read cplexE.lp163.F16.C6 lp
+opt
+read cplexE.lp163.F16.C7 lp
+opt
+read cplexE.lp163.F16.C8 lp
+opt
+read cplexE.lp163.F16.C9 lp
+opt
+read cplexE.lp163.F16.C10 lp
+opt
+read cplexE.lp163.F16.C11 lp
+opt
+read cplexE.lp163.F16.C12 lp
+opt
+read cplexE.lp163.F16.C13 lp
+opt
+read cplexE.lp163.F16.C14 lp
+opt
+read cplexE.lp163.F16.C15 lp
+opt
+read cplexE.lp163.F16.C16 lp
+opt
+read cplexE.lp163.F16.C17 lp
+opt
+read cplexE.lp163.F16.C18 lp
+opt
+read cplexE.lp163.F16.C19 lp
+opt
+read cplexE.lp163.F16.C20 lp
+opt
+read cplexE.lp163.F16.C21 lp
+opt
+read cplexE.lp163.F16.C22 lp
+opt
+read cplexE.lp163.F16.C23 lp
+opt
+read cplexE.lp163.F16.C24 lp
+opt
+read cplexE.lp163.F16.C25 lp
+opt
+read cplexE.lp163.F16.C26 lp
+opt
+read cplexE.lp163.F16.C27 lp
+opt
+read cplexE.lp163.F16.C28 lp
+opt
+read cplexE.lp163.F16.C29 lp
+opt
+read cplexE.lp163.F16.C30 lp
+opt
+read cplexE.lp163.F16.C31 lp
+opt
+read cplexE.lp163.F16.C32 lp
+opt
+read cplexE.lp163.F16.C33 lp
+opt
+read cplexE.lp163.F16.C34 lp
+opt
+read cplexE.lp163.F16.C35 lp
+opt
+read cplexE.lp163.F16.C36 lp
+opt
+read cplexE.lp163.F16.C37 lp
+opt
+read cplexE.lp163.F16.C38 lp
+opt
+read cplexE.lp163.F16.C39 lp
+opt
+read cplexE.lp163.F16.C40 lp
+opt
+read cplexE.lp163.F16.C41 lp
+opt
+read cplexE.lp163.F16.C42 lp
+opt
+read cplexE.lp163.F16.C43 lp
+opt
+read cplexE.lp163.F16.C44 lp
+opt
+read cplexE.lp163.F16.C45 lp
+opt
+read cplexE.lp163.F16.C46 lp
+opt
+read cplexE.lp163.F16.C47 lp
+opt
+read cplexE.lp163.F16.C48 lp
+opt
+read cplexE.lp163.F16.C49 lp
+opt
+read cplexE.lp163.F16.C50 lp
+opt
+read cplexE.lp163.F16.C51 lp
+opt
+read cplexE.lp163.F16.C52 lp
+opt
+read cplexE.lp163.F16.C53 lp
+opt
+read cplexE.lp163.F16.C54 lp
+opt
+read cplexE.lp163.F16.C55 lp
+opt
+read cplexE.lp163.F16.C56 lp
+opt
+read cplexE.lp163.F16.C57 lp
+opt
+read cplexE.lp163.F16.C58 lp
+opt
+read cplexE.lp163.F16.C59 lp
+opt
+read cplexE.lp163.F16.C60 lp
+opt
+read cplexE.lp163.F16.C61 lp
+opt
+read cplexE.lp163.F16.C62 lp
+opt
+read cplexE.lp163.F16.C63 lp
+opt
+read cplexE.lp163.F16.C64 lp
+opt
+read cplexE.lp163.F16.C65 lp
+opt
+read cplexE.lp163.F16.C66 lp
+opt
+read cplexE.lp163.F16.C67 lp
+opt
+read cplexE.lp163.F16.C68 lp
+opt
+read cplexE.lp163.F16.C69 lp
+opt
+read cplexE.lp163.F16.C70 lp
+opt
+read cplexE.lp163.F16.C71 lp
+opt
+read cplexE.lp163.F16.C72 lp
+opt
+read cplexE.lp163.F16.C73 lp
+opt
+read cplexE.lp163.F16.C74 lp
+opt
+read cplexE.lp163.F16.C75 lp
+opt
+read cplexE.lp163.F16.C76 lp
+opt
+read cplexE.lp163.F16.C77 lp
+opt
+read cplexE.lp163.F16.C78 lp
+opt
+read cplexE.lp163.F16.C79 lp
+opt
+read cplexE.lp163.F16.C80 lp
+opt
+read cplexE.lp163.F16.C81 lp
+opt
+read cplexE.lp163.F16.C82 lp
+opt
+read cplexE.lp163.F16.C83 lp
+opt
+read cplexE.lp163.F16.C84 lp
+opt
+read cplexE.lp163.F16.C85 lp
+opt
+read cplexE.lp163.F16.C86 lp
+opt
+read cplexE.lp163.F16.C87 lp
+opt
+read cplexE.lp163.F16.C88 lp
+opt
+read cplexE.lp163.F16.C89 lp
+opt
+read cplexE.lp163.F16.C90 lp
+opt
+read cplexE.lp163.F16.C91 lp
+opt
+read cplexE.lp163.F16.C92 lp
+opt
+read cplexE.lp163.F16.C93 lp
+opt
+read cplexE.lp163.F16.C94 lp
+opt
+read cplexE.lp163.F16.C95 lp
+opt
+read cplexE.lp163.F16.C96 lp
+opt
+read cplexE.lp163.F16.C97 lp
+opt
+read cplexE.lp163.F16.C98 lp
+opt
+read cplexE.lp163.F16.C99 lp
+opt
+read cplexE.lp163.F16.C100 lp
+opt
+read cplexE.lp163.F16.C101 lp
+opt
+read cplexE.lp163.F16.C102 lp
+opt
+read cplexE.lp163.F16.C103 lp
+opt
+read cplexE.lp163.F16.C104 lp
+opt
+read cplexE.lp163.F16.C105 lp
+opt
+read cplexE.lp163.F16.C106 lp
+opt
+read cplexE.lp163.F16.C107 lp
+opt
+read cplexE.lp163.F16.C108 lp
+opt
+read cplexE.lp163.F16.C109 lp
+opt
+read cplexE.lp163.F16.C110 lp
+opt
+read cplexE.lp163.F16.C111 lp
+opt
+read cplexE.lp163.F16.C112 lp
+opt
+read cplexE.lp163.F16.C113 lp
+opt
+read cplexE.lp163.F16.C114 lp
+opt
+read cplexE.lp163.F16.C115 lp
+opt
+read cplexE.lp163.F16.C116 lp
+opt
+read cplexE.lp163.F16.C117 lp
+opt
+read cplexE.lp164.F16.C1 lp
+opt
+read cplexE.lp164.F16.C2 lp
+opt
+read cplexE.lp164.F16.C3 lp
+opt
+read cplexE.lp164.F16.C4 lp
+opt
+read cplexE.lp164.F16.C5 lp
+opt
+read cplexE.lp164.F16.C6 lp
+opt
+read cplexE.lp164.F16.C7 lp
+opt
+read cplexE.lp164.F16.C8 lp
+opt
+read cplexE.lp164.F16.C9 lp
+opt
+read cplexE.lp164.F16.C10 lp
+opt
+read cplexE.lp164.F16.C11 lp
+opt
+read cplexE.lp164.F16.C12 lp
+opt
+read cplexE.lp164.F16.C13 lp
+opt
+read cplexE.lp164.F16.C14 lp
+opt
+read cplexE.lp164.F16.C15 lp
+opt
+read cplexE.lp164.F16.C16 lp
+opt
+read cplexE.lp164.F16.C17 lp
+opt
+read cplexE.lp164.F16.C18 lp
+opt
+read cplexE.lp164.F16.C19 lp
+opt
+read cplexE.lp164.F16.C20 lp
+opt
+read cplexE.lp164.F16.C21 lp
+opt
+read cplexE.lp164.F16.C22 lp
+opt
+read cplexE.lp164.F16.C23 lp
+opt
+read cplexE.lp164.F16.C24 lp
+opt
+read cplexE.lp164.F16.C25 lp
+opt
+read cplexE.lp164.F16.C26 lp
+opt
+read cplexE.lp164.F16.C27 lp
+opt
+read cplexE.lp164.F16.C28 lp
+opt
+read cplexE.lp164.F16.C29 lp
+opt
+read cplexE.lp164.F16.C30 lp
+opt
+read cplexE.lp164.F16.C31 lp
+opt
+read cplexE.lp164.F16.C32 lp
+opt
+read cplexE.lp164.F16.C33 lp
+opt
+read cplexE.lp164.F16.C34 lp
+opt
+read cplexE.lp164.F16.C35 lp
+opt
+read cplexE.lp164.F16.C36 lp
+opt
+read cplexE.lp164.F16.C37 lp
+opt
+read cplexE.lp164.F16.C38 lp
+opt
+read cplexE.lp164.F16.C39 lp
+opt
+read cplexE.lp164.F16.C40 lp
+opt
+read cplexE.lp164.F16.C41 lp
+opt
+read cplexE.lp164.F16.C42 lp
+opt
+read cplexE.lp164.F16.C43 lp
+opt
+read cplexE.lp164.F16.C44 lp
+opt
+read cplexE.lp164.F16.C45 lp
+opt
+read cplexE.lp164.F16.C46 lp
+opt
+read cplexE.lp164.F16.C47 lp
+opt
+read cplexE.lp164.F16.C48 lp
+opt
+read cplexE.lp164.F16.C49 lp
+opt
+read cplexE.lp164.F16.C50 lp
+opt
+read cplexE.lp164.F16.C51 lp
+opt
+read cplexE.lp164.F16.C52 lp
+opt
+read cplexE.lp164.F16.C53 lp
+opt
+read cplexE.lp164.F16.C54 lp
+opt
+read cplexE.lp164.F16.C55 lp
+opt
+read cplexE.lp164.F16.C56 lp
+opt
+read cplexE.lp164.F16.C57 lp
+opt
+read cplexE.lp164.F16.C58 lp
+opt
+read cplexE.lp164.F16.C59 lp
+opt
+read cplexE.lp164.F16.C60 lp
+opt
+read cplexE.lp164.F16.C61 lp
+opt
+read cplexE.lp164.F16.C62 lp
+opt
+read cplexE.lp164.F16.C63 lp
+opt
+read cplexE.lp164.F16.C64 lp
+opt
+read cplexE.lp164.F16.C65 lp
+opt
+read cplexE.lp164.F16.C66 lp
+opt
+read cplexE.lp164.F16.C67 lp
+opt
+read cplexE.lp164.F16.C68 lp
+opt
+read cplexE.lp164.F16.C69 lp
+opt
+read cplexE.lp164.F16.C70 lp
+opt
+read cplexE.lp164.F16.C71 lp
+opt
+read cplexE.lp164.F16.C72 lp
+opt
+read cplexE.lp164.F16.C73 lp
+opt
+read cplexE.lp164.F16.C74 lp
+opt
+read cplexE.lp164.F16.C75 lp
+opt
+read cplexE.lp164.F16.C76 lp
+opt
+read cplexE.lp164.F16.C77 lp
+opt
+read cplexE.lp164.F16.C78 lp
+opt
+read cplexE.lp164.F16.C79 lp
+opt
+read cplexE.lp164.F16.C80 lp
+opt
+read cplexE.lp164.F16.C81 lp
+opt
+read cplexE.lp164.F16.C82 lp
+opt
+read cplexE.lp164.F16.C83 lp
+opt
+read cplexE.lp164.F16.C84 lp
+opt
+read cplexE.lp164.F16.C85 lp
+opt
+read cplexE.lp164.F16.C86 lp
+opt
+read cplexE.lp164.F16.C87 lp
+opt
+read cplexE.lp164.F16.C88 lp
+opt
+read cplexE.lp164.F16.C89 lp
+opt
+read cplexE.lp164.F16.C90 lp
+opt
+read cplexE.lp164.F16.C91 lp
+opt
+read cplexE.lp164.F16.C92 lp
+opt
+read cplexE.lp164.F16.C93 lp
+opt
+read cplexE.lp164.F16.C94 lp
+opt
+read cplexE.lp164.F16.C95 lp
+opt
+read cplexE.lp164.F16.C96 lp
+opt
+read cplexE.lp164.F16.C97 lp
+opt
+read cplexE.lp164.F16.C98 lp
+opt
+read cplexE.lp164.F16.C99 lp
+opt
+read cplexE.lp164.F16.C100 lp
+opt
+read cplexE.lp164.F16.C101 lp
+opt
+read cplexE.lp164.F16.C102 lp
+opt
+read cplexE.lp164.F16.C103 lp
+opt
+read cplexE.lp164.F16.C104 lp
+opt
+read cplexE.lp164.F16.C105 lp
+opt
+read cplexE.lp164.F16.C106 lp
+opt
+read cplexE.lp164.F16.C107 lp
+opt
+read cplexE.lp164.F16.C108 lp
+opt
+read cplexE.lp164.F16.C109 lp
+opt
+read cplexE.lp164.F16.C110 lp
+opt
+read cplexE.lp164.F16.C111 lp
+opt
+read cplexE.lp164.F16.C112 lp
+opt
+read cplexE.lp164.F16.C113 lp
+opt
+read cplexE.lp164.F16.C114 lp
+opt
+read cplexE.lp164.F16.C115 lp
+opt
+read cplexE.lp164.F16.C116 lp
+opt
+read cplexE.lp164.F16.C117 lp
+opt
+read cplexE.lp165.F16.C1 lp
+opt
+read cplexE.lp165.F16.C2 lp
+opt
+read cplexE.lp165.F16.C3 lp
+opt
+read cplexE.lp165.F16.C4 lp
+opt
+read cplexE.lp165.F16.C5 lp
+opt
+read cplexE.lp165.F16.C6 lp
+opt
+read cplexE.lp165.F16.C7 lp
+opt
+read cplexE.lp165.F16.C8 lp
+opt
+read cplexE.lp165.F16.C9 lp
+opt
+read cplexE.lp165.F16.C10 lp
+opt
+read cplexE.lp165.F16.C11 lp
+opt
+read cplexE.lp165.F16.C12 lp
+opt
+read cplexE.lp165.F16.C13 lp
+opt
+read cplexE.lp165.F16.C14 lp
+opt
+read cplexE.lp165.F16.C15 lp
+opt
+read cplexE.lp165.F16.C16 lp
+opt
+read cplexE.lp165.F16.C17 lp
+opt
+read cplexE.lp165.F16.C18 lp
+opt
+read cplexE.lp165.F16.C19 lp
+opt
+read cplexE.lp165.F16.C20 lp
+opt
+read cplexE.lp165.F16.C21 lp
+opt
+read cplexE.lp165.F16.C22 lp
+opt
+read cplexE.lp165.F16.C23 lp
+opt
+read cplexE.lp165.F16.C24 lp
+opt
+read cplexE.lp165.F16.C25 lp
+opt
+read cplexE.lp165.F16.C26 lp
+opt
+read cplexE.lp165.F16.C27 lp
+opt
+read cplexE.lp165.F16.C28 lp
+opt
+read cplexE.lp165.F16.C29 lp
+opt
+read cplexE.lp165.F16.C30 lp
+opt
+read cplexE.lp165.F16.C31 lp
+opt
+read cplexE.lp165.F16.C32 lp
+opt
+read cplexE.lp165.F16.C33 lp
+opt
+read cplexE.lp165.F16.C34 lp
+opt
+read cplexE.lp165.F16.C35 lp
+opt
+read cplexE.lp165.F16.C36 lp
+opt
+read cplexE.lp165.F16.C37 lp
+opt
+read cplexE.lp165.F16.C38 lp
+opt
+read cplexE.lp165.F16.C39 lp
+opt
+read cplexE.lp165.F16.C40 lp
+opt
+read cplexE.lp165.F16.C41 lp
+opt
+read cplexE.lp165.F16.C42 lp
+opt
+read cplexE.lp165.F16.C43 lp
+opt
+read cplexE.lp165.F16.C44 lp
+opt
+read cplexE.lp165.F16.C45 lp
+opt
+read cplexE.lp165.F16.C46 lp
+opt
+read cplexE.lp165.F16.C47 lp
+opt
+read cplexE.lp165.F16.C48 lp
+opt
+read cplexE.lp165.F16.C49 lp
+opt
+read cplexE.lp165.F16.C50 lp
+opt
+read cplexE.lp165.F16.C51 lp
+opt
+read cplexE.lp165.F16.C52 lp
+opt
+read cplexE.lp165.F16.C53 lp
+opt
+read cplexE.lp165.F16.C54 lp
+opt
+read cplexE.lp165.F16.C55 lp
+opt
+read cplexE.lp165.F16.C56 lp
+opt
+read cplexE.lp165.F16.C57 lp
+opt
+read cplexE.lp165.F16.C58 lp
+opt
+read cplexE.lp165.F16.C59 lp
+opt
+read cplexE.lp165.F16.C60 lp
+opt
+read cplexE.lp165.F16.C61 lp
+opt
+read cplexE.lp165.F16.C62 lp
+opt
+read cplexE.lp165.F16.C63 lp
+opt
+read cplexE.lp165.F16.C64 lp
+opt
+read cplexE.lp165.F16.C65 lp
+opt
+read cplexE.lp165.F16.C66 lp
+opt
+read cplexE.lp165.F16.C67 lp
+opt
+read cplexE.lp165.F16.C68 lp
+opt
+read cplexE.lp165.F16.C69 lp
+opt
+read cplexE.lp165.F16.C70 lp
+opt
+read cplexE.lp165.F16.C71 lp
+opt
+read cplexE.lp165.F16.C72 lp
+opt
+read cplexE.lp165.F16.C73 lp
+opt
+read cplexE.lp165.F16.C74 lp
+opt
+read cplexE.lp165.F16.C75 lp
+opt
+read cplexE.lp165.F16.C76 lp
+opt
+read cplexE.lp165.F16.C77 lp
+opt
+read cplexE.lp165.F16.C78 lp
+opt
+read cplexE.lp165.F16.C79 lp
+opt
+read cplexE.lp165.F16.C80 lp
+opt
+read cplexE.lp165.F16.C81 lp
+opt
+read cplexE.lp165.F16.C82 lp
+opt
+read cplexE.lp165.F16.C83 lp
+opt
+read cplexE.lp165.F16.C84 lp
+opt
+read cplexE.lp165.F16.C85 lp
+opt
+read cplexE.lp165.F16.C86 lp
+opt
+read cplexE.lp165.F16.C87 lp
+opt
+read cplexE.lp165.F16.C88 lp
+opt
+read cplexE.lp165.F16.C89 lp
+opt
+read cplexE.lp165.F16.C90 lp
+opt
+read cplexE.lp165.F16.C91 lp
+opt
+read cplexE.lp165.F16.C92 lp
+opt
+read cplexE.lp165.F16.C93 lp
+opt
+read cplexE.lp165.F16.C94 lp
+opt
+read cplexE.lp165.F16.C95 lp
+opt
+read cplexE.lp165.F16.C96 lp
+opt
+read cplexE.lp165.F16.C97 lp
+opt
+read cplexE.lp165.F16.C98 lp
+opt
+read cplexE.lp165.F16.C99 lp
+opt
+read cplexE.lp165.F16.C100 lp
+opt
+read cplexE.lp165.F16.C101 lp
+opt
+read cplexE.lp165.F16.C102 lp
+opt
+read cplexE.lp165.F16.C103 lp
+opt
+read cplexE.lp165.F16.C104 lp
+opt
+read cplexE.lp165.F16.C105 lp
+opt
+read cplexE.lp165.F16.C106 lp
+opt
+read cplexE.lp165.F16.C107 lp
+opt
+read cplexE.lp165.F16.C108 lp
+opt
+read cplexE.lp165.F16.C109 lp
+opt
+read cplexE.lp165.F16.C110 lp
+opt
+read cplexE.lp165.F16.C111 lp
+opt
+read cplexE.lp165.F16.C112 lp
+opt
+read cplexE.lp165.F16.C113 lp
+opt
+read cplexE.lp165.F16.C114 lp
+opt
+read cplexE.lp165.F16.C115 lp
+opt
+read cplexE.lp165.F16.C116 lp
+opt
+read cplexE.lp165.F16.C117 lp
+opt
+read cplexE.lp166.F16.C1 lp
+opt
+read cplexE.lp166.F16.C2 lp
+opt
+read cplexE.lp166.F16.C3 lp
+opt
+read cplexE.lp166.F16.C4 lp
+opt
+read cplexE.lp166.F16.C5 lp
+opt
+read cplexE.lp166.F16.C6 lp
+opt
+read cplexE.lp166.F16.C7 lp
+opt
+read cplexE.lp166.F16.C8 lp
+opt
+read cplexE.lp166.F16.C9 lp
+opt
+read cplexE.lp166.F16.C10 lp
+opt
+read cplexE.lp166.F16.C11 lp
+opt
+read cplexE.lp166.F16.C12 lp
+opt
+read cplexE.lp166.F16.C13 lp
+opt
+read cplexE.lp166.F16.C14 lp
+opt
+read cplexE.lp166.F16.C15 lp
+opt
+read cplexE.lp166.F16.C16 lp
+opt
+read cplexE.lp166.F16.C17 lp
+opt
+read cplexE.lp166.F16.C18 lp
+opt
+read cplexE.lp166.F16.C19 lp
+opt
+read cplexE.lp166.F16.C20 lp
+opt
+read cplexE.lp166.F16.C21 lp
+opt
+read cplexE.lp166.F16.C22 lp
+opt
+read cplexE.lp166.F16.C23 lp
+opt
+read cplexE.lp166.F16.C24 lp
+opt
+read cplexE.lp166.F16.C25 lp
+opt
+read cplexE.lp166.F16.C26 lp
+opt
+read cplexE.lp166.F16.C27 lp
+opt
+read cplexE.lp166.F16.C28 lp
+opt
+read cplexE.lp166.F16.C29 lp
+opt
+read cplexE.lp166.F16.C30 lp
+opt
+read cplexE.lp166.F16.C31 lp
+opt
+read cplexE.lp166.F16.C32 lp
+opt
+read cplexE.lp166.F16.C33 lp
+opt
+read cplexE.lp166.F16.C34 lp
+opt
+read cplexE.lp166.F16.C35 lp
+opt
+read cplexE.lp166.F16.C36 lp
+opt
+read cplexE.lp166.F16.C37 lp
+opt
+read cplexE.lp166.F16.C38 lp
+opt
+read cplexE.lp166.F16.C39 lp
+opt
+read cplexE.lp166.F16.C40 lp
+opt
+read cplexE.lp166.F16.C41 lp
+opt
+read cplexE.lp166.F16.C42 lp
+opt
+read cplexE.lp166.F16.C43 lp
+opt
+read cplexE.lp166.F16.C44 lp
+opt
+read cplexE.lp166.F16.C45 lp
+opt
+read cplexE.lp166.F16.C46 lp
+opt
+read cplexE.lp166.F16.C47 lp
+opt
+read cplexE.lp166.F16.C48 lp
+opt
+read cplexE.lp166.F16.C49 lp
+opt
+read cplexE.lp166.F16.C50 lp
+opt
+read cplexE.lp166.F16.C51 lp
+opt
+read cplexE.lp166.F16.C52 lp
+opt
+read cplexE.lp166.F16.C53 lp
+opt
+read cplexE.lp166.F16.C54 lp
+opt
+read cplexE.lp166.F16.C55 lp
+opt
+read cplexE.lp166.F16.C56 lp
+opt
+read cplexE.lp166.F16.C57 lp
+opt
+read cplexE.lp166.F16.C58 lp
+opt
+read cplexE.lp166.F16.C59 lp
+opt
+read cplexE.lp166.F16.C60 lp
+opt
+read cplexE.lp166.F16.C61 lp
+opt
+read cplexE.lp166.F16.C62 lp
+opt
+read cplexE.lp166.F16.C63 lp
+opt
+read cplexE.lp166.F16.C64 lp
+opt
+read cplexE.lp166.F16.C65 lp
+opt
+read cplexE.lp166.F16.C66 lp
+opt
+read cplexE.lp166.F16.C67 lp
+opt
+read cplexE.lp166.F16.C68 lp
+opt
+read cplexE.lp166.F16.C69 lp
+opt
+read cplexE.lp166.F16.C70 lp
+opt
+read cplexE.lp166.F16.C71 lp
+opt
+read cplexE.lp166.F16.C72 lp
+opt
+read cplexE.lp166.F16.C73 lp
+opt
+read cplexE.lp166.F16.C74 lp
+opt
+read cplexE.lp166.F16.C75 lp
+opt
+read cplexE.lp166.F16.C76 lp
+opt
+read cplexE.lp166.F16.C77 lp
+opt
+read cplexE.lp166.F16.C78 lp
+opt
+read cplexE.lp166.F16.C79 lp
+opt
+read cplexE.lp166.F16.C80 lp
+opt
+read cplexE.lp166.F16.C81 lp
+opt
+read cplexE.lp166.F16.C82 lp
+opt
+read cplexE.lp166.F16.C83 lp
+opt
+read cplexE.lp166.F16.C84 lp
+opt
+read cplexE.lp166.F16.C85 lp
+opt
+read cplexE.lp166.F16.C86 lp
+opt
+read cplexE.lp166.F16.C87 lp
+opt
+read cplexE.lp166.F16.C88 lp
+opt
+read cplexE.lp166.F16.C89 lp
+opt
+read cplexE.lp166.F16.C90 lp
+opt
+read cplexE.lp166.F16.C91 lp
+opt
+read cplexE.lp166.F16.C92 lp
+opt
+read cplexE.lp166.F16.C93 lp
+opt
+read cplexE.lp166.F16.C94 lp
+opt
+read cplexE.lp166.F16.C95 lp
+opt
+read cplexE.lp166.F16.C96 lp
+opt
+read cplexE.lp166.F16.C97 lp
+opt
+read cplexE.lp166.F16.C98 lp
+opt
+read cplexE.lp166.F16.C99 lp
+opt
+read cplexE.lp166.F16.C100 lp
+opt
+read cplexE.lp166.F16.C101 lp
+opt
+read cplexE.lp166.F16.C102 lp
+opt
+read cplexE.lp166.F16.C103 lp
+opt
+read cplexE.lp166.F16.C104 lp
+opt
+read cplexE.lp166.F16.C105 lp
+opt
+read cplexE.lp166.F16.C106 lp
+opt
+read cplexE.lp166.F16.C107 lp
+opt
+read cplexE.lp166.F16.C108 lp
+opt
+read cplexE.lp166.F16.C109 lp
+opt
+read cplexE.lp166.F16.C110 lp
+opt
+read cplexE.lp166.F16.C111 lp
+opt
+read cplexE.lp166.F16.C112 lp
+opt
+read cplexE.lp166.F16.C113 lp
+opt
+read cplexE.lp166.F16.C114 lp
+opt
+read cplexE.lp166.F16.C115 lp
+opt
+read cplexE.lp166.F16.C116 lp
+opt
+read cplexE.lp166.F16.C117 lp
+opt
+read cplexE.lp167.F15.C1 lp
+opt
+read cplexE.lp167.F15.C2 lp
+opt
+read cplexE.lp167.F15.C3 lp
+opt
+read cplexE.lp167.F15.C4 lp
+opt
+read cplexE.lp167.F15.C5 lp
+opt
+read cplexE.lp167.F15.C6 lp
+opt
+read cplexE.lp167.F15.C7 lp
+opt
+read cplexE.lp167.F15.C8 lp
+opt
+read cplexE.lp167.F15.C9 lp
+opt
+read cplexE.lp167.F15.C10 lp
+opt
+read cplexE.lp167.F15.C11 lp
+opt
+read cplexE.lp167.F15.C12 lp
+opt
+read cplexE.lp167.F15.C13 lp
+opt
+read cplexE.lp167.F15.C14 lp
+opt
+read cplexE.lp167.F15.C15 lp
+opt
+read cplexE.lp167.F15.C16 lp
+opt
+read cplexE.lp167.F15.C17 lp
+opt
+read cplexE.lp167.F15.C18 lp
+opt
+read cplexE.lp167.F15.C19 lp
+opt
+read cplexE.lp167.F15.C20 lp
+opt
+read cplexE.lp167.F15.C21 lp
+opt
+read cplexE.lp167.F15.C22 lp
+opt
+read cplexE.lp167.F15.C23 lp
+opt
+read cplexE.lp167.F15.C24 lp
+opt
+read cplexE.lp167.F15.C25 lp
+opt
+read cplexE.lp167.F15.C26 lp
+opt
+read cplexE.lp167.F15.C27 lp
+opt
+read cplexE.lp167.F15.C28 lp
+opt
+read cplexE.lp167.F15.C29 lp
+opt
+read cplexE.lp167.F15.C30 lp
+opt
+read cplexE.lp167.F15.C31 lp
+opt
+read cplexE.lp167.F15.C32 lp
+opt
+read cplexE.lp167.F15.C33 lp
+opt
+read cplexE.lp167.F15.C34 lp
+opt
+read cplexE.lp167.F15.C35 lp
+opt
+read cplexE.lp167.F15.C36 lp
+opt
+read cplexE.lp167.F15.C37 lp
+opt
+read cplexE.lp167.F15.C38 lp
+opt
+read cplexE.lp167.F15.C39 lp
+opt
+read cplexE.lp167.F15.C40 lp
+opt
+read cplexE.lp167.F15.C41 lp
+opt
+read cplexE.lp167.F15.C42 lp
+opt
+read cplexE.lp167.F15.C43 lp
+opt
+read cplexE.lp167.F15.C44 lp
+opt
+read cplexE.lp167.F15.C45 lp
+opt
+read cplexE.lp167.F15.C46 lp
+opt
+read cplexE.lp167.F15.C47 lp
+opt
+read cplexE.lp167.F15.C48 lp
+opt
+read cplexE.lp167.F15.C49 lp
+opt
+read cplexE.lp167.F15.C50 lp
+opt
+read cplexE.lp167.F15.C51 lp
+opt
+read cplexE.lp167.F15.C52 lp
+opt
+read cplexE.lp167.F15.C53 lp
+opt
+read cplexE.lp167.F15.C54 lp
+opt
+read cplexE.lp167.F15.C55 lp
+opt
+read cplexE.lp167.F15.C56 lp
+opt
+read cplexE.lp167.F15.C57 lp
+opt
+read cplexE.lp167.F15.C58 lp
+opt
+read cplexE.lp167.F15.C59 lp
+opt
+read cplexE.lp167.F15.C60 lp
+opt
+read cplexE.lp167.F15.C61 lp
+opt
+read cplexE.lp167.F15.C62 lp
+opt
+read cplexE.lp167.F15.C63 lp
+opt
+read cplexE.lp167.F15.C64 lp
+opt
+read cplexE.lp167.F15.C65 lp
+opt
+read cplexE.lp167.F15.C66 lp
+opt
+read cplexE.lp167.F15.C67 lp
+opt
+read cplexE.lp167.F15.C68 lp
+opt
+read cplexE.lp167.F15.C69 lp
+opt
+read cplexE.lp167.F15.C70 lp
+opt
+read cplexE.lp167.F15.C71 lp
+opt
+read cplexE.lp167.F15.C72 lp
+opt
+read cplexE.lp167.F15.C73 lp
+opt
+read cplexE.lp167.F15.C74 lp
+opt
+read cplexE.lp167.F15.C75 lp
+opt
+read cplexE.lp167.F15.C76 lp
+opt
+read cplexE.lp167.F15.C77 lp
+opt
+read cplexE.lp167.F15.C78 lp
+opt
+read cplexE.lp167.F15.C79 lp
+opt
+read cplexE.lp167.F15.C80 lp
+opt
+read cplexE.lp167.F15.C81 lp
+opt
+read cplexE.lp167.F15.C82 lp
+opt
+read cplexE.lp167.F15.C83 lp
+opt
+read cplexE.lp167.F15.C84 lp
+opt
+read cplexE.lp167.F15.C85 lp
+opt
+read cplexE.lp167.F15.C86 lp
+opt
+read cplexE.lp167.F15.C87 lp
+opt
+read cplexE.lp167.F15.C88 lp
+opt
+read cplexE.lp167.F15.C89 lp
+opt
+read cplexE.lp167.F15.C90 lp
+opt
+read cplexE.lp167.F15.C91 lp
+opt
+read cplexE.lp167.F15.C92 lp
+opt
+read cplexE.lp167.F15.C93 lp
+opt
+read cplexE.lp167.F15.C94 lp
+opt
+read cplexE.lp167.F15.C95 lp
+opt
+read cplexE.lp167.F15.C96 lp
+opt
+read cplexE.lp167.F15.C97 lp
+opt
+read cplexE.lp167.F15.C98 lp
+opt
+read cplexE.lp167.F15.C99 lp
+opt
+read cplexE.lp167.F15.C100 lp
+opt
+read cplexE.lp167.F15.C101 lp
+opt
+read cplexE.lp167.F15.C102 lp
+opt
+read cplexE.lp167.F15.C103 lp
+opt
+read cplexE.lp167.F15.C104 lp
+opt
+read cplexE.lp167.F15.C105 lp
+opt
+read cplexE.lp167.F15.C106 lp
+opt
+read cplexE.lp167.F15.C107 lp
+opt
+read cplexE.lp167.F15.C108 lp
+opt
+read cplexE.lp167.F15.C109 lp
+opt
+read cplexE.lp167.F15.C110 lp
+opt
+read cplexE.lp167.F15.C111 lp
+opt
+read cplexE.lp167.F15.C112 lp
+opt
+read cplexE.lp167.F15.C113 lp
+opt
+read cplexE.lp167.F15.C114 lp
+opt
+read cplexE.lp167.F15.C115 lp
+opt
+read cplexE.lp167.F15.C116 lp
+opt
+read cplexE.lp167.F15.C117 lp
+opt
+read cplexE.lp168.F16.C1 lp
+opt
+read cplexE.lp168.F16.C2 lp
+opt
+read cplexE.lp168.F16.C3 lp
+opt
+read cplexE.lp168.F16.C4 lp
+opt
+read cplexE.lp168.F16.C5 lp
+opt
+read cplexE.lp168.F16.C6 lp
+opt
+read cplexE.lp168.F16.C7 lp
+opt
+read cplexE.lp168.F16.C8 lp
+opt
+read cplexE.lp168.F16.C9 lp
+opt
+read cplexE.lp168.F16.C10 lp
+opt
+read cplexE.lp168.F16.C11 lp
+opt
+read cplexE.lp168.F16.C12 lp
+opt
+read cplexE.lp168.F16.C13 lp
+opt
+read cplexE.lp168.F16.C14 lp
+opt
+read cplexE.lp168.F16.C15 lp
+opt
+read cplexE.lp168.F16.C16 lp
+opt
+read cplexE.lp168.F16.C17 lp
+opt
+read cplexE.lp168.F16.C18 lp
+opt
+read cplexE.lp168.F16.C19 lp
+opt
+read cplexE.lp168.F16.C20 lp
+opt
+read cplexE.lp168.F16.C21 lp
+opt
+read cplexE.lp168.F16.C22 lp
+opt
+read cplexE.lp168.F16.C23 lp
+opt
+read cplexE.lp168.F16.C24 lp
+opt
+read cplexE.lp168.F16.C25 lp
+opt
+read cplexE.lp168.F16.C26 lp
+opt
+read cplexE.lp168.F16.C27 lp
+opt
+read cplexE.lp168.F16.C28 lp
+opt
+read cplexE.lp168.F16.C29 lp
+opt
+read cplexE.lp168.F16.C30 lp
+opt
+read cplexE.lp168.F16.C31 lp
+opt
+read cplexE.lp168.F16.C32 lp
+opt
+read cplexE.lp168.F16.C33 lp
+opt
+read cplexE.lp168.F16.C34 lp
+opt
+read cplexE.lp168.F16.C35 lp
+opt
+read cplexE.lp168.F16.C36 lp
+opt
+read cplexE.lp168.F16.C37 lp
+opt
+read cplexE.lp168.F16.C38 lp
+opt
+read cplexE.lp168.F16.C39 lp
+opt
+read cplexE.lp168.F16.C40 lp
+opt
+read cplexE.lp168.F16.C41 lp
+opt
+read cplexE.lp168.F16.C42 lp
+opt
+read cplexE.lp168.F16.C43 lp
+opt
+read cplexE.lp168.F16.C44 lp
+opt
+read cplexE.lp168.F16.C45 lp
+opt
+read cplexE.lp168.F16.C46 lp
+opt
+read cplexE.lp168.F16.C47 lp
+opt
+read cplexE.lp168.F16.C48 lp
+opt
+read cplexE.lp168.F16.C49 lp
+opt
+read cplexE.lp168.F16.C50 lp
+opt
+read cplexE.lp168.F16.C51 lp
+opt
+read cplexE.lp168.F16.C52 lp
+opt
+read cplexE.lp168.F16.C53 lp
+opt
+read cplexE.lp168.F16.C54 lp
+opt
+read cplexE.lp168.F16.C55 lp
+opt
+read cplexE.lp168.F16.C56 lp
+opt
+read cplexE.lp168.F16.C57 lp
+opt
+read cplexE.lp168.F16.C58 lp
+opt
+read cplexE.lp168.F16.C59 lp
+opt
+read cplexE.lp168.F16.C60 lp
+opt
+read cplexE.lp168.F16.C61 lp
+opt
+read cplexE.lp168.F16.C62 lp
+opt
+read cplexE.lp168.F16.C63 lp
+opt
+read cplexE.lp168.F16.C64 lp
+opt
+read cplexE.lp168.F16.C65 lp
+opt
+read cplexE.lp168.F16.C66 lp
+opt
+read cplexE.lp168.F16.C67 lp
+opt
+read cplexE.lp168.F16.C68 lp
+opt
+read cplexE.lp168.F16.C69 lp
+opt
+read cplexE.lp168.F16.C70 lp
+opt
+read cplexE.lp168.F16.C71 lp
+opt
+read cplexE.lp168.F16.C72 lp
+opt
+read cplexE.lp168.F16.C73 lp
+opt
+read cplexE.lp168.F16.C74 lp
+opt
+read cplexE.lp168.F16.C75 lp
+opt
+read cplexE.lp168.F16.C76 lp
+opt
+read cplexE.lp168.F16.C77 lp
+opt
+read cplexE.lp168.F16.C78 lp
+opt
+read cplexE.lp168.F16.C79 lp
+opt
+read cplexE.lp168.F16.C80 lp
+opt
+read cplexE.lp168.F16.C81 lp
+opt
+read cplexE.lp168.F16.C82 lp
+opt
+read cplexE.lp168.F16.C83 lp
+opt
+read cplexE.lp168.F16.C84 lp
+opt
+read cplexE.lp168.F16.C85 lp
+opt
+read cplexE.lp168.F16.C86 lp
+opt
+read cplexE.lp168.F16.C87 lp
+opt
+read cplexE.lp168.F16.C88 lp
+opt
+read cplexE.lp168.F16.C89 lp
+opt
+read cplexE.lp168.F16.C90 lp
+opt
+read cplexE.lp168.F16.C91 lp
+opt
+read cplexE.lp168.F16.C92 lp
+opt
+read cplexE.lp168.F16.C93 lp
+opt
+read cplexE.lp168.F16.C94 lp
+opt
+read cplexE.lp168.F16.C95 lp
+opt
+read cplexE.lp168.F16.C96 lp
+opt
+read cplexE.lp168.F16.C97 lp
+opt
+read cplexE.lp168.F16.C98 lp
+opt
+read cplexE.lp168.F16.C99 lp
+opt
+read cplexE.lp168.F16.C100 lp
+opt
+read cplexE.lp168.F16.C101 lp
+opt
+read cplexE.lp168.F16.C102 lp
+opt
+read cplexE.lp168.F16.C103 lp
+opt
+read cplexE.lp168.F16.C104 lp
+opt
+read cplexE.lp168.F16.C105 lp
+opt
+read cplexE.lp168.F16.C106 lp
+opt
+read cplexE.lp168.F16.C107 lp
+opt
+read cplexE.lp168.F16.C108 lp
+opt
+read cplexE.lp168.F16.C109 lp
+opt
+read cplexE.lp168.F16.C110 lp
+opt
+read cplexE.lp168.F16.C111 lp
+opt
+read cplexE.lp168.F16.C112 lp
+opt
+read cplexE.lp168.F16.C113 lp
+opt
+read cplexE.lp168.F16.C114 lp
+opt
+read cplexE.lp168.F16.C115 lp
+opt
+read cplexE.lp168.F16.C116 lp
+opt
+read cplexE.lp168.F16.C117 lp
+opt
+read cplexE.lp169.F16.C1 lp
+opt
+read cplexE.lp169.F16.C2 lp
+opt
+read cplexE.lp169.F16.C3 lp
+opt
+read cplexE.lp169.F16.C4 lp
+opt
+read cplexE.lp169.F16.C5 lp
+opt
+read cplexE.lp169.F16.C6 lp
+opt
+read cplexE.lp169.F16.C7 lp
+opt
+read cplexE.lp169.F16.C8 lp
+opt
+read cplexE.lp169.F16.C9 lp
+opt
+read cplexE.lp169.F16.C10 lp
+opt
+read cplexE.lp169.F16.C11 lp
+opt
+read cplexE.lp169.F16.C12 lp
+opt
+read cplexE.lp169.F16.C13 lp
+opt
+read cplexE.lp169.F16.C14 lp
+opt
+read cplexE.lp169.F16.C15 lp
+opt
+read cplexE.lp169.F16.C16 lp
+opt
+read cplexE.lp169.F16.C17 lp
+opt
+read cplexE.lp169.F16.C18 lp
+opt
+read cplexE.lp169.F16.C19 lp
+opt
+read cplexE.lp169.F16.C20 lp
+opt
+read cplexE.lp169.F16.C21 lp
+opt
+read cplexE.lp169.F16.C22 lp
+opt
+read cplexE.lp169.F16.C23 lp
+opt
+read cplexE.lp169.F16.C24 lp
+opt
+read cplexE.lp169.F16.C25 lp
+opt
+read cplexE.lp169.F16.C26 lp
+opt
+read cplexE.lp169.F16.C27 lp
+opt
+read cplexE.lp169.F16.C28 lp
+opt
+read cplexE.lp169.F16.C29 lp
+opt
+read cplexE.lp169.F16.C30 lp
+opt
+read cplexE.lp169.F16.C31 lp
+opt
+read cplexE.lp169.F16.C32 lp
+opt
+read cplexE.lp169.F16.C33 lp
+opt
+read cplexE.lp169.F16.C34 lp
+opt
+read cplexE.lp169.F16.C35 lp
+opt
+read cplexE.lp169.F16.C36 lp
+opt
+read cplexE.lp169.F16.C37 lp
+opt
+read cplexE.lp169.F16.C38 lp
+opt
+read cplexE.lp169.F16.C39 lp
+opt
+read cplexE.lp169.F16.C40 lp
+opt
+read cplexE.lp169.F16.C41 lp
+opt
+read cplexE.lp169.F16.C42 lp
+opt
+read cplexE.lp169.F16.C43 lp
+opt
+read cplexE.lp169.F16.C44 lp
+opt
+read cplexE.lp169.F16.C45 lp
+opt
+read cplexE.lp169.F16.C46 lp
+opt
+read cplexE.lp169.F16.C47 lp
+opt
+read cplexE.lp169.F16.C48 lp
+opt
+read cplexE.lp169.F16.C49 lp
+opt
+read cplexE.lp169.F16.C50 lp
+opt
+read cplexE.lp169.F16.C51 lp
+opt
+read cplexE.lp169.F16.C52 lp
+opt
+read cplexE.lp169.F16.C53 lp
+opt
+read cplexE.lp169.F16.C54 lp
+opt
+read cplexE.lp169.F16.C55 lp
+opt
+read cplexE.lp169.F16.C56 lp
+opt
+read cplexE.lp169.F16.C57 lp
+opt
+read cplexE.lp169.F16.C58 lp
+opt
+read cplexE.lp169.F16.C59 lp
+opt
+read cplexE.lp169.F16.C60 lp
+opt
+read cplexE.lp169.F16.C61 lp
+opt
+read cplexE.lp169.F16.C62 lp
+opt
+read cplexE.lp169.F16.C63 lp
+opt
+read cplexE.lp169.F16.C64 lp
+opt
+read cplexE.lp169.F16.C65 lp
+opt
+read cplexE.lp169.F16.C66 lp
+opt
+read cplexE.lp169.F16.C67 lp
+opt
+read cplexE.lp169.F16.C68 lp
+opt
+read cplexE.lp169.F16.C69 lp
+opt
+read cplexE.lp169.F16.C70 lp
+opt
+read cplexE.lp169.F16.C71 lp
+opt
+read cplexE.lp169.F16.C72 lp
+opt
+read cplexE.lp169.F16.C73 lp
+opt
+read cplexE.lp169.F16.C74 lp
+opt
+read cplexE.lp169.F16.C75 lp
+opt
+read cplexE.lp169.F16.C76 lp
+opt
+read cplexE.lp169.F16.C77 lp
+opt
+read cplexE.lp169.F16.C78 lp
+opt
+read cplexE.lp169.F16.C79 lp
+opt
+read cplexE.lp169.F16.C80 lp
+opt
+read cplexE.lp169.F16.C81 lp
+opt
+read cplexE.lp169.F16.C82 lp
+opt
+read cplexE.lp169.F16.C83 lp
+opt
+read cplexE.lp169.F16.C84 lp
+opt
+read cplexE.lp169.F16.C85 lp
+opt
+read cplexE.lp169.F16.C86 lp
+opt
+read cplexE.lp169.F16.C87 lp
+opt
+read cplexE.lp169.F16.C88 lp
+opt
+read cplexE.lp169.F16.C89 lp
+opt
+read cplexE.lp169.F16.C90 lp
+opt
+read cplexE.lp169.F16.C91 lp
+opt
+read cplexE.lp169.F16.C92 lp
+opt
+read cplexE.lp169.F16.C93 lp
+opt
+read cplexE.lp169.F16.C94 lp
+opt
+read cplexE.lp169.F16.C95 lp
+opt
+read cplexE.lp169.F16.C96 lp
+opt
+read cplexE.lp169.F16.C97 lp
+opt
+read cplexE.lp169.F16.C98 lp
+opt
+read cplexE.lp169.F16.C99 lp
+opt
+read cplexE.lp169.F16.C100 lp
+opt
+read cplexE.lp169.F16.C101 lp
+opt
+read cplexE.lp169.F16.C102 lp
+opt
+read cplexE.lp169.F16.C103 lp
+opt
+read cplexE.lp169.F16.C104 lp
+opt
+read cplexE.lp169.F16.C105 lp
+opt
+read cplexE.lp169.F16.C106 lp
+opt
+read cplexE.lp169.F16.C107 lp
+opt
+read cplexE.lp169.F16.C108 lp
+opt
+read cplexE.lp169.F16.C109 lp
+opt
+read cplexE.lp169.F16.C110 lp
+opt
+read cplexE.lp169.F16.C111 lp
+opt
+read cplexE.lp169.F16.C112 lp
+opt
+read cplexE.lp169.F16.C113 lp
+opt
+read cplexE.lp169.F16.C114 lp
+opt
+read cplexE.lp169.F16.C115 lp
+opt
+read cplexE.lp169.F16.C116 lp
+opt
+read cplexE.lp169.F16.C117 lp
+opt

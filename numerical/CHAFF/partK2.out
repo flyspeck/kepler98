@@ -1,0 +1,386 @@
+------ Section A.2.5 of Kepler. --------
+
+New Case = 814398901
+numargs = 6
+0.00297001952436692918
+{2,2.50999999999999979,2.50999999999999979,2.82842712474618985,2.50999999999999979,2.50999999999999979}
+
+New Case = 786190957
+numargs = 6
+0.0269250063111733384
+{2,2.50999999999999979,2,2.50999999999999979,2.28737849666005788,2}
+
+New Case = 369969833
+numargs = 6
+0.0979948935924428999
+{2,2.50999999999999979,2,2.65967177472068439,2.50999999999999979,2.08003288570637634}
+
+New Case = 672373996
+numargs = 6
+0.0477393773648601416
+{2,2.50999999999999979,2.50999999999999979,2.50999999999999979,2,2.21543215825125372}
+
+New Case = 440293318
+numargs = 6
+0.000355599738511513941
+{2,2.50999999999999979,2,2.60000000000000009,2.4249084933156686,2}
+
+New Case = 50759223
+numargs = 6
+0.0357593133649769523
+{2,2.50999999999999979,2,2.57924420025224643,2.21907017310396615,2.50999999999999979}
+------ Section A.2.7, A.2.8 of Kepler. ----- 
+
+New Case = 551665569
+numargs = 16
+0.0710286803705156011
+{2,2,2,2,2,2.456319773947643,2,2.50999999999999979,2.50999999999999979,2.82842712474618985,2,2,2,2.50999999999999979,2,2.82842712474618985}
+
+New Case = 824762926
+numargs = 16
+0.00540143860643556295
+{2,2.50999999999999979,2,2,2,2,2,2,2,2,2,2.40605212853845041,2.82842712474618985,2.50999999999999979,2.50999999999999979,2.82842712474618985}
+
+New Case = 860887659
+numargs = 16
+0.0567724703928412788
+{2,2,2,2,2,2.1181652353021212,2,2.50999999999999979,2,2.60000000000000009,2,2,2,2.50999999999999979,2,2.50999999999999979}
+
+New Case = 520708193
+numargs = 16
+0.0280650258541795122
+{2,2.50999999999999979,2,2,2,2,2,2,2,2.50999999999999979,2,2,2,2,2.45841955532777412,2.50999999999999979}
+
+New Case = 520708194
+numargs = 16
+0.092917540417465444
+{2,2.50999999999999979,2,2,2,2,2,2.50999999999999979,2,2.6967653498015145,2,2,2,2,2.22658339538312156,2.50999999999999979}
+
+New Case = 520708195
+numargs = 16
+0.108325386687858238
+{2,2.50999999999999979,2,2,2,2.00002474561623256,2,2.50999999999999979,2.00000232417632384,2.82842712474618985,2,2,2,2,2.37214144485816814,2.50999999999999979}
+
+New Case = 812812040
+numargs = 16
+0.0309233888147376346
+{2,2.50999999999999979,2,2,2,2,2,2.05559671395169197,2,2.60000000000000009,2,2,2,2,2.50999999999999979,2.50999999999999979}
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequal
+New Case = 400364384
+numargs = 16
+0.0358855512006393679
+{2,2,2,2,2,2.41886595422424033,2,2,2,2,2,2,2.50999999999999979,2.50999999999999979,2,2.50999999999999979}
+
+New Case = 400364385
+numargs = 16
+0.0941837727094730903
+{2,2.50999999999999979,2,2,2,2,2,2,2,2,2,2.50999999999999979,2.55824037205372523,2.24984007754461901,2,2.50999999999999979}
+
+New Case = 400364386
+numargs = 16
+0.108319972537736384
+{2,2,2,2,2,2.37214764031310921,2,2.50999999999999979,2,2,2,2,2.82842712474618985,2.50999999999999979,2,2.50999999999999979}
+------- Section A.2.8 of Kepler ----------
+
+New Case = 325738864
+numargs = 16
+0.00159773352028221016
+{2,2.4488169557349373,2,2,2,2,2,2,2,2,2,2,2,2.50999999999999979,2,2.82842712474618985}
+
+New Case = 248940661
+numargs = 16
+0.00138154480513170974
+{2,2,2.47051459358886083,2,2,2,2,2,2,2,2,2,2,2,2,2.50999999999999979}
+
+New Case = 248940662
+numargs = 16
+0.079744466803897962
+{2,2,2.36298472991026465,2,2,2.00000001992762177,2,2,2,2,2,2,2,2.50999999999999979,2,2.82842712474618985}
+
+New Case = 248940663
+numargs = 16
+0.0436735699231440011
+{2,2.50999999999999979,2,2,2,2,2,2,2,2,2,2,2,2.11539531881559606,2,2.64127235096004709}
+
+New Case = 440713588
+numargs = 16
+0.0333851256047877909
+{2,2.50999999999999979,2,2,2,2,2,2,2,2,2,2,2,2,2.12344780085912221,2.70000000000000018}
+
+New Case = 306125712
+numargs = 16
+0.285687750898986181
+{2.20000000000000018,2.50999999999999979,2,2,2,2,2,2.06733616393662167,2,2,2,2,2,2.50999999999999979,2,2.60000000000000009}
+
+ smallest case = 0.000355599738511513941
+
+---------
+
+ity
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints

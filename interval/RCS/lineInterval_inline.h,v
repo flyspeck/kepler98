@@ -1,0 +1,45 @@
+head	1.1;
+access;
+symbols;
+locks
+	hales:1.1; strict;
+comment	@ * @;
+
+
+1.1
+date	97.12.15.01.41.31;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@This header contains the inline member functions
+	lineInterval::hi, "::low, domain::getValue
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@//  copyright (c) 1997, Thomas C. Hales, all rights reserved.
+
+#ifdef LINEINTERVAL_H
+#ifndef LINEINTERVAL_INLINE_H
+#define LINEINTERVAL_INLINE_H
+
+inline double lineInterval::hi() const { return interMath::sup(f); }
+inline double lineInterval::low() const { return interMath::inf(f); }
+
+inline double domain::getValue(int i) const { return ( ((i<6)&&(i>=0)) ? x[i] :
+		(error::message("face out of range"), 0) );  }
+
+
+
+
+
+
+#endif
+#endif
+@

@@ -1,0 +1,302 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@// @;
+
+
+1.1
+date	97.09.14.20.16.16;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@Routines to test Sphere Packings III, qrtet calculations,
+Numerically test Groups 1,...,5.
+This is used with ineq.cc, cfsqp, etc.
+Everything these five groups was sucessfully tested on September 14.
+(The file ineq.cc must be modified to run the appropriate minimizations)
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@#include <iomanip.h>
+#include "numerical.h"
+#include "constants.h"
+
+class iter {
+    double* xmin;
+	double* xmax;
+	double* x;
+    int numiter,numargs,nconstr;
+    void (*func)(int numargs,int whichFn,double* x,double* ret,void*);
+    void (*constraintfunc)
+        (int numargs,int which,double* x,double* ret,void*);
+    iter(int);
+    ~iter();
+    };
+
+static void nofunc(int numargs,int whichFn,double* x,double* ret,void*)
+    {
+    cout << "nofunc should not be called" << endl << flush;
+    }
+
+/* generic function */
+double dihC=0,solC=0,constC=0,gamC=0,vorC=0, dih2C=0, dih3C=0;
+static void setConst(double d,double s,double c,double g,double v)
+	{ dihC=d; solC=s; constC=c; gamC=g; vorC=v; dih2C=0; dih3C=0; }
+static void setConstX(double d1,double d2,double d3,
+		double s,double c,double g,double v)
+	{ dihC=d1; dih2C=d2; dih3C=d3; solC=s; constC=c; gamC=g; vorC=v; 
+		dih2C=d2; dih3C=d3; }
+static void sigdihsol(int numargs,int whichFn,double* x, double* ret,void*)
+	{
+	*ret = dihC*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5]) + 
+		 dih2C*dihedraly(x[1],x[0],x[2],x[4],x[3],x[5]) + 
+		 dih3C*dihedraly(x[2],x[0],x[1],x[5],x[3],x[4]) + 
+			solC*solid(x[0],x[1],x[2],x[3],x[4],x[5]) +
+			constC +
+			gamC*gamma(x[0],x[1],x[2],x[3],x[4],x[5]) +
+			vorC*vor_analytic(x[0],x[1],x[2],x[3],x[4],x[5]);
+	}
+
+/* generic function with y */
+double y1C,y2C,y3C,y4C,y5C,y6C;
+static void setY(double y1,double y2,double y3,double y4,double y5,double y6)
+	{ y1C=y1; y2C=y2; y3C=y3;y4C=y4;y5C=y5;y6C=y6; }
+static void sigy(int numargs,int whichFn,double* x, double* ret,void*)
+	{
+	*ret = dihC*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5]) + 
+			solC*solid(x[0],x[1],x[2],x[3],x[4],x[5]) +
+			constC +
+			gamC*gamma(x[0],x[1],x[2],x[3],x[4],x[5]) +
+			vorC*vor_analytic(x[0],x[1],x[2],x[3],x[4],x[5]) +
+			y1C*x[0]+y2C*x[1]+y3C*x[2]+y4C*x[3]+y5C*x[4]+y6C*x[5];
+	}
+
+iter::~iter() 
+	{ delete[] xmin; 
+	  delete[] xmax; 
+		delete[] x; }
+
+static void smallrad(int numargs,int whichFn,double* x,double* ret,void*)
+    {
+	*ret = rady(x[0],x[1],x[2],x[3],x[4],x[5]) - 1.41;
+    }
+
+static void bigrad(int numargs,int whichFn,double* x,double* ret,void*)
+    {
+	*ret = -rady(x[0],x[1],x[2],x[3],x[4],x[5]) + 1.41;
+    }
+
+iter::iter(int ineqSwitch) {
+	numiter = 100; numargs = 6; nconstr=0;
+	xmin = new double[numargs];
+	xmax = new double[numargs];
+	x = new double[numargs];
+	constraintfunc = nofunc;
+	func = sigdihsol;
+	double zetapt = 0.1004445714270568;
+	double zetapt32 = 3.2*zetapt;
+	double pt = 0.0553736456684641;
+	double xi = 2.1773; double xiP = 2.177303;
+	double m = 0.2384; double mP = 0.207045;
+	int i;
+	for (i=0;i<numargs;i++) { xmin[i]=x[i]=2.0; xmax[i]=2.51; }
+
+	switch (ineqSwitch) {
+		// GROUP 1:
+		case 1001 : func = sigdihsol; setConst(0,0,global::pt,-1,0);
+				 constraintfunc=nofunc; break;
+		case 1002 :  setConst(-1,0,1.874445,0,0); break;
+		case 1003 :  setConst(1,0,-0.8638,0,0); break;
+		case 1004 :  setConst(0,-0.37642101,0.287389,-1,0); break;
+		case 1005 :  setConst(0,0.446634,-0.190249,-1,0); break;
+		case 1006 :  setConst(0,-0.419351,0.2856354+0.001,-1,0); 
+				nconstr = 1; constraintfunc = smallrad; break;
+		case 1007 :  setConst(0,-0.37642101,0.287389,0,-1); 
+						nconstr=1; constraintfunc=bigrad; break;
+		case 1008 :  setConst(0,0.446634,-0.190249,0,-1); 
+						nconstr=1;constraintfunc=bigrad;  break;
+		case 1009 :  setConst(0,-0.419351,0.2856354+0.001,0,-1); 
+						nconstr=1;constraintfunc=bigrad;  break;
+
+		// GROUP 2:
+		case 2001 : func = sigy; setConst(0,1,-1.618331,0,0); 
+			setY(0.377076,0.377076,0.377076,-0.199235,-0.199235,-0.199235); break;
+		case 2002 : func = sigy; setConst(0,-1,-0.458262,0,0);
+			setY(-0.152679,-0.152679,-0.152679,0.320937,0.320937,0.320937); break;
+		case 2003 : func = sigy; setConst(1,0,-2.734102,0,0);
+			setY(-0.003,0.359894,0.359894,-0.685,0.359894,0.359894); break;
+		case 2004 : func = sigy; setConst(-1,0,-0.065176,0,0);
+			setY(0.498,-0.153598,-0.153598,0.76448,-0.153598,-0.153598); break;
+		case 2005 : func = sigy; setConst(0,0,1.3582137,-1,0);
+			setY(-0.10857,-0.10857,-0.10857,-0.10857,-0.10857,-0.10857); break;
+		case 2006 : func = sigy; setConst(0,-0.419351,1.486615,-1,0);
+			setY(-0.2,-0.2,-0.2,0,0,0); break;
+		case 2007 : func = sigy; setConst(0,0.1004445714270568,1.2821326,-1,0);
+			setY(-0.0845696,-0.0845696,-0.0845696,-0.129119,-0.129119,-0.129119);
+			break;
+		case 2008 : func = sigy; setConst(0,0,1.3582137,0,-1);
+			setY(-0.10857,-0.10857,-0.10857,-0.10857,-0.10857,-0.10857); 
+			nconstr=1; constraintfunc=bigrad; break;
+		case 2009 : func = sigy; setConst(0,-0.419351,1.486615,0,-1);
+			setY(-0.2,-0.2,-0.2,0,0,0); 
+			nconstr=1; constraintfunc=bigrad; break;
+		case 2010 : func = sigy; setConst(0,0.1004445714270568,1.2821326,0,-1);
+			setY(-0.0845696,-0.0845696,-0.0845696,-0.129119,-0.129119,-0.129119);
+			nconstr=1; constraintfunc=bigrad; break;
+
+		// GROUP 3:
+
+		case 3001 :  setConst(0.37898,0,-0.4111,-1,0); break;
+		case 3002 :  setConst(-0.142,0,0.23021,-1,0); break;
+		case 3003 :  setConst(-0.3302,0,0.5353,-1,0); break;
+		case 3004 :  setConst(0.3897,zetapt,-0.4666,-1,0);  break;
+		case 3005 :  setConst(0.2993,zetapt,-0.3683,-1,0);  break;
+		case 3006 :  setConst(0,zetapt,0,-1,0);  break;
+		case 3007 :  setConst(-0.1689,zetapt,0.208,-1,0);  break;
+		case 3008 :  setConst(-0.2529,zetapt,0.3442,-1,0);  break;
+		case 3009 :  setConst(0.4233,zetapt32,-0.5974,-1,0);  break;
+		case 3010 :  setConst(0.1083,zetapt32,-0.255,-1,0);  break;
+		case 3011 :  setConst(-0.0953,zetapt32,-0.0045,-1,0);  break;
+		case 3012 :  setConst(-0.1966,zetapt32,0.1369,-1,0);  break;
+		case 3013 :  setConst(0.796456,-0.419351,-0.5786316,-1,0); break;
+		case 3014 :  setConst(0.0610397,-0.419351,0.211419,-1,0); 
+			nconstr=1; constraintfunc=smallrad; break;
+		case 3015 :  setConst(-0.0162028,-0.419351,0.308526 ,-1,0); 
+			nconstr=1; constraintfunc=smallrad; break;
+		case 3016 :  setConst(-0.0499559,-0.419351,0.35641,-1,0); 
+			nconstr=1; constraintfunc=smallrad; break;
+		case 3017 :  setConst(-0.064713719,-0.419351,1.3225,-1,0); 
+			nconstr=1; constraintfunc=smallrad; break;
+
+		case 3018 :  setConst(0.37898,0,-0.4111,0,-1); 
+			nconstr=1; constraintfunc=bigrad; break;
+		case 3019 :  setConst(-0.142,0,0.23021,0,-1); 
+			nconstr=1; constraintfunc=bigrad; break;
+		case 3020 :  setConst(-0.3302,0,0.5353,0,-1); 
+			nconstr=1; constraintfunc=bigrad; break;
+		case 3021 :  setConst(0.3897,zetapt,-0.4666,0,-1);  
+			nconstr=1; constraintfunc=bigrad; break;
+		case 3022 :  setConst(0.2993,zetapt,-0.3683,0,-1);  
+			nconstr=1; constraintfunc=bigrad; break;
+		case 3023 :  setConst(0,zetapt,0,0,-1);  
+			nconstr=1; constraintfunc=bigrad; break;
+		case 3024 :  setConst(-0.1689,zetapt,0.208,0,-1);  
+			nconstr=1; constraintfunc=bigrad; break;
+		case 3025 :  setConst(-0.2529,zetapt,0.3442,0,-1);  
+			nconstr=1; constraintfunc=bigrad; break;
+		case 3026 :  setConst(0.4233,zetapt32,-0.5974,0,-1);  
+			nconstr=1; constraintfunc=bigrad; break;
+		case 3027 :  setConst(0.1083,zetapt32,-0.255,0,-1);  
+			nconstr=1; constraintfunc=bigrad; break;
+		case 3028 :  setConst(-0.0953,zetapt32,-0.0045,0,-1);  
+			nconstr=1; constraintfunc=bigrad; break;
+		case 3029 :  setConst(-0.1966,zetapt32,0.1369,0,-1);  
+			nconstr=1; constraintfunc=bigrad; break;
+		case 3030 :  setConst(0.796456,-0.419351,-0.5786316,0,-1); 
+			nconstr=1; constraintfunc=bigrad; break;
+		case 3031 :  setConst(0.0610397,-0.419351,0.211419,0,-1); 
+			nconstr=1; constraintfunc=bigrad; break;
+		case 3032 :  setConst(-0.0162028,-0.419351,0.308526,0,-1); 
+			nconstr=1; constraintfunc=bigrad; break;
+		case 3033 :  setConst(-0.0499559,-0.419351,0.35641,0,-1);
+			nconstr=1; constraintfunc=bigrad; break;
+		case 3034 :  setConst(-0.064713719,-0.419351,1.3225,0,-1);
+			nconstr=1; constraintfunc=bigrad; break;
+
+		// GROUP 4
+		case 4001 : setConst(1,0,-4.14938,0,0);
+			setY(-0.3257,0.398,0.398,0,0.398,0.398);
+			xmin[3]=2.51; xmax[3]= global::sqrt8;
+			func = sigy; break;
+		case 4002 : setConst(1,0,-1.153,0,0);
+			xmin[3]=2.51; xmax[3]= global::sqrt8; break;
+		case 4003 : setConst(-1,0,3.247/2,0,0);
+			xmin[5]=2.51; xmax[5]= global::sqrt8; break;
+
+		// GROUP 5
+
+		case 5001 : setConst(0,zetapt,-0.55*pt,-1,0); xmin[3]=xi; break;
+		case 5002 : setConst(0,zetapt,-2*0.55*pt,-1,0); xmin[3]=xmin[4]=xi; break;
+		case 5003 : setConst(-m,zetapt,0.29349,-1,0); xmax[3]=xi; break;
+		case 5004 : setConst(-m,zetapt,0.26303,-1,0); xmax[3]=xmax[3]=xi; 
+			xmin[4]=xi; break;
+		case 5005 : setConstX(-m,-m,0,zetapt,0.5565,-1,0); xmin[5]=xi;
+			xmax[3]=xmax[4]=xi; break;
+		case 5006 : setConstX(-m,-m,0,zetapt,2*0.29349,-1,0); 
+			xmax[3]=xmax[4]=xmax[5]=xi; break;
+		case 5007 : setConstX(-m,-m,-m,zetapt,3*0.29349,-1,0); 
+			xmax[3]=xmax[4]=xmax[5]=xi; break;
+
+		case 5008 : setConst(0,0,(1.0-0.48)*pt,-1,0); xmin[3]=xiP; break;
+		case 5009 : setConst(0,0,(1.0-2*0.48)*pt,-1,0); xmin[3]=xmin[4]=xiP; break;
+		case 5010 : setConst(-mP,0,0.31023815,-1,0); xmax[3]=xiP; break;
+		case 5011 : setConst(-mP,0,0.28365,-1,0); xmax[3]=xmax[3]=xiP; 
+			xmin[4]=xiP; break;
+		case 5012 : setConstX(-mP,-mP,0,0,0.53852,-1,0); xmin[5]=xiP;
+			xmax[3]=xmax[4]=xiP; break;
+		case 5013 : setConstX(-mP,-mP,0,0,-pt+2*(0.31023815),-1,0); 
+			xmax[3]=xmax[4]=xmax[5]=xiP; break;
+		case 5014 : setConstX(-mP,-mP,-mP,0,-2*pt+3*0.31023815,-1,0); 
+			xmax[3]=xmax[4]=xmax[5]=xiP; break;
+		
+
+		case 5015 : setConst(0,zetapt,-0.55*pt,0,-1); xmin[3]=xi; 
+			nconstr=1; constraintfunc=bigrad; break;
+		case 5016 : setConst(0,zetapt,-2*0.55*pt,0,-1); xmin[3]=xmin[4]=xi; 
+			nconstr=1; constraintfunc=bigrad; break;
+		case 5017 : setConst(-m,zetapt,0.29349,0,-1); xmax[3]=xi; 
+			nconstr=1; constraintfunc=bigrad; break;
+		case 5018 : setConst(-m,zetapt,0.26303,0,-1); xmax[3]=xmax[3]=xi; 
+			xmin[4]=xi; 
+			nconstr=1; constraintfunc=bigrad; break;
+		case 5019 : setConstX(-m,-m,0,zetapt,0.5565,0,-1); xmin[5]=xi;
+			xmax[3]=xmax[4]=xi; 
+			nconstr=1; constraintfunc=bigrad; break;
+		case 5020 : setConstX(-m,-m,0,zetapt,2*0.29349,0,-1); 
+			xmax[3]=xmax[4]=xmax[5]=xi; 
+			nconstr=1; constraintfunc=bigrad; break;
+		case 5021 : setConstX(-m,-m,-m,zetapt,3*0.29349,0,-1); 
+			xmax[3]=xmax[4]=xmax[5]=xi; 
+			nconstr=1; constraintfunc=bigrad; break;
+
+		case 5022 : setConst(0,0,(1.0-0.48)*pt,0,-1); xmin[3]=xiP; 
+			nconstr=1; constraintfunc=bigrad; break;
+		case 5023 : setConst(0,0,(1.0-2*0.48)*pt,0,-1); xmin[3]=xmin[4]=xiP; 
+			nconstr=1; constraintfunc=bigrad; break;
+		case 5024 : setConst(-mP,0,0.31023815,0,-1); xmax[3]=xiP; 
+			nconstr=1; constraintfunc=bigrad; break;
+		case 5025 : setConst(-mP,0,0.28365,0,-1); xmax[3]=xmax[3]=xiP; 
+			xmin[4]=xiP; 
+			nconstr=1; constraintfunc=bigrad; break;
+		case 5026 : setConstX(-mP,-mP,0,0,0.53852,0,-1); xmin[5]=xiP;
+			xmax[3]=xmax[4]=xiP; 
+			nconstr=1; constraintfunc=bigrad; break;
+		case 5027 : setConstX(-mP,-mP,0,0,-pt+2*(0.31023815),0,-1); 
+			xmax[3]=xmax[4]=xmax[5]=xiP; 
+			nconstr=1; constraintfunc=bigrad; break;
+		case 5028 : setConstX(-mP,-mP,-mP,0,-2*pt+3*0.31023815,0,-1); 
+			xmax[3]=xmax[4]=xmax[5]=xiP; 
+			nconstr=1; constraintfunc=bigrad; break;
+		
+			
+		
+			
+			
+		
+			
+
+		default : func = nofunc; constraintfunc=nofunc; break;
+		}
+	}
+
+
+
+@

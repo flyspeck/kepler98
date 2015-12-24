@@ -1,0 +1,209 @@
+head	1.4;
+access;
+symbols;
+locks
+	hales:1.4; strict;
+comment	@ * @;
+
+
+1.4
+date	98.06.24.23.54.18;	author hales;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	97.12.15.01.38.12;	author hales;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	97.11.11.02.26.33;	author hales;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	97.09.13.18.11.21;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@interval package, inline
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@//  copyright (c) 1997, Thomas C. Hales, all rights reserved.
+
+#ifdef _interval_h
+#ifndef _interval_inline_h
+#define _interval_inline_h
+#include "error.h"
+
+inline interval interMath::pos(interval x) { x.hi = ((x.hi<0.0)? 0.0:x.hi);
+                                  x.lo = ((x.lo<0.0)? 0.0:x.lo);
+                                  return x; }
+
+
+inline double interMath::sup(interval x) { return x.hi; }
+inline double interMath::inf(interval x) { return x.lo; }
+inline double interMath::abs(interval x) { return sup(max(x,-x)); }
+
+inline interval::interval(double a,double b)
+        {
+        lo=a; hi=b;
+        }
+
+inline int interval::operator==(interval a) const
+        { return ((a.lo==lo)&&(a.hi==hi)); }
+
+inline int interval::operator<(interval a) const
+	{ return (hi<a.lo); }
+
+inline int interval::operator>(interval a) const
+	{ return (lo>a.hi); }
+
+inline volatile void interMath::up() {  ROUND_UP;  }
+
+inline volatile void interMath::down() {  ROUND_DOWN;  }
+
+inline interval interval::operator+(interval t2) const
+        {
+        interval t;
+        interMath::up(); t.hi = hi+t2.hi;
+        interMath::down(); t.lo = lo+ t2.lo;
+        return t;
+        }
+
+inline interval interval::operator-(interval t2) const
+        {
+        interval t;
+        interMath::up(); t.hi = hi-t2.lo;
+        interMath::down(); t.lo = lo- t2.hi;
+        return t;
+        }
+
+// assumption: no round-off occurs in unary negation: rounding mode not set.
+inline interval interval::operator-() const
+        {
+	return interval(-hi,-lo);
+        }
+
+inline interval interval::operator/(interval t2) const
+	{
+	//
+	interval t;
+	if (interMath::boundedFromZero(t2))
+		{
+		interMath::up(); t.hi = 1.0/t2.lo;
+		interMath::down(); t.lo = 1.0/t2.hi;
+		return (*this)*t;
+		}
+	error::message("division by zero encountered"); 
+	return interval("0");
+	}
+
+inline int interMath::boundedFromZero(const interval& t)
+    { return ((t.hi> -/*float.h*/DBL_EPSILON)&&(t.lo<DBL_EPSILON)) ? 0 : 1; }
+
+	// optimized for multiplication of positives
+	// Warning: we are using the passed parameter as a local variable.
+	//
+inline interval interval::operator*(interval t2) const
+	{
+	return ((lo>0)&&(t2.lo>0 ))
+	? ( interMath::up(), t2.hi = hi*t2.hi, 
+		interMath::down(), t2.lo=lo*t2.lo, t2) 
+	: slow_multiply(t2);
+	}
+
+#endif
+#endif
+@
+
+
+1.3
+log
+@The rounding mode macros now appear in notPortable.h rather than
+in this header.  No significant changes.
+@
+text
+@d59 1
+a59 1
+	static const interval zero("0");
+d68 1
+a68 1
+	return zero;  
+@
+
+
+1.2
+log
+@interConstant class was removed
+@
+text
+@a5 12
+
+#ifdef _sunOS_
+#include <floatingpoint.h>
+#include <sys/ieeefp.h>
+#endif
+ 
+#ifdef _solaris_
+#include <float.h>
+#include <stdlib.h>
+#include <ieeefp.h>
+#endif
+
+d31 3
+a33 24
+#ifdef _sunOS_
+inline void interMath::up()
+        {
+        char *out;
+        ieee_flags("set","direction","positive",&out);
+        };
+#endif
+
+#ifdef _solaris_
+inline void interMath::up() {  fpsetround( FP_RP); }
+#endif
+
+	
+#ifdef _sunOS_
+inline void interMath::down()
+        {
+        char *out;
+        ieee_flags("set","direction","negative",&out);
+        };
+#endif
+
+#ifdef _solaris_
+inline void interMath::down() {  fpsetround(FP_RM); }
+#endif
+d41 1
+a41 1
+        };
+d49 1
+a49 1
+        };
+d72 1
+a72 1
+    { return ((t.hi> -DBL_EPSILON)&&(t.lo<DBL_EPSILON)) ? 0 : 1; }
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d92 1
+d101 1
+a101 1
+	return interConstant::zero;  
+@

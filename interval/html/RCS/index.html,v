@@ -1,0 +1,68 @@
+head	1.1;
+access;
+symbols;
+locks
+	hales:1.1; strict;
+comment	@# @;
+
+
+1.1
+date	98.05.06.15.36.08;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@This was called kep something.html. Renamed from an old file 5/6/98.
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@<HTML>
+<TITLE>Computer Calculations for the Kepler Conjecture</TITLE>
+
+<BODY>
+<H3><center>Computer Calculations used in the Proof of the Kepler Conjecture</center></H3>
+<p>
+
+<H3>Sphere Packings I,II</H3>
+<UL>
+<LI> ftp archive (code is quite archaic)
+</UL>
+
+<H3>A Formulation of the Kepler Conjecture</H3>
+<UL>
+<LI>C++ code, formulation.cc, formulation.i etc.
+	
+</UL>
+
+<H3>Sphere Packings III</H3>
+<UL>
+<LI><a href="part3qrtet.html">QR Tet calculations</a> (complete)
+<LI><a href="quad.html">Quad clusters</a>
+</UL>
+
+<H3>Sphere Packings IV</H3>
+<UL>
+<LI><a href="part4.html">Interval calcs</a>
+</UL>
+
+<H3>Sphere Packings IV (chaff)</H3>
+<UL>
+<LI><a href="scores.html">(old) Scores</a>
+<LI><a href="part4bnds.html">(old) Interval Calculations from Bounds 
+	on Std. Regions</a>
+</UL>
+
+<H3>Sphere Packings V</H3>
+<UL>
+<LI>
+</UL>
+
+
+</HTML>
+@

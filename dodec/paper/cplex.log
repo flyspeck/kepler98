@@ -1,0 +1,7 @@
+
+Log started (V4.0.9) Mon Sep  7 15:45:00 1998
+
+CPLEX Error  1423: Could not open file 'sqv' for reading.
+CPLEX Error  1423: Could not open file 'sqv.lp' for reading.
+Problem contains quadratic objective coefficients, ignored.
+No file read.

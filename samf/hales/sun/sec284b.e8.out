@@ -1,0 +1,48 @@
+Welcome to sphere packing routines, relation testing division.
+Welcome to Section A.2.8.4b.  
+Enter cell count limit:  Enter slop:  		Slop = 0
+Starting time:  	Wed Jul  1 17:16:56 1998
+
+Case 1:
+	Vor scoring:
+rhs = -0.056000000000000001
+2.199999999999999734	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.599999999999999645	2.828427124746190291
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+
+cellcount    =          1276625		maxdepth = 6
+partialpushes=                8
+largecut     =                0		discards     =                0
+smallcut     =                0		verifycount  =          1256665
+partialcount =                8		diff         =            19952
+Verification succeeded.
+
+Case 2:
+	Vor scoring:
+rhs = -0.056000000000000001
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.699999999999999734	2.828427124746190291
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+
+cellcount    =          3841228		maxdepth = 8
+partialpushes=            39546
+largecut     =                0		discards     =                0
+smallcut     =                0		verifycount  =          3642942
+partialcount =           134281		diff         =            64005
+Verification succeeded.
+
+All verifications succeeded.
+
+Done.
+Ending time:    	Wed Jul  1 17:40:24 1998
+
+Elapsed time: 1408 seconds,		diff = 1407
+5117853 cells considered,		3634.84 cells per second
+
+

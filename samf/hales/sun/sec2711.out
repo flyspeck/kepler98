@@ -1,0 +1,144 @@
+Welcome to sphere packing routines, relation testing division.
+Welcome to Section A.2.7.11.  
+Enter cell count limit:  Enter slop:  		Slop = -1e-06
+Starting time:  	Wed Jul  8 00:28:10 1998
+
+Case 1:
+	Gma scoring:
+rhs = -0.166000158072938331
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+
+cellcount    =          3012161		maxdepth = 6
+partialpushes=                6
+largecut     =                0		discards     =                0
+smallcut     =                0		verifycount  =          2965093
+partialcount =                0		diff         =            47068
+Verification succeeded.
+
+		Boundary:
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+
+cellcount    =          2958337		maxdepth = 6
+partialpushes=                0
+largecut     =                0		discards     =                0
+smallcut     =           142933		verifycount  =          2769180
+partialcount =                0		diff         =            46224
+Verification succeeded.
+
+Case 2:
+	Gma scoring:
+rhs = -0.515027990658866397
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+
+cellcount    =          1274049		maxdepth = 6
+partialpushes=                2
+largecut     =                0		discards     =                0
+smallcut     =                0		verifycount  =          1254141
+partialcount =                0		diff         =            19908
+Verification succeeded.
+
+		Boundary:
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+
+cellcount    =          1256897		maxdepth = 5
+partialpushes=                0
+largecut     =                0		discards     =                0
+smallcut     =            23687		verifycount  =          1213571
+partialcount =                0		diff         =            19639
+Verification succeeded.
+
+Case 3:
+	Gma scoring:
+rhs = -0.174397386974804225
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+
+cellcount    =          3025537		maxdepth = 6
+partialpushes=                6
+largecut     =                0		discards     =                0
+smallcut     =                0		verifycount  =          2978260
+partialcount =                0		diff         =            47277
+Verification succeeded.
+
+		Boundary:
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+
+cellcount    =          2968513		maxdepth = 6
+partialpushes=                0
+largecut     =                0		discards     =                0
+smallcut     =           153366		verifycount  =          2768764
+partialcount =                0		diff         =            46383
+Verification succeeded.
+
+Case 4:
+	Vor scoring:
+rhs = -0.483567247696956415
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.699999999999999734	2.828427124746190291
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+
+cellcount    =          9161646		maxdepth = 8
+partialpushes=           244233
+largecut     =                0		discards     =                0
+smallcut     =                0		verifycount  =          8461604
+partialcount =           445159		diff         =           254883
+Verification succeeded.
+
+Case 5:
+	Vor scoring:
+rhs = -0.663417511836596585
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.509999999999999787	2.509999999999999787
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+
+cellcount    =           274401		maxdepth = 6
+partialpushes=              935
+largecut     =                0		discards     =                0
+smallcut     =                0		verifycount  =           262539
+partialcount =             3287		diff         =             8575
+Verification succeeded.
+
+All verifications succeeded.
+
+Done.
+Ending time:    	Wed Jul  8 02:02:27 1998
+
+Elapsed time: 5657 seconds,		diff = 1358.85
+23931541 cells considered,		4230.43 cells per second
+
+

@@ -1,0 +1,77 @@
+Welcome to sphere packing routines, relation testing division.
+Welcome to Section A.4.5.1.  
+Enter cell count limit:  Enter slop:  		Slop = 0
+Starting time:  	Thu Jul  9 12:00:41 1998
+
+Starting case 1:
+	yp1 = 2.0
+		y1 = 2.51
+2.509999999999999787	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.828427124746189847	3.200000000000000178
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+
+cellcount    =           381051		maxdepth = 6
+partialpushes=            96703
+largecut     =                0		discards     =            41870
+smallcut     =                0		verifycount  =           241769
+partialcount =            85371		diff         =            12041
+Verification succeeded.
+
+		y5 = 2.0
+2.509999999999999787	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.828427124746189847	3.200000000000000178
+2.000000000000000000	2.000000000000000000
+2.000000000000000000	2.510000000000000231
+
+cellcount    =            35001		maxdepth = 6
+partialpushes=             7272
+largecut     =                0		discards     =             4130
+smallcut     =                0		verifycount  =            22721
+partialcount =             5943		diff         =             2207
+Verification succeeded.
+
+	yp1 = 2.51
+		y1 = 2.51
+2.509999999999999787	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.828427124746189847	3.200000000000000178
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+
+cellcount    =            40289		maxdepth = 4
+partialpushes=                0
+largecut     =                0		discards     =            14232
+smallcut     =                0		verifycount  =            24798
+partialcount =                0		diff         =             1259
+Verification succeeded.
+
+		y5 = 2.0
+2.509999999999999787	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.828427124746189847	3.200000000000000178
+2.000000000000000000	2.000000000000000000
+2.000000000000000000	2.510000000000000231
+
+cellcount    =             2913		maxdepth = 4
+partialpushes=                0
+largecut     =                0		discards     =             1022
+smallcut     =                0		verifycount  =             1709
+partialcount =                0		diff         =              182
+Verification succeeded.
+
+All verifications succeeded.
+
+Done.
+Ending time:    	Thu Jul  9 12:02:09 1998
+
+Elapsed time: 88 seconds,		diff = 0
+459254 cells considered,		5218.8 cells per second
+
+

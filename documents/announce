@@ -1,0 +1,70 @@
+
+From hales@math.lsa.umich.edu Wed Aug 19 02:43:02 1998
+Date: Sun, 9 Aug 1998 09:54:56 -0400 (EDT)
+From: Tom Hales <hales@math.lsa.umich.edu>
+To: 
+
+Subject: Kepler conjecture
+
+
+Dear colleagues,
+
+
+I have started to distribute copies of a series of papers giving a 
+solution to the Kepler conjecture, the oldest problem in discrete
+geometry.  These results are still preliminary in the sense
+that they have not been refereed and have not even been submitted
+for publication, but the proofs are to the best of my
+knowledge correct and complete.
+
+Nearly four hundred years ago, Kepler asserted that 
+no packing of congruent spheres can have a density greater
+than the density of the  face-centered cubic packing.  
+This assertion has come to be known as the Kepler conjecture.
+In 1900, Hilbert included the Kepler conjecture in his
+famous list of mathematical problems.
+
+In a paper published last year in the journal
+"Discrete and Computational Geometry," (DCG), I
+ published a detailed plan describing
+how the Kepler conjecture might be proved.  This approach
+differs significantly from earlier approaches to this
+problem by making extensive use of computers.
+L. Fejes T'oth was the first to suggest the use of computers.)
+The proof relies extensively on methods from the theory of
+global optimization, linear programming, and interval arithmetic.
+
+
+The full proof appears in a series of papers totaling well over
+250 pages.  The computer files containing the computer code and data
+files for combinatorics, interval arithmetic, and linear
+programs require over 3 gigabytes of space for storage.
+
+Samuel P. Ferguson, who finished his Ph.D. last year at the
+University of Michigan last year under my direction, has
+contributed significantly to this project.
+
+The papers containing the proof are:
+
+An Overview of the Kepler Conjecture, Thomas C. Hales
+A Formulation of the Kepler Conjecture, Samuel P. Ferguson and Thomas C.
+Hales
+Sphere Packings I, Thomas C. Hales (published in DCG, 1997)
+Sphere Packings II, Thomas C. Hales (published in DCG, 1997)
+Sphere Packings III, Thomas C. Hales
+Sphere Packings IV, Thomas C. Hales
+Sphere Packings V, Samuel P. Ferguson
+The Kepler Conjecture (Sphere Packings VI), Thomas C. Hales
+
+Postscript versions of the papers and more information about
+this project can be found at
+http://www.math.lsa.umich.edu/~hales
+
+Tom Hales
+
+
+samf@math.lsa.umich.edu
+hales@math.lsa.umich.edu
+
+
+

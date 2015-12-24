@@ -1,0 +1,3533 @@
+head	1.26;
+access;
+symbols;
+locks
+	hales:1.26; strict;
+comment	@// @;
+
+
+1.26
+date	98.07.31.05.58.57;	author hales;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	98.06.25.00.51.32;	author hales;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	98.06.23.23.53.02;	author hales;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	98.06.23.23.46.28;	author hales;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	98.06.23.14.01.49;	author hales;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	98.06.04.21.25.36;	author hales;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	98.06.02.17.52.06;	author hales;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	98.05.27.02.45.24;	author hales;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	98.05.25.22.47.39;	author hales;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	98.05.03.23.33.19;	author hales;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	98.04.22.16.58.46;	author hales;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	98.04.03.02.19.39;	author hales;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	98.02.24.05.43.57;	author hales;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	98.02.23.03.50.01;	author hales;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	98.02.12.15.19.58;	author hales;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	98.02.12.03.35.56;	author hales;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	98.02.12.03.33.15;	author hales;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	98.02.06.23.01.14;	author hales;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	97.12.03.00.33.36;	author hales;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	97.10.24.01.10.13;	author hales;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	97.10.23.12.51.53;	author hales;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	97.10.23.00.43.25;	author hales;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	97.09.19.12.48.30;	author hales;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	97.09.16.03.01.49;	author hales;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	97.09.14.19.00.27;	author hales;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	97.09.13.22.15.38;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@A Mathematica file that generates all the cplex inequalities
+@
+
+
+1.26
+log
+@*** empty log message ***
+@
+text
+@(* Generate equations for CPLEX from final.m *)
+(* 
+	$Id: MathToCplex.m,v 1.25 1998/06/25 00:51:32 hales Exp $
+	$Log: MathToCplex.m,v $
+	Revision 1.25  1998/06/25 00:51:32  hales
+	Another bug in VertexExcessText fixed.
+
+	Revision 1.24  1998/06/23 23:53:02  hales
+	*** empty log message ***
+
+	Revision 1.23  1998/06/23 23:46:28  hales
+	bug in VertexExcessText fixed.
+
+	Revision 1.22  1998/06/23 14:01:49  hales
+	*** empty log message ***
+
+	Revision 1.21  1998/06/04 21:25:36  hales
+	Constant in SquanderFace corrected.  Doesn't affect anything
+	I've run with this version of MathToCplex.m
+
+	Revision 1.20  1998/06/02 17:52:06  hales
+	Version used in 6/2/98 version of Sphere Packings III.
+
+	Revision 1.19  1998/05/27 02:45:24  hales
+	Another major revision.  MathToCplexQuadInExcept.m and
+	MathToCplexQuadCase.m have been eliminated.  The file
+	MathToCplex.m now has everything (I hope) needed to
+	do the verifications of SPIII.
+
+	Revision 1.18  1998/05/25 22:47:39  hales
+	Major revision of MathToCplex.m.   There was one small error
+	in a constant in the previous version (1.486615 vs. 1.48665),
+	but all the other revisions were made to simplify the code.
+	It is much much cleaner now.  I checked a cplex output file
+	to verify that all the inequalities are correct.  It looks good.
+
+	Revision 1.17  1998/05/03 23:33:19  hales
+	another small bug fixed.
+
+	Revision 1.16  1998/04/22 16:58:46  hales
+	*** empty log message ***
+
+	Revision 1.15  1998/04/03 02:19:39  hales
+	textheaderX added, AnyPosition modified.
+
+	Revision 1.14  1998/02/24 05:43:57  hales
+	dihSlack variable added. This relaxes allowing dihedral
+	bounds to fail with a penalty.
+
+	Revision 1.13  1998/02/23 03:50:01  hales
+	Some stuff for exceptionals that was never seriously used
+	was moved to another file MathToPenalty.old.m
+
+	Revision 1.12  1998/02/12 15:19:58  hales
+	MakeExec rewritten as Exec.  Doesn't affect any inequalities.
+
+	Revision 1.11  1998/02/12 03:35:56  hales
+	revision number added.
+
+	Revision 1.10  1998/02/12 03:33:15  hales
+	This version has a conservative but presumably correct
+	list of inequalities for EXCEPTIONALS.  I have cut back enough
+	that things should never have to be rerun with weaker inequalities.
+
+	Revision 1.9  1998/02/06 23:01:14  hales
+	several obsolete functions have been deleted.
+
+	Revision 1.8  1997/12/03 00:33:36  hales
+	This is the version that was used in the treatment of 18 cases
+	that remained for Part III.
+
+	Revision 1.7  1997/10/24 01:10:13  hales
+	carriage returns added because cplex complained of long lines
+
+	Revision 1.6  1997/10/23 12:51:53  hales
+	"drastic corrections" factors changed to a good number
+	n x 0.01561 x pt
+
+	Revision 1.5  1997/10/23 00:43:25  hales
+	Major changes have been made.
+	Code for excesses around crowded vertices type (4,1) or (3,2)...
+	This is not rigorous! and must be changed because there is a
+	factor called the "drastic correction" measuring the effect of
+	replacing everything by VorVc, and this factor is not what it needs
+	to be.
+	Code for the score of an exceptional cluster scored by VorVc has
+	been added ("drastic correction" needs adjustment).
+
+	Revision 1.4  1997/09/19 12:48:30  hales
+	An error was found Sept 18, 1997 that affects everything with
+	and exceptional cluster.  The error was in qedges as it relates to
+	the edgeineqIsoPeri string.  It was applying it to exceptionals,
+	when it should only apply to quads.  Fixed in this new version.
+
+	Revision 1.3  1997/09/16 03:01:49  hales
+	There was a bad constant in quad42.CC that has now been fixed
+	(A counterexample was found in part3openSqc)
+	The constant 0.7602884 was changed to 0.7624
+
+	Revision 1.2  1997/09/14 19:00:27  hales
+	Height cascade material was deleted.
+	Two constants in group3 qrtet inequalities were changed,
+		because counterexamples were found 3.15 and 3.16.
+	group10 was renamed group5 for compatibility with the paper SPIII.
+
+*)
+rM:= << MathToCplex.m;
+ErrorLog={};
+Error[x_]:= AppendTo[ErrorLog,{datestring,"\n","config=",S[GBLconfig],"\n",
+	"Length[ConfigurationList]=",S[Length[ConfigurationList]],"\n",x}//StringJoin];
+	
+(* AnyPosition[{a,b,c},b] -> 2 *)
+AnyPosition[list_,x_]:= If[Count[list,x]==0,0,
+	Min[Map[First,Position[list,x]]]];
+PSelect[x_,f_]:= Select[Range[Length[x]],f[x[[#]]]&];
+Lg[x_]:= Length[x];
+Inside[x_,list_]:= (Count[list,x]>0);
+Subset[sub_,C_]:= (Length[Complement[sub,C]]==0);
+
+(* MoveFirst[{3,4,5},5] -> {5,3,4} *)
+MoveFirst[list_,i_]:= RotateLeft[list,AnyPosition[list,i]-1];
+Nonempty[x__]:=(Length[Intersection[x]]>0);
+Deselect[x_,f_]:= Select[x,!f[#]&];
+Flatten1[x_]:= Flatten[x,1];
+
+(* Period[{a,b,c},7] -> a *)
+Period[x_,i_]:= x[[ 1 + Mod[i-1,Lg[x]] ]];
+IMod[i_,p_]:= 1 + Mod[i-1,p];
+AugMod[i_,p_]:= IMod[i+1,p];
+CR[i_,mod_]:= If[0==Mod[i,mod],"\n",""];
+
+(* SR[33.44] -> +33.44 *)
+SR[x_]:= If[N[x]>=0," +"<>S[x]," " <> S[x]];
+S[x_]:= ToString[CForm[x]];
+
+
+(* StdRegions[finalX[[107,3]] -> {{1, 3, 2}, {2, 3, 8}, ..., {1, 5, 4, 3}}; *)
+
+StdRegions[arrang_]:= Module[{OneStdRegion,OneStdRegionAt},
+ 
+	OneStdRegionAt[i_,j_,a_]:= Module[{b,s,u,t},
+				b = Map[#[[2]]&,a];
+				t = {i,u=b[[i,j]]};
+				While[Last[t]!=i,s = b[[Last[t]]];
+					q = AnyPosition[s,t[[-2]] ];
+					AppendTo[t,Period[s,q-1] ];
+					];
+				t = Drop[t,-1];
+				MoveFirst[t,Min[t]]
+				];
+ 
+	OneStdRegion[i_, a_] := Module[{j},
+	  Table[OneStdRegionAt[i, j, a], {j, 1, Length[a[[i,2]]]}]];
+ 
+	
+	Array[OneStdRegion[#,arrang]&,Lg[arrang]]//Flatten1//Union
+	];
+
+prune[list_]:= Module[{r=list},
+		If[Length[list[[1]]]>2 && list[[1,3]]==0,
+		r[[1]]=list[[1,{1,2}]] ]; r];
+
+
+
+(* Initialize[107] -> { GBLconfig -> 107, 
+	GBLregions -> {{1, 3, 2}, {2, 3, 8},... },
+*)
+
+Initialize[config_]:= Module[{list,arrang},
+		list = ConfigurationList[[config,3]];
+		arrang = Map[prune,list ];  
+		GBLconfig = config;
+		GBLregions  = StdRegions[arrang];
+		];
+
+VertexType[i_]:= Module[{r},
+	r=Map[Length,Select[GBLregions,Inside[i,#]&]];
+	{Count[r,3],Count[r,4],Length[Select[r,#>4&]]}
+	];
+
+(* datestring -> "7/28/1997" *)
+datestring:=
+	Module[{d=Date[]},S[d[[2]]]<>"/"<>S[d[[3]]]<>"/"<>S[d[[1]]]<>
+			" "<>S[d[[4]]]<>":"<>S[d[[5]]]<>":"<>S[d[[6]]] ];
+
+(* sigsum[2] -> "score :  + sigma{1} + sigma{2}" *)
+sigsum[n_]:= Module[{s="score : "},
+	Array[(s = s<> " + "<>StringVar["sig",#]<> 
+			If[0==Mod[#,5],"\n",""])&,n];
+	s];
+
+textheader:= {
+	"\\ LP Format CPLEX file generated by Mathematica on ",
+	datestring,
+	"\n\n\n",
+	"\\ Problem: Bound the score of configuration number ", S[GBLconfig],
+	"/",S[Length[ConfigurationList]],
+	"\n\\   arising in Part III/IV/V of the Kepler Conjecture.",
+	"\n\n\\ $Revision: 1.25 $",
+	"\n \n \n",
+	(* if dihSlack!=0, get relaxation allowing dihedral bounds to break*)
+	"MAXIMIZE \nX - dihSlack\n",
+	"\n\nST \n",
+	sigsum[Length[GBLregions]]," -sigsum= 0\n",
+	"sigsumX: X-sigsum=0\n"
+	}//StringJoin;
+
+exec4429:= {
+	"change delete constraints sigsumX\n",
+	"add\n",
+	"sig4429: sigsum>0.4429\n",
+	"end\n"
+	}//StringJoin;
+
+(* twopi ->
+	 \ The dihedral angles around each vertex sum to 2pi : 
+         dihsum1 : - 2 pi  + dih{1}1 + dih{19}1 + dih{20}1 = 0
+         dihsum2 : - 2 pi  + dih{1}2 + dih{2}2 + dih{3}2 + dih{4}2 + dih{19}2\
+         >   = 0
+		....		
+		dihsum13 : - 2 pi  + dih{14}13 + dih{15}13 + dih{16}13 + dih{17}13 +\
+          
+         >   dih{18}13 = 0
+		*)
+
+twopi:= Module[{i,j,dihList,t},
+	{"\n\n",
+	"\\ The dihedral angles around each vertex sum to 2pi : ",
+	Table[
+	t= Position[GBLregions,i]; 
+	dihList = Map[" + "<>StringVar["dih",#[[1]],#[[2]]]&,t];
+	{
+	"\n",
+	"dihsum" <> S[i] <> " : -2 pi ",
+	dihList,
+	" =0\n"
+	}
+	,{i,1,Max[GBLregions]}]
+	}//StringJoin
+	];
+
+(* tauText:
+	- tau{1} +0.100444571427056 solid{1} - sigma{1}=0
+	- tau{2} +0.100444571427056 solid{2} - sigma{2}=0
+	- tau{3} +0.100444571427056 solid{3} - sigma{3}=0
+	etc.
+*)
+
+tauText:= Array[
+	{" - ",StringVar["tau",#], SR[0.100444571427056] , " ", 
+	StringVar["sol",#]," - ", StringVar["sig",#], "=0\n"}&,
+	 Length[GBLregions]]//StringJoin;
+
+(* StringVar .... Generate Variable names *)
+
+StringVar["y",i_]:= "y("<>S[i]<>")";
+StringVar["y",i_,j_]:= "y("<>S[Min[i,j]]<>","<>S[Max[i,j]]<>")";
+StringVar["yG",f_,i_]:= StringVar["y",Period[GBLregions[[f]],i]];
+StringVar["yG",f_,i_,j_]:= 
+	StringVar["y",Period[GBLregions[[f]],i],Period[GBLregions[[f]],j]];
+StringVar["dih",f_,pos_]:= "dih{"<>S[f]<>"}"<>S[Period[GBLregions[[f]],pos]];
+StringVar["Adih",f_,pos_]:= "A"<>StringVar["dih",f,pos];
+StringVar["sol",f_Integer]:= "solid{"<>S[f]<>"}";
+StringVar["sig",f_Integer]:= "sigma{"<>S[f]<>"}";
+StringVar["sol",f_,pos_Integer]:= StringVar["sol",f]<>S[GBLregions[[f,pos]]];
+StringVar["sig",f_,pos_Integer]:= StringVar["sig",f]<>S[GBLregions[[f,pos]]];
+StringVar["dih",f_,pos_,pos2_]:= StringVar["dih",f,pos]<>".s("<>
+			S[GBLregions[[f,pos2]]]<>")";
+StringVar["tau",f_]:= "tau{"<>S[f]<>"}";
+StringVar["ht",f_]:= "ht{"<>S[f]<>"}213";
+
+
+
+(********************************  BOUNDS ********************************)
+
+
+(* bounds ->
+		 BOUNDS
+ 
+ 
+          pi = 3.141592653589793
+          pt = 0.05537364566846414
+ 
+         \Give bounds on dihedral angles
+         0.8538 < dih{1}1 < 1.874445
+         0.8538 < dih{1}3 < 1.874
+ 
+         \ Give bounds on edge lengths   *)
+
+bounds:= Module[{r,i,j,pt,str,dihmin,dihmax,dihQmin,dihQmax,d1,d2,
+	edgeNames},
+	dihmin = S[0.8538];
+	dihmax = S[1.874445];
+	dihQmin= S[1.153];
+	dihQmax= S[6.29];
+	pt = S[0.0553736456684637];
+	str="\n\nBOUNDS\n\n" <>
+	"\n pi = 3.141592653589793" <>
+	"\n pt = 0.05537364566846414" 
+	<> "\n\n\\Give bounds on dihedral angles";
+	Do[  If[Length[GBLregions[[i]]]<4,
+			d1=dihmin; d2=dihmax, (* else *)
+			d1=dihQmin; d2=dihQmax
+		];
+	   str = str <> "\n" <> d1 <> " < " <> StringVar["dih",i,j] <> " < " <> d2,
+		{i,1,Lg[GBLregions]},{j,1,Lg[GBLregions[[i]]]}];
+	str = str <> "\n\n\\ Give bounds on scores";
+	Do[ If[Length[GBLregions[[i]]]<4,d1=pt,d1= "0"];
+	  str = str<>"\n -infinity < "<>StringVar["sig",i] <> " < " <> d1,
+		{i,1,Lg[GBLregions]}
+		];
+	str = str <> "\n\n\\ Give bounds on edge lengths";
+	edgeNames = MakeEdgeNames;
+	Do[str = str<> "\n 2 < "<> edgeNames[[i]]<> " < 2.51",
+		{i,1,Lg[edgeNames]}
+		];
+	Do[str = str<> "\n "<>freeVar[[i]]<>" free",{i,1,Length[freeVar]}];
+	str
+	];
+
+MakeEdgeNames:= Module[{i,f,t1,t2},
+	t1 = Array[StringVar["y",#]&,Max[GBLregions]];
+	t2 = Table[StringVar["yG",f,i,i+1],
+			{f,1,Length[GBLregions]},
+			{i,1,Length[GBLregions[[f]] ]}];
+	Union[t1,t2]//Flatten
+	];
+
+(**************************************  PART III QRTET *******************)
+
+(* textQR[{"label",4,5,6},{f,v}] -> 
+		labelf.v  :  sigma{f} -4 solid{f} -5 dih{f}v < 6 *)
+
+textQR[{eqnid_,solid_,dih_,const_},{f_,v_}]:=   
+	(* sigma < {solid,const,dih} *) 
+	If[eqnid=="","",eqnid <> S[f]<>"."<>S[v] <> " :  "] <> 
+	StringVar["sig",f]<>
+	If[solid!=0,SR[-solid]<>" "<> StringVar["sol",f],""]<>
+	If[dih!=0,SR[-dih]<>" " <> StringVar["dih",f,v],""]<>
+	" < " <> S[const];
+
+(* trieqn["title","label",{3,4,5}] ->
+		 \ title
+         label{1}1 :  sigma{1} -3 solid{1} -4 dih{1}1 < 5
+         label{1}3 :  sigma{1} -3 solid{1} -4 dih{1}3 < 5
+		 ....
+		 label{18}13 :  sigma{18} -3 solid{18} -4 dih{18}13 < 5  *)
+
+trieqn[tag_,lab_,{sol_,dih_,con_}]:= Module[{r,f,j,str},
+	str = "\n\n\\ "<> tag;
+	Do[r = Lg[GBLregions[[f]]];
+		If[r<4,
+	      str=str<>"\n"<>
+		textQR[{lab,sol,dih,con},{f,j}]],
+		{f,1,Lg[GBLregions]},{j,1,Lg[GBLregions[[f]]]}
+		];
+	str
+	];
+
+group1:= (
+	trieqn["Group 1. Equation 4.","Grp1E4",{-0.37642101,0,0.287389}] <>
+	trieqn["Group 1. Equation 5.","Grp1E5",{ 0.446634,0,-0.190249}] <>
+	trieqn["Group 1. Equation 6.","Grp1E6",{-0.419351,0,0.2856354+0.001}]
+	  );
+
+group3:= Module[{zp=0.1004445714270568,zp32=0.321422628566582,
+		ax=-0.419351},
+	trieqn["Group 3. Equation 1.","Grp3E1.",{0, 0.37898, -0.4111}]<>
+	trieqn["Group 3. Equation 2.","Grp3E2.",{0, -0.142, 0.23021}]<>
+	trieqn["Group 3. Equation 3.","Grp3E3.",{0, -0.3302, 0.5353}]<>
+	trieqn["Group 3. Equation 4.","Grp3E4.",{zp, 0.3897, -0.4666}]<>
+	trieqn["Group 3. Equation 5.","Grp3E5.",{zp, 0.2993, -0.3683}]<>
+	"\n\n\\ Group 3. Equation 6 appears in the bounds section" <>
+	trieqn["Group 3. Equation 7.","Grp3E7.",{zp, -0.1689, 0.208}]<>
+	trieqn["Group 3. Equation 8.","Grp3E8.",{zp, -0.2529, 0.3442}]<>
+	trieqn["Group 3. Equation 9.","Grp3E9.",{zp32, 0.4233, -0.5974}]<>
+	trieqn["Group 3. Equation 10.","Grp3E10.",{zp32, 0.1083, -0.255}]<>
+	trieqn["Group 3. Equation 11.","Grp3E11.",{zp32, -0.0953, -0.0045}]<>
+	trieqn["Group 3. Equation 12.","Grp3E12.",{zp32, -0.1966, 0.1369}]<>
+	trieqn["Group 3. Equation 13.","Grp3E13.",{ax, 0.796456, -0.5786316}]<>
+	trieqn["Group 3. Equation 14.","Grp3E14.",{ax, 0.0610397, 0.211419}]<>
+	trieqn["Group 3. Equation 15.","Grp3E15.",{ax, -0.0162028, 0.308526}]<>
+	trieqn["Group 3. Equation 16.","Grp3E16.",{ax, -0.0499559, 0.35641}]<>
+	trieqn["Group 3. Equation 17.","Grp3E17.",{ax, -0.64713719, 1.3225}]
+	  ];
+
+
+(******************************** PART III QUAD **************************)
+
+(* text42[{"label",4,5},{"X","Y","Z"}] ->
+			 labelXY :  sigmaX -4 dihXY -4 dihXZ < 5 *)
+
+text42[{eqnid_,dih_,const_},{f_,v1_,v2_}]:=   
+	(* sigma < {const,dih} *) 
+	eqnid <> S[f] <> "." <> S[v1] <> " :  " <> 
+	StringVar["sig",f]<>
+	If[dih!=0,SR[-dih] <> StringVar["dih",f,v1],""]<>
+	If[dih!=0,SR[-dih] <> StringVar["dih",f,v2],""]<>
+	" < " <> S[const];
+
+(* quad["title","label",1] ->
+ 
+         \ title
+         label{19}1 :  sigma{19} -4.56766 dih{19}1 < -5.7906
+         label{19}2 :  sigma{19} -4.56766 dih{19}2 < -5.7906
+         label{19}6 :  sigma{19} -4.56766 dih{19}6 < -5.7906
+         label{19}5 :  sigma{19} -4.56766 dih{19}5 < -5.7906
+         label{20}1 :  sigma{20} -4.56766 dih{20}1 < -5.7906
+         label{20}5 :  sigma{20} -4.56766 dih{20}5 < -5.7906
+         label{20}4 :  sigma{20} -4.56766 dih{20}4 < -5.7906
+         label{20}3 :  sigma{20} -4.56766 dih{20}3 < -5.7906   *)
+			
+
+CCHASH = 2032330977; 
+quad[tag_,lab_,q_]:= Module[{r,f,j,str,sol,dih,con,CC,zp,zp32},
+	zp=0.1004445714270568;
+	zp32=0.321422628566582;
+	CC={ 
+	{0,-5.7906,4.56766}, 
+        {0,-2.0749,1.5094},
+        {0,-0.8341,0.5301},
+        {0,-0.6284,0.3878},  
+        {0,0.4124,-0.1897},
+        {0,1.5707,-0.5905},
+        {-0.3,0.41717,0}, 
+        {zp,-5.81446,4.49461},  
+        {zp,-2.955,2.1406}, 
+        {zp,-0.6438,0.316},
+        {zp,-0.1317,0.0},
+        {zp,0.3825,-0.2365},
+        {zp,1.071,-0.4747},
+        {zp32,-5.77942,4.25863}, 
+        {zp32,-4.893,3.5294},
+        {zp32,-0.4126,0.0},
+        {zp32,0.33,-0.316}, 
+        {-0.419351,-5.350181,4.611391},
+        {-0.419351,-1.66174,1.582508}, 
+        {-0.419351,0.0895,0.342747}, 
+        {-0.419351,3.36909,-0.974137}  
+        };
+
+	{sol,con,dih}=CC[[q]];
+	str = "\n\n\\ "<> tag;
+	Do[r = Lg[GBLregions[[f]]];
+		If[r==4,
+	      str=str<>"\n"<>
+		textQR[{lab,sol,dih,con}, {f,j} ]],
+		{f,1,Lg[GBLregions]},{j,1,Lg[GBLregions[[f]]]}
+		];
+	str
+	];
+
+
+
+quad42[tag_,lab_,q_]:= Module[{r,i,j,str,dih,con,CC},
+	CC={ (* 5/24/97 *)
+		{-9.494,3.0508},
+		{-1.0472,0.27605},
+(*		{0.7624,-0.198867}, *)  (* removed 5/25/98 *)
+		{3.5926,-0.844}
+        };
+	If[q>Length[CC],Return[""]];
+	{con,dih}=CC[[q]];
+	str = "\n\n\\ "<> tag;
+	Do[r = Lg[GBLregions[[i]]];
+		If[r==4,
+	      str=str<>"\n"<>
+		text42[{lab,dih,con}, {i,j,j+1} ]],
+		{i,1,Lg[GBLregions]},{j,1,Lg[GBLregions[[i]]]}
+		];
+	str
+	];
+
+(* quadeqn42[1]
+ 
+         \ Quad 4.2.1
+         Qu421{19}1 :  sigma{19} -3.0508 dih{19}1 -3.0508 dih{19}2 < -9.494
+         Qu421{19}2 :  sigma{19} -3.0508 dih{19}2 -3.0508 dih{19}6 < -9.494
+         Qu421{19}6 :  sigma{19} -3.0508 dih{19}6 -3.0508 dih{19}5 < -9.494
+         Qu421{19}5 :  sigma{19} -3.0508 dih{19}5 -3.0508 dih{19}1 < -9.494
+         Qu421{20}1 :  sigma{20} -3.0508 dih{20}1 -3.0508 dih{20}5 < -9.494
+         Qu421{20}5 :  sigma{20} -3.0508 dih{20}5 -3.0508 dih{20}4 < -9.494
+         Qu421{20}4 :  sigma{20} -3.0508 dih{20}4 -3.0508 dih{20}3 < -9.494
+         Qu421{20}3 :  sigma{20} -3.0508 dih{20}3 -3.0508 dih{20}1 < -9.494 *)
+
+
+
+hyp41:= Module[{i,quadeqn,str=""},
+	quadeqn[i_]:= quad["Quad 4.1."<>S[i],"Qu41"<>S[i],i];
+	Do[str = str<> quadeqn[i],{i,1,21}];
+	str
+	];
+
+hyp42:= Array[ quad42["Quad 4.2."<>S[#],"Qu42"<>S[#],#]&, 4]//StringJoin
+
+solid:= Module[{r,i},
+	{
+	"\n\n\\ Solid angles in terms of dihedral angles\n",
+	Table[r = Lg[GBLregions[[i]]];
+		{
+		"DS",S[i]," :  - ",StringVar["sol",i],
+		Array[" + "<>StringVar["dih",i,#]&,r],
+		" - "<>S[r-2]<>" pi = 0\n"
+		},
+	{i,1,Lg[GBLregions]}]
+	}//StringJoin
+	];
+
+
+group55:= Module[{v,q,str,i,j,s,t},
+	v = Select[Range[1,Max[GBLregions]],VertexType[#]=={5,0,0}&];
+	If[Length[v]<1,Return];
+	{"\n\n\\ The group 4.5 (=I.5.1.1) inequalities for type (5,0) vertices \n",
+	Table[ i = v[[q]]; t= Map[First,Position[GBLregions,i]]; 
+	{"\nGrp105Vertex" <> S[i] <> " : ",
+	Map[{" + ",StringVar["sig",#],"+0.419351",StringVar["sol",#]}&,t],
+	 " <  1.428177 \\ = 5(0.2856354)\n"
+	}
+	,{q,1,Length[v]}]
+	}//StringJoin
+	];
+
+(* group54 -> \ The group 5 inequalities for type (4,0) vertices  *)
+
+group54:= Module[{v,q,str,i,s,t},
+	v = Select[Range[1,Max[GBLregions]],VertexType[#]=={4,0,0}&];
+	If[Length[v]<1,Return[""]];
+	{"\n\n\\ The group 5 inequalities for type (4,0) vertices \n",
+	Table[ i = v[[q]]; t= Map[First,Position[GBLregions,i]]; 
+		{ "\nGrp101Vertex" <> S[i] <> " :  -0.33 pt ",
+		Map[{" + ",StringVar["sig",#]}&,t],
+		" < 0\n"
+		}
+	,{q,1,Length[v]}]
+	}//StringJoin
+	];
+
+group5:= (group55<>group54);
+
+WRITEOUTstd[stream_]:=WRITEOUTstd[stream,""];
+WRITEOUTstd[stream_,basefile_]:=
+	(WriteString[stream,textheader];
+        WriteString[stream,twopi];
+        WriteString[stream,tauText];
+        WriteString[stream,group1];
+        WriteString[stream,group3];
+        WriteString[stream,group5];
+        WriteString[stream,hyp41];
+        WriteString[stream,hyp42];
+        WriteString[stream,solid];
+        WriteString[stream,edges];
+		WriteString[stream,QRText]; 
+        WriteString[stream,qedges];
+		WriteString[stream,QuadVarRelations];
+		WriteString[stream,quadInstall[basefile]];
+        WriteString[stream,ValenceFiveText];
+        WriteString[stream,ExceptFaceText];
+        WriteString[stream,VertexExcessText]; 
+	);
+
+WRITEOUT[i_]:= Module[{stream},
+		Initialize[i];
+		freeVar={"X","sigsum"};
+		stream=OpenWrite["/tmp/cplex8.lp"<>S[i]];
+		(* on first pass use WRITEOUTstd[stream]; *)
+		WRITEOUTstd[stream,"TEMP/cplex8.lp"<>S[i]];
+		WriteString[stream,bounds];
+		WriteString[stream,"\n\nEND\n\n"];
+		WriteString[stream,faceCode];
+		Close[stream];
+		];
+
+faceCode:= Module[{str},
+		str = Array[{Length[GBLregions[[#]]],GBLregions[[#]]}&,
+				Length[GBLregions]];
+		str = Flatten[PrependTo[str,Length[GBLregions]]]//ToString;
+		str = "# "<>str;
+		str = StringReplace[str,{","->"","{"->"","}"->""}];
+		str
+		];
+
+
+(*********************** Valence Five STUFF ************************)
+
+(* ValenceFiveVertices ->
+   {{7, 11}, {7, 12}, {8, 9}, {8, 10}, {8, 13}, {9, 12}, {9, 13}, 
+    {10, 11}, {10, 13}, {11, 12}, {11, 13}, {12, 13}, {7, 9, 12}, ...., 
+    {10, 11, 12, 13}}  *)
+
+(* Valence 5 stuff *)
+(* This gives the various collections of at most four vertices that are all
+	of type (5,0) and are all connected together *)
+ValenceFiveVertices:=
+	Module[{v5,rawlist,v}, 
+	v5 = Select[Range[1,Max[GBLregions]],VertexType[#]=={5,0,0}&];
+	rawlist= Module[{x,i,j},
+		Table[j=v5[[i]]; 
+		x=Intersection[Flatten[Select[GBLregions,Count[#,j]>0&]],v5]~
+			Complement~{j};
+		Map[Join[{j},#]&,subsets[Length[x]]/.Array[#->x[[#]]&,Length[x]]],
+		{i,1,Length[v5]}] ~Flatten~ 1
+		];
+	v = Select[Union[rawlist,Map[{#}&,v5]],Length[#]<5&];
+	v = Map[Sort,Select[v,Subset[#,v5]&]]//Union;
+	If[Union[Flatten[v]]!=v5,Error["ValenceFiveVertices"]];
+	v
+	];
+
+(* Valence5txt[{7,11}]
+         +sigma{7}+sigma{8}+sigma{9}+sigma{10}+sigma{12}
+         +sigma{13}+sigma{17}+sigma{18} -7.04 pt <0
+         +sigma{7}- 0.1004445714270561 solid{7}+sigma{8}- 0.1004445714270561\
+         >   solid{8}+sigma{9}- 0.1004445714270561 solid{9}+sigma{10}-\
+         >   0.1004445714270561 solid{10}+sigma{12}- 0.1004445714270561\
+          
+         >   solid{12} +sigma{13}- 0.1004445714270561 solid{13}+sigma{17}-\
+         >   0.1004445714270561 solid{17}+sigma{18}- 0.1004445714270561\
+         >   solid{18} +1.1 pt < 0  *)
+
+Valence5txt[v_]:= Module[{fac,s,i},
+	fac=Select[Range[1,Lg[GBLregions]],Nonempty[GBLregions[[#]],v]&];
+	s ="";
+	Do[s = s<> "+"<>StringVar["sig",fac[[i]]]<>CR[i,5],{i,1,Length[fac]}];
+	s = s<> SR[Length[v] 0.48- Length[fac]]<>" pt < 0\n";
+	Do[s = s<> "+"<>StringVar["tau",fac[[i]]]<>CR[i,5],{i,1,Length[fac]}];
+	s = s<> SR[-Length[v] 0.55]<>" pt > 0\n\n";
+	s
+	];
+
+ValenceFiveText:= {
+	"\n\n\\ Valence 5 inequalities: \n\n",
+	Map[Valence5txt,ValenceFiveVertices]
+	}//StringJoin
+
+(********************* EDGE LENGTHS ***************************)
+
+(* edge length stuff *)
+edgeineq = 
+	{"-solid + 0.199235 y4 + 0.199235 y5 + 0.199235 y6 -\
+		0.377076 y1 - 0.377076 y2 - 0.377076 y3 < -1.618331\n",
+	"solid - 0.320937 y4 - 0.320937 y5 - 0.320937 y6 +\
+		0.152679 y1 + 0.152679 y2 + 0.152679 y3 < -0.458262\n",
+	"sigma + 0.10857 y1 + 0.10857 y2 + 0.10857 y3 + \
+		0.10857 y4 + 0.10857 y5 + 0.10857 y6 < 1.3582137\n",
+	"sigma + 0.419351 solid + 0.2 y1 + 0.2 y2 + 0.2 y3 < 1.48665\n",
+	"sigma - 0.1004445714270561 solid + 0.129119 y4 + 0.129119 y5 +\
+		0.129119 y6 + 0.0845696 y1 + 0.0845696 y2 + \
+		0.0845696 y3 < 1.2821326\n",
+	"dih1 + 0.153598 y2 + 0.153598 y3 + 0.153598 y5 + 0.153598 y6 -\
+		0.498 y1 - 0.76446 y4 < -0.065176\n",
+	"dih2 + 0.153598 y1 + 0.153598 y3 + 0.153598 y4 + 0.153598 y6 -\
+		0.498 y2 - 0.76446 y5 < -0.065176\n",
+	"dih3 + 0.153598 y1 + 0.153598 y2 + 0.153598 y4 + 0.153598 y5 -\
+		0.498 y3 - 0.76446 y6 < -0.065176\n",
+	"-dih1 - 0.359894 y2 - 0.359894 y3 - 0.359894 y5 - 0.359894 y6 +\
+		0.003 y1 + 0.685 y4 < -2.734102\n",
+	"-dih2 - 0.359894 y1 - 0.359894 y3 - 0.359894 y4 - 0.359894 y6 +\
+		0.003 y2 + 0.685 y5 < -2.734102\n",
+	"-dih3 - 0.359894 y1 - 0.359894 y2 - 0.359894 y4 - 0.359894 y5 +\
+		0.003 y3 + 0.685 y6 < -2.734102\n\n\n"}//StringJoin
+
+
+EdgeInequality[f_]:= "\\ Group 2, face "<>S[f]<>"\n"<>
+	StringReplace[edgeineq,
+	{"solid"->StringVar["sol",f],
+	 "dih1"->StringVar["dih",f,1],
+	 "dih2"->StringVar["dih",f,2],
+	 "dih3"->StringVar["dih",f,3],
+	 "sigma"->StringVar["sig",f],
+	 "y1"->StringVar["yG",f,1],
+	 "y2"->StringVar["yG",f,2],
+	 "y3"->StringVar["yG",f,3],
+	 "y4"->StringVar["yG",f,2,3],
+	 "y5"->StringVar["yG",f,1,3],
+	 "y6"->StringVar["yG",f,1,2]
+	}];
+
+
+edges:= Module[{li},
+	(* edgeNames={}; *)
+	li = Select[Range[1,Length[GBLregions]],Length[GBLregions[[#]]]==3&];
+	{
+	"\\ Group 2 \n",
+	Array[EdgeInequality[li[[#]]]&,Length[li]]
+	}//StringJoin
+	];
+
+qedges:= Module[{li,St,qedge},
+	qedge[i_]:= Array[qedge[i,#]&,Length[GBLregions[[i]]]  ];
+	qedge[f_,r_]:= StringReplace[
+ "- dih + 0.3257 y1 - 0.398 y2 -0.398 y3 -0.398 y5 -0.398 y6 < -4.14938\n" ,
+	  {"dih"->StringVar["dih",f,r],
+	 "y1"->StringVar["yG",f,r],
+	 "y2"->StringVar["yG",f,r+1],
+	 "y3"->StringVar["yG",f,r-1],
+	 "y5"->StringVar["yG",f,r,r-1],
+	 "y6"->StringVar["yG",f,r,r+1]
+		}];
+	li = Select[Range[1,Length[GBLregions]],Length[GBLregions[[#]]]>3&];
+	{
+	"\\ III.group 4.#6\n",
+	Array[qedge[li[[#]] ]&,Length[li] ]
+	}//StringJoin
+	];
+
+
+(******************** EXCEPTIONAL STUFF  *********************)
+
+(* This is really rough stuff for the exceptions, used to
+	obtain the SHORT/shortlist.m of 180 configurations. 
+	Better inequalities are developed in MathToCplexExcept.m *)
+
+(* ExceptionalStuff *)
+
+
+SquanderFace= {0,0,0,0.1317,0.27113,0.41056,0.54999,0.6045};
+ScoreFace  = {0,0,0,0,-0.05704,-0.11408,-0.1677,-0.1677};
+
+fSquander[flist_List]:= 
+	(Plus @@@@ Map[SquanderFace[[Length[GBLregions[[#]] ] ]]&,flist]) 
+
+ExceptFaceText:= Module[{exc,g},
+		exc = Select[Range[GBLregions//Lg],Length[GBLregions[[#]]]>4&];
+		{"\n\n\\ Exceptional Face Text: \n\n",
+		Map[
+			 (g = GBLregions[[ # ]]//Length;
+			 {StringVar["sig",#]," < ",S[ScoreFace[[g]] ],"\n",
+			 StringVar["tau",#]," > ",S[SquanderFace[[g]] ],"\n"})&
+		  ,exc]
+		}//StringJoin
+		];
+
+
+
+
+
+
+
+
+
+
+
+(* list all subsets of {1,...,n} *)
+subsets[0]:= {};
+subsets[n_]:= subsets[n] =
+	Union[subsets[n-1],Map[Join[{n},#]&,subsets[n-1]]]; /; n>1;
+subsets[1]:= {{},{1}};
+
+Edges[p_]:= Module[{EdgeOfCycle,t},
+    EdgeOfCycle[t_]:= Array[Sort[{Period[t,#],Period[t,#+1]}]&,Length[t]];
+    Flatten[Map[EdgeOfCycle,p],1]//Sort
+    ];
+
+
+	(* contributions of 1.4 or 1.5 at each vertex of types 
+		(4,0,1),(3,1,1),(3,0,2)*)
+VertexExcessText:= Module[{subn,edges,i,vertices,faces},
+	(*build nonadjacVertices*) 
+	subn=Module[{verticesOnF ,exVertices}, 
+		verticesOnF = Select[GBLregions,Length[#]>4&]//Flatten//Union;
+		exVertices=Select[verticesOnF,
+			Inside[VertexType[#],{{4,0,1},{3,1,1},{3,0,2}}]&];
+		Map[exVertices[[#]]&,
+			Complement[subsets[Length[exVertices]],{{}}]]
+		];
+	(*build string*) 
+	{
+	 "\n\n\\ Vertex Excess Text\n\n", 
+		edges = Edges[GBLregions]//Union;
+		Table[
+		vertices = subn[[i]];
+		If[HasAdjacentPair[vertices,edges],"",
+			faces = PSelect[GBLregions,Nonempty[#,vertices]&];
+			{
+			"vet",Map[("."<>S[#])&,vertices],": ",
+			Array[{"+",StringVar["tau",faces[[#]]],CR[#,10]}&,Length[faces]],
+			" > ",S[vSquander[vertices]+fSquander[faces]],"\n"
+			}
+		  ]
+		,{i,1,Length[subn]}
+			]
+	}//StringJoin
+	];
+
+HasAdjacentPair[v_,edges_]:= Module[{e2,i,j},
+	If[Length[v]<2,Return[False]];
+	e2= 
+	Flatten[Table[Sort[{v[[i]],v[[j]]}],
+			{i,1,Length[v]},{j,i+1,Length[v]}],1];
+	Nonempty[edges,e2]
+	];
+
+vSquander1[vNumber_Integer]:= Module[{pt},
+	pt = 0.05537364566846414;
+	Switch[VertexType[vNumber],
+	{4,0,1},1.5 pt,
+	{3,1,1},1.4 pt,
+	{3,0,2},1.4 pt,
+	_,0]];
+
+vSquander[vlist_List]:= Plus @@@@ Map[vSquander1,vlist];
+
+
+(*********************** QUAD CLUSTERS MATERIAL ********************)
+
+
+(* division of quads into cases :
+	  two flat quarters, split between vertices 1 & 3
+	  two flat quarters, split between vertices 2 & 4,
+	  octahedra, scored gamma/octavor on each upright quarter
+	  no quarters, scored vorVc 
+*)
+
+quadInstall[basefile_]:= Module[{flist},
+    flist=Select[Range[Length[GBLregions]],Length[GBLregions[[#]]]==4&];
+	{"\n\n\\ quadInstall:\n",
+    Array[quadInstallOne[basefile,flist[[#]]]&,Length[flist]]
+		} //StringJoin
+    ];
+
+(* StringVarQuad *)
+StringVar["yoct",f_]:= "y(F"<>S[f]<>")";
+StringVar["yoct",f_,i_]:= "y(F"<>S[f]<>","<>S[GBLregions[[f,i]]]<>")";
+StringVar["solF",f_,i_,j_]:= Module[{i1,j1},
+    {i1,j1}=Sort[{GBLregions[[f,i]],GBLregions[[f,j]]}];
+    "sol(F"<>S[f]<>","<>S[i1]<>","<>S[j1]<>")"];
+StringVar["sigF",f_,i_,j_]:= Module[{i1,j1},
+    {i1,j1}=Sort[{GBLregions[[f,i]],GBLregions[[f,j]]}];
+    "sig(F"<>S[f]<>","<>S[i1]<>","<>S[j1]<>")"];
+StringVar["dihF",f_,i_,j_]:= Module[{i1,j1},
+    {i1,j1}=Sort[{GBLregions[[f,i]],GBLregions[[f,j]]}];
+    "dih(F"<>S[f]<>","<>S[i1]<>","<>S[j1]<>")"];
+StringVar["dihFx",i_,j_,f_]:="dih("<>S[GBLregions[[f,i]]]<>","<>
+        S[GBLregions[[f,j]]]<>",F"<>S[f]<>")";
+StringVar["slack",s_,f_]:= "slack"<>s<>S[f];
+(* The following also appear in MathToCplexExcept.m *)
+StringVar["pen",f_]:= "pen"<>S[f];
+StringVar["cquo",f_,p1_,p2_]:= Module[{i,j},
+    i=GBLregions[[f,p1]];
+    j=GBLregions[[f,p2]];
+    StringVar["cquoI",f,i,j]
+    ];
+StringVar["cquoI",f_,i_,j_]:= "cquo{"<>S[f]<>"}("<>S[Min[i,j]]<>","<>S[Max[i,j]]<>")";
+
+
+
+
+quadInstallOne[basefile_,f_]:= 
+    "\n\n\\ fInstall 412\n"<>
+        fInstall[f,4,1,2]<>"\n\n\\ 234\n"<>fInstall[f,2,3,4]<>
+    "\n\n\\ fInstall 123\n"<>
+        fInstall[f,1,2,3]<>"\n\n\\ 341\n"<>fInstall[f,3,4,1]<>
+    "\n\n\\ oInstall\n"<>
+        oInstall[f,1,2]<>oInstall[f,2,3]<>oInstall[f,3,4]<>oInstall[f,4,1]<>
+    "\n\n\\ vInstall\n"<> vInstall[basefile,f];
+
+flatEquations =
+    {
+	"\\ flat Equations, flat quarters in the Q-system.\n",
+	"\\ mu-scoring only.  Not to be used with erased flat quarters.\n",
+    "- dih2 + 0.35 y2 - 0.15 y1 - 0.15 y3 + 0.7022 y5 - 0.17 y4 + slack > -0.0123",
+    "- dih3 + 0.35 y3 - 0.15 y1 - 0.15 y2 + 0.7022 y6 - 0.17 y4 + slack > -0.0123",
+    "  dih2 - 0.13 y2 + 0.631 y1 + "<>
+               "0.31 y3 - 0.58 y5 + 0.413 y4 + 0.025 y6 + slack > 2.63363 ",
+    "  dih3 - 0.13 y3 + 0.631 y1 + "<>
+               "0.31 y2 - 0.58 y6 + 0.413 y4 + 0.025 y5 + slack > 2.63363 ",
+    " -dih1 + 0.714 y1 - 0.221 y2 - 0.221 y3 + "<>
+               "0.92 y4 - 0.221 y5 - 0.221 y6 + slack > 0.3482",
+    "  dih1 - 0.315 y1 + 0.3972 y2 + 0.3972 y3 - "<>
+               "0.715 y4 +  0.3972 y5 + 0.3972 y6 + slack > 2.37095",
+    "- solid - 0.187 y1 - 0.187 y2 - "<>
+               "0.187 y3 + 0.1185 y4 + 0.479 y5 + 0.479 y6 + slack > 0.437235 ",
+    "+ solid + 0.488 y1 + 0.488 y2 + "<>
+               "0.488 y3 - 0.334 y5 - 0.334 y6 + slack > 2.244 ",
+    "- sigma - 0.159 y1 - 0.081 y2 - 0.081 y3 - "<>
+               "0.133 y5 - 0.133 y6 + slack > -1.17401",
+    "- sigma - 0.419351 solid + 0.0436 y5 + 0.0436 y6 + 0.079431 dih1 "<>
+                " + slack > 0.0296 ", 
+    " sigma + 0.197 y4 + 0.197 y5 + 0.197 y6 - slack < 1.34521 ", 
+	" slack - Cqr1 - Cqr2 = 0",
+    " y4 + slack > 2.51",
+    " y4 - slack < 2.8284271247462"
+    };
+fEquations= Apply[StringJoin,Map[(#<>"\n")&,flatEquations]];
+
+fInstall[f_,i_,j_,k_]:= (* quad f, vertices i,j,k in[1,2,3,4], *)
+      StringReplace[fEquations,
+        {"y2"->StringVar["yG",f,i],
+         "y1"->StringVar["yG",f,j],
+         "y3"->StringVar["yG",f,k],
+         "y5"->StringVar["yG",f,j,k],
+         "y4"->StringVar["yG",f,i,k],
+         "y6"->StringVar["yG",f,i,j],
+         "dih2"->StringVar["dih",f,i,j],
+         "dih1"->StringVar["dih",f,j],
+         "dih3"->StringVar["dih",f,k,j],
+         "solid"->StringVar["sol",f,j],
+		 "slack"->StringVar["slack",{"A","B"}[[1+Mod[i+j+k,2]]],f],
+		 "Cqr1"->"Cqrl"<>S[f 100],
+		 "Cqr2"->"Cqr"<>{"s","l"}[[1+Mod[i+j+k,2]]]<>S[f 100+1],
+         "sigma"->StringVar["sig",f,j]}
+    ];
+
+OctahedralEquations:= {
+	"\n\n\\ OctahedralEquations",
+	"\n\\ Gamma/octavor scoring.  ",
+	"\\ For use only on upright quarters in quad clusters",
+    " y1 + slack > 2.51 ",
+    " y1 - slack < 2.8284271247462 ",
+    " y2 + slack > 2 ",
+    " y3 + slack > 2 ",
+    " y4 + slack > 2 ",
+    " y5 + slack > 2 ",
+    " y6 + slack > 2 ",
+    " y2 - slack < 2.51 ",
+    " y3 - slack < 2.51 ",
+    " y4 - slack < 2.51 ",
+    " y5 - slack < 2.51 ",
+    " y6 - slack < 2.51 ",
+    " dih1 - 0.636 y1 + 0.462 y2 + 0.462 y3 - 0.82 y4 + 0.462 y5 + "<>
+        " 0.462 y6 + slack > 1.82419 ", (* case 20 *)
+    " - dih1 + 0.55 y1 - 0.214 y2 - 0.214 y3 + 1.24 y4 - 0.214 y5 "<>
+        " - 0.214 y6 + slack > 0.75281 ",  (* case21 *)
+    " dih2 + 0.4 y1 - 0.15 y2 + 0.09 y3 + 0.631 y4 - 0.57 y5 + 0.23 y6 " <>
+    "  + slack > 2.5481", (* case 22 *)
+    " - dih2 - 0.454 y1 + 0.34 y2 + 0.154 y3 - 0.346 y4 + " <>
+        "0.805 y5 + slack > -0.3429", (* case 23 *)
+    " dih3 + 0.4 y1 - 0.15 y3 + 0.09 y2 + 0.631 y4 - 0.57 y6 + 0.23 y5 " <>
+    "  + slack > 2.5481", (* case 22 *)
+    " - dih3 - 0.454 y1 + 0.34 y3 + 0.154 y2 - 0.346 y4 + " <>
+        "0.805 y6 + slack > -0.3429", (* case 23 *)
+    " sol + 0.065 y2 + 0.065 y3 + 0.061 y4 - 0.115 y5 - "<>
+        "0.115 y6 + slack > 0.2618", (* case 24 *)
+    " - sol - 0.293 y1 - 0.03 y2 - 0.03 y3 + 0.12 y4 + " <>
+        "0.325 y5 + 0.325 y6 + slack > 0.2514", (* case 25 *)
+    " - sig - 0.054 y2 - 0.054 y3 - 0.083 y4 - 0.054 y5 - "<>
+        "0.054 y6 + slack > -0.59834", (* case 26,27,28 *)
+    " - sig - 0.419351 sol + 0.079431 dih2 - 0.0846 y1 + slack > -0.30592 " ,
+                (* case 69,70,71, added 11/24/97 *)
+    " - sig - 0.419351 sol + 0.079431 dih3 - 0.0846 y1 + slack > -0.30592 ",
+                (* case 69,70,71, added 11/24/97 *)
+	" slack - Cqrs - Cqrl =0",
+	(* This equation holds if y2,y3 < 2.13 *)
+	" - sig + 0.07 y1 - 0.133 y2 - 0.133 y3 - 0.135 y4 - "<>
+	   "0.133 y5 - 0.133 y6 + ht213 + slack > -1.1583 "
+    };
+
+
+oEquations= Apply[StringJoin,Map[(#<>"\n")&,OctahedralEquations]];
+
+oInstall[f_,i_,j_]:= (* quad f, vertices i,j,k in[1,2,3,4], *)
+      StringReplace[oEquations,
+        {"y1"->StringVar["yoct",f],
+         "y2"->StringVar["yG",f,i],
+         "y3"->StringVar["yG",f,j],
+         "y4"->StringVar["yG",f,i,j],
+         "y5"->StringVar["yoct",f,j],
+         "y6"->StringVar["yoct",f,i],
+         "dih1"->StringVar["dihF",f,i,j],
+         "dih2"->StringVar["dihFx",i,j,f],
+         "dih3"->StringVar["dihFx",j,i,f],
+         "sol"->StringVar["solF",f,i,j],
+		 "slack"->StringVar["slack","Oct",f],
+		 "ht213"->StringVar["ht",f],
+		 "Cqrs"->"Cqrs"<>S[f 100],
+		 "Cqrl"->"Cqrl"<>S[f 100+1],
+         "sig"->StringVar["sigF",f,i,j]}
+    ];
+
+
+(* vorVc stuff *)
+
+QuoinText[f_]:= Module[{face,i,j},
+    face = GBLregions[[f]];
+	{"\n\n\\ Quoin Text (VI.4.10, and III.Appendix)\n",
+    Table[
+        j = IMod[i+1,Length[face]];
+        {StringVar["cquo",f,i,j],
+         SR[0.00758+0.0115]," ",StringVar["y",face[[i]] ],
+         SR[0.00758+0.0115]," ",StringVar["y",face[[j]] ],
+         SR[0.0115 +0.0115]," ",StringVar["y",face[[i]],face[[j]] ],
+         " > ", S[2 0.06333],"\n"},
+        {i,1,Length[face]}]}//StringJoin
+    ];
+
+QuadVcDefText[f_]:= StringReplace[
+	StringJoin[{
+	"\n\n\\ QuadVcDef The definition of truncated Voronoi\n",
+	"vorVc -slack - Adih1 - Adih2 - Adih3 - Adih4 + negphi0 sol \n "<>
+		" + 4doct cquo1 + 4doct cquo2 + 4doct cquo3 + 4doct cquo4 < 0\n",
+	"Adih1 + slack>0\n",
+	"Adih2 + slack>0\n",
+	"Adih3 + slack>0\n",
+	"Adih4 + slack>0\n"
+	}],
+		{"vorVc"->StringVar["sig",f],
+		 "slack"->StringVar["slack","Vc",f],
+		 "Adih1"->StringVar["Adih",f,1],
+		 "Adih2"->StringVar["Adih",f,2],
+		 "Adih3"->StringVar["Adih",f,3],
+		 "Adih4"->StringVar["Adih",f,4],
+		 "cquo1"->StringVar["cquo",f,1,2],
+		 "cquo2"->StringVar["cquo",f,2,3],
+		 "cquo3"->StringVar["cquo",f,3,4],
+		 "cquo4"->StringVar["cquo",f,4,1],
+		 "negphi0"-> "0.5666365478933329",
+		 "4doct"-> "2.88361179806985"
+		}
+		];
+
+vInstall[basefile_,f_]:= 
+		{Array[VcSupplement[f,#]&,4],
+		 QuadVcDefText[f], 
+		 QuoinText[f],
+		 If[basefile=="","",UpdateFace[basefile,f]]
+		}//StringJoin
+
+
+(* vorVc stuff *)
+UpdateFace[basefile_,f_]:= Module[{face},
+		face=GBLregions[[f]];
+		 Array[LPmUpdateAdih[basefile,StringVar["y",face[[#]]],
+			StringVar["dih",f,#],StringVar["Adih",f,#]]&,Length[face]]
+		//StringJoin
+        ];
+
+(* first three arguments are text, last three the numerical bounds *)
+AdihText[yvar_,dihvar_,Adihvar_,hmax_,dihmin_,dihmax_]:=
+	Module[{A1,slope},
+	A1 = (* A[1]= *) 0.109691511444153; 
+	slope = 0.4806019663449766*(-1.493759012518814 + hmax)*
+				(2.493759012518814 + hmax); (* (A[hmax]-A[1])/(hmax-1)*)
+	{Adihvar,SR[-A1]," ",dihvar,SR[-slope dihmin/2]," ",yvar," < ",
+		S[-slope dihmin],"\n",
+	 Adihvar,SR[-slope dihmax/2]," ",yvar," < ",
+		S[(A1-slope) dihmax],"\n"}//StringJoin
+	];
+
+
+VcSupplement[f_,i_]:= Module[{r,eqnlist},
+	(* f is a face Number, 1..GBLregions//Length *)
+	(* i = 1,2,3,4 *)
+	(* unorthodox labels, dih4,quo42,etc. 4 refers to corner opposite 1,
+		this allows standard labels 1,2,3 on the front simplex...,
+		 *)
+ 
+	eqnlist = {
+		"\n\n\\ Supplementary Vc-inequalities. ["<>S[f]<>"] (See SPIII.A4)\n",
+		" dih1 - 0.372 y1 + 0.465 y2 + 0.465 y3 + 0.465 y5 + "<>
+			" 0.465 y6 + slack > 4.885" (* case 19 *),
+		(* case 21 , assumes dih < 2.12 and heights <=2.26 *) 
+		" - vor - 0.06 y2 - 0.06 y3 - 0.185 y5 - 0.185 y6 + "<>
+			" slackDih+ slack > -0.9978 ",
+		"  vor +0.419351 sol -slackDih - slack < 0.3072 ",
+		" pen - slack =0",
+		" slack - CqrsA - CqrsB =0"
+		};
+	eqnlist = Map[(#<>"\n")&,eqnlist]//StringJoin;
+	r = RotateLeft[GBLregions[[f]],i-1];
+	  StringReplace[eqnlist,
+		{"y1"->StringVar["y",r[[1]]], 
+		 "y2"->StringVar["y",r[[2]]],
+		 "y3"->StringVar["y",r[[4]]],
+		 "y4"->StringVar["y",r[[2]],r[[4]]],
+		 "y5"->StringVar["y",r[[1]],r[[4]]],
+		 "y6"->StringVar["y",r[[1]],r[[2]]],
+		 "dih1"->StringVar["dih",f,i],
+		 "Dih"->"Dih"<>S[r[[1]]],
+		 "sol"->StringVar["sol",f,i],
+		 "vor"->StringVar["sig",f,i],
+		 "pen"->StringVar["pen",f],
+		 "slack"->StringVar["slack","Vc",f],
+		 "CqrsA"->"Cqrs"<>S[f 100],
+		 "CqrsB"->"Cqrs"<>S[f 100+1]
+		}
+	]
+	];
+
+(* This is not part of WRITEOUT.  Used on archive PM(4,127). 6/1/98. *)
+DihHalfVc[f_,i_]:= Module[{eqn,r},
+	eqn = {
+	"dih2 +0.59 y1 + 0.1 y2 + 0.1 y3 + 0.55 y4 -0.6 y5 -0.12y6>2.6506\n",
+	"dih2 +0.35 y1 -0.24 y2 + 0.05y3 + 0.35 y4 -0.72y5 -0.18y6<0.47\n",
+	"dih3 +0.59 y1 + 0.1 y3 + 0.1 y2 + 0.55 y4 -0.6 y6 -0.12y5>2.6506\n",
+	"dih3 +0.35 y1 -0.24 y3 + 0.05y2 + 0.35 y4 -0.72y6 -0.18y5<0.47\n"
+	}//StringJoin;
+	r = RotateLeft[GBLregions[[f]],i-1];
+	StringReplace[eqn,{
+		"y1"-> StringVar["y",r[[1]]],
+		"y2"-> StringVar["y",r[[2]]],
+		"y3"-> StringVar["y",r[[4]]],
+		"y4"-> StringVar["y",r[[2]],r[[4]]],
+		"y5"-> StringVar["y",r[[1]],r[[4]]],
+		"y6"-> StringVar["y",r[[1]],r[[2]]],
+		"dih2"-> StringVar["dih",f,IMod[i+1,4],i],
+		"dih3"-> StringVar["dih",f,IMod[i-1,4],i]
+			}]
+	];
+
+QuadVarRelations:= Module[{fc},
+	fc = Select[Range[Length[GBLregions]],Length[GBLregions[[#]]]==4&];
+	Map[QuadVarOneRelation,fc]//StringJoin
+	];
+
+QuadVarOneRelation[f_]:= Module[{s},
+    freeVar=freeVar~Join~Array[StringVar["sig",f,#]&,4];
+	freeVar=freeVar~Join~Array[StringVar["sigF",f,#,AugMod[#,4]]&,4];
+    freeVar=freeVar~Join~Array[StringVar["sol",f,#]&,4];
+	freeVar=freeVar~Join~Array[StringVar["solF",f,#,AugMod[#,4]]&,4];
+	freeVar=freeVar~Join~Array[StringVar["dihF",f,#,AugMod[#,4]]&,4];
+	freeVar=freeVar~Join~Array[StringVar["dihFx",#,AugMod[#,4],f]&,4];
+	freeVar=freeVar~Join~Array[StringVar["dihFx",AugMod[#,4],#,f]&,4];
+	freeVar=freeVar~Join~Array[StringVar["dih",f,#,AugMod[#,4]]&,4];
+	freeVar=freeVar~Join~Array[StringVar["dih",f,AugMod[#,4],#]&,4];
+	freeVar=freeVar~Join~Array[StringVar["Adih",f,#]&,4];
+	s = {
+    "\n\n\\ QuadVarRelations"<>S[f]<>"\n",
+	(* solid on flats relates to solid on quad *)
+	StringVar["sol",f]<>"-"<>StringVar["sol",f,1]<>"-"<>
+		StringVar["sol",f,3]<>" =0\n",
+	StringVar["sol",f]<>"-"<>StringVar["sol",f,2]<>"-"<>
+		StringVar["sol",f,4]<>" =0\n",
+	StringVar["sig",f]<>"-"<>StringVar["sig",f,1]<>"-"<>
+		StringVar["sig",f,3]<>" =0\n",
+	StringVar["sig",f]<>"-"<>StringVar["sig",f,2]<>"-"<>
+		StringVar["sig",f,4]<>" =0\n",
+	(* solid on a flat relates to dihedrals *)
+	StringVar["sol",f,1]<>"-",StringVar["dih",f,1],"-",
+		StringVar["dih",f,2,1],"-",StringVar["dih",f,4,1],"+pi=0\n",
+	StringVar["sol",f,2]<>"-",StringVar["dih",f,2],"-",
+		StringVar["dih",f,1,2],"-",StringVar["dih",f,3,2],"+pi=0\n",
+	StringVar["sol",f,3]<>"-",StringVar["dih",f,3],"-",
+		StringVar["dih",f,2,3],"-",StringVar["dih",f,4,3],"+pi=0\n",
+	StringVar["sol",f,4]<>"-",StringVar["dih",f,4],"-",
+		StringVar["dih",f,1,4],"-",StringVar["dih",f,3,4],"+pi=0\n",	
+	(* two dihedrals make the full angle *)
+	StringVar["dih",f,1],"-",StringVar["dih",f,1,2],"-",
+		StringVar["dih",f,1,4]," =0\n",
+	StringVar["dih",f,2],"-",StringVar["dih",f,2,1],"-",
+		StringVar["dih",f,2,3]," =0\n",
+	StringVar["dih",f,3],"-",StringVar["dih",f,3,2],"-",
+		StringVar["dih",f,3,4]," =0\n",
+	StringVar["dih",f,4],"-",StringVar["dih",f,4,3],"-",
+		StringVar["dih",f,4,1]," =0\n"}//StringJoin;
+ 
+    (* octahedral constraints *)
+    {s,
+	"\n\\ octahedral relations:\n",
+		StringVar["sigF",f,1,2]<>" +",
+           StringVar["sigF",f,2,3]<>" +",
+           StringVar["sigF",f,3,4]<>" +",
+           StringVar["sigF",f,4,1]<>" -",
+            StringVar["sig",f] <> " =0\n",
+    	StringVar["dihF",f,1,2]<>" +"<>
+           StringVar["dihF",f,2,3]<>" +"<>
+           StringVar["dihF",f,3,4]<>" +"<>
+           StringVar["dihF",f,4,1]<>" - 2 pi = 0\n",
+    Array[StringVar["dihFx",#,AugMod[#,4],f]<>" +"<>
+            StringVar["dihFx",#,IMod[#+3,4],f]<>" -"<>
+            StringVar["dih",f,#]<>" =0\n"&,4],
+    Array[StringVar["dihF",f,#,AugMod[#,4]]<>" +"<>
+            StringVar["dihFx",#,AugMod[#,4],f]<>" +"<>
+            StringVar["dihFx",AugMod[#,4],#,f]<>" -"<>
+            StringVar["solF",f,#,AugMod[#,4]]<>" - pi = 0\n"&,4]
+    }//StringJoin
+];
+
+
+(********************* TRIANGLE BRANCH AND BOUND ********************)
+
+
+(*  Now add stuff for QRtets. 
+	Cqrs, Cqrl are slack variables, making these
+		equations useless unless the slacks are set to 0. 
+	This is the QRtet branch & bound stuff.
+	Constants are changed from MathToCplexQuadCase.m, because we do not assume
+		y1+y2+y3<2.13. 
+	Instead there is a slack variable ht213. Setting ht213=0 activates inequalities
+		that hold if all heights are at most 2.13. 
+*)
+(* Now break qrtets into 2 cases, y4+y5+y6 vs. 2.25 *)
+SmallQRtet= { (* partX.cc:cases 201--207 *)
+	"\n\n\\ Inequalities for QR tets for which y4+y5+y6>6.25.",
+	"\\ Set Cqrl slack variable=0 to activate. (References III.Appendix, VI (Kepler)",
+	"\\ The last four assume that the heights are at most 2.13. Set ht213=0 to activate",
+ 
+	" qrs.0 : y4 +y5 +y6 - Cqrs < 6.25 ",
+    " qrs.1 : sol + 0.377076 y1 + 0.377076 y2 + 0.377076 y3 - 0.221 y4 - "<>
+        " 0.221 y5 - 0.221 y6 + Cqrs > 1.487741 ",
+    " qrs.2 : 0.221 y4 + 0.221 y5 + 0.221 y6 - sol + Cqrs > 0.76822 ",
+	" qrs.3 : dih1 + 0.34 y2 + 0.34 y3 - 0.689 y4 + 0.27 y5 + 0.27 y6 + Cqrs > 2.29295 ",
+	" qrs.4 : dih2 + 0.34 y1 + 0.34 y3 - 0.689 y5 + 0.27 y4 + 0.27 y6 + Cqrs > 2.29295 ",
+	" qrs.5 : dih3 + 0.34 y1 + 0.34 y2 - 0.689 y6 + 0.27 y4 + 0.27 y5 + Cqrs > 2.29295 ",
+    " qrs.6 : - dih1 + 0.498 y1 + 0.731 y4 - 0.212 y5 - 0.212 y6 + Cqrs > 0.37884 ",
+    " qrs.7 : - dih2 + 0.498 y2 + 0.731 y5 - 0.212 y4 - 0.212 y6 + Cqrs > 0.37884 ",
+    " qrs.8 : - dih3 + 0.498 y3 + 0.731 y6 - 0.212 y4 - 0.212 y5 + Cqrs > 0.37884 ",
+	" qrs.9 : - sig - 0.109 y1 - 0.109 y2 - 0.109 y3 - 0.14135 y4 - "<>
+		" 0.14135 y5 - 0.14135 y6 + Cqrs > -1.5574737 ",
+    " qrs.10: - sig - 0.419351 sol - 0.2 y1 - 0.2 y2 - 0.2 y3 - 0.048 y4 - "<>
+        " 0.048 y5 - 0.048 y6 + Cqrs > -1.77465 ",
+    " qrs.11: tau - 0.0845696 y1 - 0.0845696 y2 - 0.0845696 y3 - 0.163 y4 - "<>
+        " 0.163 y5 - 0.163 y6 + Cqrs > -1.48542 ",
+	(* the next ones assume that the vertices have height at most 2.13 *)
+	(* set ht213=0 to activate *)
+	" qrs.12 : dih1 + 0.27 y2 + 0.27 y3 - 0.689 y4 + 0.27 y5 + 0.27 y6 +Cqrs+ht213> 2.01295 ",
+	" qrs.13 : dih2 + 0.27 y1 + 0.27 y3 - 0.689 y5 + 0.27 y4 + 0.27 y6 +Cqrs+ht213> 2.01295 ",
+	" qrs.14 : dih3 + 0.27 y1 + 0.27 y2 - 0.689 y6 + 0.27 y4 + 0.27 y5 +Cqrs+ht213> 2.01295 ",
+	" qrs.15 : - sig - 0.14135 y1 - 0.14135 y2 - 0.14135 y3 - 0.14135 y4 - "<>
+		" 0.14135 y5 - 0.14135 y6 +Cqrs+ht213 > -1.7515737 "
+	};
+
+LargeQRtet= { (* partX.cc:cases 208--212 *)
+	"\n\n\\ Inequalities for QR tets for which y4+y5+y6>6.25.",
+	"\\ Set Cqrl slack variable=0 to activate. (References III.Appendix, VI (Kepler)",
+	"\\ The last three assume that the heights are at most 2.13. Set ht213=0 to activate",
+ 
+    " qrl.0 : y4 +y5 +y6 + Cqrl > 6.25 ",
+	" qrl.1 : sol + 0.378 y1 + 0.378 y2 + 0.378 y3 - 0.1781 y4 - "<>
+   		" 0.1781 y5 - 0.1781 y6 +Cqrl > 1.761445 ",
+	" qrl.2 : - sol - 0.171 y1 - 0.171 y2 - 0.171 y3 + 0.3405 y4 + " <>
+   		" 0.3405 y5 + 0.3405 y6 +Cqrl > 0.489145 ",
+	" qrl.3 : - sig - 0.1208 y1 - 0.1208 y2 - " <> (* fixed 5/30/98*)
+		" 0.1208 y3 - 0.0781 y4 - 0.0781 y5 - 0.0781 y6 + Cqrl > -1.2436 ",
+    " qrl.4 : - sig - 0.419351 sol - 0.2 y1 - 0.2 y2 - 0.2 y3 + 0.0106 y4 + "<>
+        " 0.0106 y5 + 0.0106 y6 + Cqrl > - 1.40816 ",
+	(* The next inequalities assume that the vertices have height at most 2.13.
+		Set ht213=0  to activate. *)
+    " qrl.5 : sol + 0.356 y1 + 0.356 y2 + 0.356 y3 - 0.1781 y4 - 0.1781 y5 - "<>
+        " 0.1781 y6 +Cqrl+ht213 > 1.629445 ",
+    " qrl.6 : - sol - 0.254 y1 - 0.254 y2 - 0.254 y3 + 0.3405 y4 + 0.3405 y5 + "<>
+        " 0.3405 y6 +Cqrl+ht213 > - 0.008855 ",
+    " qrl.7 : - sig - 0.167 y1 - 0.167 y2 - 0.167 y3 - 0.0781 y4 - 0.0781 y5 - "<>
+        " 0.0781 y6 + Cqrl+ht213 > -1.51017 "
+	};
+
+(* branch & bound qrtet inequalities, activate with slacks *)
+QRText:= Module[{g,x,Combine,QRTextOne,QRtetsub,f},
+	Combine[x_]:= Apply[StringJoin,Map[(#<>"\n")&,x]];
+	QRTextOne[f_]:=
+		 StringReplace[
+			Join[SmallQRtet,LargeQRtet],QRtetsub[f]]//Combine;
+ 
+	QRtetsub[f_]:=
+		{"qrl" -> "qrl"<>S[f],
+		 "qrs" -> "qrs"<>S[f],
+		 "sol" -> StringVar["sol",f],
+		 "dih1"-> StringVar["dih",f,1],
+		 "dih2"-> StringVar["dih",f,2],
+		 "dih3"-> StringVar["dih",f,3],
+		 "y1"->   StringVar["yG",f,1],
+		 "y2"->   StringVar["yG",f,2],
+		 "y3"->   StringVar["yG",f,3],
+		 "y4"->   StringVar["yG",f,2,3],
+		 "y5"->   StringVar["yG",f,1,3],
+		 "y6"->   StringVar["yG",f,1,2],
+		 "sig" -> StringVar["sig",f],
+		 "ht213" -> StringVar["ht",f],
+		 "tau" -> StringVar["tau",f]};
+		
+	{"\n\n\n\\ Branch and Bound Inequalities for QRTets,\n\n",
+	 g= Select[Range[Length[GBLregions]],Length[GBLregions[[#]]]==3&]; 
+	 Map[QRTextOne,g],
+	 Array[StringVar["ht",#]<>" -ht213 < 0\n"&,Length[GBLregions]]
+	}
+	//StringJoin
+	];
+
+(************ GENERATE BRANCH AND BOUND CASES ******************)
+
+optText[file_,added_]:=
+	{
+	"read ",file," lp\n",
+	"add \n",added,
+	"end\n",
+	"opt\n"
+	}//StringJoin;
+
+
+Branch[list_,i_]:= Module[{digits,j},
+	digits = Table[1+Mod[Floor[(i-1)/2^j],2],{j,0,Length[list]-1}];
+	Array[{"Cqr",Part[{"s","l"},digits[[#]]],S[list[[#]]],"=0\n"}&,
+		Length[list]]//StringJoin
+	];
+
+optBranch[file_,list_]:= 
+	Array[optText[file,Branch[list,#]]&,2^Length[list]]//StringJoin;
+
+
+@
+
+
+1.25
+log
+@Another bug in VertexExcessText fixed.
+@
+text
+@d3 1
+a3 1
+	$Id: MathToCplex.m,v 1.24 1998/06/23 23:53:02 hales Exp hales $
+d5 3
+d199 1
+a199 1
+	"\n\n\\ $Revision: 1.24 $",
+d270 1
+d964 1
+d1257 1
+d1262 2
+a1263 1
+	 Map[QRTextOne,g]
+@
+
+
+1.24
+log
+@*** empty log message ***
+@
+text
+@d3 1
+a3 1
+	$Id: MathToCplex.m,v 1.23 1998/06/23 23:46:28 hales Exp hales $
+d5 3
+d196 1
+a196 1
+	"\n\n\\ $Revision: 1.23 $",
+d756 1
+a756 1
+		verticesOnF = Select[GBLregions,Length[#]>4&]//Flatten;
+d771 1
+@
+
+
+1.23
+log
+@bug in VertexExcessText fixed.
+@
+text
+@d3 1
+a3 1
+	$Id: MathToCplex.m,v 1.22 1998/06/23 14:01:49 hales Exp hales $
+d5 3
+d193 1
+a193 1
+	"\n\n\\ $Revision: 1.22 $",
+d742 4
+@
+
+
+1.22
+log
+@*** empty log message ***
+@
+text
+@d3 1
+a3 1
+	$Id: MathToCplex.m,v 1.21 1998/06/04 21:25:36 hales Exp hales $
+d5 3
+d190 1
+a190 1
+	"\n\n\\ $Revision: 1.21 $",
+d733 7
+a739 16
+	(* a list of all subsets of n s.t. no two are cyclic-adjacent *)
+NonAdjacentSubsets[n_]:= NonAdjacentSubsets[n]= 
+							Select[subsets[n],NonAdjacent[#,n]&];
+	(* list all subsets of {1,...,n} *)
+	subsets[0]:= {};
+	subsets[n_]:= subsets[n] =
+		Union[subsets[n-1],Map[Join[{n},#]&,subsets[n-1]]]; /; n>1;
+	subsets[1]:= {{},{1}};
+	(* True if no two elements are adjacent in cyclic order mod n *)
+	NonAdjacent[list_,modulus_]:= Module[{sortedList,gap,i},
+			sortedList = Sort[list];
+			(* compare list with its shift *)
+			gap = Mod[RotateLeft[sortedList]-sortedList-1,modulus]; 
+			If[Min[gap]>0,Return[True]];
+			False
+			];
+d743 1
+a743 1
+VertexExcessText:= Module[{nonadjacVertices,str,i,vertices,faces},
+d745 3
+a747 5
+	nonadjacVertices = {};
+	Module[{exc,verticesOnF ,exVertices,subn,nonadjacOnF,i}, 
+		exc = Select[GBLregions,Length[#]>4&];
+        Do[
+		exVertices=Select[exc[[i]], 
+d749 3
+a751 6
+		verticesOnF =exc[[i]];
+		subn = NonAdjacentSubsets[Length[verticesOnF]] ~Complement~ {{}};
+		nonadjacOnF=Select[Map[verticesOnF[[#]]&,subn],Subset[#,exVertices]&];
+		nonadjacVertices = Union[nonadjacVertices,nonadjacOnF];
+		,{i,1,Length[exc]}
+		]];
+d755 1
+d757 2
+a758 2
+		vertices = nonadjacVertices[[i]];
+		If[HasAdjacentPair[vertices],"",
+d765 1
+a765 1
+		,{i,1,Length[nonadjacVertices]}
+d770 6
+a775 5
+HasAdjacentPair[v_]:= Module[{s,i},
+	Union[Table[
+	s = Complement[Select[GBLregions,Inside[v[[i]],#]&]//Flatten,{v[[i]]}];
+	If[Nonempty[s,v],1,0]
+	,{i,1,Length[v]}]]=={1}
+@
+
+
+1.21
+log
+@Constant in SquanderFace corrected.  Doesn't affect anything
+I've run with this version of MathToCplex.m
+@
+text
+@d3 1
+a3 1
+	$Id: MathToCplex.m,v 1.20 1998/06/02 17:52:06 hales Exp hales $
+d5 4
+d103 1
+d187 1
+a187 1
+	"\n\n\\ $Revision: 1.20 $",
+d747 1
+a747 1
+	(* contributions of 1.4 or 1.5 at each vertex of "hot" types 
+d749 1
+a749 7
+VertexExcessText:= Module[{hotVertices,nonadjacVertices,str},
+	hotVertices = Module[{vertexRange,vertex401,vertex311,vertex302},
+		vertexRange = Range[Max[GBLregions]]; 
+		vertex401 = Select[vertexRange,(VertexType[#]=={4,0,1})&];
+		vertex311 = Select[vertexRange,(VertexType[#]=={3,1,1})&];
+		vertex302 = Select[vertexRange,(VertexType[#]=={3,0,2})&];
+		Union[vertex401,vertex311,vertex302]];
+d752 1
+a752 1
+	Module[{exc,verticesOnF ,hotVerticesOnF,subn,nonadjacOnF,i,j}, 
+d755 2
+a757 1
+		hotVerticesOnF = Intersection[verticesOnF ,hotVertices];
+d759 1
+a759 1
+		nonadjacOnF=Select[Map[verticesOnF[[#]]&,subn],Subset[#,hotVertices]&];
+d764 3
+a766 2
+	str = "\n\n\\ Vertex Excess Text\n\n"; Module[{i,j,vertices,faces},
+		Do[
+d768 7
+a774 5
+		faces = Select[Range[Length[GBLregions]],
+			Length[Intersection[GBLregions[[#]],vertices]]>0&];
+		Do[str = str <> "+"<>StringVar["tau",faces[[j]]] <> CR[j,10],{j,1,Length[faces]}];
+		str = str <> " > " <> S[vSquander[vertices]+fSquander[faces]] <>
+			"\n";
+d776 9
+a784 2
+		]];
+	str
+d968 1
+d976 1
+a976 1
+        {i,1,Length[face]}]//StringJoin
+@
+
+
+1.20
+log
+@Version used in 6/2/98 version of Sphere Packings III.
+@
+text
+@d3 1
+a3 1
+	$Id: MathToCplex.m,v 1.19 1998/05/27 02:45:24 hales Exp hales $
+d5 3
+d182 1
+a182 1
+	"\n\n\\ $Revision: 1.19 $",
+d698 1
+a698 1
+SquanderFace= {0,0,0,0.1317,0.27113,0.41056,0.54999,0.06045};
+@
+
+
+1.19
+log
+@Another major revision.  MathToCplexQuadInExcept.m and
+MathToCplexQuadCase.m have been eliminated.  The file
+MathToCplex.m now has everything (I hope) needed to
+do the verifications of SPIII.
+@
+text
+@d3 1
+a3 1
+	$Id: MathToCplex.m,v 1.18 1998/05/25 22:47:39 hales Exp hales $
+d5 6
+d179 1
+a179 1
+	"\n\n\\ $Revision: 1.18 $",
+d1033 1
+d1047 2
+d1058 21
+d1188 1
+a1188 1
+		" 0.14135 y5 - 0.14135 y6 +Cqrs+ht213 > -1.75157 "
+d1201 2
+a1202 2
+	" qrl.3 : - sig - 0.1208 y1 - 0.1208 y2 - " <>
+		" 0.1208 y3 - 0.0781 y4 - 0.0781 y5 - 0.0781 y6 + Cqrl > -1.232965 ",
+d1208 1
+a1208 1
+        " 0.1781 y6 +Cqrl+ht213 > 1.62945 ",
+@
+
+
+1.18
+log
+@Major revision of MathToCplex.m.   There was one small error
+in a constant in the previous version (1.486615 vs. 1.48665),
+but all the other revisions were made to simplify the code.
+It is much much cleaner now.  I checked a cplex output file
+to verify that all the inequalities are correct.  It looks good.
+@
+text
+@d3 1
+a3 1
+	$Id: MathToCplex.m,v 1.17 1998/05/03 23:33:19 hales Exp $
+d5 7
+d173 1
+a173 1
+	"\n\n\\ $Revision: 1.17 $",
+a242 3
+StringVar["quo",f_,pos_]:= "qu{"<>S[f]<>"}"<>S[GBLregions[[f,pos]]]; 
+StringVar["quo",f_,pos_,pos2_]:= StringVar["quo",f,pos]<>".s("<>
+			S[GBLregions[[f,pos2]]]<>")";
+d513 2
+a514 1
+WRITEOUTstd[stream_]:=
+d525 1
+d527 2
+d537 3
+a539 2
+		stream=OpenWrite["TEMP/cplex8.lp"<>S[i]];
+		WRITEOUTstd[stream];
+d681 1
+d778 456
+@
+
+
+1.17
+log
+@another small bug fixed.
+@
+text
+@d3 1
+a3 1
+	$Id: MathToCplex.m,v 1.16 1998/04/22 16:58:46 hales Exp $
+d5 3
+d15 1
+a15 1
+	dihBuffer variable added. This relaxes allowing dihedral
+d75 5
+a79 1
+
+d97 1
+d101 1
+a101 1
+S[x_]:= ToString[FullForm[x]];
+a102 23
+sel[x_] := Select[x, #1[[1]] > 0.4429 & ];
+
+(* text[{"label",4,5,6},{"X","Y"}] -> 
+		labelXY :  sigmaX -4 solidX -5 dihXY <= 6 *)
+
+text[{eqnid_,solid_,dih_,const_},{Fnum_,Vnum_}]:=   
+	(* sigma <= {solid,const,dih} *) 
+	If[eqnid=="","",eqnid <> Fnum <> Vnum <> " :  "] <> 
+	"sigma" <> Fnum <> 
+	If[solid!=0,SR[-solid] <> " solid" <> Fnum,""] <>
+	If[dih!=0,SR[-dih] <> " dih" <> Fnum <> Vnum,""] <>
+	" <= " <> S[const];
+
+(* text42[{"label",4,5},{"X","Y","Z"}] ->
+			 labelXY :  sigmaX -4 dihXY -4 dihXZ <= 5 *)
+
+text42[{eqnid_,dih_,const_},{Fnum_,Vnum_,V2num_}]:=   
+	(* sigma <= {const,dih} *) 
+	eqnid <> Fnum <> Vnum <> " :  " <> 
+	"sigma" <> Fnum <> 
+	If[dih!=0,SR[-dih] <> " dih" <> Fnum <> Vnum,""] <>
+	If[dih!=0,SR[-dih] <> " dih" <> Fnum <> V2num,""] <>
+	" <= " <> S[const];
+a132 2
+	GBLarrang ->{ptcluster[{1, 2}, {5, 3, 2}, {{6, 2, 5}, {4, 5, 3}}], .... },
+	GBLnumver -> 13,
+d134 1
+a134 1
+	GBLcharset -> List["{1}", "{2}", ... , "{19}", "{20}"];  *)
+d136 3
+a138 1
+Initialize[config_]:= Module[{list},
+d140 1
+a140 5
+		list = finalY[[config,3]];
+		GBLarrang = Map[prune,list ];
+		GBLnumver = Length[GBLarrang];
+		GBLregions  = StdRegions[GBLarrang];
+		GBLcharset = Array["{"<>S[#]<>"}"&,Lg[GBLregions]];
+d143 5
+d155 1
+a155 1
+	Array[(s = s<> " + sigma"<> GBLcharset[[#]]<>
+d159 22
+a180 48
+(* textheader -> 
+	 \ LP Format CPLEX file generated by Mathematica on 7/28/1997
+          
+ 
+         \ Problem: Bound the score of configuration number 107
+         \   arising in Part IV of the Kepler Conjecture.
+          
+          
+         MAXIMIZE 
+         score :  + sigma{1} + sigma{2} + sigma{3} + sigma{4} + sigma{5} +\
+          
+         >   sigma{6} + sigma{7} + sigma{8} + sigma{9} + sigma{10} +\
+          
+         >   sigma{11} + sigma{12} + sigma{13} + sigma{14} + sigma{15} +\
+          
+         >   sigma{16} + sigma{17} + sigma{18} + sigma{19} + sigma{20}
+ 
+         ST    *)
+
+textheader:= (
+	"\\ LP Format CPLEX file generated by Mathematica on "<>datestring
+	<> "\n \n"
+	<> "\n\\ Problem: Bound the score of configuration number " 
+	<> S[GBLconfig] 
+	<> "\n\\   arising in Part IV of the Kepler Conjecture."
+	<> "\n\n\\ $Revision: 1.16 $"
+	<> "\n \n \n"
+	<> "MAXIMIZE \n"
+	(* if dihBuffer!=0, get relaxation allowing dihedral bounds to break*)
+	<> sigsum[Lg[GBLregions]]<>" - dihBuffer" (* changeable *)
+	<> "\n\nST \n"
+	)
+
+EIGHTPTineq=False;
+textheaderX:= (
+	"\\ LP Format CPLEX file generated by Mathematica on "<>datestring
+	<> "\n \n"
+	<> "\n\\ Problem: Bound the score of configuration number " 
+	<> S[GBLconfig] 
+	<> "\n\\   arising in Part IV of the Kepler Conjecture."
+	<> "\n\n\\ $Revision: 1.16 $"
+	<> "\n \n \n"
+	(* if dihBuffer!=0, get relaxation allowing dihedral bounds to break*)
+	<> "MAXIMIZE \nX - dihBuffer\n"
+	<> "\n\nST \n"
+	<> sigsum[Lg[GBLregions]]<>" -sigsum= 0\n"<>
+	If[EIGHTPTineq,"sigsum>0.4429\n","X-sigsum=0\n"]
+	);
+d193 14
+a206 10
+twopi:= Module[{str,i,j,s,t},
+	str="\n\n\\ The dihedral angles around each vertex sum to 2pi : ";
+	Do[
+	str=str<> "\ndihsum" <> S[i] <> " : ";
+	s= "- 2 pi " ; 
+	t= Map[First,Position[GBLregions,i]]; 
+	Do[s = s<> " + dih" <> GBLcharset[[t[[j]]]] <> S[i],{j,1,Length[t]}];
+	str = str <> s <> " = 0";
+	,{i,1,GBLnumver}];
+	str 
+d209 12
+a223 1
+StringVar["yG",f_,i_]:= StringVar["y",GBLregions[[f,i]]];
+d225 5
+a229 3
+StringVar["yG",f_,i_,j_]:= StringVar["y",GBLregions[[f,i]],GBLregions[[f,j]]];
+StringVar["dih",f_,pos_]:= "dih{"<>S[f]<>"}"<>S[GBLregions[[f,pos]]];
+StringVar["Adih",f_,pos_]:= "Adih{"<>S[f]<>"}"<>S[GBLregions[[f,pos]]];
+d239 1
+a239 5
+(* tau is a "bad macro."  It will expand incorrectly if it is multiplied
+	by a scalar !=1. *)
+StringVar["tau",i_]:= SR[0.100444571427056] <> " " <> 
+	StringVar["sol",i] <> " - " <> StringVar["sig",i];
+(* octahedral variables: see MathToCplexQuadCase.m *)
+a245 3
+(* dihs[1,2] -> "dih{1}3" *)
+dihs[i_,j_]:= "dih"<>GBLcharset[[i]]<>S[GBLregions[[i,j]]];
+
+d254 2
+a255 5
+         0.8538 <= dih{1}1 <= 1.874445
+         0.8538 <= dih{1}3 <= 1.874
+		 ....
+		  0 <= solid{19} <= 12.57
+          0 <= solid{20} <= 12.57
+d259 1
+a259 1
+bounds:= Module[{r,i,j,pt,str,dihmin,dihmax,dihQmin,dihQmax,dihEmax,d1,d2,
+d264 1
+a264 3
+	dihQmax= S[3.247];
+	dihEmax[reg_]:= Module[{r=Length[reg]}, If[r==3,Return[dihmax]];
+			If[r==4,Return[dihQmax]]; S[6.28319]];
+d272 1
+a272 1
+			d1=dihQmin; d2=dihEmax[GBLregions]
+d274 1
+a274 1
+	   str = str <> "\n" <> d1 <> " <= " <> dihs[i,j] <> " <= " <> d2,
+d278 1
+a278 6
+	  str = str<>"\n -infinity <= sigma" <> GBLcharset[[i]] <> " <= " <> d1,
+		{i,1,Lg[GBLregions]}
+		];
+	str = str <> "\n\n\\ Give bounds on solid angle (4pi < 12.57)";
+	Do[ 
+	  str = str <> "\n 0 <= solid" <> GBLcharset[[i]] <> " <= 12.57",
+d283 1
+a283 1
+	Do[str = str<> "\n 2 <= "<> edgeNames[[i]]<> " <= 2.51",
+a286 1
+
+d291 5
+a295 5
+	t1 = Table[StringVar["y",i],{i,1,Length[GBLarrang]}];
+	t2 = Table[StringVar["y",GBLregions[[f,i]],GBLregions[[f,IMod[i+1,
+			Length[GBLregions[[f]]] ] ]] ],{f,1,Length[GBLregions]},
+			{i,1,Length[GBLregions[[f]] ]}]//Flatten;
+	Union[t1,t2]
+d298 13
+d313 2
+a314 2
+         label{1}1 :  sigma{1} -3 solid{1} -4 dih{1}1 <= 5
+         label{1}3 :  sigma{1} -3 solid{1} -4 dih{1}3 <= 5
+d316 1
+a316 1
+		 label{18}13 :  sigma{18} -3 solid{18} -4 dih{18}13 <= 5  *)
+d318 1
+a318 1
+trieqn[tag_,lab_,{sol_,dih_,con_}]:= Module[{r,i,j,str},
+d320 1
+a320 1
+	Do[r = Lg[GBLregions[[i]]];
+d323 2
+a324 3
+		text[{lab,sol,dih,con}, 
+			{GBLcharset[[i]],S[GBLregions[[i,j]]]}]],
+		{i,1,Lg[GBLregions]},{j,1,Lg[GBLregions[[i]]]}
+a328 2
+(**************************************  PART III QRTET *******************)
+
+d337 5
+a341 5
+	trieqn["Group 3. Equation 1.","Grp3E1",{0, 0.37898, -0.4111}]<>
+	trieqn["Group 3. Equation 2.","Grp3E2",{0, -0.142, 0.23021}]<>
+	trieqn["Group 3. Equation 3.","Grp3E3",{0, -0.3302, 0.5353}]<>
+	trieqn["Group 3. Equation 4.","Grp3E4",{zp, 0.3897, -0.4666}]<>
+	trieqn["Group 3. Equation 5.","Grp3E5",{zp, 0.2993, -0.3683}]<>
+d343 11
+a353 11
+	trieqn["Group 3. Equation 7.","Grp3E7",{zp, -0.1689, 0.208}]<>
+	trieqn["Group 3. Equation 8.","Grp3E8",{zp, -0.2529, 0.3442}]<>
+	trieqn["Group 3. Equation 9.","Grp3E9",{zp32, 0.4233, -0.5974}]<>
+	trieqn["Group 3. Equation 10.","Grp3E10",{zp32, 0.1083, -0.255}]<>
+	trieqn["Group 3. Equation 11.","Grp3E11",{zp32, -0.0953, -0.0045}]<>
+	trieqn["Group 3. Equation 12.","Grp3E12",{zp32, -0.1966, 0.1369}]<>
+	trieqn["Group 3. Equation 13.","Grp3E13",{ax, 0.796456, -0.5786316}]<>
+	trieqn["Group 3. Equation 14.","Grp3E14",{ax, 0.0610397, 0.211419}]<>
+	trieqn["Group 3. Equation 15.","Grp3E15",{ax, -0.0162028, 0.308526}]<>
+	trieqn["Group 3. Equation 16.","Grp3E16",{ax, -0.0499559, 0.35641}]<>
+	trieqn["Group 3. Equation 17.","Grp3E17",{ax, -0.64713719, 1.3225}]
+a355 14
+group7:= Module[{zp=0.1004445714270568,zp32=0.321422628566582,
+		ax=-0.419351},
+	trieqn["Group 7. Equation 1.","",{0,7.782,-7.7606} ]<>
+	trieqn["Group 7. Equation 2.","",{0,0.545,-0.59257} ]<>
+	trieqn["Group 7. Equation 3.","",{0,0.38607,-0.41085} ]<>
+	trieqn["Group 7. Equation 4.","",{zp,8.2522,-8.2828}]<>
+	trieqn["Group 7. Equation 5.","",{zp,0.45454,-0.5595}]<>
+	trieqn["Group 7. Equation 6.","",{zp32,9.28646,-9.43164}]<>
+	trieqn["Group 7. Equation 7.","",{zp32,0.54176,-0.77026}]<>
+	trieqn["Group 7. Equation 8.","",{zp32,0.25285,-0.43306}]<>
+	trieqn["Group 7. Equation 9.","",{1.28231,0,-0.59084}]<>
+	trieqn["Group 7. Equation 10.","",{0.8513,0,-0.39842}]<>
+	trieqn["Group 7. Equation 11.","",{0.59162,0,-0.27077}]
+	  ];
+d357 4
+d362 7
+a368 1
+(******************************** PART III QUAD **************************)
+d373 8
+a380 8
+         label{19}1 :  sigma{19} -4.56766 dih{19}1 <= -5.7906
+         label{19}2 :  sigma{19} -4.56766 dih{19}2 <= -5.7906
+         label{19}6 :  sigma{19} -4.56766 dih{19}6 <= -5.7906
+         label{19}5 :  sigma{19} -4.56766 dih{19}5 <= -5.7906
+         label{20}1 :  sigma{20} -4.56766 dih{20}1 <= -5.7906
+         label{20}5 :  sigma{20} -4.56766 dih{20}5 <= -5.7906
+         label{20}4 :  sigma{20} -4.56766 dih{20}4 <= -5.7906
+         label{20}3 :  sigma{20} -4.56766 dih{20}3 <= -5.7906   *)
+d383 2
+a384 2
+CCHASH = 2032330977; (* // CHANGE IF CC IS CHANGED. ineq.cc // 5/21/97 *)
+quad[tag_,lab_,q_]:= Module[{r,i,j,str,sol,dih,con,CC,zp,zp32},
+d407 1
+a407 1
+        {-0.419351,0.0895,0.342747}, (* //4.1.23 (modified 5/21/97) *)
+d413 1
+a413 1
+	Do[r = Lg[GBLregions[[i]]];
+d416 2
+a417 3
+		text[{lab,sol,dih,con}, 
+			{GBLcharset[[i]],S[GBLregions[[i,j]]]}]],
+		{i,1,Lg[GBLregions]},{j,1,Lg[GBLregions[[i]]]}
+d428 1
+a428 1
+		{0.7624,-0.198867},
+d431 1
+d437 1
+a437 3
+		text42[{lab,dih,con}, 
+			{GBLcharset[[i]],S[GBLregions[[i,j]]],
+			S[Period[GBLregions[[i]],j+1]]}]],
+d446 8
+a453 8
+         Qu421{19}1 :  sigma{19} -3.0508 dih{19}1 -3.0508 dih{19}2 <= -9.494
+         Qu421{19}2 :  sigma{19} -3.0508 dih{19}2 -3.0508 dih{19}6 <= -9.494
+         Qu421{19}6 :  sigma{19} -3.0508 dih{19}6 -3.0508 dih{19}5 <= -9.494
+         Qu421{19}5 :  sigma{19} -3.0508 dih{19}5 -3.0508 dih{19}1 <= -9.494
+         Qu421{20}1 :  sigma{20} -3.0508 dih{20}1 -3.0508 dih{20}5 <= -9.494
+         Qu421{20}5 :  sigma{20} -3.0508 dih{20}5 -3.0508 dih{20}4 <= -9.494
+         Qu421{20}4 :  sigma{20} -3.0508 dih{20}4 -3.0508 dih{20}3 <= -9.494
+         Qu421{20}3 :  sigma{20} -3.0508 dih{20}3 -3.0508 dih{20}1 <= -9.494 *)
+a455 2
+quadeqn42[i_]:= quad42["Quad 4.2."<>S[i],"Qu42"<>S[i],i];
+quadeqn[i_]:= quad["Quad 4.1."<>S[i],"Qu41"<>S[i],i];
+d457 2
+a458 1
+hyp41:= Module[{i,str=""},
+d463 1
+a463 4
+hyp42:= Module[{i,str=""},
+	Do[str = str<> quadeqn42[i],{i,1,4}];
+	str
+	];
+d465 11
+a475 11
+solid:= Module[{r,i,j,str,v},
+	str = "\n\n\\ Solid angles in terms of dihedral angles";
+	Do[r = Lg[GBLregions[[i]]];
+	      str=str<>"\nDS"<> S[i]<> " : ";
+		v = GBLcharset[[i]];
+		str = str<>" - solid"<>v;
+		Do[str=str<>" + dih"<>v<>S[GBLregions[[i,j]]],
+			{j,1,r}];
+		str=str<>" - "<>S[r-2]<>" pi = 0",
+	{i,1,Lg[GBLregions]}];
+	str
+a477 22
+(* stuff for breaking quads, i == face number, so GBLregions[[i]] has lnth 4.
+	Do nothing if we are not dealing witht the 18 final cases of III. 
+	MathToCplexQuadCase is defined in MathToCplexQuadCase.m.   *)
+solidA[i_]:= If[IntegerQ[MathToCplexQuadCase],solidAx[i],""];
+
+brokensolid:= Module[{i},
+	str = "\n\n\\ Division of quad clusters into simplices\n";
+	quads = Select[Range[Length[GBLregions]],(Length[GBLregions[[#]]]==4&)];
+	Do[str = str<> solidA[quads[[i]]],{i,1,Length[quads]}];
+	str
+	];
+
+(* sig[1] -> "sigma{1}" *)
+
+sig[i_]:= "sigma"<>GBLcharset[[i]];
+sig1[i_]:= "sigma"<>GBLcharset[[i]]<>"- 0.1004445714270561 solid"<>GBLcharset[[i]];
+
+(* group55 ->          \ The group 5 inequalities for type (5,0) vertices 
+         Grp102Vertex7 :  - 4.52 pt  + sigma{7} + sigma{8} + sigma{10} +\
+          
+         >   sigma{12} + sigma{13} <= 0
+         Grp102Vertex8 :  - 4.52 pt  + sigma{2} + sigma{3} + si.... *)
+d479 2
+a480 3
+group55:= Module[{v,q,str,i,j,s,h,t},
+	str="\n\n\\ The group 5 inequalities for type (5,0) vertices ";
+	v = Select[Range[1,GBLnumver],GBLarrang[[#,1]]=={5,0}&];
+d482 8
+a489 31
+	\
+	Do[ i = v[[q]];
+	str=str<> "\nGrp102Vertex" <> S[i] <> " : ";
+	s= " - 4.52 pt ";
+	t= Map[First,Position[GBLregions,i]]; 
+	Do[s = s<> " + sigma" <> GBLcharset[[t[[j]]]],{j,1,Length[t]}];
+	str = str <> s <> " <= 0";
+	,{q,1,Length[v]}];
+	\
+	Do[ i = v[[q]];
+	str=str<> "\nGrp104Vertex" <> S[i] <> " : ";
+	s= " 0.55 pt ";
+	t= Map[First,Position[GBLregions,i]]; 
+	Do[
+		h = GBLcharset[[t[[j]] ]];
+		s = s<> " + sigma" <> h <> " - 0.1004445714270568 solid" <> h,
+		{j,1,Length[t]}];
+	str = str <> s <> " <= 0"
+	,{q,1,Length[v]}];
+	\
+	Do[ i = v[[q]];
+	str=str<> "\nGrp105Vertex" <> S[i] <> " : ";
+	s= " ";
+	t= Map[First,Position[GBLregions,i]]; 
+	Do[
+		h = GBLcharset[[t[[j]] ]];
+		s = s<> " + sigma" <> h <> " + 0.419351 solid" <> h,
+		{j,1,Length[t]}];
+	str = str <> s <> " <=  1.428177 \\ = 5(0.2856354)"
+	,{q,1,Length[v]}];
+	str 
+d494 11
+a504 13
+group54:= Module[{v,q,str,i,j,s,h,t},
+	str="\n\n\\ The group 5 inequalities for type (4,0) vertices ";
+	v = Select[Range[1,GBLnumver],GBLarrang[[#,1]]=={4,0}&];
+	If[Length[v]<1,Return];
+	\
+	Do[ i = v[[q]];
+	str=str<> "\nGrp101Vertex" <> S[i] <> " : ";
+	s= " -0.33 pt ";
+	t= Map[First,Position[GBLregions,i]]; 
+	Do[s = s<> " + sigma" <> GBLcharset[[t[[j]]]],{j,1,Length[t]}];
+	str = str <> s <> " <= 0";
+	,{q,1,Length[v]}];
+	str 
+d507 1
+a507 1
+group5:= (group55 <> group54);
+d510 1
+a510 1
+	(WriteString[stream,textheaderX];
+d512 1
+a521 2
+        WriteString[stream,brokensolid];
+		(* for exceptionals *)
+d529 1
+a529 1
+		stream=OpenWrite["BASIC/cplex8.lp"<>S[i]];
+a545 6
+Exec[i_] := Module[{stream, j}, 
+   stream = OpenWrite["cplex.exec"]; 
+    Do[WriteString[stream, StringJoin["\nread cplex.lp", ToString[j], 
+       " lp\noptimize"]], {j, 1, i}]; WriteString[stream, "\nquit\n"]; 
+    Close[stream]; ]
+
+d555 1
+a555 1
+(* This gives the collections of at most four vertices that are all
+d557 14
+a570 39
+ValenceFiveVertices:=Module[{i,j,x,d2,d3a,d3b,d4a,d4b,d4c,v5s,r,s,rx,sx},
+	v5s = Select[Range[1,GBLnumver],GBLarrang[[#,1]]=={5,0}&];
+	d2 = Table[j=v5s[[i]]; x=GBLarrang[[j,2]];
+		{j, Period[x,k]},
+		{i,1,Length[v5s]},{k,1,5}] ~Flatten~ 1;
+	d2 = Select[d2,Subset[#,v5s]&];
+	d2 = Map[Sort,d2]//Union;
+	d3a = Select[GBLregions,Length[#]==3&];
+	d3a = Select[d3a,Subset[#,v5s]&];
+	d3a = Map[Sort,d3a]//Union;
+	d3b = Table[j=v5s[[i]]; x=GBLarrang[[j,2]];
+		{j,Period[x,k],Period[x,k+2]},
+		{i,1,Length[v5s]},{k,1,5}] ~Flatten~ 1;
+	d3b = Select[d3b,Subset[#,v5s]&];
+	d3b = Map[Sort,d3b]//Union;
+	d4a = Table[j=v5s[[i]]; x=GBLarrang[[j,2]];
+		{j,Period[x,k],Period[x,k+1],Period[x,k+2]},
+		{i,1,Length[v5s]},{k,1,5}] ~Flatten~ 1;
+	d4a = Select[d4a,Subset[#,v5s]&];
+	d4a = Map[Sort,d4a]//Union;
+	d4b = Table[j=v5s[[i]]; x=GBLarrang[[j,2]];
+		{j,Period[x,k],Period[x,k+2],Period[x,k+3]},
+		{i,1,Length[v5s]},{k,1,5}] ~Flatten~ 1;
+	d4b = Select[d4b,Subset[#,v5s]&];
+	d4b = Map[Sort,d4b]//Union;
+	d4c = Table[x = GBLarrang[[j,2]];
+		{Period[x,k],Period[x,k+1],Period[x,k+2],Period[x,k+3]}//Union,
+		{j,1,GBLnumver},{k,1,Length[x]}]~Flatten~1;
+	d4c = Select[d4c,Subset[#,v5s]&];
+	d4c = Map[Sort,d4c]//Union;
+	d4d = Table[r = d2[[i,1]]; s = d2[[i,2]];
+		    rx = GBLarrang[[r,2]]; sx = GBLarrang[[s,2]];
+		    rx =  MoveFirst[rx,s]; sx = MoveFirst[sx,r];
+		{{r,s,rx[[3]],sx[[3]]},{r,s,rx[[4]],sx[[4]]}},
+		{i,1,Length[d2]}
+		]~Flatten~1;
+	d4d = Select[d4d,Subset[#,v5s]&];
+	d4d = Map[Sort,d4d]//Union;
+	Union[d2,d3a,d3b,d4a,d4b,d4c,d4d]
+d575 1
+a575 1
+         +sigma{13}+sigma{17}+sigma{18} -7.04 pt <=0
+d582 1
+a582 1
+         >   solid{18} +1.1 pt <=0  *)
+d584 1
+a584 1
+Valence5txt[v_]:= Module[{fac,s,i,CR},
+a585 1
+	CR[i_]:= If[0==Mod[i,5],"\n",""];
+d587 4
+a590 4
+	Do[s = s<> "+"<>sig[fac[[i]]]<>CR[i],{i,1,Length[fac]}];
+	s = s<> SR[Length[v] 0.48- Length[fac]]<>" pt <=0\n";
+	Do[s = s<> "+"<>sig1[fac[[i]]]<>CR[i],{i,1,Length[fac]}];
+	s = s<> SR[Length[v] 0.55]<>" pt <=0\n";
+d594 4
+a597 6
+ValenceFiveText:= Module[{s,vList,i},
+	vList = ValenceFiveVertices;
+	s = "\n\n\\ Valence 5 inequalities: \n\n";
+	Do[s = s<>Valence5txt[vList[[i]]],{i,1,Length[vList]}];
+	s
+	];
+d602 39
+a640 34
+edgeineq:= edgeineq = 
+	StringReplace[
+	"\n-solid + 0.199235 y4 + 0.199235 y5 + 0.199235 y6 -\n  \
+	   0.377076 y1 - 0.377076 y2 - 0.377076 y3 <= -1.618331\n"<>
+	" solid - 0.320937 y4 - 0.320937 y5 - 0.320937 y6 +\n  \
+	   0.152679 y1 + 0.152679 y2 + 0.152679 y3 <= -0.458262\n"<>
+	" sigma + 0.10857 y1 + 0.10857 y2 + 0.10857 y3 + \n  \
+	   0.10857 y4 + 0.10857 y5 + 0.10857 y6 <= 1.3582137\n"<>
+	" sigma + 0.419351 solid + 0.2 y1 + 0.2 y2 + 0.2 y3 <= 1.486615\n"<>
+	" sigma - 0.1004445714270561 solid + c1 y4 + c1 y5 +\n  \
+		c1 y6 + 0.0845696 y1 + 0.0845696 y2 + \n  \
+		0.0845696 y3 <= 1.2821326\n" <>
+	" dih1 + d1 y2 + d1 y3 + d1 y5 + d1 y6 -\n  \
+		d2 y1 - d3 y4 <= -0.065176\n"<>	
+	" dih2 + d1 y1 + d1 y3 + d1 y4 + d1 y6 -\n  \
+		d2 y2 - d3 y5 <= -0.065176\n"<>	
+	" dih3 + d1 y1 + d1 y2 + d1 y4 + d1 y5 -\n  \
+		d2 y3 - d3 y6 <= -0.065176\n"<>	
+	"-dih1 - e1 y2 - e1 y3 - e1 y5 - e1 y6 +\n  \
+		e2 y1 + e3 y4 <= -2.734102\n"<>
+	"-dih2 - e1 y1 - e1 y3 - e1 y4 - e1 y6 +\n  \
+		e2 y2 + e3 y5 <= -2.734102\n"<>
+	"-dih3 - e1 y1 - e1 y2 - e1 y4 - e1 y5 +\n  \
+		e2 y3 + e3 y6 <= -2.734102\n\n\n"
+	,
+	{
+	"c1"->"0.129119","c2"->"0.0845696",
+	"d1"->"0.153598","d2"->"0.498","d3"->"0.76446",
+	"e1"->"0.359894","e2"->"0.003","e3"->"0.685"
+	}
+	];
+
+edgeineqQ:= "-1.0 dih + 0.3257 y1 - 0.398 y2 -0.398 y3 "<>
+				"-0.398 y5 -0.398 y6 <= -4.14938\n";
+a641 46
+qedge[i_,r_]:= Module[{sub,bg,x1,x2,x3,Y1,Y2,Y3,Y4,Y5,Y6},
+		bg = GBLcharset[[i]];
+		x1 = Period[GBLregions[[i]], r];
+		x2 = Period[GBLregions[[i]], r+1];
+		x3 = Period[GBLregions[[i]], r-1];
+		Y1 = "y("<>S[x1]<>")";
+		Y2 = "y("<>S[x2]<>")";
+		Y3 = "y("<>S[x3]<>")";
+		Y4="y("<>S[Min[x2,x3]]<>","<>S[Max[x2,x3]]<>")";
+		Y5="y("<>S[Min[x1,x3]]<>","<>S[Max[x1,x3]]<>")";
+		Y6="y("<>S[Min[x1,x2]]<>","<>S[Max[x1,x2]]<>")";
+		 sub = {"dih"->"dih"<>bg<>S[x1],
+				"solid"->"solid"<>bg,
+				"y1"->Y1,"y2"->Y2,"y3"->Y3,"y4"->Y4,"y5"->Y5,"y6"->Y6};
+	(* edgeNames = Union[edgeNames,{Y1,Y2,Y3,Y5,Y6}]; *)
+	StringReplace[edgeineqQ,sub]
+	];
+
+qedge[i_]:= Apply[StringJoin,Array[qedge[i,#]&,Length[GBLregions[[i]]]  ]];
+
+qedges:= Module[{li,St},
+	li = Select[Range[1,Length[GBLregions]],Length[GBLregions[[#]]]>3&];
+	St=Apply[StringJoin,Array[qedge[li[[#]] ]&,Length[li] ]];
+	li = Select[Range[1,Length[GBLregions]],Length[GBLregions[[#]]]==4&];
+	St<>Apply[StringJoin,Array[edgeIso[li[[#]] ]&,Length[li] ]]
+	];
+
+edgeineqIsoPeri:= "solid - 0.719788 y1 - 0.719788 y2 - 0.719788 y3 "<>
+			"-0.719788 y4 <= -4.398954\n";
+
+edgeIso[i_]:= Module[{sub,bg,x1,x2,x3,x4,Y1,Y2,Y3,Y4},
+		bg = GBLcharset[[i]];
+		x1 = Period[GBLregions[[i]], 1];
+		x2 = Period[GBLregions[[i]], 2];
+		x3 = Period[GBLregions[[i]], 3];
+		x4 = Period[GBLregions[[i]], 4];
+		Y1="y("<>S[Min[x1,x2]]<>","<>S[Max[x1,x2]]<>")";
+		Y2="y("<>S[Min[x2,x3]]<>","<>S[Max[x2,x3]]<>")";
+		Y3="y("<>S[Min[x3,x4]]<>","<>S[Max[x3,x4]]<>")";
+		Y4="y("<>S[Min[x4,x1]]<>","<>S[Max[x4,x1]]<>")";
+		 sub = {"dih"->"dih"<>bg<>S[x1],
+				"solid"->"solid"<>bg,
+				"y1"->Y1,"y2"->Y2,"y3"->Y3,"y4"->Y4};
+	(* edgeNames = Union[edgeNames,{Y1,Y2,Y3,Y4}]; *)
+	StringReplace[edgeineqIsoPeri,sub]
+	];
+d646 22
+a667 1
+	Apply[StringJoin,Array[EdgeInequality[li[[#]]]&,Length[li]]]
+a669 60
+EdgeInequality[i_]:=Module[{gb,Y1,Y2,Y3,Y4,Y5,Y6,sub,x1,x2,x3},
+	gb = GBLcharset[[i]];
+	x1 = GBLregions[[i,1]];
+	x2 = GBLregions[[i,2]];
+	x3 = GBLregions[[i,3]];
+	sub = 
+	{"solid"->"solid"<>gb,
+	 "dih1"->"dih"<>gb<>S[x1],
+	 "dih2"->"dih"<>gb<>S[x2],
+	 "dih3"->"dih"<>gb<>S[x3],
+	 "sigma"->"sigma"<>gb,
+	 "y1"->(Y1="y("<>S[x1]<>")"),
+	 "y2"->(Y2="y("<>S[x2]<>")"),
+	 "y3"->(Y3="y("<>S[x3]<>")"),
+	 "y4"->(Y4="y("<>S[Min[x2,x3]]<>","<>S[Max[x2,x3]]<>")"),
+	 "y5"->(Y5="y("<>S[Min[x1,x3]]<>","<>S[Max[x1,x3]]<>")"),
+	 "y6"->(Y6="y("<>S[Min[x1,x2]]<>","<>S[Max[x1,x2]]<>")")
+	};
+	(* edgeNames = Union[edgeNames,{Y1,Y2,Y3,Y4,Y5,Y6}]; *)
+	StringReplace[edgeineq,sub]
+	];
+
+(* stuff for generating new inequalities *)
+MakeSub[i_]:= Module[{gb,x1,x2,x3},
+	gb = GBLcharset[[i]];
+        x1 = GBLregions[[i,1]];
+        x2 = GBLregions[[i,2]];
+        x3 = GBLregions[[i,3]];
+	 {"solid"->"solid"<>gb,
+         "dih1"->"dih"<>gb<>S[x1],
+         "dih2"->"dih"<>gb<>S[x2],
+         "dih3"->"dih"<>gb<>S[x3],
+         "sigma"->"sigma"<>gb,
+         "y1"->"y."<>S[x1]<>"\)",
+         "y2"->"y."<>S[x2]<>"\)",
+         "y3"->"y."<>S[x3]<>"\)",
+         "y4"->"y."<>S[Min[x2,x3]]<>","<>S[Max[x2,x3]]<>"\)",
+         "y5"->"y."<>S[Min[x1,x3]]<>","<>S[Max[x1,x3]]<>"\)",
+         "y6"->"y."<>S[Min[x1,x2]]<>","<>S[Max[x1,x2]]<>"\)"
+        }];
+
+egreps := "!egrep '(sigma|dih1|dih2|dih3|y1|y2|y3|y4|y5|y6)' CPLEX/LP127/cplex.log"
+
+Egrep[i_]:= ToExpression[StringReplace[egreps,MakeSub[i]]];
+
+newineq:= "D1 d1 + D2 d2 + D3 d3 +\
+	A1 a1 + A2 a2 + A3 a3 + A4 a4 + A5 a5 + A6 a6 +b\
+	<= Score";
+
+SubX[i_]:= StringReplace[{
+		"dih1"-> "D1",
+		"dih2"-> "D2",
+		"dih3"-> "D3",
+		"y1"-> "A1",
+		"y2"-> "A2",
+		"y3"-> "A3",
+		"y4"-> "A4",
+		"y5"-> "A5",
+		"y6"-> "A6",
+		"sigma"-> "Score"},MakeSub[i]];
+d678 16
+a693 20
+(* format for exceptional:
+		{vertices,faces};
+		vertices = {{f1,f2,f3,f4},{f5,f6,f7,f8},...} // faces around each vertex.
+		faces = {{v1,v2,v3},{v2,v3,v4},{v5,v6,v7...},...}//dual.  *)
+
+
+SquanderFace= {0,0,0,2.378,4.896,7.414,9.932,10.916};
+ScoreFace  = {0,0,0,0,-1.03,-2.06,-3.03,-3.03};
+ExceptFaceText:= Module[{exc,zp,i,r,str,pt},
+		zp=0.1004445714270568;
+		pt= 0.055373645668463;
+		exc = Select[Range[1,GBLregions//Lg],Length[GBLregions[[#]]]>4&];
+		str = "\n\n\\ Exceptional Face Text: \n\n";
+		Do[str = str<>"\n"<> (r=exc[[i]];
+			text[{"except",0,0,pt*ScoreFace[[GBLregions[[r]]//Lg]]},
+				{GBLcharset[[r]],""}]),{i,1,exc//Lg}];
+		Do[str = str<>"\n"<> (r=exc[[i]];
+			text[{"exSquander",zp,0,-pt*SquanderFace[[GBLregions[[r]]//Lg]]},
+				{GBLcharset[[r]],""}]),{i,1,exc//Lg}];
+		str
+d727 4
+a730 4
+		vertexRange = Range[Length[GBLarrang]]; 
+		vertex401 = Select[vertexRange,(GBLarrang[[#,1]]=={4,0,1})&];
+		vertex311 = Select[vertexRange,(GBLarrang[[#,1]]=={3,1,1})&];
+		vertex302 = Select[vertexRange,(GBLarrang[[#,1]]=={3,0,2})&];
+d750 1
+a750 1
+		Do[str = str <> StringVar["tau",faces[[j]]] <> "\n",{j,1,Length[faces]}];
+d760 1
+a760 1
+	Switch[GBLarrang[[vNumber,1]],
+a767 5
+fSquander[flist_List]:= 
+	Module[{pt},
+	pt = pt= 0.055373645668463;
+	(Plus @@@@ Map[SquanderFace[[Length[GBLregions[[#]] ] ]]&,flist]) pt
+	];
+@
+
+
+1.16
+log
+@*** empty log message ***
+@
+text
+@d3 1
+a3 1
+	$Id: MathToCplex.m,v 1.15 1998/04/03 02:19:39 hales Exp hales $
+d5 3
+d169 2
+a170 1
+	Array[(s = s<> " + sigma"<> GBLcharset[[#]])&,n];
+d198 1
+a198 1
+	<> "\n\n\\ $Revision: 1.15 $"
+d213 1
+a213 1
+	<> "\n\n\\ $Revision: 1.15 $"
+@
+
+
+1.15
+log
+@textheaderX added, AnyPosition modified.
+@
+text
+@d3 1
+a3 1
+	$Id: MathToCplex.m,v 1.14 1998/02/24 05:43:57 hales Exp hales $
+d5 3
+d194 1
+a194 1
+	<> "\n\n\\ $Revision: 1.14 $"
+d202 1
+d209 1
+a209 1
+	<> "\n\n\\ $Revision: 1.14 $"
+d214 2
+a215 1
+	<> sigsum[Lg[GBLregions]]<>" >0.4429\n"
+d595 1
+a595 1
+	(WriteString[stream,textheader];
+d614 1
+a614 1
+		freeVar={};
+@
+
+
+1.14
+log
+@dihBuffer variable added. This relaxes allowing dihedral
+bounds to fail with a penalty.
+@
+text
+@d3 1
+a3 1
+	$Id: MathToCplex.m,v 1.13 1998/02/23 03:50:01 hales Exp hales $
+d5 4
+d68 2
+a69 1
+AnyPosition[list_,x_]:= Min[Map[First,Position[list,x]]];
+a153 1
+		freeVar ={}; (* global variable *)
+d191 1
+a191 1
+	<> "\n\n\\ $Revision: 1.13 $"
+a196 1
+	(* <> sigsum[Lg[GBLregions]] <> " > 0.44298 \n" *)(* BUGBUG! *)
+d199 14
+d609 1
+@
+
+
+1.13
+log
+@Some stuff for exceptionals that was never seriously used
+was moved to another file MathToPenalty.old.m
+@
+text
+@d3 1
+a3 1
+	$Id: MathToCplex.m,v 1.12 1998/02/12 15:19:58 hales Exp hales $
+d5 4
+d187 1
+a187 1
+	<> "\n\n\\ $Revision: 1.12 $"
+d190 2
+a191 1
+	<> sigsum[Lg[GBLregions]] (* changeable *)
+@
+
+
+1.12
+log
+@MakeExec rewritten as Exec.  Doesn't affect any inequalities.
+@
+text
+@d3 1
+a3 1
+	$Id: MathToCplex.m,v 1.11 1998/02/12 03:35:56 hales Exp hales $
+d5 3
+d106 11
+a116 6
+OneStdRegionAt[i_,j_,a_]:= Module[{b,s,u,t},
+			b = Map[#[[2]]&,a];
+			t = {i,u=b[[i,j]]};
+			While[Last[t]!=i,s = b[[Last[t]]];
+				q = AnyPosition[s,t[[-2]] ];
+				AppendTo[t,Period[s,q-1] ];
+d118 7
+a124 9
+			t = Drop[t,-1];
+			MoveFirst[t,Min[t]]
+			];
+
+OneStdRegion[i_, a_] := Module[{j},
+  Table[OneStdRegionAt[i, j, a], {j, 1, Length[a[[i,2]]]}]];
+
+StdRegions[arrang_]:= 
+		Array[OneStdRegion[#,arrang]&,Lg[arrang]]//Flatten1//Union;
+d145 1
+a145 1
+		brokenVar ={}; (* global variable *)
+d183 1
+a183 1
+	<> "\n\n\\ $Revision: 1.11 $"
+d222 4
+a225 4
+StringVar["sol",f_]:= "solid{"<>S[f]<>"}";
+StringVar["sig",f_]:= "sigma{"<>S[f]<>"}";
+StringVar["sol",f_,pos_]:= StringVar["sol",f]<>S[GBLregions[[f,pos]]];
+StringVar["sig",f_,pos_]:= StringVar["sig",f]<>S[GBLregions[[f,pos]]];
+d231 2
+d295 1
+a295 1
+	Do[str = str<> "\n "<>brokenVar[[i]]<>" free",{i,1,Length[brokenVar]}];
+a581 2
+		WriteString[stream,"\\ penalty trunc text not used"];
+        (* WriteString[stream,PenaltyTruncText]; *)
+d844 3
+a872 22
+dihMin[GBLregionPart_,pos_]:= Module[{tetAngleMin,quadAngleMin,a1,ln,v},
+	v = GBLregions[[GBLregionPart,pos]];
+	ln = Length[GBLregions[[GBLregionPart]]];
+	tetAngleMin=0.8638;
+	quadAngleMin = 1.153;
+	If[ln<4,Return[tetAngleMin]];
+	If[ln==4,Return[quadAngleMin]];
+	If[GBLarrang[[v,1,3]]>1,Return[quadAngleMin]]; (* >1 exceptional *)
+	(* Prop III.4.3, Calc III.10.1.2  *)
+	a1 = 2Pi - 3.247 GBLarrang[[v,1,2]] - 1.874445 GBLarrang[[v,1,1]];
+	Max[a1,quadAngleMin]
+	];
+
+
+dihMax[GBLregionPart_,pos_]:= Module[{v,ln},
+	v = GBLregions[[GBLregionPart,pos]];
+	ln = Length[GBLregions[[GBLregionPart]]];
+	If[ln<4,Return[1.874445]];  (* III.10.1.2 *)
+	If[ln==4,Return[3.247]];
+	2Pi +(1.153 - 0.8638) GBLarrang[[v,1,1]] - 
+		1.153 ((Plus @@@@ GBLarrang[[v,1]])-1)  (* subtract off one here *)
+	];
+a876 78
+(* -sigma{13} - 0.5666365478933329*solid{13} + dihf{13}1 + ...
+		- doct4*qu{13}(1,2) - doct4*qu{13}(2,3) - ...
+		>= - penalty[[...]];  *)
+
+
+
+(* The vorVc bound *)
+PenaltyTruncText:= Module[{multiplier,
+	r,i,j,exc,phi0,pt,doct4,penalty,str,ln,Y},
+	Y[f_,p1_]:= StringVar["y",GBLregions[[f,p1]]];
+	Y[f_,p1_,p2_]:= StringVar["y",GBLregions[[f,p1]],GBLregions[[f,p2]]];
+	exc = Select[Range[1,GBLregions//Lg],Length[GBLregions[[#]]]>4&];
+	phi0 = -0.5666365478933329;
+	pt = 0.05537364566846414;
+	doct4 = 2.883611798069859;
+	(* penalty = penalties for switching to VorVc *)
+	penalty = {0,0,0,0,(5)0.01561,(6)0.01561,(7)0.01561,(8)0.01561};
+	str = "\n\n";
+ 
+	(* vorVc upper bound *)
+	Do[str = str<>"\n";
+	   r = exc[[i]];
+		ln = GBLregions[[r]]//Length;
+		str = str <> "-" <> StringVar["sig",r];
+		str = str <> SR[phi0] <> " " <> StringVar["sol",r] <> " ";
+		Do[str = str <> "+" <> StringVar["Adih",r,j],
+			{j,1,ln}];
+		Do[str = str <> "\n"<> S[-doct4] <> " "<> StringVar["quo",r,j,IMod[j+1,ln]];
+			,{j,1,ln}];
+		Do[str = str <> "\n"<> S[-doct4] <> " "<> StringVar["quo",r,IMod[j+1,ln],j];
+			,{j,1,ln}];
+		str = str<>"\n";
+		str = str <> " > " <> S[-penalty[[ln]]] <> "\n";
+		, {i,1,Length[exc]}
+		];
+ 
+	(* Quoin *)
+	Do[r = exc[[i]];
+		ln = GBLregions[[r]]//Length;
+ 
+		Do[
+		str = str <> StringVar["quo",exc[[i]],j,IMod[j+1,ln]] <>
+		" +0.00758 "<> Y[r,j] <> 
+		" +0.0115 " <> Y[r,IMod[j-1,ln]] <>
+		" +0.0115 " <> Y[r,j,IMod[j-1,ln]] <>
+		" > " <> S[0.00217 + 2 0.00758 + 4 0.0115] <> "\n";
+		, {j,1,ln}];
+ 
+		Do[
+		str = str <> StringVar["quo",exc[[i]],j,IMod[j+1,ln]] <>
+		" +0.00758 "<> Y[r,j] <> 
+		" +0.0115 " <> Y[r,IMod[j+1,ln]] <>
+		" +0.0115 " <> Y[r,j,IMod[j+1,ln]] <>
+		" > " <> S[0.00217 + 2 0.00758 + 4 0.0115] <> "\n";
+		, {j,1,ln}];
+		, {i,1,Length[exc]}];
+ 
+	(* Adih inequalities *)
+	multiplier = 0.109691511444153; (* f[1];  
+		(dih f[h] is term in vorVc. ),
+		 f[h_]:= (1 - h/t0)*(phi[h, t0] - phi[t0, t0]) *)
+	Do[r = exc[[i]]; 
+		ln = GBLregions[[r]]//Length;
+		Do[
+		str = str <> StringVar["Adih",r,j] <> S[-multiplier] <> " " <>
+			StringVar["dih",r,j] <> " " <>
+			SR[multiplier/(1.255-1.0) dihMin[r,j]/2] <> " " <>
+				StringVar["y",GBLregions[[r,j]]] <> " < " <>
+			S[multiplier/(1.255-1.0) dihMin[r,j]] <> "\n";
+		str = str <> StringVar["Adih",r,j] <> " " <>
+			SR[multiplier /(1.255-1)/2 dihMax[r,j]] <> " " <>
+			StringVar["y",GBLregions[[r,j]]] <> " < " <>
+			S[multiplier/(1.255-1) 1.255 dihMax[r,j]] <> "\n\n";
+		(* finish *)
+		,{j,1,ln}];
+		, {i,1,Length[exc]}];
+	str
+	];
+d900 1
+a900 1
+		(4,0,1),(3,1,1),(3,02)*)
+d921 1
+a921 1
+	str = "\n\n\\ Vertex Excess Text\n\n"; Module[{i,vertices,faces},
+@
+
+
+1.11
+log
+@revision number added.
+@
+text
+@d3 1
+a3 1
+	$Id: MathToCplex.m,v 1.10 1998/02/12 03:33:15 hales Exp hales $
+d5 3
+d177 1
+a177 1
+	<> " $Revision$
+d581 1
+a581 1
+		stream=OpenWrite["BASIC/cplex.lp"<>S[i]];
+d598 6
+a603 11
+MakeExec:= Module[{s,i},
+		(* Do[WRITEOUT[i];Print[i,"/",Length[finalY]," "],
+				{i,1,Length[finalY]}]; *)
+		stream=OpenWrite["/tmp/Z/cplex.exec"];
+		s="set logfile /tmp/Z/cplex.log\n";
+		Do[s = s<>"read /tmp/Z/cplex.lp"<>S[i]<>" lp \n"<>
+				"optimize\n",{i,1,Length[finalY]}];
+		s=s<>"quit";
+		WriteString[stream,s];
+		Close[stream];
+		];
+@
+
+
+1.10
+log
+@This version has a conservative but presumably correct
+list of inequalities for EXCEPTIONALS.  I have cut back enough
+that things should never have to be rerun with weaker inequalities.
+@
+text
+@d3 1
+a3 1
+	$Id: MathToCplex.m,v 1.9 1998/02/06 23:01:14 hales Exp hales $
+d5 5
+d174 1
+a174 1
+	<> "\n\\ equation 4.1 "
+@
+
+
+1.9
+log
+@several obsolete functions have been deleted.
+@
+text
+@d3 1
+a3 1
+	$Id: MathToCplex.m,v 1.8 1997/12/03 00:33:36 hales Exp hales $
+d5 3
+a94 13
+(* old : replace on 7/30/97 
+OneStdRegion[i_,a_]:= Module[{t,j,q},
+		  t = Array[{i,a[[i,2,#]],Period[a[[i,2]],#+1]}&,
+				Length[a[[i,2]]] ];
+		  Do[q = AnyPosition[a[[i,2]],a[[i,3,j,2]] ];
+		  t=Insert[t,a[[i,3,j,1]],{q,3}],{j,1,Length[a[[i,3]]]}];
+		  Map[MoveFirst[#,Min[#]]&,t]
+		  ]; *)
+(* decommissioned 7/30/97 
+StdRegions[arrang_]:= 
+		Array[OneStdRegion[#,arrang]&,Lg[arrang]]//Flatten1//Union;
+*)
+
+a123 1
+(* old: Initialize[config_]:= Initialize[config,3]; *)
+d136 2
+a137 1
+	Module[{d=Date[]},S[d[[2]]]<>"/"<>S[d[[3]]]<>"/"<>S[d[[1]]]];
+d149 1
+a149 1
+         \   arising in Part III of the Kepler Conjecture.
+d168 1
+a168 1
+	<> "\n\\   arising in Part III of the Kepler Conjecture."
+d223 1
+d245 1
+a245 1
+bounds:= Module[{r,i,j,pt,str,dihmin,dihmax,dihQmin,dihQmax,dihEmax,d1,d2,exc,
+d280 1
+a280 10
+	str = str <> "\n\n\\ Quoins, Adih, etc. \n";
+	exc = Select[Range[Length[GBLregions]],Length[GBLregions[[#]]]>4&];
+	Do[str = str<> "\n 0<= "<>StringVar["Adih",exc[[i]],j]<> " < infinity ",
+		{i,1,Length[exc]},{j,1,Length[GBLregions[[exc[[i]]]]]}];
+	Do[r = exc[[i]]; 
+	  str = str<> "\n 0 <= "<>StringVar["quo",r,j,
+		IMod[j+1,Length[GBLregions[[r]]]]] <> " < infinity ";
+	  str = str<> "\n 0 <= "<>StringVar["quo",r,
+		IMod[j+1,Length[GBLregions[[r]]]],j] <> " < infinity ",
+		{i,1,Length[exc]},{j,1,Length[GBLregions[[exc[[i]]]]]}];
+d311 2
+d355 3
+d562 1
+a562 1
+        WriteString[stream,BuildAll055];
+d564 5
+a568 3
+        WriteString[stream,AddExceptScores];
+        WriteString[stream,AddMoreExcept];
+        WriteString[stream,AddExcess]; 
+d573 1
+a573 1
+		stream=OpenWrite["/tmp/Z/cplex.lp"<>S[i]];
+d602 1
+a602 1
+(*********************** 0.55 STUFF ************************)
+d604 1
+a604 1
+(* Build055Vertices ->
+d609 1
+a609 1
+(* 0.55 stuff *)
+d612 1
+a612 1
+Build055Vertices:=Module[{i,j,x,d2,d3a,d3b,d4a,d4b,d4c,v5s,r,s,rx,sx},
+d653 1
+a653 1
+(* Build055[{7,11}]
+d664 1
+a664 1
+Build055[v_]:= Module[{fac,s,i,CR},
+d675 4
+a678 4
+BuildAll055:= Module[{s,vList,i},
+	vList = Build055Vertices;
+	s = "\n\n\\ 0.55 inequalities: \n\n";
+	Do[s = s<>Build055[vList[[i]]],{i,1,Length[vList]}];
+d844 3
+a846 4
+(* need a procedure that takes exceptionals and gives scores & squanders *)
+ExSquander= {0,0,0,0,4.896,7.414,9.932,11.668};
+ExScores  = {0,0,0,0,-1.032,-2.064,-3.096,-4.128};
+AddExceptScores:= Module[{exc,zp,i,r,str,pt},
+d850 1
+a850 1
+		str = "\n\n";
+d852 1
+a852 1
+			text[{"except",0,0,pt*ExScores[[GBLregions[[r]]//Lg]]},
+d855 1
+a855 1
+			text[{"exSquander",zp,0,-pt*ExSquander[[GBLregions[[r]]//Lg]]},
+d860 9
+a868 7
+alphaMin[f_,pos_]:= Module[{a0,a1,ln,v},
+	ln = Length[GBLregions[[f]]];
+	If[ln<4,Return[0.8638]];
+	a0 = 1.153;
+	If[ln==4,Return[a0]];
+	v = GBLregions[[f,pos]];
+	If[GBLarrang[[v,1,3]]>1,Return[a0]];
+d871 1
+a871 1
+	Max[a1,a0]
+d874 4
+a877 2
+alphaMax[f_,pos_]:= Module[{v},
+	ln = Length[GBLregions[[f]]];
+a879 1
+	v = GBLregions[[f,pos]];
+d883 4
+a886 1
+	
+d889 3
+a891 1
+		>= - drastic[[...]];  *)
+d894 2
+a895 2
+AddMoreExcept:= Module[{multiplier,
+	r,i,j,exc,phi0,pt,doct4,drastic,str,ln,Y},
+d902 2
+a903 2
+	(* drastic = penalties for switching to VorVc *)
+	drastic = {0,0,0,0,5*0.01561*pt,6*0.01561*pt,7*0.01561*pt,8*0.01561*pt};
+d919 1
+a919 1
+		str = str <> " > " <> S[-drastic[[ln]]] <> "\n";
+d946 1
+a946 1
+		(alpha f[h] is term in vorVc. ),
+d953 1
+a953 1
+			SR[multiplier/(1.255-1.0) alphaMin[r,j]/2] <> " " <>
+d955 1
+a955 1
+			S[multiplier/(1.255-1.0) alphaMin[r,j]] <> "\n";
+d957 1
+a957 1
+			SR[multiplier /(1.255-1)/2 alphaMax[r,j]] <> " " <>
+d959 1
+a959 1
+			S[multiplier/(1.255-1) 1.255 alphaMax[r,j]] <> "\n\n";
+d966 10
+a975 2
+subsets[0]:= {};
+subsets[n_]:= subsets[n] =
+d977 9
+a985 8
+subsets[1]:= {{},{1}};
+disjointsub[n_]:= disjointsub[n]= Select[subsets[n],disjoint[#,n]&];
+disjoint[list_,n_]:= Module[{p,q,i},
+		p = Sort[list];
+		p1 = Mod[RotateLeft[p]-p-1,n];
+		If[Min[p1]>0,Return[True]];
+		False
+		];
+d987 19
+a1005 17
+
+AddExcess:= Module[{range,type401,type311,type302,types,exc,r,
+			mlist,subn,subM,dlist,i,j,str,vlist,flist},
+	range = Range[Max[GBLregions]];
+	type401 = Select[range,(GBLarrang[[#,1]]=={4,0,1})&];
+	type311 = Select[range,(GBLarrang[[#,1]]=={3,1,1})&];
+	type302 = Select[range,(GBLarrang[[#,1]]=={3,0,2})&];
+	types = Union[type401,type311,type302];
+	exc = Select[GBLregions,Length[#]>4&];
+	dlist = {};
+	Do[
+		r=exc[[i]];
+		mlist = Intersection[r,types];
+		subn = disjointsub[Length[mlist]];
+		subn = Complement[subn,{{}}];
+		subM = Table[mlist[[subn[[j]] ]],{j,1,Length[subn]}];
+		dlist = Union[dlist,subM];
+d1007 9
+a1015 8
+		];
+	str = "\n\n";
+	Do[
+		vlist = dlist[[i]];
+		flist = Select[Range[Length[GBLregions]],
+			Length[Intersection[GBLregions[[#]],vlist]]>0&];
+		Do[str = str <> StringVar["tau",flist[[j]]] <> "\n",{j,1,Length[flist]}];
+		str = str <> " > " <> S[vSquander[vlist]+fSquander[flist]] <>
+d1017 2
+a1018 2
+		,{i,1,Length[dlist]}
+		];
+d1022 1
+a1022 1
+vSquander1[v_]:= Module[{pt},
+d1024 1
+a1024 1
+	Switch[GBLarrang[[v,1]],
+d1026 2
+a1027 2
+	{3,1,1},1.41 pt,
+	{3,0,2},1.41 pt,
+d1030 1
+a1030 1
+vSquander[v_]:= Plus @@@@ Map[vSquander1,v];
+d1032 1
+a1032 1
+fSquander[f_]:= 
+d1035 1
+a1035 1
+	(Plus @@@@ Map[ExSquander[[Length[GBLregions[[#]] ] ]]&,f]) pt
+@
+
+
+1.8
+log
+@This is the version that was used in the treatment of 18 cases
+that remained for Part III.
+@
+text
+@d3 1
+a3 1
+	$Id: MathToCplex.m,v 1.7 1997/10/24 01:10:13 hales Exp hales $
+d5 4
+d66 2
+a182 1
+	(* <> "y(" <> S[VNUM] <> ")\n" *) (* BUGBUG!*)
+d229 1
+a229 14
+(* octahedral variables: *)
+StringVar["yoct",f_]:= "y(F"<>S[f]<>")";
+StringVar["yoct",f_,i_]:= "y(F"<>S[f]<>","<>S[GBLregions[[f,i]]]<>")";
+StringVar["solF",f_,i_,j_]:= Module[{i1,j1},
+	{i1,j1}=Sort[{GBLregions[[f,i]],GBLregions[[f,j]]}];
+	"sol(F"<>S[f]<>","<>S[i1]<>","<>S[j1]<>")"];
+StringVar["sigF",f_,i_,j_]:= Module[{i1,j1},
+	{i1,j1}=Sort[{GBLregions[[f,i]],GBLregions[[f,j]]}];
+	"sig(F"<>S[f]<>","<>S[i1]<>","<>S[j1]<>")"];
+StringVar["dihF",f_,i_,j_]:= Module[{i1,j1},
+	{i1,j1}=Sort[{GBLregions[[f,i]],GBLregions[[f,j]]}];
+	"dih(F"<>S[f]<>","<>S[i1]<>","<>S[j1]<>")"];
+StringVar["dihFx",i_,j_,f_]:="dih("<>S[GBLregions[[f,i]]]<>","<>
+		S[GBLregions[[f,j]]]<>",F"<>S[f]<>")";
+d485 4
+a488 59
+(* stuff for breaking quads, i == face number  *)
+solidA[i_]:= Module[{di,v,s,str,stx,vert,f,g,r,j},
+	vert = GBLregions[[i]];
+	v = GBLcharset[[i]];
+	str = "solid"<>v;
+	stx = "sigma"<>v;
+	di = "dih"<>v;
+	Do[f[j]=S[vert[[j]]],{j,1,4}];
+	g[r_,j_]:= di<>S[r]<>".s("<>S[j]<>")";
+	Do[AppendTo[brokenVar,str<>f[j]],{j,1,4}];
+	Do[AppendTo[brokenVar,stx<>f[j]],{j,1,4}];
+	Do[AppendTo[brokenVar,g[vert[[j]],vert[[1+Mod[j,4] ]] ]],{j,1,4}];
+	Do[AppendTo[brokenVar,g[vert[[1+Mod[j,4] ]],vert[[j]] ]],{j,1,4}];
+	Do[AppendTo[brokenVar,StringVar["solF",i,j,AugMod[j,4]]],{j,1,4}];
+	Do[AppendTo[brokenVar,StringVar["dihF",i,j,AugMod[j,4]]],{j,1,4}];
+	Do[AppendTo[brokenVar,StringVar["sigF",i,j,AugMod[j,4]]],{j,1,4}];
+	Do[AppendTo[brokenVar,StringVar["dihFx",j,AugMod[j,4],i]],{j,1,4}];
+	Do[AppendTo[brokenVar,StringVar["dihFx",AugMod[j,4],j,i]],{j,1,4}];
+	(* use default positivity: 
+	   AppendTo[brokenVar,StringVar["y",vert[[1]],vert[[3]] ]]; 
+	   AppendTo[brokenVar,StringVar["y",vert[[2]],vert[[4]] ]]; *)
+	s="";
+	s = str<>" -"<>str<>f[1] <>" -"<>str<>f[3]<>" = 0\n";
+	s = s<>str<>" -"<>str<>f[2]<>" -"<>str<>f[4]<>" = 0\n";
+	s = s<>stx<>" -"<>stx<>f[1]<>" -"<>stx<>f[3]<>" = 0\n";
+	s = s<>stx<>" -"<>stx<>f[2]<>" -"<>stx<>f[4]<>" = 0\n";
+	w = S[vert[[1]]];
+	s = s<>" "<>str<>w<>" -"<>di<>w<>" -"<>g[vert[[2]],vert[[1]]]<>" -" <>
+			g[vert[[4]],vert[[1]]]<>" +pi =0\n";
+	s = s<>" "<>di<>w<>" -"<>g[vert[[1]],vert[[2]]]<>" -"<>
+			g[vert[[1]],vert[[4]]]<> " = 0\n";
+	w = S[vert[[2]]];
+	s = s<>" "<>str<>w<>" -"<>di<>w<>" -"<>g[vert[[1]],vert[[2]]]<>" -" <>g[vert[[3]],vert[[2]]]<>" +pi =0\n";
+	s = s<>" "<>di<>w<>" -"<>g[vert[[2]],vert[[1]]]<>" -" <>g[vert[[2]],vert[[3]]]<> " = 0\n";
+	w = S[vert[[3]]];
+	s = s<>" "<>str<>w<>" -"<>di<>w<>" -"<>g[vert[[2]],vert[[3]]]<>" -"<>g[vert[[4]],vert[[3]]]<>" +pi =0\n";
+	s = s<>" "<>di<>w<>" -"<>g[vert[[3]],vert[[2]]]<>" -"<>g[vert[[3]],vert[[4]]]<> " = 0\n";
+	w = S[vert[[4]]];
+	s = s<>" "<>str<>w<>" -"<>di<>w<>" -"<>g[vert[[3]],vert[[4]]]<>" -"<>g[vert[[1]],vert[[4]]]<>" +pi =0\n";
+	s = s<>" "<>di<>w<>" -"<>g[vert[[4]],vert[[3]]]<>" -"<>g[vert[[4]],vert[[1]]]<> " = 0\n";
+	(* octahedral constraints *)
+	s = s<>StringVar["sigF",i,1,2]<>" +"<>
+		   StringVar["sigF",i,2,3]<>" +"<>
+		   StringVar["sigF",i,3,4]<>" +"<>
+		   StringVar["sigF",i,4,1]<>" -"<>
+			StringVar["sig",i] <> " =0\n";
+	s = s<>StringVar["dihF",i,1,2]<>" +"<>
+		   StringVar["dihF",i,2,3]<>" +"<>
+		   StringVar["dihF",i,3,4]<>" +"<>
+		   StringVar["dihF",i,4,1]<>" - 2 pi = 0\n";
+	Do[s = s<>StringVar["dihFx",j,AugMod[j,4],i]<>" +"<>
+			StringVar["dihFx",j,IMod[j+3,4],i]<>" -"<>
+			StringVar["dih",i,j]<>" =0\n",{j,1,4}];
+	Do[s = s<>StringVar["dihF",i,j,AugMod[j,4]]<>" +"<>
+			StringVar["dihFx",j,AugMod[j,4],i]<>" +"<>
+			StringVar["dihFx",AugMod[j,4],j,i]<>" -"<>
+			StringVar["solF",i,j,AugMod[j,4]]<>" - pi = 0\n",{j,1,4}];
+	s
+	];
+a496 59
+flatQuarter[data_]:= Module[{i},
+		Apply[StringJoin,Table[flatQuarterOne[data[[i]]],{i,1,Length[data]}]]
+		];
+
+flatQuarterOne[d_]:= Module[{sub,s1,s2,d1},
+		sub = flatQuartersub[d];
+		s1 = StringReplace[flatQuarterString,sub];
+		d1 = d; d1[[2]] = d[[2]]+2;
+		sub = flatQuartersub[d1];
+		s2 = StringReplace[flatQuarterString,sub];
+		s1<>s2
+		];
+
+flatQuartersub[d_]:= Module[{face,null,a,b,c,fx},
+	{face,null}=d;
+	fx = GBLregions[[face]];
+	{a,b,c}= {Period[fx,null],Period[fx,null+1],Period[fx,null-1]};
+	{
+	"y1" -> StringVar["y",a],
+	"y2" -> StringVar["y",b],
+	"y3" -> StringVar["y",c],
+	"y4" -> StringVar["y",b,c],
+	"y5" -> StringVar["y",a,c],
+	"y6" -> StringVar["y",a,b],
+	"sigma" -> StringVar["sig",face,null],
+	"solid" -> StringVar["sol",face,null],
+	"dih1" -> StringVar["dih",face,null],
+	"dih2" -> StringVar["dih",face,IMod[null+1,4],null],
+	"dih3" -> StringVar["dih",face,IMod[null-1,4],null]
+	}
+	];
+
+flatQuarterString := flatQuarterString = 
+		"0.33 y5 + 0.33 y6 -0.41 y2 - 0.41 y3 - 0.49 y1 -solid < -1.95289\n"<>
+		"0.491 y5 + 0.491 y6 -0.08 y4 - 0.196 y1-0.196 y2 -0.196 y3"<>
+				" -solid >-0.118274169\n"<>
+		"0.3 y1 -0.4 y2 -0.4 y3 - 0.4 y5 -0.4 y6 + 0.61 y4"<>
+				" -dih1 < -2.6889\n"<>
+		"0.714 y1 -0.22 y2 - 0.22 y3 -0.22 y5 - 0.22 y6 + 0.92 y4"<>
+				" -dih1 > 0.3562\n"<>
+		"-0.54 y1 + 0.15 y2 -0.16 y3 -0.16 y6 -0.54 y4 + 0.5 y5"<>
+				" -dih2 < -2.8554\n"<>
+		"-0.16 y1 - 0.16 y4 + 0.23 y2 - 0.024 y3 - 0.024 y6 + 0.8 y5"<>
+				" -dih2 > 0.1424\n"<>
+		"-0.54 y1 + 0.15 y2 -0.16 y3 -0.16 y6 -0.54 y4 + 0.5 y5"<>
+				" -dih3 < -2.8554\n"<>
+		"-0.16 y1 - 0.16 y4 + 0.23 y2 - 0.024 y3 - 0.024 y6 + 0.8 y5"<>
+				" -dih3 > 0.1424\n"<>
+		"-0.159 y1 - 0.081 y2 - 0.081 y3 - 0.133 y5 - 0.133 y6"<>
+				" -sigma > -1.17401\n"<>
+		"-0.344 y1 - 0.174 y2 - 0.174 y3 + 0.016 y5 + 0.016 y6"<>
+				" -sigma - 0.419351 solid > -1.6051\n"<>
+		"-0.1 y1 -0.061 y2 - 0.061 y3 - 0.166 y5 - 0.166 y6"<>
+				" -sigma + 0.1004445714270568 solid > -1.0422 \n";
+
+		
+
+
+
+a591 41
+(* I don't know what this one does *)
+WRITEOUTV[i_,r_,lab_]:= Module[{stream},
+		Initialize[i];
+		VNUM=r;
+		stream=OpenWrite["/tmp/Z/cplex.lp"<>S[lab]<>"_"<>S[r]];
+		WriteString[stream,textheader];
+		WriteString[stream,twopi];
+		WriteString[stream,group1];
+		WriteString[stream,group3];
+		WriteString[stream,group5];
+		WriteString[stream,hyp41];
+		WriteString[stream,hyp42];
+		WriteString[stream,solid];
+		WriteString[stream,edges];  
+		WriteString[stream,qedges];   
+		WriteString[stream,BuildAll055]; 
+		WriteString[stream,brokensolid]; 
+		WriteString[stream,AddExceptScores]; 
+		WriteString[stream,AddMoreExcept]; 
+		WriteString[stream,AddExcess]; (* 1.41 & 1.5 pt at crowded vertices *)
+		WriteString[stream,bounds];
+		WriteString[stream,"\n\nEND\n\n"];
+		WriteString[stream,faceCode];
+		Close[stream];
+		];
+
+SetJ[i_]:= Module[{},
+	If[i<1750, Return[{i,lquad}]];
+	If[i<2879, Return[{i-2000,lpent}]];
+	If[i<4177, Return[{i-4000,lhex}]];
+	If[i<6365, Return[{i-4000,lhept}]];
+	If[i<8018, Return[{i-8000,loct}]];
+	Return[{0,0}];
+	];
+
+WRITEOUTV[i_]:= Module[{r,j},
+	{j,finalY} = SetJ[i]; 
+	Initialize[j];
+	Do[WRITEOUTV[j,r,i],{r,1,Length[GBLarrang]}];
+	];
+
+a599 24
+		
+
+WRITEOUTwithFlat[i_,data_]:= Module[{stream},
+		Initialize[i];
+		stream=OpenWrite["/tmp/Z/cp.lp"]; 
+		WriteString[stream,textheader];
+		WriteString[stream,twopi];
+		WriteString[stream,group1];
+		WriteString[stream,group3];
+		WriteString[stream,group5];
+		WriteString[stream,hyp41];
+		WriteString[stream,hyp42];
+		WriteString[stream,solid];
+		WriteString[stream,edges];  
+		WriteString[stream,qedges];   (* added 8/10/97 *)
+		WriteString[stream,BuildAll055]; (* added 6/28/97 *)
+		WriteString[stream,brokensolid]; (* added 8/18/97 *)
+		WriteString[stream,AddExceptScores]; (* added 7/28/97 *)
+		WriteString[stream,flatQuarter[data]]; (* added 8/25/97 *)
+		WriteString[stream,bounds];
+		WriteString[stream,"\n\nEND\n\n"];
+		WriteString[stream,faceCode];
+		Close[stream];
+		];
+a611 30
+		
+
+MakeExecY:= Module[{s,i,j,r},
+		stream=OpenWrite["/tmp/Z/cplex.exec"];
+		s="set logfile /tmp/Z/cplex.log\n";
+		Do[
+			i = penthi[[r]];
+			Initialize[i];
+		Do[
+			s = s<>"read /tmp/Z/cplex.lp"<>S[2000+i]<>"_"<>S[j]<>" lp \n"<>
+				"optimize\n";
+			,{j,1,Length[GBLarrang]}];
+			,{r,1,Length[penthi]}];
+		s=s<>"quit";
+		WriteString[stream,s];
+		Close[stream];
+		];
+		
+
+
+
+run[i_]:= Module[{stream},
+	WRITEOUT[i];
+	stream=OpenWrite["cplex.exec"];
+	WriteString[stream,"read CPLEX/Z/cplex.lp"<>S[i]<>" lp\n"];
+	WriteString[stream,"optimize\nquit\n"];
+	Close[stream];
+	ToExpression["!cplex < ~/h/CPLEX/cplex.exec"];
+	stream=OpenWrite["Z/cplex.lp"<>S[i]]; Close[stream];
+	];
+@
+
+
+1.7
+log
+@carriage returns added because cplex complained of long lines
+@
+text
+@d3 1
+a3 1
+	$Id: MathToCplex.m,v 1.6 1997/10/23 12:51:53 hales Exp hales $
+d5 3
+d56 1
+d110 2
+a111 2
+OneStdRegion[i_, a_] := 
+  Table[OneStdRegionAt[i, j, a], {j, 1, Length[a[[i,2]]]}];
+d176 2
+a177 1
+	<> sigsum[Lg[GBLregions]]
+d179 1
+d205 37
+d310 1
+a310 1
+MakeEdgeNames:= Module[{},
+d493 1
+a493 1
+(* stuff for breaking quads *)
+d506 8
+d533 17
+d553 1
+a553 1
+brokensolid:= Module[{},
+a614 17
+StringVar["y",i_]:= "y("<>S[i]<>")";
+StringVar["y",i_,j_]:= "y("<>S[Min[i,j]]<>","<>S[Max[i,j]]<>")";
+StringVar["dih",f_,pos_]:= "dih{"<>S[f]<>"}"<>S[GBLregions[[f,pos]]];
+StringVar["quo",f_,pos_]:= "qu{"<>S[f]<>"}"<>S[GBLregions[[f,pos]]];
+StringVar["Adih",f_,pos_]:= "Adih{"<>S[f]<>"}"<>S[GBLregions[[f,pos]]];
+StringVar["sol",f_]:= "solid{"<>S[f]<>"}";
+StringVar["sig",f_]:= "sigma{"<>S[f]<>"}";
+StringVar["sol",f_,pos_]:= StringVar["sol",f]<>S[GBLregions[[f,pos]]];
+StringVar["sig",f_,pos_]:= StringVar["sig",f]<>S[GBLregions[[f,pos]]];
+StringVar["dih",f_,pos_,pos2_]:= StringVar["dih",f,pos]<>".s("<>
+			S[GBLregions[[f,pos2]]]<>")";
+StringVar["quo",f_,pos_,pos2_]:= StringVar["quo",f,pos]<>".s("<>
+			S[GBLregions[[f,pos2]]]<>")";
+StringVar["tau",i_]:= SR[0.100444571427056] <> " " <> 
+	StringVar["sol",i] <> " - " <> StringVar["sig",i];
+
+
+d662 1
+a662 1
+	str = str <> s <> " <=  1.428177 \\ = 4(0.2856354)"
+d686 18
+d707 12
+d740 15
+d788 1
+a788 1
+MakeExec:= Module[{s},
+d801 18
+d1164 1
+a1164 1
+
+a1183 2
+		
+
+@
+
+
+1.6
+log
+@"drastic corrections" factors changed to a good number
+n x 0.01561 x pt
+@
+text
+@d3 1
+a3 1
+	$Id: MathToCplex.m,v 1.5 1997/10/23 00:43:25 hales Exp hales $
+d5 4
+d1021 1
+a1021 2
+		str = str<>"\n";
+		Do[str = str <> S[-doct4] <> " "<> StringVar["quo",r,j,IMod[j+1,ln]];
+d1023 1
+a1023 2
+		str = str<>"\n";
+		Do[str = str <> S[-doct4] <> " "<> StringVar["quo",r,IMod[j+1,ln],j];
+@
+
+
+1.5
+log
+@Major changes have been made.
+Code for excesses around crowded vertices type (4,1) or (3,2)...
+This is not rigorous! and must be changed because there is a
+factor called the "drastic correction" measuring the effect of
+replacing everything by VorVc, and this factor is not what it needs
+to be.
+Code for the score of an exceptional cluster scored by VorVc has
+been added ("drastic correction" needs adjustment).
+@
+text
+@d3 1
+a3 1
+	$Id: MathToCplex.m,v 1.4 1997/09/19 12:48:30 hales Exp hales $
+d5 10
+d1006 1
+a1006 1
+	drastic = {0,0,0,0,0.41*pt,0.6912*pt,0.6912*pt,0.6912*pt};
+@
+
+
+1.4
+log
+@An error was found Sept 18, 1997 that affects everything with
+and exceptional cluster.  The error was in qedges as it relates to
+the edgeineqIsoPeri string.  It was applying it to exceptionals,
+when it should only apply to quads.  Fixed in this new version.
+@
+text
+@d3 1
+a3 1
+	$Id: MathToCplex.m,v 1.3 1997/09/16 03:01:49 hales Exp hales $
+d5 6
+d42 1
+a42 1
+S[x_]:= ToString[x];
+a135 1
+         \ equation 4.1 hash= 2032330977.
+d155 1
+a155 1
+	<> "\n\\ equation 4.1 hash= "<>S[CCHASH]<>"."
+d205 2
+a206 1
+bounds:= Module[{i,j,pt,str,dihmin,dihmax,dihQmin,dihQmax,dihEmax,d1,d2},
+d235 1
+d240 10
+d253 8
+d536 2
+d544 4
+d637 2
+d679 2
+a680 1
+		Do[WRITEOUT[i];Print[i,"/",Length[finalY]," "],{i,1,Length[finalY]}];
+a687 1
+		ToExpression["!cplex < "<> "/tmp/Z/cplex.exec"];
+d834 1
+a834 1
+	edgeNames = Union[edgeNames,{Y1,Y2,Y3,Y5,Y6}];
+d863 1
+a863 1
+	edgeNames = Union[edgeNames,{Y1,Y2,Y3,Y4}];
+d868 1
+a868 1
+	edgeNames={};
+d891 1
+a891 1
+	edgeNames = Union[edgeNames,{Y1,Y2,Y3,Y4,Y5,Y6}];
+a936 2
+(* Need to create finalY in the give format, need to test
+	InitializeExcept *)
+a942 23
+InitializeExcept[config_]:= Module[{i,cycleAround,type},
+		GBLconfig = config;
+		GBLdata = finalY[[config]];
+		GBLnumver = GBLdata[[1]]//Length;
+		GBLregions = GBLdata[[2]];
+		cycleAround[i_]:= Module[{cycle,face,i,j,r},
+				cycle = {};
+				type = {0,0,0};
+				Do[faceIndex = GBLdata[[1,i,j]];
+				face = MoveFirst[GBLregions[[faceIndex]],  i];
+				r = face//Length;
+				If[r==3,type += {1,0,0}];
+				If[r==4,type += {0,1,0}];
+				If[r>4,type += {0,0,1}];
+				AppendTo[cycle,face[[2]]];
+				,{j,1,GBLdata[[1,i]]//Length} ];
+				cycle
+				];
+		If[type[[3]]==0,type = type[[{1,2}]]];
+		GBLarrange = {}; 
+		Do[AppendTo[GBLarrange,{type,cycleAround[i]}],{i,1,GBLnumver}];
+		];
+
+d960 164
+@
+
+
+1.3
+log
+@There was a bad constant in quad42.CC that has now been fixed
+(A counterexample was found in part3openSqc)
+The constant 0.7602884 was changed to 0.7624
+@
+text
+@d3 1
+a3 1
+	$Id: MathToCplex.m,v 1.2 1997/09/14 19:00:27 hales Exp hales $
+d5 5
+d810 1
+a810 1
+	li = Select[Range[1,Length[GBLregions]],Length[GBLregions[[#]]]>3&];
+@
+
+
+1.2
+log
+@Height cascade material was deleted.
+Two constants in group3 qrtet inequalities were changed,
+	because counterexamples were found 3.15 and 3.16.
+group10 was renamed group5 for compatibility with the paper SPIII.
+@
+text
+@d3 8
+a10 2
+	$Id$
+	$Log$
+d351 1
+a351 1
+		{0.7602884,-0.198867},
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d2 4
+d266 2
+a267 2
+	trieqn["Group 3. Equation 15.","Grp3E15",{ax, -0.0162028, 0.3065009}]<>
+	trieqn["Group 3. Equation 16.","Grp3E16",{ax, -0.0499559, 0.3544919}]<>
+a270 15
+group5:= Module[{zp=0.1004445714270568,zp32=0.321422628566582,
+		ax=-0.419351},
+	trieqn["Group 5. Equation 1.","",{0, 31.319,-29.689}]<>
+	trieqn["Group 5. Equation 2.","",{0, 0.47866,-0.52048}]<>
+	trieqn["Group 5. Equation 3.","",{0, 0.3861,-0.4198}]<>
+	trieqn["Group 5. Equation 4.","",{0.908, 0,-0.4198}]<>
+	trieqn["Group 5. Equation 5.","",{0.537, 0,-0.24}]<>
+	trieqn["Group 5. Equation 6.","",{zp,32.588,-30.941}]<>
+	trieqn["Group 5. Equation 7.","",{zp,0.435,-0.531}]<>
+	trieqn["Group 5. Equation 8.","",{zp,0.397,-0.4884} ]<>
+	trieqn["Group 5. Equation 9.","",{zp32,35.3775,-33.696}]<>
+	trieqn["Group 5. Equation 10.","",{zp32,0.5013,-0.7105}]<>
+	trieqn["Group 5. Equation 11.","",{zp32,0.196,-0.3629}]
+	  ];
+
+d517 1
+a517 1
+(* group105 ->          \ The group 10 inequalities for type (5,0) vertices 
+d523 2
+a524 2
+group105:= Module[{v,q,str,i,j,s,h,t},
+	str="\n\n\\ The group 10 inequalities for type (5,0) vertices ";
+d560 1
+a560 1
+(* group104 -> \ The group 10 inequalities for type (4,0) vertices  *)
+d562 2
+a563 2
+group104:= Module[{v,q,str,i,j,s,h,t},
+	str="\n\n\\ The group 10 inequalities for type (4,0) vertices ";
+d577 1
+a577 1
+group10:= (group105 <> group104);
+d586 1
+a586 1
+		WriteString[stream,group10];
+d591 4
+a594 4
+		WriteString[stream,qedges];   (* added 8/10/97 *)
+		WriteString[stream,BuildAll055]; (* added 6/28/97 *)
+		WriteString[stream,brokensolid]; (* added 8/18/97 *)
+		WriteString[stream,AddExceptScores]; (* added 7/28/97 *)
+d618 1
+a618 1
+		WriteString[stream,group10];
+a655 110
+	];
+
+(************** NOW 2.35 height cascade stuff **************************)
+
+trieqnv[v_,tag_,{sol_,dih_,con_}]:= Module[{r,i,j,str},
+	str = "\n\n\\ "<> tag;
+	Do[r = Lg[GBLregions[[i]]];
+		If[(r<4)&&(v==GBLregions[[i,j]]),
+			str=str<>"\n"<>
+			text[{"",sol,dih,con},{GBLcharset[[i]],S[v]}]
+		  ],
+		{i,1,Lg[GBLregions]},{j,1,Lg[GBLregions[[i]]]}
+		];
+	str
+	];
+
+group4[v_]:= (
+	trieqnv[v,"Group 4. Equation 1.",{0,0.48,-0.614}] <>
+	trieqnv[v,"Group 4. Equation 2.",{0,0.389,-0.507}] <>
+	trieqnv[v,"Group 4. Equation 3.",{0,-0.166,0.232}] <>
+	trieqnv[v,"Group 4. Equation 4.",{0,-0.173,0.243}] <>
+	quad43v["Quad 4.3.",v]
+	  );
+
+group6[v_]:= Module[{zp=0.1004445714270568,zp32=0.321422628566582,
+                ax=-0.419351},
+	trieqnv[v,"Group 6. Equation 1.",{0,4.6709,-4.8305}] <>
+	trieqnv[v,"Group 6. Equation 2.",{0,0.555851,-0.6763}] <>
+	trieqnv[v,"Group 6. Equation 3.",{0,0.39264,-0.48995}] <>
+	trieqnv[v,"Group 6. Equation 4.",{0,-0.17153,0.242837}] <>
+	trieqnv[v,"Group 6. Equation 5.",{0,-0.29172,0.45}] <>
+	trieqnv[v,"Group 6. Equation 6.",{zp,4.8112,-5.0214}] <>
+	trieqnv[v,"Group 6. Equation 7.",{zp,0.49547,-0.6646}] <>
+	trieqnv[v,"Group 6. Equation 8.",{zp,0.4159,-0.56944}] <>
+	trieqnv[v,"Group 6. Equation 9.",{zp,-0.18837,0.215346}] <>
+	trieqnv[v,"Group 6. Equation 10.",{zp,-0.21754,0.265612}] <>
+	trieqnv[v,"Group 6. Equation 11.",{zp32,5.12,-5.44135}] <>
+	trieqnv[v,"Group 6. Equation 12.",{zp32,0.5708,-0.84912}] <>
+	trieqnv[v,"Group 6. Equation 13.",{zp32,0.2792,-0.5005}] <>
+	trieqnv[v,"Group 6. Equation 14.",{zp32,-0.0608,-0.0589}] <>
+	trieqnv[v,"Group 6. Equation 15.",{zp32,-0.2179,0.1504}] <>
+	quad43Av["Quad 4.3A.",v]
+	  ];
+
+quad43v[tag_,v_]:= Module[{r,i,str},
+	str = "\n\n\\ "<> tag;
+	Do[r = Lg[GBLregions[[i]]]; 
+	    If[(r==4)&&(Inside[v,GBLregions[[i]] ]),
+	        str=str<>"\n"<>
+		text[{"",0,0,-0.0677},{GBLcharset[[i]],S[0]}]
+	      ],
+	  {i,1,Lg[GBLregions]}
+	  ];
+	str
+	];
+
+quad43Av[tag_,v_]:= Module[{r,i,str},
+	str = "\n\n\\ "<> tag;
+	Do[r = Lg[GBLregions[[i]]]; 
+	    If[(r==4)&&(Inside[v,GBLregions[[i]] ]),
+	        str=str<>"\n"<>
+		text[{"",0,0,-0.0527},{GBLcharset[[i]],S[0]}]
+	      ],
+	  {i,1,Lg[GBLregions]}
+	  ];
+	str
+	];
+
+WRITEOUT35[i_,vertex_]:= Module[{},
+	Initialize[i];
+	stream=OpenWrite["cplex.lp"<>S[i]<>".v"<>S[vertex]];
+	WriteString[stream,"\n\nADD+\n\n"];
+	WriteString[stream,
+		"\\ These are the additional inequalities that hold in "<>
+		"configuration "<>S[i]<>"\n\\ if vertex "<>S[vertex]<>
+		" has height at least 2.35"];
+	WriteString[stream,group4[vertex]];
+	WriteString[stream,"\n\nEND\n\n"];
+	Close[stream]
+	];
+
+WRITEOUTA235[i_] := 
+  Module[{}, Initialize[i]; stream = 
+     OpenWrite[StringJoin["cplex.lp", S[i], ".a235"]]; 
+    WriteString[stream, "\n\nADD+\n\n"]; 
+    WriteString[stream, "\\ Group 5 inequalities holding if y1,y2,y3\
+      <=2.35"]; WriteString[stream, group5]; 
+    WriteString[stream, "\n\nEND\n\n"]; Close[stream]];
+
+WRITEOUTA225[i_] := 
+  Module[{}, Initialize[i]; stream = 
+     OpenWrite[StringJoin["cplex.lp", S[i], ".a225"]]; 
+    WriteString[stream, "\n\nADD+\n\n"]; 
+    WriteString[stream, "\\ Group 7 inequalities holding if y1,y2,y3\
+      <=2.25"]; WriteStream[stream,group5]; WriteString[stream, group7]; 
+    WriteString[stream, "\n\nEND\n\n"]; Close[stream]]
+
+
+WRITEOUT25[i_,vertex_]:= Module[{},
+	Initialize[i];
+	stream=OpenWrite["cplex.lp"<>S[i]<>".25v"<>S[vertex]];
+	WriteString[stream,"\n\nADD+\n\n"];
+	WriteString[stream,
+		"\\ These are the additional inequalities that hold in "<>
+		"configuration "<>S[i]<>"\n\\ if vertex "<>S[vertex]<>
+		" has height at least 2.25"];
+	WriteString[stream,group6[vertex]];
+	WriteString[stream,group5];
+	WriteString[stream,"\n\nEND\n\n"];
+	Close[stream]
+@

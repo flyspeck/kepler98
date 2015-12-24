@@ -1,0 +1,41 @@
+# redone version 6/28/97, using all edge-length constraints, all 0.55 ineqs.
+
+ 'Z/cplex.lp72' read.  5.1788088746e-01
+ 'Z/cplex.lp121' read.  4.9791975208e-01
+ 'Z/cplex.lp126' read.  5.1453465354e-01
+ 'Z/cplex.lp127' read.  5.3083648149e-01
+ 'Z/cplex.lp139' read.  5.1337387341e-01
+ 'Z/cplex.lp143' read.  5.1431877595e-01
+ 'Z/cplex.lp179' read.  4.9984982245e-01
+ 'Z/cplex.lp351' read.  5.0774903299e-01
+ 'Z/cplex.lp16' read.  4.8019650781e-01
+ 'Z/cplex.lp41' read.  4.4511258177e-01
+ 'Z/cplex.lp42' read.  4.7252601595e-01
+ 'Z/cplex.lp58' read.  4.8085376217e-01
+ 'Z/cplex.lp61' read.  4.7797964967e-01
+ 'Z/cplex.lp69' read.  4.9028437763e-01
+ 'Z/cplex.lp70' read.  4.7744483423e-01
+ 'Z/cplex.lp114' read.  4.5578865613e-01
+ 'Z/cplex.lp119' read.  4.8537703805e-01
+ 'Z/cplex.lp124' read.  4.5351123682e-01
+ 'Z/cplex.lp140' read.  4.1990546635e-01  // DONE !
+ 'Z/cplex.lp147' read.  4.5312855292e-01
+ 'Z/cplex.lp157' read.  4.8252110483e-01
+ 'Z/cplex.lp177' read.  4.2411498205e-01  // DONE !
+ 'Z/cplex.lp238' read.  4.8519317478e-01
+ 'Z/cplex.lp309' read.  4.4059486910e-01  // DONE !
+
+over8s = {72, 121, 126, 127, 139, 143, 179, 351, 16, 41,
+        42, 58, 61, 69, 70, 114, 119, 124, 147, 157, 238};
+
+
+code used:
+read Z/cplex.lp72 lp
+optimize
+read Z/cplex.lp121 lp
+optimize
+read Z/cplex.lp126 lp
+optimize....
+
+grep "[ l][':]" cplex.log > cplex45x.ln
+

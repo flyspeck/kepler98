@@ -1,0 +1,156 @@
+ Section A16:
+
+
+
+ The next case is broken into 8 subcases. 
+ +1: compression; 
+ +2: vor-analytic eta-top-big; +3 vor-analytic eta-back-big 
+ +4: vor0, x[0]>2.2, x[3]>2.6; +5 vor0, x[0]<2.2, x[3]>2.7 
+ +6: compression-nu; +7: voronoi-nu; 
+ +8: doesn't exist;  +9: vor0, eta-top-big.
+
+New Case = 695180204
+numargs = 6
+7.131358481238248e-07
+{2, 2, 2, 2.50999999999999979, 2, 2}
+
+New Case = 695180205
+numargs = 6
+0.00241954545042898095
+{2, 2, 2, 2.82842712474618985, 2, 2}
+
+New Case = 695180206
+numargs = 6
+0.254780279831461287
+{2.31403759584843449, 2.50999999999999979, 2.50999999999999979, 2.50999999999999979, 2, 2}
+
+New Case = 695180207
+numargs = 6
+0.051512060000002427
+{2.20000000000000018, 2, 2, 2.60000000000000009, 2, 2}
+
+New Case = 695180208
+numargs = 6
+0.00198250345922935944
+{2, 2, 2, 2.70000000000000018, 2, 2}
+
+New Case = 695180209
+numargs = 6
+0.00120977272521455292
+{2.82842712474618985, 2, 2, 2, 2, 2}
+
+New Case = 695180210
+numargs = 6
+0.00120977272521455292
+{2.82842712474618985, 2, 2, 2, 2, 2}
+
+New Case = 695180212
+numargs = 6
+0.0581246572706598658
+{2.20000000000000018, 2, 2, 2.82842712474618985, 2, 2}
+
+
+ The next case is broken into 9 subcases. 
+ +1: compression; 
+ +2: vor-analytic eta-top-big; +3 vor-analytic eta-back-big 
+ +4: vor0, x[0]>2.2, x[3]>2.6; +5 vor0, x[0]<2.2, x[3]>2.7 
+ +6: compression-nu; +7: voronoi-nu; 
+ +8: doesn't exist;  +9: vor0, eta-top-big.
+
+New Case = 690626705
+numargs = 6
+2.22044604925031308e-16
+{2, 2, 2, 2.82842712474618985, 2, 2}
+
+New Case = 690626706
+numargs = 6
+-4.44089209850062616e-16
+{2, 2, 2, 2.82842712474619029, 2, 2}
+
+New Case = 690626707
+numargs = 6
+0.281089414413697947
+{2.31403759584843449, 2.50999999999999979, 2.50999999999999979, 2.50999999999999979, 2, 2}
+
+New Case = 690626708
+numargs = 6
+0.0583847247153520266
+{2.20000000000000018, 2, 2, 2.60000000000000009, 2, 2}
+
+New Case = 690626709
+numargs = 6
+7.84276569454275818e-05
+{2, 2, 2, 2.70000000000000018, 2, 2}
+
+New Case = 690626710
+numargs = 6
+-0
+{2.82842712474618985, 2, 2, 2, 2, 2}
+
+New Case = 690626711
+numargs = 6
+-0
+{2.82842712474618985, 2, 2, 2, 2, 2}
+
+New Case = 690626713
+numargs = 6
+0.0655566774068407909
+{2.20000000000000018, 2, 2, 2.82842712474618985, 2, 2}
+
+New Case = 807023313
+numargs = 6
+3.04781844126730816e-05
+{2, 2, 2, 2.50999999999999979, 2.50999999999999979, 2}
+
+New Case = 590577214
+numargs = 6
+0.000359327243841411903
+{2, 2, 2, 2.50999999999999979, 2.50999999999999979, 2}
+
+
+ The next two cases are broken into 2 subcases each. 
+ +1: 2.77<x[3]<2sqrt2; +2: 2.51<x[3]<2.77; eta-top-big 
+
+New Case = 949210509
+numargs = 6
+0.0206556183369155585
+{2, 2, 2, 2.77000000000000002, 2.50999999999999979, 2}
+
+New Case = 949210510
+numargs = 6
+0.0116878656238658882
+{2, 2, 2, 2.50999999999999979, 2.69676534980151539, 2}
+
+New Case = 671961775
+numargs = 6
+0.0284630855263658389
+{2, 2, 2, 2.77000000000000002, 2.50999999999999979, 2}
+
+New Case = 671961776
+numargs = 6
+0.0175240627346964217
+{2, 2, 2, 2.69676534980151583, 2.50999999999999979, 2}
+
+
+ Exiting cfsqp numerical optimizer.
+
+
+
+
+
+ Cfsqp numerical optimizer for Sphere Packings IV 
+
+ The inequalities in the appendix are divided into 24 sections.
+ Sections 1-24 are tested numerically here. 
+
+ Select section number (1--24): 
+ The inequalities are written in the form F>0.
+ This program minimizes F subject to constraints.
+ If the returned value is positive, the inequality passes the numerical check. 
+ Each inequality is test with 80 random initial configurations. 
+
+ Optimizing.... 
+
+
+
+

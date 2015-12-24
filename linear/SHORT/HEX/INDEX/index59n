@@ -1,0 +1,111 @@
+PM[6,59].F17.Cxx (* flat cases *)
+
+
+pHHn = Map[Drop[#,1]&,valHexnHi]//Union ==
+	  {{6, 59, 17, 8}, {6, 59, 17, 24}, {6, 59, 17, 28}, {6, 59, 17, 53}, 
+   {6, 70, 19, 9}, {6, 131, 17, 1}, {6, 131, 17, 10}, {6, 131, 17, 20}, 
+   {6, 131, 17, 21}, {6, 131, 17, 29}, {6, 131, 17, 58}, {6, 146, 17, 57}, 
+   {6, 248, 16, 9}}
+
+
+PM[6,59].F17.C8:
+Initialize[6,59];
+AllHex[[8]]/.VertexSub[17]=={{1, 5, 10, 11}, {1, 11, 6, 2}};
+Map[StringVar["sigE",17,#]&,%] == {sigma{17}86946, sigma{17}66427};
+bf = "SHORT/HEX/LP/cplexE.lp6.59.F17.C8";
+LPdisplay[bf]==0.513595
+
+LPmax[bf,"dih{17}6"]==1.8525197004 < 1.9
+LPmax[bf,"dih{17}10"]==1.8525197004 < 1.9
+LPmax[bf,"y(10)"]== 2.1336742257 < 2.2
+LPmax[bf,"y(6)"]== 2.1336758276 < 2.2
+LPmax[bf,StringVar["dihE",17,1,5,11]]== 1.5886392904 < 2
+LPmax[bf,StringVar["dihE",17,1,2,11]]== 1.5886392404 < 2
+LPmax[bf,"y(11)+y(5)"]== 4.6664735597
+LPmax[bf,"y(11)+y(2)"]== 4.6664735597
+
+
+EqnJ = {"sJ{17}86946.10=0\n",
+		"sJ{17}66427.6=0\n",
+	StretchOne[17,{1,5,10,11},{0,1,5,10,11}],
+	StretchOne[17,{1,2,6,11},{0,1,2,6,11}]
+	}// StringJoin
+LPdisplay[bf,EqnJ] == 0.264409
+PM[6,59].F17.C8, done.
+
+
+
+
+
+PM[6,59].F17.C24
+Initialize[6,59];
+AllHex[[24]]/.VertexSub[17]=={{1, 11, 2}, {11, 6, 2}, {1, 5, 10, 11}};
+Map[StringVar["sigE",17,#]&,%] == 
+	{sigma{17}54638, sigma{17}55811, sigma{17}86946};
+bf = "SHORT/HEX/LP/cplexE.lp6.59.F17.C24";
+LPdisplay[bf]==0.463276
+
+
+LPmax[bf,"dih{17}10"]==1.7150388246 < 1.9
+LPmax[bf,"y(10)"]== 2.0560265042 < 2.2
+LPmax[bf,StringVar["dihE",17,1,5,11]]== 1.5816216813 < 2
+LPmax[bf,"y(5)+y(11)"]== 4.3633422914
+
+EqnJ = {"sJ{17}86946.10=0\n",
+	StretchOne[17,{1,5,10,11},{0,1,5,10,11}]
+	}// StringJoin
+LPdisplay[bf,EqnJ] == 0.356001
+PM[6,59].F17.C24, done
+
+
+PM[6,59].F17.C28
+Initialize[6,59];
+AllHex[[28]]/.VertexSub[17]=={{5, 10, 11}, {11, 6, 2}, {1, 5, 11, 2}};
+Map[StringVar["sigE",17,#]&,%] == 
+	{sigma{17}57018, sigma{17}55811, sigma{17}472243}
+bf = "SHORT/HEX/LP/cplexE.lp6.59.F17.C28";
+LPdisplay[bf]==0.490162
+uf = UpdateSubregion[bf,17,AllHex[[28]]//Last];
+LPdisplay[bf,uf]==0.447213
+list = Select[valHexn,#[[3]]==59&&#[[5]]==28&]; Length[list]== 1024;
+plist= PSelect[list,#[[1]]>0.4429&]; Length[plist]==44;
+Map[LPdisplay[bf,uf<>Branch[Band[6,59],#]]&,plist]
+	//Max == 0.407865
+
+PM[6,59].F17.C28 done 11:05pm 7/6/98.
+
+
+PM[6,59].F17.C53
+Initialize[6,59];
+AllHex[[53]]/.VertexSub[17]==
+	{{1, 5, 11}, {1, 11, 2}, {5, 10, 11}, {11, 6, 2}}
+Map[StringVar["sigE",17,#]&,%] == 
+	{sigma{17}55505, sigma{17}54638, sigma{17}57018, sigma{17}55811}
+bf = "SHORT/HEX/LP/cplexE.lp6.59.F17.C53";
+LPdisplay[bf]==0.482131
+list = Select[valHexn,#[[3]]==59&&#[[5]]==53&]; Length[list]== 1024;
+plist= PSelect[list,#[[1]]>0.4429&]== {41, 42, 45};
+
+Table[Map[LPmax[bf,StringVar["y",i],Branch[Band[6,59],#]]&,plist],
+	{i,1,Max[GBLregions]}]//Max ==2.0346624892
+Map[LPdisplay[bf,"ht213=0\n"<>Branch[Band[6,59],#]]&,plist]==
+	{0.446212, 0.445288, 0.447174}  (* no good *)
+Map[LPmax[bf,"y(5,11)","ht213=0\n"<>Branch[Band[6,59],#]]&,plist]//Max
+	== 2.5418689379
+Map[LPmax[bf,"y(5,10)","ht213=0\n"<>Branch[Band[6,59],#]]&,plist]//Max
+	== 2.3179098949
+Map[LPmax[bf,"y(10,11)","ht213=0\n"<>Branch[Band[6,59],#]]&,plist]//Max
+	== 2.0308333536
+eta[2.5418689379,2.3179098949,2.0308333536]^2 == 1.80273
+so it is compression scored.
+
+(* VI.A2.Flat.594246986. *)
+gamma = StringVar["sigE",17,{5,10,11}]<>
+ " +0.145 y(10) + 0.08 y(5)+ 0.08 y(11)+ 0.133 y(5,10)+0.133 y(10,11)<1.146\n";
+Map[LPdisplay[bf,gamma<>"ht213=0\n"<>Branch[Band[6,59],#]]&,plist]//Max
+	== 0.440578
+PM[6,59].F17.C53 done 6/13/98, 11:55 pm.
+
+PM[6,59]n done.
+
+

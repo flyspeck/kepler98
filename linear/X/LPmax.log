@@ -1,0 +1,35 @@
+
+Log started (V4.0.9) Thu Jun 25 19:48:30 1998
+
+New value for presolve indicator: no
+New value for results output screen indicator and file: n /tmp/Z/y.log
+New value for dialog output screen indicator and file: n /tmp/Z/x.log
+
+Problem 'SHORT/PENT/LP/cplexE.lp5.365.F17.C22' read.
+Read time =    0.14 sec.
+
+Problem addition successful.
+Reduced presolve eliminated 3 rows and 3 columns.
+Aggregator did 28 substitutions.
+Reduced LP has 1956 rows, 260 columns, and 8613 nonzeros.
+Presolve time =    0.07 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           591.204307
+Iteration:   105    Scaled Infeas =            98.205942
+Switched to Devex.
+Iteration:   205    Scaled Infeas =            28.344102
+Iteration:   305    Scaled Infeas =             2.387538
+Iteration:   371    Objective     =         -7344.013700
+Iteration:   470    Objective     =            -1.068820
+Iteration:   570    Objective     =            -0.466877
+Iteration:   670    Objective     =             0.159110
+Iteration:   770    Objective     =             0.319999
+Iteration:   870    Objective     =             0.367682
+Iteration:   970    Objective     =             0.385628
+Elapsed time =    4.47 sec.
+Removing shift (7).
+
+Primal - Optimal:  Objective =    3.8832710870e-01
+Solution time =    4.75 sec.    Iterations = 1053 (370)
+

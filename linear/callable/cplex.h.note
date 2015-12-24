@@ -1,0 +1,19 @@
+From jlockard@math.lsa.umich.eduSat Jun 28 09:42:39 1997
+Date: Wed, 25 Jun 1997 18:18:37 -0400 (EDT)
+From: John Lockard <jlockard@math.lsa.umich.edu>
+To: hales@math.lsa.umich.edu
+Subject: [Update to REQ 6680]: Where is the cplex callable library
+
+
+I made a link to the cplex.h file.  You'll just need to make sure that
+/usr/local/include is in the Include-Path
+
+Try this out and give me an update.
+
+jlockard
+
+
+Request  State  Assigned   Due by    Originator 
+-------------------------------------------------------------------
+6680     open   systems   06/30/97   Tom Hales <hales>
+[20 lines of previous history; see request -v 6680.]

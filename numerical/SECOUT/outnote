@@ -1,0 +1,2 @@
+// These files are to test the second derivative bounds
+// produced by (vord; seconds.cc).  compare (vord::SECOUT/out.sec.Q)

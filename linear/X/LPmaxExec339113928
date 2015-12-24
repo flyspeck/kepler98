@@ -1,0 +1,19 @@
+set logfile X/LPmax.log339113928
+set preprocessing presolve no
+set output results n X/y.log
+set output dialog n X/x.log
+read SHORT/PENT/LPmany/cplexE2.lp5.947.F15.C7.F16.C11 lp
+add 
+Cqrs1=0
+Cqrl3=0
+Cqrs4=0
+Cqrs5=0
+Cqrs2=0
+Cqrs9=0
+Cqrs8=0
+Cqrs7=0
+ht213=0
+
+end
+opt
+quit

@@ -1,0 +1,3 @@
+read CPLEX/Z/cplex.lp539 lp
+optimize
+quit

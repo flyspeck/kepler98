@@ -1,0 +1,12 @@
+set logfile X/LPmax.log481644967
+set preprocessing presolve no
+set output results n X/y.log
+set output dialog n X/x.log
+read SHORT/HEX/LP/cplexE.lp6.131.F17.C1 lp
+change delete constraints sigsumX
+add 
+sigsum > 0.4429
+y(6) - X =0
+end
+opt
+quit

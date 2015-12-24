@@ -1,0 +1,89 @@
+ Section A3:
+
+ +0 gives compression type 
+ +1 gives voronoi type 
+
+
+New Case = 334002329
+numargs = 6
+1.12513962833848957e-05
+{2.50999999999999979, 2.50999999999999979, 2, 2, 2.50999999999999979, 2}
+
+New Case = 334002330
+numargs = 6
+0.0554900175366080939
+{2.50999999999999979, 2.50999999999999979, 2.50999999999999979, 2, 2.50999999999999979, 2.50999999999999979}
+
+New Case = 883139937
+numargs = 6
+1.37165290636231951e-05
+{2.50999999999999979, 2.50999999999999979, 2, 2, 2.50999999999999979, 2}
+
+New Case = 883139938
+numargs = 6
+4.39742167712697807e-05
+{2.50999999999999979, 2.50999999999999979, 2, 2, 2, 2.50999999999999979}
+
+New Case = 507989176
+numargs = 6
+0.000818241774762917817
+{2.50999999999999979, 2.50999999999999979, 2, 2, 2.50999999999999979, 2}
+
+New Case = 507989177
+numargs = 6
+1.20126627697753063e-05
+{2.82842712474618985, 2, 2.50999999999999979, 2, 2.50999999999999979, 2}
+
+New Case = 244435805
+numargs = 6
+9.24364007648392771e-06
+{2.50999999999999979, 2, 2, 2, 2, 2}
+
+New Case = 244435806
+numargs = 6
+8.56533905117806693e-06
+{2.82842712474618985, 2.50999999999999979, 2, 2, 2, 2.50999999999999979}
+
+New Case = 930176500
+numargs = 6
+1.46401694222086931e-05
+{2.50999999999999979, 2, 2, 2, 2, 2}
+
+New Case = 930176501
+numargs = 6
+1.53411346299134332e-05
+{2.82842712474618985, 2, 2, 2, 2, 2}
+
+New Case = 815681339
+numargs = 6
+3.98574316922556404e-06
+{2.82842712474618985, 2, 2, 2, 2, 2}
+
+New Case = 815681340
+numargs = 6
+3.98574316922556404e-06
+{2.82842712474618985, 2, 2, 2, 2, 2}
+
+
+ Exiting cfsqp numerical optimizer.
+
+
+
+
+
+ Cfsqp numerical optimizer for Sphere Packings IV 
+
+ The inequalities in the appendix are divided into 24 sections.
+ Sections 1-24 are tested numerically here. 
+
+ Select section number (1--24): 
+ The inequalities are written in the form F>0.
+ This program minimizes F subject to constraints.
+ If the returned value is positive, the inequality passes the numerical check. 
+ Each inequality is test with 80 random initial configurations. 
+
+ Optimizing.... 
+
+
+
+

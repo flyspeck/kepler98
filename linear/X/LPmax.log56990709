@@ -1,0 +1,24 @@
+
+Log started (V4.0.9) Wed Jul  1 21:52:56 1998
+
+New value for presolve indicator: no
+New value for results output screen indicator and file: n X/y.log
+New value for dialog output screen indicator and file: n X/x.log
+
+Problem 'SHORT/PENT/LPmany/cplexE2.lp5.895.F17.C16.F18.C6' read.
+Read time =    0.13 sec.
+
+Problem addition successful.
+Reduced presolve eliminated 0 rows and 10 columns.
+Aggregator did 13 substitutions.
+Reduced LP has 1880 rows, 242 columns, and 8520 nonzeros.
+Presolve time =    0.06 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           517.207141
+Switched to Devex.
+Iteration:   107    Scaled Infeas =            96.555620
+
+Primal - Aborted:  Infeasibility =    5.3838090527e+02
+Solution time =    0.83 sec.    Iterations = 188 (188)
+

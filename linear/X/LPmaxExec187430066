@@ -1,0 +1,25 @@
+set logfile X/LPmax.log187430066
+set preprocessing presolve no
+set output results n X/y.log
+set output dialog n X/x.log
+read SHORT/PENT/LP/cplexE2.lp5.1454.F17.C11 lp
+add 
+sigma{17}50643 +0.145 y(4) + 0.08 y(5)+ 0.08 y(10)+ 0.133 y(4,5)+0.133 y(4,10)<1.146
+sigma{17}50643 +0.03 y(4) + 0.03 y(5)+ 0.03 y(10)+ 0.094 y(4,5)+0.094 y(4,10)<0.5361
+ht213=0
+Cqrl1600=0
+Cqrs1601=0
+Cqrl1600=0
+Cqrs1601=0
+Cqrl1=0
+Cqrl6=0
+Cqrs5=0
+Cqrs4=0
+Cqrl3=0
+Cqrs2=0
+Cqrs8=0
+Cqrs9=0
+
+end
+opt
+quit

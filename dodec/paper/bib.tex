@@ -1,0 +1,138 @@
+%\magnification=\magstep1
+\documentstyle{amsppt}
+
+\topmatter
+%\parskip=\baselineskip
+\baselineskip=1.1\baselineskip  % was 1.1
+%\parindent=0pt
+\loadmsbm
+\UseAMSsymbols
+%\raggedbottom
+\hoffset=0.75truein
+\voffset=0.5truein
+
+
+\def\reft{\relax}  % items
+\def\refz{\relax}
+\def\bul{\noindent$\bullet$\quad }
+\def\lb#1{\line{$\bullet$ #1 \hfill}}
+\def\cir{\noindent$\circ$\quad }
+\def\heads#1{\rightheadtext{#1}}
+\def\doct{\delta_{oct}}
+\def\pt{\hbox{\it pt}}
+\def\Vol{\hbox{vol}}
+\def\and{\operatorname{and}}
+\def\sol{\operatorname{sol}}
+\def\quo{\operatorname{quo}}
+\def\anc{\operatorname{anc}}
+\def\cro{\operatorname{crown}}
+\def\vor{\operatorname{vor}}
+\def\octavor{\operatorname{octavor}}
+\def\dih{\operatorname{dih}}
+\def\arc{\operatorname{arc}}
+\def\rad{\operatorname{rad}}
+\def\if{\operatorname{if}}
+\def\A{{\bold A}}
+\def\squander{(4\pi\zeta-8)\,\pt}
+\def\score{8\,\pt}
+\def\Sfour{\Cal{\bold S}_4^+}
+\def\Sminus{\Cal{\bold S}_3^-}
+\def\Splus{\Cal{\bold S}_3^+}
+\def\maxpi{\pi_{\max}}
+\def\xiG{\xi_\Gamma}
+\def\xiV{\xi_V}
+\def\xik{\xi_\kappa}
+\def\xikG{\xi_{\kappa,\Gamma}}
+
+\font\twrm=cmr8
+\def\DLP{\operatorname{D}_{\hbox{\twrm LP}}}
+\def\ZLP{\operatorname{Z}_{\hbox{\twrm LP}}}
+\def\tLP{\operatorname{\hbox{$\tau$}LP}}  % 3 args small LP.
+\def\tlp{\tau_{\hbox{\twrm LP}}}  % 2 args (p,q) tri, quad
+\def\slp{\sigma_{\hbox{\twrm LP}}}  % 2 args (p,q) tri, quad
+\def\sLP{\operatorname{\hbox{$\sigma$}LP}}
+\def\LPmin{\operatorname{LP-min}}
+\def\LPmax{\operatorname{LP-max}}
+\def\geom{{\operatorname{g}}}
+\def\anal{{\operatorname{an}}}
+
+
+
+\def\sol{\operatorname{sol}}
+\def\dih{\operatorname{dih}}
+\def\V{\operatorname{V}}
+\def\vol{\operatorname{vol}}
+\def\Area{\operatorname{Area}}
+\def\Per{\operatorname{Per}}
+\def\rad{\operatorname{rad}}
+\def\quo{\operatorname{quo}}
+
+\def\rom{\uppercase\romannumeral}
+
+\def\R{{\Bbb R}}
+\def\ldot{\cdot}
+\def\S{{\Cal S}}
+\def\del{\partial}
+\def\B#1{{\bold #1}}
+\def\tri#1#2{\langle#1;#2\rangle}
+\def\ha{ \hangindent=20pt \hangafter=1\relax }
+\def\ho{ \hangindent=20pt \hangafter=0\relax }
+\def\i{I}
+\def\was#1{\relax}
+
+\def\diag|#1|#2|{\vbox to #1in {\vskip.3in\centerline{\tt Diagram #2}\vss} }
+\def\v{\hskip -3.5pt }
+% to place a fig file  align the bottom left corner at (0,-11).
+% save as left justified.
+% resize so that the box is just under 5 in width
+\def\gram|#1|#2|#3|{
+        {
+        \smallskip
+        \hbox to \hsize
+        {\hfill
+        \vrule \vbox{ \hrule \vskip 6pt \centerline{\it Diagram #2}
+         \vskip #1in %
+             \special{psfile=#3 hoffset=5 voffset=5 }\hrule }
+        \v\vrule\hfill
+        }
+\smallskip}}
+
+\def\today{\ifcase\month\or
+    January\or February\or March\or April\or May\or June\or
+    July\or August\or September\or October\or November\or December\fi
+    \space\number\day, \number\year}
+
+
+{\bf References.}
+
+[H1] Hales, T.C. {\it Sphere Packings 1}, Dis. and Comp. Geom., 
+{\bf 17} (1997), 1-51.
+
+[H3] Hales, T.C. {\it Sphere Packings 3}, Preprint.
+
+[H4] Hales, T.C. {\it Sphere Packings 4}, Preprint.
+
+[1] Leech, John.  {\it The Problem of the Thirteen Spheres},  Math. Gazette,  
+Feb. 1956, 22-23.
+
+[2] L. Fejes T\'oth, {\it Uber die dichteste Kugellagerung}, Math 
+Z., {\bf 48} (1943), 676-684.
+
+[3] L. Fejes T\'oth, {\it Regular Figures}, Pergamon Press, Oxford-London-New York, 1964.
+
+
+[4] C.A. Rogers, {\it The packing of equal spheres}, J. London Math. Soc.,
+{\bf 3/8} (1958),609-620.
+
+[5] D.J. Muder, {\it Putting the best face on a Voronoi polyhedron}, 
+Proc. London Math. Soc., {\bf 3/56} (1988),329-348.
+
+[6] D.J. Muder, {\it A new bound on the local density of sphere packings}, 
+Discrete and Comp. Geom., {\bf 10} (1993), 351-375.
+
+[7] W.-Y. Hsiang, {\it On the sphere packing problem and teh proof of Kepler's conjecture},
+Int. J. Math., {\bf 4/5} (1993),739-831.
+
+[8] K. Bezdek, {\it Isoperimetric inequalities and the dodecahedral conjecture}, Int. J. Math.,
+{\bf 8/6} (1997), 759-780.
+

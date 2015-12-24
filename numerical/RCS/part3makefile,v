@@ -1,0 +1,80 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	97.09.16.03.10.56;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@Sphere Packings III,
+makefile for files part3*.cc
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@# for Silicon graphics cc compiler
+CC = CC
+CCOPTS1 = -O2 -g -dalign
+
+# make -f makefile -f part3makefile part3open
+
+part3tet : numerical.h numerical.o morefn.o constants.o morefn.h constants.h part3tet.cc\
+	gradient.o gradient.cc gradient.h ineq.cc constants.cc constrained_min.o \
+	part3tet.o
+	$(CC) $(CCOPTS1) ineq.cc gradient.o numerical.o morefn.o part3tet.o\
+	constrained_min.o cfsqp.o qld.o \
+	constants.o -lm -o part3tet
+
+part3oct : numerical.h numerical.o morefn.o constants.o morefn.h constants.h part3oct.cc\
+	gradient.o gradient.cc gradient.h ineq.cc constants.cc constrained_min.o \
+	part3oct.o
+	$(CC) $(CCOPTS1) ineq.cc gradient.o numerical.o morefn.o part3oct.o\
+	constrained_min.o cfsqp.o qld.o \
+	constants.o -lm -o part3oct
+
+part3flat : numerical.h numerical.o morefn.o constants.o morefn.h constants.h part3flat.cc\
+	gradient.o gradient.cc gradient.h ineq.cc constants.cc constrained_min.o \
+	part3flat.o
+	$(CC) $(CCOPTS1) ineq.cc gradient.o numerical.o morefn.o part3flat.o\
+	constrained_min.o cfsqp.o qld.o \
+	constants.o -lm -o part3flat
+
+part3open : numerical.h numerical.o morefn.o constants.o morefn.h constants.h part3open.cc\
+	gradient.o gradient.cc gradient.h ineq.cc constants.cc constrained_min.o \
+	part3open.o
+	$(CC) $(CCOPTS1) ineq.cc gradient.o numerical.o morefn.o part3open.o\
+	constrained_min.o cfsqp.o qld.o \
+	constants.o -lm -o part3open
+
+part3openSqc : numerical.h numerical.o morefn.o constants.o morefn.h constants.h part3openSqc.cc\
+	gradient.o gradient.cc gradient.h ineq.cc constants.cc constrained_min.o \
+	part3openSqc.o
+	$(CC) $(CCOPTS1) ineq.cc gradient.o numerical.o morefn.o part3openSqc.o\
+	constrained_min.o cfsqp.o qld.o \
+	constants.o -lm -o part3openSqc
+
+part3open.o : part3open.cc
+	$(CC) $(CCOPTS1) -c part3open.cc
+part3openSqc.o : part3openSqc.cc
+	$(CC) $(CCOPTS1) -c part3openSqc.cc
+part3flat.o : part3flat.cc
+	$(CC) $(CCOPTS1) -c part3flat.cc
+part3oct.o : part3oct.cc
+	$(CC) $(CCOPTS1) -c part3oct.cc
+part3tet.o : part3tet.cc
+	$(CC) $(CCOPTS1) -c part3tet.cc
+part3.o : part3.cc
+	$(CC) $(CCOPTS1) -c part3.cc
+part4.o : part4.cc
+	$(CC) $(CCOPTS1) -c part4.cc
+@

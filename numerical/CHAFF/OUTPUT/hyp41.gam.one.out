@@ -1,0 +1,121 @@
+//This first pass did not make any conditions on the
+smallness of faces:
+
+Maximize Function 4.1. = 1
+-0.0570743,   x = {2.51,2,2,2.82843,2,2}
+Maximize Function 4.1. = 2
+-0.0968923,   x = {2.51,2,2,2.82843,2,2}
+Maximize Function 4.1. = 3
+-8.7285e-05,   x = {2.51,2,2,2.82843,2,2}
+Maximize Function 4.1. = 4
+-2.79952e-05,   x = {2.51,2,2,2.82843,2,2}
+Maximize Function 4.1. = 5
+-0.0127204,   x = {2.51,2,2,2.82843,2,2}
+Maximize Function 4.1. = 6
+-2.22045e-16,   x = {2,2,2,2.82843,2,2}
+Maximize Function 4.1. = 7
+-3.59449e-05,   x = {2,2,2,2.51,2.51,2}
+Maximize Function 4.1. = 8
+-6.30401e-05,   x = {2,2,2,2.51,2.51,2}
+Maximize Function 4.1. = 9
+-0.000152312,   x = {2,2.51,2,2.51,2.51,2}
+Maximize Function 4.1. = 10
+0.0223398,   x = {2,2,2,2.82843,2.51,2.51}
+Maximize Function 4.1. = 11
+-0.0782922,   x = {2.51,2,2,2.82843,2,2}
+Maximize Function 4.1. = 12
+-0.000456749,   x = {2.51,2,2,2.82843,2,2}
+Maximize Function 4.1. = 13
+-3.7122e-05,   x = {2.51,2,2,2.82843,2,2}
+Maximize Function 4.1. = 14
+-7.13136e-07,   x = {2,2,2,2.51,2,2}
+Maximize Function 4.1. = 15
+-6.60891e-05,   x = {2,2,2,2.51,2,2}
+Maximize Function 4.1. = 16
+-0.000153327,   x = {2,2,2,2.51,2.51,2}
+Maximize Function 4.1. = 17
+-0.0355183,   x = {2.51,2,2,2.82843,2,2}
+Maximize Function 4.1. = 18
+-0.00048094,   x = {2.51,2,2,2.82843,2,2}
+Maximize Function 4.1. = 19
+-0.0038263,   x = {2,2,2,2.51,2,2}
+Maximize Function 4.1. = 20
+-0.0160109,   x = {2,2.51,2,2.51,2,2}
+Maximize Function 4.1. = 21
+-0.158672,   x = {2.51,2,2,2.82843,2,2}
+Maximize Function 4.1. = 22
+-0.0796054,   x = {2.51,2,2,2.82843,2,2}
+Maximize Function 4.1. = 23
+-0.0717823,   x = {2,2,2,2.82843,2,2}
+Maximize Function 4.1. = 24
+0.0400812,   x = {2,2,2,2.82843,2.51,2.51}
+Maximize Function 4.1. = 25
+-0.266496,   x = {2,2,2,2.82843,2.51,2.51}
+Maximize Function 4.1. = 26
+-1.68455,   x = {2,2,2,2.51,2.51,2}
+Maximize Function 4.1. = 27
+0.204925,   x = {2,2,2,2.82843,2.51,2.51}
+
+// This second pass assume the top face was small
+
+Maximize Function 4.1. = 1 (gamma)  (NUM_HITS= 10)
+-0.0570743,   x = {2.51,2,2,2.82843,2,2}
+Maximize Function 4.1. = 2 (gamma)  (NUM_HITS= 10)
+-0.0968923,   x = {2.51,2,2,2.82843,2,2}
+Maximize Function 4.1. = 3 (gamma)  (NUM_HITS= 10)
+-8.7285e-05,   x = {2.51,2,2,2.82843,2,2}
+Maximize Function 4.1. = 4 (gamma)  (NUM_HITS= 10)
+-2.79952e-05,   x = {2.51,2,2,2.82843,2,2}
+Maximize Function 4.1. = 5 (gamma)  (NUM_HITS= 10)
+-0.0127204,   x = {2.51,2,2,2.82843,2,2}
+Maximize Function 4.1. = 6 (gamma)  (NUM_HITS= 10)
+-2.22045e-16,   x = {2,2,2,2.82843,2,2}
+Maximize Function 4.1. = 7 (gamma)  (NUM_HITS= 10)
+-3.59449e-05,   x = {2,2,2,2.51,2.51,2}
+Maximize Function 4.1. = 8 (gamma)  (NUM_HITS= 10)
+-6.30401e-05,   x = {2,2,2,2.51,2.51,2}
+Maximize Function 4.1. = 9 (gamma)  (NUM_HITS= 10)
+-0.000152312,   x = {2,2.51,2,2.51,2.51,2}
+Maximize Function 4.1. = 10 (gamma)  (NUM_HITS= 10)
+-7.85433e-06,   x = {2,2,2,2.82843,2,2}
+Maximize Function 4.1. = 11 (gamma)  (NUM_HITS= 10)
+-0.0782922,   x = {2.51,2,2,2.82843,2,2}
+Maximize Function 4.1. = 12 (gamma)  (NUM_HITS= 10)
+-0.000456749,   x = {2.51,2,2,2.82843,2,2}
+Maximize Function 4.1. = 13 (gamma)  (NUM_HITS= 10)
+-3.7122e-05,   x = {2.51,2,2,2.82843,2,2}
+Maximize Function 4.1. = 14 (gamma)  (NUM_HITS= 10)
+-7.13136e-07,   x = {2,2,2,2.51,2,2}
+Maximize Function 4.1. = 15 (gamma)  (NUM_HITS= 10)
+-6.60891e-05,   x = {2,2,2,2.51,2,2}
+Maximize Function 4.1. = 16 (gamma)  (NUM_HITS= 10)
+-0.000153327,   x = {2,2,2,2.51,2.51,2}
+Maximize Function 4.1. = 17 (gamma)  (NUM_HITS= 10)
+-0.0355183,   x = {2.51,2,2,2.82843,2,2}
+Maximize Function 4.1. = 18 (gamma)  (NUM_HITS= 10)
+-0.00048094,   x = {2.51,2,2,2.82843,2,2}
+Maximize Function 4.1. = 19 (gamma)  (NUM_HITS= 10)
+-0.0038263,   x = {2,2,2,2.51,2,2}
+Maximize Function 4.1. = 20 (gamma)  (NUM_HITS= 10)
+-0.0160109,   x = {2,2.51,2,2.51,2,2}
+
+Maximize Function 4.1. = 21 (gamma)  (NUM_HITS= 10)
+-0.158672,   x = {2.51,2,2,2.82843,2,2}
+Maximize Function 4.1. = 22 (gamma)  (NUM_HITS= 10)
+-0.0796054,   x = {2.51,2,2,2.82843,2,2}
+Maximize Function 4.1. = 23 (gamma)  (NUM_HITS= 10)
+-0.0751415,   x = {2,2,2,2.82843,2,2}
+Maximize Function 4.1. = 24 (gamma)  (NUM_HITS= 10)
+-0.0457445,   x = {2,2,2,2.82843,2,2}
+Maximize Function 4.1. = 25 (gamma)  (NUM_HITS= 10)
+-0.00798842,   x = {2,2,2,2.69677,2,2.51}
+Maximize Function 4.1. = 26 (gamma)  (NUM_HITS= 10)
+-1.10756e-05,   x = {2,2,2,2.69677,2.51,2}
+Maximize Function 4.1. = 27 (gamma)  (NUM_HITS= 10)
+-7.93389e-06,   x = {2,2,2,2.51004,2.51,2.31399}
+Maximize Function 4.1. = 28 (gamma)  (NUM_HITS= 10)
+-9.32898e-06,   x = {2,2,2,2.51,2.51,2}
+Maximize Function 4.1. = 29 (gamma)  (NUM_HITS= 10)
+-4.74152e-06,   x = {2,2,2,2.51,2.51,2}
+Maximize Function 4.1. = 30 (gamma)  (NUM_HITS= 10)
+0.00358459,   x = {2,2,2,2.69718,1.99967,2.50958}

@@ -1,0 +1,4 @@
+// d-series (4.1-sigma) back inequalities
+// format:
+// i,j,k,div,desired bound on sigma, 0
+

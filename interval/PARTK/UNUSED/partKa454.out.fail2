@@ -1,0 +1,20 @@
+ -- loading interval routines $Revision: 1.5 $
+ -- loading lineInterval routines $Revision: 1.5 $ 
+ -- loading derivative routines $Revision: 1.4 $ 
+ -- loading taylor routines $Revision: 1.6 $ 
+ -- Installation complete -- 
+
+
+Section VI.A.4.5.4
+
+Begin verification of 319046543
+900689033
+[0] 900689033
+[1][2] dih1-a done 
+ dih1-b done 
+
+{6.3000999999999995893,4,4,4,4,4} {6.7842580000000003437,4.5750250000000001194,4.5750250000000001194,4.5750250000000001194,4.5750250000000001194,4.5750250000000001194}  current inequalities are false
+FAIL! 319046543
+900691229
+all done!
+(no errors)

@@ -1,0 +1,536 @@
+head	1.4;
+access;
+symbols;
+locks
+	hales:1.4; strict;
+comment	@ * @;
+
+
+1.4
+date	98.06.24.23.54.18;	author hales;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	97.12.15.01.44.14;	author hales;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	97.11.11.02.28.27;	author hales;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	97.09.13.18.11.21;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@interval package, second derivatives
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@//  copyright (c) 1997, Thomas C. Hales, all rights reserved.
+
+#ifndef VOR
+#define VOR
+
+#include <iomanip.h>
+#include <iostream.h>
+extern "C"
+{
+#include <math.h>
+#include <stdlib.h>
+}
+#include "error.h"
+#include "interval.h"
+
+/* 
+CLASS
+	secondDerive
+
+	Low level routines relating to the second derivative.  These
+	should not generally be called directly by the end user.
+
+OVERVIEW TEXT
+
+	The class secondDerive contains a large number of static
+	low level routines.  I do not see any reason that
+	a user would want to call these routines directly.  They compute
+	bounds on the second partial derivatives of various functions
+	defined on a simplex.  This class is used by various
+	Taylor approximation procedures to give rigorous upper and lower
+	bounds on various functions.
+
+	In the following routines x[] is the lower bound, 
+	z[6] the upper on a cell.
+	these are the edges squared, so that often they are in the range [4,8].
+
+	Usually it is only the second deriviatives that are needed, but
+	this usually requires computing the function value and the first
+	derivatives as well, so often they are returned too.
+
+
+AUTHOR
+
+	Thomas C. Hales
+
+*/
+
+	
+
+
+class secondDerive 
+{
+public:
+
+		//////////
+		// Give interval bounds on the second partial derivatives
+		// of the function chi126. 
+		//
+		// The input is the upper and lower bounds on the cell.
+		//
+		// This procedure writes the partial derivatives to  DDf.
+		//
+		// 1 is the return value. Since chi126 is a polynomial, the 
+		// computation will always be sucessful 
+		// (unless outrageous arguments creating overflow are given). 
+		//
+		//
+static int setChi126(const double x[6],const double z[6],interval DDf[6][6]);
+
+		//////////
+		// Give interval bounds on the second partial derivatives
+		// of the function u126. 
+		//
+		// The input is the upper and lower bounds on the cell.
+		//
+		// This procedure writes the partial derivatives to DDf.
+		//
+		// 1 is the return value.  Since u126 is a polynomial, the 
+		// computation will always be sucessful 
+		// (unless outrageous arguments creating overflow are given). 
+		//
+		//
+static int setU126(const double x[6],const double z[6], interval DDf[6][6]);
+
+		//////////
+		// Give interval bounds on the second partial derivatives
+		// of the function u135. 
+		//
+		// The input is the upper and lower bounds on the cell.
+		//
+		// This procedure writes the partial derivatives to DDf.
+		//
+		// 1 is the return value.  Since u135 is a polynomial, the 
+		// computation will always be sucessful. 
+		// (unless outrageous arguments creating overflow are given). 
+		//
+		//
+static int setU135(const double x[6],const double z[6], interval DDf[6][6]);
+
+		//////////
+		// Give interval bounds on the second derivatives of the
+		// function delta. 
+		//
+		// The input is the upper and lower bounds on the cell.
+		//
+		// This procedure writes the partial derivatives to DDf.
+		//
+		// 1 is the return value.  Since delta is a polynomial, the 
+		// computation will always be sucessful.
+		// (unless outrageous arguments creating overflow are given). 
+		//
+		//
+static int setDelta(const double x[6],const double z[6],interval DDf[6][6]);
+
+		//////////
+		// Give interval bounds on the function dih, and its
+		// first and second partial derivatives.
+		//
+		// The input is the upper and lower bounds on the cell.
+		//
+		// This procedure writes the absolute value of the 
+		// partial derivatives to DDf.
+		//
+		// If the derivatives were
+		// sucessfully computed a nonzero value is returned.
+		//
+static int setDihedral(const double x[6],const double z[6],double DDf[6][6]);
+
+		//////////
+		// Compute the second derivative of the dihedral angle.
+		// The dihedral angle is that along the first edge of the simplex.
+		// All mixed partial derivatives are computed.
+		// 
+		// Input lower and upper bounds x,z on the lengths squared of
+		// the edges.  The function also inputs sqrt(delta) 
+		// and its first and second derivatives in
+		// s, Ds, DDs.  The function returns a nonzero value if 
+		// the calculation is a success.  The dihedral angle, and
+		// its first and second derivatives are placed in h,Dh, and DDh.
+		//
+static int setDihedral(const double x[6],const double z[6],const interval& s,
+	const interval Ds[6],const interval DDs[6][6],
+	interval& h,interval Dh[6],interval DDh[6][6]);
+
+
+		//////////
+		// Compute the second derivative of the dihedral2 angle.
+		// The dihedral angle is that along the second edge of the simplex.
+		// All mixed partial derivatives are computed.
+		// 
+		// Input lower and upper bounds x,z on the lengths squared of
+		// the edges.  The function also inputs sqrt(delta) 
+		// and its first and second derivatives in
+		// s, Ds, DDs.  The function returns a nonzero value if 
+		// the calculation is a success.  The dihedral angle, and
+		// its first and second derivatives are placed in h,Dh, and DDh.
+		//
+static int setDih2(const double x[6],const double z[6],
+	const interval& s,const interval Ds[6],const interval DDs[6][6],
+	interval& h,interval Dh[6],interval DDh[6][6]);
+
+		//////////
+		// Compute the second derivative of the dihedral3 angle.
+		// The dihedral angle is that along the third edge of the simplex.
+		// All mixed partial derivatives are computed.
+		// 
+		// Input lower and upper bounds x,z on the lengths squared of
+		// the edges.  The function also inputs sqrt(delta) 
+		// and its first and second derivatives in
+		// s, Ds, DDs.  The function returns a nonzero value if 
+		// the calculation is a success.  The dihedral angle, and
+		// its first and second derivatives are placed in h,Dh, and DDh.
+		//
+static int setDih3(const double x[6],const double z[6],
+	const interval& s,const interval Ds[6],const interval DDs[6][6],
+	interval& h, interval Dh[6],interval DDh[6][6]);
+
+		//////////
+		// Compute interval bounds on the second derivative of the
+		// solid angle of a simplex.  To call this procedure, it is
+		// necessary first to have computed sqrt(delta) and its first
+		// and second partials. 
+		// 
+		// Input x,z lower and upper bounds on the squares of the lengths
+		// of the edges.
+		// Input ss,Ds,DDs, the derivative information for sqrt(delta).
+		// If the calculation is successful, a nonzero value is returned.
+		// When the call is successful, 
+		// the bounds on the second partials of the solid angle are
+		// placed into the array DDx
+		//
+static int setSolid(const double x[6],const double z[6],
+	const interval ss,const interval Ds[6],const interval DDs[6][6],
+	interval DDx[6][6]);
+
+		//////////
+		// Compute interval bounds on the value, derivatives, 
+		// and second derivatives of
+		// the function sqrt(delta).
+		// The lower and upper values of the domain are passed in
+		// the arrays x and z.  As usual, these represent the
+		// lengths squared of the variables.
+		//
+		// If the values are successfully computed a nonzero
+		// value is returned, and the information is placed in
+		// sqrt_d, Dsqrt_d, and DDsqrt_d.
+		//
+		// If the return is 0, the values of sqrt_d, Dsqrt_d, and
+		// DDsqrt_d is undefined.
+		//
+static int setSqrtDelta(const double x[6],const double z[6],
+	interval& sqrt_d,interval Dsqrt_d[6],interval DDsqrt_d[6][6]);
+
+		//////////
+		// Compute the interval bounds on the second derivatives of
+		// the function vorAnalytic.
+		// The lower and upper values of the domain are passes in
+		// the arrays x and z.  As usual, these represent the 
+		// lengths squared of the variables.
+		//
+		// If the bounds are computed, the return value is nonzero,
+		// and the bounds are returned in DD.  If the return value
+		// is zero, the values of the array DD are undefined.
+		//
+static int setVorAnalytic(const double x[6],const double z[6],
+    double DD[6][6]);
+
+		//////////
+		// chi^2/(4 u delta)+ eta^2 126 is the circumradius squared of a simplex.
+		// Compute interval bounds on the second derivatives of
+		// chi^2/(4 u delta).
+		// The lower and upper values of the domain are passed in
+		// the arrays x and z. As usual, these represent the lengths
+		// squared of the variables.
+		//
+		// If the values are successfully computed a nonzero
+        // value is returned, and the information is placed in DDf.
+		// Otherwise the value of DDf is undefined.
+		//
+static int setChi2over4uDelta(const double x[6],const double z[6],double DDf[6][6]);
+
+		//////////
+		// Compute the interval bounds on the second derivatives of
+        // the function vorVc.
+        // The lower and upper values of the domain are passes in
+        // the arrays x and z.  As usual, these represent the
+        // lengths squared of the variables.
+        //
+        // If the bounds are computed, the return value is nonzero,
+        // and the bounds are returned in DD.  If the return value
+        // is zero, the values of the array DD are undefined.
+        //
+static int setVorVc(const double x[6],const double z[6],double DD[6][6]);
+
+		//////////
+		// Compute the interval bounds on the second derivatives of
+        // the function vor1385.
+        // The lower and upper values of the domain are passes in
+        // the arrays x and z.  As usual, these represent the
+        // lengths squared of the variables.
+        //
+        // If the bounds are computed, the return value is nonzero,
+        // and the bounds are returned in DD.  If the return value
+        // is zero, the values of the array DD are undefined.
+        //
+static int setVor1385(const double x[6],const double z[6],double DD[6][6]);
+
+
+		//////////
+        // Compute the interval bounds on the second derivatives of
+        // the function vorVcInverted (used in octavor0).
+        // The lower and upper values of the domain are passes in
+        // the arrays x and z.  As usual, these represent the
+        // lengths squared of the variables.
+        //
+        // If the bounds are computed, the return value is nonzero,
+        // and the bounds are returned in DD.  If the return value
+        // is zero, the values of the array DD are undefined.
+        //
+static int setVorVcInverted(const double x[6],const double z[6],double DDv[6][6]);
+
+
+		//////////
+        // Compute the interval bounds on the second derivatives of
+        // the function vorVcSqc, the truncation of voronoi at sqrt(2).
+        // The lower and upper values of the domain are passes in
+        // the arrays x and z.  As usual, these represent the
+        // lengths squared of the variables.
+        //
+        // If the bounds are computed, the return value is nonzero,
+        // and the bounds are returned in DD.  If the return value
+        // is zero, the values of the array DD are undefined.
+        //
+static int setVorSqc(const double x[6],const double z[6],double DDv[6][6]);
+
+	//////////
+	// Check the correctness of secondDerive routines
+	//
+static void selfTest();
+
+};
+
+
+#endif
+@
+
+
+1.3
+log
+@selfTest has been added to the header.
+@
+text
+@d255 13
+@
+
+
+1.2
+log
+@Many changes including extensive documentation of the classes.
+@
+text
+@d283 5
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d26 1
+a26 1
+	low level routines.  I do not see any conceivable reason that
+a40 1
+	The functions have been protected to discourage their use.
+d53 1
+a53 1
+protected:
+d56 2
+a57 2
+		// Give interval bounds on the function chi126, and its
+		// first and second partial derivatives.
+d61 1
+a61 1
+		// This procedure writes the partial derivatives to f, Df, and DDf.
+d63 1
+a63 1
+		// A void is returned, because chi126 is a polynomial, so the 
+d68 1
+a68 2
+static void setChi126(const double x[6],const double z[6],interval& f,
+		interval Df[6],interval DDf[6][6]);
+d71 2
+a72 2
+		// Give interval bounds on the function u126, and its
+		// first and second partial derivatives.
+d76 1
+a76 1
+		// This procedure writes the partial derivatives to f, Df, and DDf.
+d78 1
+a78 1
+		// A void is returned, because u126 is a polynomial, so the 
+d83 1
+a83 2
+static void setU126(const double x[6],const double z[6],
+                interval& f, interval Df[6], interval DDf[6][6]);
+d86 2
+a87 2
+		// Give interval bounds on the function u135, and its
+		// first and second partial derivatives.
+d91 1
+a91 1
+		// This procedure writes the partial derivatives to f, Df, and DDf.
+d93 1
+a93 1
+		// A void is returned, because u135 is a polynomial, so the 
+d98 1
+a98 2
+static void setU135(const double x[6],const double z[6],
+        interval& f, interval Df[6], interval DDf[6][6]);
+d101 2
+a102 2
+		// Give interval bounds on the function delta, and its
+		// first and second partial derivatives.
+d106 1
+a106 1
+		// This procedure writes the partial derivatives to f, Df, and DDf.
+d108 1
+a108 1
+		// A void is returned, because delta is a polynomial, so the 
+d113 1
+a113 2
+static void setDelta(const double x[6],const double z[6],
+        interval& f, interval Df[6], interval DDf[6][6]);
+d121 2
+a122 1
+		// This procedure writes the partial derivatives to f, Df, and DDf.
+a140 1
+
+a213 31
+
+// chi2over4udelta + eta^2 126 is the circumradius squared of a simplex.
+static int compute_chi2over4udelta(const double x[6],const double z[6],double DDf[6][6]);
+static int compute_vorVc(const double x[6],const double z[6],double DDv[6][6]);
+static int compute_swap_vorVc(const double x[6],const double z[6],double DDv[6][6]);
+static int compute_vorSqc(const double x[6],const double z[6],double DDv[6][6]);
+
+};
+
+/*
+CLASS
+	Leibniz
+
+	Some calculus methods including the product and quotient rules.
+	The code is written for functions of 6 variables, but this could
+	be easily modified.
+
+OVERVIEW TEXT
+	The class Leibniz contains 
+	some calculus methods including the product and quotient rules.
+	It also contains a square root method that computes the derivatives
+	of the square root of a function by the chain rule.
+
+AUTHOR
+	Thomas C. Hales
+*/
+
+class Leibniz 
+{
+public:
+
+d215 5
+a219 3
+		// Use the product rule to compute a product uv, its first
+		// derivatives Duv, and its second derivatives DDuv in terms
+		// of the same data for u and v.
+d221 3
+a223 2
+		// The input is the derivative information for the first function
+		// u, Du, and DDu, and for the second function v, Dv, DDv.
+d225 10
+a234 3
+		// void is returned because the calculation will always be
+		// successful provided the magnitudes of the numbers involved
+		// are less than <float.h>DBL_MAX 
+d236 3
+a238 1
+		// It is assumed that the functions are functions of 6 variables.
+d240 15
+a254 4
+static void product(const interval& u,const interval Du[6],
+	const interval DDu[6][6],
+	const interval& v,const interval Dv[6],const interval DDv[6][6],
+	interval& uv,interval Duv[6],interval DDuv[6][6]);
+d257 12
+a268 20
+		// Use the chain rule to compute the sqrt of a function, and
+		// its first and second derivatives in terms of the same data
+		// for the function
+		//
+		// The input is the value and derivative information of the
+		// first function u, Du, DDu.
+		// The return is sqrt_u, Dsqrt_u, DDsqrt_u containing the
+		// square root information.  
+		//
+		// If calculation is not sucessful, 0 is returned, otherwise
+		// a nonzero is returned.  The squrt_u variables take undefined
+		// values if the calculation is not a success.
+		// This function should be safe to
+		// call even if u is not strictly positive, but no useful
+		// information will be obtained.
+		//
+		// It is assumed that the functions are functions of 6 variables.
+		//
+static int Dsqrt(const interval&u,const interval Du[6],const interval DDu[6][6],
+   interval& sqrt_u,interval Dsqrt_u[6],interval DDsqrt_u[6][6]);
+d271 12
+a282 18
+		// Use the quotient rule to compute a quotient v=a/b, its first
+		// derivatives Dv, and its second derivatives DDv in terms
+		// of the same data for a and b.
+		//
+		// The input is the derivative information for the first function
+		// a, Da, and DDa, and for the second function b, Db, DDb.
+		//
+		// If the computation is a sucess a nonzero integer is returned.
+		// The usual cause of an unsuccesful call is a zero denominator.
+		// An effort is made to avoid a division by zero.  If this appears
+		// likely an unsucessful return is made.
+		//
+		// It is assumed that the functions are functions of 6 variables.
+		//
+static int quotient(const interval& a,const interval Da[6],
+	const interval DDa[6][6],
+	const interval& b,const interval Db[6],const interval DDb[6][6],
+	interval& v,interval Dv[6],interval DDv[6][6]);
+@

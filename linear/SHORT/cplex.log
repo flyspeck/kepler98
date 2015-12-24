@@ -1,0 +1,392 @@
+
+Log started (V4.0.9) Thu May  7 19:24:29 1998
+
+CPLEX Error  1423: Could not open file 'cplexE.lp57.F18.C11' for reading.
+CPLEX Error  1423: Could not open file 'cplexE.lp57.F18.C11.lp' for reading.
+Problem contains quadratic objective coefficients, ignored.
+No file read.
+CPLEX Error  1423: Could not open file 'cplexE.lp57.F18.C11' for reading.
+CPLEX Error  1423: Could not open file 'cplexE.lp57.F18.C11.lp' for reading.
+Problem contains quadratic objective coefficients, ignored.
+No file read.
+
+Problem 'cplexE.lp56.F18.C11' read.
+Read time =    0.15 sec.
+LP Presolve eliminated 428 rows and 49 columns.
+Aggregator did 2 substitutions.
+Reduced LP has 1289 rows, 152 columns, and 6320 nonzeros.
+Presolve time =    0.08 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           205.844674
+Switched to Devex.
+Iteration:   106    Scaled Infeas =             9.705209
+Iteration:   207    Scaled Infeas =             0.022756
+Iteration:   213    Objective     =            -1.966681
+Iteration:   312    Objective     =             0.211982
+Iteration:   412    Objective     =             0.420392
+Iteration:   512    Objective     =             0.491658
+Iteration:   612    Objective     =             0.502647
+Removing shift (2).
+
+Primal - Optimal:  Objective =    5.0345683222e-01
+Solution time =    2.39 sec.    Iterations = 665 (212)
+
+CPLEX Error  1423: Could not open file 'cplexE.lp18.C12' for reading.
+CPLEX Error  1423: Could not open file 'cplexE.lp18.C12.lp' for reading.
+Problem contains quadratic objective coefficients, ignored.
+No file read.
+
+Problem 'cplexE.lp56.F18.C12' read.
+Read time =    0.17 sec.
+LP Presolve eliminated 477 rows and 49 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 1331 rows, 163 columns, and 6443 nonzeros.
+Presolve time =    0.09 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           210.217711
+Switched to Devex.
+Iteration:   111    Scaled Infeas =            13.543854
+Iteration:   211    Scaled Infeas =             0.924971
+Iteration:   244    Objective     =        -46961.759479
+Iteration:   343    Objective     =            -0.279051
+Iteration:   443    Objective     =             0.297889
+Iteration:   543    Objective     =             0.511967
+Removing shift (2).
+
+Primal - Optimal:  Objective =    5.2098076468e-01
+Solution time =    2.19 sec.    Iterations = 590 (243)
+
+
+Problem 'cplexE.lp56.F18.C19' read.
+Read time =    0.17 sec.
+Infeasibility row 'c1472':  0 <= -0.05.
+Presolve time =    0.03 sec.
+CPLEX Error  1101: Presolve determines problem is infeasible or unbounded.
+ c1472:          sigma{18}25432 <= -0.05
+No solution exists.
+The indicated variable is >= 0.
+
+Problem 'cplexE.lp56.F18.C19' read.
+Read time =    0.15 sec.
+Infeasibility row 'c1472':  0 <= -0.05.
+Presolve time =    0.03 sec.
+CPLEX Error  1101: Presolve determines problem is infeasible or unbounded.
+ c1472:          sigma{18}25432 <= -0.05
+
+Problem 'cplexE.lp56.F18.C19' read.
+Read time =    0.16 sec.
+LP Presolve eliminated 485 rows and 53 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 1345 rows, 165 columns, and 6507 nonzeros.
+Presolve time =    0.10 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           211.113033
+Switched to Devex.
+Iteration:   108    Scaled Infeas =            10.481068
+Iteration:   208    Scaled Infeas =             0.935796
+Iteration:   252    Objective     =       -764017.739684
+Iteration:   351    Objective     =            -1.094446
+Iteration:   451    Objective     =             0.314601
+Iteration:   551    Objective     =             0.503213
+Iteration:   651    Objective     =             0.565377
+Removing shift (3).
+
+Primal - Optimal:  Objective =    5.6687401433e-01
+Solution time =    2.49 sec.    Iterations = 684 (251)
+
+
+The variable 'sigma{18}20230' is 0.
+
+Problem 'cplexE.lp56.F18.C19' read.
+Read time =    0.16 sec.
+LP Presolve eliminated 489 rows and 53 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 1342 rows, 165 columns, and 6513 nonzeros.
+Presolve time =    0.09 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           210.617804
+Switched to Devex.
+Iteration:   108    Scaled Infeas =            10.130276
+Iteration:   208    Scaled Infeas =             0.149684
+Iteration:   224    Objective     =      -1310780.061712
+Iteration:   323    Objective     =            -0.626447
+Iteration:   423    Objective     =             0.115356
+Iteration:   523    Objective     =             0.461138
+Iteration:   623    Objective     =             0.519492
+Removing shift (1).
+
+Primal - Optimal:  Objective =    5.2782879455e-01
+Solution time =    2.33 sec.    Iterations = 678 (223)
+
+
+Variable Name           Solution Value
+sigma{18}20230               -0.050000
+
+Variable Name           Solution Value
+sigma{18}24854               -0.033941
+
+Variable Name           Solution Value
+sigma{18}                    -0.124434
+
+Variable Name           Solution Value
+y(2,4)                        2.545191
+
+Variable Name           Solution Value
+y(2)                          2.000000
+
+Variable Name           Solution Value
+y(4)                          2.000000
+
+Variable Name           Solution Value
+y(3)                          2.000000
+
+Variable Name           Solution Value
+y(2,3)                        2.000000
+
+Variable Name           Solution Value
+y(3,4)                        2.274066
+
+Variable Name           Solution Value
+sigma{18}20553               -0.029949
+
+Variable Name           Solution Value
+sigsum                        0.527829
+
+Variable Name           Solution Value
+sigma{18}20553               -0.029949
+
+Variable Name           Solution Value
+y(180)                        2.696000
+
+Variable Name           Solution Value
+y(2,180)                      2.000000
+
+Variable Name           Solution Value
+y(4,180)                      2.212996
+
+Variable Name           Solution Value
+sigsum                        0.527829
+
+Variable Name           Solution Value
+sigma{18}24854               -0.033941
+
+Variable Name           Solution Value
+sigma{18}10115               -0.010374
+
+Variable Name           Solution Value
+sigma{18}25721               -0.000171
+
+Variable Name           Solution Value
+sigma{18}20230               -0.050000
+
+Variable Name           Solution Value
+sigma{18}20553               -0.029949
+
+Variable Name           Solution Value
+dih{18}20230                  1.886894
+
+Problem 'cplexE.lp56.F18.C12' read.
+Read time =    0.15 sec.
+LP Presolve eliminated 477 rows and 49 columns.
+Aggregator did 1 substitutions.
+Reduced LP has 1331 rows, 163 columns, and 6443 nonzeros.
+Presolve time =    0.09 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           210.217711
+Switched to Devex.
+Iteration:   111    Scaled Infeas =            13.543854
+Iteration:   211    Scaled Infeas =             0.924971
+Iteration:   244    Objective     =        -46961.759479
+Iteration:   343    Objective     =            -0.279051
+Iteration:   443    Objective     =             0.297889
+Iteration:   543    Objective     =             0.511967
+Removing shift (2).
+
+Primal - Optimal:  Objective =    5.2098076468e-01
+Solution time =    2.21 sec.    Iterations = 590 (243)
+
+
+Variable Name           Solution Value
+dih{18}20230                  2.089330
+
+Variable Name           Solution Value
+dih{18}3                      1.632903
+
+Variable Name           Solution Value
+sigma{18}349401              -0.043000
+
+Log started (V4.0.9) Mon May 25 08:43:25 1998
+
+
+Problem 'cplexE.lp74.F17.C22.F18.C16' read.
+Read time =    0.16 sec.
+No deletions made.
+
+Log started (V4.0.9) Fri Jun 12 21:37:14 1998
+
+CPLEX Error  1608: Line 1844: Expected '+','-' or sense, found 't'.
+Problem contains quadratic objective coefficients, ignored.
+No file read.
+CPLEX Error  1423: Could not open file 'cplexE.lp157.F15.C1' for reading.
+CPLEX Error  1423: Could not open file 'cplexE.lp157.F15.C1.lp' for reading.
+Problem contains quadratic objective coefficients, ignored.
+No file read.
+CPLEX Error  1616: Line 1845: Expected identifier, found '>'.
+Problem contains quadratic objective coefficients, ignored.
+No file read.
+
+Problem 'cplexE.lp175.F15.C1' read.
+Read time =    0.13 sec.
+LP Presolve eliminated 440 rows and 53 columns.
+Aggregator did 10 substitutions.
+Reduced LP has 978 rows, 131 columns, and 3633 nonzeros.
+Presolve time =    0.07 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           123.910841
+Iteration:    65    Scaled Infeas =             4.936678
+Iteration:   126    Scaled Infeas =             0.000000
+Switched to Devex.
+Iteration:   127    Objective     =            -1.937205
+Iteration:   186    Objective     =            -0.051886
+Iteration:   246    Objective     =             0.286020
+Iteration:   306    Objective     =             0.390801
+Iteration:   366    Objective     =             0.396819
+Removing shift (1).
+
+Primal - Optimal:  Objective =    3.9681900558e-01
+Solution time =    0.87 sec.    Iterations = 366 (126)
+
+CPLEX Error  1434: Line 2056: Couldn't convert '-0.06585+' to a number.
+Problem contains quadratic objective coefficients, ignored.
+No file read.
+
+Problem 'cplexE.lp179.F17.C21' read.
+Read time =    0.12 sec.
+LP Presolve eliminated 514 rows and 61 columns.
+Aggregator did 5 substitutions.
+Reduced LP has 1155 rows, 163 columns, and 4374 nonzeros.
+Presolve time =    0.08 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           200.724702
+Switched to Devex.
+Iteration:    64    Scaled Infeas =            29.781153
+Iteration:   129    Scaled Infeas =             3.069631
+Iteration:   189    Scaled Infeas =             0.046276
+Iteration:   194    Objective     =       -524884.316827
+Iteration:   253    Objective     =            -1.083674
+Iteration:   313    Objective     =            -0.483114
+Iteration:   373    Objective     =             0.134845
+Iteration:   433    Objective     =             0.364160
+Iteration:   493    Objective     =             0.453676
+Iteration:   553    Objective     =             0.458786
+Removing shift (4).
+Iteration:   577    Scaled Infeas =             0.000019
+
+Primal - Optimal:  Objective =    4.6114726863e-01
+Solution time =    1.59 sec.    Iterations = 581 (198)
+
+
+Problem 'LPe/cplexE.lp179.F17.C21' read.
+Read time =    0.10 sec.
+LP Presolve eliminated 138 rows and 17 columns.
+Aggregator did 5 substitutions.
+Reduced LP has 1141 rows, 157 columns, and 4586 nonzeros.
+Presolve time =    0.07 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           205.343418
+Switched to Devex.
+Iteration:    63    Scaled Infeas =            29.488862
+Iteration:   125    Scaled Infeas =             3.504308
+Iteration:   183    Objective     =       -482376.245501
+Iteration:   242    Objective     =            -2.079757
+Iteration:   302    Objective     =            -0.242835
+Iteration:   362    Objective     =             0.279760
+Iteration:   422    Objective     =             0.430860
+Iteration:   482    Objective     =             0.454908
+Removing shift (3).
+
+Primal - Optimal:  Objective =    4.6119066695e-01
+Solution time =    1.47 sec.    Iterations = 530 (182)
+
+
+Log started (V4.0.9) Mon Jun 15 09:53:57 1998
+
+
+Problem 'cplexE.lp167.F15.C68.F14.C2' read.
+Read time =    0.13 sec.
+LP Presolve eliminated 522 rows and 75 columns.
+Aggregator did 5 substitutions.
+Reduced LP has 1020 rows, 168 columns, and 3665 nonzeros.
+Presolve time =    0.08 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           213.844745
+Switched to Devex.
+Iteration:    67    Scaled Infeas =            27.356951
+Iteration:   130    Scaled Infeas =             1.732210
+Iteration:   171    Objective     =            -1.702098
+Iteration:   230    Objective     =            -0.759557
+Iteration:   290    Objective     =            -0.118027
+Iteration:   350    Objective     =             0.050909
+Iteration:   410    Objective     =             0.242468
+Removing shift (1).
+
+Primal - Optimal:  Objective =    2.4777188140e-01
+Solution time =    1.02 sec.    Iterations = 439 (170)
+
+
+Log started (V4.0.7) Thu Jun 25 13:10:53 1998
+
+
+Problem 'cplexE.lp5.2.F14.C1' read.
+Read time =    0.10 sec.
+LP Presolve eliminated 377 rows and 43 columns.
+Aggregator did 6 substitutions.
+Reduced LP has 845 rows, 122 columns, and 3140 nonzeros.
+Presolve time =    0.03 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           132.058430
+Iteration:    69    Scaled Infeas =             1.605039
+Switched to Devex.
+Iteration:    97    Objective     =            -2.148335
+Iteration:   156    Objective     =            -0.497931
+Iteration:   216    Objective     =             0.373102
+
+Primal - Optimal:  Objective =    3.8112634834e-01
+Solution time =    0.41 sec.    Iterations = 225 (96)
+
+
+Log started (V4.0.7) Thu Jun 25 13:57:58 1998
+
+
+Problem 'cplexE.lp5.2.F14.C1' read.
+Read time =    0.09 sec.
+LP Presolve eliminated 377 rows and 43 columns.
+Aggregator did 6 substitutions.
+Reduced LP has 845 rows, 122 columns, and 3140 nonzeros.
+Presolve time =    0.04 sec.
+
+Iteration Log . . .
+Iteration:     1    Scaled Infeas =           132.058430
+Iteration:    69    Scaled Infeas =             1.605039
+Switched to Devex.
+Iteration:    97    Objective     =            -2.148335
+Iteration:   156    Objective     =            -0.497931
+Iteration:   216    Objective     =             0.373102
+
+Primal - Optimal:  Objective =    3.8112634834e-01
+Solution time =    0.43 sec.    Iterations = 225 (96)
+
+
+Primal - Optimal:  Objective =    3.8112634834e-01
+Solution time =    0.01 sec.    Iterations = 0 (0)
+

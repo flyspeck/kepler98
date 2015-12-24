@@ -1,0 +1,113 @@
+PM[6,131].F17.Cxx (* no-upright cases *)
+
+
+pHHn = Map[Drop[#,1]&,valHexnHi]//Union ==
+  {{6, 59, 17, 8}, {6, 59, 17, 24}, {6, 59, 17, 28}, {6, 59, 17, 53}, 
+   {6, 70, 19, 9}, {6, 131, 17, 1}, {6, 131, 17, 10}, {6, 131, 17, 20}, 
+   {6, 131, 17, 21}, {6, 131, 17, 29}, {6, 131, 17, 58}, {6, 146, 17, 57}, 
+   {6, 248, 16, 9}}
+
+
+(* so for PM[6,131] we have the flat cases, {1, 10, 20, 21, 29, 58} 
+Map[AllHex[[#]]/.VertexSub[17]&,{1, 10, 20, 21, 29, 58}] ==
+   {{{5, 10, 9, 8, 12, 11}},   (* 1 pure hex *)
+	{{5, 10, 12, 11}, {10, 9, 8, 12}},  (* 10 two quads *)
+    {{5, 10, 11}, {10, 12, 11}, {10, 9, 8, 12}},  (* 20 one quad *)
+    {{5, 10, 11}, {9, 8, 12}, {10, 9, 12, 11}},  (* 21 quad in the middle *)
+    {{10, 9, 12}, {9, 8, 12}, {5, 10, 12, 11}},  (* 29 one quad ,
+			this case is isomorphic with 20, so we do not treat it
+			separately *)
+    {{5, 10, 11}, {10, 9, 12}, {10, 12, 11}, {9, 8, 12}}} (* triangles *)
+
+
+PM[6,131].F17.C1:
+Initialize[6,131];
+bf = "SHORT/HEX/LP/cplexE.lp6.131.F17.C1";
+LPdisplay[bf]==0.466324
+uf = UpdateSubregion[bf,17,AllHex[[1]]//Last];
+LPdisplay[bf,uf]==0.461953
+ 
+list = Select[valHexn,#[[3]]==131&&#[[5]]==1&]; Length[list]== 256;
+pp= PSelect[list,#[[1]]>0.4429&]==
+	{49, 81, 113, 161, 177, 178, 193, 209, 225, 229, 241};
+vv=Map[LPdisplay[bf,uf<>Branch[Band[6,131],#]]&,pp];
+PSelect[vv,#>0.4429&] == {11};
+pp[[11]]== 241;
+uf2 = UpdateSubregion[bf,17,AllHex[[1]]//Last,Branch[Band[6,131],241]<>uf];
+LPdisplay[bf,uf2<>Branch[Band[6,131],241]] == 0.447686
+Array[LPmax[bf,StringVar["y",#],uf2<>Branch[Band[6,131],241]]&,
+	Max[GBLregions]]//Max == 2.0371009566
+LPdisplay[bf,"ht213=0\n"<>uf2<>Branch[Band[6,131],241]] == 0.436699
+PM[6,131].F17.C1, done.
+
+
+PM[6,131].F17.C10:
+Initialize[6,131];
+bf = "SHORT/HEX/LP/cplexE.lp6.131.F17.C10";
+LPdisplay[bf]==0.512324
+AllHex[[10]]/.VertexSub[17]==
+	{{5, 10, 12, 11}, {10, 9, 8, 12}}
+LPmax[bf,"dih{17}5"] == 1.830679795
+uf1 = UpdateSubregion[bf,17,AllHex[[10]]//Last];
+f17c10 = (
+uf2 = UpdateSubregion[bf,17,AllHex[[10]]//First,uf1];
+LPdisplay[bf,uf1<>uf2]==0.467284;
+uf3 = UpdateSubregion[bf,17,AllHex[[10]]//Last,uf1<>uf2];
+uf4 = UpdateSubregion[bf,17,AllHex[[10]]//First,uf3<>uf2];
+LPdisplay[bf,uf3<>uf4]==  0.463189 (* not much *);
+htx= Array[LPmax[bf,StringVar["y",#],uf3<>uf4]&,Max[GBLregions]]//Max ;
+	(* == 2.0660376166 *)
+list = Select[valHexn,#[[3]]==131&&#[[5]]==10&]; Length[list]== 256;
+pp= PSelect[list,#[[1]]>0.4429&]; Length[pp]==125;
+vv=Map[LPdisplay[bf,uf3<>uf4<>"ht213=0\n"<>Branch[Band[6,131],#]]&,pp];
+ps=PSelect[vv,#>0.4429&]; (* == {113}; *)
+pp[[113]]==241;
+uf5 = UpdateSubregion[bf,17,AllHex[[10]]//Last,uf3<>uf4<>"ht213=0\n"<>
+		Branch[Band[6,131],241]];
+uf6 = UpdateSubregion[bf,17,AllHex[[10]]//First,uf5<>uf4<>"ht213=0\n"<>
+		Branch[Band[6,131],241]];
+LPdisplay[bf,uf5<>uf6<>"ht213=0\n"<>Branch[Band[6,131],241]] (* ==0.444606 *);
+Array[
+	LPdisplay[bf,uf5<>uf6<>"ht213=0\n"<>Branch[Band[6,131],241]<>
+		Branch[{14,15,11,10},#]]&,2^4] // Max  (* == 0.420049 *)
+);
+PM[6,131].F17.C10, done
+
+PM[6,131].F17.C20:
+Initialize[6,131];
+bf = "SHORT/HEX/LP/cplexE.lp6.131.F17.C20";
+LPdisplay[bf]==0.525369
+AllHex[[20]]/.VertexSub[17]=={{5, 10, 11}, {10, 12, 11}, {10, 9, 8, 12}}
+	
+uf1 = UpdateSubregion[bf,17,AllHex[[20]]//Last];
+LPdisplay[bf,uf1]==0.483744
+LPmax[bf,"dih{17}8",uf1]== 1.7999759679 < 1.9
+LPmax[bf,"y(8)",uf1]== 2.0435772459 < 2.2
+LPmax[bf,StringVar["dihE",17,10,9,12],uf1]== 1.776588255 < 2
+LPmax[bf,"y(9)+y(12)"]== 4.3071362024
+(* so the conditions for slackJ are met *)
+StringVar["sigE",17,{10,9,8,12}]== sigma{17}171742
+EqnJ = {"sJ{17}171742.8=0\n",
+    StretchOne[17,{10,9,8,12},{0,10,9,8,12}]
+    }// StringJoin
+LPdisplay[bf,EqnJ<>uf1]== 0.442093
+PM[6,131].F17.C20, done
+
+
+PM[6,131].F17.C21:
+Initialize[6,131];
+bf = "SHORT/HEX/LP/cplexE.lp6.131.F17.C21";
+LPdisplay[bf]==0.470592
+AllHex[[21]]/.VertexSub[17]=={{5, 10, 11}, {9, 8, 12}, {10, 9, 12, 11}};
+	
+uf1 = UpdateSubregion[bf,17,AllHex[[21]]//Last];
+LPdisplay[bf,uf1]==0.441928
+PM[6,131].F17.C21, done
+
+
+PM[6,131].F17.C58:
+(* CASE PM[6,131].F17.C58 is in index131.58 *)
+
+(* every other hexagon with no uprights is done *)
+
+PM[6,131].F17.Cxx (* no-upright cases *)

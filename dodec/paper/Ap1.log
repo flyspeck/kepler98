@@ -1,0 +1,30 @@
+This is TeX, Version 3.14159 (Web2c 7.0) (format=amstex.ini 97.11.19)  31 AUG 1998 10:20
+**Ap1.tex
+(Ap1.tex
+
+AmS-TeX- Version 2.1
+COPYRIGHT 1985, 1990, 1991 - AMERICAN MATHEMATICAL SOCIETY
+Use of this macro package is not restricted provided
+each use is acknowledged upon publication.
+
+
+(/usr/local/texk-7.0/share/texmf/tex/amstex/amsppt.sty
+version 2.1h (1997/02/02): Loading utility definitions, more fonts,
+page dimension settings, top matter, section heads,
+theorems/proofs/definitions/remarks, rosters, footnotes, figures and captions,
+miscellaneous, references, end of document, output routine,
+\copyins=\insert252
+
+hyphenation exceptions (U.S. English)
+(/usr/local/texk-7.0/share/texmf/tex/amstex/amsppt.sti symbol names
+(/usr/local/texk-7.0/share/texmf/tex/amstex/amssym.tex) ,)
+
+) (/usr/local/texk-7.0/share/texmf/tex/amstex/amssym.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 138--191
+
+
+\hbox(0.0+0.0)x360.0
+.\glue(\rightskip) 0.0
+
+[1] [2] [3] [4] )
+Output written on Ap1.dvi (4 pages, 14428 bytes).

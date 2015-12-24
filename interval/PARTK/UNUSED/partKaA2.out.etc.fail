@@ -1,0 +1,42 @@
+ -- loading interval routines $Revision: 1.5 $
+ -- loading lineInterval routines $Revision: 1.5 $ 
+ -- loading derivative routines $Revision: 1.4 $ 
+ -- loading taylor routines $Revision: 1.6 $ 
+ -- Installation complete -- 
+
+
+Section VI.A2.etc.
+
+Begin verification of 312481617
+901522847
+[0] 901522847
+Verification complete
+901522873
+Begin verification of 292760488
+901522873
+Verification complete
+901522918
+Begin verification of 399326202
+901522918
+
+{4,4,4,7.5750250000000001194,4.7187812500000001492,5.1500500000000002387} {4,4,4,7.5750250000000001194,4.7187812500000001492,5.1500500000000002387}  isolated point
+  value=[0.0021248169794239046837,0.0021248169794247928621]
+FAIL! 399326202
+901522966
+Begin verification of 794413343
+901522966
+Verification complete
+901522966
+Begin verification of 569240360
+901522966
+Verification complete
+901523338
+Begin verification of 271703736
+901523338
+Verification complete
+901523917
+Begin verification of 155008179
+901523917
+[1]Verification complete
+901524239
+(no errors)

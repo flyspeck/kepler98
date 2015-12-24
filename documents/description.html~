@@ -1,0 +1,157 @@
+<html>
+<head>
+<title>The Kepler Conjecture</title>
+</head>
+
+<!-- <body bgcolor=FFFFFF> -->
+
+<body background="paperbackground.JPG" alink=blue vlink=red>
+
+<!-- HEADING -->
+
+<BR>
+<H2>The Kepler Conjecture </H2>
+
+Here it is at last! 
+
+<!-- see progress.html -->
+<center>
+<!-- <applet code="Clock.class" width=420 height=30> 
+<param name="earnedCredit" value="16000"> 
+<param name="FontFamily" value="Helvetica">
+<param name="FontSize" value="14">
+<param name="FontWeight" value="bold">
+<param name="BGCol" value="ffce00">
+<param name="FGCol" value="36648b">
+<param name="DateFmt" value="%A, %B %e %Y">
+</applet>
+-->
+</center>
+<p>
+
+
+<p>
+<BR><BR>
+
+<!-- BACKGROUND -->
+<tr valign=center>
+<td bgcolor="FFCE00" colspan=2>
+<font color=black face=arial,helvetica,geneva>
+<b>Background</b></font>
+</td></tr>
+<tr><td colspan=2 valign=top background="paperbackground.JPG">
+<br>
+<UL>
+<LI> This page is a summary of the site.
+<LI> The announcement of a <a href=announce>solution</a>.
+<LI> A brief <a href=what.html>statement</a> of the problem.
+<LI> The <a href=kephistory.html>history</a> of the problem.<br>
+<LI> A 1996 <a href=holyoke.html>lecture</a> at Mt. Holyoke
+	explains the key ideas that will be involved in the proof.<br>
+<LI> <a href="theprogram.html">
+	Academic papers, popular articles,</a> and general reference
+	books on discrete geometry.  
+<LI>Ferguson's Ph.D. 
+	<a href="samf/index.html">thesis</a> at the University
+	of Michigan completes one of the five steps of the proof.<br>
+<LI>Sean McLaughlin has proved Fejes T&oacute;th's
+	<a href="dodec/index.html">
+	dodecahedral conjecture</a><br>
+<!--<LI> A <a href=glossary.html>glossary</a> of terms that are
+	used at this site.<br>-->
+<LI> Here is a link to the 
+	<a href="http://www.math.lsa.umich.edu/~hales/kepler.html">
+	old Kepler</a> conjecture page.
+<LI> Follow this link to the 
+	<a href="technical.html">serious stuff.</a>  This link is intended
+	for discrete geometers who wish to check the technical details
+	of the solution.
+<LI> What have Kepler, Hilbert, Milnor, Coxeter, Fejes T&oacute;th
+	and <a href=kepquotes.html>others said</a> about the Kepler Conjecture?
+</UL>
+ <br><br>
+</td></tr>
+
+<!-- COUNTDOWN -->
+<!--
+<tr valign=center>
+<td bgcolor="FFCE00" colspan=2>
+<font color=black face=arial,helvetica,geneva>
+<b>Countdown</b></font>
+</td></tr>
+<tr><td colspan=2 valign=top background="paperbackground.JPG">
+<br>
+
+<UL>
+<LI> A <a href=clock.html>clock</a> estimates the completion date of the
+	Kepler conjecture. <br>
+</UL>
+<br><br>
+</td></tr>
+-->
+
+<!-- Open Problems -->
+<!--
+<tr valign=center>
+<td bgcolor="FFCE00" colspan=2>
+<font color=black face=arial,helvetica,geneva>
+<b>Open Problems</b></font>
+</td></tr>
+<tr><td colspan=2 valign=top background="paperbackground.JPG">
+<br>
+<UL>
+<LI><a href=penthex.html>Pentagons</a> <br>
+<LI><a href=penthex.html>Hexagons</a> <br>
+<LI><a href=interval.html>Intervals</a> <br>
+</UL>
+ <br><br>
+</td></tr>
+-->
+
+<!-- SOFTWARE TOOLS -->
+<tr valign=center>
+<td bgcolor="FFCE00" colspan=2>
+<font color=black face=arial,helvetica,geneva><b>Software Tools</b></font>
+</td></tr>
+<tr><td colspan=2 valign=top background="paperbackground.JPG">
+<br>
+<UL>
+<LI>
+<a href=interval/kepler.html>Interval Package.</a> A C++ library especially
+	designed to prove inequalities arising in the Kepler
+	conjecture. <br>
+<LI><a href=graph/index.html>Graph Generator</a> An applet that generates all the combinatorial
+	possibilities of the Kepler conjecture.<br>
+<!--<LI><a href=numerical/index.html>Inequality Checker</a> Programs to test the
+	specific claims
+	of the Kepler conjecture.<br>
+	-->
+<!--
+<LI>Because of the number of variables involved, many of the optimization
+	problems were solved with <a href=cplex.html> 
+	Linear programming</a> techniques.<br>
+-->
+<LI>
+	<a href=spherem.html>Mathematica</a> 
+	has been used extensively throughout this project
+	for experimentation and exploration.  Some of the most useful
+	functions have been posted here.
+</UL>
+<br>
+ </td></tr>
+
+
+
+
+<!--
+<font size=1><IT>Copyright 1997, Thomas C. Hales</IT></font>
+-->
+<p><br><p><br><p>
+<font size=4 color=#CD2626><hr>
+This page is available for historical purposes only.  It is a copy
+from www.math.lsa.umich.edu/~hales/countdown.  It has not been
+maintained since 1998.<hr></font>
+</p>
+</body>
+</html>
+

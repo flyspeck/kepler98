@@ -1,0 +1,83 @@
+Welcome to sphere packing routines, relation testing division.
+Welcome to Section A.2.8.1b.  
+Enter cell count limit:  Enter slop:  		Slop = 0
+Starting time:  	Tue Jun 30 16:59:42 1998
+
+Case 1:
+	Vor scoring:
+rhs = -0.138434114171173406
+2.000000000000000000	2.000000000000000000
+2.000000000000000000	2.000000000000000000
+2.000000000000000000	2.000000000000000000
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+
+cellcount    =             4401		maxdepth = 4
+partialpushes=                0
+largecut     =                0		discards     =                0
+smallcut     =             3767		verifycount  =               84
+partialcount =                0		diff         =              550
+Verification succeeded.
+
+Case 2:
+	Vor scoring:
+rhs = -0.138434114171173406
+2.000000000000000000	2.000000000000000000
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.000000000000000000
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+
+cellcount    =           702145		maxdepth = 6
+partialpushes=                0
+largecut     =                0		discards     =                0
+smallcut     =           625320		verifycount  =            32941
+partialcount =                0		diff         =            43884
+Verification succeeded.
+
+Case 3:
+	Vor scoring:
+rhs = -0.138434114171173406
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.000000000000000000
+2.000000000000000000	2.000000000000000000
+2.000000000000000000	2.510000000000000231
+
+cellcount    =           319457		maxdepth = 6
+partialpushes=                8
+largecut     =                0		discards     =                0
+smallcut     =           261947		verifycount  =            37540
+partialcount =                0		diff         =            19970
+Verification succeeded.
+
+Case 4:
+	Vor scoring:
+rhs = -0.138434114171173406
+		Boundary:
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+2.000000000000000000	2.510000000000000231
+
+cellcount    =        828367809		maxdepth = 7
+partialpushes=                0
+largecut     =             2691		discards     =                0
+smallcut     =        605861465		verifycount  =        209560406
+partialcount =                0		diff         =         12943247
+Verification succeeded.
+
+All verifications succeeded.
+
+Done.
+Ending time:    	Wed Jul  1 22:37:18 1998
+
+Elapsed time: 106656 seconds,		diff = 944.436
+829393812 cells considered,		7776.34 cells per second
+
+

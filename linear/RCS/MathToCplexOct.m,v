@@ -1,0 +1,106 @@
+head	1.1;
+access;
+symbols;
+locks
+	hales:1.1; strict;
+comment	@// @;
+
+
+1.1
+date	98.04.22.16.58.46;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@? Not used since November 97.
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@
+(* try to do octahedra by linear programming *)
+(* piggybacks on MathToCplex.m:oEquations stuff *)
+
+OctHeader = StringJoin[ "\\ Octahedra bounds \n",
+		 "MINIMIZE \n",
+		 "-9.494 + 3.0508 dH - sigma \n\n",   (* adjust as needed *)
+		 "ST \n",
+		 "sigma - sigma{1}-sigma{2}-sigma{3}-sigma{4} = 0\n",
+		 "y{1}1-y{2}1 = 0\n",
+		 "y{2}1-y{3}1 = 0\n",
+		 "y{3}1-y{4}1 = 0\n",
+		 "y{4}1-y{1}1 = 0\n",
+		 "y{1}3-y{2}2 = 0\n",
+		 "y{2}3-y{3}2 = 0\n",
+		 "y{3}3-y{4}2 = 0\n",
+		 "y{4}3-y{1}2 = 0\n",
+		 "y{1}5-y{2}6 = 0\n",
+		 "y{2}5-y{3}6 = 0\n",
+		 "y{3}5-y{4}6 = 0\n",
+		 "y{4}5-y{1}6 = 0\n",
+		 "dH - dih{1}3 -dih{2}2 - dih{2}3 - dih{3}2 = 0\n",
+		 "dih{1}1 + dih{2}1 + dih{3}1 + dih{4}1 = 6.283185307179586476\n"
+		];
+
+OctBounds = StringJoin["BOUNDS \n",
+		"sigma{1} < 0 \n",
+		"sigma{2} < 0 \n",
+		"sigma{3} < 0 \n",
+		"sigma{4} < 0 \n",
+		"sigma < 0 \n",
+		" 2.51 < y{1}1 < 2.8284271247461900976\n",
+		" 2 < y{1}2 < 2.51\n",
+		" 2 < y{1}3 < 2.51\n",
+		" 2 < y{1}4 < 2.51\n",
+		" 2 < y{1}5 < 2.51\n",
+		" 2 < y{1}6 < 2.51\n",
+		" 2.51 < y{2}1 < 2.8284271247461900976\n",
+		" 2 < y{2}2 < 2.51\n",
+		" 2 < y{2}3 < 2.51\n",
+		" 2 < y{2}4 < 2.51\n",
+		" 2 < y{2}5 < 2.51\n",
+		" 2 < y{2}6 < 2.51\n",
+		" 2.51 < y{3}1 < 2.8284271247461900976\n",
+		" 2 < y{3}2 < 2.51\n",
+		" 2 < y{3}3 < 2.51\n",
+		" 2 < y{3}4 < 2.51\n",
+		" 2 < y{3}5 < 2.51\n",
+		" 2 < y{3}6 < 2.51\n",
+		" 2.51 < y{4}1 < 2.8284271247461900976\n",
+		" 2 < y{4}2 < 2.51\n",
+		" 2 < y{4}3 < 2.51\n",
+		" 2 < y{4}4 < 2.51\n",
+		" 2 < y{4}5 < 2.51\n",
+		" 2 < y{4}6 < 2.51\n",
+		" END"];
+
+OCT[i_]:= StringReplace[
+		StringJoin[oEquations,"dih1+dih2+dih3 -sol =3.141592653589793\n\n"],
+		{
+		"y1"->"y{"<>S[i]<>"}1",
+		"y2"->"y{"<>S[i]<>"}2",
+		"y3"->"y{"<>S[i]<>"}3",
+		"y4"->"y{"<>S[i]<>"}4",
+		"y5"->"y{"<>S[i]<>"}5",
+		"y6"->"y{"<>S[i]<>"}6",
+		"dih1"->"dih{"<>S[i]<>"}1",
+		"dih2"->"dih{"<>S[i]<>"}2",
+		"dih3"->"dih{"<>S[i]<>"}3",
+		"sol"->"sol{"<>S[i]<>"}",
+		"sig"->"sigma{"<>S[i]<>"}"}
+		];
+
+WRITEOCT:= Module[{stream},
+		stream = OpenWrite["oct.lp"];
+		WriteString[stream,OctHeader];
+		WriteString[stream,OCT[1]<>OCT[2]<>OCT[3]<>OCT[4]];
+		WriteString[stream,OctBounds];
+		Close[stream];
+		];
+	
+@

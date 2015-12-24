@@ -1,0 +1,167 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@// @;
+
+
+1.1
+date	99.08.11.17.33.17;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@
+HoneySlope[u_,v_,tu_]:= 
+	Module[{tv,Ctv,Stv,Ctu,Stu,rho,Du,Dv,Dtu,Dtv,Drho,Dperim,E1,E2},
+	Du = 1.;
+	Dv = -Du;
+	rho= u/(2 Sin[tu]);
+	Ctu = Cos[tu];
+	Stu = Sin[tu];
+	tv = ArcSin[ v/(2 rho) ];
+	Ctv = Cos[tv];
+	Stv = Sin[tv];
+	Drho := Du/(2Stu) - rho Ctu/Stu Dtu;
+	E1 = Stv Du + u Ctv Dtv - Stu Dv - v Ctu Dtu;
+	E2 = 2 rho Drho (tu - Ctu Stu + tv - Ctv Stv) +
+			rho^2 * (
+				Dtu + (Stu^2 - Ctu^2) Dtu +
+				Dtv + (Stv^2 - Ctv^2) Dtv ) ;
+	{Dtu,Dtv}= ({Dtu,Dtv}/.Solve[{E1==0,E2==0},{Dtu,Dtv}][[1]]);
+	Print[{E1,E2}];
+	Print["perim = ", u tu/Stu + v tv/Stv];
+	Print["rho = ", rho];
+	Print["area = ", rho^2 ( tu - Ctu*Stu + tv - Ctv*Stv) ];
+	Print["Dtu = ",Dtu];
+	Print["Dtv = ",Dtv];
+	Dperim = 2 Drho (tu+tv) + 2 rho (Dtu+Dtv)
+	];
+
+
+HoneyAreaSlope[t_,tu_]:= 
+	Module[{u,v,tv,Ctv,Stv,Ctu,Stu,
+			Qu,Qv,Ru,Rv,Fu,Fv,uff,det,darea2,rest1,rest2},
+	u = 1;
+	v = t;
+	Ctu = Cos[tu];
+	Stu = Sin[tu];
+	tv = ArcSin[ t Stu ];
+	Ctv = Cos[tv];
+	Stv = Sin[tv];
+	(* Print["perim = ", u tu/Stu + v tv/Stv];
+	Print["rho = ",u/(2 Stu)]; *)
+	Qu = tu/Stu;  
+	Qv = tv/Stv;
+	Ru = (Stu - tu Ctu)/(Stu^2 tu);
+	Rv = (Stv - tv Ctv)/(Stv^2 tv);
+	Fu = Stu (1- Qu Ru)/Ctu;
+	Fv = Stv (1- Qv Rv)/Ctv;
+	uff = u Fu - v Fv;
+	det = u^2 tu Ru Ctv + v^2 tv Rv Ctu;
+	(* rest1 = 1/det (u v Ru Rv) (u Qu tv - v Qv tu)(Stu+Stv); *)
+	rest2 = 1/det (Qu - Qv) (-u^3 Ctv Qu Ru - v^3 Ctu Qv Rv);
+	darea2 = uff + rest2;
+	(* Print["area = ", (u^2 Fu + v^2 Fv)/4]; *)
+	Print["term1= ",uff," rest2= ",rest2];
+	darea2/2
+	];
+
+HoneyCombPerimeter[n_Integer, x_] := 
+	(* u is the area of the regular n-gon, *)
+  Module[{u, ChordArea, PolygonRadius, PolygonEdge, rho, theta}, 
+	u = 1-x;
+	If[N[u]<0,Return["invalid"]];
+	If[n<3,Return["invalid"]];
+	If[Chop[N[u]]==0,Return[2 Sqrt[Pi n]]];
+	ChordArea := Abs[N[(1 - u)/n]]; 
+	If[n==2,
+		PolygonEdge:= "??"];
+	PolygonRadius := Sqrt[u/(n*Cos[Pi/n]*Sin[Pi/n])]; 
+	PolygonEdge := 2*PolygonRadius*Sin[Pi/n]; 
+    Bisectf= 
+     (#/Sin[#]^2 - Cos[#]/Sin[#] - (4*ChordArea)/PolygonEdge^2)&; 
+    theta := Bisect[{10^-8, 3.14}, 0.0001, Bisectf][[1]]; 
+    rho := PolygonEdge/(2*Sin[theta]); 
+	(*
+	Print[ChordArea];
+	Print[PolygonRadius];
+	Print[PolygonEdge];
+	Print[theta]; Print[rho];
+	*)
+	(* thetabak = theta; *)
+Return[2*n*theta*rho]; ];
+P[n_, x_] := HoneyCombPerimeter[n, x]
+
+PI[n_]:= n Tan[Pi/n];
+
+eps[n_,T_]:= T Sqrt[PI[6]] + (n-6) 0.0505 - 2 Sqrt[PI[6]];
+
+L[N_,x_]:= 2 Sqrt[(1-x) PI[N]];
+Lplus = 2 Sqrt[Pi];
+Lminus[x_]:= 2 Sqrt[(1-2x) Pi];
+tau0 = 1/2;
+Ld[x_]:= -x Sqrt[2Pi/tau0];  (* for x<0 *)
+L1[N_,x_]:= L[N,x] HoneyEdge[1,Abs[x]/L[N,x]];
+
+HoneyDoubleArea[u_, v_, t_] := 
+  Module[{r, uu, vv, tu, tv}, r = eta[u, v, t]; 
+    If[v > u, uu = v; vv = u, uu = u; vv = v]; tu = ArcSin[uu/(2*r)]; 
+    tv = ArcSin[vv/(2*r)]; If[uu^2 - t^2 - vv^2 > 0, tu = Pi - tu]; 
+    Return[r^2*(tu + tv) - r^2*(Cos[tu]*Sin[tu] + Cos[tv]*Sin[tv])]]
+
+HoneyDoublePerimeter[u_, v_, x_] := 
+  Module[{r, t, tt, uu, vv, tu, tv}, 
+   If[v > u, uu = v; vv = u, uu = u; vv = v]; 
+    Bisectf[t_] := 
+     Module[{}, r = eta[u, v, t]; tu = ArcSin[uu/(2*r)]; 
+       tv = ArcSin[vv/(2*r)]; If[uu^2 - t^2 - vv^2 > 0, tu = Pi - tu]; 
+       -x + r^2*(tu + tv) - r^2*(Cos[tu]*Sin[tu] + Cos[tv]*Sin[tv])]; 
+    tt = Bisect[{Abs[u - v] + 10^(-8), u + v - 10^(-8)}, 1.*^-7, Bisectf][[
+      1]]; Print[{tt, tu, tv}]; Return[2*eta[u, v, tt]*(tu + tv)]; ]
+
+HoneyEdge[polyedge_, x_] := 
+	(* called arc in paper,
+		arclength of an arc cut by a chord of length polyedge and
+		enclosing area x *)
+  Module[{ChordArea, PolygonRadius, PolygonEdge, rho, theta, Bisectf}, 
+   ChordArea = x; PolygonEdge = polyedge; 
+    Bisectf = #1/Sin[#1]^2 - Cos[#1]/Sin[#1] - 
+       (4*ChordArea)/PolygonEdge^2 & ; 
+    theta := Bisect[{10^(-8), 3.14}, 0.0001, Bisectf][[1]]; 
+    rho := PolygonEdge/(2*Sin[theta]); Return[2*theta*rho]; ]
+
+ConstrainedNgonArea[N_,r_] := 
+	(* Area of an N-gon  inscribed in a circle, sides t (N-1 times) and max(1,t)
+		*)
+	Module[{t0,t,perim,area,alpha,beta},
+		t0 = Max[1,2 r Sin[Pi/N]];
+		alpha = ArcSin[t0/(2r)];
+		beta = (Pi-alpha)/(N-1);
+		t = 2r Sin[beta];
+		perim = (N-1)t + t0;
+		area = r^2 ((N-1) Cos[beta]Sin[beta] + Cos[alpha]Sin[alpha]);
+		{perim,area}
+		];
+
+
+XNplus[N_]:= 1 - Pi/PI[N];
+XNminus[N_]:= (1-Pi/PI[N])/(1-2Pi/PI[N]);
+
+Fp[t_]:= (t-Sin[t] Cos[t])/Sin[t]^2;
+
+Fq[t_]:= t/Sin[t];
+
+Fr[t_]:= (Sin[t]- t Cos[t])/(t Sin[t]^2);
+
+
+@

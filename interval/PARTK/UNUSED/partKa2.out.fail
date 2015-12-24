@@ -1,0 +1,62 @@
+ -- loading interval routines $Revision: 1.5 $
+ -- loading lineInterval routines $Revision: 1.5 $ 
+ -- loading derivative routines $Revision: 1.4 $ 
+ -- loading taylor routines $Revision: 1.6 $ 
+ -- Installation complete -- 
+
+
+Section VI.A2
+
+Begin verification of 480930831
+900737184
+[0] 900737184
+Verification complete
+900737394
+Begin verification of 463544803
+900737394
+[1][2][3][4][5][6][7][8][9][10] 900778978
+[11][12][13]Verification complete
+900794686
+Begin verification of 594246986
+900794686
+
+{4,4,4,7.5562499999999994671,6.3001000000000004775,6.3001000000000004775} {4,4,4,7.6006249999999999645,6.3001000000000004775,6.3001000000000004775}  current inequalities are false
+FAIL! 594246986
+900794880
+Begin verification of 381970727
+900794881
+[14]Verification complete
+900795117
+Begin verification of 951798877
+900795117
+Verification complete
+900795218
+Begin verification of 923397705
+900795218
+
+{4,4,4,8,4,4} {4,4,4,8,4,4}  isolated point
+  value=[-2.6665358809907502291e-10,2.6668112163008572679e-10]
+FAIL! 923397705
+900795230
+Begin verification of 495568072
+900795230
+Verification complete
+900795236
+Begin verification of 378020227
+900795236
+Verification complete
+900795438
+Begin verification of 256893386
+900795438
+Verification complete
+900795451
+Begin verification of 749955642
+900795451
+Verification complete
+900795452
+Begin verification of 653849975
+900795452
+Verification complete
+900795544
+all done!
+(no errors)

@@ -1,0 +1,61 @@
+ Section A9:
+
+
+New Case = 956875054
+numargs = 6
+0.014953113875909179
+{2.82842709696307137, 2.50999999999999979, 2.00000000195373984, 2.77000000000000002, 2, 2.50999999999999979}
+
+New Case = 664200787
+numargs = 6
+0.002519693196563106
+{2.50999999999999979, 2, 2, 2.82842712474618985, 2, 2}
+
+New Case = 390273147
+numargs = 6
+0.002519693196563106
+{2.50999999999999979, 2, 2, 2.82842712474618985, 2, 2}
+
+New Case = 654422246
+numargs = 6
+0.00812407785502283417
+{2.82842709826963468, 2.50999999999999979, 2, 3.20000000000000018, 2, 2.50999999999999979}
+
+New Case = 366536370
+numargs = 6
+0.000634080660037242283
+{2.50999999999999979, 2, 2.50999999999999979, 3.20000000000000018, 2.50999999999999979, 2}
+
+New Case = 62532125
+numargs = 6
+0.000940368225599105823
+{2.50999999999999979, 2.03256531315758115, 2.03256531797659346, 3.20000000000000018, 2.08331453615502271, 2.08331450584779887}
+
+New Case = 370631902
+numargs = 6
+0.000636227507671574544
+{2.50999999999999979, 2.25, 2, 3.20000000000000018, 2, 2.50999999999999979}
+
+
+ Exiting cfsqp numerical optimizer.
+
+
+
+
+
+ Cfsqp numerical optimizer for Sphere Packings IV 
+
+ The inequalities in the appendix are divided into 24 sections.
+ Sections 1-24 are tested numerically here. 
+
+ Select section number (1--24): 
+ The inequalities are written in the form F>0.
+ This program minimizes F subject to constraints.
+ If the returned value is positive, the inequality passes the numerical check. 
+ Each inequality is test with 80 random initial configurations. 
+
+ Optimizing.... 
+
+
+
+

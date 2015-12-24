@@ -1,0 +1,36 @@
+head	1.1;
+access;
+symbols;
+locks
+	hales:1.1; strict;
+comment	@ * @;
+
+
+1.1
+date	97.09.14.20.26.09;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@ineq.cc, miscellaneous functions
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@double vorAV(double y[6]);
+double vorVcAV(double y[6]);
+double crownV(double h);
+double tauAnchor1(double y1,double y2,double y6,double eta1);
+double tauAnchor1(double y1,double y2,double y6);
+double tauAnchor2(double y1,double y2,double y6,double eta1);
+double tauAnchor2(double y1,double y2,double y6,double eta1);
+double tauAnchor2(double y1,double y2,double y6);
+double tauAnchor(double y1,double y2,double y6);
+double vorAnchor(double y1,double y2,double y6);
+
+@

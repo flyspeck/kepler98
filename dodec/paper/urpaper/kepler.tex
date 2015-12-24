@@ -1,0 +1,2296 @@
+%\magnification=\magstep1
+\documentstyle{amsppt}
+\topmatter
+\parskip=\baselineskip
+\baselineskip=1.1\baselineskip  % was 1.1
+%\parindent=0pt
+\loadmsbm
+\UseAMSsymbols
+\raggedbottom
+\hoffset=0.75truein
+\voffset=0.5truein
+
+
+
+\font\twrm=cmr8
+\def\refz{\relax}
+\def\bul{\noindent$\bullet$\quad }
+\def\lb#1{\line{$\bullet$ #1 \hfill}}
+\def\cir{\noindent$\circ$\quad }
+\def\heads#1{\rightheadtext{#1}}
+\def\doct{\delta_{oct}}
+\def\pt{\hbox{\it pt}}
+\def\Vol{\hbox{vol}}
+\def\sol{\operatorname{sol}}
+\def\quo{\operatorname{quo}}
+\def\anc{\operatorname{anc}}
+\def\cro{\operatorname{crown}}
+\def\vor{\operatorname{vor}}
+\def\octavor{\operatorname{octavor}}
+\def\dih{\operatorname{dih}}
+\def\Adih{\operatorname{Adih}}
+\def\arc{\operatorname{arc}}
+\def\rad{\operatorname{rad}}
+\def\gap{\operatorname{gap}}
+\def\xiG{\xi_\Gamma}
+\def\xiV{\xi_V}
+\def\DLP{\operatorname{D}_{\hbox{\twrm LP}}}
+\def\ZLP{\operatorname{Z}_{\hbox{\twrm LP}}}
+\def\tLP{\operatorname{\hbox{$\tau$}LP}}  % 3 args small LP.
+\def\tlp{\tau_{\hbox{\twrm LP}}}  % 2 args (p,q) tri, quad
+\def\slp{\sigma_{\hbox{\twrm LP}}}  % 2 args (p,q) tri, quad
+\def\sLP{\operatorname{\hbox{$\sigma$}LP}}
+\def\LPmin{\operatorname{LP-min}}
+\def\LPmax{\operatorname{LP-max}}
+\def\A{{\bold A}}
+\def\squander{(4\pi\zeta-8)\,\pt}
+
+\def\Sfour{\Cal{\bold S}_4^+}
+\def\Sminus{\Cal{\bold S}_3^-}
+\def\Splus{\Cal{\bold S}_3^+}
+
+\def\calc{\footnote"*"{add calculation at end}}
+
+\def\R{{\Bbb R}}
+\def\ldot{\cdot}
+\def\S{{\Cal S}}
+\def\del{\partial}
+\def\ha{ \hangindent=20pt \hangafter=1\relax }
+\def\ho{ \hangindent=20pt \hangafter=0\relax }
+\def\i{I}
+
+\def\diag|#1|#2|{\vbox to #1in {\vskip.3in\centerline{\tt Diagram #2}\vss} }
+\def\v{\hskip -3.5pt }
+% to place a fig file  align the bottom left corner at (0,-11).
+% save as left justified.
+% resize so that the box is just under 5 in width
+\def\gram|#1|#2|#3|{
+        {
+        \smallskip
+        \hbox to \hsize
+        {\hfill
+        \vrule \vbox{ \hrule \vskip 6pt \centerline{\it Diagram #2}
+         \vskip #1in %
+             \special{psfile=#3 hoffset=5 voffset=5 }\hrule }
+        \v\vrule\hfill
+        }
+\smallskip}}
+
+
+\title The Kepler Conjecture\endtitle
+\author Thomas C. Hales\endauthor
+\endtopmatter
+
+\document
+\footnote""{\hfill preliminary draft -- 4/12/98}
+\footnote""{\noindent The results of this paper depend on the
+hypotheses listed in the appendices.  These include various 
+unfinished computer verifications. Many of the interval verifications
+are presented as if they have been carried out, when in fact they
+have not.  Sections 5.4, 6.2, and 7 leave various cases unfinished.}
+
+
+\bigskip
+%\heads{\refz 1. Introduction and Review}
+\head \refz 1. Introduction and Review\endhead
+
+\subhead \refz 1.1. The steps\endsubhead
+The Kepler conjecture asserts that no packing of spheres in
+three dimensions has density greater than 
+$\pi/\sqrt{18} \approx 0.74048$.  This paper is the final in a series
+devoted to a proof of that conjecture.
+
+\bigskip
+\head 2.  Parameters\endhead
+\subhead \refz 2.1  \endsubhead The paper \cite{III} gives a 
+general algorithm for generating all planar maps that are relevant
+to the Kepler Conjecture.  We refer to it as the classification
+algorithm.  This algorithm has been implemented
+in \cite{H1}.  This algorithm depends on various 
+parameters.  The purpose of Section 2 is to describe and justify
+the parameters that enter into the classification of planar maps.
+
+The parameters are given.  Array indices start at 0.
+
+{\obeylines\tt
+\parindent=0pt
+\parskip=0pt
+
+\hbox{}
+\smallskip
+vertexCountMin=1,\quad vertexCountMax=100,
+scoreTarget=8,\quad squanderTarget=14.8,
+squanderVertex= 
+}
+$$\pmatrix x&x&x&7.135&10.649&x&x\\
+		   x&x&6.95&7.135&x&x&x\\
+		   x&8.5&4.756&12.981&x&x&x\\
+		   x&3.642&8.334&x&x&x&x\\
+		   4.139&3.781&x&x&x&x&x\\
+		   5.5&11.22&x&x&x&x&x\\
+		   6.339&x&x&x&x&x&x
+\endpmatrix$$
+{\obeylines\tt
+\parindent=0pt
+\parskip=0pt
+
+\hbox{}
+x=14.8,
+scoreFace=$\{1,1,1,1,0,-1.03,-2.06,-3.03,-3.03\}$,
+squanderFace=$\{0,0,0,2.378,4.896,7.414,9.932,10.916\}$,
+faceCountMax=6,\quad faceCountMaxAtExceptionalVertex=5,
+vertexAdjustment=$\{x,x,x,1.4,1.5\}$,
+excludePentQRtet= true,
+
+}
+
+
+\subhead {\tt vertexCountMin} \endsubhead
+A lower bound on the number of vertices of height at most 2.51 in
+the decomposition star is $1$.  If there are no vertices of height
+at most 2.51, there is a single standard region, and the score of
+the truncated cluster is $4\pi\phi_0 <0$.
+
+\subhead {\tt vertexCountMax} \endsubhead
+There are at most 100 vertices of height 2.51 in the decomposition
+star.  The projections of these vertices to the unit sphere are
+separated by arc-lengths at least 
+$\alpha = 2\arcsin(1/2.51)$.  Each Delaunay triangle on the unit sphere
+with vertices at these points has area $\ge3\beta-\pi$,
+	with $\cos\beta=1/(1+\sec\alpha)$.
+There are at most $4\pi/(3\beta-\pi) < 40$ triangles or at most
+$2+40/2$ vertices.  See \cite{H2} for details.
+
+\subhead {\tt scoreTarget} \endsubhead
+Any decomposition star scoring less than $8\,\pt$ may be discarded.
+
+\subhead {\tt squanderTarget} \endsubhead
+Any decomposition star squandering more than $\squander$ may be
+discarded.
+
+\subhead {\tt squanderVertex}\endsubhead
+This array gives lower bounds on what is squandered by the
+standard regions around a vertex that has $p$ triangles, $q$
+quadrilaterals, and no exceptional regions.  These constants
+were computed in \cite{III.5.1}.  The entries marked $x$ do not
+occur.
+
+\subhead {\tt scoreFace,squanderFace} \endsubhead
+A standard region is a polygon or one of the exceptions in IV.4.4.
+Each of these exceptions has a polygonal hull, which is a polygon
+obtained by removing the internal edges and vertices from the exceptional
+region.
+It will be shown in Section 3.3 that the polygonal hull can be treated
+as a polygonal face in the classification algorithm.  This allows
+us to assume, for the purposes of classification, that all standard
+regions are polygons.  By the results of IV, each polygon is at most
+an octagon.  The constants in the arrays {\tt scoreFace} and 
+{\tt squanderFace} are the bounds on what is scored and squandered
+by a face as a function of the number of sides.  These constants
+are derived in Theorem IV.4.4.
+
+\subhead 2.2. Face Counts\endsubhead
+
+{\tt faceCountMax} is an upper bound on the number of faces at a vertex
+of the planar map.  The bound $6$ on the number of faces at a vertex
+is established by the lemma that follows.  {\tt faceCountMaxAtExceptionalVertex}
+is an upper bound on the number of faces at a vertex at which there
+is at least one exceptional face.  The lemma allows one case
+with 6 faces, but we set the parameter at 5.  This is justified
+in Section 3.2, where the case with 6 faces is folded into the
+classification algorithm in a different way.  The proof of the lemma
+will use the inequalities III.10 (Group 3. 4--8) and
+III.4.1 several times.
+Give $p$ quasi-regular tetrahedra and $q$ quad clusters at a vertex,
+subject to the constraint that the dihedral angles at the vertex are
+at most $d$, let $\tLP(p,q,d)$ denote a linear programming lower bound
+on what these $p+q$ standard clusters squander.  Similarly,
+let $\sLP(p,q,d)$ be a linear programming upper bound on score.
+
+
+\proclaim{Lemma}  Suppose that there are six or more standard
+clusters around a vertex.  Then either (1) all the clusters are
+quasi-regular tetrahedron and the vertex has type $(6,0)$, or
+(2) there are five quasi-regular tetrahedra, no quad clusters,
+and one exceptional cluster.
+\endproclaim
+
+\demo{Proof}
+ If there are no exceptional standard regions around the
+vertex then the result follows from the inequalities of III.5.2
+and IV.4.5:
+$$\tau(D^*)\ge t_5 + \min
+	\Sb p+q\ge6,\ q\ge1,\\
+		|| p+q\ge7
+	\endSb
+	\tau(p,q)\ge 4.896\,\pt+11.22\,\pt \ge \squander.$$
+Without loss of generality, we assume there is an exceptional
+region at the vertex.
+If there are seven or more clusters,
+ then the dihedral angles
+around the vertex cannot be $2\pi$:
+$$1.153 + 6 (0.8638)> 2\pi$$
+(See III.4.3. III.10.G1.3.)
+The lower bound $1.153$
+on dihedral angles was stated
+for quad clusters, but the proof was written to apply
+to exceptional clusters as well.  We now assume six standard
+clusters at the vertex. There are several cases according to
+the number $k$ of triangular regions at the vertex.
+
+
+{\bf($k\le2$)}
+If there are more than three nontriangular regions at the vertex, then
+the dihedral angle around the vertex
+is at least $4(1.153)+2(0.8638)>2\pi$, which is impossible.
+
+{\bf($k=3$)}
+If there are three nontriangular regions at the vertex, then 
+we squander at least $2t_4+t_5+\tLP(3,0,2\pi-3(1.153))>\squander$.
+
+{\bf($k=4$)}
+If there are two exceptional regions at the vertex, 
+we squander at least $2t_5+\tLP(4,0,2\pi-2(1.153))>\squander$.
+
+If there are two nontriangular regions at the vertex, 
+we have $t_5+\tLP(3,1,2\pi-1.153)>\squander$.
+
+We are left with the case of five triangular regions and one exceptional
+\qed
+\enddemo
+
+\bigskip
+
+\subhead 2.3. {\tt vertexAdjustment}\endsubhead
+
+Let $v_1,\ldots,v_k$ be vertices of exceptional regions such that
+no two are adjacent an no two are opposite vertices of a quadrilateral.
+Suppose that there are 5 faces at each vertex $v_i$ and
+at $v_i$ there are $a_i$ triangles, with $0\le a_i\le4$.
+Let $F_1,\ldots,F_r$ be the faces around the vertices
+$v_1,\ldots,v_k$.  Assume that $F_i$ is an $f_i$-gon.
+The vertex adjustments are constants, for $0\le i\le 4$, such
+that the faces $F_j$ around the $v_i$ squander at least
+$$\sum_{j=1}^4 \hbox{\tt squanderFace}[f_j]+\sum_{i=1}^k
+	\hbox{\tt vertexAdjustment}[a_i].$$
+For example, {\tt vertexAdjustment}$[i]=\squander$, for $i=0,1,2$,
+so that any decomposition star with one of these vertices squanders
+at least $\squander$.  The constants for $i=0,1$ are derived
+in Section 2.4, that for $i=2$ in Section 2.6,
+that for $i=3$ in Section 2.7, and that for
+$i=4$ in Section 2.8.
+
+
+\subhead 2.4. {\tt vertexAdjustment}$[0]$, \ {\tt vertexAdjustment}$[1]$  
+\endsubhead
+
+\proclaim{Lemma}  Consider a vertex that has five standard clusters
+around it.  Assume that at most one of them is a quasi-regular tetrahedron.
+Then the score of the decomposition star is less than $8\,\pt$.
+\endproclaim
+
+\demo{Proof}
+If there are $a$ quasi-regular tetrahedra, $b$ quad clusters, and
+$c$ exceptional clusters, then the clusters squander at least
+$$c\, t_5 + \tLP(a,b,2\pi-c(1.153)).$$
+We run the linear programs for each $(a,b,c)$, and find that the
+bound is always greater than $\squander$.
+$$\pmatrix
+	(a,b,c)&\hbox{ lower bound }\\
+	(0,5,0)&22.27\,\pt \hbox{ (III.5.2)}\\
+	(0,b,c\ge1)& t_5+4 t_4 \\
+	(1,b,c\ge3)& 3 t_5 + t_4\\
+	(1,4,0)	&17.62\,\pt \hbox{ (III.5.2)}\\
+	(1,3,1) &t_5 + 12.58\,\pt \ (\tLP)\\
+	(1,2,2) &2t_5 + 7.53\,\pt \ (\tLP)
+\endpmatrix
+$$
+\qed
+\enddemo
+
+\subhead 2.5. Some flat quarters\endsubhead
+
+Set $\xiV=0.003521$, $\xiG=0.01561$, $\xiG'=0.00935$.
+They are the penalties that result from erasing an upright
+quarter of Voronoi type, an upright quarter of compression type,
+and an upright quarter of compression type with diagonal $\ge2.57$,
+respectively.  (See IV.$A_{10}$, IV.$A_{11}$.)
+
+In the next lemma we score a flat quarter by any of the functions
+	 $$\sigma= \cases \Gamma,& \eta_{234},\eta_{456}\le\sqrt2,\\
+			 \vor, & \eta_{456}\ge\sqrt2,\hbox{ or }\eta_{234}\ge\sqrt2,\\
+			\vor_0, & y_4\ge 2.6,\\
+			\vor_0+0.035, & \eta_{456}\ge\sqrt2.
+	\endcases
+	$$
+We also measure what is squandered by 
+a flat quarter by $\sol\zeta\pt - \sigma$.
+
+
+\proclaim{Lemma} (1)
+Let $v$ be a corner of an exceptional cluster at which
+the dihedral angle is at most $1.32$.
+Then the vertex $v$ it a vertex (not on the diagonal) of a flat
+quarter in the exceptional region.  
+Moreover, 
+the flat quarter squanders at least
+$3.07\,\pt$.
+\endproclaim
+
+
+\demo{Proof}  
+Let $S=S(y_1,\ldots,y_6)$ be the simplex inside the exceptional centered
+at $v$, with $y_1=|v|$.   
+The inequality $\dih\le 1.32$ gives the interval calculation%
+\footnote"*"{The results of this paper rely on a large number of
+interval calculations.  They are listed in an appendix, arranged
+according to section number.}
+$y_4\le 2\sqrt{2}$, 
+so $S$ is a quarter.
+The result now follows by interval arithmetic.
+\qed
+\enddemo
+
+\proclaim{Lemma}  Let $R$ be an exceptional cluster with a dihedral
+angle $\le1.32$ at a vertex $v$.  Let $n=n(R)$ be as in IV.4.4.
+Then $R$ squanders $>t_n+1.47\,\pt$.
+\endproclaim
+
+\demo{Proof}
+In most cases we establish the stronger bound $t_n+1.5\,\pt$.  
+In the proof of IV.4.4, we erase all upright diagonals, except
+those completely surrounded by anchored simplices.  The contribution
+to $t_n$ from the flat quarter at $v$ in that proof is
+$D(3,1)$ (IV.4.5, IV.5.5.1).
+Replace $D(3,1)$ with $3.07\,\pt$ and we obtain the bound.
+Now suppose the upright diagonal
+is completely surrounded by anchored simplices.  
+  Analyzing the constants of IV.5.11,
+we see that $\DLP(n,k)-D(n,k)>1.5\,\pt$.
+except when $(n,k)=(4,1)$.
+
+Here we have $4$ anchored simplices around an upright diagonal.
+Three of them are quarters.  We erase and take a penalty.
+Two possibilities arise.  If the upright diagonal is
+enclosed over the flat quarter, its height is $\ge2.6$ by
+geometric considerations and the top face of the flat
+quarter has circumradius at least $\sqrt2$.  The penalty
+is $\pi_0 = 2\xiG' + \xiV< 0.035$, so the
+bound holds for the various choices of scoring functions.
+
+If, on the other hand, the upright diagonal is not
+enclosed over the flat diagonal, the penalty is
+$\pi_0 = \xiG + 2\xiV$.  In this case, we
+obtain the weaker bound $1.47\,\pt+t_n$:
+	$$3.07\,\pt > 1.189\,\pt + 1.47\,\pt +\pi_0.$$
+\qed
+\enddemo
+
+
+
+\subhead 2.6. {\tt vertexAdjustment}$[2]$ \endsubhead
+
+\proclaim{Lemma} Consider a vertex $v$ with 5 faces around it.
+If only two are triangles, then the others are quadrilaterals.
+\endproclaim
+
+\demo{Proof}
+The constants $0.55\,\pt$, $4.52\,\pt$ used throughout the proof
+come from III.5.3; $t_n$ comes from IV.4.4.
+
+($e=3$):
+First, assume that there are three exceptional regions around it.
+They must be pentagons ($2t_5+t_6>\squander$).  The aggregate
+of the five faces is an $11$-gon (or less).  If there is a vertex
+not on this aggregate, use $3t_5+0.55\,\pt>\squander$.
+So there are at most $9$ quasi-regular tetrahedra.  The
+score is at most $9\,\pt + 3 s_5 < 8\,\pt$.
+
+The argument if there is a quad, pentagon, and hexagon is the
+same $(t_4+t_6=2t_5,s_4+s_6=2s_5)$.
+
+($e=2$):
+Assume next that there are two pentagons and a quadrilateral
+around the vertex.  
+The aggregate of the two pentagons, quadrilateral, and two triangles
+is a $10$-gon (at most).  
+There must be an an vertex not on the aggregate of 5 faces, for
+otherwise the score is at most $10\,\pt+2s_5<8\,\pt$.
+
+The dihedral angle of one of 
+the pentagons is at most $1.32$.  For otherwise, 
+$\tLP(2,1,2\pi-2(1.32))+2t_5+0.55\,\pt>\squander$.
+
+Thus, one of the two pentagons has a flat quarter.  Let us
+show that this case of the lemma follows once we show that 
+any pentagon with a dihedral angle less than $1.32$ 
+squanders at least $5.66\,\pt$.   If both pentagons have a dihedral
+angle $<1.32$ this is clear 
+$2(5.66)\,\pt+\tLP(2,1,2\pi-2(1.153))+0.55\,\pt>\squander$.
+If there is one pentagon with angle $>1.32$, 
+we then have $5.66\,\pt+\tLP(2,1,2\pi-1.153-1.32)+t_5+0.55\,\pt>\squander$.
+
+To obtain the bound $5.66\,\pt$, we argue as follows.  If
+there are 5 anchored simplices surrounding a vertex, we have
+the bound by (IV.5.11).  If the configuration $\Sfour$
+or $\Sminus$ occurs, we squander at least $7.23\,\pt$.
+So if there are any upright diagonals in the pentagon
+ that carry a penalty,
+we may assume they have $4$ anchors.  If there are no
+penalties, Lemma 2.5 gives
+$3.07\,pt+D(4,1)>5.66\,\pt$.
+We do not need to deal with penalties from $\Splus$
+in the score of the flat quarter at $v$ because of the
+transfers defined in IV.5.5. 
+The only remaining possibility is four simplices surrounding an
+upright vertex.  Unless there are three upright quarters, the
+bound follows from IV.5.11.  If there are 3 upright quarters,
+erasing gives penalty $\pi_0=3\xiG$, and
+$3.07\,\pt +D(4,1)-\pi_0 >5.66\,\pt$.
+This proves the lemma for two pentagons and a flat quarter.
+
+($e=1$): Assume finally that there is one exceptional
+region at the vertex.
+If the exceptional region is a hexagon
+(or more), we are done $t_6+\tLP(2,2,2\pi-1.153)>\squander$.
+Assume it is a pentagon.  The aggregate of the five regions at the
+vertex is a $9$-gon (at most).  If there are no more than $11$
+quasi-regular tetrahedra outside the aggregate, the score is
+at most $(1+2(4.52))\,\pt+s_5+\sLP(2,2,2\pi-1.153)<8\,\pt$.  So we may assume
+that there are at least three vertices not on the aggregate.
+
+If the dihedral angle of the exceptional is greater than $1.32$,
+we have 
+$$\tLP(2,2,2\pi-1.32) +3(0.55)\,\pt +t_5 > \squander;$$ 
+and if it is less than $1.32$, we have 
+$$\tLP(2,2,2\pi-1.153)+3(0.55)\pt+1.47\,\pt+t_5> \squander$$
+\qed
+\enddemo
+
+\subhead 2.7. {\tt vertexAdjustment}$[3]$ \endsubhead
+
+When there are three triangles at a vertex with an exceptional,
+we establish that the vertex adjustment is $1.4\,\pt$.
+This follows from Lemma 2.6 if the dihedral angle at the
+vertex of an exceptional region
+is $\le1.32$.  Assume the angles are $\ge1.32$.
+If there are three triangles, a quad, and an
+exceptional at the vertex,
+then we have $\tLP(3,1,2\pi-1.32)>1.4\,\pt+t_4$.
+
+The final case is three triangles and two exceptionals
+at the vertex.  There can be no heptagons and at most one hexagon
+$2t_6 = t_5+t_7>\squander$.  
+If neither exceptional has a flat quarter at $v$, the result follows
+from an interval calculation.
+In these calculations, the flat quarters are scored by $\vor_0$
+or $\mu$ as appropriate.%
+\footnote"*"{Why not $\vor_0-0.0114$?}
+
+The vertex adjustment now follows from an interval calculation.
+
+\subhead 2.8. {\tt vertexAdjustment}$[4]$ \endsubhead
+
+If there are four triangles and one exceptional at a vertex,
+we establish the vertex adjustment of $1.5\,\pt$.
+There are two cases.  If there is a flat quarter at the vertex,
+we use an interval calculation.  
+If there is none, we again use an interval calculation.
+  This completes
+the justification of the vertex adjustments used in the classification
+algorithm.
+
+\head 3. The Classification\endhead
+
+\subhead 3.1 {\tt excludePentQRtet=true} \endsubhead
+This parameter tells the classification algorithm that a particular
+unusual pentagonal subregion has been treated by hand,
+and need not been considered as a separate case in the classification.
+  The purpose of this section is to treat that subregion by hand.
+The unusual configuration is a vertex that has only two subregions,
+a triangle and a pentagon.  The aggregate of the two is a quadrilateral.
+
+Let $v_1,v_2,\ldots,v_5$
+be the five corners of the pentagonal cluster $R$, where $v_1$ is a
+vertex at only two standard clusters, $R$ and a quasi-regular tetrahedron
+$S = (0,v_1,v_2,v_5)$.   Since the four edges $(v_2,v_3)$, $(v_3,v_4)$,
+$(v_4,v_5)$, and $(v_5,v_2)$ have length less than $2.51$, the
+aggregate of 
+$R$ and $S$ will resemble a quad cluster in many respects.
+
+\proclaim{Lemma}  One of the edges $(v_1,v_3)$, $(v_1,v_4)$ has
+length less than $2\sqrt{2}$.  Both of the edges have length less
+than $3.02$. Also, $|v_1|\ge2.3$.
+\endproclaim
+
+\demo
+{Proof}
+This is a standard exercise in geometric considerations (III.2).
+We deform the figure using pivots to a configuration $v_2,\ldots,v_5$
+at height $2$, and $|v_i-v_j|=2.51$, $(i,j)=(2,3),(3,4),(4,5),(5,2)$.
+We scale $v_1$ until $|v_1|=2.51$.
+We can also take the distance from $v_1$ to $v_5$ and $v_2$ to be
+$2$.  If we have $|v_1-v_3|\ge 2\sqrt{2}$, then we stretch
+the edge $|v_1-v_4|$ until $|v_1-v_3|=2\sqrt{2}$.  The resulting
+configuration is rigid.  Pick coordinates to find that $|v_1-v_4|<2\sqrt{2}$.
+If we have $|v_1-v_3|\ge 2.51$, follow a similar procedure to
+reduce to the rigid configuration $|v_1-v_3|=2.51$, to find that
+$|v_1-v_4|<3.02$.
+The estimate $|v_1|\ge2.3$ is similar.
+\qed
+\enddemo
+
+There are restrictive bounds on the dihedral angles of the
+simplices $(0,v_1,v_i,v_j)$ along the edge $(0,v_1)$.  
+The quasi-regular tetrahedron has a
+dihedral angle of at most $1.875$ (III.10.1.2).  The dihedral angles
+of the simplices $(0,v_1,v_2,v_3)$, $(0,v_1,v_5,v_4)$
+adjacent to it are at most $1.63$ (IV.$A_8$).
+The dihedral angle of the remaining simplex $(0,v_1,v_3,v_4)$ is at
+most $1.51$ (IV.$A_8$).   This leads to lower bounds as well.
+The quasi-regular tetrahedron has a dihedral angle that is at least
+$2\pi - 2(1.63)-1.51 > 1.51$.  The dihedral angles adjacent to the
+quasi-regular tetrahedron is at least $2\pi- 1.63-1.51-1.875> 1.26$.
+The remaining dihedral angle is at least $2\pi-1.875-2(1.63) > 1.14$.
+
+\proclaim{Lemma} A decomposition star with this configuration
+squanders $>\squander$.
+\endproclaim
+
+\demo{Proof}  We will show that the pentagonal exceptional and
+quasi-regular tetrahedron squander at least $11.16\,\pt$.
+Let $P$ denote the aggregate cluster formed by these two standard
+clusters.
+
+First we show how the lemma follows from this bound.  
+There are no other exceptionals
+($11.16\,\pt+t_5>\squander$), and every vertex not on $P$
+has type $(5,0)$, by III.5.2.  In particular, there are no
+quad clusters.  There are at most 4 quasi-regular tetrahedra
+at every corner of $P$, because the 
+$\tLP(5,0,2\pi-1.32)>6.02\,\pt$.
+(The $1.32$ comes from that fact 
+that $P$ has no flat quarters because
+$v$ is too short to be enclosed over one \cite{F.1.3}, Lemma 2.5.)
+
+The only 
+triangulation with these properties is obtained by removing an
+edge from the icosahedron.  This implies that 
+there are two opposite corners of
+$P$ each having four quasi-regular tetrahedra.  
+Since the diagonals of $P$ have
+lengths greater than $2\sqrt{2}$, the results of Section 2.8
+show that these eight quasi-regular tetrahedra squander at least
+$2(1.5)\,\pt$.  There are two adjacent vertices of type $(5,0)$
+whose tetrahedra are distinct from these eight quasi-regular tetrahedra.
+They give an additional $2(0.55)\,\pt$.  Now 
+$(11.16+2(1.5)+2(0.55))\,\pt>\squander$.
+
+We prove the bound $11.16\,\pt$.
+Let $S_{ij}$ be the simplex $(0,v_1,v_i,v_j)$, for 
+$(i,j)=(2,3),(3,4), (4,5),(2,5)$.  We have $\sum_{(4)}\dih(S_{ij}) = 2\pi$.
+Suppose some edge $(v_1,v_3)$ or $(v_1,v_4)$ has length $\ge2\sqrt2$.
+Say $(v_1,v_3)$.
+
+We have 
+$$
+\align
+\tau(S_{25}) &- 0.2529\dih(S_{25}) > -0.3442,\\
+\tau_0(S_{23}) &- 0.2529\dih(S_{23}) > -0.1747,\\
+\tau_0(S_{45}) &- 0.2529\dih(S_{45}) > -0.2137,\\
+\tau_0(S_{34}) &- 0.2529\dih(S_{34}) > -0.1371,\\
+\endalign
+$$
+Summing, we find 
+$\sum_{(4)}\tau(S_{ij}) >2\pi(0.2529)-0.3442-0.1747-0.2137-0.1371>12.99\,\pt$.
+The penalty is at most $0.06688$, and $12.99\,\pt -0.06688>11.16\,\pt$.
+
+Now suppose $(v_1,v_3)$ and $(v_1,v_4)$ have length $\le2\sqrt2$.
+So 
+$$\sum_{(4)}\tau(S_{ij})>2\pi(0.2529)-0.3442-2(0.2137)-0.1371 >12.28\,\pt.$$
+If there is an upright diagonal that is not enclosed over either
+flat quarter, the penalty is at most $3\xiG+2\xiV+0.0268$.
+Otherwise, the penalty is at most $4\xiG'+\xiV+0.0268$.
+In both cases, we the penalty is at most $0.973\,\pt$.  We have
+$(12.28-0.973)\,\pt>11.16\,\pt$.
+\qed
+\enddemo
+
+
+
+
+
+\subhead 3.2.  Six regions\endsubhead
+
+We return to the case of 5 quasi-regular tetrahedra and one
+exceptional cluster around a vertex that was left unresolved
+in Section 2.2.
+When there is an exceptional region at a vertex
+of degree six, we claim that the exceptional region must be 
+a pentagon.  
+If the exceptional region is a heptagon or more, we squander
+$t_7+\tLP(5,0,2\pi-1.153) > \squander$.  
+
+If the exceptional region is
+a hexagon, we squander $t_6 + \tLP(5,0,2\pi-1.153) > t_9$.
+Also, $s_6+\sLP(5,0,2\pi-1.153) < s_9$.
+The aggregate of the six clusters is a $9$-gon.
+The argument of IV.4.6 extends to this context to give the bound
+of $8\,\pt$.
+
+Thus, we can assume that the exceptional region is a pentagon.
+The six standard clusters score at most $s_5+\sLP(5,0,2\pi-1.153)< -3.03\,\pt$,
+and squander at least $t_5+\tLP(5,0,2\pi-1.153)> 10.916\,\pt$.
+The constants $-3.03\,\pt$ and $10.916\,\pt$ are the bounds
+for an octagon in {\tt scoreFace} and {\tt squanderFace}.
+We note that there can be at most one vertex of degree six with
+an exceptional region.  Indeed, if there are two, then they must
+both be vertices of the same pentagon $(10.916+4.896)\,\pt>\squander$.
+A vertex on the octagon gives
+$$\align
+	10.916\,\pt &+\tLP(4,0,2\pi-1.153-0.8638) > \squander\\
+	10.916\,\pt &+\tLP(5,0,2\pi-1.153) > \squander.
+\endalign
+$$
+
+\subhead 3.3.  Nonpolygonal standard regions\endsubhead
+
+In the next section we will turn to the classification of
+planar maps.  Certain combinatorial complications arise if the
+standard regions are not polygons.  Because of these complications
+it is best to classify the planar maps arising from the
+polygonal hulls of standard regions.  That is, we suppress the internal
+structure of the nonpolygonal standard regions.
+
+We know from IV.4.4
+what the possibilities for the standard regions are.
+If we have, for example, the
+eight sided figure whose hull is a pentagon, it will be treated as
+a pentagon in the combinatorial classification.  Moreover, the
+constants $t_5$ and $s_5$ from IV.4.4 may be used in the
+determination of the possibilities, because we have $t_8>t_5$,
+$s_8+1\,\pt<s_5$.  This allows us to run the combinatorial classification
+assuming that  every face is a polygon. After the classification is
+complete, we will go back and interpret various faces as one of
+the cases IV.4.4. (See Section 3.6, 3.7, and 3.8.)
+
+\subhead 3.4. Classification\endsubhead
+
+We have now explained and justified all the parameters in Section 2.1.
+There are a few additional properties of the planar map that we make
+use of in the classification.  The graph has no loops or multiple
+joins.  Two degree four vertices cannot be adjacent.  A cycle
+of $4$-edges bounds a face or there is an edge between two
+opposite corners.  A cycle of $3$ edges bounds a triangle.
+(See I.4, I.5.)
+
+The classification algorithm constructs all the planar maps
+of decomposition stars that have the potential of scoring $<8\,\pt$,
+as implied by the parameters of Section 2.1.  As we construct the
+planar maps face by face, the lower bound on whatever is
+squandered increases monotonically.  It is this property that
+insures the termination of the algorithm.  As soon as a case reaches
+$\squander$ squandered, it may be discarded.  Details of the
+algorithm appear in III.
+
+We have made no comprehensive effort to make the list as short
+as possible, because extraneous cases or redundancies are eliminated
+quickly in Section 3.5 by linear programming.  The archive \cite{H1}
+contains a list of all the possibilities obtained in the classification.
+In summary, the archive contains the following planar maps
+
+{
+\parindent=0pt
+\parskip=0pt
+\hbox{}
+
+$$
+\matrix
+\format\l&\quad\r&\quad\l\\
+\text{(quad)}&1749&\text{planar maps}\\
+\text{(pent)}&2459&\text{planar maps}\\
+\text{(hex)}&429&\text{planar maps}\\
+\text{(hept)}&413&\text{planar maps}\\
+\text{(oct)}&44&\text{planar maps}\\
+&5094&\text{total}
+\endmatrix
+$$
+
+}
+
+These planar maps are listed according to the standard region whose
+hull has the greatest number of sides.  So for example, the planar
+maps in the hexagon list have triangles, quadrilaterals, pentagons,
+and at least one hexagon. The planar maps will be referred
+to as quad\#n, $n=1,\ldots,1749$, pent\#n, $n=1,\ldots,2459$, etc.
+A constant is added to numbers of the planar map in the archive.
+Map (pent\#n) corresponds to archive $2000+n$,
+(hex\#n) corresponds to $6000+n$,
+(hept\#n) corresponds to $8000+n$,
+and (oct\#n) corresponds to $10000+n$.
+
+If we eliminate all these possibilities the Kepler Conjecture
+will be established.  The quadrilaterals have been treated in
+full by III, IV.  The decomposition stars of the
+fcc and hcp packings score $8\,\pt$.  They are local
+maxima in the strong sense that any deformation of a
+quasi-regular tetrahedron or quad cluster from  the 
+regular ones appearing in the fcc and hcp brings a drop
+in score below $8\,\pt$ \cite{II}.
+There is one case that is far more difficult than the
+others.  It is the pentahedral prism, treated by S. Ferguson
+in \cite{V}.
+
+The next few sections will eliminate the cases that are
+most easily disposed of.
+Section 3.5 eliminates all but 180 cases by linear programming.
+Section 3.6 treats the nonpolygonal region $n(R)=8$ with
+pentagonal hull.  Section 3.7 treats nonpolygonal regions
+with $n(R)=8$ and hexagonal hull.  Section 3.8 treats
+$n(R)=7$, pentagonal hull.  After Section 3.8 we may assume
+that all standard regions are polygons.
+Section 3.9 eliminates the configurations $\Sminus$, $\Sfour$
+of upright quarters.  Section 3.10 treats the case of six vertices,
+from Section 3.2.
+
+\subhead 3.5. Linear programs\endsubhead
+
+Following the methods outlined in III, we obtain linear programming
+bounds on the scores of the 5094 planar maps generated by the
+classification algorithm.  In all but 180 cases, the bound is
+less than $8\,\pt$.  According to the ordering of planar maps
+in the archive \cite{H1}, we are left with the following cases.
+
+{\obeylines
+\parskip=0pt
+\parindent=0pt
+\hbox{}
+
+(pentagon)=$\{2,45,263,273,274,275,288,290,302,\ldots,2321,2351\}$ (149 cases)
+(hexagon)= $\{59,70,104,111,129,130,131,146,226,248,$
+\hfill\quad\quad $250,251,256,296,302,303,310,363,368,385\}$ (20 cases)
+(heptagon)=$\{27,36,46,70,75\}$ (5 cases)
+(octagon)=$\{6,7,8,12,14,16\}$ (6 cases)
+
+}
+
+The linear program uses all the linear inequalities from 
+Sphere Packings III for
+quasi-regular tetrahedra and quad clusters (Section 10 group 1, group 3,
+group 5, Prop. 4.1, 4.2, 4.3).  It uses the linear relations
+among solid angles and dihedral angles.  It uses the bounds
+from 
+the arrays {\tt scoreFace}, {\tt squanderFace}, and {\tt vertexAdjustment}.
+It does not use any of the linear inequalities such as
+III.10 group 5, or III.A.6 
+that depend on special conditions being met.  It does not
+use any of the inequalities that assume the quad cluster has a special
+structure.  It does not use, for example, the inequalities for
+the octahedral case of the quad cluster in III.A.3.
+
+As with all these calculations, code and details can be found in \cite{H1}.
+
+If the linear program associated with a particular planar map
+is expressed as $\max \sum\sigma_i$
+such that $A\,x\le b$, we can determine bounds on the variables
+$x_j$ as follows.   Define a new linear program $\max c\,x$
+such that $A\,x\le b$, and $\sum\sigma_i\ge 8\,\pt$.   If
+$c\,x = x_j$ or $-x_j$, or in fact, any linear combination of
+variables, then solving the linear program gives a bound on $x_j$
+or any linear combination $c\,x$.  The bounds on $x_j$ obtained
+by this method will be called the {\it LP-bounds} on a variable.  
+We write $\LPmin(x_j)\le x_j\le\LPmax(x_j)$ for the linear programming
+bounds that follow in this manner.  The LP-bounds depend on the
+system of linear equations $A\,x\le b$ that we use, although this
+is not indicated in the notation.
+
+\subhead 3.6. A pentagonal hull with $n=8$
+\endsubhead
+
+The next few sections treat the nonpolygonal standard regions illustrated
+in IV.4.4.
+In this standard cluster, the aggregate of the octagonal cluster and
+the quasi-regular tetrahedron forms a pentagonal cluster.  Let $P$
+denote this aggregated cluster.
+
+We have bounds $(-3.03+1)\,\pt$ on what is scored and $10.916\,\pt$ on
+what is squandered.  There is no other exceptional cluster 
+$10.916\,\pt+t_5>\squander$.  We make the substitutions
+$4.896\mapsto 10.916$, $-1.03\mapsto -2.03$ in {\tt squanderFace}
+and {\tt scoreFace} respectively.  With these changes we rerun
+the linear programs for the 149 remaining pentagonal planar maps.
+This time through, all but 1 case has a bound less than $8\,\pt$.
+
+The one case (pentagon\#575) can be described at the planar map
+with 15 triangles obtained by deleted all five triangles at a vertex
+from the icosahedral planar map.  The property of this triangulation
+that we exploit is that it has three triangles at every vertex of
+the pentagonal region. Let $v$ be the vertex of the pentagonal region
+that is a corner of the quasi-regular tetrahedron in the aggregate $P$.
+The four quasi-regular tetrahedra at $v$ give
+$t_8+\tLP(4,0,2\pi-2(1.153)) > \squander$.  
+
+\subhead 3.7. $n=8$, hexagonal hull\endsubhead
+
+We treat the two cases from IV.4.4 that have a hexagonal hull.
+One can be represented as a hexagonal cluster with an enclosed vertex
+that has height at most $2.51$ and distance at least $2.51$ from
+each corner of the hexagon.  The other is represented as a hexagonal cluster
+with an enclosed vertex of height at most $2.51$, but this time
+with distance less than $2.51$ from one of the corners of the
+hexagonal cluster.
+
+The argument for the case $n=8$ with hexagonal hull is similar
+to the argument of Section 3.7.
+Make the substitutions $7.414\mapsto10.916$, and $-2.06\mapsto-4.12$
+in {\tt squanderFace} and {\tt scoreFace}, respectively.
+The constant $-4.12$ comes from IV.4.4.
+Rerunning the 20 remaining hexagonal cases with these changes brings
+all but one planar map under $8\,\pt$. 
+
+The planar map that remains is (hex\#131).  The planar
+map is shown.  There are 16 triangles and one hexagonal standard
+region.  
+
+\smallskip
+\gram|2|3.7|diag3.7.ps|
+\smallskip
+
+In discussing various maps, we let $v_i$ be the vertices of
+the clusters, and we set $y_i = |v_i|$ and $y_{ij}= |v_i-v_j|$.
+If $F$ is a standard region, subregion, cluster, or subcluster,  
+we let $\dih_{F,i}$ denote
+the dihedral angle of $F$ along $(0,v_i)$.  The subscript $F$
+is dropped, when there is no great danger of ambiguity.
+
+We have $\LPmax(\dih_8)\le1.647$ and 
+$\LPmax(y_9+y_{8,9}+y_{8,12}+y_{12})\le 8.57$.
+An interval arithmetic
+ upper bound on $y_{9,12}$, 
+subject to these two constraints
+ is $2\sqrt2$.  Similarly, $y_{10,11}\le 2\sqrt2$.
+There are two flat quarters $(0,v_5,v_{10},v_{11})$ and
+$(0,v_8,v_9,v_{12})$.  The vertex $v_{13}$ enclosed over the hexagonal
+region cannot be over the flat quarters.  
+Also, $\LPmax(y_{11,12}+y_{9,10}) \le 4.378$.  
+So $y_{11,12},y_{9,10}\le 2.378$.
+Geometric considerations as in Section 3.1 give
+$y_{13,i}\le 2.97$, $i=9,10,11,12$.
+
+Case 1.  $y_{i,13}\ge 2.51$, for $i=9,10,11,12$.
+Interval calculations give 
+$$
+\align
+\dih(0,v_{13},v_9,v_{12}) &< 1.77,\\
+\dih(0,v_{13},v_{10},v_{11}) &< 1.77,\\
+\dih(0,v_{13},v_{11},v_{12}) &<1.23 + 0.7(y_{11,12}-2),\\
+\dih(0,v_{13},v_9,v_{10})&< 1.23 + 0.7(y_{9,10}-2)
+\endalign
+$$
+This gives the contradiction
+$$2\pi > 2 (1.23)+0.7(0.378) >\sum\dih = 2\pi.$$
+
+Case 2.  $y_{i,13}\ge 2.51$, for $i=9,10,11$, $y_{12,13}\in[2,2.51]$.
+We have $y_{11,12},y_{9,10}\le 2.378$.  Geometric considerations
+as in Section 3.1 give $y_{11,13}\le 2.97$, $y_{10,13}\le 3.16$,
+$y_{9,13}\le 2.96$.
+We also obtain by interval arithmetic if $y_{13}\le 2.28$,
+that 
+$$2\pi > 1.427+1.356 + 1.684+1.806 > \sum\dih = 2\pi.$$
+So $y_{13}\ge 2.28$.
+
+The LP-lower bound on the score of the hexagonal cluster is
+$-4.93\,\pt$.  The simplex $(0,v_{11},v_{12},v_{13})$ is
+possibly a flat quarter.  Since we do not have further information
+about it, we use the worst case bound of 0.
+We use interval arithmetic worst case bounds on the score of
+$(0,v_{13},v_9,v_{10})$, $(0,v_{13},v_{10},v_{11})$, 
+$(0,v_{13},v_{11},v_{12})$, and $(0,v_{13},v_{12},v_9)$.
+$$\sigma<-4.15\,\pt-1.19\,\pt-2.52\,\pt-0 < -4.93\,\pt
+	-8(0.01561)-2 (0.014).$$
+
+
+
+
+
+\subhead 3.8. $n=7$, heptagonal hull\endsubhead
+
+We treat the two cases from IV.4.4 that have a heptagonal hull.
+One can be represented as a heptagon with an enclosed vertex
+that has height at most $2.51$ and distance at least $2.51$ from
+each corner of the heptagon.  The other is represented as a heptagon
+with an enclosed vertex of height at most $2.51$, but this time
+with distance less than $2.51$ from one of the corners of the
+heptagon. They are illustrated in IV.4.4.
+
+Make the substitutions $4.896\mapsto 9.932$, $-1.03\mapsto -3.03$
+in {\tt squanderFace} and {\tt scoreFace}.  There is no
+other exceptional region $(9.932+4.896)\,\pt>\squander$.  
+With these changes, of the 149 pentagonal
+planar maps, all but one of the linear programs give a bound
+under $8\,\pt$.  The case that remains (pentagon\#575) is the one
+that occurred in Section 3.6.  It is the planar map obtained by 
+removing the five triangles around a vertex
+from an icosahedron.
+
+We treat the case (pent\#575).  Let $v_{12}$ be the vertex enclosed
+over the pentagon.  We let $v_1,\ldots,v_5$ be the five corners
+of the pentagon.
+Break the pentagon into
+five simplices along $(0,v_{12})$:  $S_i = (0,v_{12},v_i,v_{i+1})$.
+
+Case 1.  {\it The vertex $v_{12}$ has distance at least $2.51$ from
+the five corners of the pentagon.}
+
+We have $\LPmax(y_i)\le2.168$, for $i=1,2,3,4,5$.  The penalty
+to switch the pentagon to a pure $\vor_0$ score is at most $5\xiG$.
+There cannot be two flat quarters because then
+$$|v_{12}+>\Cal E(S(2,2,2,2.51,2\sqrt2,2\sqrt2),2.51,2.51,2.51)>2.51.$$
+Suppose there is one flat quarter, $|v_1-v_4|\le2\sqrt2$.
+Geometric considerations give $|v_{12}-v_i|\le3.39$, $i=1,2,3,4$.
+The four simplices around $v_{12}$ squander
+	$$2\pi(0.2529)-3(0.1452) - 0.29 >15.5\,\pt.$$
+The 15 quasi-regular tetrahedra squander $>4(0.55)\,\pt$ by
+Lemma III.5.3.  We have
+$$15.5\,\pt - 5\xiG + 4(0.55)\,\pt>\squander.$$
+
+Now assume there are no flat quarters.  Disregard all vertices
+but $v_1,\ldots,v_5,v_{12}$.  If a vertex $|v_i-v_{12}|>2.51$,
+deform $v_i$ as in Section IV.4.9 until $|v_i-v_{i-1}|=|v_i-v_{i+1}|=2$,
+or $|v_i-v_{12}|=2.51$.  Move $v_{12}$ keeping $v_1,\ldots,v_5$
+fixed and not increasing $|v_{12}|$ until $|v_{12}-v_i|=2.51$.
+
+Two of these three are necessarily adjacent, say 
+$|v_3-v_{12}|=|v_4-v_{12}|=2.51$.  The vertex $v_{12}$ is not
+enclosed over $(0,v_3,v_4,v_5)$ or $(0,v_1,v_2,v_3)$\footnote"*"{prove!}
+so if the third vertex is $\ne v_1$, we can continue the deformations.
+So assume $|v_1-v_2|=2.51$.
+
+There are three cases. In all three cases 
+$|v_i-v_{12}|=2.51$, for $i=1,3,4$.
+$$
+\align
+(a)\quad &|v_1-v_2|=|v_2-v_3|=|v_4-v_5|=|v_5-v_1|=2,\\
+(b)\quad &|v_{12}-v_2|=2.51,\quad |v_4-v_5|=|v_5-v_1|=2,\\
+(c)\quad &|v_{12}-v_2|=|v_{12}-v_5|=2.51.
+\endalign
+$$
+Case (c) follows from interval calculations
+$$
+\sum\tau_0 \ge 2\pi(0.2529) - 5 (0.1452) -5 \xiG - 4(0.55)\,\pt > \squander.
+$$
+Case (a) does not exist,
+$$2\pi=\sum\dih < 1.51 + 4(1.16).$$
+In case (b), we have again
+	$$2\pi(0.2529)-5 (0.1452)$$
+if the dihedral angles of both angles along $(v_{12},v_5)$ are
+$>0.65$.  We have
+	$$(2\pi-1.49)(0.2529) - 3 (0.01452),$$
+if an angle $<0.65$ (so that by an interval calculation the sum is
+less than $1.49$).  Either way we squander $>\squander$.
+
+
+Case 2. The vertex $v_{12}$ has distance at most $2.51$ from
+the vertex $v_1$ and distance at least $2.51$ from the others.
+The five simplices squander
+\footnote"*"{Add calculation at the end and stabilize!}
+$$\sum\tau_0(S_i) \ge 2\pi (0.2529) - 2 (0.239)-3 (0.1452)\ge0.675.$$
+The LP-upper bound on what is squandered by the subregion
+is $0.644$.  So if the penalty is $\le 0.031$, we are done.
+
+An LP-lower bound on the score of the subregion is $-0.234$.
+Since $-0.4339$ is less than this the lower bound, 
+the configuration $\Sminus$
+does  not occur.  Similarly, since $-0.25$ breaks the lower bound,
+$\Sfour$ does not occur (IV.3.7, IV.3.8).  
+If there are no loops, then the penalty
+$\le 2(0.008)< 0.031$, and we are done.
+
+Suppose that there is a loop in context $(4,2)$.  
+Again the score is less than the LP-lower
+bound, showing that this does not occur.
+$$s_7+ (-0.2 +0.1141)< -0.234.$$ The constants come from table
+IV.5.11 and IV.4.4.
+If there is a loop other than $(4,2)$ and $(4,1)$, we break the
+bound again
+	$$t_7 + (\tau\text{LP}-D(n,k)) \ge 0.5498 +0.1 \ge 0.644.$$
+We conclude that the only loops have context $(4,1)$.
+
+Let $(0,v_{13})$ be the upright diagonal of a loop $(4,1)$.  The
+vertices of the loop are not $v_2,v_3,v_4,v_5$ with $v_{12}$ enclosed
+over $(0,v_2,v_5,v_{13})$ by IV.3.6.  The vertices of the loop
+are not $v_2,v_3,v_4,v_5$ with $v_{12}$ enclosed over $(0,v_1,v_2,v_5)$
+because this would lead to a contradiction
+$$y_{12}\ge \Cal E(S(2,2,2,2.51,2.51,3.2),2.51,2.51,2)>2.51,$$
+or
+$$y_{12}\ge \Cal E(S(2,2,2,2.51,2.51,3.2),2,2.51,2)>2.51.$$
+We get the same contradiction unless $(v_1,v_{12})$ is an edge of some
+upright quarter of every loop of type $(4,1)$.
+
+We represent the two situations as follows.  In the first
+(case 2-a) there is one upright diagonal $(0,v_{13})$ with anchors to
+$v_1,v_2,v_3,v_{12}$.  The anchored simplex $(0,v_{13},v_3,v_{12})$ is
+not a quarter, but the other three anchored simplices around $(0,v_{13})$
+are.  In the second (case 2-b) there are two
+upright diagonals $(0,v_{13})$ and $(0,v_{14})$.  The anchors
+of $(0,v_{13})$ are $v_1,v_2,v_3,v_{12}$.  The anchors of 
+$(0,v_{14})$ are $v_1,v_5,v_4,v_{12}$.  The 
+anchored simplices $(0,v_{14},v_4,v_{12})$ and $(0,v_{13},v_3,v_{12})$
+are not quarters.
+
+Case 2-a.  If $(0,v_{12},v_1,v_2)$ is a flat quarter, the penalty
+is at most
+$$0.008 + \xiG + 2 \xiV < 0.031,$$
+or 
+$$0.008 + 2 \xiG' + \xiV < 0.031,$$
+and the bound is established.  So $y_{2,12}\ge 2\sqrt2$.
+
+The penalty is at most $0.008 + 3 \xiG < 0.0471$.
+The exceptional region squanders at least $0.675- 0.0471\ge 0.6279$.
+The LP-upper bound on $\dih(0,v_1,v_2,v_5)$ is $2(1.38)=2.76$.
+This implies, by an interval calculation that
+$y_{12,5}\le2\sqrt2$.  
+(This interval calculation uses that $y_{2,12}\ge2\sqrt2$.)
+If $y_{13}\ge2.57$, then $\LPmax(y_5)\le 2.168$.
+We have interval arithmetic bounds 
+$$
+\align
+\dih(0,v_1,v_{12},v_5)&>1.19,\\
+\dih(0,v_1,v_2,v_{13})&>0.8,\\
+\dih(0,v_1,v_{12},v_{13})&>0.8.
+\endalign
+$$
+This gives a contradiction $2.76>\sum\dih>2.79$.
+
+Case 2-b.  $\LPmax(\dih(0,v_1,v_2,v_5))\le2.891$.
+The 4 upright quarters at $v_1$ give by interval arithmetic
+$$\sum_{(4)}nu < 0.252 (2.891) - 4 (0.24) = -0.231468.$$
+By IV, the simplex $(0,v_3,v_4,v_{12})$ scores $<Z(3,2)$.  
+The exceptional
+region gives
+$$-0.231468 +Z(3,2)< -0.234.$$
+The other anchored simplices
+\footnote"*"{Show these are negligible even if $\dih>2.46$}
+at $v_{13},v_{14}$ score $\le0$. Either way,
+we are done.
+
+
+
+
+\subhead 3.9. $\Sminus$, $\Sfour$\endsubhead
+
+If we have the configuration $\Sminus$, there is only one exceptional
+region ($10.12\,\pt+t_5>\squander$) (Section IV.3.7).  
+The configuration with
+six standard regions around a vertex from Section 3.2 does not occur
+because the five qrtets in the configuration squander $>6\,\pt$,
+giving $(6+10.12)\,\pt>\squander$.
+
+Based on Section IV.3.7,
+we make the substitutions 
+$$
+\align
+(4.896,7.414,9.932,10.916)&\mapsto (10.12,10.12,10.12,10.12)\\
+(-1.03,-2.06,-3.03,-3.03)&\mapsto (-7.83,-7.83,-7.83,-7.83),
+\endalign
+$$
+in {\tt squanderFace} and {\tt scoreFace} respectively.
+All 180 linear programming bounds are under $8\,\pt$ when
+these changes are made.
+
+The configuration $\Sfour$ requires more work.  Make the
+substitution
+$$(-2.06,-3.03,-3.03)\mapsto (-4.52,-4.52,-4.52)$$
+in {\tt squanderFace}.  The configuration $\Sfour$ does not
+appear in a pentagon.  Rerun the other 31 linear programs with
+these changes.  All but 7 cases are under $8\,\pt$.
+They are (hexagon 59, 70, 131), (heptagon 36, 75), (octagon 8, 14).
+
+The following argument eliminates these 7 cases.  Let $v_1$ and
+$v_2$ be the corners of $\Sfour$ that are on the large gap.
+For the remaining 7 cases we solve the linear programming
+problem maximizing $|v_1|+|v_2|$ subject to all the usual
+constraints, together with the additional constraint that the
+score of the decomposition star is at least $\squander$.  Since
+we do not know how $\Sfour$ is situated with respect to the
+planar map there are several cases involved here.  We find
+that $|v_1|+|v_2|<4.6$ in every case.
+
+The LP-lower bound on the score of the exceptional cluster is
+$-0.31547$.
+We solve the linear programming problem involving just the four
+quarters of $\Sfour$ maximizing the dihedral angle $\alpha$ of
+the gap subject to the constraint that the score of the four
+quarters is at least $-0.31547$.  The solution gives $\alpha<1.743$.
+This is inconsistent with an interval calculation, which asserts $\alpha>1.78$.
+Thus, the decomposition star scores less than $8\,\pt$.
+
+\subhead 3.10.  Six vertices\endsubhead
+
+Turn to the case of six vertices around a vertex, introduced in Section 3.2.
+We claim that the aggregate of the six subclusters around the
+vertex squanders at least $11.839\,\pt$.
+In fact, if the dihedral angle of the pentagon is $\le1.32$, we get
+$$\tLP(5,0,2\pi-1.153)+1.47\,\pt + t_5 > 11.839\,\pt.$$
+If the angle is $\ge1.32$, we get
+$$\tLP(5,0,2\pi-1.32)+t_5>11.839\,\pt.$$
+
+The score of the aggregate is $<s_5+\sLP(5,0,2\pi-1.153)<-3.03\,\pt$.
+
+Rerun the linear programs for the six remaining octahedral cases making
+the substitution $10.916\mapsto11.839$ in {\tt squanderFace}. 
+All but one linear program gives a bound under $8\,\pt$.  The planar
+map that remains is a triangulation of an octagon (octagon \#7).  
+Although it might
+seem there are several ways to combine them, there is actually only
+1 viable planar map.  All others produce a vertex of degree 3 surrounded
+by 3 triangles, which is inadmissible.   De-aggregating the arrangement
+gives a planar map with one pentagonal region.  We run the usual
+linear programming optimization on this planar map and obtain
+a bound under $8\,\pt$.
+
+\subhead 3.11. Type $(n,k)=(5,1)$\endsubhead
+
+Five quarters around a common upright diagonal in a pentagonal
+region can certainly occur.  We claim that any other upright
+diagonal with five anchors leads to a decomposition star that
+squanders $\ge\squander$.  In fact, the only other possible
+context is $(5,1)$, and there is squanders $>10.72\,\pt$, by IV.5.11.
+It scores $<-6.79\,\pt$.
+
+If this appears in an octagon, we squander $>10.72\,\pt+D(5,1)>\squander$.
+If this appears in a heptagon, we squander
+$$>10.72\,\pt + D(4,1) + 0.55\,\pt > \squander,$$
+because there must be a vertex that is not a corner of the heptagonal
+cluster.
+It cannot appear on a pentagon.  If it appears on a hexagonal region,
+it squanders $10.72\,\pt+D(3,1)>11.91\,\pt$ and scores $<-6.79\,\pt$.
+Weaker constants than these are used in Section 3.7 with the
+conclusion that only one particular planar map is possible (hex\#131).
+So here too it is enough to consider that case.  Make the
+substitutions $7.414\mapsto 11.91\,\pt$ and $-2.06\mapsto -6.79\,\pt$
+in {\tt squanderFace} and {\tt scoreFace}.  The LP-bound obtained
+with these changes is $>\squander$.
+
+\subhead 3.12.  Summary.\endsubhead
+We summarize some of the results obtained up to this point.
+The worst pathologies have now been eliminated.
+Let $D^*$ be a decomposition star scoring $\ge8\,\pt$ that
+has an exceptional region.  Then
+
+1.  The exceptional region is a polygon with $n=5,6,7$, or $8$ sides.
+
+2.  There are no $\Sfour$ or $\Sminus$ configurations (even in
+	the original decomposition star before anything is erased).
+
+3.  The planar map is one of the 180 cases obtained in Section 3.5.
+
+4.  If an upright quarter with 5 anchors appears, it must have
+	context $(5,0)$ and lie over a pentagonal standard region.
+
+
+\head 4.  Refined Linear Programming Bounds\endhead
+
+\subhead 4.1. Internal structures\endsubhead
+
+From the results of Section 3, we know that every standard region
+is a polygon, and there are no $\Sminus$ or $\Sfour$ configurations
+of exceptional regions.  We describe linear programming arguments that
+reduce the list of possibilities from 180 to 67.  We do this by
+separating each planar map into a  number of subcases according to
+the detailed structure of the exceptional cluster.
+We list the structures and afterward we give an extended explanation
+of what the diagram means.
+
+
+\vfill\eject
+\gram|5.3|4.1|diag41.ps|
+\vfill\eject
+
+The possibilities are listed in the diagram only up to symmetry
+by the dihedral group action on the polygon.  We do not prove
+the completeness of the list, but its completeness can be seen
+by inspection, in view of the comments that follow here and
+in Section 4.2.
+
+Each enclosed vertex in the diagrams is an upright diagonal.  
+Four types of edges are drawn. (1) an edge from the endpoint
+of an upright diagonal to its anchor. (2) the diagonal of
+a  flat quarter. (3) dashes representing edges of anchored
+simplices that are not quarters.  (4) the edges of the polygon.
+The type of the edge can be inferred from 
+the diagram.  The diagonals of erased upright quarters and
+masked flat quarters are not drawn.
+
+The upright diagonals in the diagrams are surrounding by anchored
+simplices.  (We know from Section 4 that there are no configurations
+$\Sfour$ or $\Sminus$, and we have erased $\Splus$, taking a penalty.)
+Dashes have length $[2.51,3.2]$.  Except in the two cases
+of a the hexagonal regions, where dashes join opposite corners,
+the length of a dash is at least $2\sqrt2$.
+
+In one case involving pentagonal clusters, one case involving
+hexagonal clusters, and all cases involving heptagonal and octagonal
+clusters, some upright quarters have been erased that incur a penalty.
+In these cases we have indicated an upper bound on the penalty.
+By erasing those we have, there does not remain more than one upright
+diagonal. In the lists of heptagonal and octagonal regions, no
+upright quarters remain.
+
+
+We will continue our description of the diagrams in Section 4.2, where
+the penalties are described.
+
+\subhead 4.2. Penalties\endsubhead
+
+
+
+Erasing an upright quarter of compression type gives $\xiG$
+and one of Voronoi type gives $\xiV$.
+We take the worst possible penalty.  It is at most $n\xiG$
+in an $n$-gon.  If there is a masked flat quarter, the
+penalty is only $2\xi_V$ from the two 
+upright quarters along the flat quarter.  We note in this connection
+that both edges of a polygon along a flat quarter lie on
+upright quarters, or neither does.
+
+If an upright diagonal appears enclosed over a flat quarter,
+the flat quarter is part of a loop with context $(4,1)$, for
+a penalty $2\xi'_\Gamma+\xi_V$.  This is smaller than the
+penalty obtained from a loop with context $(4,1)$, when the
+upright diagonal is not enclosed over the flat quarter
+	$$\xi_\Gamma + 2\xi_V.$$
+So we calculate the worst-case penalties under the assumption
+that the upright diagonals are not enclosed over flat quarters.
+
+A loop of context $(4,1)$ gives $\xi_\Gamma+2\xi_V$ or
+$3\xi_\Gamma$.  A loop of context $(4,2)$ gives $2\xi_\Gamma$
+or $2\xi_V$. 
+
+
+The penalties are obtained as follows.  If we erase $\Splus$,
+the is a penalty of $0.008$. (Recall that the penalty is 0 if
+it masks a flat quarter.)  This is dominated by the penalty
+$3\xi_\Gamma$.
+
+Suppose we have an octagonal standard region.  We claim
+that a loop does not occur in context $(4,2)$.
+If there are at most three vertices that are not corners
+of the octagonal cluster, then there are at most 12 quasi-regular
+tetrahedra, and the score is at most 
+$$s_8 + 12\,\pt<8\,\pt.$$
+Assume there are more than three vertices that are not corners
+of the octagonal cluster.
+We squander
+$$t_8+ (\DLP(4,2)-D(4,2))+4\tlp(5,0) > \squander.$$
+As a consequence, there are at most 2 upright diagonals.
+
+If there are
+three upright diagonals, we have
+$$\tlp(4,1)+\tlp(4,2) + 0.55\,\pt > \squander.$$
+So there are at most $2$ upright diagonals and at most $6$ quarters:
+$\pi_0\le 6\xi_\Gamma$. Let $f$ be the number of flat quarters
+This leads to
+	$$
+	\pi_0 = \cases 6\xiG, & f=0,1,\\
+				   4\xiG+2\xiV, & f=2,\\
+					2\xiG+4\xiV, & f=3,\\
+					0, & f=4.
+			\endcases
+	$$
+The 0 is justified by a parity argument.  Each upright quarter occurs
+in a pair at each masked flat quarter.  But there are an odd
+number of quarters along the upright diagonal, so no penalty at
+all can occur.
+
+Suppose we have a heptagonal standard region.  For the same reason
+as given for octagons, there are at most 2 upright diagonals.
+If there are at most 2 upright diagonals, and both have context
+$(4,1)$, then
+	$$
+	\pi_0 = \cases 6\xiG, & f=0,\\
+				 4\xiG+2\xiV, & f=1,\\
+				2\xiG+4\xiV, & f=2.
+			\endcases
+	$$
+If there are at most 2 upright diagonals, and one has context
+$(4,2)$, then
+	$$
+	\pi_0 = \cases 5\xiG, & f=0,1,\\
+				3\xiG + 2\xiV, & f=2,\\
+				\xiG + 4 \xiV, &f = 3.\\
+			\endcases
+	$$
+The constant $0.0114$ will be explained in Section 4.3.
+This gives the bounds used in the diagrams of cases.
+
+\subhead 4.3 Additional inequalities for flats\endsubhead
+
+We discuss the context $(2,1)$ that occurs when two upright
+quarters in the $Q$-system lie over a flat quarter.  
+Let $(0,v)$ be the upright diagonal, and assume that $(0,v_1,v_2,v_3)$
+is the flat quarter, with diagonal $(v_2,v_3)$.
+Let $\sigma$ denote the score of the upright quarters
+and other anchored simplex lying over the flat quarter.
+
+\proclaim{Lemma} $\sigma\le \min(0,\vor_0)$.
+\endproclaim
+
+\demo{Proof}  The bound of $0$ is established in II and F.
+
+By F.4.7.5, if $|v|\ge 2.69$, then the upright quarters satisfy
+$$\nu < \vor_0 + 0.01 (\pi/2-\dih)$$
+so the upright quarters can be erased.  Thus we assume
+without loss of generality that $|v|\le 2.69$.
+
+We have $$|v|\ge\Cal E(S(2,2,2,2.51,2.51,2\sqrt2),2,2,2)>2.6.$$
+If $|v_1-v_2|\le 2.1$,  or $|v_1-v_3|\le 2.1$, then
+	$$|v|\ge \Cal E(S(2,2,2,2.1,2.51,2\sqrt2),2,2,2)>2.72,$$
+contrary to assumption.  So take $|v_1-v_2|\ge 2.1$ and $|v_1-v_3|\ge2.1$.
+Under these conditions we have the interval calculation
+$\nu(Q) < \vor_0(Q)$ where $Q$ is the upright quarter.
+\qed
+\enddemo
+
+\proclaim{Remark}  If we have an upright diagonal enclosed over
+a masked flat quarter in the context $(4,1)$, then there are
+3 upright quarters.  By the same argument as in the lemma, the
+two quarters over the masked flat quarter score $\le\vor_0$. The
+third quarter can be erased with penalty $\xiV$.
+\endproclaim
+
+\proclaim{Lemma} $\mu < \vor_0 +0.0268$ for all flat quarters.
+\endproclaim
+
+\demo{Proof} This is an interval calculation.\qed\enddemo
+
+We introduce some scoring conventions that are somewhat different
+from those presented in IV.3.10.
+Flat quarters in the $Q$-system are scored by $\mu$.  Erased
+flats with $y_1\ge 2.2$ are scored with $\vor_0$ and erased
+flats with $y_1\le 2.2$ are scored with $\vor_0-0.0114$.
+We will use these scoring conventions in the inequalities of
+Section 4.5.
+
+The penalty we introduced in Section 4.2 for masked flat quarters
+is $\xiG+2\xiV$.  The penalties introduced in Section 4.2 do not
+take the constant $0.0114$ into account.  We show here that the
+bounds on the penalties from Section 4.2 still hold even if we
+adjust some flat quarters by $0.0114$ according to these new
+scoring conventions.  
+
+Begin with the context $(4,1)$. In Section 4.2, we erase with
+penalty $\pi_0=2\xiV+\xiG$.
+If $|v|\ge 2.696$, the penalty is actually
+$3\xiV < \pi-0.0114$.  If $|v|\in[2.57,2.696]$, the penalty
+is $\xiV+\xiG' - 0.004131 < \pi_0-0.0014$.  
+The constant $0.004131$ comes from IV.$A_{11}$.
+If $|v|\le2.57$, then $\Cal E(S(2,2,2,2.51,2.2,2.57),2,2,2)>2\sqrt2$,
+so this case does not occur.
+
+The only other context to consider is a loop in context $(4,2)$.  We
+have seen in Section 4.3 that this context does not occur in
+octahedra.  This context is never erased in pentagons or hexagons.
+This leaves heptagons.  If there is one flat quarter and a context $(4,2)$,
+we have penalty
+	$$3\xiG + 2\xiV < 5\xiV - 0.0114.$$
+If there are two flats we have
+	$$\xiG+4\xiV < 3\xiG+2+2\xiV-0.0114.$$
+If there are three flats, we have
+	$$\xiG+4\xiV+0.0114.$$
+This completes the justification of the penalties in Diagram 4.1.
+
+
+\subhead 4.4. Dihedral angles\endsubhead
+
+We gave in Section 4.1 the possible decompositions of a standard cluster
+into smaller pieces.  We give lower an upper bounds in this Section
+on the dihedral angles at each vertex of each of the smaller pieces.
+
+We divide the edges into 6 categories, 0--6. In 0--3 it is assumed
+that neither endpoint of the edge is the endpoint $v$ of an upright
+diagonal $(0,v)$.  In 4--6 we assume that one of the endpoints is
+the endpoint of an upright diagonal.
+
+0.  The edge has length $[2,2.51]$.  
+
+1.  The edge has length $[2.51,2\sqrt2]$.
+
+2.  The edge has length $\ge2.51$.
+
+3.  The edge has length $\ge2\sqrt2$.
+
+4.  The edge has length $[2,2.51]$.
+
+5.  The edge has length $\ge2.51$.
+
+The categories are not exclusive.  In general we consider an
+edge as belonging to the most restrictive category that the information
+of the diagrams of 4.1 permit us to conclude that it lies in.
+
+The following chart summarizes the bounds.  The dihedral angle is
+computed along the first edge.
+
+$$
+\matrix 
+y_5  & y_6 & y_4 & \dih_{\min} & \dih_{\max} \\
+%	(* first section 5&6 short. *)
+    0&0&1&1.153&2.28\\
+    0&0&3&1.32&2\pi\\
+% 
+%   (* second section 5 short& 6 long *)
+    0&1&0&0.633&1.624\\
+    0&1&1&1.033&1.929\\
+    0&1&2&1.033&2\pi\\
+    0&1&3&1.259&2\pi\\
+% 
+%   (* 5 long& 6 short *)
+    1&0&0&0.633&1.624\\
+    1&0&1&1.033&1.929\\
+    1&0&2&1.033&2\pi\\
+    1&0&3&1.259&2\pi\\
+%
+%   (* 5 long& 6 long *)
+    1&1&0&0.817&1.507\\
+    1&1&1&1.07&1.761\\
+    1&1&2&1.07&2\pi\\
+    1&1&3&1.23&2\pi\\
+%
+%   (* upright diagonal& 5 drawn& 6 drawn *)
+    4&4&0&0.956&2.184\\
+    4&4&1&1.23&\pi\\
+    4&4&2&1.23&\pi\\
+    4&4&3&1.416&\pi\\
+%
+%   (* upright diagonal at vertex 3& 5 drawn *)
+    4&0&4&0.633&1.624\\
+    4&0&5&1.033&2\pi\\
+    4&1&4&0&1.381\\
+    4&1&5&0.777&2\pi\\
+%
+%   (* upright diagonal at vertex 2& 6 drawn *)
+    0&4&4&0.633&1.624\\
+    0&4&5&1.033&2\pi\\
+    1&4&4&0&1.381\\
+    1&4&5&0.777&2\pi.
+\endmatrix
+$$
+
+
+\subhead 4.5. Other inequalities \endsubhead
+
+A number of other inequalities hold on the various smaller pieces of
+the decomposition of standard clusters into the finer pieces
+described in Section 4.2.
+
+
+\subhead Flat Quarters \endsubhead
+The following inequalities hold for flat quarters.
+In these inequalities
+$$\sigma = \cases \mu&\text{flat quarter in the Q-system}\\
+				  \vor_0&y_1\ge2.2,\\
+				  \vor_0-0.0114&y_1\le2.2,\\
+	\endcases
+$$
+and $\tau_\sigma = \sol\zeta\pt-\sigma$.
+The fourth edge is the diagonal.
+
+$$
+\align
+- \dih_2& + 0.35 y_2 - 0.15 y_1 - 0.15 y_3 + 0.7022 y_5 - 0.17 y_4 > -0.0123,\\
+- \dih_3& + 0.35 y_3 - 0.15 y_1 - 0.15 y_2 + 0.7022 y_6 - 0.17 y_4 > -0.0123,\\
+\dih_2& - 0.13 y_2 + 0.631 y_1 + 
+	   0.31 y_3 - 0.58 y_5 + 0.413 y_4 + 0.025 y_6 > 2.63363,\\
+\dih_3& - 0.13 y_3 + 0.631 y_1 + 
+	   0.31 y_2 - 0.58 y_6 + 0.413 y_4 + 0.025 y_5 > 2.63363,\\
+-\dih_1& + 0.714 y_1 - 0.221 y_2 - 0.221 y_3 + 
+	   0.92 y_4 - 0.221 y_5 - 0.221 y_6 > 0.3482,\\
+\dih_1& - 0.315 y_1 + 0.3972 y_2 + 0.3972 y_3 - 
+	   0.715 y_4 +  0.3972 y_5 + 0.3972 y_6 > 2.37095,\\
+- \sol& - 0.187 y_1 - 0.187 y_2 - 
+	   0.187 y_3 + 0.1185 y_4 + 0.479 y_5 + 0.479 y_6 > 0.437235,\\
+\sol& + 0.488 y_1 + 0.488 y_2 + 
+	   0.488 y_3 - 0.334 y_5 - 0.334 y_6 > 2.244,\\
+- \sigma& - 0.145 y_1 - 0.081 y_2 - 0.081 y_3 - 
+		0.133 y_5 - 0.133 y_6 > -1.17401,\\
+\sigma& + 0.153 y_4 + 0.153 y_5 + 0.153 y_6 < 1.05382,\\
+\sigma& < 0.00005\\
+\tau_\sigma& > 1.189 \,\pt.
+\endalign
+$$
+
+\subhead Upright Quarters \endsubhead
+
+In the following equations, the simplex is an upright quarter.
+The first edge is the diagonal.
+
+$$
+\align
+ \dih_1& - 0.636 y_1 + 0.462 y_2 + 0.462 y_3 - 0.82 y_4 + 0.462 y_5 + 
+ 0.462 y_6 > 1.82419,\\
+ - \dih_1& + 0.55 y_1 - 0.214 y_2 - 0.214 y_3 + 1.24 y_4 - 0.214 y_5 
+ - 0.214 y_6 > 0.75281,\\
+ \dih_2& + 0.4 y_1 - 0.15 y_2 + 0.09 y_3 + 0.631 y_4 - 0.57 y_5 + 0.23 y_6
+  > 2.5481,\\
+ - \dih_2& - 0.454 y_1 + 0.34 y_2 + 0.154 y_3 - 0.346 y_4 + 
+0.805 y_5 > -0.3429,\\
+ \dih_3& + 0.4 y_1 - 0.15 y_3 + 0.09 y_2 + 0.631 y_4 - 0.57 y_6 + 0.23 y_5 
+  > 2.5481,\\
+ - \dih_3& - 0.454 y_1 + 0.34 y_3 + 0.154 y_2 - 0.346 y_4 + 
+0.805 y_6 > -0.3429,\\
+ \sol& + 0.065 y_2 + 0.065 y_3 + 0.061 y_4 - 0.115 y_5 - 
+0.115 y_6 > 0.2618,\\
+ - \sol& - 0.293 y_1 - 0.03 y_2 - 0.03 y_3 + 0.12 y_4 + 
+0.325 y_5 + 0.325 y_6 > 0.2514,\\
+ -\nu& - 0.0538 y_2 - 0.0538 y_3 -0.083 y_4 - 0.0538 y_5 - 
+0.0538 y_6 > -0.59834,\\
+ \nu& \le 0,\\
+ \tau_\nu& - 0.5945 \,\pt > 0.\\  % (* part4sec2.cc:527,528 *)
+\endalign
+$$
+
+We also include in this group, the inequalities IV.$A_2$, IV.$A_3$
+for upright quarters.
+
+\subhead Miscellaneous Inequalities\endsubhead
+
+Depending on the types of the edges $y_5$, $y_6$, $y_4$, there
+are additional inequalities that hold on the simplices in
+the decomposition of Section 4.2.  We list the types of
+the edges $y_5$, $y_6$, $y_4$ as a triple $(a,b,c)$ and
+then list the additional inequalities that hold.
+
+$$\align
+(0, 0, 3)&\quad 
+\dih-0.372 y_1 +0.465 y_2 +0.465 y_3 + 0.465 y_5 + 0.465 y_6 >4.885,\\ 
+%
+%
+(0, 1, 1)&\quad 
+0.291 y_1 -0.393 y_2 -0.586 y_3 +0.79 y_4 -0.321 y_5 -0.397 y_6 -\dih  
+	<  -2.47277,\\
+%
+(0, 1, 2)&\quad 
+0.291 y_1 -0.393 y_2 -0.586 y_3 +0. y_4 -0.321 y_5 -0.397 y_6 -\dih  
+	<  -4.45567,\\
+%
+(0, 1, 3)&\quad  
+0.291 y_1 -0.393 y_2 -0.586 y_3 +0. y_4  -0.321 y_5 -0.397 y_6 -\dih  
+	<  -4.71107,\\
+%
+(1, 0, 1)&\quad 
+0.291 y_1 -0.586 y_2 -0.393 y_3 +0.79 y_4 -0.397 y_5 -0.321 y_6 -\dih  
+	<  -2.47277,\\
+%
+(1, 0, 2)&\quad 
+0.291 y_1 -0.586 y_2 -0.393 y_3 +0. y_4 -0.397 y_5 -0.321 y_6 -\dih  
+	< -4.45567,\\
+%
+(1, 0, 3)&\quad 
+0.291 y_1 -0.586 y_2 -0.393 y_3 +0. y_4  -0.397 y_5 -0.321 y_6 -\dih  
+	< -4.71107,\\
+%
+%
+(1, 1, 0)&\quad 
+\tau_x -2.518 pt > 0,\\
+	&\quad \sigma_x +1.03 pt < 0,\\ 
+	&\quad - \sol -0.492 y_1 - 0.492 y_2 -0.492 y_3 +0.43 y_4 +0.038 y_5+0.038 y_6 
+	> -2.71884,\\
+	&\quad - \sigma_x -0.058 y_1 -0.105 y_2  -0.105 y_3 -0.115 y_4 -0.062 y_5 -0.062 y_6
+		> -1.02014 ,\\
+	&\quad 0.115 y_1 -0.452 y_2  -0.452 y_3 +0.613 y_4 -0.15 y_5 -0.15 y_6 -\dih  < -2.177,\\
+%
+(1, 1, 1)&\quad 
+0.115 y_1 -0.452 y_2 -0.452 y_3 +0.618 y_4 -0.15 y_5 -0.15 y_6 -\dih  < -2.17382,\\
+%
+(1, 1, 2)&\quad 
+0.115 y_1 -0.452 y_2 -0.452 y_3 +0. y_4 -0.15 y_5 -0.15 y_6 -\dih < -3.725,\\
+%
+(1, 1, 3)&\quad 
+0.115 y_1 -0.452 y_2 -0.452 y_3 +0. y_4 -0.15 y_5 -0.15 y_6 -\dih < -3.927,\\
+%
+(4, 4, 1)&\quad \sigma_x < 0\\
+&\quad 0.47 y_1 -0.522 y_2 -0.522 y_3 +0.812 y_4 -0.522 y_5 -0.522 y_6 -\dih  < -2.82998,\\
+%
+(4, 4, 2)&\quad 
+0.47 y_1 -0.522 y_2 -0.522 y_3 +0. y_4 -0.522 y_5 -0.522 y_6 -\dih  
+		< -4.8681,\\
+%
+(4, 4, 3)&\quad 
+0.47 y_1 -0.522 y_2 -0.522 y_3 +0. y_4 -0.522 y_5  -0.522 y_6 -\dih  
+		< -5.1623,\\
+%
+(4, 0, 5)&\quad 
+-0.4 y_3 +0.15 y_1 -0.09 y_2 -0.631 y_6-0.23 y_5-\dih < -3.9788,\\
+%
+(4, 1, 4)&\quad 
+0.289 y_1 -0.148 y_2 -1.36 y_3 +0.688 y_4 -0.148 y_5 -1.36 y_6 -\dih  
+	< -6.3282,\\
+%
+(4, 1, 5)&\quad 
+0.289 y_1 -0.148 y_2 -0.723 y_3 -0.148 y_5 -0.723 y_6 -\dih  
+	< -4.85746,\\
+%
+(0, 4, 5)&\quad  
+-0.4 y_2 +0.15 y_1 -0.09 y_3 -0.631 y_5-0.23 y_6-\dih < -3.9788,\\
+%
+(1, 4, 4)&\quad  
+0.289 y_1 -1.36 y_2 -0.148 y_3 +0.688 y_4 -1.36 y_5 -0.148 y_6 -\dih  
+	< -6.3282,\\
+%
+(1, 4, 5)&\quad 
+0.289 y_1 -0.723 y_2 -0.148 y_3 +0. y_4 -0.723 y_5 -0.148 y_6 -\dih  < -4.85746,\\
+%
+\endalign
+$$
+
+
+
+\subhead 4.6. Variable relations\endsubhead
+
+We are now ready to describe an augmentation of the linear programs
+that were presented in Section 3.5 to reduce to 180 cases.
+
+Take the decompositions of Section 4.1 and generate all the
+decompositions that can be obtained from them by the action
+of the dihedral group on the vertices.  This gives
+$n_5$ pentagonal cases $\Cal P_5$, $n_6$ hexagonal cases $\Cal P_6$,
+$n_7$ heptagonal case $\Cal P_7$, and $n_8$ octagonal cases
+$\Cal P_8$.  
+
+For each of the 180 planar maps that remain, and for each
+exceptional region of that planar map with $n$ sides, and a
+case $p$ in $\Cal P_n$, we associate a new linear program.
+
+For each face $F$ in $p$, introduce new variables 
+$\sol_F$, $\sigma_F$, $\dih_{F,i}$, where $i$ indexes the
+vertices of $F$.  Let $n(F)$ be the number of vertices of $F$.
+These variables are related to the previous variables by the
+linear inequalities
+	$$
+	\align
+	\sol_F &= -(n(F)-2)\pi + \sum \dih_{F,i} \\
+	\dih_i &= \sum_F \dih_{F,i},\\
+	2\pi &= \sum_F\dih_{F,i},\\
+	\sigma &\le \sum_{F,i}+\pi_0.
+	\endalign
+	$$
+Here $\sigma$ is a variable representing the score of the standard
+region and $\pi_0$ is a constant giving the penalty.
+The sum of the dihedral angles at a vertex $i$ is $\dih_i$, the
+dihedral angle of the standard region at $i$, if $i$ indexes
+a vertex of the standard region.  The sum is $2\pi$, if $i$
+indexes an enclosed upright diagonal.
+
+For each $F$, we add the inequalities giving bounds on the
+dihedral angles from Section 4.4, and all the relevant
+inequalities relating edge lengths, scores, solid angles, and
+dihedral angles from Section 4.5.  The inequalities selected depend
+on the particularities of $F$.  
+
+If the region $F$ is scored by $\vor_0$, we also add the inequalities
+of III.A for $\vor_0$.  Recall that $\vor_0$ is defined by
+a formula of the form (F.3.7)
+$$\vor_0 =\sol\phi_0 +\sum \Adih - \sum 4\doct\quo.$$
+$\phi_0$ is a constant.  We introduce a new variable $\Adih$
+for each vertex of $F$ and two new variables $\quo$ for each edge
+between adjacent vertices (one for each Rogers simplex along the
+edge).  These variables are subject to the collection of linear
+inequalities of III.A.4.
+
+To write down the linear inequalities from III.A.4 for $\Adih$,
+it is necessary to have bounds on the heights of vertices and on
+the dihedral angles of $F$.  The LP-bounds on these variables
+are used for these bounds.
+
+The bound on the score of an octagonal cluster is $-4.12\,\pt$
+(See IV.4.4).  Change {\tt scoreFace[7]=-3.09, scoreFace[8]=-4.12}.
+
+Information about the internal structure of a exceptional cluster
+gives improvements to 
+the vertex adjustments $1.4\,\pt$ and $1.5\,\pt$.
+The vertex adjustments contribute to the bound on the score
+through the bound
+$$\sum_{j=1}^4 \hbox{\tt squanderFace}[f_j]+\sum_{i=1}^k
+	\hbox{\tt vertexAdjustment}[a_i]\tag 4.6.1$$
+from Section 2.3.  Assume that 
+at the vertex $v$ there are has four tetrahedra
+and an exceptional, and that the exceptional cluster has a
+flat quarter whose first edge lies along $(0,v)$. 
+The 
+calculations of Section 2.8 show that
+the four quarters and exceptional squander at least $1.5\,\pt$.
+If we know that there is no flat quarter (masked or unmasked)
+whose first edge lies along $(0,v)$, then the four quasi-regular
+tetrahedra at $v$ squander at least $1.5\,\pt$.
+These are stronger inequalities than those used in Section 2.3,
+because the adjustment is spread over a small region.
+We can make similar improvements in {\tt vertexAdjustment[3]}.
+
+
+If the planar map has more than one exceptional cluster, then the
+weak bounds described in Section 3.5 are to be used on the other
+exceptional clusters.
+
+The LP problem in Section 3.5 has been augmented by all these
+additional inequalities.  New linear programming bounds are obtained
+by running these in all possible cases.  All but 67 
+planar maps gave LP bounds
+under $8\,\pt$.  (For each planar map that remains, often a number
+of different patterns in $\Cal P_n$ lead to an LP-bound over $8\,\pt$.)
+The 67 remaining planar maps are
+
+
+
+{\obeylines
+\parskip=0pt
+\parindent=0pt
+\hbox{}
+
+(pentagon)=$\{45, 365, 374, 380, 383, 384, 577, 599, 603, 604, 607, 649,$ 
+\quad\quad $651, 658, 661, 663, 670, 882, 893, 895, 896, 914, 947, 951,$
+\quad\quad $953, 957, 993, 997, 1140, 1310, 1338, 1405, 1438, 1442, 1445, 1451,$
+\quad\quad $1454, 1588, 1590, 1894, 2003, 2011, 2016, 2034, 2246, 2268,%
+2300, 2302\}$ (48 cases)
+(hexagon)= $\{59,70,129,131,146,248,250,256,296,$
+\hfill\quad\quad$302,303,310,368,385\}$ (14 cases)
+(heptagon)=$\{27,36,46,75\}$ (4 cases)
+(octagon)=$\{14\}$ (1 case)
+
+}
+
+The numbers are consistent with the numbering in the archive \cite{H1}
+
+\subhead 4.7. Octagons \endsubhead
+
+All but one case is under $8\,\pt$.  It is (oct\#14).  The octagon
+has two flat quarters.  The planar map and the decomposition of
+the octagonal cluster are shown ($p(21)\in\Cal P_8$).
+
+\smallskip
+\gram|2|4.7|diag47.ps|
+\smallskip
+
+The LP-bounds on the heights gives\footnote"*"{These numbers
+need to be rechecked. The argument in my scratch paper was done
+by a somewhat different method.}
+	$$
+\align
+y_2&\le 2.123,\quad y_6\le 2.119,\quad y_5\le 2.123,\quad\\
+		y_{12}&\le 2.109,\quad y_{13}\le 2.217,\le y_{10}\le 2.109.
+\endalign
+$$
+Let $\dih_{F,i}$ denote the dihedral angle along $(0,v_i)$ of the
+hexagonal subcluster determined by the corners $i=2,6,5,12,13,10$.
+The linear programming bounds on the variables $\dih_{F,i}$
+are
+$$
+\align
+\dih_{F,2}&\in[1.32,1.706],\quad
+\dih_{F,6}\in[3.78,3.94],\quad
+\dih_{F,5}\in[1.32,1.706],\quad\\
+\dih_{F,12}&\in[1.26,1.642],\quad
+\dih_{F,13}\in[4.96,5.097],\quad
+\dih_{F,20}\in[1.26,1.642].
+\endalign
+$$
+With these new bounds on $y_i$ and $\dih_{F,i}$, we revise the linear
+inequalities on $\Adih_{F,i}$ from III.A.4.  The LP-bound is now
+$<8\,\pt$.  
+
+This argument gives improved bounds on $\Adih$ by determining
+new LP-bounds on the $y_i$ and $\dih_{F,i}$ variables and using
+these new bounds in the inequalities constraining $\Adih$.  We
+will make use of this argument several times.  We refer to this
+procedure as {\it updating the $\Adih$ variables}.  Improvements
+in the bounds on $\Adih_{F,i}$ are possible in this way because 
+$\Adih$ is a nonlinear function of $y_i$ and $\dih_{F,i}$.
+
+\smallskip
+
+\head 5.  Heptagons\endhead
+
+\subhead 5.1. Cases\endsubhead
+
+There are four planar maps that have an LP-bound over $8\,\pt$.
+If we include the various internal structures $c$ of the heptagon,
+there are 10 cases in all.
+The cases $(n,c)=(27,3),(46,13),(46,21)$ drop under $8\,\pt$
+when we update the $\Adih$ variables. This leaves 7 cases.
+We show the planar maps and the possible positions of the flat quarters.
+
+\gram|6|5.1|diag51.ps|
+
+
+\subhead 5.2. $(n,c)=(36,7)$\endsubhead
+
+For the case $(n,c)=(36,7)$, we use a branch and bound approach.
+The set of inequalities A.5.2 hold for a quasi-regular tetrahedron
+satisfying $y_4+y_5+y_6\le 6.25$.  
+$$
+\align
+\sol& + 0.377076 y_1 + 0.377076 y_2 + 0.377076 y_3 - 0.221 y_4 - 
+	 0.221 y_5 - 0.221 y_6 > 1.487741,\\
+ -\sol&+ 0.221 y_4 + 0.221 y_5 + 0.221 y_6   > 0.76822,\\
+\dih_1& + 0.34 (y_2 + y_3) - 0.689 y_4 + 0.27 y_5 + 0.27 y_6  > 2.29295,\\
+\dih_2& + 0.34 (y_1 + y_3) - 0.689 y_5 + 0.27 y_4 + 0.27 y_6  > 2.29295,\\
+\dih_3& + 0.34 (y_1 + y_2) - 0.689 y_6 + 0.27 y_4 + 0.27 y_5  > 2.29295,\\
+ - \dih_1& + 0.498 y_1 + 0.731 y_4 - 0.212 (y_5 + y_6)  > 0.37884,\\
+ - \dih_2& + 0.498 y_2 + 0.731 y_5 - 0.212 (y_4 + y_6)  > 0.37884,\\
+ - \dih_3& + 0.498 y_3 + 0.731 y_6 - 0.212 (y_4 +y_5)  > 0.37884,\\
+ - \sigma& - 0.109 (y_1 +y_2 +y_3) - 0.14135 y_4 - 
+         0.14135 y_5 - 0.14135 y_6  > -1.5574737,\\
+ - \sigma& - 0.419351 \sol - 0.2 (y_1 +y_2 +y_3) 
+	- 0.048 (y_4 +y_5 +y_6) > -1.77465,\\
+ \tau& - 0.0845696 (y_1 +y_2 +y_3) 
+	- 0.163 (y_4 +y_5 + y_6)  > -1.48542.\\
+ &y_4 +y_5 +y_6 \le 6.25,\\
+\endalign
+$$
+
+The following inequalities hold if
+$y_4+y_5+y_6\ge6.25$.  
+$$\align
+\sol& + 0.378 (y_1 + y_2 + y_3) 
+	- 0.1781 (y_4 +y_5 + y_6)  > 1.761445,\\
+- \sol& - 0.171 (y_1+y_2+y_3) 
+	+ 0.3405 (y_4 + y_5 + y_6)  > 0.489145,\\
+- \sigma& - 0.1208 (y_1 + y_2 + y_3) 
+	- 0.0781 (y_4+y_5+y_6)  > -1.232965,\\
+- \sigma& - 0.419351 sol - 0.2 (y_1 + y_2 +y_3) 
+	+ 0.0106 (y_4 + y_5 + y_6)  > - 1.40816,\\
+&y_4 +y_5 +y_6  \ge 6.25.\\
+\endalign
+$$
+
+These two sets of inequalities are small
+modifications of those in III.A.6.  We pick the quasi-regular
+tetrahedra
+	$$\{1,2,3,4,11,12,14,15,16,17\}.$$
+Divide the domain into $2^{10}$ parts by imposing the
+constraint $y_4+y_5+y_6\le6.25$ on some of the 10 quasi-regular
+tetrahedra, and $y_4+y_5+y_6\ge6.25$ on the rest of the 10.
+Depending on which constraint is picked, we add to the LP-problem
+(described in Section 4.6) the inequalities in the first or
+second set.  The
+LP-bound on the score is less than $8\,\pt$ in every case.
+
+\subhead 5.3. The case $(n,c)=(46,27)$\endsubhead
+
+In this case there are 3 flat quarters 
+$$(0,v_1,v_5,v_6),\quad (0,v_2,v_6,v_7),\quad (0,v_{10},v_5,v_{11}).$$
+
+\proclaim{Lemma} $|v_6-v_{11}|\le 2\sqrt2$.
+\endproclaim
+
+\demo{Proof}  We have LP-bounds $\dih_5\le 1.68$,
+$\dih_7\le 1.715$, $y_5+y_6+y_{11}\le 6.28$, 
+$y_7+y_6+y_{11}\le 6.28$, $y_{6,7}+y_{7,11}\le 4.94$.
+
+We have $\LPmin(\sigma_F)>-4.632\,\pt$, where
+$\sigma_F$ denotes the score ($\vor_0$) of 
+the simplex $(0,v_5,v_{11},v_7,v_6)$.
+
+We have the interval calculation  bound
+	$|v_6-v_{11}|\le 3.22$.
+If $|v_6-v_{11}|\ge2\sqrt2$, then interval calculations give
+the contradiction
+$$
+\align
+-4.632\,\pt&<\sigma_F\le \vor_0(0,v_6,v_7,v_{11})+
+	\vor_0(0,v_5,v_6,v_{11})\\
+ 		&<-1.52\,\pt -3.51\,\pt<-4.632\,\pt.
+\endalign
+$$
+\qed
+\enddemo
+
+We draw the edge $(v_6,v_{11})$.
+Suppose that there are no penalties.  We follow the approach of
+Section 4.6 using penalty $\pi_0=0$ and the decomposition of
+the heptagonal cluster shown in the first frame of the diagram.
+
+\smallskip
+\gram|1.5|5.3|diag53.ps|
+\smallskip
+
+The LP-bound is still over $8\,\pt$.  If we combine this
+with the branch and bound method described in Section 5.2 for the
+10 quasi-regular tetrahedra
+	$$\{1,2,3,4,5,6,9,10,14,15\},$$
+then the LP-bounds are in all $2^{10}$ under $8\,\pt$.
+
+Now suppose that there is an upright diagonal that cannot be erased
+without incurring penalties.  The 5-anchor cases were treated in
+Section 3.11, so we assume it has only four anchors.  We claim that
+there is no upright diagonal with context $(4,2)$.  Such would
+score 
+$$t_7 + \ZLP(4,2)-Z(4,2)= -0.171-0.2+0.1141< \LPmin(\sigma_F).$$
+
+The only context that is possible is $(4,1)$.
+One possibility is shown.  There is one masked flat quarter,
+$(0,v_5,v_6,v_7)$.
+Its LP-bound is $<8\,\pt$.
+
+We claim that there is no other way to arrange the anchors.  If
+there are at least 4 anchors and an anchor crosses the edge
+$(v_4,v_7)$ then there are 5-anchors, contrary to assumption.  Similarly,
+if an anchor crosses $(v_4,v_5)$ and $(v_5,v_7)$, there are five anchors.
+If there is an upright diagonal over 
+$(v_1,v_5,v_{10},v_{11},v_6)$, the context $(4,2)$ is created.
+Thus, the case shown was the only remaining possibility.
+
+\subhead 5.4.  Remaining cases\endsubhead
+
+The cases $(n,c)=(27,7),(27,15),(75,2),(75,7),(75,11)$ need
+to be filled in.
+
+\head 6. Hexagons\endhead
+
+\subhead 6.1. Quad clusters\endsubhead
+
+There are 67 planar maps in Section 4.6 that require further attention.
+14 of them are on the list of planar maps containing a hexagonal
+standard region.  The 14 are (hex\#n), 
+$$n= 59,70,129,131,146,248,250,256,296,302,303,310,368,385.$$
+
+There is a quad cluster in each of the planar maps (hex\#n),
+$$n=129,250,256,368.$$  III.A.1--III.A.4 describes four types of quad
+clusters and derives various inequalities for each type.  The
+four types are the octahedron, a pair of flat quarters with diagonal
+between two opposite corners of the quad cluster, a pair of
+flat quarters with diagonal between the other two opposite corners
+of the quad cluster, and a $\vor_0$-scored quad with both diagonals
+$\ge2\sqrt2$.
+
+For each of the 4 planar maps, for each decomposition of the
+hexagon that gave a bound over $8\,\pt$, and for each type of
+quad cluster, we determine an LP-bound on the score.
+The linear program combines the
+inequalities of 4.6 with the inequalities adapted to the type
+of quad cluster from Section III.A.1--III.A.4.  
+In each case the LP-bound
+is $8\,\pt$.
+
+\subhead 6.2\endsubhead
+
+There are ten more cases to be treated
+	$$n=59,70,131,146,248,296,302,303,310,385.$$
+
+\head 7. Pentagons\endhead
+
+This section still needs to be written.  Treat the final $48$
+cases here.
+
+
+\vfill\eject
+%\baselineskip=0.9\baselineskip
+\parskip=0.2\parskip
+\head References\endhead
+
+\noindent
+[F] S. Ferguson, T. Hales, A Formulation of the Kepler
+    Conjecture, preprint
+
+\noindent
+[I] Thomas C. Hales, Sphere Packings I,
+    Discrete and Computational Geometry, 17 (1997), 1-51.
+
+\noindent
+[II] Thomas C. Hales, Sphere Packings II,
+    Discrete and Computational Geometry, 18 (1997), 135-149.
+
+\noindent
+[III] Thomas C. Hales, Sphere Packings III, preprint.
+
+\noindent
+[IV] Thomas C. Hales, Sphere Packings IV, preprint.
+ 
+\noindent
+[V] S. Ferguson, Sphere Packings V, thesis, University of Michigan,
+    1997.
+
+\noindent
+[H1] Thomas C. Hales, Packings, \hfill\break
+    \hfill{\tt http://www.math.lsa.umich.edu/\~%
+    \relax hales/packings.html}
+
+[H2] Thomas C. Hales, Remarks on the Density of Sphere Packings,
+        Combinatorica, 13 (2) (1993) 181-197.
+
+ 
+
+\newpage
+
+\head Appendix. Calculations\endhead
+
+Interval calculations are arranged according to the section
+in which they appear.
+Each inequality is accompanied by one or more reference numbers.
+These identification numbers are needed to find further details
+about the calculation in \cite{H1}.
+Some of these inequalities were checked numerically
+using a nonlinear
+optimization package {\tt cfsqp}
+\footnote"*"{\tt \quad www.isr.umd.edu/Labs/CACSE/FSQP/fsqp.html}
+I thank the University of Maryland
+for this software.
+
+  Edge lengths whose bounds are not specified are assumed
+to be between 2 and $2.51$.  The first edge of an upright
+quarter is its diagonal.  The fourth edge of a flat
+quarter is its diagonal.
+
+\def\refno#1{\hfill {\tt (#1)}}
+\parindent=0pt
+
+\footnote""{\it The results of this paper depend on
+various unverified inequalities listed in this appendix.
+It is expected that they will be verified by computer
+with interval arithmetic.}
+
+
+
+\subhead Section A.2.5\endsubhead
+
+$\dih>1.32$, if $y_4=2\sqrt{2}$.\refno{814398901}
+
+$\tau>3.07\,\pt$, 
+	if a flat quarter satisfies $\eta_{234},\eta_{456}\le\sqrt2$,
+	$\dih\le1.32$.
+	\refno{786190957}
+
+$\tau_V>3.07\,\pt$,
+	if a flat quarter satisfies $\eta_{456}\ge\sqrt2$,
+	$\dih\le1.32$.
+	\refno{369969833}
+
+$\tau_V>3.07\,\pt$,
+	if a flat quarter satisfies $\eta_{234}\ge\sqrt2$,
+	$\dih\le1.32$.
+	\refno{672373996}
+
+$\tau_0>3.07\,\pt$,
+	if a flat quarter satisifies $y_4\ge2.6$,
+	$\dih\le1.32$.
+	\refno{440293318}
+
+$\tau_0>3.07\,\pt$,
+	if a flat quarter satisifies $\eta_{456}\ge\sqrt2$,
+	$\dih\le1.32$.
+	\refno{50759223}
+
+\subhead Section A.2.7%
+\footnote"*"
+{Some penalties and adjustments may need to be added to 2.7 and 2.8.}
+\endsubhead
+
+In Sections A.2.7 and A.2.8,
+let $S_1,\ldots,S_5$ be 5 simplices arrranged around a common
+edge $(0,v)$, with $|v|\in[2,2.51]$.   Let $y_i(S_j)$ be the
+edges, with $y_1(S_j)=|v|$ for all $j$, and $y_3(S_j)= y_2(S_{j+1})$,
+where the subscripts $j$ are extended modulo 5.
+In Sections A.2.7 and A.2.8, $\sum\dih(S_j)\le2\pi$.
+
+$\tau(S_1)+\tau(S_2)+\tau(S_4) > 1.4\,\pt$, 
+	if $y_4(S_3),y_4(S_5)\ge2\sqrt2$.
+	\refno{551665569}
+
+$\tau(S_1)+\tau(S_2)+\tau(S_3) > 1.4\,\pt$,
+	if $y_4(S_4),y_4(S_5)\ge2\sqrt2$.
+	\refno{824762926}
+
+$\tau(S_1)+\tau(S_2)+\tau_0(S_3) +\tau(S_4)> 1.4\,\pt
+	+1.189\,\pt$,
+	if $y_4(S_4)\in[2.6,2\sqrt2]$, 
+	$y_4(S_5)\ge2.51$, $\dih(S_5)>1.32$,
+	\refno{860887659}
+
+$\tau(S_1)+\tau(S_2)+\tau_\mu(S_3) +\tau(S_4)> 1.4\,\pt
+	+1.189\,\pt$,
+	if $y_4(S_4)\in[2.51,2\sqrt2]$,  
+	$y_4(S_5)\ge2.51$, $\dih(S_5)>1.32$.
+	\refno{520708192}
+
+$\tau(S_1)+\tau(S_2)+\tau(S_3) +\tau_0(S_4)> 1.4\,\pt
+	+1.189\,\pt$,
+	if $y_4(S_4)\in[2.6,2\sqrt2]$,  
+	$y_4(S_5)\ge2.51$, $\dih(S_5)>1.32$.
+	\refno{812812040}
+
+$\tau(S_1)+\tau(S_2)+\tau(S_3) +\tau_\mu(S_4)> 1.4\,\pt
+	+1.189\,\pt$,
+	if $y_4(S_4)\in[2.51,2\sqrt2]$,  
+	$y_4(S_5)\ge2.51$, $\dih(S_5)>1.32$.
+	\refno{400364383}
+
+
+\subhead Section A.2.8\endsubhead
+
+$\tau(S_1)+\tau(S_2)+\tau(S_3) +\tau(S_4)> 1.5\,\pt$,
+	if $y_4(S_5)\ge\sqrt2$.
+	\refno{325738864}
+
+
+$\tau(S_1)+\tau(S_2)+\tau(S_3) +\tau(S_4)+\tau_\mu(S_5)> 1.5\,\pt
+	+1.189\,\pt$,
+	if $y_4(S_5)\in[2.51,2\sqrt2]$.
+	\refno{248940660}
+
+
+$\tau(S_1)+\tau(S_2)+\tau(S_3) +\tau(S_4)+\tau_0(S_5)> 1.5\,\pt
+	+1.189\,\pt$,
+	if $y_4(S_5)\in[2.7,2\sqrt2]$.
+	\refno{440713588}
+
+$\tau(S_1)+\tau(S_2)+\tau(S_3) +\tau(S_4)+\tau_0(S_5)> 1.5\,\pt
+	+1.189\,\pt$,
+	if $y_4(S_5)\in[2.6,2\sqrt2]$, $y_1\in[2.2,2.51]$.
+	\refno{306125712}
+
+
+\subhead Section A.3.1\endsubhead
+
+$\tau - 0.2529\dih > -0.3442$,
+	if $y_1\in[2,2.51]$, and $\dih\ge1.51$.
+	\refno{718074849}
+
+$\tau_0  - 0.2529\dih > -0.1747$,
+	if $y_1\in[2.3,2.51]$, $y_6\in[2\sqrt2,3.02]$, $1.26\le\dih\le 1.63$.
+	\refno{378662012}
+
+$\tau_0- 0.2529\dih > -0.2137$,
+	if $y_1\in[2.3,2.51]$, $y_6\in[2.51,3.02]$, $1.26\le\dih\le 1.63$.
+	\refno{465031274}
+
+$\tau_0 - 0.2529\dih > -0.1371$,
+	if $y_1\in[2.3,2.51]$, $y_5,y_6\in[2.51,3.02]$,
+	$1.14\le\dih\le 1.51$.
+	\refno{535502975}
+
+\subhead Section A.3.7\endsubhead
+
+$\dih>1.647$, if $y_2+y_3+y_5+y_6\le 8.57$, $y_4=2\sqrt2$.
+	\refno{181416564}
+
+$\dih<1.77$, if $y_4=2.51$, $y_5,y_6\ge2.51$.
+	\refno{59900722}
+
+$\dih< 1.23 + 0.7(y_4-2)$ if $y_5,y_6\ge 2.51$.
+	\refno{87586361}
+
+$\dih< 1.427$, if $y_1\in[2,2.28]$, $y_4=2.378$, $y_6\in[2.51,2.97]$.
+	\refno{707727501}
+
+$\dih< 1.356$, if $y_1\in[2,2.28]$, $y_4=2.378$, $y_5\in[2.51,3.16$],
+		$y_6\in[2.51,2.96]$.
+	\refno{523067541}
+
+$\dih<1.684$, if $y_1\in[2,2.28]$, $y_4=2\sqrt2$,
+	$y_5\in[2.51,2.97]$, $y_6\in[2.51,3.16]$.
+	\refno{405500141}
+
+$\dih<1.806$, if $y_1\le2.28$, $y_4=2\sqrt2$, $y_6\in[2.51,2.96]$.
+	\refno{711127690}
+
+$\vor_0 < -4.15\,\pt$, if $y_1\in[2.28,2.51]$,
+	$y_5\in[2.51,2.97]$, $y_4\in[2.51,2\sqrt2]$, $y_6\in[2.51,3.16]$.
+	\refno{422371452}
+
+$\vor_0< -1.19\,\pt$, if $y_1\in[2.28,2.51]$, $y_5\in[2.51,3.16]$,
+	$y_6\in[2.51,2.96]$.
+	\refno{66204488}
+
+$\vor_0 < -2.51\,\pt$, if $y_1\in[2.28,2.51]$, $y_4\in[2.51,2\sqrt2]$,
+		$y_5\in[2.51,2.96]$.
+	\refno{699970320}
+
+$\vor_0 < 0$, fi $y_1\in[2.28,2.51]$, $y_3\in[2.51,2.97]$.
+	\refno{548202396}
+
+
+
+
+
+
+
+\subhead Section A.3.8\endsubhead
+
+$\tau_0 > 0.2529\dih - 0.1452$, if $y_5,y_6\in[2.51,3.39]$,
+		$y_2,y_3\in[2,2.168]$.
+	\refno{323390408}
+
+$\tau_0 > 0.2529\dih - 0.29$, if $y_4\in[2.51,2\sqrt2$,
+	$y_5,y_6\in[2.51,3.39]$, $y_2,y_3\in[2,2.168]$.
+	\refno{429841465}
+
+$\dih<1.25$, if $y_1=y_4=2$, $y_5,y_6\ge 2.51$, $y_2,y_3\in[2,2.168]$.
+	\refno{152858738}
+
+$\dih< 1.61$, if $y_5,y_6\ge 2.51$, $y_2,y_3\in[2,2.168]$.
+	\refno{750126217}
+
+$\dih<1.16$, if $y_5,y_6\ge 2.51$, $y_4=2$, $y_2,y_3\in[2,2.168]$.
+	\refno{60314528}
+
+$\tau_0 > 0.02529 \dih - 0.1452$, if $y_2,y_3\in[2,2.168]$,
+		$y_4=2$, $y_5=2.51$, $\dih>0.68$.
+	\refno{334755730}
+
+$\dih < 0.84$, if $y_2,y_3\in[2,2.168]$, $y_4=2$, $y_5=2.51$,
+	and there is some $y_3'\in[2,2.168]$ such that
+	$\dih(S(y_1,y_2,y_3',y_4,y_5,y_6))\le 0.65$.
+	\refno{276313138}
+
+$\dih>1.38$, if $y_4=2\sqrt2$, $y_2\in[2,2.168]$.
+	\refno{777094391}
+
+$\dih>1.19$, if $y_4=2.51$, $y_1,y_2\in[2,2.168]$.
+	\refno{824874646}
+
+$\dih_2>0.8$, if $y_2\in[2,2.168]$, $y_1\in[2.51,2.57]$.
+	\refno{476071948}
+
+$\nu < 0.252\dih_2 - 0.24$, for all upright quarters.
+	\refno{131914556}
+
+\subhead Section A.3.9\endsubhead
+
+$\dih>1.78$, if 
+	$y_4=3.2$, $y_1\in[2.51,2\sqrt2]$, $y_2+y_3\le4.6$.
+	\refno{161665083}
+
+\subhead Section A.4.3\endsubhead
+
+$\nu < \vor_0$ if $y_1\in[2.6,2.69]$, $y_4\in[2.1,2.51]$.
+	\refno{835135186}
+
+\subhead Section A.4.4\endsubhead
+
+The bounds on the entries of Table 4.4 hold by interval
+calculations.
+	\refno{219414783}
+
+\subhead Section A.4.5\endsubhead
+
+There are three sets of inequalities in Section 4.5: flat
+quarters, upright quarters, miscellaneous inequalities.
+These hold by interval calculations.
+	\refno{249432024}, \refno{193857347}, \refno{413688513}
+
+
+\subhead Section A.5.3\endsubhead
+
+$\dih>1.715$, if $y_1+y_2+y_3\le6.28$, $y_5+y_6\le4.94$, $y_4=3.22$.
+	\refno{96077248}
+
+$\vor_0 < -3.51\,\pt$, if $y_4\in[2\sqrt2,3.22]$, $y_1+y_2+y_3\le 6.28$,
+	$y_5,y_6\in[2.51,2\sqrt2]$.
+	\refno{983938527}
+
+$\vor_0 < -1.52\,\pt$, if $y_4\in[2\sqrt2,3.22]$,
+	$y_1+y_2+y_3\le 6.28$, $y_5\in[2.51,2\sqrt2]$, $y_6\in[2,2.51]$,
+		$y_5+y_6\le4.94$.
+	\refno{648168371}
+
+
+\bye

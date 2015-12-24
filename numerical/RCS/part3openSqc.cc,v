@@ -1,0 +1,133 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@// @;
+
+
+1.1
+date	97.09.16.03.10.56;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@Sphere Packings III,
+numerical verification of Hypo 4.1 and 4.2
+This treats only the few cases requiring vorSqc instead of vorVc
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@#include <iomanip.h>
+#include <stdlib.h>
+#include "numerical.h"
+#include "constants.h"
+#include <math.h>
+
+class iter {
+    double* xmin;
+	double* xmax;
+	double* x;
+    int numiter,numargs,nconstr;
+    void (*func)(int numargs,int whichFn,double* x,double* ret,void*);
+    void (*constraintfunc)
+        (int numargs,int which,double* x,double* ret,void*);
+    iter(int);
+    ~iter();
+    };
+
+/* generic function */
+double dihC=0,dih2C=0,solC=0,constC=0,gamC=0;
+
+static void setConst(double d,double d2,double s,double c, double g)
+	{ 
+	dihC=d; dih2C=d2; solC=s; constC=c; gamC=g; 
+	}
+
+
+static double gv(double x1,double x2,double x3,double x4,double x5,
+	double x6,int type)
+	{
+	if (type) return vorVc(x1,x2,x3,x4,x5,x6);
+	else return vorSqc(x1,x2,x3,x4,x5,x6);
+	}
+
+int TYPE=0;
+static void sigdihsol(int numargs,int whichFn,double* x, double* ret,void*)
+	{
+	*ret = 
+	dihC*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])
+		  
+	+ dih2C*(dihedraly(x[1],x[0],x[2],x[4],x[3],x[5])+
+				dihedraly(x[1],x[6],x[2],x[7],x[3],x[8])
+		 )
+	+ solC*(solid(x[1],x[0],x[2],x[4],x[3],x[5])+
+			solid(x[1],x[6],x[2],x[7],x[3],x[8])
+			)
+	+ constC 
+	+ gamC*(gv(x[1],x[0],x[2],x[4],x[3],x[5],TYPE)+
+			gv(x[1],x[6],x[2],x[7],x[3],x[8],TYPE)
+			);
+	}
+
+iter::~iter() 
+	{ delete[] xmin; 
+	  delete[] xmax; 
+		delete[] x; }
+
+static void Constraint(int numargs,int whichFn,double* x,double* ret,void*)
+    {
+	switch (whichFn) {
+	case 1 : *ret = (x[3]-crossdiag(x)); break;
+	case 2 : *ret = 1.04*global::pt 
+	+ dihC*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])
+ 
+    + dih2C*(dihedraly(x[1],x[0],x[2],x[4],x[3],x[5])+
+                dihedraly(x[1],x[6],x[2],x[7],x[3],x[8])
+         )
+    + solC*(solid(x[1],x[0],x[2],x[4],x[3],x[5])+
+            solid(x[1],x[6],x[2],x[7],x[3],x[8])
+            )
+    + constC;
+		break;
+	}
+    }
+
+iter::iter(int ineqSwitch) {
+	numiter = 20; numargs = 9; nconstr=1;
+	xmin = new double[numargs];
+	xmax = new double[numargs];
+	x = new double[numargs];
+	constraintfunc = Constraint;
+	func = sigdihsol;
+	double zetapt = 0.1004445714270568;
+	double zetapt32 = 3.2*zetapt;
+	double pt = 0.0553736456684641;
+	int i;
+	for (i=0;i<numargs;i++) { xmin[i]=x[i]=2.0; xmax[i]=2.51; }
+	xmin[3]=global::sqrt8; xmax[3]=2.51*global::sqrt2;
+	double dihC,dih2C,constC,solC,gamC=-1;
+	int caseNumber = ineqSwitch/1000;
+
+	dihC = (caseNumber>=21  ? DD::array[caseNumber-21][1] 
+							: CC::array[caseNumber][2]);
+	dih2C =(caseNumber >=21 ? dihC : 0);
+	solC  =(caseNumber >=21 ? 0 : CC::array[caseNumber][0]);
+	constC=(caseNumber >=21 ? DD::array[caseNumber-21][0] 
+							: CC::array[caseNumber][1]);
+	gamC = -1;
+	TYPE = (ineqSwitch % 2);
+	if (TYPE) { nconstr=2; cout << "switching to vorVc" << endl; }
+
+	setConst(dihC,dih2C,solC,constC,gamC);
+	cout.precision(5);
+	cout << "parameters(d,d2,s,c,g) = "
+		<< dihC << " " << dih2C << " " << solC << " " << constC << " " <<
+		gamC << endl;
+	}
+@

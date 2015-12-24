@@ -1,0 +1,29 @@
+#Those still over 8pt: (pre-0.55 ineq. pre-full edge length ineq. )
+over8s={72, 121, 126, 127, 139, 143, 179, 351, 16, 41,
+        42, 58, 61, 69, 70, 114, 119, 124, 140, 147, 157, 177, 238, 309};
+
+// gleaned from cplexfinalsum.ln
+Problem 'CPLEX/Z/cplex.lp72' Primal - Optimal:  Objective =    5.1890195154e-01
+Problem 'CPLEX/Z/cplex.lp121' Primal - Optimal:  Objective =    5.0099112923e-01
+Problem 'CPLEX/Z/cplex.lp126' Primal - Optimal:  Objective =    5.1738026240e-01
+Problem 'CPLEX/Z/cplex.lp127' Primal - Optimal:  Objective =    5.3617685888e-01
+Problem 'CPLEX/Z/cplex.lp139' Primal - Optimal:  Objective =    5.1777699858e-01
+Problem 'CPLEX/Z/cplex.lp143' Primal - Optimal:  Objective =    5.1431970951e-01
+Problem 'CPLEX/Z/cplex.lp179' Primal - Optimal:  Objective =    5.0759485102e-01
+Problem 'CPLEX/Z/cplex.lp351' Primal - Optimal:  Objective =    5.0799730066e-01
+Problem 'CPLEX/Z/cplex.lp16' Primal - Optimal:  Objective =    4.8517698260e-01
+Problem 'CPLEX/Z/cplex.lp41' Primal - Optimal:  Objective =    4.5272337979e-01
+Problem 'CPLEX/Z/cplex.lp42' Primal - Optimal:  Objective =    4.7294313260e-01
+Problem 'CPLEX/Z/cplex.lp58' Primal - Optimal:  Objective =    4.8229046132e-01
+Problem 'CPLEX/Z/cplex.lp61' Primal - Optimal:  Objective =    4.7865350307e-01
+Problem 'CPLEX/Z/cplex.lp69' Primal - Optimal:  Objective =    4.9591800719e-01
+Problem 'CPLEX/Z/cplex.lp70' Primal - Optimal:  Objective =    4.7744483848e-01
+Problem 'CPLEX/Z/cplex.lp114' Primal - Optimal:  Objective =    4.6439265066e-01
+Problem 'CPLEX/Z/cplex.lp119' Primal - Optimal:  Objective =    4.8537703805e-01
+Problem 'CPLEX/Z/cplex.lp124' Primal - Optimal:  Objective =    4.5391208006e-01
+Problem 'CPLEX/Z/cplex.lp140' Primal - Optimal:  Objective =    4.6358484246e-01
+Problem 'CPLEX/Z/cplex.lp147' Primal - Optimal:  Objective =    4.8019890964e-01
+Problem 'CPLEX/Z/cplex.lp157' Primal - Optimal:  Objective =    4.8467977216e-01
+Problem 'CPLEX/Z/cplex.lp177' Primal - Optimal:  Objective =    4.5731033781e-01
+Problem 'CPLEX/Z/cplex.lp238' Primal - Optimal:  Objective =    4.8519143166e-01
+Problem 'CPLEX/Z/cplex.lp309' Primal - Optimal:  Objective =    4.4752734939e-01

@@ -1,0 +1,261 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	97.10.09.14.34.22;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@Sphere Packings IV
+output from part4sec2.
+Numerical verification of Appendix I, batch 1
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@
+New Case = 757995764
+numargs = 6
+0.00897343830801211606
+{2,2.20000000000000018,2.20000000000000018,2.82842712474618985,2,2}
+
+New Case = 275706375
+numargs = 6
+0.169425386523932742
+{2.82842712474618985,2,2,2.31403759584843449,2.50999999999999979,2.50999999999999979}
+
+New Case = 324536936
+numargs = 6
+0.283026926896712938
+{2.82842712474618985,2.50999999999999979,2.31403759584843582,2.50999999999999979,2,2}
+
+New Case = 983547118
+numargs = 6
+0.0912877994016847438
+{2.82842712474618985,2,2,2.31403759584843449,2.50999999999999979,2.50999999999999979}
+
+New Case = 206278009
+numargs = 6
+0.134788361547916069
+{2.82842712474618985,2.50999999999999979,2.31403759584843449,2.50999999999999979,2,2}
+
+New Case = 214637273
+numargs = 6
+0.000107030121131300449
+{2.69600000000000017,2,2,2,2,2}
+
+New Case = 378432183
+numargs = 6
+0.000439474697493391631
+{2.82842712474618985,2,2.45000000000000018,2,2.50999999999999979,2}
+
+New Case = 572206659
+numargs = 6
+0.0638078147928553552
+{2.69600000000000017,2.45000000000000018,2,2,2.45000000000000018,2}
+
+New Case = 310679005
+numargs = 6
+0.0079165094214507202
+{2.50999999999999979,2,2,2,2,2}
+
+New Case = 122573656
+numargs = 6
+0.185518434241797397
+{2.80782770902820156,2.50739982299264463,2.13159733878597368,2.81480774003561507,2.02709768974883264,2.50345011749626112}
+
+New Case = 284970880
+numargs = 6
+0.071468406559145381
+{2.82842712474618985,2.45000000000000018,2,2.50999999999999979,2,2.45000000000000018}
+
+New Case = 956875054
+numargs = 6
+0.01495311389462586
+{2.82842709768722456,2.50999999999999979,2,2.77000000000322766,2.00000000008436984,2.50999999999999979}
+
+New Case = 597997492
+numargs = 6
+0.0149531138724772507
+{2.82842709768685729,2.50999999999999979,2.00000000209562989,2.77000000000001334,2.00000000206187867,2.50999999999999979}
+
+New Case = 751772680
+numargs = 6
+1.0873777609252816e-06
+{2.50999999999999979,2,2,2,2,2}
+
+New Case = 7444003
+numargs = 6
+0.00327923952179896838
+{2.50999999999999979,2,2,2.50999999999999979,2,2}
+
+New Case = 139787058
+numargs = 6
+0.00327923952179896838
+{2.50999999999999979,2,2,2.50999999999999979,2,2}
+
+New Case = 664200787
+numargs = 6
+0.00251969319941489425
+{2.50999999999999979,2.00000000011845458,2,2.82842712474618985,2,2}
+
+New Case = 390273147
+numargs = 6
+0.00251969357246812492
+{2.50999999999999979,2,2,2.82842712474618985,2.00000000000321565,2.00000001766053837}
+
+New Case = 125103581
+numargs = 6
+8.06205900101275574e-05
+{2.50999999999999979,2.50999999999999979,2.50999999999999979,2,2.50999999999999979,2.50999999999999979}
+
+New Case = 504968542
+numargs = 6
+0.566970525685358884
+{2.50999999999999979,2.50999999999999979,2,2,2.82842712474618985,2}
+
+New Case = 630927837
+numargs = 6
+0.0609858038729645391
+{2.6967653498015145,2.50999999999999979,2,2,2,2}
+
+New Case = 825907374
+numargs = 6
+0.0162073060816137898
+{2.82842712474618985,2.50999999999999979,2,2.50999999999999979,2,2}
+
+New Case = 410091263
+numargs = 6
+0.0044746299107232268
+{2.50999999999999979,2.50999999999999979,2.50999999999999979,3.20000000000000018,2.50999999999999979,2.50999999999999979}
+
+New Case = 503100724
+numargs = 6
+1.3716529063567684e-05
+{2.50999999999999979,2.50999999999999979,2,2,2.50999999999999979,2}
+
+New Case = 503100725
+numargs = 6
+4.39742167712697807e-05
+{2.50999999999999979,2.50999999999999979,2,2,2,2.50999999999999979}
+
+New Case = 503100726
+numargs = 6
+4.39742167712697807e-05
+{2.50999999999999979,2,2.50999999999999979,2,2.50999999999999979,2}
+
+New Case = 543902992
+numargs = 6
+0.429712034435062451
+{2.50999999999999979,2.50999999999999979,2,2.50999999999999979,2,2.50999999999999979}
+
+New Case = 324222121
+numargs = 6
+0.429712034435062451
+{2.50999999999999979,2.50999999999999979,2,2.50999999999999979,2,2.50999999999999979}
+
+New Case = 988906740
+numargs = 6
+0.4750057977834371
+{2.50999999999999979,2.50999999999999979,2.50999999999999979,2.77000000000000002,2.50999999999999979,2.50999999999999979}
+
+New Case = 58687038
+numargs = 6
+0.4750057977834371
+{2.50999999999999979,2.50999999999999979,2.50999999999999979,2.77000000000000002,2.50999999999999979,2.50999999999999979}
+
+ smallest case = 1.0873777609252816e-06
+
+---------
+
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+Error: No feasible point is found for nonlinear inequality
+constraints and linear equality constraints
+@

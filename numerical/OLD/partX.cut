@@ -1,0 +1,188 @@
+static double d2V(double y1,double y2,double y3,double y4,double y5,double y6)
+    {
+    double x1=y1*y1, x2=y2*y2,x3=y3*y3, x4=y4*y4, x5=y5*y5, x6=y6*y6;
+    double delta5 = -(x1*x3) + x1*x4 - x2*x5 + x3*x6 - x4*x6 +
+                            x2*(x1 - x2 + x3 + x4 - x5 + x6);
+    double delta45 = x1+x2-x6;
+    double delta65 = x2+x3-x4;
+    double u135 = U(x1,x3,x5);
+    double u135p = 2*(x1+x3-x5);
+    double dVp = -y1*B(y1)*delta65 + y2*B(y2)*u135p -y3*B(y3)*delta45;
+    double dV0 = dV(y1,y2,y3,y4,y5,y6);
+    double del = delta(x1,x2,x3,x4,x5,x6);
+    return
+     2.0*del*dVp*u135 - 2.0*u135p*dV0*del - dV0*u135*delta5;
+    }
+ 
+// numerator of D[vorA,x5]+D[vorB,x5] :
+static double dVab(double y1,double y2,double y3,double y4,double y5,double y6,
+    double y2p,double y4p,double y6p)
+    {
+    double x1=y1*y1, x2=y2*y2,x3=y3*y3, x4=y4*y4, x5=y5*y5, x6=y6*y6;
+    double x2p=y2p*y2p, x4p=y4p*y4p, x6p=y6p*y6p;
+    double u135=U(x1,x3,x5);
+    double sdel = safesqrt(delta(x1,x2,x3,x4,x5,x6));
+    double sdelp= safesqrt(delta(x1,x2p,x3,x4p,x5,x6p));
+    return dV(y1,y2,y3,y4,y5,y6)*sdelp+dV(y1,y2p,y3,y4p,y5,y6p)*sdel;
+    }
+ 
+// numerator of D[vorA,{x5,2}]+D[vorB,{x5,2}] :
+static double d2Vab(double y1,double y2,double y3,double y4,double y5,double y6,
+    double y2p,double y4p,double y6p)
+    {
+    double x1=y1*y1, x2=y2*y2,x3=y3*y3, x4=y4*y4, x5=y5*y5, x6=y6*y6;
+    double x2p=y2p*y2p, x4p=y4p*y4p, x6p=y6p*y6p;
+    double u135=U(x1,x3,x5);
+    double del = delta(x1,x2,x3,x4,x5,x6);
+    double delp = delta(x1,x2p,x3,x4p,x5,x6p);
+    if (del<0) { del = 0.0; }
+    if (delp<0) { delp = 0.0; }
+    double sdel3 = sqrt(del)*del;
+    double sdelp3= sqrt(delp)*delp;
+    return d2V(y1,y2,y3,y4,y5,y6)*sdelp3+d2V(y1,y2p,y3,y4p,y5,y6p)*sdel3;
+    }
+ 
+ 
+static double d2S(double y1,double y2,double y3,double y4,double y5,double y6)
+    {
+    double x1=y1*y1, x2=y2*y2,x3=y3*y3, x4=y4*y4, x5=y5*y5, x6=y6*y6;
+    double delta5 = -(x1*x3) + x1*x4 - x2*x5 + x3*x6 - x4*x6 +
+                            x2*(x1 - x2 + x3 + x4 - x5 + x6);
+    double delta45 = x1+x2-x6;
+    double delta65 = x2+x3-x4;
+    double u135 = U(x1,x3,x5);
+    double u135p = 2*(x1+x3-x5);
+    double dSp = -y1*delta65 + y2*u135p -y3*delta45;
+    double dS0 = dS(y1,y2,y3,y4,y5,y6);
+    double del = delta(x1,x2,x3,x4,x5,x6);
+    return
+     2.0*del*dSp*u135 - 2.0*u135p*dS0*del - dS0*u135*delta5;
+    }
+ 
+static double d2T(double y1,double y2,double y3,double y4,double y5,double y6)
+    {
+    return global::zetapt*d2S(y1,y2,y3,y4,y5,y6)-d2V(y1,y2,y3,y4,y5,y6);
+    }
+ 
+ 
+// numerator of D[tauA,x5]+D[tauB,x5] :
+static double dTab(double y1,double y2,double y3,double y4,double y5,double y6,
+    double y2p,double y4p,double y6p)
+    {
+    double x1=y1*y1, x2=y2*y2,x3=y3*y3, x4=y4*y4, x5=y5*y5, x6=y6*y6;
+    double x2p=y2p*y2p, x4p=y4p*y4p, x6p=y6p*y6p;
+    double u135=U(x1,x3,x5);
+    double sdel = safesqrt(delta(x1,x2,x3,x4,x5,x6));
+    double sdelp= safesqrt(delta(x1,x2p,x3,x4p,x5,x6p));
+    return dT(y1,y2,y3,y4,y5,y6)*sdelp+dT(y1,y2p,y3,y4p,y5,y6p)*sdel;
+    }
+ 
+ 
+// numerator of D[tauA,{x5,2}]+D[tauB,{x5,2}] :
+static double d2Tab(double y1,double y2,double y3,double y4,double y5,double y6,
+    double y2p,double y4p,double y6p)
+    {
+    double x1=y1*y1, x2=y2*y2,x3=y3*y3, x4=y4*y4, x5=y5*y5, x6=y6*y6;
+    double x2p=y2p*y2p, x4p=y4p*y4p, x6p=y6p*y6p;
+    double u135=U(x1,x3,x5);
+    double del = delta(x1,x2,x3,x4,x5,x6);
+    double delp = delta(x1,x2p,x3,x4p,x5,x6p);
+    if (del<0) { del = 0.0; }
+    if (delp<0) { delp = 0.0; }
+    double sdel3 = sqrt(del)*del;
+    double sdelp3= sqrt(delp)*delp;
+    return d2T(y1,y2,y3,y4,y5,y6)*sdelp3+d2T(y1,y2p,y3,y4p,y5,y6p)*sdel3;
+    }
+ 
+ 
+double Q1,Q2,Q3,Q4;
+// Sqrt(delta).D[vor0,x1] =
+static double dVor0dx1(double y1,double y2,double y3,double y4,double y5,
+        double y6)
+    {
+    double x1=y1*y1, x2=y2*y2,x3=y3*y3, x4=y4*y4, x5=y5*y5, x6=y6*y6;
+    double dBdx1 = dBdx(y1);
+    double del = delta(x1,x2,x3,x4,x5,x6);
+    double sdel = safesqrt(del);
+    double delta4 = -(x2*x3) - x1*x4 + x2*x5 + x3*x6 - x5*x6 + x1*(-x1 + x2 + x3 - x4 + x5 + x6);
+    double delta6 = -(x1*x2) + x1*x4 + x2*x5 - x4*x5 + x3*(x1 + x2 - x3 + x4 + x5 - x6) - x3*x6;
+    double delta2 =  x1*x4 - x3*x4 - x2*x5 - x1*x6 + x3*x6 + x5*(x1 - x2 + x3 + x4 - x5 + x6);
+    double delta3 =  x1*x4 - x2*x4 - x1*x5 + x2*x5 - x3*x6 + (x1 + x2 - x3 + x4 + x5 - x6)*x6;
+    double delta1 = -(x1*x4) + x2*x5 - x3*x5 - x2*x6 + x3*x6 + x4*(-x1 + x2 + x3 - x4 + x5 + x6);
+    double del14 = -2*x1 + x2 + x3 - 2*x4 + x5 + x6;
+    double u135 = U(x1,x3,x5);
+    double u126 = U(x1,x2,x6);
+    double pi = global::pi;
+ 
+    double Ddih1 = (-2.0*x1*del*del14+x1*delta1*delta4+del*delta4)/(u126*u135*y1);
+    Q1  = dBdx1*(pi-atan((sdel*2.0*y1)/(-delta4)))*sdel;
+    Q2 = B(y1)*Ddih1;
+    Q3 = B(y2)*(-y2)*delta3/u126;
+    Q4 = B(y3)*(-y3)*delta2/u135;
+    return dBdx1*(pi-atan((sdel*2.0*y1)/(-delta4)))*sdel
+        +B(y1)*Ddih1 + B(y2)*(-y2)*delta3/u126 + B(y3)*(-y3)*delta2/u135;
+    }
+ 
+static double dBdx(double y)
+    {
+    static const double v = 0.0901128686896831; //
+        //v= (pi-4atan(sqrt(2)/5))/(16sqrt2);
+    return (-6.3001+y*y)*v/y;
+    }
+ 
+ 
+        case 1100 : case 1101 : case 1102 : case 1103 : case 1104 : case 1105:
+        case 1106 : case 1107 : case 1108 :
+            *ret = -dVor0dx1(x[0],x[1],x[2],x[3],x[4],x[5]);
+            break;
+ 
+ 
+ 
+        case 999 :
+            *ret = x[1]+x[5]+x[10]+x[11];
+                /*tau(x[0],x[1],x[2],x[3],x[4],x[5])+
+                tau(x[0],x[7],x[2],x[6],x[4],x[8])+
+                tau(x[0],x[7],x[11],x[9],x[10],x[8]); */
+                break;
+ 
+        case 1000 : case 1001 : case 1002 : case 1003 : case 1004 : case 1005:
+        case 1006 : case 1007 : case 1008 :
+            *ret = d2V(x[0],x[1],x[2],x[3],x[4],x[5]);
+            break;
+ 
+ 
+        case 1010 : case 1011 : case 1012 : case 1013 : case 1014 : case 1015 :
+        case 1016 : case 1017 : case 1018 : case 1019 : case 1020 : case 1021:
+        case 1022 : case 1023 : case 1024 : case 1025 : case 1026 : case 1027:
+            {
+            double t =dVab(x[0],x[1],x[2],x[3],x[4],x[5],x[7],x[6],x[8]);
+            *ret = t*t;
+            break;
+            }
+ 
+        case 1028 : case 1029 : case 1030 : case 1031 : case 1032 : case 1033 :
+        case 1034 : case 1035 : case 1036 : case 1037 : case 1038 : case 1039 :
+        case 1040 : case 1041 : case 1042 : case 1043 : case 1044 : case 1045 :
+            {
+            double t =dTab(x[0],x[1],x[2],x[3],x[4],x[5],x[7],x[6],x[8]);
+            *ret = t*t;
+            break;
+            }
+ 
+        case 1046 : case 1047 : case 1048 : case 1049 : case 1050 : case 1051 :
+        case 1052 : case 1053 : case 1054 : case 1055 : case 1056 : case 1057 :
+        case 1058 : case 1059 : case 1060 : case 1061 : case 1062 : case 1063 :
+            {
+            *ret = d2Vab(x[0],x[1],x[2],x[3],x[4],x[5],x[7],x[6],x[8]);
+            break;
+            }
+ 
+        case 1064 : case 1065 : case 1066 : case 1067 : case 1068 : case 1069 :
+        case 1070 : case 1071 : case 1072 : case 1073 : case 1074 : case 1075 :
+        case 1076 : case 1077 : case 1078 : case 1079 : case 1080 : case 1081 :
+            {
+            *ret = -d2Tab(x[0],x[1],x[2],x[3],x[4],x[5],x[7],x[6],x[8]);
+            break;
+            }
+ 
+

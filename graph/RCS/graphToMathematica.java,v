@@ -1,0 +1,42 @@
+head	1.1;
+access;
+symbols;
+locks
+	hales:1.1; strict;
+comment	@# @;
+
+
+1.1
+date	97.09.13.17.15.57;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@graph generator, convert the string form of a graph to Mathematica format
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@import java.util.*;
+
+class graphToMathematica {
+
+		static public void main(String ac[]) 
+		{
+
+	for (int i=7000;i<8227;i++)
+	{
+	archive.GraphArrays gr = archive.graphDispatch.grab(i);
+	arrange a = new arrange(gr);
+	String S = arrange.MathematicaString(a);
+	System.out.print(S+",\n");
+	};
+
+	}
+	  }
+@

@@ -1,0 +1,2153 @@
+%\magnification=\magstep1
+\documentstyle{amsppt}
+
+\topmatter
+\parskip=\baselineskip
+\baselineskip=1.1\baselineskip  % was 1.1
+\parindent=0pt
+\loadmsbm
+\UseAMSsymbols
+\raggedbottom
+\hoffset=0.75truein
+\voffset=0.5truein
+
+
+\def\reft{\relax}  % items
+\def\refz{\relax}
+\def\bul{\noindent$\bullet$\quad }
+\def\lb#1{\line{$\bullet$ #1 \hfill}}
+\def\cir{\noindent$\circ$\quad }
+\def\heads#1{\rightheadtext{#1}}
+\def\doct{\delta_{oct}}
+\def\pt{\hbox{\it pt}}
+\def\Vol{\hbox{vol}}
+\def\and{\operatorname{and}}
+\def\tan{\operatorname{tan}}
+\def\sol{\operatorname{sol}}
+\def\quo{\operatorname{quo}}
+\def\anc{\operatorname{anc}}
+\def\cro{\operatorname{crown}}
+\def\vor{\operatorname{vor}}
+\def\octavor{\operatorname{octavor}}
+\def\dih{\operatorname{dih}}
+\def\arc{\operatorname{arc}}
+\def\rad{\operatorname{rad}}
+\def\if{\operatorname{if}}
+\def\A{{\bold A}}
+\def\squander{(4\pi\zeta-8)\,\pt}
+\def\score{8\,\pt}
+\def\Sfour{\Cal{\bold S}_4^+}
+\def\Sminus{\Cal{\bold S}_3^-}
+\def\Splus{\Cal{\bold S}_3^+}
+\def\maxpi{\pi_{\max}}
+\def\xiG{\xi_\Gamma}
+\def\xiV{\xi_V}
+\def\xik{\xi_\kappa}
+\def\xikG{\xi_{\kappa,\Gamma}}
+
+\def\rom{\uppercase\romannumeral}
+
+
+\font\twrm=cmr8
+\def\DLP{\operatorname{D}_{\hbox{\twrm LP}}}
+\def\ZLP{\operatorname{Z}_{\hbox{\twrm LP}}}
+\def\tLP{\operatorname{\hbox{$\tau$}LP}}  % 3 args small LP.
+\def\tlp{\tau_{\hbox{\twrm LP}}}  % 2 args (p,q) tri, quad
+\def\slp{\sigma_{\hbox{\twrm LP}}}  % 2 args (p,q) tri, quad
+\def\sLP{\operatorname{\hbox{$\sigma$}LP}}
+\def\LPmin{\operatorname{LP-min}}
+\def\LPmax{\operatorname{LP-max}}
+\def\geom{{\operatorname{g}}}
+\def\anal{{\operatorname{an}}}
+
+
+
+\def\sol{\operatorname{sol}}
+\def\dih{\operatorname{dih}}
+\def\V{\operatorname{V}}
+\def\vol{\operatorname{vol}}
+\def\Area{\operatorname{Area}}
+\def\Per{\operatorname{Per}}
+\def\rad{\operatorname{rad}}
+\def\quo{\operatorname{quo}}
+
+\def\R{{\Bbb R}}
+\def\ldot{\cdot}
+\def\S{{\Cal S}}
+\def\del{\partial}
+\def\B#1{{\bold #1}}
+\def\tri#1#2{\langle#1;#2\rangle}
+\def\ha{ \hangindent=20pt \hangafter=1\relax }
+\def\ho{ \hangindent=20pt \hangafter=0\relax }
+\def\i{I}
+\def\was#1{\relax}
+
+\def\diag|#1|#2|{\vbox to #1in {\vskip.3in\centerline{\tt Diagram #2}\vss} }
+\def\v{\hskip -3.5pt }
+% to place a fig file  align the bottom left corner at (0,-11).
+% save as left justified.
+% resize so that the box is just under 5 in width
+\def\gram|#1|#2|#3|{
+        {
+        \smallskip
+        \hbox to \hsize
+        {\hfill
+        \vrule \vbox{ \hrule \vskip 6pt \centerline{\it Diagram #2}
+         \vskip #1in %
+             \special{psfile=#3 hoffset=5 voffset=5 }\hrule }
+        \v\vrule\hfill
+        }
+\smallskip}}
+
+\def\today{\ifcase\month\or
+    January\or February\or March\or April\or May\or June\or
+    July\or August\or September\or October\or November\or December\fi
+    \space\number\day, \number\year}
+
+
+
+
+
+
+\centerline{\bf{A Proof of the Dodecahedral Conjecture}}
+\vskip 6pt
+\centerline{\sl Thomas Hales and Sean McLaughlin}
+\bigskip
+\centerline{10/10/98}
+\bigskip
+
+{\bf Abstract.}  We prove the dodecahedral conjecture.
+
+\bigskip
+
+\proclaim{The Dodecahedral Conjecture} The volume of the Voronoi polyhedron of a sphere in a packing 
+of equal spheres is at least the volume of a regular dodecahedron with inradius 1.
+ \endproclaim
+
+\bigskip
+
+\centerline {{ \bf 1. Introduction.}}
+
+\bigskip
+
+
+
+It is known that at most 12 congruent spheres can be tangent to a 13th [1]. 
+In 1943, L. Fejes T\'oth conjectured that a lower bound on the volume of a 
+Voronoi polyhedron of a sphere, $S_0$, in a packing of unit spheres is obtained
+ by arranging 12 spheres around $S_0$ such that its Voronoi is a 
+regular dodecahedron with inradius 1. 
+
+The reader will recall that ``the Voronoi polyhedron of a sphere in a packing of congruent
+ spheres in $\Bbb E^3$ means the set of the points that are not further from the center of 
+the given sphere than from any other sphere center of the packing'' [8].
+
+In [2], the dodecahedral conjecture is stated and proved with an assumption 
+about the closest
+ a 13th sphere could get.  However, this seemingly benign assumption ended up being
+ more difficult to prove than expected. 
+
+In the years since the statement of the conjecture, there have been a number of 
+developments.  
+
+L. Fejes T\'oth himself made considerable progress.  In his book ``Regular Figures'' 
+[3, pp.263-300], he proved that if $m$ is the total number of spheres surrounding 
+a central sphere $S_0$ and $n$ is the number of spheres whose center to center 
+distance from $S_0$ is less than  $2 \sqrt 3 \tan(\pi/5)\approx 2.516817$, then 
+the conjecture is true when $n\leq 12$.  We rely heavily 
+on this result in our method of proof.
+
+Upper bounds on the density of packings have been improved gradually
+over the years.  In [4], Rogers proves an upper bound of 0.7797.  In [5] and [6], 
+Muder makes significant improvements on Rogers' bound with bounds of 
+0.77836 and 0.7731 respectively.  The dodecahedral conjecture 
+implies a bound of $0.754697\dots$.
+
+
+In 1993, Hsiang published what seemed to be a proof of the Kepler conjecture which would prove the 
+dodecahedral conjecture as well. [7].  However, the proof did not hold up to
+ careful analysis.  ``As of this writing, Kepler's conjecture as well as the 
+dodecahedral conjecture are still unproven.'' [8, p.761].
+
+Hales and I began work on the conjecture in the summer of 1997.  He was deeply 
+involved in a proof of the Kepler conjecture and suggested that his strategies 
+might be useful in a proof of the dodecahedral conjecture.  Also useful to the 
+research at this stage was a preprint of K. Bezdek's paper, [8], which reduced 
+the dodecahedral conjecture to 3 isoperimetric inequalities.  The paper was so helpful,
+ in fact, that we seemed close to a solution.  Unfortunately, a counterexample 
+was discovered to both parts of his third conjecture.  In Conjecture C, 
+Bezdek makes the following claims:
+
+
+$$\Area(F)\ge \frac 6 {\sqrt3} \frac {(3-l^2)^2}{9-l^2}$$
+$$\Per(F)\ge\frac {12} {\sqrt3} \frac {(3-l^2)}{\sqrt{9-l^2}}$$
+
+Here $F$ is the face of a Voronoi with at least 6 edges, $\Area(F)$ 
+is the area of $F$, $\Per(F)$ is the perimeter of $F$, and $l$ is the distance 
+from the center of $S_0$ to $F$.  From these inequalities we have the conjecture
+ that if a hexagonal face is tangent to $S_0$ then $\Area(F) > 1.732$ and 
+$\Per(F)>4.898$.  The reader may check that the arrangement of 8 spheres shown 
+in Figure 1.1 gives a hexagonal face $F'$, tangent to $S_0$, with $\Area(F')<1.468$
+ and $\Per(F)<4.642$.  
+The six triangles represent six tetrahedra whose vertices
+are the centers of the eight spheres.  
+All edges have length 2 except for the two edges marked $x$.  
+The value of $x\approx 2.70588$ 
+is determined by the condition that the six dihedral
+angles along the common edge sum to $2\pi$.
+	
+%\gram|2.1|1.1|dia1.1.ps|  % counterexample
+\gram|2.1|1.1|1.1.ps|  % counterexample
+
+
+Thus we were forced to abandon the hope of using these conjectured inequalities 
+in a proof of the conjecture.
+	
+We decided instead to follow the methods used in Hales' proof of Kepler's 
+conjecture, using techniques of interval arithmetic and linear optimization.
+
+See [H1.7] for a description of the method of proof of inequalities using interval arithmetic calculations.  These proofs are ubiquitous in the paper.  
+In fact, every inequality which is not labeled otherwise was proved in this manner.  
+
+
+
+\bigskip
+
+\centerline {{ \bf 2. The Decomposition.}}
+
+\bigskip
+
+{\bf 2.1. The Truncation.}
+
+We begin with an arbitrary packing of unit spheres.  Select a sphere and label it $S_0$.
+  Let the center of $S_0$ be the origin.  We wish to show that the volume of its Voronoi 
+polyhedron is greater than that of a regular dodecahedron.  
+Let $\vol(x)$ be defined as the volume of $x$.  Let $\vol(\Cal D)\approx 5.55029$
+ denote the volume of a regular dodecahedron.
+Let $V$ denote the Voronoi polyhedron of $S_0$.
+Let the centers of the surrounding spheres be called the {\it vertices} of the packing.
+We define the constant $T=\sqrt 3 \tan(\pi/5)$, the circumradius of a regular dodecahedron.
+(Note that this $T$ is the same constant used by Fejes T\'oth as his truncation parameter.)
+Let $X$ be the set of non-zero vertices at most $2T$ from $0$.
+Thanks to the result of Fejes T\'oth, we can assume that there are at least 13 vertices in $X$. 
+ We draw an edge between vertices if the distance between them is at most $2T$. 
+ We call two vertices which are connected by an edge {\it close neighbors}. 
+ We make the observations that the distance between vertices is at least 2 and 
+ also that all the vertices of $X$ are close neighbors to $0$.
+  If four vertices, one being the origin, are all close neighbors of each other, we call the set of vertices a {\it quasi-regular tetrahedron}, or simply 
+a tetrahedron.  
+The set of vertices and edges will be called the {\it sparse graph} of $S_0$.
+
+We show that the 
+portion of the Voronoi contained in a quasi-regular tetrahedron can not be
+affected by another sphere if the circumradii of the four faces of the tetrahedron are 
+less than $\sqrt2$.  We call tetrahedra which satisfy this property {\it small tetrahedra}.
+Therefore, we do not truncate the Voronoi contained in small tetrahedra.
+Though this complicates the proof a bit, we lose less volume in the truncation.
+
+To be more precise,
+let $Z$ denote the portion of the Voronoi which is contained in small tetrahedra.
+ Let $\Cal S$ be a ball of radius $T$.
+Let $V'=((V\setminus Z)\cap \Cal S)\cup Z$.  
+
+\proclaim{Theorem} $\vol(V') \ge \vol(\Cal D).$ \endproclaim
+
+As this truncation only subtracts volume from any Voronoi, the theorem implies the conjecture.
+
+\bigskip
+
+{\bf 2.2. The Planar Map.}
+
+We describe the structure of the sparse graph with a planar map on the unit
+sphere. 
+Project the vertices to $S_0$.  We distinguish between the vertices of the sparse graph and 
+the vertices of the map $G$.  Each vertex of the sparse graph corresponds to 
+exactly one vertex on the map and vice versa.  The context will make clear 
+which  vertex we are speaking of.  We draw a geodesic arc on the
+unit sphere between 
+vertices on the map if the corresponding vertices of the sparse graph 
+are close neighbors.  
+
+We want the edges of the map to meet only at the vertices.  The next lemma 
+gives us the result.
+
+In the following deformations, we say two points or vectors {\it collide} if the distance between them
+ ever falls below 2.
+
+ \proclaim{Lemma 2.2.1} Let $x_0,x_1,x_2$ be points in space such that 
+the distance between any two of them is between $2$ and $2T$.
+Let $x_3,x_4$ be points such that the edge 
+$(x_3,x_4)$ passes through the triangle $A=(x_0,x_1,x_2)$.  
+Also, assume $2\le d(x_i,x_j)$ for $i=3,4$ and $j=0,1,2$, and  
+$2\le d(x_i,x_0)\le 2T$ for $i=3,4$.
+Then $d(x_3,x_4)>2T$.
+\endproclaim
+
+{\bf Proof:} For a contradiction, suppose $d(x_3,x_4)\le 2T$.  
+
+\smallskip
+
+{\it Claim 1.} If such a figure exists, one exists with 
+$2\le d(x_i,x_j)\le 2T$ for $i=3,4$ and $j=0,1,2$.
+
+\smallskip
+
+{\it Proof:} Fix the line $(x_0,x_1)$ and rotate $x_3$ toward $x_2$ on the perpendicular
+ plane of $(x_0,x_1)$ through $x_3$.  (The rotation preserves the distance between $x_3$ and the line $(x_0,x_1)$.)  This action will be called a {\it pivot}. 
+ This pivot preserves the distance $d(x_3,x_1)$ and $d(x_3,x_0)$.  
+The distance $d(x_3,x_4)$ is decreasing, as $x_4$ lies on the same side
+of plane $(x_0,x_1,x_3)$ as the direction of the pivot.  By construction, $d(x_3,x_2)$ is decreasing.  
+
+\smallskip
+
+{\it Claim 1a.} The pivot above terminates.  That is, at some point the distance between 
+$x_3$ and $x_2$ is less than $2T$.  
+
+\smallskip
+
+{\it Proof:} For the contradiction, there are two cases.  
+
+For the first case, suppose that at some point, $(x_3,x_4)$ intersects an edge 
+$(a,b)$ for $\{a,b\}\subset\{x_0,x_1,x_2\}$.  Suppose, without loss of generality, 
+that $(x_3,x_4)$ intersects $(x_1,x_2)$.  
+In this case, we rotate $x_2$ in a circle about $x_4$ of radius
+$d(x_2,x_4)$ toward $x_3$.  This process terminates because if $x_1,x_2,x_3$ 
+become colinear during the deformation, we have  $d(x_1,x_3)\ge2$, $d(x_2,x_3)\ge2$,
+and $d(x_2,x_4)\le2T$ which violates the assumption of colinearity.
+Rotate until  $d(x_2,x_3)=2$.  
+(The reader may check that $d(x_1,x_2)\ge2$ throughout the rotation.)
+Proceed in the same way until $d(x_1,x_3)=
+d(x_1,x_4)=d(x_2,x_4)=2$.  Note that in all these deformations, the
+value $d(x_3,x_4)$ was either constant or decreasing.  We wish to minimize $d(x_3,x_4)$, so 
+we stretch edge $(x_1,x_2)$ until $d(x_1,x_2)=2T$.  This is a rigid figure.
+We have a lower bound on $d(x_3,x_4)$ of $2\sqrt{4-T^2}>2T.$  This is a
+contradiction.
+
+
+%\gram|2.1|2.4|dia39.ps|  %  
+\gram|2.1|2.2.1|2.1.ps|  %  
+
+
+In the second case, the edge $(x_3,x_4)$ never crosses an edge of $A$.
+So the simplex $(x_0,x_1,x_2,x_3)$ can collapse and the vertices become
+ coplanar.  It is an easy exercise to show that if
+a triangle has edges between 2 and $2T$, there is no interior point of that triangle whose distance is at least 2 from each vertex.
+ This completes the proof of Claim 1a.
+
+Once $x_3$ is within $2T$ of $x_2$, pivot $x_3$ toward $x_1$ until they are 
+within $2T$.  Follow this procedure for $x_4$.  
+This completes the proof of Claim 1.
+
+\smallskip
+
+We now know that, due to edge length constraints, that the triangles $(x_i,x_3,x_4)$ are acute for 
+$i=0,1,2$. Given that a figure exists of the type in Claim 1, 
+a figure exists with $d(x_3,x_4)=2T$.  This follows from the acuteness of 
+the triangles.  We wish to deform the configuration such that 
+the edges of $A$ are all $2T$.  Pivot $x_1$ about the line $(x_0,x_3)$ away from $x_2$.  
+We check to be sure $x_1$ does not collide with any of the other vertices. 
+The pivot maintains the distances $d(x_1,x_3),d(x_1,x_0)$.  
+The distance $d(x_1,x_2)$ is increasing.  Finally, $x_4$ lies on the opposite side of 
+plane $(x_0,x_1,x_3)$ from the direction we are pivoting.  So the distance 
+$d(x_1,x_4)$ is increasing.   By the argument of Claim 1, 
+this pivot terminates and we have $d(x_1,x_2)=2T$.  
+Continue in this way until all the edges of $A$ have length $2T$.  
+
+Next, we want to reduce the argument to the case where 
+$d(x_3,x_i)=2$ for $i=0,1,2$.  To do this, we first check that 
+$x_4$ can't lie in the convex hull of $x_0,x_1,x_2,x_3$.  If $x_4$ does lie 
+in the convex hull, there is a triangulation of the unit sphere at $x_4$ 
+by four triangles of area at most 1.07, the area of a spherical
+equilateral triangle 
+of edge $\approx 1.37$.   This is impossible.  So $x_3$ and $x_4$ lie on opposite sides 
+of the plane through $(x_0,x_1,x_2)$.  We pivot $x_1$ about edge $(x_0,x_2)$ until 
+$d(x_1,x_3)=2$.  Note that in this pivot $x_1$ maintained the distance $2T$ 
+from $x_0$ and $x_2$.  Do the same for $x_2$ and $0$.  The edge lengths of 
+simplex $(x_0,x_1,x_2,x_3)$ are now fixed.  We move $x_4$ inside the cone 
+with vertex $x_3$ spanned by vectors $x_3-x_i$ for $i=0,1,2$.  
+We move $x_4$ toward the origin until $d(x_4,x_i)=2$ for $i=0,1,2$.  We choose coordinates
+and calculate $d(x_3,x_4)$.  We find that the distance is about $2.748 > 2T$.
+This is a contradiction.  This completes the proof of Lemma 2.2.1. \qed
+
+\proclaim{Corollary 2.2.2} The arcs of the planar map do not meet except at the vertices.  \endproclaim
+
+{\bf Proof:} If two arcs cross, than we have an arrangement of four vertices, 
+$w_1,\dots,w_4$
+ above $0$ such that the vertices along the two diagonals are at most $2T$ from each other.
+There are two cases.  Either $w_2-w_4$ passes through face $(w_1,w_3,0)$ or $w_1-w_3$ 
+passes through face $(w_2,w_4,0)$.  In either case, use Lemma 2.2.1 to show that such a figure 
+can not exist.  
+
+\qed
+
+
+\bigskip
+
+{\bf Section 2.2.3. Geometric Considerations.}
+
+\bigskip
+The proof of Lemma 2.2.1 is tedious and rather simple.  Later in the paper, we rely on similar tests of the existence of certain arrangements of spheres.  For the sake of brevity, we will state these results without proof and say the result was obtained by {\it geometric considerations}.  This phrase always means we do a series of pivots to deform the structure into a rigid figure, choose vertices, and make a distance calculation.  We leave the details as an exercise.
+
+
+\bigskip
+
+\centerline{ { \bf 3. Standard Regions.}}
+
+\bigskip
+
+The closures of the connected components of the complement of these arcs are regions 
+on the unit sphere, called the {\it standard regions}. 
+ The resulting system of edges and regions will be 
+referred to as the {\it standard decomposition} of the unit sphere.
+
+
+
+\bigskip
+
+{\bf 3.1. Triangular Regions.}
+
+\bigskip
+
+\proclaim {Lemma 3.1.1} Each triangle in the standard decomposition of 
+the unit sphere is associated with a unique quasi-regular tetrahedron, 
+and each tetrahedron determines a triangle in the standard decomposition.  
+\endproclaim
+
+
+{\bf Proof:} [H1.3.7].
+
+
+\bigskip
+
+
+
+We now justify our somewhat unorthodox truncation.  As you will recall, we 
+do not truncate over small quasi-regular tetrahedra.
+We will show that a sphere which is not centered at one of the vertices 
+can not get close enough to a tetrahedron to 
+affect the contained portion of the Voronoi.  
+
+
+We order the vertices of the tetrahedra $(v_0,v_i,v_j,v_k)$ such that the 
+origin corresponds to $v_0$, and the three sphere centers correspond to 
+$v_i,v_j,v_k$.  The vertex at the origin will always be fixed.  We number 
+the six edges such that edges $1,2,3$ meet at $0$ and edge $i+3$ is
+ opposite edge $i$ for $i=1,2,3$. $S(y_1,y_2,\dots,y_6)$, abbreviated $S$,
+ denotes a simplex whose edges have lengths $y_i$, indexed in this way. 
+When speaking of edge lengths, we let $x_i=y_i^2$.  (The use of $x$ is 
+often more convenient in the functions we define on simplices.)
+ We refer to the endpoints away from the origin of the first, second, 
+and third edges as the first, second, and third vertices.
+ (Observe that $S(y_1,y_2,\dots,y_6)$ is a tetrahedron if and only if
+$2\le y_i \le 2T$ for $i=1,\ldots,6$.)
+
+
+\proclaim{Lemma 3.1.2} If the circumradii of the four faces of a 
+tetrahedron are less than $\sqrt 2$,
+ then the circumcenter of the tetrahedron is contained in the tetrahedron. 
+\endproclaim
+
+{\bf Proof:}  First notice that the circumcenter of the tetrahedron is
+ the point of intersection of the four lines perpendicular to, and passing
+ through the circumcenter of, each face.  So if the 
+circumcenter lies outside the tetrahedron, it lies in the cone over
+one of the faces.  (The vertex of the cone is the vertex of the tetrahedron which is not on the given face.)
+   Call that face $F$ and let $v_0$ be located at the vertex of the
+ tetrahedron which is not a vertex of $F$.  Label the vertices of $F$ 
+by $v_1,v_2,v_3$.  
+
+We use the function $\chi$ defined in [1.8]. 
+I simply state Hales' results here.
+``The vanishing of $\chi$ is the condition for the
+circumcenter of the simplex to lie
+in the plane through the face $F$
+bounded by the fourth,
+fifth, and sixth edges.  $\chi$ is positive if the circumcenter of
+$S$ and the vertex of $S$ opposite $F$ lie on the same side of the
+plane through $F$ and negative if they lie on opposite sides
+of the plane.  We will say that $F$ has {\it positive orientation\/}
+when $\chi>0$.''  [1],(8.2.3)
+
+A counterexample to the lemma would require $\chi < 0$.  We minimize $\chi$ based on the 
+assumptions of the lemma.
+
+We have $$\frac {d\chi}{dx_i}\geq 0$$ for $i=1,2,3$ on the domain.  Thus, to minimize $\chi$,
+ we set $x_1=x_2=x_3=4=2^2$.  Now, since each vertex has distance 2 from the $v_0$, 
+the origin lies on the line through the circumcenter and perpendicular to the face.  
+Also, the spheres can be moved about the circle of radius $\eta$, centered at the circumcenter,
+ while maintaining a distance of 2 from the origin without moving the circumcenter of the face. 
+ Thus, the result does not depend on any particular arrangement of spheres, but only on the 
+circumradius.  
+
+It is now easy to see that $\sqrt{4-\eta^2} > \eta$ implies that the circumcenter is
+ contained in the tetrahedron.  So $\eta < \sqrt 2$ implies that the circumcenter is 
+contained.  \qed
+
+\proclaim{Lemma 3.1.3} If the circumradius of a face of a tetrahedron is less than $\sqrt 2$,
+ then a sphere which does not correspond to one of the vertices of the tetrahedron does not 
+affect (through that face) the part of the Voronoi contained in the tetrahedron. \endproclaim
+
+{\bf Proof:} Consider a Voronoi cell about a 5th sphere.  We call the center $v_5$.  
+
+We can assume, without loss of generality, that $d(v_5,v_i)\le 2T$ for $i=1,2,3$. 
+
+Thus, the set of vertices, $v_1,v_2,v_3,v_5$ form a tetrahedron centered at $v_5$.  
+By the argument of Lemma 3.1.2, the circumcenters of both tetrahedra do not pass through the face $(v_1,v_2,v_3)$.  So the Voronoi do not intersect.  Since the Voronoi do not intersect, the fifth sphere does not affect the 
+Voronoi contained in the tetrahedra with vertex at the origin.  \qed
+
+\bigskip
+
+We say that a point $v\in{\Bbb E}^3$ is {\it enclosed\/} by a region
+on the unit sphere if the interior of the cone 
+(with vertex $0$) over that region contains
+$v$. 
+
+\proclaim{Corollary 3.1.4} A triangular standard region cannot enclose a fourth 
+vertex of the packing. \endproclaim
+
+{\bf Proof:} Proof of Lemma 2.2.1. \qed
+
+\bigskip
+
+{\bf 3.2. Quadrilateral Regions.}
+
+\bigskip
+
+Quadrilateral regions can enclose other vertices of the packing.  Therefore, it is 
+necessary to distinguish between quadrilaterals with no enclosed vertices from
+the more general quadrilateral regions.  We will call the quadrilaterals
+with no enclosed vertices {\it short quads}.  The geometric configuration of five spheres
+corresponding to a short quad will be called a {\it quad cluster}.  
+Note that the analogue of the quad cluster for four spheres 
+is the quasi-regular tetrahedron.  More generally, a {\it quadrilateral region}
+ is a union of standard regions delimited by a 4-circuit in $G$.  
+
+Hales proved that a quadrilateral region can enclose at most one other vertex of the packing.
+
+
+\proclaim{Lemma 3.2.1} A union of regions (of area less than $2\pi$) 
+bounded by exactly four edges cannot enclose two vertices of distance at 
+most $2T$ from the origin.  \endproclaim
+
+{\bf Proof:} See [1.4.2].  Note that he uses the constant 2.51 here. 
+ The reader may follow the proof exactly, substituting $2T$ for 2.51, and will 
+find that the proof holds with the new constant. \qed
+
+\bigskip
+
+\proclaim{Corollary 3.2.2} The quadrilateral regions shown in Fig. 3.2.2 are the only ones
+ possible.  \endproclaim
+
+
+%\gram|2.1|1.2|a39.ps|  % counterexample
+\gram|2.1|3.2.2|3.1.ps|  % counterexample
+
+
+\bigskip
+
+{\bf 3.3. Exceptional Regions.}
+
+\bigskip
+
+We call standard regions with at least five bounding edges {\it exceptional regions}.  
+Intuitively, it seems that any map with an exceptional region will correspond
+to a loose packing, as the spheres over diagonals must be a least $2T$ apart.  
+We will
+discuss them shortly.
+
+\bigskip
+
+\centerline{{\bf 4. Functions.}}
+
+\bigskip
+
+{\bf 4.1. Basic Functions on Tetrahedra.}
+
+\bigskip
+
+We define some useful functions on tetrahedra.
+
+The {\it dihedral angle}, dih(S),  is defined to be the measure of the dihedral angle of the simplex S along the first edge (with respect to the fixed order on the edges of S).  Similarly, $\dih_2(S),\ \dih_3(S)$ are the measure of the dihedral angles along the second and third edges respectively.
+
+The {\it solid angle} (measured in steradians) of simplex S with vertex at $0$ is denoted sol(S).  
+The intersection of the cone over S with the ball of unit radius centered at $0$ has volume sol(S)/3.  For example, $\sol(S(2,2,2,2,2,2))\approx 0.55$.  
+
+Let $\rad=\rad(S)$ denote the circumradius of the simplex $S$.  
+
+Let $\eta(a,b,c)=\eta(F)$ denote the circumradius of the Euclidean triangle $F=(a,b,c)$.
+
+Let $\Delta(S)$ be a polynomial relating to the volume of simplex $S$ from [H1.8].
+
+Let $\vol=\vol(S)$ denote the volume of the Voronoi contained in the cone over simplex S.
+
+If all the faces of $S$ has circumradii less than $\sqrt2$,
+let $\omega=\omega(S)$ be the volume $\vol(S)$.
+Otherwise, let $\omega(S)$ denote the volume of the intersection of the 
+Voronoi contained in the cone over $S$, and the ball of radius $T$.  $\omega$ is defined more generally on the cone over any standard region as a
+volume truncated at radius $T$.
+
+%(Note: It has been important to distinguish when to use $\vol(S)$ and $\omega(S)$.  
+%When working with tetrahedra, we use $\omega(S)$ when $\eta(F) > \sqrt 2$ for some 
+%face $F$ of $S$.  We use $\vol(S)$ otherwise.  For regions with at least four edges
+%we consistently use $\omega$ as the volume function.)  
+
+Define the constant $M=0.42755 \approx \vol(S(2,2,2,2,2,2))/\sol(S(2,2,2,2,2,2)).$  
+
+We define $\mu=\mu(S)$ to be the linear combination of volume 
+and solid angle given by the following.
+$$\mu(S)=\omega(S)-M \sol(S)$$
+%$$\mu'(S)=\omega(S)-M \sol(S)$$
+
+%Like the distinction between $\vol$ and $\omega$, we use $\mu$ when all the faces 
+%of $S$ have circumradius less than $\sqrt 2$ and $\mu'$ otherwise.  
+%It may occur that when speaking of a simplex we use the terms $\vol$ or $\mu$ without 
+%the conditional phrase, ``unless the circumradius is greater than $\sqrt 2$.''
+%We universally mean that we use $\vol$ when the faces have circumradius less than 
+%$\sqrt 2$ and $\omega$ otherwise.  Likewise for $\mu$ and $\mu'$.
+
+Formulas for $\dih, \sol, \rad, \eta, \Delta, \vol$  can be found in [1.8].  
+They are straightforward algebraic calculations,
+ easily checked using a computer algebra system.
+
+The function $\omega$ requires a longer discussion.
+
+\bigskip
+
+{\bf 4.2.  An explicit formula for $\omega$.}
+
+\bigskip
+
+The plan for a formula is shown in Figure 4.2.  It follows an inclusion-exclusion strategy. 
+
+(1) We begin by calculating the volume of a portion of a sphere of radius $T$ and solid 
+angle $\sol(S)$.  
+
+(2) We then exclude the 
+caps of the cones above the faces of the Voronoi.  (Caps will be defined shortly.)
+
+(3) If these cones 
+overlap, we subtract small pieces called {\it quoins} two times in (2).
+  Therefore, we add these back.  
+
+
+%\gram|2.1|1.2|dia39.ps|  % counterexample
+\gram|1.2|4.2|4.2.ps|  % counterexample
+
+
+We define the {\it height}, $h_i$, of vertex $v_i$, to be $|v_i|/2$.
+
+Let $C(h)$ be the cone of height $h$ and circular base of area 
+$\pi (T^2-h^2)$.
+The volume of the cone $C(h)$ is given by the classical formula $$\vol(C(h))=\pi (T^2-h^2) h/3.$$ 
+ Similarly, the solid angle of the cone is given by $$\sol(C(h))=2\pi (1-h/T).$$ 
+ We define a function $\phi$ which can be thought of geometrically as the volume per 
+unit solid angle.  It is, $$\phi(h)=\vol(C)/\sol(C)=\frac 1 6 T(T+h)h.$$  Notice that 
+$\phi(T)$ can be thought of as the volume per unit area of a ball of radius $T$.  
+
+So we have an explicit formula for (1).  It is 
+$\sol(S)\phi(T)$.  
+
+We define the {\it cap} of $C(h)$ as the portion of the ball of radius $T$ 
+which is truncated by a face of the Voronoi and is enclosed by the tetrahedron.
+We find the volume of the cap by adding the volume of the entire cone and then 
+subtracting the portion of the cone below the plane of height $h$.
+
+(2) is given by
+$-(1-h/T)\phi(T)\dih(S)+(1-h/T)\phi(h)\dih(S)$.
+
+The quoins of (3) lie above Pieces 2-7 of Figure 4.3.b.  4.3.e shows the quoins.  
+
+We need some extra notation to find the volume of the quoins.
+Define the Rogers simplex $R(a,b,c)$ as 
+$$R=R(a,b,c):= S(a,b,c,(c^2-b^2)^{1/2},(c^2-a^2)^{1/2},(b^2-a^2)^{1/2})$$
+for $1\le a\le b\le c$.
+
+See [1.8.6] for a discussion of the uses of Rogers simplices in the Kepler conjecture.
+
+If $R=R(a,b,c)$ is a Rogers simplex, we set
+$$
+\align
+6\quo(R) &=-(a^2+ac-2c^2)(c-a)\arctan(e)
+		+a(b^2-a^2)e\\&-4c^3\arctan(e(b-a)/(b+c))
+\endalign
+$$
+where $e\ge0$ is given by $e^2(b^2-a^2)=(c^2-b^2)$.  
+The function $\quo(R)$ (the 
+{\it quoin\/}
+of $R$) is the volume of a wedge-like region situated above the Rogers
+simplex $R$.  It is defined as
+the region bounded by the four planes through the
+faces of $R$ and a sphere of radius $c$ at the origin.  We set
+$\quo(R) = 0$, unless $1\le a\le b\le c$.
+
+{\bf Formula 4.2.1.}
+
+We have $$
+	\align
+	\omega(S) &= 
+	\sol(S)\phi(T)
+	-\sum\Sb i=1\\h_i\le T\endSb^3 \dih_i(S) (1-h_i/T) (\phi(T)-\phi(h_i)) \\
+	&+\sum_{(i,j,k)\in S_3} 	
+	\quo(R(h_i,\eta(y_i,y_j,y_{k+3}),T))
+	\endalign
+	$$
+
+Where $S_3$ is the set of permutations of $(i,j,k)$.
+Similarly, we have an explicit formula $\omega(P)$ for arbitrary standard clusters $P$.  
+Extending the notation in an obvious way, we have
+
+{\bf Formula 4.2.2.}
+
+        $$
+	\align
+	\omega(P) &= 
+	\sol(P)\phi(T)
+	-\sum_{|v_i|\le 2T} \dih_i (1-|v_i|/(2T)) (\phi(T)-\phi(|v_i|/2)) \\
+	&+\sum_{R} \quo(R) 
+	\endalign	
+	$$
+
+
+
+The first sum runs over vertices in $P$ of height at most
+$2T$.  The second sum runs over Rogers simplices 
+$R(|v_i|/2,\eta(F),T)$ in $P$, where $F=(0,v_1,v_2)$ is a 
+face of circumradius $\eta(F)$ at most $T$, formed by vertices
+in $P$.  
+
+\bigskip
+
+\centerline{ {\bf 5. Squander.}}
+
+\bigskip
+
+{\bf 5.1. The function $\mu$.}
+
+\bigskip
+
+Numerical evidence suggests that 
+the volume function can be minimized by extending two of the first three edges to $2T$ 
+and keeping the others at 2.  This means we are lifting two of the spheres high above $S_0$. 
+ Intuitively, it seems that the densest packing will be achieved when the spheres are as
+ close as possible.  Clearly, the fact that the simplex $S(2,2T,2T,2,2,2)$ minimizes 
+volume doesn't bode well with our intuition.  To address this siege on our good senses, we use a 
+comparison between the volume contained in a cluster and the solid angle of that cluster.  
+While both  the volume and solid angle of the above simplex is considerably less than 
+$S(2,2,2,2,2,2)$, the ratio of volume to solid angle is far greater
+(about 0.56816 for $S(2,2T,2T,2,2,2)$ as opposed to about 0.42755 for $S(2,2,2,2,2,2))$.  
+The point being that even though some simplices have smaller volumes when edges are extended, they may 
+waste more solid angle than that smaller  volume is worth.  We say that the 
+amount $\mu(P)$ is {\it squandered} at standard region $P$.  This idea of squander 
+is the most important strategy used in this paper.
+Since the sphere has a finite surface area, it seems that the best arrangements are 
+obtained not by simply minimizing the volume enclosed by each standard region, 
+but by minimizing the ratio of volume enclosed to solid angle.  This is the reasoning 
+behind the function $\mu$.  (Recall that $M$ is defined approximately as 
+$\vol(S(2,2,2,2,2,2))/\sol(S(2,2,2,2,2,2))$.  Thus, $\mu$ takes the approximate value $0$ for
+ the simplex $S(2,2,2,2,2,2)$.)  (In practice, $\mu(S(2,2,2,2,2,2))\approx 
+10^{-7}$ due to the 
+rounding of $M$.)  
+
+
+We have $$\mu(X)=\omega(X)-M \sol(X).$$
+Summing over all standard regions X we have,
+$$\sum \mu(X)=\sum \omega(X)-M \sum \sol(X).$$
+So,
+$$\sum \mu(X)=\omega(V(S_0))-4 \pi M.$$
+
+We have $\mu(X)>0$ on all possible standard regions 
+by inequality A.1.1.6 and Theorem 6.1.  
+
+We also know that $\omega(X)>0$.
+
+Also, we have $$\mu(D)=\omega(D)-4 \pi M \approx (5.55029\dots) -( 5.37275\dots) \approx 0.177540.$$  
+Let the number $\mu(D)$ %0.178 
+be called the {\it squander target}.  
+
+While summing $\mu$ over the standard regions of a planar map, if the partial sum ever
+ exceeds the squander target then that graph can be discarded because it can not 
+possibly correspond to a packing whose Voronoi has smaller volume than $\vol(D)$.
+
+Using this method, we have a powerful strategy to determine immediately if a graph 
+can correspond to a counterexample to the conjecture.  
+
+\bigskip
+
+{\bf Section 5.2. Types of Vertices.}
+
+\bigskip 
+
+We say that a vertex $v$ of a planar map has {\it type} $(p,q)$ if there are exactly $p$ triangular faces, $q$ quadrilateral (cluster) faces, and no exceptional regions that meet at $v$.  We write $(p_v,q_v)$ for the type of $v$.  
+
+
+It seems intuitively clear that a vertex which is an element of a very large 
+(8) or very small (2) number of standard regions would yield a large Voronoi volume due to the necessary dihedral angle distortions.  To make this idea precise, we use the function $\mu$ to tell when a particular arrangement of triangles and quadrilaterals around a vertex corresponds to a graph whose Voronoi has a volume which is necessarily larger than the volume of the dodecahedron.  
+
+We will now prove lower bounds for the squander of a vertex based entirely on its type.  The following table gives obvious constraints on the sparse graphs.  For example, if more than 0.178 is squandered at a vertex of a given type, then that type of vertex cannot be part of a graph from a sparse graph whose volume is less than $\vol(D)$.  These relations between volumes and vertex types will allow us to reduce the feasible planar maps to an explicit finite list.  For each of the planar maps on this list, we calculate a second, more refined linear programming bound on the volume.  Often, the refined linear programming bound is greater than $\vol(D)$.  
+
+This section derives the bounds on the squanders of the clusters around a given vertex as a function of the type of vertex.  Define constants $\mu_{LP} (p,q)$ by Table 5.2.1.  The entries marked with just an asterisk are impossible due to dihedral angle constraints.  
+(See Lemma 5.3.1.)
+The entries with numbers followed by asterisks exceed  the squander target and cannot be part of a graph yielding a volume less than the dodecahedron.
+
+
+$$
+\vbox{\offinterlineskip
+\hrule
+\halign{&\vrule#&\strut\quad\hfil#\hfil\quad\cr
+height 7pt&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&\cr
+&\hfil $\mu_{LP} (p,q)$\hfil
+        &&\hfil0\hfil
+        &&\hfil1\hfil
+        &&\hfil2\hfil
+        &&\hfil3\hfil
+        &&\hfil4\hfil
+        &&\hfil5\hfil&
+\cr
+height 7pt&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&\cr
+\noalign{\hrule}
+height7pt&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&\cr
+&0&&	*&&	*&&	0.224*&&  0.093&& 0.125&& 0.429*&\cr
+&1&&	*&& *&&  0.092&& 0.093&& 0.314* && *&\cr
+&2&&	*&& 0.133&& 0.062 && 0.199*&& *&&*&\cr
+&3&&	*&& 0.043&& 0.118 && 0.403* &&*&&*&\cr
+&4&& 0.053 && 0.051 && 0.288*&&*&&*&&*&\cr
+&5&& 0.004 && 0.198*&&*&&*&&*&&*&\cr
+&6&& 0.121 &&*&&*&&*&&*&&*&\cr
+&7&& 0.279*&&*&&*&&*&&*&&*&\cr
+height7pt&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&&\omit&\cr}
+\hrule
+}\tag 5.2.1
+$$
+
+
+\proclaim{Lemma 5.2.1} Let $S_1,\dots,S_p$ and $R_1,\dots,R_q$ be the tetrahedra and quad clusters around a vertex of type $(p,q)$.  Consider the constants of Table 5.2.1.  We have 
+
+$$\sum^p \mu (S_i) + \sum^q \mu (R_i) \geq \mu_{LP}(p,q).$$  \endproclaim
+
+{\bf Proof:} Set 
+$$(d_i^0,t_i^0)=(\dih(S_i),\mu(S_i)),\qquad 
+(d_i^1,t_i^1)=(\dih(R_i),\mu(R_i)).$$  Then
+$\sum^p\mu(S_i)+\sum^q\mu(R_i)$ is at least the minimum
+of $\sum^p t_i^0+\sum^q t_i^1$ subject to
+$\sum^p d_i^0+\sum^q d_i^1 = 2\pi$ and to the system
+of linear inequalities of 1.1-2.2 from Appendix 1.
+The constant $\mu_{LP}(p,q)$ was chosen to be slightly smaller
+than the true minimum of this linear programming problem.  
+By convexity, we may take the constants $d_i^0$ to be equal and
+the constants $d_i^1$ to be equal to $((2\pi-pd_1^0)/q)$, so the
+optimization reduces to a single variable $d_1^0$.
+
+The entry $\mu_{LP}(5,0)$ is based on Lemma 5.2.2.  \qed
+
+
+\proclaim{Lemma 5.2.2} Let $v_1,\dots,v_k,$ for some $k\leq 4$ be distinct vertices of a decomposition star of type (5,0).  Let $S_1,\dots,S_r$ be quasi-regular tetrahedra around the edges $(0,v_i)$, for $i\leq k$.  
+Then $$\sum_{i=1}^r \mu(S_i)> 0.004 k.$$  \endproclaim
+
+{\bf Proof:} We have $\mu(S)\geq 0$, for any quasi-regular tetrahedron S.  We refer to the edges $y_4,y_5,y_6$ of a simplex $S(y_1,\dots,y_6)$ as its top edges.  Set $\epsilon=2.1773$.  This value was obtained by assuming 4 of the tetrahedra around a vertex of type (5,0) have values $S(2,2,2,2,2,2)$.  Then the fourth edge of the  fifth tetrahedron is totally described, based on the fact that the dihedral angles sum to $2 \pi$.  The value for  $\epsilon$ is approximately this edge length.
+
+Define the constant $m=0.0368$.
+
+
+{\it Claim 1:}  If $S_1,\dots, S_5$ are quasi-regular tetrahedra around an edge $(0,v)$ and if $S_1=S(y_1,\dots,y_6)$, where $y_5\geq \epsilon$ is the length of a top edge $e$ on $S_1$ shared with $S_2$, then 
+$\sum_{i=1}^5 \mu(S_i) > 3 (0.004)=0.012$.  
+
+{\it Proof:}  This claim follows from Inequalities 5.2.3.1 and 5.2.3.2 if some other top edge in this group of quasi-regular tetrahedra has length greater than $\epsilon$.  (There are three choices, up to symmetry, where to put the long edge.  Apply the Inequalities to the three choices.)
+Assuming all the top edges other than $e$ have length at most $\epsilon$, the estimate follows from $\sum_1^5 \dih(S_i)=2 \pi$ and Inequalities 5.2.3.3 and 5.2.3.4. 
+ $(3 (-0.04542) + 2 (-0.03896) + 2 \pi m > 0.012.)$
+\qed
+
+Now let $S_1,\dots,S_8$ be the eight quasi-regular tetrahedra around two 
+edges 
+$(0,v_1)$, $(0,v_2)$ of type $(5,0)$.  Let $S_1$, and $S_2$ be the simplices along the face $(0,v_1,v_2)$.  Suppose that the top edge $(v_1,v_2)$ has length at least $\epsilon$.  
+
+{\it Claim 2:}  $\sum_{i=1}^8 \mu(S_i) > 4(0.004)=0.016.$ 
+
+{\it Proof:}  If there is a top edge of length at least $\epsilon$ that does not lie on $S_1$ or $S_2$ then this claim reduces to Inequality 5.2.3.1 and Claim 1.  If any of the top edges of $S_1$ or $S_2$ other than $(v_1,v_2)$ has length at least $\epsilon$, then the claim follows from Inequality 5.2.3.1 and 5.2.3.2.  We assume all top edges other than $(v_1,v_2)$ have length at most $\epsilon$.  The claim now follows from Inequalities 5.2.3.3 and 5.2.3.5.  
+ $(6(-0.04542) + 2 (-0.08263) + 4 \pi m \approx 0.0246624 > 0.016.)$ 
+ \qed
+
+Consider $\mu(S)$ for $k=1$.  If a top edge has length at least $\epsilon$, this is Inequality 5.2.3.1.  If all top edges have length less than $\epsilon$, this is Inequality 5.2.3.3, since dihedral angles sum to $2 \pi$.  
+
+We say that a top edge lies around a vertex $v$, if it is an edge of a quasi-regular tetrahedron with vertex $v$.  We do not require $v$ to be the endpoint of the edge.
+
+Take $k=2$.  If there is an edge of length at least $\epsilon$ that lies around only one of $v_1$ and $v_2$, then Inequality 5.2.3.1 reduces us to the case $k=1$.  Any other edge of length at least $\epsilon$ is covered by Claim 1.  So we may  assume that all top edges have length less than $\epsilon$.  And then the result follows easily from Inequalities 5.2.3.3 and 5.2.3.6. 
+$( 6 (-0.04542)+2(-0.0906) +4 \pi m \approx 0.02466 > 0.008 )$
+
+Take $k=3$, vertices $v_1,v_2,v_3$.  If there is an edge of length at least $\epsilon$ lying around only one of the $v_i$, then Inequality 5.2.3.1 reduces us to the case $k=2$.  If an edge of length at least $\epsilon$ lies around exactly two of the $v_i$, then it is an edge of two of the quasi-regular tetrahedra.  These quasi-regular tetrahedra give 2(0.004), and the quasi-regular tetrahedron around the third vertex $v_i$ gives 0.004 more.  If a top edge of length at least $\epsilon$ lies around all three vertices, then one of the endpoints of the edge lies in $\{v_1,v_2,v_3\}$, so the result follows from Claim 1.  Finally, if all top edges have length at most $\epsilon$, we use Inequalities 5.2.3.3, 5.2.3.6, and 5.2.3.7.  (There are two possible arrangements of the vertices up to symmetry.)  Case 1 has a tetrahedron with vertices $v_1,v_2,v_3$.  This arrangement yields 
+$(6(-0.04542)+3(-0.0906)+1(-0.13591)+6 \pi m \approx 0.0134337 > 0.012).$  
+Case 2 yields 
+$(7(-0.04542)+4(-0.0906)+6 \pi m \approx 0.01332 > 0.012)$.
+
+Take $k=4$, vertices $v_1,\dots,v_4$.  Suppose there is a top edge $e$ of length at least $\epsilon$.  If $e$ lies around only one of the $v_i$, we reduce to the case $k=3$.  If it lies around two of them, then the two quasi-regular tetrahedra along this edge give 2(0.004) and the quasi-regular tetrahedra around the other two vertices $v_i$ give another 2(0.004).  If both endpoints of $e$ are among the vertices $v_i$, the result follows from Claim 2.  This happens in particular if $e$ lies around four vertices.  If $e$ only lies around three vertices, one of its endpoints is one of the vertices $v_i$, say $v_1$.  Assume $e$ is not around $v_2$.  If $v_2$ is not adjacent to $v_1$, then Claim 1 and the case for $k=1$ give the result.  So taking $v_1$ adjacent to $v_2$, we adapt Claim 1, by using Inequalities 5.2.3.1-7, to show that the eight quasi-regular tetrahedra around $v_1$ and $v_2$ give $4(0.004)$.  
+$(2(-0.03896)+4(-0.04542)+2(-0.0906)+4\pi m \approx 0.02164 > 0.016)$.
+
+Finally, if all top edges have length at most $\epsilon$, we use Inequalities 5.2.3.3, 5.2.3.6, 5.2.3.7.  
+There are three cases up to symmetry.  Case 1 has two tetrahedra with all their vertices among $v_1,\dots,v_4$.  This case yields 
+$(6(-0.04542)+4(-0.0906)+2(-0.13591)+8 \pi m \approx 0.018144 > 0.016.)$  Case 2 has one tetrahedron with all vertices among $v_1,\dots,v_4$.  This case yields 
+$(7(-0.04542)+5(-0.0906)+1(-0.13591)+8 \pi m \approx 0.0180349 > 0.016.)$  Case 3 yields 
+$(8(-0.04542)+6(-0.0906)+8 \pi m \approx 0.01792 > 0.016.)$  
+
+$\qed$
+
+{\bf 5.2.3. Inequalities used in 5.2.2:}
+\smallskip
+\hbox{}
+Let $\epsilon=2.1773, m=0.0368.$\newline
+1.  If $y_4 \geq \epsilon$, then $\mu(S) > 0.00470$, \newline
+2.  If $y_4,y_5 \geq \epsilon$, then $\mu(S) > 0.01059$,\newline
+3.  If $y_4 \leq \epsilon$, then $\mu(S) > -0.04542 + m \dih(S)$,\newline
+4.  If $y_4,y_6 \leq \epsilon, y_5 \geq \epsilon$, then 
+	$\mu (S)>-0.03896 + m \dih(S)$,\newline
+5.  If $y_6 \geq \epsilon, y_4,y_5 \leq \epsilon$, then $\mu (S) > -0.08263 + m (\dih_1(S)+\dih_2(S))$\newline
+6.  If $y_4,y_5,y_6\leq\epsilon,$ then $\mu(S) > -0.09060 + m(\dih_1(S)+\dih_2(S))$,\newline
+7.  If $y_4,y_5,y_6 \leq\epsilon,$ then $\mu(S) > -0.13591 + m ( \dih_1(S)+\dih_2(S)+\dih_3(S))$\newline
+
+
+
+
+\bigskip
+
+{\bf Section 5.3. Limitations on Types.}
+
+\bigskip
+
+Recall that a vertex of a planar map has type $(p,q)$ if it is the vertex of exactly $p$ triangles and $q$ quadrilaterals.  This section restricts the possible types that appear in a map of a sparse graph.  
+
+
+{\bf Lemma 5.3.1.} The following types $(p,q)$ are impossible: (1) $p\geq 8$, (2) $p\geq6$ and $q \geq 1$, (3) $p \geq 5$ and $q\geq 2$, (4) $p\geq 4$ and $q \geq 3$, (5) $p \geq 2$ and $q \geq 4$, (6) $p\ge 1$ and $\ge 5$, (7) $q \geq 6$, (8) $p \leq 3$ and $q=0$, (9) $p \leq 1$ and $q=1$. 
+
+{\bf Proof:}  By Inequalities A.1.1.4, A.1.1.5, A.2.1.4, and  A.2.1.5,  we have\newline
+$\dih_{min}(S)>0.856147$, \newline
+$\dih_{max}(S)>1.88673$, \newline
+$\dih_{min}(Q)<1.15242$, \newline
+$\dih_{max}(Q)<3.25887.$ \newline
+
+  This lemma follows from the constraint that the sum of the minimum dihedral angles must be $2 \pi$.  One can easily verify in Cases 1-7 that 
+
+$$p\ \dih_{min}(S)  + q\ \dih_{min}(Q)  > 2 \pi.$$  
+
+Similarly, in Cases 8 and 9 we have 
+
+$$p\ \dih_{max}(S)  + q\ \dih_{max}(Q)  < 2 \pi.$$
+ 
+\qed
+
+\proclaim{Lemma 5.3.2} $\omega(V(S_0))=4 \pi M + \mu(V(S_0))$. \endproclaim
+
+{\bf Proof:} Let $R$ be a standard cluster.  From the definition of $\mu$ we have $$\omega(V(S_0))=\sum \omega(R_i)+ M (4\pi - \sum \sol(R_i)) = 4 \pi M + \sum \mu(R_i).$$ \qed
+
+Since $\mu(R_i) > 0$, if the partial sum over the squanders of the standard regions of a map ever exceeds $\vol(D)-4\pi M$, (the squander target), the Voronoi has a volume greater than $\vol(D)$.  
+
+\bigskip
+
+\proclaim{Corollary 5.3.3} If the type of any vertex of the map of a decomposition star is one of $(0,2), (0,5), (1,4), (2,3), (3,3), (4,2),(5,1), (7,0)$, then the Voronoi corresponding to this sparse graph has a volume greater than $\vol(D)$. \endproclaim
+
+ According to Table 5.2.1, we have $\mu_{LP}(p,q) > 0.178$, the squander target, for $(p,q)=(0,2),(0,5),(1,5),(2,3), (3,3),(4,2),(5,1),(7,0)$.  \qed
+
+Due to the preceding two lemmas, we find that we may restrict our attention to the following types of vertices.
+
+$$\matrix
+   (6,0)&      &       &       &       \\
+   (5,0)&      &       &       &       \\
+   (4,0)&(4,1) &       &       &       \\
+        &(3,1) &(3,2)  &       &       \\
+        &(2,1) &(2,2)  &       &       \\
+        &      &(1,2)  &(1,3)  &       \\
+        &      &       &(0,3)  &(0,4)  \\
+\endmatrix 
+$$
+
+
+\bigskip
+
+\bigskip
+
+\centerline{ {\bf 6. Exceptional Regions.}}
+
+\bigskip
+
+We wish to prove lower bounds on the squander of exceptional regions.  
+However, the problem is complicated by the high dimension of these objects.  
+For instance, a pentagonal region is discribed by no fewer than 12 variables, (5 heights, 5 edges,
+ and 2 diagonals).  Our optimization package can handle 6 or 7 variables 
+with little difficulty, but a 12 variable optimization is out of the question.  
+In [H4], Sections 4 and 5, Hales proves lower bounds on $\tau$ (the equivalent of $\mu$ in his proof of Kepler's conjecture) for exceptional regions.  
+It is helpful to note here that the $\tau$ function of Hales' papers and the $\mu$ function are related by 
+
+$$\tau(X)\approx 4\delta_{oct} \mu(X).$$
+
+(See [H1.1] for the definition of $\delta_{oct}$.)
+We follow the mentioned sections to the letter in proving lower bounds on the squander of exceptional regions.  We check that all the deformations work with the slightly larger domain and find the arguments hold.  Therefore, we leave the details to the reader and state the next theorem without proof, on the basis that the transition is easy enough not to require an entire 20 page recapitulation of the material of [H4].
+
+There are some notable differences between the two however.  The first difference is the bound on close neighbors.  Hales uses 2.51 while we use $2T$ here.
+We do not prove volume bounds, so we need only go through the arguments for $\tau$.  The $\sigma$ function seen in [H4] has no analogue.  Happily, there is no need here to make use of the penalties nor the $S^+,S^-$ configurations.  As the bounds are easier to prove here, these techniques are unnecessary.  
+Our thanks to Sam Ferguson who proved all the inequalities used in this stage.
+
+
+Let $R$ be a standard cluster. Let $U$ be the set of vertices
+over $R$ of height at most $2T$.  These vertices can be boundary vertices of the cluster or enclosed vertices.  Consider the set $E$ of 
+edges of length at most $2T$ between vertices of $U$.
+We attach a multiplicity to each edge.
+We let the multiplicity be $2$ when the edge projects to the interior
+of the standard region, and $0$ when the edge
+projects to the complement of the standard region.  
+%Also, if an enclosed vertex is not connected to any vertex of the enclosing region, we draw an imaginary edge from one of the vertices of the region to that vertex and count that edge with multiplicity 2.  
+The other
+edges, those bounding the standard region, are counted with
+multiplicity $1$.  
+
+Let $n_1$ be the number of edges
+in $E$, 
+counted with multiplicities.
+Let $c$ be the number of classes of vertices
+under the equivalence relation $v\sim v'$ if there is a sequence
+of edges in $E$ from $v$ to $v'$.
+  Let $n(R)=n_1+2(c-1)$.
+If the standard region under $R$ is a polygon, then $n(R)$ is the
+number of sides.  
+
+
+\proclaim{Theorem 6.1} $\mu(R) > t_n$, where $n=n(R)$ and
+$$\align
+t_4&=0.031,\quad t_5=0.076,\quad
+t_6=0.121,\\
+t_7&=0.166.
+\endalign$$
+
+Also, if $n(R)\ge 8$ for some standard cluster $R$, then the map corresponds to a volume greater than $\vol(D)$.
+
+\endproclaim
+
+\bigskip
+
+In the cases of exceptional regions that are not polygons, we call the {\it polygonal hull} the
+polygon obtained by removing the internal edges and vertices.
+We have $m(R)\le n(R)$, where the
+constant $m(R)$ is the number of sides of the polygonal hull.
+
+
+\proclaim{Corollary 6.2}  Every standard region of a graph that squanders less than the target is a polygon.
+\endproclaim
+
+
+
+If some figure has a septagonal hull, it has no enclosed vertices, 
+otherwise it would give $n\ge 9$.  A hexagonal region can't have an 
+enclosed vertex either, for then $n \ge 8$.  A pentagon may enclose at 
+most one vertex, giving $n=7$.  We deal with this case in Section 7.
+  A quad
+ region may enclose at most one vertex.  The combinatorial possibilities
+ are shown in Figure 3.2.2  (a) and (b) are a quad and two tetrahedra, respectively.  (c) and (d) do  
+do not exist by geometric considerations.  
+The proof that (e) does not exist is given in Lemma 7.2.
+(f),(g),and (h) are unions of standard regions.  The enclosed vertices are of types (0,2),(2,1), and (4,0) and will 
+be left to the graph generating algorithm.
+
+
+\bigskip
+
+{\bf Section 6.3. Vertex Adjustments.}
+
+\bigskip
+
+
+When generating the graphs which have a face with at least 5 edges, we simply get too many (hundreds of thousands).  More information is needed to reduce the number to a manageable size.  We introduce the concept of a {\it vertex adjustment}.  
+
+\proclaim{Theorem 6.3.1} If a vertex has 4 tetrahedra and 1 exceptional region with $n\ge5$ sides, then $\sum\mu > t_n+0.016$ where the sum runs over the set of 4 tetrahedra and the exceptional region.
+\endproclaim
+
+We also use, without further comment, a modification of this lemma that 
+combines more than one such vertex.  See [H5] (2.2,2.7) for details.
+Using this constraint, we limit the number of graphs to less than 1000.  
+
+%\gram|2.1|1.2|dia39.ps|  % counterexample
+\gram|2.1|6.3.1|6.1.ps|  % counterexample
+
+
+{\bf Proof:} We use the variable names from Figure 6.3.1. 
+There are two cases, depending on whether $y_{16}$ is less than or greater than $2\sqrt 2$.
+
+{\it Case 1:} ($y_{16}\ge2\sqrt2$) In this case, the tetrahedra are so deformed that we can sum the squander over the 4 tetrahedra to achieve the bound.  
+Notice the edge length bounds given in Section 2.1.  Using these bounds we find that the following inequalities hold.  (Note that $\dih(S)$ is the dihedral angle at vertex 1.)
+
+% $$\align \vol(A)>-0.166 y_1 & - 0.174893 y_2 - 0.174893 y_3 + 0.306136 y_4 + %  0.143 y_5 \\& + 0.143 y_6-0.263488(\dih_1(A)-1.76) - 0.038250. \endalign$$
+
+
+$\mu(A) > + 0.077882  + 0.026877 y_2 - 0.068297 y_3 - 0.015104 y_5 + 0.015864 y_6$  \newline $- 0.054196 (\dih(A)-2 \pi /5) $
+
+$\mu(B) > - 0.003439  + 0.068297 y_3 - 0.068297 y_8 - 0.015104 y_9 + 0.015104 y_5$  \newline $- 0.054196 (\dih(B)-2 \pi /5) $
+
+$\mu(C) > - 0.337042   + 0.068297 y_8 + 0.068297 y_{12} + 0.015104 y_{11} + 0.015104 y_9$  \newline $- 0.054196 (\dih(C)-2 \pi /5) $
+
+$\mu(D) > 0.077882 - 0.068297 y_{12} + 0.026877 y_{14} + 0.015864 y_{15} - 0.015104 y_{11}$ \newline $ - 0.054196 (\dih(D)-2 \pi /5)$
+
+$0 > 0.200816 - 0.026877 y_{14} - 0.026877 y_2 - 0.015864 y_6 - 0.015864 y_{15} $ \newline $ - 0.054196 (\dih(E)-2 \pi /5)$
+
+Amazingly, as we sum these 5 inequalities, all the terms cancel.  (The dihedral terms sum to $2\pi$). We are left with the inequality 
+
+$$\sum_{A}^E\mu > 0.016$$
+ as required. 
+\qed
+
+{\it Case 2:} In this case, the diagonal $2T\le y_{16}\le 2\sqrt 2$.  We must calculate the squander of part $E$.  
+We define $R(3,1)=0.0155$.  This constant is used in [H4] to determine lower bounds on the squander of the exceptional regions.  It is the
+contribution to $t_n$ that comes from $E$ in the proof of Theorem 6.1.
+Note that
+$R(3,1)\approx \mu(S(2,2,2,2,2,2T))$.
+Since we wish to add squander to the sum, we must subtract $R(3,1)$ from the squander of $E$.  Here are the inequalities.
+
+$\mu(A) >  0.215754 - 0.037846 y_2 -0.05782 y_3 - 0.014907 y_6  - 0.110014 (\dih(A)-2 \pi /5)$\newline
+
+$\mu(B) > - 0.236671 + 0.05782 y_3 + 0.05782 y_8  - 0.110014 (\dih(B)-2 \pi /5) $\newline
+
+$\mu(C) > 0.225888 - 0.05782 y_8 -0.05782 y_{12}   
+- 0.110014 (\dih(C)-2 \pi /5)$\newline
+
+$\mu(D)> - 0.236671 + 0.05782 y_{12} + 0.05782 y_{14} - 0.110014 (\dih(D)-2 \pi /5)$\newline
+
+$\mu(E) >  (0.063301) - 0.05782 y_{14} + 0.037846 y_2 + 0.014907 y_6 -  0.110014 (\dih(E)-2 \pi /5)$\newline
+
+
+Again, these inequalities sum to $$\sum\mu > 0.016+R(3,1)$$
+
+This completes the proof. \qed
+
+
+\bigskip
+
+\centerline{{\bf Part 7. The Planar Maps:}}
+\bigskip
+
+{\bf Lemma 7.1.} Let $L$ be the map of a packing about $S_0$.
+Suppose that the standard regions of L are all triangles and quadrilaterals.  
+Suppose that $\sum \mu_{LP}(P)$ over all disjoint sets of vertices of type $P$ is less than the squander target.  
+Than $L$ has the following properties (without loss of generality): 
+
+1. The graph G(L) has no loops or multiple joins. \newline
+2. Each face of L is a triangle or quadrilateral.\newline
+3. Each vertex has one of the types from the end of Section 5.\newline
+4. If C is a 3-circuit in G(L), then it bounds a triangular face.\newline
+5. If C is a 4-circuit in G(L), then one of the following is true:\newline
+(a) C bounds a short quad. \newline
+(b) C bounds a pair of adjacent triangles.\newline
+(c) C encloses one vertex, and it has type (4,0) or (2,1).\newline
+6. $\sum_{v\in V} \mu_{LP}(p_v,q_v) \leq 0.178$, for any collection V of vertices in L such that no two vertices of V lie on a common face. \newline 
+
+
+\bigskip
+
+{\bf Proof:} Property 1 follows from the fact that a loop would give a closed geodesic on the unit sphere of length less than $2\pi$ and a multiple join would give nonantipodal conjugate points on the sphere. \newline 
+Property 2 is assumed.  \newline
+Property 3 follows from 5.3. \newline 
+Property 4 follows from Lemma 3.1.4. \newline 
+Property 5 follows from Lemma 3.2.1, Corollary 3.2.2 and 5.3, and Corollary 6.2.\newline 
+Property 6 follows from Lemma 5.3.2. \newline 
+
+\qed
+
+
+See [H3.8] for a description of the graph generator algorithm.  The program produced close to 500 planar graphs which are conceivably counterexamples to the Dodecahedral Conjecture.
+
+We generate the cases with pentagons in the same way with a few differences.
+
+The next lemma is used by the graph generator to discard graphs with 
+the configuration shown in 3.2.2 (e).  We found it easier to eliminate this
+particular arrangement by hand.
+
+\proclaim{Lemma 7.2} The  pentagon/tetrahedron arrangement of Corollary 3.2.2 (e) squanders more than 0.178. \endproclaim
+
+{\bf Proof:} We will show that the above arrangement squanders at least
+0.168.  Let $P$ denote the aggregate cluster formed by these two standard
+clusters. (Pentagon and Tetrahedron)
+
+It is easy to see that the lemma follows from the bound.  The arrangement consists of exactly 5 vertices.  Choose 4 of the vertices in the graph which are not part of the pentagon tetrahedron configuration.  By 5.2.2, these 4 squander at least 0.016.  Thus, any graph with this configuration squanders at least 0.184 and can be discarded.
+
+We now prove the bound.  
+
+Let $v_1,v_2,\ldots,v_5$
+be the five corners of the pentagonal cluster $R$, where $v_1$ is a
+vertex at only two standard clusters, $R$ and a quasi-regular tetrahedron
+$S = (0,v_1,v_2,v_5)$.   Since the four edges $(v_2,v_3)$, $(v_3,v_4)$,
+$(v_4,v_5)$, and $(v_5,v_2)$ have length less than $2T$, the
+aggregate of 
+$R$ and $S$ will resemble a quad cluster in many respects.
+
+\proclaim{Claim 1}  One of the edges $(v_1,v_3)$, $(v_1,v_4)$ has
+length less than $2\sqrt{2}$.  Both of the edges have length less
+than $3.06$. Also, $|v_1|\ge2.289$.
+\endproclaim
+
+\demo
+{Proof}
+This is a standard exercise in geometric considerations.
+We deform the figure using pivots to a configuration $v_2,\ldots,v_5$
+at height $2$, and $|v_i-v_j|=2T$, $(i,j)=(2,3),(3,4),(4,5),(5,2)$.
+We scale $v_1$ until $|v_1|=2T$.
+We can also take the distance from $v_1$ to $v_5$ and $v_2$ to be
+$2$.  If we have $|v_1-v_3|\ge 2\sqrt{2}$, then we stretch
+the edge $|v_1-v_4|$ until $|v_1-v_3|=2\sqrt{2}$.  The resulting
+configuration is rigid.  Pick coordinates to find that $|v_1-v_4|<2\sqrt{2}$.
+If we have $|v_1-v_3|\ge 2T$, follow a similar procedure to
+reduce to the rigid configuration $|v_1-v_3|=2T$, to find that
+$|v_1-v_4|<3.06$.
+The estimate $|v_1|\ge2.289$ is similar.
+\qed
+\enddemo
+
+There are restrictive bounds on the dihedral angles of the
+simplices $(0,v_1,v_i,v_j)$ along the edge $(0,v_1)$.  
+The quasi-regular tetrahedron has a
+dihedral angle of at most $1.887$ (A.1.1.1.5.).  The dihedral angles
+of the simplices $(0,v_1,v_2,v_3)$, $(0,v_1,v_5,v_4)$
+adjacent to it are at most $1.63$ (7.2.1).
+The dihedral angle of the remaining simplex $(0,v_1,v_3,v_4)$ is at
+most $1.512$ (7.2.2).   This leads to lower bounds as well.
+The quasi-regular tetrahedron has a dihedral angle that is at least
+$2\pi - 2(1.63)-1.512 > 1.511$.  The dihedral angles adjacent to the
+quasi-regular tetrahedron is at least $2\pi- 1.63-1.512-1.887> 1.254$.
+The remaining dihedral angle is at least $2\pi-1.887-2(1.63) > 1.136$.
+
+\proclaim{Claim 2} A sparse graph with this configuration
+squanders $> 0.178$.
+\endproclaim
+
+\demo{Proof}  
+
+
+Let $S_{ij}$ be the simplex $(0,v_1,v_i,v_j)$, for 
+$(i,j)=(2,3),(3,4), (4,5),(2,5)$.  We have $\sum_{(4)}\dih(S_{ij}) = 2\pi$.
+We will let $(v_1,v_3)\in [2T,3.06]$ and $(v_1,v_4)\in [2T,2\sqrt{2}]$.
+
+
+We have 
+$$
+\align
+\mu(S_{25}) &- 0.02365\dih(S_{25}) > -0.0126, (7.2.3)\\
+\mu_0(S_{23}) &- 0.02365\dih(S_{23}) > 0.0026,(7.2.4)\\
+\mu_0(S_{45}) &- 0.02365\dih(S_{45}) > 0.0026,(7.2.4)\\
+\mu_0(S_{34}) &- 0.02365\dih(S_{34}) > 0.0274,(7.2.5)\\
+\endalign
+$$
+Summing, we find 
+$\sum_{(4)}\tau(S_{ij}) >2\pi(0.02365)-0.0126+0.0026+0.0026+0.0274>0.168$.
+
+\qed
+\enddemo
+
+
+
+{\bf Lemma 7.3.} Let $L$ be the map of a packing about $S_0$.
+Suppose that the standard regions of L are polygons.  
+Suppose that the volume of the truncated Voronoi cell has volume smaller than 
+the regular dodecahedron.
+Then $L$ has the following properties (without loss of generality): 
+
+1. The graph G(L) has no loops or multiple joins. \newline
+2. If a vertex consists only of triangles and quadrilaterals, then each vertex has one of the types from Table 5.1.\newline
+3. If C is a 3-circuit in G(L), then it bounds a triangular face.\newline
+4. If C is a 4-circuit in G(L), then one of the following is true:\newline
+(a) C bounds some quadrilateral region. (The projection of a quad cluster.)\newline
+(b) C bounds a pair of adjacent triangles.\newline
+(c) C encloses one vertex, and it has type (4,0) or (2,1).\newline
+5. $\sum_{v\in V} \mu_{LP}(p_v,q_v) \leq 0.178$, for any collection V of vertices (with no exceptional regions) in L such that no two vertices of V lie on a common face. \newline 
+6. There are no more than two exceptional regions.\newline
+7. The pentagon/tetrahedron arrangement of Corollary 3.2.2 (e) is not allowed.\newline
+8. If a vertex has 4 tetrahedra and one exceptional region, we add 0.016 to the squander of the set of regions.
+
+\smallskip
+(This last property is complicated by the fact that the sets of regions can often be chosen in more than one way.  
+Luckily, this last property is needed only by the graph generator and then
+when we are down to 15 cases.  They were entered by hand into the linear programming files.  When there was a choice, it never made a decisive difference which choice was made.) \newline
+
+\bigskip
+
+{\bf Proof:} Properties 1,2,3,4,5 are proved above.
+Property 6 follows from the fact that three pentagons would put 
+a graph over the target.
+Property 7 if proved in Lemma 7.2.
+Property 8 is Theorem 6.3.1.
+
+\qed
+
+
+
+
+Now we must deal with the case of the pentagon with an enclosed vertex left unfinished in 6.2.  
+If a pentagon encloses one vertex, then the pentagon (including the enclosed vertex) squanders at least 0.166.  (Note that the pentagon may not enclose more than one vertex or the number of sides of the configuration, counted with multiplicities, is more than 7.)  This configuration consists of exactly 6 vertices.  Since there are at least 13 vertices in the map, choose 4 that aren't part of the pentagon configuration.  By Lemma 5.2.2, these 4 vertices squander at least 0.016.  So the configuration squanders at least 0.182 and the graph can be discarded.  
+
+We are left with about 1000 graphs with pentagons, 10 with hexagons and 0 with heptagons.
+
+
+For each of these maps, we define a linear programming problem whose solution dominates the volume of the Voronoi polyhedron associated with the planar map.  
+The programs are based on the inequalities of Appendix 1.
+See [H3.9] for a description of the linear programs.
+
+The linear optimization succeeded in eliminating all but 3 graphs consisting 
+solely triangles and quadrilaterals, and 9 graphs with pentagons from consideration.  The  3 quad cases are dealt with individually in Appendix 2 and the pents are dealt with in Appendix 3.  All 12 exceptions squander more than the target.  
+
+
+\bigskip
+
+
+This completes the proof of the Dodecahedral Conjecture.
+
+$\qed$
+
+\bigskip
+
+
+
+
+\bigskip
+
+\centerline{\bf Appendix 1. Inequalities}
+
+\bigskip
+
+{\bf 1. Tetrahedral Inequalities.}
+
+\smallskip
+
+The inequalities in Sections 1-3 apply only to quasi-regular tetrahedra.
+The edges are numbered in the usual way.
+
+\smallskip
+
+{\bf 1.1 Function Bounds on Quasi-Regular Tetrahedra.}
+
+
+$1:  \omega(S) > 0.202804$\newline
+$2:  \sol(S) > 0.315696$\newline
+$3:  \sol(S) < 1.051232$\newline
+$4:  \dih(S) > 0.856147$\newline
+$5:  \dih(S) < 1.886730$\newline
+$6:  \mu(S) > 0$\newline
+
+
+\smallskip
+
+{\bf 1.2. Vol, Sol, Dih inequalities on Quasi-Regular Tetrahedra.}
+
+\smallskip
+
+$1:  \omega(S) - 0.68 \sol(S) + 1.88718 \dih(S) > 1.54551 $\newline
+$2:  \omega(S) - 0.68 \sol(S) + 0.90746 \dih(S) > 0.706725$\newline
+$3:  \omega(S) - 0.68 \sol(S) + 0.46654 \dih(S) > 0.329233$\newline
+$4:  \omega(S) - 0.55889 \sol(S) - 0 \dih(S) > -0.0736486$\newline
+$5:  \omega(S) - 0.63214 \sol(S) - 0 \dih(S) > -0.13034$\newline
+$6:  \omega(S) - 0.73256 \sol(S) - 0 \dih(S) > -0.23591$\newline
+$7:  \omega(S) - 0.89346 \sol(S) - 0 \dih(S) > -0.40505$\newline
+$8:  \omega(S) - 0.3 \sol(S) - 0.5734 \dih(S) > -0.978221$\newline
+$9:  \omega(S) - 0.3 \sol(S) - 0.03668 \dih(S) > 0.024767$\newline
+$10:  \omega(S) - 0.3 \sol(S) + 0.04165 \dih(S) > 0.121199$\newline
+$11:  \omega(S) - 0.3 \sol(S) + 0.1234 \dih(S) > 0.209279$\newline
+$12:  \omega(S) - 0.42755 \sol(S) - 0.11509 \dih(S) > -0.171859$\newline
+$13:  \omega(S) - 0.42755 \sol(S) - 0.04078 \dih(S) > -0.050713$\newline
+$14:  \omega(S) - 0.42755 \sol(S) + 0.11031 \dih(S) > 0.135633$\newline
+$15:  \omega(S) - 0.42755 \sol(S) + 0.13091 \dih(S) > 0.157363$\newline
+$16:  \omega(S) - 0.55792 \sol(S) - 0.21394 \dih(S) > -0.417998$\newline
+$17:  \omega(S) - 0.55792 \sol(S) - 0.0068 \dih(S) > -0.081902$\newline
+$18:  \omega(S) - 0.55792 \sol(S) + 0.0184 \dih(S) > -0.051224$\newline
+$19:  \omega(S) - 0.55792 \sol(S) + 0.24335 \dih(S) > 0.193993$\newline
+$20:  \omega(S) - 0.68 \sol(S) - 0.30651 \dih(S) > -0.648496$\newline
+$21:  \omega(S) - 0.68 \sol(S) - 0.06965 \dih(S) > -0.278$\newline
+$22:  \omega(S) - 0.68 \sol(S) + 0.0172 \dih(S) > -0.15662$\newline
+$23:  \omega(S) - 0.68 \sol(S) + 0.41812 \dih(S) > 0.287778$\newline
+$24:  \omega(S) - 0.64934 \sol(S) - 0 \dih(S) > -0.14843$\newline
+$25:  \omega(S) - 0.6196 \sol(S) - 0 \dih(S) > -0.118$\newline
+$26:  \omega(S) - 0.58402 \sol(S) - 0 \dih(S) > -0.090290$\newline
+$27:  \omega(S) - 0.25181 \sol(S) - 0 \dih(S) > 0.096509$\newline
+$28:  \omega(S) - 0.00909 \sol(S) - 0 \dih(S) > 0.199559$\newline
+$29:  \omega(S) + 0.93877 \sol(S) - 0 \dih(S) > 0.537892$\newline
+$30:  \omega(S) + 0.93877 \sol(S) - 0.20211 \dih(S) > 0.27313$\newline
+$31:  \omega(S) + 0.93877 \sol(S) + 0.63517 \dih(S) > 1.20578$\newline
+$32:  \omega(S) + 1.93877 \sol(S) - 0 \dih(S) > 0.854804$\newline
+$33:  \omega(S) + 1.93877 \sol(S) - 0.20211 \dih(S) > 0.621886$\newline
+$34:  \omega(S) + 1.93877 \sol(S) + 0.63517 \dih(S) > 1.57648$\newline
+$35:  \omega(S) - 0.42775 \sol(S) - 0 \dih(S) > -0.000111$\newline
+$36:  \omega(S) - 0.55792 \sol(S) - 0 \dih(S) > -0.073037$\newline
+$37:  \omega(S) - 0 \sol(S) - 0.07853 \dih(S) > 0.08865$\newline
+$38:  \omega(S) - 0 \sol(S) - 0.00339 \dih(S) > 0.198693$\newline
+$39:  \omega(S) - 0 \sol(S) + 0.18199 \dih(S) > 0.396670$\newline
+$40:  \omega(S) - 0.42755 \sol(S) - 0.2 \dih(S) > -0.332061$\newline
+$41:  \omega(S) - 0.3 \sol(S) - 0.36373 \dih(S) > -0.58263$\newline
+$42:  \omega(S) - 0.3 \sol(S) + 0.20583 \dih(S) > 0.279851$\newline
+$43:  \omega(S) - 0.3 \sol(S) + 0.40035 \dih(S) > 0.446389$\newline
+$44:  \omega(S) - 0.3 \sol(S) + 0.83259 \dih(S) > 0.816450$\newline
+$45:  \omega(S) - 0.42755 \sol(S) - 0.51838 \dih(S) > -0.932759$\newline
+$46:  \omega(S) - 0.42755 \sol(S) + 0.29344 \dih(S) > 0.296513$\newline
+$47:  \omega(S) - 0.42755 \sol(S) + 0.57056 \dih(S) > 0.533768$\newline
+$48:  \omega(S) - 0.42755 \sol(S) + 1.18656 \dih(S) > 1.06115$\newline
+$49:  \omega(S) - 0.55792 \sol(S) - 0.67644 \dih(S) > -1.29062$\newline
+$50:  \omega(S) - 0.55792 \sol(S) + 0.38278 \dih(S) > 0.313365$\newline
+$51:  \omega(S) - 0.55792 \sol(S) + 0.74454 \dih(S) > 0.623085$\newline
+$52:  \omega(S) - 0.55792 \sol(S) + 1.54837 \dih(S) > 1.31128$\newline
+$53:  \omega(S) - 0.68 \sol(S) - 0.82445 \dih(S) > -1.62571$\newline
+\smallskip
+
+{\bf 1.3. Edge length inequalities on Quasi-Regular Tetrahedra.}
+
+\smallskip
+
+$1: \sol(S) > 0.551285 - 0.245 (y_1+y_2+y_3-6) + 0.063 (y_4+y_5+y_6-6)$\newline
+$2: \sol(S) > 0.551285 - 0.3798 (y_1+y_2+y_3-6) + 0.198 (y_4+y_5+y_6-6)$\newline
+$3: \sol(S) < 0.551286 - 0.151 (y_1+y_2+y_3-6) + 0.323 (y_4+y_5+y_6-6)$\newline
+
+$4: \mu(S) > 0.0392 (y_1+y_2+y_3-6) + 0.0101 (y_4+y_5+y_6-6) $\newline
+$5: \omega > 0.235702 -0.107 (y_1+y_2+y_3-6) + 0.116 (y_4+y_5+y_6-6)$\newline
+$6: \omega > 0.235702 -0.0623 (y_1+y_2+y_3-6) + 0.0722 (y_4+y_5+y_6-6)$\newline
+$7: \dih(S) > 1.23095 + 0.237 (y_1-2) - 0.372 (y_2+y_3+y_5+y_6-8) + 0.708 (y_4-2) $\newline
+$8: \dih(S) > 1.23095 + 0.237 (y_1-2) - 0.363 (y_2+y_3+y_5+y_6-8) + 0.688 (y_4-2)$\newline
+$9: \dih(S) < 1.23096 + 0.505 (y_1-2) - 0.152(y_2+y_3+y_5+y_6-8) + 0.766 (y_4-2)$\newline
+
+
+
+\smallskip
+
+{\bf  2. Quadrilateral Inequalities}
+
+\smallskip
+
+We define $Q(x_1,x_2,x_3,x_4,x_5,x_6,x_7,x_8,x_9)$, abreviated as Q, to be a quad cluster with edge lengths $x_1,\dots, x_9$ with the following order on the edges.  The edges $x_1,\dots, x_6$ are ordered the same as a tetrahedron.  (Note: $x_4$ corresponds to a diagonal of the quadrilateral.  The two vertices which are connected by $x_4$ are {\sl NOT} close neighbors.) The edge $x_7$ refers to the vector connecting 0 and the 4th sphere.  Edge $x_8,x_9$ are opposite $x_2,x_3$ respectively.
+
+What follow are the quad cluster equivalent of the tetrahedral inequalities.
+The function $\dih_1(Q)$ refers to the dihedral angle at edge 1 or 7.  Similarly, $\dih_2(Q)$ refers to the dihedral angle at edge 2 or 3.  If simply $\dih(Q)$ is used, the inequality holds for any choice of dihedral angle.  (Note that a quadrilateral is always truncated so we use $\omega$ consistently as the volume function.)
+
+{\bf 2.1. Function Bounds on Quadrilateral Clusters.}
+
+$1:  \omega(Q) > 0.455149$\newline
+$2:  \sol(Q) > 0.731937$\newline
+$3:  \sol(Q) < 2.85860$\newline
+$4:  \dih(Q) > 1.15242$\newline
+$5:  \dih(Q) < 3.25887$\newline
+$6:  \mu(Q) > 0.031350$\newline
+
+\smallskip
+
+{\bf 2.2. Vol, Sol, Dih inequalities on Quad Clusters.}
+
+\smallskip
+
+$1:  \omega(Q) - 0.42775 \sol(Q) - 0.15098 \dih(S) > -0.3670$\newline
+$2:  \omega(Q) - 0.42775 \sol(Q) - 0.09098 \dih(S) > -0.1737$\newline
+$3:  \omega(Q) - 0.42775 \sol(Q) - 0.00000 \dih(S) > 0.0310$\newline
+$4:  \omega(Q) - 0.42775 \sol(Q) + 0.18519 \dih(S) > 0.3183$\newline
+$5:  \omega(Q) - 0.42775 \sol(Q) + 0.20622 \dih(S) > 0.3438$\newline
+$6:  \omega(Q) - 0.55792 \sol(Q) - 0.30124 \dih(S) > -1.0173$\newline
+$7:  \omega(Q) - 0.55792 \sol(Q) - 0.02921 \dih(S) > -0.2101$\newline
+$8:  \omega(Q) - 0.55792 \sol(Q) - 0.00000 \dih(S) > -0.1393$\newline
+$9:  \omega(Q) - 0.55792 \sol(Q) + 0.05947 \dih(S) > -0.0470$\newline
+$10:  \omega(Q) - 0.55792 \sol(Q) + 0.39938 \dih(S) > 0.4305$\newline
+$11:  \omega(Q) - 0.55792 \sol(Q) + 2.50210 \dih(S) > 2.8976$\newline
+$12:  \omega(Q) - 0.68000 \sol(Q) - 0.44194 \dih(S) > -1.6264$\newline
+$13:  \omega(Q) - 0.68000 \sol(Q) - 0.10957 \dih(S) > -0.6753$\newline
+$14:  \omega(Q) - 0.68000 \sol(Q) - 0.00000 \dih(S) > -0.4029$\newline
+$15:  \omega(Q) - 0.68000 \sol(Q) + 0.86096 \dih(S) > 0.8262$\newline
+$16:  \omega(Q) - 0.68000 \sol(Q) + 2.44439 \dih(S) > 2.7002$\newline
+$17:  \omega(Q) - 0.30000 \sol(Q) - 0.12596 \dih(S) > -0.1279$\newline
+$18:  \omega(Q) - 0.30000 \sol(Q) - 0.02576 \dih(S) > 0.1320$\newline
+$19:  \omega(Q) - 0.30000 \sol(Q) + 0.00000 \dih(S) > 0.1945$\newline
+$20:  \omega(Q) - 0.30000 \sol(Q) + 0.03700 \dih(S) > 0.2480$\newline
+$21:  \omega(Q) - 0.30000 \sol(Q) + 0.22476 \dih(S) > 0.5111$\newline
+$22:  \omega(Q) - 0.30000 \sol(Q) + 2.31852 \dih(S) > 2.9625$\newline
+$23:  \omega(Q) - 0.23227 \dih(S) > -0.1042$\newline
+$24:  \omega(Q) + 0.07448 \dih(S) > 0.5591$\newline
+$25:  \omega(Q) + 0.22019 \dih(S) > 0.7627$\newline
+$26:  \omega(Q) + 0.80927 \dih(S) > 1.5048$\newline
+$27:  \omega(Q) + 5.84380 \dih(S) > 7.3468$\newline
+
+
+
+\smallskip
+
+{\bf 2.3. Edge Length Inequalities on Quad Clusters.}
+
+This inequality will be called (*) and is not used in the general linear programming problems.  It is applied as needed to disprove counterexamples.  It is 
+difficult to prove and will be discussed whenever it is used.
+
+\smallskip
+
+$(*): \omega(Q) > 0.590491 -0.166(y_1+y_2+y_3+y_7-8) + 0.143 (y_5+y_6+y_8+y_9-8)$\newline
+
+\smallskip
+
+\bigskip
+
+
+
+\bigskip
+
+\centerline{\bf Appendix 2. Quad Graphs}
+
+
+\bigskip
+
+\proclaim{Theorem 1} The graph shown 
+squanders more than the target.  \endproclaim
+
+
+%\gram|2.1|1.2|dia39.ps|  % counterexample
+\gram|3.8|A2.1|q1.ps|  % counterexample
+
+
+We discovered that for this graph, (our worst case), that (*) applied 
+to the two quads is enough to give the result.
+
+\proclaim{Lemma} (*) holds for the quads in this graph. \endproclaim
+
+Let $A$ be the part of the quad on the side of $y(9,10)$ which contains $y(4)$ and $B$ the part which contains $y(13)$.
+
+
+If $2T\le y_4 \le 2.8$ we have
+
+$$\omega(S) > .2952455 - 0.166 (y_1-2) - 0.083 (y_2+y_3-4)+0.143 (y_5+y_6-4)$$
+(Ap2.1.1).
+
+
+which, when doubled, gives the result. 
+
+If $2.8 < y_4 \le 3.1$ then we can break the problem into five cases.
+An interval bound gives $\dih_1(A)\ge1.76$.
+
+{\it Case 1:} If $y_1\ge2.25841,3.1\ge y_4\ge 2.8$,
+
+$$\align \omega(A)>-0.166 y_1 & - 0.174893 y_2 - 0.174893 y_3 + 0.306136 y_4 + 0.143 y_5 \\& + 0.143 y_6-0.263488(\dih_1(A)-1.76) - 0.038250. \endalign$$
+$$\align \omega(B)>-0.166 y_7 & + 0.008893 y_2 + 0.008893 y_3 - 0.306136 y_4 + 0.143 y_8 \\& + 0.143 y_9 +0.80825. \endalign$$
+
+
+
+
+{\it Case 2:}  If $y_1\le 2.25841, 2.95\ge y_4\ge 2.8$,
+
+$$\align \omega(A)>-0.166 y_1 & - 0.120535 y_2 - 0.120535 y_3 + 0.107880 y_4 + 0.143 y_5 \\& + 0.143 y_6-0.104704(\dih_1(A)-1.76) +0.251657. \endalign$$
+$$\align \omega(B)>-0.166 y_7 & -0.045465 y_2 -0.045465 y_3 - 0.107880 y_4 + 0.143 y_8 \\& + 0.143 y_9 +0.518343. \endalign$$
+
+
+
+{\it Case 3:}  If $y_1\le 2.25841, 3.1\ge y_4\ge 2.95,2.25841 \ge y_7 \ge 2$,
+
+$$\align \omega(A)>-0.166 y_1 & - 0.114552 y_2 - 0.114552 y_3 + 0.115382 y_4 + 0.143 y_5 \\& + 0.143 y_6-0.153420(\dih_1(A)-1.76) +0.193572. \endalign$$
+$$\align \omega(B)>-0.166 y_7 & -0.051448 y_2 -0.051448 y_3 - 0.115382 y_4 + 0.143 y_8 \\& + 0.143 y_9 +0.576428. \endalign$$
+
+
+
+{\it Case 4:} If $y_1\le 2.25841, 3.1\ge y_4\ge 2.95,2T \ge y_7 \ge 2.25841,2.25841\ge y_2\ge 2$,
+
+$$\align \omega(A)>-0.166 y_1 & - 0.279805 y_2 - 0.340136 y_3 + 0.422343 y_4 + 0.143 y_5 \\& + 0.143 y_6-0.380615(\dih_1(A)-1.76) +0.147006. \endalign$$
+$$\align \omega(B)>-0.166 y_7 & +0.113805 y_2 +0.174136 y_3 - 0.422343 y_4 + 0.143 y_8 \\& + 0.143 y_9 +0.622994. \endalign$$
+
+
+
+{\it Case 5:} If $y_1\le 2.25841, 3.1\ge y_4\ge 2.95,2T \ge y_7 \ge 2.25841,2T\ge y_2\ge 2.25841$,
+
+$$\align \omega(A)>-0.166 y_1 & - 0.182394 y_2 - 0.147301 y_3 + 0.250100 y_4 + 0.143 y_5 \\& + 0.143 y_6-0.206213(\dih_1(A)-1.76) +0.001504. \endalign$$
+$$\align \omega(B)>-0.166 y_7 & +0.016394 y_2 +0.018699 y_3 - 0.250100 y_4 + 0.143 y_8 \\& + 0.143 y_9 +0.768496\endalign$$
+
+
+
+
+Finally, suppose $y_4 > 3.1$.  
+
+We suppose the volume of the Voronoi corresponding to the 
+graph is at most $\vol(D)$ and maximize variables to get upper
+ bounds which can not be broken without violating the volume 
+constraint.  
+We then use these bounds to find improved lower bounds on the 
+volume and squander of the quadrilateral regions which are
+ proved by interval arithmetic.
+  
+We will attach [L] to all bounds given by the linear optimizer.  
+We will attach [I] to bounds given by interval arithmetic.  All non-labelled bounds are proved by [I].
+
+Using the numbering system from the graph, let $y(i)$ denote 
+the length of vertex $i$.  Let $y(i,j)$ denote the length of 
+edge $(i,j)$. Let $\dih_i(j)$ denote the dihedral angle of face 
+$j$ at vertex $i$.
+
+\proclaim{Claim 1} $\dih_4(1)<1.719$ without loss of generality.
+\endproclaim 
+
+{\bf Proof:}  
+
+We find that $\dih_7(3)+\dih_4(1)<2(1.719)$.[L]., 
+so swap face 1 and 3 as necessary.\qed
+
+\proclaim{Claim 2} $y(9,10),y(4,13),y(7,13),y(11,12)<3.6$.\endproclaim
+
+{\bf Proof:} 
+
+We have $\dih_4(1)<1.860,\ \dih_9(1)<1.860,\ y(4)<2.273,\ y(9)<2.244$.[L]
+
+These bounds imply the claim. [I]  The arrangement is symmetric 
+and the proof and bounds are identical for face 3. \qed
+
+\proclaim{Proposition} The diagonals $y(9,10),y(11,12)$ both have length at most 3.1. \endproclaim
+
+{\bf Proof:}  We have the following table by [I]. We break the quad along the diagonal $y(9,10)$.  
+
+
+$$
+\matrix
+diagonal	        &       C1      &\min\ \mu(A)	& \min\ \mu(B)\\
+y_4\in[3.1,3.2] 	&	4.22	&	0.057	& 0.02	\\
+y_4\in[3.2,3.3] 	&	4.37 	&	0.069	& 0.016\\
+y_4\in[3.3,3.4]		&	4.53	&	0.083	& 0.009 \\	
+y_4\in[3.4,3.6]		&       4.8	&	0.11	& -0.02	\\
+\endmatrix
+$$
+
+(C1=''min (y(9) + y(10)) s.t. $\dih_4(1)<1.719$.'')
+
+By [L], we have $\mu(1)<0.0887$.  Taking $A+B$ for each case, we find that $y(9,10)<3.3$.  
+
+If $y(9,10)\in[3.2,3.3]$, minimize $\dih_4(1)$ in [L] subject to the constraint that 
+$\mu(1)>0.069+0.016=0.085.$ We find $\dih_4(1)<1.532$.  With this constraint, $\mu(A)>0.129>0.0887$,[I],
+and the case passes easily.
+
+By the same argument, suppose $y(9,10)\in[3.1,3.2]$.  Then $\dih_4(1)<1.614$, [L], subject to
+the constraint $\mu(1)>0.057+0.02=0.077$.  With this constraint, $\mu(A)>0.076$,[I].  
+Then $\mu(A)+\mu(B)>0.76+0.02=0.96>0.0887$ and we are done.  We conclude that the diagonal $y(9,10)\le 3.1$.
+
+We now attack face 3.  First, add (*) to [L] at face 1.  
+We find that $\dih_7(3)<1.76$ and $\dih_{13}(3)<2.11$. [L].  We also have $\mu(3)<0.081$.  We make a new table.
+
+$$
+\matrix
+diagonal	        &       C2      &	\min\ \mu(C)	& \min\ \mu(D)\\
+y_4\in[3.1,3.2] 	&	4.134	&	0.049	& 0.024	\\
+y_4\in[3.2,3.3] 	&	4.29 	&	0.0617	& 0.020\\
+y_4\in[3.3,3.4]		&	4.44	&	0.074	& 0.020 \\	
+y_4\in[3.4,3.6]		&       4.64	&	0.093	& -0.01	\\
+\endmatrix
+$$
+
+(C2=``min (y(11)+y(12)) s.t. $\dih_7(3)<1.76$ and $\dih_7(3)<2.11$.'')
+
+We conclude that $y(11,12)<3.2$.  If $y(11,12)\in[3.1,3.2]$, add $\mu(3)>0.073$ to [L] and we 
+find that $\dih_7(3)<1.625$.  Using [I] we have that $\mu(C)>0.074$ which implies $\mu(C)+\mu(D)>0.074+0.024=0.098>0.081$.
+This is the result. \qed
+
+{\bf Proof of Theorem 1.}  We apply (*) to the second
+quadrilateral face and optimize.  The graph passes easily.
+\qed
+
+\proclaim{Theorem 2} The two graphs shown below squander more than the target.\endproclaim
+
+%\gram|2.1|1.2|dia39.ps|  % counterexample
+%\gram|2.1|1.2|dia39.ps|  % counterexample
+\gram|3.5|A2.2.1|q2.ps|  % counterexample
+\gram|4.2|A2.2.2|q3.ps|  % counterexample
+
+{\bf Proof:} These remaining two quad cases are much simpler.  We use the methods of finding upper bounds on diagonals and dihedrals as in the previous proof.  On graph 3, we know that both diagonals on one of the three quads are at most 2.8.  We apply (*) to that face and the graph passes.  On graph 2, We have the diagonals of one of the faces are less than 3.1 and a dihedral angle less than 1.76.  We apply (*) to that face and the graph passes. \qed
+
+ \bigskip
+
+
+
+\bigskip
+
+\centerline{{\bf Appendix 3. Pentagon Cases.}}
+
+\bigskip
+
+\proclaim{Theorem 1} The graph shown 
+squanders more than the target.  \endproclaim
+
+%\gram|3.0|A3.1|dia39.ps|  %  ceq0
+\gram|3.5|A3.1|p1.ps|  %  ceq0
+
+
+We have the following inequalities by [L].\newline
+
+$\dih_7(2) < 1.701$ \newline
+$y(7) < 2.219$ \newline
+$y(1) < 2.330$ \newline
+$y(6) < 2.207$ \newline
+$y(7) + y(1) + y(6) < 6.406$ \newline
+$y(1) + y(6) < 4.399$ \newline
+
+Using these constraints, we find by [I] that
+
+$y(1,6)<3.179$ \newline
+
+\proclaim{Lemma 1} Inequality (*) holds for this situation. \endproclaim
+
+{\bf Proof:}
+
+
+The only case which is different than the proof of (*) in 
+the quad case is case 3.  We adjust the constants.
+
+{\it Case 3:} If $y_1\le 2.25841, 3.1\ge y_4\ge 2.95,2.25841 \ge y_7 \ge 2$,
+
+$$\align \omega(A)>-0.166 y_1 & - 0.114552 y_2 - 0.114552 y_3 + 0.115382 y_4 + 0.143 y_5 \\& + 0.143 y_6-0.153420(\dih_1(A)-1.76) +0.22. \endalign$$
+$$\align \omega(B)>-0.166 y_7 & -0.051448 y_2 -0.051448 y_3 - 0.115382 y_4 + 0.143 y_8 \\& + 0.143 y_9 +0.55. \endalign$$
+
+
+
+Optimizing with (*) gives
+
+
+$\dih_1(1) < 1.917$ \newline
+$\dih_3(1) < 1.681$ \newline
+$y(1)<2.329$ \newline
+$y(2)<2.207$ \newline
+$y(3)<2.161$ \newline
+$y(4)<2.280$ \newline
+$y(5)<2T$ \newline
+$y(2)+y(4)<4.307$ \newline
+$y(3)+y(2)+y(4)<6.313$ \newline
+$y(2)+y(5)<4.657$ \newline
+$y(1)+y(5)+y(2)<6.757$ \newline
+
+With these constraints, we have
+
+$y(2,4) < 3.101$ \newline
+$y(2,5) < 3.611$ \newline
+
+by interval arithmetic.
+
+Similarly, using all the above inequalities we have
+
+$\omega(A) > .273$ \newline
+$\omega(B)+\omega(C) > .50$ \newline
+
+So $\omega(1)>0.773$,
+
+Adding this constraint to the linear optimizer we find
+
+$\dih_1(1)<1.875$ \newline
+$\dih_3(1)<1.634$ \newline
+$y(1)<2.263$ \newline
+$y(2)<2.134$ \newline
+$y(3)<2.126$ \newline
+$y(4)<2.169$ \newline
+$y(2)+y(5)<4.616$ \newline
+$y(1)+y(2)+y(5)<6.702$ \newline
+
+There is a problem in this case in that the edge $y(5)$ is bounded above only by 2T.  This ``loose'' edge allows the volume of the simplices to be small.
+We solve this by using $\mu$ when the edge is long and vol when it is short.
+
+Case 1: Suppose $y(5)<2.26$.
+
+Then 
+
+$\omega(A)>.283$ \newline
+$\omega(B)>.277$ \newline
+$\omega(C)>.335$ \newline
+
+so $\omega(1)>0.924.$  
+
+This is adequate to push this graph over the target.
+
+Case 2 : Suppose $y(5)>2.26.$
+
+Then
+
+$\mu(A)>0.0156$ \newline
+$\mu(B)>0.0304$ \newline
+$\mu(C)>0.0406$ \newline
+
+so $\mu(1)>.0866$
+
+Again, this is adequate to eliminate the graph.
+
+This completes the proof of Theorem 1.
+
+\qed
+
+
+
+\bigskip
+
+
+
+\proclaim{Theorem 2} The graph shown 
+squanders more than the target.  \endproclaim
+
+%\gram|2.1|2|dia39.ps|  %  ceq2
+\gram|2.8|A3.2|p2.ps|  %  ceq2
+
+We have 
+
+$\dih_5(1) < 1.705$ \newline
+$\dih_8(1) < 1.682$ \newline
+$y(5)<2.207$ \newline
+$y(12)<2.222$ \newline
+$y(8)<2.206$ \newline
+$y(13)<2.181$ \newline
+$y(11)<2.199$ \newline
+
+These imply 
+
+$y(11,12)<3.188$ \newline
+$y(12,13)<3.146$ \newline
+
+which in turn imply
+
+$\omega(A)>.278$ \newline
+$\omega(B)>.277$ \newline
+$\omega(C)>.362$ \newline
+
+so $\omega(1)>0.917$ which pushes the graph over the target. \qed
+
+
+
+\bigskip
+
+
+
+\proclaim{Theorem 3} The graph shown 
+squanders more than the target.  \endproclaim
+
+%\gram|2.1|3|dia39.ps|  %  ceq3
+\gram|3.0|A3.3|p3.ps|  %  ceq3
+
+
+We have the following inequalities by [L].
+
+$\dih_7(12) < 1.676$ \newline
+$y(7) < 2.176$ \newline
+$y(3) < 2.343$ \newline
+$y(6) < 2.205$ \newline
+$y(3,7)+y(6,7) < 4.965$ \newline
+$y(2) + y(3) < 4.386$ \newline
+
+Using these constraints, we find by [I] that
+
+$y(3,6)<3.126.$
+
+\proclaim{Lemma 1} Inequality (*) holds for this situation. \endproclaim
+
+{\bf Proof:}
+
+The reader may check that the edge and dihedral constraints are tighter than those used in the proof of (*) in Theorem 1.  Thus, (*) holds here as well. \qed
+
+Optimizing with (*) gives
+
+$\dih_4(1) < 1.685$ \newline
+$\dih_3(1) < 1.828$ \newline
+$y(1)<2.221$ \newline
+$y(4)<2.165$ \newline
+$y(9)<2.202$ \newline
+$y(8)<2.230$ \newline
+$y(3)<2.343$ \newline
+
+
+With these constraints, we have
+
+$y(1,9) < 3.161$ \newline
+$y(1,8) < 3.370$ \newline
+
+by interval arithmetic.
+
+Similarly, using all the above inequalities we have
+
+$\omega(A) > 0.277$ \newline
+$\omega(B) > 0.272$ \newline
+$\omega(C)> 0.360$ \newline
+
+So $\omega(1)>0.909$, which pushes the graph over the target.
+
+\qed
+
+
+\bigskip
+
+
+
+\proclaim{Theorem 4} The graph shown 
+squanders more than the target.  \endproclaim
+
+%\gram|2.1|4|dia39.ps|  %  ceq4
+\gram|3.5|A3.4|p4.ps|  %  ceq4
+
+We have 
+
+$\dih_3(1) < 1.713$ \newline
+$\dih_1(1) < 1.319$ \newline
+$y(1)<2.243$ \newline
+$y(2)<2.269$ \newline
+$y(3)<2.169$ \newline
+$y(4)<2.360$ \newline
+$y(5)<2T$ \newline
+
+These imply 
+
+$y(2,4)<2.683$ \newline
+$y(2,5)<3.390$ \newline
+
+which in turn imply
+
+$\omega(A)>.320$ \newline
+$\omega(B)>.247$ \newline
+$\omega(C)>.300$ \newline
+
+so $\omega(1)>0.865$ which pushes the graph over the target. \qed
+
+
+
+\bigskip
+
+
+
+\proclaim{Theorem 5} The graph shown 
+squanders more than the target.  \endproclaim
+
+%\gram|2.1|5|dia39.ps|  %  ceq6
+\gram|3.5|A3.5|p5.ps|  %  ceq6
+
+
+We have the following inequalities by [L].
+
+$\dih_9(1) < 1.314$ \newline
+$\dih_1(1) < 1.684$ \newline
+$y(9)<2.194$ \newline
+$y(4)<2.314$ \newline
+$y(1)<2.153$ \newline
+$y(5)<2.174$ \newline
+$y(10)<2T$ \newline
+
+
+Case 1: Suppose $y(5)<2.26$.
+
+Then 
+
+$y(4,10)<2.697$ \newline
+$y(4,5)<3.365$ \newline
+
+$\omega(A)>.328$ \newline
+$\omega(B)>.272$ \newline
+$\omega(C)>.350$ \newline
+
+so $\omega(1)>0.950$.  
+
+This is adequate to push this graph over the target.
+
+Case 2 : Suppose $y(5)>2.26$.
+
+Then
+
+$y(4,10)<2.807$ \newline
+$y(4,5)<3.365$ \newline
+
+$\mu(A)>0.0453$ \newline
+$\mu(B)>0.0156$ \newline
+$\mu(C)>0.0480$ \newline
+
+so $\mu\{1\}>.1089$
+
+Again, this is adequate to eliminate the graph.
+
+This completes the proof of Theorem 5.
+
+\qed
+
+\bigskip
+
+
+
+\proclaim{Theorem 6} The graph shown 
+squanders more than the target.  \endproclaim
+
+%\gram|2.1|6|dia39.ps|  %  ceq7
+\gram|3.7|A3.6|p6.ps|  %  ceq7
+
+We have 
+
+$\dih_2(1) < 1.577$ \newline
+$\dih_4(1) < 1.610$ \newline
+
+$y(2)<2.123$ \newline
+$y(6)<2.150$ \newline
+$y(7)<2.217$ \newline
+$y(11)<2.095$ \newline
+$y(12)<2.101$ \newline
+
+Use the proof of Theorem 2 to show $\omega(1)>0.900$ which pushes the graph over the target. \qed
+
+\bigskip
+
+\proclaim{Theorem 7} The graph shown 
+squanders more than the target.  \endproclaim
+
+%\gram|2.1|7|dia39.ps|  %  ceq9
+\gram|4.0|A3.7|p7.ps|  %  ceq9
+
+
+We have the following inequalities by [L].
+
+$\dih_2(1) < 1.735$ \newline
+$\dih_4(1) < 1.735$ \newline
+$y(1)<2T$ \newline
+$y(2)<2.199$ \newline
+$y(3)<2.206$ \newline
+$y(4)<2.199$ \newline
+$y(5)<2T$ \newline
+
+
+Case 1: Suppose $y(1)<2.26$.
+
+Then 
+
+$y(1,3)<3.254$ \newline
+$y(4,5)<3.396$ \newline
+
+$\omega(A)>.275$ \newline
+$\omega(B)>.275$ \newline
+$\omega(C)>.357$ \newline
+
+so $\omega(1)>0.907$.  
+
+This is adequate to push this graph over the target.
+
+Now, interchange $y(1)$ with $y(5)$.  The solutions are the same.
+Therefore, both $y(1)$ and $y(5)$ must be greater than 2.26.
+
+
+
+Case 2 : Suppose $y(5),y(1)>2.26.$
+
+
+Then
+
+$y(1,3)<3.396$ \newline
+$y(4,5)<3.396$ \newline
+
+$\mu(A)>0.0313$ \newline
+$\mu(B)>0.0313$ \newline
+$\mu(C)>0.0336$ \newline
+
+so $\mu(1)>.0962$
+
+Again, this is adequate to eliminate the graph.
+
+This completes the proof of Theorem 7.
+
+\qed
+
+
+\bigskip
+
+
+
+\proclaim{Theorem 8} The graph shown 
+squanders more than the target.  \endproclaim
+
+%\gram|2.1|8|dia39.ps|  %  ceq11
+\gram|3.7|A3.8|p8.ps|  %  ceq11
+
+We have 
+
+$\dih_2(1) < 1.637$ \newline
+$\dih_4(1) < 1.625$ \newline
+$y(1)<2.329$ \newline
+$y(2)<2.130$ \newline
+$y(3)<2.179$ \newline
+$y(4)<2.189$ \newline
+$y(5)<2.373$ \newline
+
+These imply 
+
+$y(1,3)<3.139$ \newline
+$y(3,5)<3.145$ \newline
+
+which in turn imply
+
+$\omega(A)>.271$ \newline
+$\omega(B)>.267$ \newline
+$\omega(C)>.346$ \newline
+
+so $\omega(1)>0.884$.
+
+Add this inequality to the linear optimizer.
+
+Then
+
+$\dih_6(12)<1.545$ \newline
+$y(6)<2.078$ \newline
+$y(1)<2.167$ \newline
+$y(12)<2.076$ \newline
+
+which imply
+
+$y(1,12)<2.87.$ \newline
+
+As these constraints easily satisfy the proof of (*) from
+quad case 1, add (*) to push the graph over the target.
+
+\qed
+
+\bigskip
+
+\proclaim{Theorem 9} The graph shown 
+squanders more than the target.  \endproclaim
+
+%\gram|2.1|9|dia39.ps|  %  ceq13
+\gram|3.6|A3.9|p9.ps|  %  ceq13
+
+
+We have 
+
+$\dih_3(1) < 1.519$ \newline
+$\dih_1(1) < 1.636$ \newline
+$y(1)<2.206$ \newline
+$y(2)<2.122$ \newline
+$y(3)<2.191$ \newline
+$y(4)<2.113$ \newline
+$y(5)<2.077$ \newline
+
+These imply 
+so $\omega(1)>0.911$ by the proof of Theorem 2, which pushes the graph over the target. \qed
+
+\bigskip
+
+This completes the list of pentagon graphs.
+
+
+\bigskip
+
+
+
+{\bf References.}
+
+[H1] Hales, T.C. {\it Sphere Packings 1}, Dis. and Comp. Geom., 
+{\bf 17} (1997), 1-51.
+
+[H3] Hales, T.C. {\it Sphere Packings 3}, Preprint.
+
+[H4] Hales, T.C. {\it Sphere Packings 4}, Preprint.
+
+[H5] Hales, T.C. {\it The Kepler Conjecture}, Preprint.
+
+[1] Leech, John.  {\it The Problem of the Thirteen Spheres},  Math. Gazette,  
+Feb. 1956, 22-23.
+
+[2] L. Fejes T\'oth, {\it Uber die dichteste Kugellagerung}, Math 
+Z., {\bf 48} (1943), 676-684.
+
+[3] L. Fejes T\'oth, {\it Regular Figures}, Pergamon Press, Oxford-London-New York, 1964.
+
+
+[4] C.A. Rogers, {\it The packing of equal spheres}, J. London Math. Soc.,
+{\bf 3/8} (1958), 609-620.
+
+[5] D.J. Muder, {\it Putting the best face on a Voronoi polyhedron}, 
+Proc. London Math. Soc., {\bf 3/56} (1988),329-348.
+
+[6] D.J. Muder, {\it A new bound on the local density of sphere packings}, 
+Discrete and Comp. Geom., {\bf 10} (1993), 351-375.
+
+[7] W.-Y. Hsiang, {\it On the sphere packing problem and the proof of Kepler's conjecture},
+Int. J. Math., {\bf 4/5} (1993),739-831.
+
+[8] K. Bezdek, {\it Isoperimetric inequalities and the dodecahedral conjecture}, Int. J. Math.,
+{\bf 8/6} (1997), 759-780.
+
+
+
+
+
+
+
+\bye

@@ -1,0 +1,75 @@
+ Section A12:
+
+
+New Case = 970291025
+numargs = 6
+0.0609858038729645044
+{2.69676534980151361, 2.50999999999999979, 2, 2, 2, 2}
+
+New Case = 524345535
+numargs = 6
+0.0162073060816143172
+{2.82842712474618985, 2.50999999999999979, 2, 2.50999999999999979, 2, 2}
+
+
+ The next case is broken into 2 subcases 
+ +1:voronoi-type;  +2:compression 
+
+New Case = 812894434
+numargs = 6
+7.45045055631776698e-05
+{2.82842712474618985, 2.50999999999999979, 2, 2, 2, 2.50999999999999979}
+
+New Case = 812894435
+numargs = 6
+0.0261341745568342831
+{2.75, 2, 2, 2, 2.41225082160974891, 2}
+
+
+ The next case is broken into 4 subcases 
+ +1:analytic,x[3]<2.77; +2:analytic, small etas 
+ +3:t0, eta-top-big;    +4: t0, eta-back-big 
+
+New Case = 404793782
+numargs = 6
+0.00320474361128057772
+{2.75, 2, 2, 2.50999999999999979, 2, 2}
+
+New Case = 404793783
+numargs = 6
+0.0568635053800689433
+{2.51782575204507131, 2, 2, 2.77000000000000002, 2, 2}
+
+New Case = 404793784
+numargs = 6
+0.0316656714237214393
+{2.75, 2, 2, 2.78357475815610744, 2.32304617339925867, 2}
+
+New Case = 404793785
+numargs = 6
+0.0419351530410838474
+{2.75, 2, 2, 2.82842712474618985, 2, 2.39901422217253613}
+
+
+ Exiting cfsqp numerical optimizer.
+
+
+
+
+
+ Cfsqp numerical optimizer for Sphere Packings IV 
+
+ The inequalities in the appendix are divided into 24 sections.
+ Sections 1-24 are tested numerically here. 
+
+ Select section number (1--24): 
+ The inequalities are written in the form F>0.
+ This program minimizes F subject to constraints.
+ If the returned value is positive, the inequality passes the numerical check. 
+ Each inequality is test with 80 random initial configurations. 
+
+ Optimizing.... 
+
+
+
+

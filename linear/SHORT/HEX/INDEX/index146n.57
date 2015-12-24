@@ -1,0 +1,21 @@
+PM[6,146].F17.C57
+
+Map[Last,Select[valHexnHi,#[[3]]==146&]]//Union == {57}
+Initialize[6,146].
+bf = "SHORT/HEX/LP/cplexE.lp6.146.F17.C57";
+LPdisplay[bf] == 0.449266
+
+exceptStem= "SHORT/HEX/LP/cplexE2.lp";
+WRITEOUTexcept[6,146,17,57];
+bf = "SHORT/HEX/LP/cplexE2.lp6.146.F17.C57";
+LPdisplay[bf] == 0.442496
+
+
+(* I had been leaving out an inequality. MathToCplexExcept.m has
+	been updated.  In the revision, this case should never arise.
+one new hypothesis.  vor0 <-0.121, if y4,y5,y6 in [2.51,2sqrt2]
+In (VI.4.9.1).
+*) 
+
+
+PM[6,146].F17.57

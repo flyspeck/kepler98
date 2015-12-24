@@ -1,0 +1,352 @@
+# Makefile for dimred_quad, boundary_quad, etc.
+#
+#
+#	make           to produce executables for all programs
+#
+#	make clean     to remove object files and core
+#
+#       BINDIR -- directory where to copy executables
+#       CC --     ANSI C compiler
+#       CCOPTS1 - options used to compile .c files
+#       CCOPTS2 -- options used to link .o files
+#
+#       CFILES -- .c files for printing
+#	FILES -- all other files
+#
+
+#for Gnu's gcc compiler -O2 for optimization, -g for debugging, -Wall for check
+#
+#CC     = gcc
+#CCOPTS1 = -O2 -ansi 
+#BINDIR  = ../sun
+
+# for Sun's cc compiler, -fast or O2 for optimization, -g for debugging
+#CC = cc
+#CCOPTS1 = -Xc -v -fast
+
+# for Silicon Graphics cc compiler, -O2 for optimization, -g for debugging
+CC = cc
+CCOPTS1 = -ansi -O2 -OPT:IEEE_comparisons:IEEE_arithmetic=1:roundoff=0
+BINDIR  = ../sgi
+#BINDIR  = bin
+
+# for loader, ld
+CCOPTS2 = $(CCOPTS1)
+
+# OBJS is in library order, CFILES in alphabetical order after qhull.c
+OBJS = 	interval.o i_sphere.o i_bounds.o sphere.o second_partials.o \
+				i_taylor.o
+CFILES= interval.c i_sphere.c i_bounds.c dimred_quad.c sphere.c \
+        boundary_quad.c testmain.c \
+        octa_diag_cut_gma.c octa_peel.c \
+        octa_gma.c octa_gma_bdry.c octa_vor.c octa_vor_bdry.c \
+        test_bdry_quad_vor.c second_partials.c \
+        vor_sp_bounds.c qr_vor_sp_bounds.c sph_sp_bounds.c \
+        qr_sph_sp_bounds.c dih_sp_bounds.c qr_dih_sp_bounds.c \
+        gmavol_sp_bounds.c qr_gmavol_sp_bounds.c i_taylor.c	\
+        acute_voronoi.c acute_voronoi_cut.c acute_vor_cor.c \
+        acute_voronoi_bdry.c acute_voronoi_bdry.2c obtuse_voronoi.c \
+        obtuse_voronoi2.c big_poly.c \
+        octa_gma_corr.c octa_gma_corr_bdry.c \
+        octa_vor_corr.c octa_vor_corr_bdry.c \
+        penta_dihcut.c pentahedral_cap.c penta_dih_rel.c
+
+FILES=  Makefile 
+
+all: 		QuadGma QuadGmaBdry QuadVor QuadVorBdry \
+				OctaDiagCutGma \
+				OctaGma OctaGmaBdry OctaVor OctaVorBdry \
+				OctaPeel \
+				TestQuadVorBdry QuadVorCornerBdry \
+				VorSecParBds QRVorSecParBds SphSecParBds QRSphSecParBds \
+				DihSecParBds QRDihSecParBds GmaVolSecParBds \
+				QRGmaVolSecParBds AcuteVoronoi AcuteVorCorner \
+				AcuteVoronoiCut AcuteVoronoiBdry AcuteVoronoiBdry2 \
+				ObtuseVoronoi ObtuseVoronoi2 BigPoly \
+				QuarterCorner QuarterCornPars QuarterGma \
+				QuarterOctaVor QuarterVorPunch QuarterVorPunchBdry \
+				OctaGmaCorr OctaGmaCorrBdry OctaVorCorr OctaVorCorrBdry \
+				PentaDihCut PentaCap PentaDihRel
+
+
+test: 	TestInterval
+
+pentacap:		PentaDihCut PentaCap PentaDihRel
+
+quad:		QuadGma QuadGmaBdry QuadVor QuadVorBdry \
+				TestQuadVorBdry QuadVorCornerBdry
+
+octa: 	OctaDiagCutGma \
+				OctaGma OctaGmaBdry OctaVor OctaVorBdry \
+				OctaPeel \
+				OctaGmaCorr OctaGmaCorrBdry OctaVorCorr OctaVorCorrBdry
+
+secpar:	VorSecParBds QRVorSecParBds SphSecParBds QRSphSecParBds \
+				DihSecParBds QRDihSecParBds GmaVolSecParBds \
+				QRGmaVolSecParBds
+
+vor:		AcuteVoronoi AcuteVoronoiBdry AcuteVorCorner AcuteVoronoiCut \
+				ObtuseVoronoi ObtuseVoronoi2 AcuteVoronoiBdry2
+				
+
+dimred:	BigPoly
+
+quarter:		QuarterCorner QuarterCornPars QuarterGma \
+						QuarterOctaVor QuarterVorPunch QuarterVorPunchBdry
+
+
+# all
+
+interval.o:			system_headers.h macros.h
+i_sphere.o:			system_headers.h i_sphere.h interval.h i_bounds.h macros.h
+i_bounds.o:			system_headers.h i_sphere.h interval.h i_bounds.h macros.h
+second_partials.o:			system_headers.h i_sphere.h interval.h i_bounds.h \
+		macros.h i_taylor.h second_partials.h
+i_taylor.o:			system_headers.h i_sphere.h interval.h i_bounds.h macros.h \
+		i_taylor.h
+sphere.o:			system_headers.h sphere.h
+
+
+# test
+
+testmain.o:		system_headers.h sphere.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h second_partials.h
+
+
+# pentacap
+
+penta_dihcut.o:		system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h
+pentahedral_cap.o:		system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h
+penta_dih_rel.o:		system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h
+
+
+# quad
+
+dimred_quad_gma.o:		system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h
+boundary_quad_gma.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h
+dimred_quad_vor.o:		system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h
+boundary_quad_vor.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h
+quad_vor_corner_bdry.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h
+test_bdry_quad_vor.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h
+
+
+# octa
+
+octa_diag_cut_gma.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h
+octa_gma.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h
+octa_gma_bdry.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h
+octa_vor.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h
+octa_vor_bdry.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h
+octa_peel.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h
+octa_gma_corr.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h
+octa_vor_corr.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h
+octa_gma_corr_bdry.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h
+octa_vor_corr_bdry.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h
+
+
+# secpar
+
+vor_sp_bounds.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h second_partials.h
+sph_sp_bounds.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h second_partials.h
+dih_sp_bounds.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h second_partials.h
+gmavol_sp_bounds.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h second_partials.h
+qr_vor_sp_bounds.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h second_partials.h
+qr_sph_sp_bounds.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h second_partials.h
+qr_dih_sp_bounds.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h second_partials.h
+qr_gmavol_sp_bounds.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h second_partials.h
+
+
+# vor
+
+acute_voronoi.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h second_partials.h
+acute_voronoi_cut.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h second_partials.h
+acute_vor_cor.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h second_partials.h
+acute_voronoi_bdry.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h second_partials.h
+acute_voronoi_bdry2.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h second_partials.h
+obtuse_voronoi.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h second_partials.h
+obtuse_voronoi2.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h second_partials.h
+
+
+# dimred
+
+big_poly.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h 
+
+
+# quarter
+
+quarter_corner.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h second_partials.h
+quarter_corn_pars.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h second_partials.h
+quarter_gma.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h second_partials.h
+quarter_octa_vor.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h second_partials.h
+quarter_vor_punch.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h second_partials.h
+quarter_vor_punch_bdry.o:	system_headers.h interval.h i_sphere.h \
+		i_bounds.h macros.h i_taylor.h second_partials.h
+
+.c.o:
+	$(CC) -c $(CCOPTS1) $<
+
+clean:
+	rm -f *.o core
+
+move:
+	mv Test* Quad*  Octa* *Bds  Acute* Quart* Big* Penta* Ob* $(BINDIR); \
+	chmod 744 do*; mv do* $(BINDIR)
+
+# test
+
+TestInterval:  testmain.o $(OBJS)
+	$(CC) -o TestInterval $(CCOPTS2) testmain.o $(OBJS) -lm 
+
+
+# pentacap
+
+PentaDihCut:  penta_dihcut.o $(OBJS)
+	$(CC) -o PentaDihCut $(CCOPTS2) penta_dihcut.o $(OBJS) -lm 
+PentaCap:  pentahedral_cap.o $(OBJS)
+	$(CC) -o PentaCap $(CCOPTS2) pentahedral_cap.o $(OBJS) -lm 
+PentaDihRel:  penta_dih_rel.o $(OBJS)
+	$(CC) -o PentaDihRel $(CCOPTS2) penta_dih_rel.o $(OBJS) -lm 
+
+
+# quad
+
+QuadGmaBdry:  boundary_quad_gma.o $(OBJS)
+	$(CC) -o QuadGmaBdry $(CCOPTS2) boundary_quad_gma.o $(OBJS) -lm 
+QuadGma:  dimred_quad_gma.o $(OBJS)
+	$(CC) -o QuadGma $(CCOPTS2) dimred_quad_gma.o $(OBJS) -lm 
+QuadVorBdry:  boundary_quad_vor.o $(OBJS)
+	$(CC) -o QuadVorBdry $(CCOPTS2) boundary_quad_vor.o $(OBJS) -lm 
+QuadVor:  dimred_quad_vor.o $(OBJS)
+	$(CC) -o QuadVor $(CCOPTS2) dimred_quad_vor.o $(OBJS) -lm 
+TestQuadVorBdry:  test_bdry_quad_vor.o $(OBJS)
+	$(CC) -o TestQuadVorBdry $(CCOPTS2) test_bdry_quad_vor.o $(OBJS) -lm 
+QuadVorCornerBdry:  quad_vor_corner_bdry.o $(OBJS)
+	$(CC) -o QuadVorCornerBdry $(CCOPTS2) quad_vor_corner_bdry.o $(OBJS) -lm 
+
+
+# octa
+
+OctaDiagCutGma:  octa_diag_cut_gma.o $(OBJS)
+	$(CC) -o OctaDiagCutGma $(CCOPTS2) octa_diag_cut_gma.o $(OBJS) -lm 
+OctaGma:  octa_gma.o $(OBJS)
+	$(CC) -o OctaGma $(CCOPTS2) octa_gma.o $(OBJS) -lm 
+OctaGmaBdry:  octa_gma_bdry.o $(OBJS)
+	$(CC) -o OctaGmaBdry $(CCOPTS2) octa_gma_bdry.o $(OBJS) -lm 
+OctaVor:  octa_vor.o $(OBJS)
+	$(CC) -o OctaVor $(CCOPTS2) octa_vor.o $(OBJS) -lm 
+OctaVorBdry:  octa_vor_bdry.o $(OBJS)
+	$(CC) -o OctaVorBdry $(CCOPTS2) octa_vor_bdry.o $(OBJS) -lm 
+OctaPeel:  octa_peel.o $(OBJS)
+	$(CC) -o OctaPeel $(CCOPTS2) octa_peel.o $(OBJS) -lm 
+OctaGmaCorr:  octa_gma_corr.o $(OBJS)
+	$(CC) -o OctaGmaCorr $(CCOPTS2) octa_gma_corr.o $(OBJS) -lm 
+OctaVorCorr:  octa_vor_corr.o $(OBJS)
+	$(CC) -o OctaVorCorr $(CCOPTS2) octa_vor_corr.o $(OBJS) -lm 
+OctaGmaCorrBdry:  octa_gma_corr_bdry.o $(OBJS)
+	$(CC) -o OctaGmaCorrBdry $(CCOPTS2) octa_gma_corr_bdry.o $(OBJS) -lm 
+OctaVorCorrBdry:  octa_vor_corr_bdry.o $(OBJS)
+	$(CC) -o OctaVorCorrBdry $(CCOPTS2) octa_vor_corr_bdry.o $(OBJS) -lm 
+
+
+# secpar
+
+VorSecParBds:  vor_sp_bounds.o $(OBJS)
+	$(CC) -o VorSecParBds $(CCOPTS2) vor_sp_bounds.o $(OBJS) -lm 
+SphSecParBds:  sph_sp_bounds.o $(OBJS)
+	$(CC) -o SphSecParBds $(CCOPTS2) sph_sp_bounds.o $(OBJS) -lm 
+DihSecParBds:  dih_sp_bounds.o $(OBJS)
+	$(CC) -o DihSecParBds $(CCOPTS2) dih_sp_bounds.o $(OBJS) -lm 
+GmaVolSecParBds:  gmavol_sp_bounds.o $(OBJS)
+	$(CC) -o GmaVolSecParBds $(CCOPTS2) gmavol_sp_bounds.o $(OBJS) -lm 
+QRVorSecParBds:  qr_vor_sp_bounds.o $(OBJS)
+	$(CC) -o QRVorSecParBds $(CCOPTS2) qr_vor_sp_bounds.o $(OBJS) -lm 
+QRSphSecParBds:  qr_sph_sp_bounds.o $(OBJS)
+	$(CC) -o QRSphSecParBds $(CCOPTS2) qr_sph_sp_bounds.o $(OBJS) -lm 
+QRDihSecParBds:  qr_dih_sp_bounds.o $(OBJS)
+	$(CC) -o QRDihSecParBds $(CCOPTS2) qr_dih_sp_bounds.o $(OBJS) -lm 
+QRGmaVolSecParBds:  qr_gmavol_sp_bounds.o $(OBJS)
+	$(CC) -o QRGmaVolSecParBds $(CCOPTS2) qr_gmavol_sp_bounds.o $(OBJS) -lm 
+
+
+# vor
+
+AcuteVoronoi:  acute_voronoi.o $(OBJS)
+	$(CC) -o AcuteVoronoi $(CCOPTS2) acute_voronoi.o $(OBJS) -lm 
+AcuteVoronoiBdry:  acute_voronoi_bdry.o $(OBJS)
+	$(CC) -o AcuteVoronoiBdry $(CCOPTS2) acute_voronoi_bdry.o $(OBJS) -lm 
+AcuteVoronoiBdry2:  acute_voronoi_bdry2.o $(OBJS)
+	$(CC) -o AcuteVoronoiBdry2 $(CCOPTS2) acute_voronoi_bdry2.o $(OBJS) -lm 
+AcuteVorCorner:  acute_vor_cor.o $(OBJS)
+	$(CC) -o AcuteVorCorner $(CCOPTS2) acute_vor_cor.o $(OBJS) -lm 
+AcuteVoronoiCut:  acute_voronoi_cut.o $(OBJS)
+	$(CC) -o AcuteVoronoiCut $(CCOPTS2) acute_voronoi_cut.o $(OBJS) -lm 
+ObtuseVoronoi:  obtuse_voronoi.o $(OBJS)
+	$(CC) -o ObtuseVoronoi $(CCOPTS2) obtuse_voronoi.o $(OBJS) -lm 
+ObtuseVoronoi2:  obtuse_voronoi2.o $(OBJS)
+	$(CC) -o ObtuseVoronoi2 $(CCOPTS2) obtuse_voronoi2.o $(OBJS) -lm 
+
+
+# dimred
+
+BigPoly:  big_poly.o $(OBJS)
+	$(CC) -o BigPoly $(CCOPTS2) big_poly.o $(OBJS) -lm 
+
+
+# quarter
+
+QuarterCorner:  quarter_corner.o $(OBJS)
+	$(CC) -o QuarterCorner $(CCOPTS2) quarter_corner.o $(OBJS) -lm 
+QuarterCornPars:  quarter_corn_pars.o $(OBJS)
+	$(CC) -o QuarterCornPars $(CCOPTS2) quarter_corn_pars.o $(OBJS) -lm 
+QuarterGma:  quarter_gma.o $(OBJS)
+	$(CC) -o QuarterGma $(CCOPTS2) quarter_gma.o $(OBJS) -lm 
+QuarterOctaVor:  quarter_octa_vor.o $(OBJS)
+	$(CC) -o QuarterOctaVor $(CCOPTS2) quarter_octa_vor.o $(OBJS) -lm 
+QuarterVorPunch:  quarter_vor_punch.o $(OBJS)
+	$(CC) -o QuarterVorPunch $(CCOPTS2) quarter_vor_punch.o $(OBJS) -lm 
+QuarterVorPunchBdry:  quarter_vor_punch_bdry.o $(OBJS)
+	$(CC) -o QuarterVorPunchBdry $(CCOPTS2) quarter_vor_punch_bdry.o $(OBJS) -lm 
+
+
+
+# end of Makefile

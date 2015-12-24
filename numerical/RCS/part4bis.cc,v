@@ -1,0 +1,322 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@// @;
+
+
+1.1
+date	97.11.04.17.14.47;	author hales;	state Exp;
+branches;
+next	;
+
+
+desc
+@The main series of upright quarter inequalities are retested
+here using a modified score octavorB, gammaB to see if the
+inequalities still hold.  It seems advantageous to switch over
+to this scoring system if possible on upright quarters.
+The output is in part4bis.out  (Ineq III.3.23.*)
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@#include <iomanip.h>
+#include <stdlib.h>
+#include "numerical.h"
+#include "constants.h"
+#include "morefn.h"
+#include <math.h>
+ 
+// This VERSION IS FOR PRELIMINARY TESTS OF INEQUALITIES 3.23.1--3.23.12
+// using a new scoring scheme.... octatauB, octavorB.
+
+static double octavorB(double x1,double x2,double x3,double x4,
+		double x5,double x6)
+	{
+	return octavor(x1,x2,x3,x4,x5,x6)+0.5*vorVc(x1,x2,x3,x4,x5,x6)
+		-0.5*vorVc(x1,x6,x5,x4,x3,x2);
+	}
+
+
+static double gammaB(double x1,double x2,double x3,double x4,
+		double x5,double x6)
+	{
+	return gamma(x1,x2,x3,x4,x5,x6)+0.5*vorVc(x1,x2,x3,x4,x5,x6)
+		-0.5*vorVc(x1,x6,x5,x4,x3,x2);
+	}
+
+
+static double tauB(double x1,double x2,double x3,double x4,
+		double x5,double x6)
+	{
+	return global::zeta*global::pt*solid(x1,x2,x3,x4,x5,x6)-
+	gammaB(x1,x2,x3,x4,x5,x6);
+	}
+
+static double octatauB(double x1,double x2,double x3,double x4,
+		double x5,double x6)
+	{
+	return global::zeta*global::pt*solid(x1,x2,x3,x4,x5,x6)-
+	octavorB(x1,x2,x3,x4,x5,x6);
+	}
+
+class iter {
+    double* xmin;
+	double* xmax;
+	double* x;
+    int numiter,numargs,nconstr;
+    void (*func)(int numargs,int whichFn,double* x,double* ret,void*);
+    void (*constraintfunc)
+        (int numargs,int which,double* x,double* ret,void*);
+    iter(int);
+    ~iter();
+    };
+
+double /*numerical.cc*/sigma_star(double h1,double h2,double h3,
+        double a1,double a2,double a3,double trunc);
+
+static void nofunc(int numargs,int whichFn,double* x,double* ret,void*)
+    {
+    cout << "nofunc should not be called" << endl << flush;
+    }
+
+int INEQ_NUMBER=0;
+static void generic(int numargs,int whichFn,double* x, double* ret,void*)
+	{
+	switch (INEQ_NUMBER) {
+
+
+		// third page :
+
+		case 413688580 : *ret = 
+			-4.3223 +4.10113*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])-
+			gammaB(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+		case 413688581 : *ret = 
+			-4.3223 +4.10113*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])-
+			octavorB(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+
+		case 805296510 : *ret = 
+			-0.9871 +0.80449 *dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])-
+			gammaB(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+		case 805296511 : *ret = 
+			-0.9871 +0.80449 *dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])-
+			octavorB(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+
+		case 136610219 : *ret = 
+			-0.8756 + 0.70186 *dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])-
+			gammaB(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+		case 136610220 : *ret = 
+			-0.8756 + 0.70186 *dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])-
+			octavorB(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+
+		case 379204810 : *ret = 
+			//-0.3429 +0.24573*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])-
+			-0.3404 +0.24573*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])-
+			gammaB(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+		case 379204811 : *ret = 
+			// next line modified nov 4, 1997
+			-0.3404 +0.24573*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])-
+			octavorB(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+
+		case 878731435 : *ret = 
+			-0.0024+0.00154*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])-
+			gammaB(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+		case 878731436 : *ret = 
+			-0.0024+0.00154*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])-
+			octavorB(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+
+		case 891740103 : *ret = 
+			0.1196- 0.07611*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])-
+			gammaB(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+		case 891740104 : *ret = 
+			0.1196- 0.07611*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])-
+			octavorB(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+
+		case 334002329 : *ret = 
+			-4.42873+4.16523*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])+
+			tauB(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+		case 334002330 : *ret = 
+			-4.42873+4.16523*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])+
+			octatauB(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+
+		case 883139937 : *ret = 
+			-1.01104+0.78701*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])+
+			tauB(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+		case 883139938 : *ret = 
+			-1.01104+0.78701*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])+
+			octatauB(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+
+		case 507989176 : *ret = 
+			-0.99937+0.77627*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])+
+			tauB(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+		case 507989177 : *ret = 
+			-0.99937+0.77627*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])+
+			octatauB(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+
+		case 244435805 : *ret = 
+			-0.34877+0.21916*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])+
+			tauB(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+		case 244435806 : *ret = 
+			-0.34877+0.21916*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])+
+			octatauB(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+
+		case 930176500 : *ret = 
+			-0.11434+ 0.05107*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])+
+			tauB(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+		case 930176501 : *ret = 
+			-0.11434+ 0.05107*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])+
+			octatauB(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+
+		case 815681339 : *ret = 
+			0.07749 - 0.07106*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])+
+			tauB(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+		case 815681340 : *ret = 
+			0.07749 - 0.07106*dihedraly(x[0],x[1],x[2],x[3],x[4],x[5])+
+			octatauB(x[0],x[1],x[2],x[3],x[4],x[5]);
+			break;
+
+		default : cout << "generic default" << endl << flush;
+			*ret=0;
+		}
+	}
+
+iter::~iter() 
+	{ delete[] xmin; 
+	  delete[] xmax; 
+		delete[] x; }
+
+
+// functions are constrained to be negative.
+
+static void ConstraintPage3(int numargs,int whichFn,double* x,double* ret,void*)
+    {
+	*ret = 0;
+	switch (INEQ_NUMBER) {
+		case 413688580 : case 805296510 : case 136610219 :
+		case 379204810 : case 878731435 : case 891740103 :
+		case 334002329 : case 883139937 : case 507989176 :
+		case 244435805 : case 930176500 : case 815681339 :
+			switch (whichFn)
+				{
+				case 1 : *ret= radf(x[0],x[1],x[5])- global::sqrt2; break;
+				case 2 : *ret= radf(x[0],x[2],x[4])- global::sqrt2; break;
+				}
+			break;
+		case 413688581 : case 805296511 : case 136610220 :
+		case 379204811 : case 878731436 : case 891740104 :
+		case 334002330 : case 883139938 : case 507989177 :
+		case 244435806 : case 930176501 : case 815681340 :
+			*ret = global::sqrt2 - radf(x[0],x[1],x[5]); break;
+
+		default : cout << "unexpected case in constraint" << endl;
+	}
+}
+
+iter::iter(int ineqSwitch) {
+	numiter = 20; numargs = 6; nconstr=0;
+	switch (ineqSwitch)
+		{
+		case 2 : numargs = 16; break;
+		case 554886232 : case 273124689 : numargs = 9; break;
+		}
+	xmin = new double[numargs];
+	xmax = new double[numargs];
+	x = new double[numargs];
+	constraintfunc = nofunc;
+	func = generic;
+	double zetapt = 0.1004445714270568;
+	double zetapt32 = 3.2*zetapt;
+	double pt = 0.0553736456684641;
+	int i;
+	for (i=0;i<numargs;i++) { xmin[i]=x[i]=2.0; xmax[i]=2.51; }
+ 
+	INEQ_NUMBER = ineqSwitch;
+	switch (ineqSwitch)
+		{
+		// page 0:
+		case 1 : xmin[3]=xmax[3]=3.2; xmin[4]=2.51; xmax[4]=3.2;
+				xmin[5]=2; xmax[5]=3.2; break;
+		case 2 : xmin[3]=xmax[3]=global::sqrt8;
+			xmin[15]=xmax[15]=global::sqrt8;
+			break;
+		// page 3;
+		case 413688580 : case 805296510 : case 136610219 :
+		case 379204810 : case 878731435 : case 891740103 :
+		case 334002329 : case 883139937 : case 507989176 :
+		case 244435805 : case 930176500 : case 815681339 :
+			xmin[0]=2.51; xmax[0]=global::sqrt8;
+			nconstr=2; constraintfunc=ConstraintPage3;
+			break;
+		case 413688581 : case 805296511 : case 136610220 :
+		case 379204811 : case 878731436 : case 891740104 :
+		case 334002330 : case 883139938 : case 507989177 :
+		case 244435806 : case 930176501 : case 815681340 :
+			xmin[0]=2.51; xmax[0]=global::sqrt8;
+			nconstr=1; constraintfunc=ConstraintPage3;
+			break;
+
+
+		default : cout << "error " << ineqSwitch << ": not installed " << endl;
+		}
+
+	}
+
+void /*ineq.cc*/minimize2(int);
+
+
+void page4()
+	{
+		minimize2(413688580); 
+		minimize2(805296510); 
+		minimize2(136610219);
+		minimize2(379204810); 
+		minimize2(878731435); 
+		minimize2(891740103);
+		minimize2(334002329); 
+		minimize2(883139937); 
+		minimize2(507989176);
+		minimize2(244435805); 
+		minimize2(930176500); 
+		minimize2(815681339);
+		minimize2(413688581); 
+		minimize2(805296511); 
+		minimize2(136610220);
+		minimize2(379204811); 
+		minimize2(878731436); 
+		minimize2(891740104);
+		minimize2(334002330); 
+		minimize2(883139938); 
+		minimize2(507989177);
+		minimize2(244435806); 
+		minimize2(930176501); 
+		minimize2(815681340);
+	}
+@

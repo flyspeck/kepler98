@@ -1,0 +1,18 @@
+set logfile X/LPmax.log236898025
+set preprocessing presolve no
+set output results n X/y.log
+set output dialog n X/x.log
+read BASIC/LP/cplexPent.lp575 lp
+change delete constraints sigsumX
+add 
+Cqrs2=0
+Cqrs8=0
+Cqrl6=0
+Cqrs4=0
+Cqrs1=0
+
+sigsum > 0.4429
+y(1,5)+y(4,5)+y(3,4)+y(2,3)+y(1,2) - X =0
+end
+opt
+quit

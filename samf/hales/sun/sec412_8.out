@@ -1,0 +1,130 @@
+Welcome to sphere packing routines, relation testing division.
+Welcome to Section A.4.12.8.  
+Enter cell count limit:  Enter slop:  		Slop = 0
+Starting time:  	Mon Jul 13 12:59:25 1998
+
+Starting case 1:
+		rhs = -0.149000000000000021
+2.000000000000000000	2.510000000000000231
+2.449999999999999734	2.510000000000000231
+2.509999999999999787	2.828427124746190291
+2.828427124746189847	4.000000000000000000
+
+a_case = ( 0 0 )
+
+cellcount    =         13211030		maxdepth = 11
+partialpushes=            54450
+largecut     =                0		discards     =               32
+smallcut     =          3628703		verifycount  =          8422263
+partialcount =           334255		diff         =          4454480
+Verification succeeded.
+
+2.000000000000000000	2.510000000000000231
+2.449999999999999734	2.510000000000000231
+2.509999999999999787	2.828427124746190291
+2.828427124746189847	4.000000000000000000
+
+a_case = ( 0 1 )
+
+cellcount    =            13473		maxdepth = 5
+partialpushes=                0
+largecut     =                0		discards     =                0
+smallcut     =             4336		verifycount  =             8295
+partialcount =                0		diff         =             5178
+Verification succeeded.
+
+2.000000000000000000	2.510000000000000231
+2.449999999999999734	2.510000000000000231
+2.509999999999999787	2.828427124746190291
+2.828427124746189847	4.000000000000000000
+
+a_case = ( 1 0 )
+
+cellcount    =            16017		maxdepth = 5
+partialpushes=                0
+largecut     =                0		discards     =                4
+smallcut     =             5954		verifycount  =             9058
+partialcount =                0		diff         =             6955
+Verification succeeded.
+
+2.000000000000000000	2.510000000000000231
+2.449999999999999734	2.510000000000000231
+2.509999999999999787	2.828427124746190291
+2.828427124746189847	4.000000000000000000
+
+a_case = ( 1 1 )
+
+cellcount    =             2017		maxdepth = 4
+partialpushes=                0
+largecut     =                0		discards     =                0
+smallcut     =              607		verifycount  =             1284
+partialcount =                0		diff         =              733
+Verification succeeded.
+
+Starting case 2:
+		rhs = -0.281000000000000028
+2.000000000000000000	2.510000000000000231
+2.449999999999999734	2.510000000000000231
+2.509999999999999787	2.828427124746190291
+2.828427124746189847	4.000000000000000000
+
+a_case = ( 0 0 )
+
+cellcount    =         74633066		maxdepth = 18
+partialpushes=           197679
+largecut     =                0		discards     =               32
+smallcut     =         20510776		verifycount  =         47585408
+partialcount =          1872229		diff         =         25175397
+Verification succeeded.
+
+2.000000000000000000	2.510000000000000231
+2.449999999999999734	2.510000000000000231
+2.509999999999999787	2.828427124746190291
+2.828427124746189847	4.000000000000000000
+
+a_case = ( 0 1 )
+
+cellcount    =            24601		maxdepth = 5
+partialpushes=               11
+largecut     =                0		discards     =                0
+smallcut     =            10102		verifycount  =            12834
+partialcount =              126		diff         =            11641
+Verification succeeded.
+
+2.000000000000000000	2.510000000000000231
+2.449999999999999734	2.510000000000000231
+2.509999999999999787	2.828427124746190291
+2.828427124746189847	4.000000000000000000
+
+a_case = ( 1 0 )
+
+cellcount    =            37009		maxdepth = 5
+partialpushes=                4
+largecut     =                0		discards     =                4
+smallcut     =            11621		verifycount  =            23020
+partialcount =               51		diff         =            13934
+Verification succeeded.
+
+2.000000000000000000	2.510000000000000231
+2.449999999999999734	2.510000000000000231
+2.509999999999999787	2.828427124746190291
+2.828427124746189847	4.000000000000000000
+
+a_case = ( 1 1 )
+
+cellcount    =             4705		maxdepth = 4
+partialpushes=                0
+largecut     =                0		discards     =                0
+smallcut     =             1368		verifycount  =             3043
+partialcount =                0		diff         =             1662
+Verification succeeded.
+
+All verifications succeeded.
+
+Done.
+Ending time:    	Mon Jul 13 16:38:44 1998
+
+Elapsed time: 13159 seconds,		diff = 168.285
+87941918 cells considered,		6683.02 cells per second
+
+

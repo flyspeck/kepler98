@@ -1,0 +1,54 @@
+\magnification=\magstep1
+\parskip=\baselineskip
+\centerline{\bf Testing Inequalities with CFSQP}
+\bigskip
+
+There are many inequalities that enter into the proof of the Kepler
+conjecture.  They were proved rigorously by computer using 
+interval arithmetic.  They have also been tested by 
+numerical methods.  These numerical methods are not entirely reliable,
+but in practice they are usually dependable, and they give a
+partial independent confirmation that the methods of interval
+arithmetic are functioning properly.
+
+The computer program CFSQP has been used for the numerical tests of the
+inequalities.  This program was developed by Craig Lawrence,
+Jian L. Zhou, and Andr\'e L. Tits, at the Electrical Engineering
+Department and Institute for Systems Research at the University of
+Maryland.   It is available, free of charge, to non-profit
+organizations.
+
+The documentation describes CFSQP as ``a set of C functions for the
+minimization of the maximum of a set of smooth functions (possibly
+a single one, or even none at all) subject to general smooth
+constraints.''
+
+CFSQP has been extended through a series of functions relating to
+the Kepler conjecture.  Each inequality arising in the proof of
+the Kepler conjecture has been tested numerical by taking each
+inequality $F(x)>0$, for $x \in D$, on a domain $D$, and expressing
+it as a constrained minimization problem 
+$$\min F(x)\hbox{ s.t. }   x\in D.$$
+If the minimimum to this problem found by CFSQP is positive, it gives
+numerical evidence that the inequality is true.
+
+Many optimization problems of this type were considered during
+the development stages of the Kepler conjecture.
+
+
+This packet of materials contains
+
+\noindent
+the C++ code for the Kepler conjecture inequalities\hfil\break
+the particular inequalities arising in Sphere Packings IV\hfil\break
+the output from the inequality checking for Sphere Packings IV\hfil\break
+the User's Guide for CFSQP, Version 2.5
+
+See {\tt www.math.lsa.umich.edu/\~\relax hales/countdown/numerical/}.  There
+you can find more extensive resources.
+This directory contains all the inequalities appearing
+in any of the papers as well as the output from testing
+them.
+
+
+\bye

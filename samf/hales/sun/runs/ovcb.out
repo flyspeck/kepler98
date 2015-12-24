@@ -1,0 +1,22 @@
+Welcome to sphere packing routines, relation testing division.
+Welcome to OctaVorCorrBdry.  Not using partials.
+Subdivisions:	2
+
+Enter slop:  		Slop = 1e-05
+Starting time:  	Thu Jul 17 20:44:34 1997
+
+Starting case 1:
+cellcount    =          1855489		maxdepth = 10
+sccutcount   =           359984
+gmacount     =           352274		vorcount     =           571098
+dualcount    =           932117		verifycount  =           543141
+partialcount =                0		diff         =           952364
+Verification succeeded.
+
+Done.
+Ending time:    	Thu Jul 17 21:17:24 1997
+
+Elapsed time: 1970 seconds
+diff = 1958.7		941.873 cells per second
+
+
