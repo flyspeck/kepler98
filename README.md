@@ -28,9 +28,9 @@ Portions of this code have been deposited at the [arXiv](http://arxiv.org/abs/ma
 The computer portions of the proof fall into three main bodies of code, as reflected below in the directory
 structure.
 
-* The verification of nonlinear inequalities.
-* The verification of linear programs.  
-* The generation of all planar graphs satisfying a technical list of properties.
+* The verification of nonlinear inequalities by [`interval`](interval) arithmetic.
+* The verification of [`linear`](linear) programs.  
+* The generation of all planar [`graphs`](graph) satisfying a technical list of properties.
 
 ## Directory structure
 
@@ -47,7 +47,8 @@ structure.
 [`linear`](linear) Linear programming.  This directory contains the bulk of the project code in the form
 of 
 
-[`numerical`](numerical) Code for the numerical verification of nonlinear inequalities.
+[`numerical`](numerical) Code for the numerical verification of nonlinear inequalities.  This part is not
+mathematically rigorous.
 
 [`samf`](samf)  Sam Ferguson's code related to the Kepler Conjecture.
 
